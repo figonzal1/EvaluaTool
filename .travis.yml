@@ -1,0 +1,22 @@
+language: android
+java: oraclejdk8
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28.0.3
+    - android-28
+    - extra-google-google_play_services  - extra-google-m2repository
+    - extra-android-m2repository
+before_install:
+  - openssl aes-256-cbc -K $encrypted_cdc0677920ab_key -iv $encrypted_cdc0677920ab_iv -in secrets.tar.gz.enc -out secrets.tar.gz -d
+  - tar xzvf secrets.tar.gz
+  - chmod +x gradlew
+  - export TZ=America/Santiago
+script:
+  - "./gradlew clean"
+  - "./gradlew assemble"
+  - "./gradlew test"
+notifications:
+  slack:
+    secure: LhdbmXYjdnWdstQlC72B9BrgYH8HoWpMRYuB7DCvZ2tf25uQuCXtgGhUsQcODBrsFM45oKNF6g2HqBSN2wYeq14FvKWLFRDwgmHA/l3ci1pBkrrYd0dCNZZuvun1y4w0SMzOjTXB/3QMFKjqqHVQ0qn8aObcUNEEHXR5fjURc6SgFbzrnbOsgIODdl91W963aU+bDDaxHnucxZ0IzE/DnkV7/UZH9wX01+lDal3GZiE+VDZhYkEsmO34/CJR6UuTvvRh+YsYRU05TjetHIeGxDGcquWioLY/VumIMt46kCrEPmiFH0SlWxOrHXbWC2xvCHN1sCThGvyjxb4PKcdfsnZWEVOp8Yi/Hy7bw6aac+OdUZxSAoWabYvzdfQyLhW8lOfz6jaGG1FZhSa/iwqk8cFiToJhMJE6wiKkrGoNPx8U3VZ8r7VdAFPAx8mn5WaUuR6P0bFUmvaME7fDcc66ywOaJHOOM69vRb89wgEVh9JfaxL2+jcRMfxguAdoz2AUuayHqZ/itW/Iw5JujKDvK0Yu/TjLaTLKuat5Ywqvew6Den2FdLHgHldmW3SUuFurMo7z401chL+Gtn9+H1gtbkOoop59fxB0kYngCbZ8AhEbdfd1/RDhFZO55QC5VLDFZde+lJisM28RQg7dZ0VN2LE1ldWS7ZpZMpwS1MAKw88=
