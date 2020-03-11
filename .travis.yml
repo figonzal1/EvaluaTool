@@ -8,15 +8,39 @@ android:
     - android-29
     - extra-google-google_play_services  - extra-google-m2repository
     - extra-android-m2repository
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+    - $HOME/.android/build-cache
+stages:
+  - test
+  - name: deploy
+    if: tag IS present
+obs:
+  include:
+    - stage: test
+      script: "./gradlew test"
+    - stage: deploy
+        script: "./gradlew assembleRelease"
+        deploy:
+          provider: releases
+          api_key:
+            secure: RWTMq8NzjGAFJpfobMK2ontBHOf0nRZdsRD4fWZl5rID0zENaWQt1oQnWTTKtWlX6VWogWIJvL81VpH3Wn1zdXaO+V7jU9BsGwrlV1M19Gdtd9E+VRwX1dYvCGTjiLMDWYcIScJPLCMpOtSOmx6pjpvP1mG/6cq6omjAAzghjlrPDqQt/gOpbDGfl/489+FmC+jnwVg0L7Fsw0n+ct8n+cAkHObyLWGfZ3K+OI7N88Xoo99g8MIYAFWIrnqrmW8Y/FDD31V3seXkjwX3cU1IgCyTLOqmkWqUqGPU+4UUBSNmtWZWpNP94Z45c4ADo9dz1vsryamM0zhy1bIqZIQtultUY2plYKXNhKb+PL+DCxe+5+byS2Kbu7k5C6pk/GH5iavouH9uTgQelOjy9aH4n+Qwo4yQN2/ivuuTe2vSS8WqjfSz+a8SKKGEsBb7vQh+WKLEP2aYTR1SrgHHAOqQRmSDcF778L0dsisQk0Lw3e3wE2Uuubf+Z/DTEqEdoR6f4Sau81Mu06ZLvugmZ9uIzhI23k0gF89ktKIIoBf4IvoeP6VCdZ6emG7PHVXZnRfdhPjjGbvtpxbRbSqq8JeFxS9jaPGqdSzl5J92559bXmlZXr8+VqwcnrhRZry0i0Gi9vAXYsN8cRwkB5wrU5fQ2nfmCu1R7YoCZpCKxoHtxPo=
+          file: $TRAVIS_BUILD_DIR/app/release/*
+          skip_cleanup: true
+          overwrite: true
+          on:
+            tags: true
+
 before_install:
   - openssl aes-256-cbc -K $encrypted_cdc0677920ab_key -iv $encrypted_cdc0677920ab_iv -in secrets.tar.gz.enc -out secrets.tar.gz -d
   - tar xzvf secrets.tar.gz
   - chmod +x gradlew
   - export TZ=America/Santiago
-script:
-  - "./gradlew clean"
-  - "./gradlew assemble"
-  - "./gradlew test"
 notifications:
   slack:
     secure: H2hZzWsFuQYi71yLf/BXUAfAh8wtoQ2+3nMxV/nS/co8Tdb1XNMHBI5Ed5VdWl8bPMUhp+XHLH0zm3QsrcQrndD0pqqRPmoPo/kBpj/BIebfwIB8yhL7vsAWaEQU1/vTsPv+FD3J0yPa7mrzgRB1fNs7JNawL9TBtX+PKY7IbwtG+79e6Mqyp3D74n+EpQIQ3MlUxWFyZ6//PK7EdQwEWrC0h+AXVbq8BY6oXgRQ4tXgRbkHxCukJCcWju1yY1Uka9gnSRnpbr2lWHqO/AkFTwCf4PDhwIdQnoYzawcAbpePAzJz0ArvvJGZWaLLKk+X5mQtVwDPVhqRiqnhSgDS3ZUDzv5P6lT3rE1MHke+8XxS5RL7QR/i9JI29IZ15ldTAzqKh2yhHr1gaxoJvpmdspmM7RIbl4Ue3XSDUgo55+U/EX+MYjHy+29Eg7cZdmcXe/aEw6uz/HyYjh9VX+9bljq2l2KRirpKAxiwNMWSpEBfSpgctTluWJsJk/cv68zTK2VysXj3jRKjUvnoWy3AH9CUcQ4fyk9LUMWBtVIrHV20H71SwlxC9cVFnB0KoMYrFqhJNgAA1a8e6QW7cyrK0vd73DNZ5vqKXIT2JWIY7B3wAoqRLD1DzKUwAYBsz+kBGEt7pngqK0XlcQBvsW6Wg0BJF7TvXEXJD6sQ1EHt0AE=
