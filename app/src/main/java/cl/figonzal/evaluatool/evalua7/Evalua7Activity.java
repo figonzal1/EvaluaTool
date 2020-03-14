@@ -13,6 +13,7 @@
 
 package cl.figonzal.evaluatool.evalua7;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,11 +44,12 @@ import cl.figonzal.evaluatool.evalua7.modulo5.ExpresionEscrita;
 import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaFonetica;
 import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaVisualReglada;
 import cl.figonzal.evaluatool.evalua7.modulo6.CalculoNumeracion;
+import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
+public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -148,98 +150,111 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ATEN_CONCENTRACION));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ATEN_CONCENTRACION));
-
-                Intent intent = new Intent(Evalua7Activity.this, AtencionConcentracion.class);
-                startActivity(intent);
+                abrirActividad(
+                        this, AtencionConcentracion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ATEN_CONCENTRACION)
+                );
             }
         } else if (getString(R.string.EVALUA_7_MODULO_2).equals(sectionTitle)) {
 
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_DEDUCTIVO));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_DEDUCTIVO));
-
-                Intent intent = new Intent(Evalua7Activity.this, RazonamientoDeductivo.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        RazonamientoDeductivo.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_RAZON_DEDUCTIVO)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_INDUCTIVO));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_INDUCTIVO));
-
-                Intent intent = new Intent(Evalua7Activity.this, RazonamientoInductivo.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        RazonamientoInductivo.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_RAZON_INDUCTIVO)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_ESPACIAL));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RAZON_ESPACIAL));
-
-                Intent intent = new Intent(Evalua7Activity.this, RazonamientoEspacial.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        RazonamientoEspacial.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_RAZON_ESPACIAL)
+                );
             }
         } else if (getString(R.string.EVALUA_7_MODULO_3).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EFICACIA_LECTORA));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EFICACIA_LECTORA));
-
-                Intent intent = new Intent(Evalua7Activity.this, EficaciaLectora.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        EficaciaLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_EFICACIA_LECTORA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COMPRENSION_LECTORA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COMPRENSION_LECTORA));
-
-                Intent intent = new Intent(Evalua7Activity.this, ComprensionLectora.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ComprensionLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_COMPRENSION_LECTORA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VELOCIDAD_LECTORA));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VELOCIDAD_LECTORA));
-
-                Intent intent = new Intent(Evalua7Activity.this, VelocidadLectora.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        VelocidadLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VELOCIDAD_LECTORA)
+                );
             }
         } else if (getString(R.string.EVALUA_7_MODULO_4).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORTOGRAFIA_FONETICA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORTOGRAFIA_FONETICA));
-
-                Intent intent = new Intent(Evalua7Activity.this, OrtografiaFonetica.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        OrtografiaFonetica.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EXP_ESCRITA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EXP_ESCRITA));
-
-                Intent intent = new Intent(Evalua7Activity.this, ExpresionEscrita.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ExpresionEscrita.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_EXP_ESCRITA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORT_VIS_REGLADA));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORT_VIS_REGLADA));
-
-                Intent intent = new Intent(Evalua7Activity.this, OrtografiaVisualReglada.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        OrtografiaVisualReglada.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORT_VIS_REGLADA)
+                );
             }
         } else if (getString(R.string.EVALUA_7_MODULO_5).equals(sectionTitle)) {
 
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_NUMERACION));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_NUMERACION));
-
-                Intent intent = new Intent(Evalua7Activity.this, CalculoNumeracion.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        CalculoNumeracion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CAL_NUMERACION)
+                );
             }
         }
 
+    }
+
+    @Override
+    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
+        Log.d(log_title, log_reponse);
+        Crashlytics.log(Log.DEBUG, log_title, log_reponse);
+
+        Intent intent = new Intent(activity, calledActivity);
+        startActivity(intent);
     }
 }
 
