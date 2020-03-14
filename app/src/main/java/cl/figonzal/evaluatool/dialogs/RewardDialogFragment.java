@@ -15,7 +15,6 @@ package cl.figonzal.evaluatool.dialogs;
 
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -50,32 +49,26 @@ public class RewardDialogFragment extends DialogFragment {
 
         builder.setTitle("¡Apoya a la aplicación!");
         builder.setMessage("Ve el video, apoya gratis monetariamente y recibe 1 hora libre de publicidad");
-        builder.setPositiveButton("Ver video", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (rewardedVideoAd.isLoaded()) {
-                    dismiss();
-                    rewardedVideoAd.show();
-                    Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
-                            .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
-                }
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
-                        .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
-
+        builder.setPositiveButton("Ver video", (dialog, which) -> {
+            if (rewardedVideoAd.isLoaded()) {
                 dismiss();
+                rewardedVideoAd.show();
+                Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+                        .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
             }
+
+            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+                    .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
+
+            dismiss();
         });
 
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
-                        .TAG_REWARD_DIALOG_BTN_CANCEL));
-                Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
-                        .TAG_REWARD_DIALOG_BTN_CANCEL));
-                dismiss();
-            }
+        builder.setNegativeButton("Cancelar", (dialog, which) -> {
+            Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+                    .TAG_REWARD_DIALOG_BTN_CANCEL));
+            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+                    .TAG_REWARD_DIALOG_BTN_CANCEL));
+            dismiss();
         });
         //MaterialButton btn_reward = view.findViewById(R.id.btn_reward_ver_video);
         //MaterialButton btn_cancelar = view.findViewById(R.id.btn_reward_cancelar);

@@ -110,7 +110,7 @@
                         android:fontFamily="@font/roboto"
                         android:text="Ingresa el error total de los 6 ejercicios"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textSize="10sp"
+                        android:textSize="12sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/tv_tarea_1"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_1" />

@@ -121,17 +121,14 @@ public class VelocidadFragment extends Fragment implements EvaluaInterface {
         progressBar.setMax(percentil_segundos[0][1]);
 
         ImageView iv_corregido = v.findViewById(R.id.iv_help_pd_corregido);
-        iv_corregido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
+        iv_corregido.setOnClickListener(v1 -> {
+            Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
+            Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
-                CorregidoDialogFragment dialogFragment = new CorregidoDialogFragment();
-                dialogFragment.setCancelable(false);
-                dialogFragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), getString(R.string.DIALOGO_AYUDA));
-            }
+            CorregidoDialogFragment dialogFragment = new CorregidoDialogFragment();
+            dialogFragment.setCancelable(false);
+            dialogFragment.show(Objects.requireNonNull(getActivity()).getSupportFragmentManager(), getString(R.string.DIALOGO_AYUDA));
         });
     }
 

@@ -15,6 +15,7 @@ package cl.figonzal.evaluatool.interfaces;
 
 import android.widget.TextView;
 
+@SuppressWarnings("unused")
 public interface EvaluaInterface {
 
     double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas);

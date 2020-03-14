@@ -13,6 +13,7 @@
 
 package cl.figonzal.evaluatool.evalua0;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,11 +43,12 @@ import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidad;
 import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicas;
 import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrases;
 import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacion;
+import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
+public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -107,84 +109,91 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
         if (getString(R.string.EVALUA_0_MODULO_1).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CLASIFICACION));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CLASIFICACION));
-
-                Intent intent = new Intent(Evalua0Activity.this, Clasificacion.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        Clasificacion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_SERIES));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_SERIES));
+                abrirActividad(
+                        this,
+                        Series.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_SERIES)
+                );
 
-                Intent intent = new Intent(Evalua0Activity.this, Series.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORG_PERCEPTIVA));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORG_PERCEPTIVA));
-
-                Intent intent = new Intent(Evalua0Activity.this, OrganizacionPerceptiva.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptiva.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_LETRAS_NUMEROS));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_LETRAS_NUMEROS));
+                abrirActividad(
+                        this,
+                        LetrasYNumeros.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_LETRAS_NUMEROS)
+                );
 
-                Intent intent = new Intent(Evalua0Activity.this, LetrasYNumeros.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_MEMORIA_VERBAL));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_MEMORIA_VERBAL));
-
-                Intent intent = new Intent(Evalua0Activity.this, MemoriaVerbal.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        MemoriaVerbal.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_MEMORIA_VERBAL)
+                );
             }
         } else if (getString(R.string.EVALUA_0_MODULO_2).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COPIA_DIBUJOS));
+                abrirActividad(
+                        this,
+                        CopiaDibujos.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_COPIA_DIBUJOS)
+                );
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COPIA_DIBUJOS));
-
-                Intent intent = new Intent(Evalua0Activity.this, CopiaDibujos.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_GRAFO_MOTRICIDAD));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_GRAFO_MOTRICIDAD));
-
-                Intent intent = new Intent(Evalua0Activity.this, GrafoMotricidad.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        GrafoMotricidad.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_GRAFO_MOTRICIDAD)
+                );
             }
         } else if (getString(R.string.EVALUA_0_MODULO_3).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_PALABRAS_FRASES));
+                abrirActividad(
+                        this,
+                        PalabrasYFrases.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_PALABRAS_FRASES)
+                );
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_PALABRAS_FRASES));
-
-                Intent intent = new Intent(Evalua0Activity.this, PalabrasYFrases.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RECEPCION_AUDITIVA));
+                abrirActividad(
+                        this,
+                        RecepcionAuditivaArticulacion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_RECEPCION_AUDITIVA)
+                );
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_RECEPCION_AUDITIVA));
-
-                Intent intent = new Intent(Evalua0Activity.this, RecepcionAuditivaArticulacion.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_HABILIDADES_FONOLOGICAS));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_HABILIDADES_FONOLOGICAS));
-
-                Intent intent = new Intent(Evalua0Activity.this, HabilidadesFonologicas.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        HabilidadesFonologicas.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_HABILIDADES_FONOLOGICAS)
+                );
             }
         }
     }
@@ -221,5 +230,14 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
+        Log.d(log_title, log_reponse);
+        Crashlytics.log(Log.DEBUG, log_title, log_reponse);
+
+        Intent intent = new Intent(activity, calledActivity);
+        startActivity(intent);
     }
 }

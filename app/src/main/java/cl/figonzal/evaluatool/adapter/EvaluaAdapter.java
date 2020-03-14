@@ -67,12 +67,7 @@ public class EvaluaAdapter extends Section {
         Evalua evalua = subItems.get(position);
 
         itemViewHolder.tv_item_title.setText(evalua.getNombre());
-        itemViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickListener.onItemRootViewClicked(nombre_header, itemViewHolder.getAdapterPosition());
-            }
-        });
+        itemViewHolder.itemView.setOnClickListener(v -> clickListener.onItemRootViewClicked(nombre_header, itemViewHolder.getAdapterPosition()));
 
     }
 
@@ -85,12 +80,7 @@ public class EvaluaAdapter extends Section {
                 expanded ? R.drawable.ic_keyboard_arrow_up_black_24dp : R.drawable.ic_keyboard_arrow_down_black_24dp
         );
 
-        headerViewHolder.rootView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickListener.onHeaderRootViewClicked(EvaluaAdapter.this);
-            }
-        });
+        headerViewHolder.rootView.setOnClickListener(v -> clickListener.onHeaderRootViewClicked(EvaluaAdapter.this));
 
     }
 

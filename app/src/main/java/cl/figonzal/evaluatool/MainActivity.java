@@ -19,7 +19,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
@@ -45,7 +44,7 @@ import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean testMode = false;
+    private final Boolean testMode = true;
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
@@ -83,37 +82,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clickListeners(final InterstitialAd mInterstitialAd) {
-        btn_evalua_0.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
+        btn_evalua_0.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
+            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
 
-                checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua0Activity.class);
-            }
+            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua0Activity.class);
         });
 
-        btn_evalua_3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
+        btn_evalua_3.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
+            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
 
-                checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua3Activity.class);
-            }
+            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua3Activity.class);
         });
 
-        btn_evalua_7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
+        btn_evalua_7.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
+            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
 
-                checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua7Activity.class);
-            }
+            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua7Activity.class);
         });
     }
 
