@@ -13,6 +13,7 @@
 
 package cl.figonzal.evaluatool.evalua3;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -46,11 +47,12 @@ import cl.figonzal.evaluatool.evalua3.modulo5.ValoracionGlobalEscritura;
 import cl.figonzal.evaluatool.evalua3.modulo6.CalculoNumeracion;
 import cl.figonzal.evaluatool.evalua3.modulo6.ResolucionProblemas;
 import cl.figonzal.evaluatool.evalua3.modulo6.ValoracionGlobalAprenMatemat;
+import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
+public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -119,12 +121,12 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         if (getString(R.string.EVALUA_3_MODULO_1).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_MEMORIA_ATENCION));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_MEMORIA_ATENCION));
-
-                Intent intent = new Intent(Evalua3Activity.this, MemoriaAtencion.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        MemoriaAtencion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_MEMORIA_ATENCION)
+                );
             }
         }
 
@@ -132,32 +134,36 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         else if (getString(R.string.EVALUA_3_MODULO_2).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_REFLEXIVIDAD));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_REFLEXIVIDAD));
-
-                Intent intent = new Intent(Evalua3Activity.this, Reflexividad.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        Reflexividad.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_REFLEXIVIDAD)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_PENSAMIENTO_ANALOGICO));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_PENSAMIENTO_ANALOGICO));
-
-                Intent intent = new Intent(Evalua3Activity.this, PensamientoAnalogico.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        PensamientoAnalogico.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORG_PERCEPTIVA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORG_PERCEPTIVA));
-
-                Intent intent = new Intent(Evalua3Activity.this, OrganizacionPerceptiva.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptiva.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-                Intent intent = new Intent(Evalua3Activity.this, ValoracionInterfaceGlobalBases.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ValoracionInterfaceGlobalBases.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
             }
         }
 
@@ -165,78 +171,85 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         else if (getString(R.string.EVALUA_3_MODULO_4).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COMPR_LECTORA));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_COMPR_LECTORA));
-
-                Intent intent = new Intent(Evalua3Activity.this, ComprensionLectora.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ComprensionLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_COMPR_LECTORA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EXACTITUD_LECTORA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_EXACTITUD_LECTORA));
-
-                Intent intent = new Intent(Evalua3Activity.this, ExactitudLectora.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ExactitudLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_EXACTITUD_LECTORA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-
-                Intent intent = new Intent(Evalua3Activity.this, ValoracionGlobalLectura.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ValoracionGlobalLectura.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
             }
         }
 
         //MODULO 5
         else if (getString(R.string.EVALUA_3_MODULO_5).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORTOGRAFIA_FONETICA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORTOGRAFIA_FONETICA));
+                abrirActividad(
+                        this,
+                        OrtografiaFonetica.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+                );
 
-                Intent intent = new Intent(Evalua3Activity.this, OrtografiaFonetica.class);
-                startActivity(intent);
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORT_VIS_REGLADA));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_ORT_VIS_REGLADA));
-
-                Intent intent = new Intent(Evalua3Activity.this, OrtografiaVisualReglada.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        OrtografiaVisualReglada.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORT_VIS_REGLADA)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-
-                Intent intent = new Intent(Evalua3Activity.this, ValoracionGlobalEscritura.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ValoracionGlobalEscritura.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
             }
         }
 
         //MODULO 6
         else if (getString(R.string.EVALUA_3_MODULO_6).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_NUMERACION));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_NUMERACION));
-
-                Intent intent = new Intent(Evalua3Activity.this, CalculoNumeracion.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        CalculoNumeracion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CAL_NUMERACION)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_RES_PROBLEMAS));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_CAL_RES_PROBLEMAS));
-
-                Intent intent = new Intent(Evalua3Activity.this, ResolucionProblemas.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ResolucionProblemas.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CAL_RES_PROBLEMAS)
+                );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                Log.d(getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-
-                Crashlytics.log(Log.DEBUG, getString(R.string.SUB_ITEM_CLICK), getString(R.string.CLICK_VALORACION_GLOBAL));
-
-                Intent intent = new Intent(Evalua3Activity.this, ValoracionGlobalAprenMatemat.class);
-                startActivity(intent);
+                abrirActividad(
+                        this,
+                        ValoracionGlobalAprenMatemat.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
             }
         }
     }
@@ -274,4 +287,15 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
+
+        Log.d(log_title, log_reponse);
+        Crashlytics.log(Log.DEBUG, log_title, log_reponse);
+
+        Intent intent = new Intent(activity, calledActivity);
+        startActivity(intent);
+    }
+
 }

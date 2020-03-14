@@ -44,15 +44,12 @@ public class CorregidoDialogFragment extends DialogFragment {
         MaterialButton btn_entendido;
 
         btn_entendido = view.findViewById(R.id.btn_entendido_pd);
-        btn_entendido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_CERRADO));
+        btn_entendido.setOnClickListener(v -> {
+            Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_CERRADO));
 
-                Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_CERRADO));
+            Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_CERRADO));
 
-                dismiss();
-            }
+            dismiss();
         });
 
         return builder.create();

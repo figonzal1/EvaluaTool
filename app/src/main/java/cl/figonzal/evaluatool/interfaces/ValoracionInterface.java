@@ -14,5 +14,6 @@
 package cl.figonzal.evaluatool.interfaces;
 
 public interface ValoracionInterface {
+    @SuppressWarnings("unused")
     void calcularResultado();
 }
