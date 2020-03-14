@@ -17,11 +17,11 @@
     <string name="ADMOB_MASTER_KEY">ca-app-pub-6355378855577476~8089782740</string>
 
     <!--TEST AD-->
-    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>
+    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
     <!--PROD AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>-->
+    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
 
 
     <!-- FORMAT -->
