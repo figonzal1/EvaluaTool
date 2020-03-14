@@ -44,7 +44,7 @@ import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean testMode = true;
+    private final Boolean testMode = false;
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
