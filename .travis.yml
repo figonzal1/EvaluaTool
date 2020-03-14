@@ -18,8 +18,10 @@ cache:
     - $HOME/.android/build-cache
 stages:
   - test
-  - name: deploy
-    if: tag IS present
+  exclude:
+    - if: branch = development
+    - name: deploy
+      if: tag IS present
 jobs:
   include:
     - stage: test
