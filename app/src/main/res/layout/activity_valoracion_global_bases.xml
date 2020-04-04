@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                               ~
   This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package.                  ~
+  file 'LICENSE', which is part of this source code package                   ~
                                                                               ~
   Autor: Felipe González                                                      ~
   Email: felipe.gonzalezalarcon94@gmail.com                                   ~
                                                                               ~
-  Copyright (c) 2020.                                                         ~
+  Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 09-03-20 0:32                                                 ~
+  Last modified 04-04-20 14:17                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -94,10 +94,10 @@
                             android:id="@+id/et_totales_t1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="0123456789"
+                            android:digits=".-0123456789"
                             android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
+                            android:inputType="number"
+                            android:maxLength="5"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -116,10 +116,10 @@
                             android:id="@+id/et_totales_t2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="0123456789"
+                            android:digits=".-0123456789"
                             android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
+                            android:inputType="number"
+                            android:maxLength="5"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -140,10 +140,10 @@
                             android:id="@+id/et_totales_t3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits="0123456789"
+                            android:digits=".-0123456789"
                             android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
+                            android:inputType="number"
+                            android:maxLength="5"
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -211,7 +211,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="0 pts"
+                        android:text="RE: 0 pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +226,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="0 pts"
+                        android:text="PA: 0 pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -241,7 +241,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="0 pts"
+                        android:text="OP: 0 pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"

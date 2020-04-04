@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 16:51                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 14:04                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo2;
 
@@ -29,7 +29,6 @@ import com.crashlytics.android.Crashlytics;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.Locale;
-import java.util.Objects;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
@@ -40,15 +39,15 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
     //TAREA 1
     private TextInputEditText et_totales_t1;
     private TextView tv_sub_total_t1;
-    private int sub_total_t1;
+    private double sub_total_t1;
     //TAREA 2
     private TextInputEditText et_totales_t2;
     private TextView tv_sub_total_t2;
-    private int sub_total_t2;
+    private double sub_total_t2;
     //TAREA 3
     private TextInputEditText et_totales_t3;
     private TextView tv_sub_total_t3;
-    private int sub_total_t3;
+    private double sub_total_t3;
 
     private TextView tv_pd_total;
 
@@ -107,8 +106,8 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
             public void afterTextChanged(Editable s) {
                 if (s.length() == 0) {
                     sub_total_t1 = 0;
-                } else if (s.length() > 0) {
-                    sub_total_t1 = Integer.parseInt(Objects.requireNonNull(et_totales_t1.getText()).toString());
+                } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
+                    sub_total_t1 = Double.parseDouble(String.valueOf(et_totales_t1.getText()));
                 }
                 tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "RE", sub_total_t1));
                 calcularResultado();
@@ -131,8 +130,8 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
             public void afterTextChanged(Editable s) {
                 if (s.length() == 0) {
                     sub_total_t2 = 0;
-                } else if (s.length() > 0) {
-                    sub_total_t2 = Integer.parseInt(Objects.requireNonNull(et_totales_t2.getText()).toString());
+                } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
+                    sub_total_t2 = Double.parseDouble(String.valueOf(et_totales_t2.getText()));
                 }
                 tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "PA", sub_total_t2));
                 calcularResultado();
@@ -155,8 +154,8 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
             public void afterTextChanged(Editable s) {
                 if (s.length() == 0) {
                     sub_total_t3 = 0;
-                } else if (s.length() > 0) {
-                    sub_total_t3 = Integer.parseInt(Objects.requireNonNull(et_totales_t3.getText()).toString());
+                } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
+                    sub_total_t3 = Double.parseDouble(String.valueOf(et_totales_t3.getText()));
                 }
                 tv_sub_total_t3.setText(String.format(Locale.US, "%s: %s pts", "OP", sub_total_t3));
                 calcularResultado();
