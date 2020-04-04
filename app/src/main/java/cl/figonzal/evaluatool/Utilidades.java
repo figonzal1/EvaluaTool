@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 17:32                                                 -
+ Last modified 04-04-20 19:37                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -25,8 +25,6 @@ import java.util.Locale;
 import java.util.Random;
 
 public class Utilidades {
-
-    private static FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
 
     /**
      * Funcion encargada de calcular la desviación del PD de un alumno (Metodo con implementacion
@@ -66,7 +64,7 @@ public class Utilidades {
 
         Log.d("NIVEL_CALCULADO", "nulo");
 
-        crashlytics.log("D/NIVEL_CALCULADO: " + "nulo");
+        FirebaseCrashlytics.getInstance().log("D/NIVEL_CALCULADO: " + "nulo");
 
         return null;
     }
