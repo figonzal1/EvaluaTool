@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 18:20                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments;
 
@@ -27,8 +27,8 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -77,6 +77,8 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
     private TextView tv_nivel;
     private ProgressBar progressBar;
     private TextView tv_desviacion_calculada;
+
+    private FirebaseCrashlytics crashlytics;
 
     public ComprensionFragment() {
         // Required empty public constructor
@@ -137,7 +139,7 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
         iv_corregido.setOnClickListener(v1 -> {
             Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
+            crashlytics.log(getString(R.string.DIALOGO_AYUDA) + getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
             CorregidoDialogFragment dialogFragment = new CorregidoDialogFragment();
             dialogFragment.setCancelable(false);
@@ -275,7 +277,7 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
         //Percentil no encontrado
         Log.d(getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
 
-        Crashlytics.log(Log.DEBUG, getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
+        crashlytics.log(getString(R.string.TAG_PERCENTIL_CALCULADO) + getString(R.string.PERCENTIL_NULO));
         return -1;
     }
 
@@ -294,7 +296,7 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
         }
         Log.d(getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO));
 
-        Crashlytics.log(Log.DEBUG, getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO));
+        crashlytics.log(getString(R.string.TAG_PD_CORREGIDO) + getString(R.string.PD_NULO));
         return -1;
     }
 
@@ -315,7 +317,7 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
         //Percentil no encontrado
         Log.d(getString(R.string.TAG_COMPRENSION_CALCULADA), getString(R.string.COMPRENSION_NULA));
 
-        Crashlytics.log(Log.DEBUG, getString(R.string.TAG_COMPRENSION_CALCULADA), getString(R.string.COMPRENSION_NULA));
+        crashlytics.log(getString(R.string.TAG_COMPRENSION_CALCULADA) + getString(R.string.COMPRENSION_NULA));
         return null;
     }
 }

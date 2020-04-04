@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 16:51                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 19:08                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.dialogs;
 
@@ -23,8 +23,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Objects;
 
@@ -55,9 +55,11 @@ public class RewardDialogFragment extends DialogFragment {
                 rewardedVideoAd.show();
                 Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
                         .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
+                FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
+                        .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
             }
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+            FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
                     .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
 
             dismiss();
@@ -66,7 +68,7 @@ public class RewardDialogFragment extends DialogFragment {
         builder.setNegativeButton("Cancelar", (dialog, which) -> {
             Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
                     .TAG_REWARD_DIALOG_BTN_CANCEL));
-            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_REWARD_DIALOG), getString(R.string
+            FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
                     .TAG_REWARD_DIALOG_BTN_CANCEL));
             dismiss();
         });

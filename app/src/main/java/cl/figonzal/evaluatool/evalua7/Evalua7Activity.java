@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 18:20                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7;
 
@@ -26,7 +26,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +53,14 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
+    private FirebaseCrashlytics crashlytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evalua7);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorOnPrimary, getTheme()));
@@ -114,7 +118,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
             Log.d(getString(R.string.CLOSE_EVALUA_7), getString(R.string.ACTIVIDAD_CERRADA));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.CLOSE_EVALUA_7), getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.CLOSE_EVALUA_7) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
 
@@ -251,7 +255,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
     @Override
     public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
         Log.d(log_title, log_reponse);
-        Crashlytics.log(Log.DEBUG, log_title, log_reponse);
+        crashlytics.log("D/" + log_title + ": " + log_reponse);
 
         Intent intent = new Intent(activity, calledActivity);
         startActivity(intent);
