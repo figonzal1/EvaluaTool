@@ -1,22 +1,22 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 17:32                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
 
 import android.content.Context;
 import android.util.Log;
 
-import com.crashlytics.android.Crashlytics;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -25,6 +25,8 @@ import java.util.Locale;
 import java.util.Random;
 
 public class Utilidades {
+
+    private static FirebaseCrashlytics crashlytics = FirebaseCrashlytics.getInstance();
 
     /**
      * Funcion encargada de calcular la desviación del PD de un alumno (Metodo con implementacion
@@ -64,7 +66,7 @@ public class Utilidades {
 
         Log.d("NIVEL_CALCULADO", "nulo");
 
-        Crashlytics.log(Log.DEBUG, "NIVEL_CALCULADO", "nulo");
+        crashlytics.log("D/NIVEL_CALCULADO: " + "nulo");
 
         return null;
     }
