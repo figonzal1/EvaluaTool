@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 18:48                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
 
@@ -25,7 +25,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
@@ -34,6 +33,7 @@ import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Date;
 
@@ -61,10 +61,14 @@ public class MainActivity extends AppCompatActivity {
     private RewardedVideoAd rewardedVideoAd;
     private SharedPreferences sharedPreferences;
 
+    private FirebaseCrashlytics crashlytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         MobileAds.initialize(this, getString(R.string.ADMOB_MASTER_KEY));
 
@@ -85,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_0.setOnClickListener(v -> {
             Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_0));
 
             checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua0Activity.class);
         });
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_3.setOnClickListener(v -> {
             Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_3));
 
             checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua3Activity.class);
         });
@@ -101,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_7.setOnClickListener(v -> {
             Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_7));
 
             checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua7Activity.class);
         });
@@ -113,16 +117,22 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(getApplicationContext(), reward_date));
 
+        crashlytics.log(getString(R.string.TAG_BTN_REWARD_DATE) + Utilidades.dateToString(getApplicationContext(), reward_date));
+
         Date now_date = new Date();
 
         //si las 24 horas ya pasaron, cargar los ads nuevamente
         if (now_date.after(reward_date) && !testMode) {
             Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS));
 
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_PERMITIDOS));
+
             configurarIntersitial(mInterstitialAd, ActivityToOpen);
 
         } else {
             Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS));
+
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_NO_PERMITIDOS));
 
             Intent intent = new Intent(MainActivity.this, ActivityToOpen);
             startActivity(intent);
@@ -230,12 +240,16 @@ public class MainActivity extends AppCompatActivity {
 
             Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_CARGADO));
 
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_CARGADO));
+
             interstitialAd.setAdListener(new AdListener() {
                 @Override
                 public void onAdClosed() {
                     super.onAdClosed();
 
                     Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_CERRADO));
+                    crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_CERRADO));
+
                     Intent intent = new Intent(MainActivity.this, ActivityToOpen);
                     startActivity(intent);
 
@@ -247,6 +261,8 @@ public class MainActivity extends AppCompatActivity {
                     super.onAdFailedToLoad(i);
 
                     Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_FALLADO));
+                    crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_FALLADO));
+
                     Intent intent = new Intent(MainActivity.this, ActivityToOpen);
                     startActivity(intent);
                 }
@@ -254,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
             interstitialAd.show();
         } else {
             Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_NO_CARGADO));
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_NO_CARGADO));
 
             Intent intent = new Intent(MainActivity.this, ActivityToOpen);
             startActivity(intent);
@@ -274,6 +291,8 @@ public class MainActivity extends AppCompatActivity {
             public void onRewardedVideoAdLoaded() {
                 Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
                         .TAG_VIDEO_REWARD_STATUS_LOADED));
+
+                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED));
             }
 
             @Override
@@ -292,6 +311,8 @@ public class MainActivity extends AppCompatActivity {
             public void onRewarded(RewardItem rewardItem) {
                 Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
                         .TAG_VIDEO_REWARD_STATUS_REWARDED));
+
+                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED));
             }
 
             @Override
@@ -302,6 +323,8 @@ public class MainActivity extends AppCompatActivity {
             public void onRewardedVideoAdFailedToLoad(int i) {
                 Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
                         .TAG_VIDEO_REWARD_STATUS_FAILED));
+
+                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED));
             }
 
             @Override
@@ -309,14 +332,18 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
                         .TAG_VIDEO_REWARD_STATUS_COMPLETED));
+                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_COMPLETED));
+
                 Date date_now = new Date();
 
                 Log.d(getString(R.string.TAG_HORA_AHORA), Utilidades.dateToString(getApplicationContext(), date_now));
+                crashlytics.log(getString(R.string.TAG_HORA_AHORA) + Utilidades.dateToString(getApplicationContext(), date_now));
 
                 //sumar 1 horas al tiempo del celular
                 Date date_new = Utilidades.addHoursToJavaUtilDate(date_now, 1);
 
                 Log.d(getString(R.string.TAG_HORA_REWARD), Utilidades.dateToString(getApplicationContext(), date_new));
+                crashlytics.log(getString(R.string.TAG_HORA_REWARD) + Utilidades.dateToString(getApplicationContext(), date_new));
 
                 //Guardar fecha de termino de reward
                 SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -329,6 +356,8 @@ public class MainActivity extends AppCompatActivity {
         if (now_date.after(reward_date)) {
 
             Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
+                    .TAG_REWARD_STATUS_EN_PERIODO));
+            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
                     .TAG_REWARD_STATUS_EN_PERIODO));
 
             //Cargar video
@@ -343,14 +372,20 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
                         .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
+                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
             } else {
                 Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
+                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
                         .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
             }
         }
         //Si el periodo de reward aun no pasa
         else if (now_date.before(reward_date)) {
             Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
+                    .TAG_REWARD_STATUS_PERIODO_INACTIVO));
+            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
                     .TAG_REWARD_STATUS_PERIODO_INACTIVO));
         }
     }

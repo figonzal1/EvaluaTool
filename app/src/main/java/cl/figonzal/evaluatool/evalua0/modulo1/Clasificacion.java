@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 16:51                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 04-04-20 17:39                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo1;
 
@@ -28,8 +28,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Locale;
 import java.util.Objects;
@@ -86,10 +86,14 @@ public class Clasificacion extends AppCompatActivity implements EvaluaInterface 
     private ProgressBar progressBar;
     private TextInputEditText et_reprobadas_t2;
 
+    private FirebaseCrashlytics crashlytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clasificacion);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorOnPrimary, getTheme()));
@@ -141,7 +145,7 @@ public class Clasificacion extends AppCompatActivity implements EvaluaInterface 
         iv_corregido.setOnClickListener(v -> {
             Log.d(getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.DIALOGO_AYUDA), getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
+            crashlytics.log(getString(R.string.DIALOGO_AYUDA) + getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO));
 
             CorregidoDialogFragment dialogFragment = new CorregidoDialogFragment();
             dialogFragment.setCancelable(false);
@@ -311,7 +315,7 @@ public class Clasificacion extends AppCompatActivity implements EvaluaInterface 
         //Percentil no encontrado
         Log.d(getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
 
-        Crashlytics.log(Log.DEBUG, getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
+        crashlytics.log(getString(R.string.TAG_PERCENTIL_CALCULADO) + getString(R.string.PERCENTIL_NULO));
 
         return -1;
     }
@@ -335,7 +339,7 @@ public class Clasificacion extends AppCompatActivity implements EvaluaInterface 
 
         Log.d(getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO));
 
-        Crashlytics.log(Log.DEBUG, getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO));
+        crashlytics.log(getString(R.string.TAG_PD_CORREGIDO) + getString(R.string.PD_NULO));
 
         return -1;
     }
@@ -346,7 +350,7 @@ public class Clasificacion extends AppCompatActivity implements EvaluaInterface 
 
             Log.d(getString(R.string.TAG_CLASIFICACION), getString(R.string.ACTIVIDAD_CERRADA));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_CLASIFICACION), getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_CLASIFICACION) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

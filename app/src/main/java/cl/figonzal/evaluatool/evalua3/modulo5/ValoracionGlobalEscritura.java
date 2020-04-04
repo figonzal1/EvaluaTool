@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 10-03-20 17:53                                                 -
+ Last modified 04-04-20 18:20                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo5;
@@ -25,8 +25,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.crashlytics.android.Crashlytics;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Locale;
 
@@ -50,10 +50,14 @@ public class ValoracionGlobalEscritura extends AppCompatActivity implements Valo
 
     private TextView tv_pd_total;
 
+    private FirebaseCrashlytics crashlytics;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_valoracion_global_escritura);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorOnPrimary, getTheme()));
@@ -175,7 +179,7 @@ public class ValoracionGlobalEscritura extends AppCompatActivity implements Valo
 
             Log.d(getString(R.string.TAG_VALORACION_GLOBAL), getString(R.string.ACTIVIDAD_CERRADA));
 
-            Crashlytics.log(Log.DEBUG, getString(R.string.TAG_VALORACION_GLOBAL), getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_VALORACION_GLOBAL) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;
