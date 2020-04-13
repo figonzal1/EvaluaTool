@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo4;
@@ -140,6 +140,10 @@ public class ValoracionGlobalLectura extends AppCompatActivity implements Valora
         double total_pd = sub_total_t1 + sub_total_t2;
         total_pd /= 2.0;
         total_pd = Math.round(total_pd * 100.0) / 100.0;
+
+        if (total_pd < 0) {
+            total_pd = 0;
+        }
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
     }
 
