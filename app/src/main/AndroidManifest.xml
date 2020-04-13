@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-04-20 13:26                                                ~
+  Last modified 13-04-20 17:04                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,6 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".evalua1.modulo2.Series"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -68,7 +69,7 @@
             android:name=".evalua1.Evalua1Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua1.MemoriaAtencion"
+            android:name=".evalua1.modulo1.MemoriaAtencion"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua3.Evalua3Activity"

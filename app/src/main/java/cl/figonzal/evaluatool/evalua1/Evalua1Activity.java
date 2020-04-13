@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 15:41                                                 -
+ Last modified 13-04-20 17:04                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -33,6 +33,8 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
+import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencion;
+import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -69,8 +71,13 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems1 = new ArrayList<>();
         subItems1.add(new Evalua(getString(R.string.EVALUA_1_M1_SI_1)));
 
+        //Submodulo2
+        List<Evalua> subItems2 = new ArrayList<>();
+        subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -87,6 +94,19 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                 abrirActividad(
                         this,
                         MemoriaAtencion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
+            }
+        }
+
+        //Modulo 2
+        else if (getString(R.string.EVALUA_1_MODULO_2).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        Series.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
