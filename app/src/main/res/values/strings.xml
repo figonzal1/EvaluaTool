@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-04-20 17:04                                                ~
+  Last modified 13-04-20 19:08                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -31,6 +31,7 @@
     <string name="TOOLBAR_EVALUA_0">Evalúa 0</string>
     <string name="TOOLBAR_CLASIFICACION">Clasificación</string>
     <string name="TOOLBAR_SERIES">Series</string>
+    <string name="TOOLBAR_CLASIFICACIONES">Clasificaciones</string>
     <string name="TOOLBAR_ORG_PERCEPTIVA">Organización Perceptiva</string>
     <string name="TOOLBAR_LETRAS_NUMEROS">Letras y Números</string>
     <string name="TOOLBAR_MEMORIA_VERBAL">Memoria Verbal</string>
@@ -59,6 +60,7 @@
     <string name="EVALUA_1_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_1_M1_SI_1">Memoria y Atención [MA-1]</string>
     <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
+    <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
