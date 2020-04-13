@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo5;
@@ -263,6 +263,11 @@ public class OrtografiaFonetica extends AppCompatActivity implements EvaluaInter
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
         double total = aprobadas;
         total = Math.floor(total);
+
+        if (total < 0) {
+            total = 0;
+        }
+
         tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
         return total;
     }

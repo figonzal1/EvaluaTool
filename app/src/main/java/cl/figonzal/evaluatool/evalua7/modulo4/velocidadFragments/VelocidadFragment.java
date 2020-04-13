@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments;
@@ -94,6 +94,8 @@ public class VelocidadFragment extends Fragment implements EvaluaInterface {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_velocidad, container, false);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         instanciarRecursosInterfaz(v);
 
