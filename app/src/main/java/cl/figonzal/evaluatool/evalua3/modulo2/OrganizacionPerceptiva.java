@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo2;
@@ -265,6 +265,11 @@ public class OrganizacionPerceptiva extends AppCompatActivity implements EvaluaI
             total = aprobadas - (reprobadas / 3.0);
             total = Math.floor(total);
         }
+
+        if (total < 0) {
+            total = 0;
+        }
+
         tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
         return total;
     }

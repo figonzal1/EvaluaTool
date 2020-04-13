@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo2;
@@ -200,6 +200,10 @@ public class RazonamientoDeductivo extends AppCompatActivity implements EvaluaIn
         double total = aprobadas - (reprobadas / 2.0);
         //Aproximacion piso
         total = Math.floor(total);
+
+        if (total < 0) {
+            total = 0;
+        }
 
         tv_sub_total.setText(String.format("%s%s pts", tarea, total));
         return total;

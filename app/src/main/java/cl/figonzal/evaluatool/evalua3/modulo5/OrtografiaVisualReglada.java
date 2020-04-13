@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo5;
@@ -352,6 +352,11 @@ public class OrtografiaVisualReglada extends AppCompatActivity implements Evalua
             total = 24 - reprobadas;
             total = Math.floor(total);
         }
+
+        if (total < 0) {
+            total = 0;
+        }
+
         tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
         return total;
     }

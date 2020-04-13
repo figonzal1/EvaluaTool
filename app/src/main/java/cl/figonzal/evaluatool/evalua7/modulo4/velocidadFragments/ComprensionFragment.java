@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 13-04-20 17:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments;
@@ -98,6 +98,8 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
                              Bundle savedInstanceState) {
 
         View v = inflater.inflate(R.layout.fragment_comprension, container, false);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
 
         instanciarRecursosInterfaz(v);
 
@@ -228,6 +230,11 @@ public class ComprensionFragment extends Fragment implements EvaluaInterface {
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
         int total = aprobadas - (omitidas + reprobadas);
+
+        if (total < 0) {
+            total = 0;
+        }
+
         tv_sub_total.setText(String.format(Locale.US, "%s%d pts", tarea, total));
         return total;
     }
