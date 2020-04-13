@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:04                                                 -
+ Last modified 13-04-20 19:12                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -34,6 +34,7 @@ import java.util.List;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencion;
+import cl.figonzal.evaluatool.evalua1.modulo2.Clasificaciones;
 import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
@@ -74,6 +75,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         //Submodulo2
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_1)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_2)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -107,6 +109,16 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                 abrirActividad(
                         this,
                         Series.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
+            }
+
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+
+                abrirActividad(
+                        this,
+                        Clasificaciones.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
