@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-04-20 17:58                                                ~
+  Last modified 14-04-20 18:19                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +24,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua1.modulo2.Series"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -70,6 +69,36 @@
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".evalua1.modulo1.MemoriaAtencion"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo6.CalculoNumeracion"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo5.OrtografiaVisual"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo5.OrtografiaFonetica"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo4.ValoracionGlobalLectura"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo4.ExactitudLectora"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo4.ComprensionLectora"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo2.ValoracionInterfaceGlobalBases"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo2.OrganizacionPerceptiva"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo2.Clasificaciones"
+            android:parentActivityName=".evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua1.modulo2.Series"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua3.Evalua3Activity"
