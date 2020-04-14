@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 16:47                                                 -
+ Last modified 14-04-20 18:03                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -43,6 +43,7 @@ import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLectura;
 import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFonetica;
 import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisual;
+import cl.figonzal.evaluatool.evalua1.modulo6.CalculoNumeracion;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -96,11 +97,16 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems5.add(new Evalua(getString(R.string.EVALUA_1_M5_SI_1)));
         subItems5.add(new Evalua(getString(R.string.EVALUA_1_M5_SI_2)));
 
+        //Submodulo6
+        List<Evalua> subItems6 = new ArrayList<>();
+        subItems6.add(new Evalua(getString(R.string.EVALUA_1_M6_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_4), subItems4, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_5), subItems5, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_6), subItems6, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -204,6 +210,19 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         OrtografiaVisual.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
+                );
+            }
+        }
+
+        //Modulo6
+        else if (getString(R.string.EVALUA_1_MODULO_6).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        CalculoNumeracion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CAL_NUMERACION)
                 );
             }
         }

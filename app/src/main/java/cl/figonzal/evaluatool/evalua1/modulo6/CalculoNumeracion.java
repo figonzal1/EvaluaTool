@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 18:10                                                 -
+ Last modified 14-04-20 18:15                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua7.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo6;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -40,36 +40,39 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
 public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 12.29;
-    private static final double MEDIA = 33.70;
+    private static final double DESVIACION = 8.83;
+    private static final double MEDIA = 31.08;
     private final Integer[][] perc = new Integer[][]{
-            {79, 99},
-            {76, 98},
-            {73, 97},
-            {70, 96},
-            {67, 95},
-            {64, 92},
-            {61, 90},
-            {58, 87},
-            {55, 85},
-            {52, 82},
-            {49, 80},
-            {46, 75},
-            {43, 70},
-            {40, 65},
-            {37, 60},
-            {34, 50},
-            {31, 40},
-            {28, 35},
-            {25, 30},
-            {22, 25},
-            {19, 20},
-            {16, 17},
-            {13, 15},
-            {10, 10},
-            {7, 5},
-            {4, 3},
-            {1, 1}
+            {47, 99},
+            {46, 97},
+            {45, 95},
+            {44, 90},
+            {43, 85},
+            {42, 82},
+            {41, 80},
+            {40, 77},
+            {39, 75},
+            {38, 70},
+            {37, 67},
+            {36, 62},
+            {35, 60},
+            {34, 57},
+            {33, 55},
+            {32, 50},
+            {31, 45},
+            {30, 40},
+            {29, 35},
+            {28, 32},
+            {27, 30},
+            {26, 27},
+            {25, 25},
+            {21, 20},
+            {19, 15},
+            {16, 10},
+            {13, 5},
+            {10, 1}
+
+
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
@@ -90,8 +93,7 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculo_numeracion);
-
+        setContentView(R.layout.activity_calculo_numeracion3);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
