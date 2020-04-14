@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:04                                                 -
+ Last modified 14-04-20 15:55                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -41,6 +41,7 @@ import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionInterfaceGlobalBases;
 import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLectura;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFonetica;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -90,10 +91,14 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_2)));
         subItems4.add(new Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)));
 
+        List<Evalua> subItems5 = new ArrayList<>();
+        subItems5.add(new Evalua(getString(R.string.EVALUA_1_M5_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_4), subItems4, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_5), subItems5, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -176,6 +181,19 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         ValoracionGlobalLectura.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            }
+        }
+
+        //MOdulo 5
+        else if (getString(R.string.EVALUA_1_MODULO_5).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        OrtografiaFonetica.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
                 );
             }
         }
