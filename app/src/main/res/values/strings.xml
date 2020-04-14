@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 10:20                                                ~
+  Last modified 14-04-20 10:44                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -62,6 +62,7 @@
     <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
     <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
+    <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
