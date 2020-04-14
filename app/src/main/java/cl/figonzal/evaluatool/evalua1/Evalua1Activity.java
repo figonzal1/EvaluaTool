@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:55                                                 -
+ Last modified 14-04-20 16:47                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -42,6 +42,7 @@ import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLectura;
 import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFonetica;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisual;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -93,6 +94,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
         List<Evalua> subItems5 = new ArrayList<>();
         subItems5.add(new Evalua(getString(R.string.EVALUA_1_M5_SI_1)));
+        subItems5.add(new Evalua(getString(R.string.EVALUA_1_M5_SI_2)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -194,6 +196,14 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         OrtografiaFonetica.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+
+                abrirActividad(
+                        this,
+                        OrtografiaVisual.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
                 );
             }
         }
