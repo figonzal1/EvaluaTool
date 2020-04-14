@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 10:47                                                 -
+ Last modified 14-04-20 15:21                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo2;
@@ -170,10 +170,6 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
         double total_pd = sub_total_t1 + sub_total_t2 + sub_total_t3;
         total_pd /= 3.0;
         total_pd = Math.round(total_pd * 100.0) / 100.0;
-
-        if (total_pd < 0) {
-            total_pd = 0;
-        }
 
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
     }
