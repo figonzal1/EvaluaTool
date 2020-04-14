@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 19:12                                                 -
+ Last modified 14-04-20 10:20                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -35,6 +35,7 @@ import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencion;
 import cl.figonzal.evaluatool.evalua1.modulo2.Clasificaciones;
+import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
@@ -76,6 +77,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_1)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_2)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_3)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -112,13 +114,19 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
-            }
-
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
 
                 abrirActividad(
                         this,
                         Clasificaciones.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptiva.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
