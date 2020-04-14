@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 10:44                                                 -
+ Last modified 14-04-20 12:09                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -38,6 +38,7 @@ import cl.figonzal.evaluatool.evalua1.modulo2.Clasificaciones;
 import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionInterfaceGlobalBases;
+import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -81,9 +82,14 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_3)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)));
 
+        //Submodulo4
+        List<Evalua> subItems4 = new ArrayList<>();
+        subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_4), subItems4, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -137,6 +143,19 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                 abrirActividad(
                         this,
                         ValoracionInterfaceGlobalBases.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
+            }
+        }
+
+        //MOdulo 4
+        else if (getString(R.string.EVALUA_1_MODULO_4).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        ComprensionLectora.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
