@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 10:20                                                 -
+ Last modified 14-04-20 10:44                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -37,6 +37,7 @@ import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencion;
 import cl.figonzal.evaluatool.evalua1.modulo2.Clasificaciones;
 import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua1.modulo2.Series;
+import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionInterfaceGlobalBases;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -78,6 +79,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_1)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_2)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_1_M2_SI_3)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -127,6 +129,14 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                 abrirActividad(
                         this,
                         OrganizacionPerceptiva.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        ValoracionInterfaceGlobalBases.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
