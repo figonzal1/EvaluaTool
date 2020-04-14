@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 12:51                                                 -
+ Last modified 14-04-20 15:04                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -40,6 +40,7 @@ import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionInterfaceGlobalBases;
 import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
+import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLectura;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -87,6 +88,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems4 = new ArrayList<>();
         subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_1)));
         subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_2)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -167,6 +169,13 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         ExactitudLectora.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_EXACTITUD_LECTORA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+                abrirActividad(
+                        this,
+                        ValoracionGlobalLectura.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             }
         }
