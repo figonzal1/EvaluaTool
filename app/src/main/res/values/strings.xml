@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 15:57                                                ~
+  Last modified 14-04-20 17:06                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -66,8 +66,9 @@
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
     <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
-    <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
     <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
+    <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
+    <string name="EVALUA_1_M5_SI_2">Ortografía Visual [OR-1]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
@@ -78,6 +79,7 @@
     <string name="TOOLBAR_VALORACION_GLOBAL">Valoración global</string>
     <string name="TOOLBAR_RESOLUCION_PROBLEMAS">Resolución Problemas</string>
     <string name="TOOLBAR_EXACTITUD_LECTORA">Exactitud Lectora</string>
+    <string name="TOOLBAR_ORTOGRAFIA_VISUAL">Ortografía Visual</string>
     <string name="EVALUA_3_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_3_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_3_MODULO_4">Lectura</string>
@@ -137,7 +139,7 @@
     <string name="TAG_SERIES">D/SERIES_ACT: </string>
     <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
     <string name="CLOSE_EVALUA_0">D/EVALUA_0_ACTIVITY: </string>
-    <string name="CLOSE_EVALUA_1">D/EVALUA_0_ACTIVITY: </string>
+    <string name="CLOSE_EVALUA_1">D/EVALUA_1_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
@@ -168,6 +170,7 @@
     <string name="TAG_EXP_ESCRITA">D/EXP_ESCRITA_ACT: </string>
     <string name="TAG_ORTO_FONETICA">D/ORTO_FONETICA_ACT: </string>
     <string name="TAG_ORT_VIS_REGLADA">D/ORT_VIS_REGLADA_ACT: </string>
+    <string name="TAG_ORT_VIS">D/ORT_VIS_ACT: </string>
     <string name="TAG_MEMORIA_ATENCION">D/MEMORIA_ATENCION_ACT: </string>
     <string name="TAG_EXACTITUD_LECTORA">D/EXACTITUD_LECTORA_ACT: </string>
     <string name="TAG_VALORACION_GLOBAL">D/VALORACION_GLOBAL_ACT: </string>
@@ -185,6 +188,7 @@
     <string name="CLICK_COMPRENSION_LECTORA">click_comprension_lectora</string>
     <string name="CLICK_VELOCIDAD_LECTORA">click_velocidad_lectora</string>
     <string name="CLICK_ORTOGRAFIA_FONETICA">click_ortografia_fonectica</string>
+    <string name="CLICK_ORTOGRAFIA_VISUAL">click_ortografia_visual</string>
     <string name="CLICK_EXP_ESCRITA">click_expresion_escrita</string>
     <string name="CLICK_ORT_VIS_REGLADA">click_ortografia_visual_reglada</string>
     <string name="CLICK_CAL_NUMERACION">click_calculo_numeracion</string>
