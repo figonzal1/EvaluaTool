@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:21                                                 -
+ Last modified 14-04-20 15:38                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo4;
+package cl.figonzal.evaluatool.evalua1.modulo4;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -39,6 +39,7 @@ public class ValoracionGlobalLectura extends AppCompatActivity implements Valora
     private TextInputEditText et_totales_t1;
     private TextView tv_sub_total_t1;
     private double sub_total_t1;
+
     //TAREA 2
     private TextInputEditText et_totales_t2;
     private TextView tv_sub_total_t2;
@@ -51,7 +52,7 @@ public class ValoracionGlobalLectura extends AppCompatActivity implements Valora
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valoracion_global_lectura);
+        setContentView(R.layout.activity_valoracion_global_lectura2);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
