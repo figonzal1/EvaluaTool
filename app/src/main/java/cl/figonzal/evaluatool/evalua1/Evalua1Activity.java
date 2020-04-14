@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 12:09                                                 -
+ Last modified 14-04-20 12:51                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -39,6 +39,7 @@ import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua1.modulo2.Series;
 import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionInterfaceGlobalBases;
 import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
+import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -85,6 +86,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
         //Submodulo4
         List<Evalua> subItems4 = new ArrayList<>();
         subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_1)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_1_M4_SI_2)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this));
@@ -107,7 +109,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         this,
                         MemoriaAtencion.class,
                         getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
+                        getString(R.string.CLICK_MEMORIA_ATENCION)
                 );
             }
         }
@@ -120,7 +122,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         this,
                         Series.class,
                         getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
+                        getString(R.string.CLICK_SERIES)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
 
@@ -136,7 +138,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         this,
                         OrganizacionPerceptiva.class,
                         getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
 
@@ -144,7 +146,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         this,
                         ValoracionInterfaceGlobalBases.class,
                         getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             }
         }
@@ -157,7 +159,14 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
                         this,
                         ComprensionLectora.class,
                         getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
+                        getString(R.string.CLICK_COMPRENSION_LECTORA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+                abrirActividad(
+                        this,
+                        ExactitudLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_EXACTITUD_LECTORA)
                 );
             }
         }

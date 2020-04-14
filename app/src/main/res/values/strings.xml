@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 12:09                                                ~
+  Last modified 14-04-20 12:48                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -65,6 +65,7 @@
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
     <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
+    <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
