@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 17:06                                                ~
+  Last modified 14-04-20 18:03                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -60,6 +60,7 @@
     <string name="EVALUA_1_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_1_MODULO_4">Lectura</string>
     <string name="EVALUA_1_MODULO_5">Escritura</string>
+    <string name="EVALUA_1_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_1_M1_SI_1">Memoria y Atención [MA-1]</string>
     <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
     <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
@@ -69,6 +70,7 @@
     <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
     <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
     <string name="EVALUA_1_M5_SI_2">Ortografía Visual [OR-1]</string>
+    <string name="EVALUA_1_M6_SI_1">Cálculo y Numeración [CN-1]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
