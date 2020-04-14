@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 12:48                                                ~
+  Last modified 14-04-20 15:57                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -59,12 +59,14 @@
     <string name="EVALUA_1_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_1_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_1_MODULO_4">Lectura</string>
+    <string name="EVALUA_1_MODULO_5">Escritura</string>
     <string name="EVALUA_1_M1_SI_1">Memoria y Atención [MA-1]</string>
     <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
     <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
     <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
+    <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
     <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
 
     <!-- EVALUA 3-->
