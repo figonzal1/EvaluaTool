@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo5;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,60 +26,54 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
+public class OrtografiaVisualTest {
 
-    private final double pd_total;
+    private static final double DESVIACION = 7.57;
+    private static final double MEDIA = 14.59;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
-    private CalculoNumeracion m1;
+    private OrtografiaVisual m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public OrtografiaVisualTest(double pd_total, double percentil_esperado,
+                                double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
+                {28, 99, 1.77},
+                {27, 97, 1.64},
+                {26, 95, 1.51},
+                {25, 90, 1.38},
+                {24, 87, 1.24},
+                {23, 85, 1.11},
+                {22, 82, 0.98},
+                {21, 80, 0.85},
+                {20, 75, 0.71},
+                {19, 65, 0.58},
+                {18, 60, 0.45},
+                {17, 55, 0.32},
+                {16, 52, 0.19},
+                {15, 50, 0.05},
+                {13, 45, -0.21},
+                {11, 40, -0.47},
+                {10, 35, -0.61},
+                {8, 30, -0.87},
+                {6, 25, -1.13},
+                {5, 20, -1.27},
+                {4, 15, -1.4},
+                {3, 10, -1.53}
 
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new CalculoNumeracion();
+        m1 = new OrtografiaVisual();
     }
 
     @Test

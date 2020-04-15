@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo1;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,60 +26,64 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
+public class MemoriaAtencionTest {
 
-    private final double pd_total;
+    private static final double DESVIACION = 12.90;
+    private static final double MEDIA = 49.39;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
-    private CalculoNumeracion m1;
+    private MemoriaAtencion m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public MemoriaAtencionTest(double pd_total, double percentil_esperado,
+                               double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
-
+                {68, 99, 1.44},
+                {67, 97, 1.37},
+                {66, 95, 1.29},
+                {65, 93, 1.21},
+                {64, 90, 1.13},
+                {63, 87, 1.06},
+                {62, 85, 0.98},
+                {61, 80, 0.9},
+                {60, 75, 0.82},
+                {59, 72, 0.74},
+                {58, 70, 0.67},
+                {57, 65, 0.59},
+                {56, 62, 0.51},
+                {55, 60, 0.43},
+                {54, 57, 0.36},
+                {53, 55, 0.28},
+                {52, 52, 0.2},
+                {51, 50, 0.12},
+                {50, 47, 0.05},
+                {49, 45, -0.03},
+                {48, 43, -0.11},
+                {47, 40, -0.19},
+                {46, 37, -0.26},
+                {45, 35, -0.34},
+                {44, 32, -0.42},
+                {43, 30, -0.5},
+                {40, 25, -0.73},
+                {37, 20, -0.96},
+                {34, 15, -1.19},
+                {31, 10, -1.43},
+                {28, 7, -1.66},
+                {25, 5, -1.89},
+                {22, 1, -2.12}
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new CalculoNumeracion();
+        m1 = new MemoriaAtencion();
     }
 
     @Test
