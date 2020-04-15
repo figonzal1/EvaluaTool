@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo4;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,60 +26,68 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
+public class ExactitudLectoraTest {
 
-    private final double pd_total;
+    private static final double DESVIACION = 25.02;
+    private static final double MEDIA = 98.38;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
-    private CalculoNumeracion m1;
+    private ExactitudLectora m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public ExactitudLectoraTest(double pd_total, double percentil_esperado,
+                                double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
+                {146, 99, 1.9},
+                {143, 97, 1.78},
+                {140, 95, 1.66},
+                {137, 90, 1.54},
+                {134, 85, 1.42},
+                {131, 80, 1.3},
+                {128, 75, 1.18},
+                {125, 70, 1.06},
+                {122, 65, 0.94},
+                {119, 60, 0.82},
+                {116, 57, 0.7},
+                {113, 55, 0.58},
+                {110, 52, 0.46},
+                {107, 50, 0.34},
+                {104, 48, 0.22},
+                {101, 45, 0.1},
+                {98, 42, -0.02},
+                {95, 40, -0.14},
+                {92, 38, -0.25},
+                {89, 35, -0.37},
+                {86, 34, -0.49},
+                {83, 32, -0.61},
+                {80, 31, -0.73},
+                {77, 30, -0.85},
+                {74, 29, -0.97},
+                {71, 28, -1.09},
+                {68, 27, -1.21},
+                {65, 26, -1.33},
+                {62, 25, -1.45},
+                {59, 22, -1.57},
+                {56, 20, -1.69},
+                {53, 15, -1.81},
+                {50, 12, -1.93},
+                {47, 10, -2.05},
+                {44, 5, -2.17},
+                {41, 1, -2.29}
 
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new CalculoNumeracion();
+        m1 = new ExactitudLectora();
     }
 
     @Test

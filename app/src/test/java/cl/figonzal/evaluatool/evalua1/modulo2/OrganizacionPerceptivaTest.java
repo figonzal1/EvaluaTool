@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo2;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,60 +26,60 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
+public class OrganizacionPerceptivaTest {
 
-    private final double pd_total;
+    private static final double DESVIACION = 11.36;
+    private static final double MEDIA = 38.01;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
-    private CalculoNumeracion m1;
+    private OrganizacionPerceptiva m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public OrganizacionPerceptivaTest(double pd_total, double percentil_esperado,
+                                      double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
-
+                {52, 99, 1.23},
+                {51, 95, 1.14},
+                {50, 92, 1.06},
+                {49, 90, 0.97},
+                {48, 85, 0.88},
+                {47, 80, 0.79},
+                {46, 75, 0.7},
+                {45, 70, 0.62},
+                {44, 67, 0.53},
+                {43, 62, 0.44},
+                {42, 60, 0.35},
+                {41, 57, 0.26},
+                {40, 55, 0.18},
+                {39, 52, 0.09},
+                {38, 50, 0},
+                {37, 45, -0.09},
+                {36, 42, -0.18},
+                {35, 40, -0.26},
+                {34, 37, -0.35},
+                {33, 35, -0.44},
+                {32, 32, -0.53},
+                {29, 30, -0.79},
+                {26, 25, -1.06},
+                {23, 20, -1.32},
+                {20, 15, -1.59},
+                {17, 10, -1.85},
+                {14, 7, -2.11},
+                {11, 5, -2.38},
+                {8, 1, -2.64}
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new CalculoNumeracion();
+        m1 = new OrganizacionPerceptiva();
     }
 
     @Test
