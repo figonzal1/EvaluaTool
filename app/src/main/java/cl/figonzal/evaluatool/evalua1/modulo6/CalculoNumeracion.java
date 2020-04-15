@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 15:47                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo6;
@@ -128,7 +128,7 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
         tv_desviacion_calculada = findViewById(R.id.tv_desviacion_calculada_value);
         progressBar = findViewById(R.id.progressBar);
 
-        progressBar.setMax(perc[perc.length - 1][1]);
+        progressBar.setMax(perc[0][1]);
 
         ImageView iv_corregido = findViewById(R.id.iv_help_pd_corregido);
         iv_corregido.setOnClickListener(v -> {
@@ -247,6 +247,10 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
                 } else if ((pd_actual - 1) == item[0]) {
                     return item[0];
                 } else if ((pd_actual - 2) == item[0]) {
+                    return item[0];
+                } else if ((pd_actual - 3) == item[0]) {
+                    return item[0];
+                } else if ((pd_actual - 4) == item[0]) {
                     return item[0];
                 }
             }
