@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo6;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,52 +27,51 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
-
-    private final double pd_total;
+    private static final double DESVIACION = 8.83;
+    private static final double MEDIA = 31.08;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
     private CalculoNumeracion m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public CalculoNumeracionTest(double pd_total, double percentil_esperado,
+                                 double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
+                {47, 99, 1.8},
+                {46, 97, 1.69},
+                {45, 95, 1.58},
+                {44, 90, 1.46},
+                {43, 85, 1.35},
+                {42, 82, 1.24},
+                {41, 80, 1.12},
+                {40, 77, 1.01},
+                {39, 75, 0.9},
+                {38, 70, 0.78},
+                {37, 67, 0.67},
+                {36, 62, 0.56},
+                {35, 60, 0.44},
+                {34, 57, 0.33},
+                {33, 55, 0.22},
+                {32, 50, 0.1},
+                {31, 45, -0.01},
+                {30, 40, -0.12},
+                {29, 35, -0.24},
+                {28, 32, -0.35},
+                {27, 30, -0.46},
+                {26, 27, -0.58},
+                {25, 25, -0.69},
+                {21, 20, -1.14},
+                {19, 15, -1.37},
+                {16, 10, -1.71},
+                {13, 5, -2.05},
+                {10, 1, -2.39}
 
         });
     }

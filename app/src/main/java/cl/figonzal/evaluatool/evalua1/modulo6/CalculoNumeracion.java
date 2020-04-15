@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 18:15                                                 -
+ Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo6;
@@ -71,8 +71,6 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
             {16, 10},
             {13, 5},
             {10, 1}
-
-
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;

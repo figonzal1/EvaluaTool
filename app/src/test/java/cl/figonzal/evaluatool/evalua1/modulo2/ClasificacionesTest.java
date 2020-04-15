@@ -11,7 +11,7 @@
  Last modified 15-04-20 13:22                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo2;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,60 +26,52 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class CalculoNumeracionTest {
-    private static final double DESVIACION = 6.50;
-    private static final double MEDIA = 19.56;
+public class ClasificacionesTest {
 
-    private final double pd_total;
+    private static final double DESVIACION = 4.87;
+    private static final double MEDIA = 8.80;
     private final double percentil_esperado;
+    private final double pd_total;
     private final double desviacion_esperada;
-    private CalculoNumeracion m1;
+    private Clasificaciones m1;
 
-    public CalculoNumeracionTest(double pd_total, double percentil_esperado, double desviacion_esperada) {
-        this.pd_total = pd_total;
+    public ClasificacionesTest(double pd_total, double percentil_esperado,
+                               double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
+        this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
     }
 
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {34, 99, 2.22},
-                {33, 98, 2.07},
-                {32, 97, 1.91},
-                {31, 95, 1.76},
-                {30, 92, 1.61},
-                {29, 87, 1.45},
-                {28, 85, 1.3},
-                {27, 82, 1.14},
-                {26, 77, 0.99},
-                {25, 75, 0.84},
-                {24, 70, 0.68},
-                {23, 65, 0.53},
-                {22, 60, 0.38},
-                {21, 55, 0.22},
-                {20, 50, 0.07},
-                {19, 45, -0.09},
-                {18, 42, -0.24},
-                {17, 40, -0.39},
-                {16, 35, -0.55},
-                {15, 30, -0.7},
-                {14, 25, -.86},
-                {13, 20, -1.01},
-                {12, 15, -1.16},
-                {11, 12, -1.32},
-                {10, 10, -1.47},
-                {9, 7, -1.62},
-                {8, 5, -1.78},
-                {7, 3, -1.93},
-                {6, 1, -2.09}
-
+                {20, 99, 2.3},
+                {19, 98, 2.09},
+                {18, 97, 1.89},
+                {17, 95, 1.68},
+                {16, 92, 1.48},
+                {15, 90, 1.27},
+                {14, 85, 1.07},
+                {13, 80, 0.86},
+                {12, 70, 0.66},
+                {11, 65, 0.45},
+                {10, 55, 0.25},
+                {9, 50, 0.04},
+                {8, 45, -0.16},
+                {7, 40, -0.37},
+                {6, 30, -0.57},
+                {5, 25, -0.78},
+                {4, 20, -0.99},
+                {3, 15, -1.19},
+                {2, 10, -1.4},
+                {1, 5, -1.6},
+                {0, 1, -1.81}
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new CalculoNumeracion();
+        m1 = new Clasificaciones();
     }
 
     @Test
