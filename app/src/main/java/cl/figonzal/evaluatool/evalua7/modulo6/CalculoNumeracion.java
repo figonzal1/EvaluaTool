@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:57                                                 -
+ Last modified 14-04-20 18:10                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo6;
@@ -162,7 +162,7 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                total_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, null);
+                total_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tareas: ", aprobadas_t1, null, null);
                 calcularResultado();
             }
         });
