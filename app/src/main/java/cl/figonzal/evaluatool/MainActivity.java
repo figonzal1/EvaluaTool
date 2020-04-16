@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 18:55                                                 -
+ Last modified 15-04-20 22:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -45,7 +45,7 @@ import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean testMode = true;
+    private final Boolean testMode = false;
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
