@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:30                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo4;
@@ -68,7 +68,12 @@ public class ComprencionLectoraTest {
                 {25, 7, -1.85},
                 {20, 5, -2.45},
                 {15, 3, -3.06},
-                {10, 1, -3.66}
+                {10, 1, -3.66},
+
+                //LIMITE
+                {9, 1, -3.79},
+                {50, 95, 1.18}
+
 
         });
     }
