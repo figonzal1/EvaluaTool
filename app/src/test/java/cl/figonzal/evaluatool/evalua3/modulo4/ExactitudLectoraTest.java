@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 22:13                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo4;
 
@@ -69,8 +69,11 @@ public class ExactitudLectoraTest {
                 {22, 5, -2.03},
                 {21, 3, -2.21},
                 {20, 2, -2.38},
-                {19, 1, -2.55}
+                {19, 1, -2.55},
 
+                //LIMITE
+                {18, 1, -2.73},
+                {45, 99, 1.98}
         });
     }
 

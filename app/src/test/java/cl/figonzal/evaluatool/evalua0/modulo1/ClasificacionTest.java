@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 21:00                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo1;
 
@@ -61,7 +61,11 @@ public class ClasificacionTest {
                 {6, 4, -2.31},
                 {5, 2, -2.64},
                 {4, 1, -2.98},
-                {3, 1, -3.31}
+                {3, 1, -3.31},
+
+                //LIMITES
+                {25, 99, 4.02},
+                {2, 1, -3.64}
         });
     }
 

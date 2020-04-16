@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 21:59                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo2;
 
@@ -63,8 +63,11 @@ public class OrganizacionPerceptivaTest {
                 {4, 15, -1.19},
                 {3, 10, -1.36},
                 {2, 5, -1.53},
-                {1, 1, -1.7}
+                {1, 1, -1.7},
 
+                //LIMITE
+                {0, 1, -1.87},
+                {21, 99, 1.72}
         });
     }
 

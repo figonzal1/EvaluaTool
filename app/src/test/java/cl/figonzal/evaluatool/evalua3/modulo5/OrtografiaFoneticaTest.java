@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 22:15                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo5;
 
@@ -72,7 +72,12 @@ public class OrtografiaFoneticaTest {
                 {55, 6, -1.83},
                 {54, 5, -1.98},
                 {53, 3, -2.12},
-                {52, 1, -2.27}
+                {52, 1, -2.27},
+
+                //LIMITE
+                {51, 1, -2.41},
+                {80, 99, 1.83}
+
 
         });
     }

@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 22:20                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo2;
 
@@ -64,6 +64,11 @@ public class RazonamientoEspacialTest {
                 {6, 10, -1.71},
                 {4, 5, -1.94},
                 {2, 1, -2.18},
+
+                //LIMITE
+                {1, 1, -2.29},
+                {39, 99, 2.17}
+
 
         });
     }
