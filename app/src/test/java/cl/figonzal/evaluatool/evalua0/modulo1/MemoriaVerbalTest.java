@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 15-04-20 20:11                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo1;
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.Utilidades;
 import static junit.framework.TestCase.assertEquals;
 
 @RunWith(Parameterized.class)
-public class MemoriaVervalTest {
+public class MemoriaVerbalTest {
 
     private static final double DESVIACION = 6.72;
     private static final double MEDIA = 22.02;
@@ -36,7 +36,7 @@ public class MemoriaVervalTest {
     private final double desviacion_esperada;
     private MemoriaVerbal m1;
 
-    public MemoriaVervalTest(double pd_total, double percentil_esperado,
+    public MemoriaVerbalTest(double pd_total, double percentil_esperado,
                              double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
@@ -70,8 +70,11 @@ public class MemoriaVervalTest {
                 {7, 1, -2.24},
 
                 //Limites
-                {36, 99, 2.08},
-                {0, 1, -3.28}
+                {0, 1, -3.28},
+                {6, 1, -2.38},
+                {36, 99, 2.08}
+
+
         });
     }
 
