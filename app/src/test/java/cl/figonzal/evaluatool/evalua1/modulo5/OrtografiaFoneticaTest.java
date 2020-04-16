@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:34                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo5;
@@ -71,7 +71,11 @@ public class OrtografiaFoneticaTest {
                 {35, 20, -1.11},
                 {30, 15, -1.4},
                 {25, 10, -1.69},
-                {20, 5, -1.98}
+                {20, 5, -1.98},
+
+                //LIMITE
+                {19, 5, -2.03},
+                {84, 99, 1.71}
 
         });
     }

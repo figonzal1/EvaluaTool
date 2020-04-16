@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:35                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo5;
@@ -66,7 +66,11 @@ public class OrtografiaVisualTest {
                 {6, 25, -1.13},
                 {5, 20, -1.27},
                 {4, 15, -1.4},
-                {3, 10, -1.53}
+                {3, 10, -1.53},
+
+                //LIMITE
+                {2, 10, -1.66},
+                {29, 99, 1.9}
 
         });
     }
