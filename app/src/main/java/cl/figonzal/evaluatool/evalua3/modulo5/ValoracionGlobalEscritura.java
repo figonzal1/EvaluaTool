@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:57                                                 -
+ Last modified 14-04-20 15:21                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo5;
@@ -171,9 +171,6 @@ public class ValoracionGlobalEscritura extends AppCompatActivity implements Valo
         total_pd /= 3.0;
         total_pd = Math.round(total_pd * 100.0) / 100.0;
 
-        if (total_pd < 0) {
-            total_pd = 0;
-        }
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
     }
 

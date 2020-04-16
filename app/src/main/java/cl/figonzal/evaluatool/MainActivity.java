@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:58                                                 -
+ Last modified 15-04-20 22:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -39,6 +39,7 @@ import java.util.Date;
 
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment;
 import cl.figonzal.evaluatool.evalua0.Evalua0Activity;
+import cl.figonzal.evaluatool.evalua1.Evalua1Activity;
 import cl.figonzal.evaluatool.evalua3.Evalua3Activity;
 import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
@@ -94,16 +95,13 @@ public class MainActivity extends AppCompatActivity {
             checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua0Activity.class);
         });
 
-        /*btn_evalua_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1));
+        btn_evalua_1.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1));
 
-                crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_1));
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_1));
 
-                checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua1Activity.class);
-            }
-        });*/
+            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua1Activity.class);
+        });
 
         btn_evalua_3.setOnClickListener(v -> {
             Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
@@ -159,8 +157,6 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_0 = findViewById(R.id.btn_evalua_0);
 
         btn_evalua_1 = findViewById(R.id.btn_evalua_1);
-        btn_evalua_1.setEnabled(false);
-        btn_evalua_1.setAlpha(0.6f);
 
         btn_evalua_2 = findViewById(R.id.btn_evalua_2);
         btn_evalua_2.setEnabled(false);
