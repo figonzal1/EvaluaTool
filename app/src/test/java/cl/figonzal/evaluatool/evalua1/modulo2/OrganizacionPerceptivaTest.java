@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:24                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo2;
@@ -73,7 +73,13 @@ public class OrganizacionPerceptivaTest {
                 {17, 10, -1.85},
                 {14, 7, -2.11},
                 {11, 5, -2.38},
-                {8, 1, -2.64}
+                {8, 1, -2.64},
+
+
+                //LIMITES
+                {7, 1, -2.73},
+                {53, 99, 1.32}
+
         });
     }
 

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:37                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo6;
@@ -71,7 +71,12 @@ public class CalculoNumeracionTest {
                 {19, 15, -1.37},
                 {16, 10, -1.71},
                 {13, 5, -2.05},
-                {10, 1, -2.39}
+                {10, 1, -2.39},
+
+                //LIMITES
+                {9, 1, -2.5},
+                {48, 99, 1.92}
+
 
         });
     }

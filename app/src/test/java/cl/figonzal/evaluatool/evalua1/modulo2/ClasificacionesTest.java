@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 13:22                                                 -
+ Last modified 15-04-20 21:19                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo2;
@@ -65,7 +65,12 @@ public class ClasificacionesTest {
                 {3, 15, -1.19},
                 {2, 10, -1.4},
                 {1, 5, -1.6},
-                {0, 1, -1.81}
+                {0, 1, -1.81},
+
+                //LIMITE
+                {-1, 1, -2.01},
+                {21, 99, 2.51}
+
         });
     }
 
