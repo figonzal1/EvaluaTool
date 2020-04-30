@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 22:33                                                 -
+ Last modified 30-04-20 19:12                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -40,12 +40,13 @@ import java.util.Date;
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment;
 import cl.figonzal.evaluatool.evalua0.Evalua0Activity;
 import cl.figonzal.evaluatool.evalua1.Evalua1Activity;
+import cl.figonzal.evaluatool.evalua2.Evalua2Activity;
 import cl.figonzal.evaluatool.evalua3.Evalua3Activity;
 import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean testMode = false;
+    private final Boolean testMode = true;
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
@@ -101,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
             crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_1));
 
             checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua1Activity.class);
+        });
+
+        btn_evalua_2.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2));
+
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_2));
+
+            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua2Activity.class);
         });
 
         btn_evalua_3.setOnClickListener(v -> {
@@ -159,8 +168,6 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_1 = findViewById(R.id.btn_evalua_1);
 
         btn_evalua_2 = findViewById(R.id.btn_evalua_2);
-        btn_evalua_2.setEnabled(false);
-        btn_evalua_2.setAlpha(0.6f);
 
         btn_evalua_3 = findViewById(R.id.btn_evalua_3);
 
