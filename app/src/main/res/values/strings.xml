@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-04-20 18:03                                                ~
+  Last modified 30-04-20 19:10                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -17,11 +17,11 @@
     <string name="ADMOB_MASTER_KEY">ca-app-pub-6355378855577476~8089782740</string>
 
     <!--TEST AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
+    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>
     <!--PROD AD-->
-    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
+    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>-->
 
 
     <!-- FORMAT -->
@@ -71,6 +71,11 @@
     <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
     <string name="EVALUA_1_M5_SI_2">Ortografía Visual [OR-1]</string>
     <string name="EVALUA_1_M6_SI_1">Cálculo y Numeración [CN-1]</string>
+
+    <!-- EVALUA 2-->
+    <string name="TOOLBAR_EVALUA_2">Evalúa 2</string>
+    <string name="EVALUA_2_MODULO_1">Pensamiento Analógico</string>
+    <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
@@ -143,8 +148,10 @@
     <string name="CLOSE_EVALUA_0">D/EVALUA_0_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_1">D/EVALUA_1_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
+    <string name="CLOSE_EVALUA_2">D/EVALUA_2_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
+    <string name="BTN_EVALUA_2">btn_evalua_2</string>
     <string name="BTN_EVALUA_3">btn_evalua_3</string>
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
