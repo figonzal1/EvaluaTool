@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-04-20 20:43                                                ~
+  Last modified 30-04-20 21:20                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo1.PensamientoAnalogico">
+    tools:context=".evalua2.modulo1.OrganizacionPerceptiva">
 
     <include
         android:id="@+id/include"
