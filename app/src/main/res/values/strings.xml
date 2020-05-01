@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-04-20 21:43                                                ~
+  Last modified 30-04-20 23:00                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -78,6 +78,7 @@
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
+    <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
@@ -85,7 +86,7 @@
     <string name="TOOLBAR_REFLEXIVIDAD">Reflexividad</string>
     <string name="TOOLBAR_PENSAMIENTO_ANALOGICO">Pensamiento Analógico</string>
     <string name="TOOLBAR_COMP_LECTORA">Comprensión Lectora</string>
-    <string name="TOOLBAR_VALORACION_GLOBAL">Valoración global</string>
+    <string name="TOOLBAR_VALORACION_GLOBAL">Valoración Global</string>
     <string name="TOOLBAR_RESOLUCION_PROBLEMAS">Resolución Problemas</string>
     <string name="TOOLBAR_EXACTITUD_LECTORA">Exactitud Lectora</string>
     <string name="TOOLBAR_ORTOGRAFIA_VISUAL">Ortografía Visual</string>
