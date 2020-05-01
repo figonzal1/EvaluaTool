@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 10-03-20 17:53                                                ~
+  Last modified 01-05-20 2:14                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -70,7 +70,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Pruebas Escritura"
+                        android:text="@string/pruebas_escritura"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"
@@ -85,7 +85,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:hint="Ort. fonética"
+                        android:hint="@string/ort_fon_tica"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_1">
@@ -107,7 +107,7 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="Grafía / Expresión escrita"
+                        android:hint="@string/graf_a_expresi_n_escrita"
                         app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
                         app:layout_constraintStart_toStartOf="@+id/it_totales_t1"
                         app:layout_constraintTop_toBottomOf="@+id/it_totales_t1">
@@ -130,7 +130,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
-                        android:hint="Ort. Visual"
+                        android:hint="@string/ort_visual"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
                         app:layout_constraintStart_toStartOf="@+id/it_totales_t2"
@@ -197,7 +197,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="PD subtotales"
+                        android:text="@string/pd_subtotales"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -211,7 +211,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="OF: 0 pts"
+                        android:text="@string/of_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -226,7 +226,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="GR: 0 pts"
+                        android:text="@string/gr_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -241,7 +241,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="OR: 0 pts"
+                        android:text="@string/or_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -257,7 +257,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="PD Total"
+                        android:text="@string/pd_total"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -271,7 +271,7 @@
                         android:layout_marginEnd="16dp"
                         android:layout_marginBottom="8dp"
                         android:fontFamily="@font/roboto"
-                        android:text="0 pts"
+                        android:text="@string/_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                         android:textColor="@color/colorOnSurface"
                         android:textSize="30sp"
