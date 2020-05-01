@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-04-20 21:23                                                ~
+  Last modified 30-04-20 21:43                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -77,6 +77,7 @@
     <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
+    <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
