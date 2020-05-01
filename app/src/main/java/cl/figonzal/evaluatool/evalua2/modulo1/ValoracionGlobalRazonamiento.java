@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:21                                                 -
+ Last modified 30-04-20 23:00                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo2;
+package cl.figonzal.evaluatool.evalua2.modulo1;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,7 +33,7 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements ValoracionInterface {
+public class ValoracionGlobalRazonamiento extends AppCompatActivity implements ValoracionInterface {
 
     //TAREA 1
     private TextInputEditText et_totales_t1;
@@ -55,7 +55,8 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valoracion_global_bases2);
+        setContentView(R.layout.activity_valoracion_global_razonamiento);
+
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);

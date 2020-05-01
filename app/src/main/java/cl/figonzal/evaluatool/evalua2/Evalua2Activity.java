@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 21:43                                                 -
+ Last modified 30-04-20 23:00                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -37,6 +37,7 @@ import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua2.modulo1.Clasificaciones;
 import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
+import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamiento;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -75,6 +76,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_1)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_2)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_3)));
+        subItems1.add(new Evalua(getString(R.string.EVALUA_2_EVALUA_GLOBAL)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
@@ -110,6 +112,13 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         Clasificaciones.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+                abrirActividad(
+                        this,
+                        ValoracionGlobalRazonamiento.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             }
         }

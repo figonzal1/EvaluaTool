@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:21                                                 -
+ Last modified 30-04-20 22:49                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo2;
+package cl.figonzal.evaluatool.evalua1.modulo2;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,8 +33,7 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements ValoracionInterface {
-
+public class ValoracionGlobalBases extends AppCompatActivity implements ValoracionInterface {
 
     //TAREA 1
     private TextInputEditText et_totales_t1;
@@ -56,8 +55,7 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valoracion_global_bases);
-
+        setContentView(R.layout.activity_valoracion_global_bases2);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -112,7 +110,7 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t1 = Double.parseDouble(String.valueOf(et_totales_t1.getText()));
                 }
-                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "RE", sub_total_t1));
+                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "SE", sub_total_t1));
                 calcularResultado();
             }
         });
@@ -136,7 +134,7 @@ public class ValoracionInterfaceGlobalBases extends AppCompatActivity implements
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t2 = Double.parseDouble(String.valueOf(et_totales_t2.getText()));
                 }
-                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "PA", sub_total_t2));
+                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "CL", sub_total_t2));
                 calcularResultado();
             }
         });

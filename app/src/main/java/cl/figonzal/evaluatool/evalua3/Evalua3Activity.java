@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 30-04-20 22:56                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3;
@@ -37,7 +37,7 @@ import cl.figonzal.evaluatool.evalua3.modulo1.MemoriaAtencion;
 import cl.figonzal.evaluatool.evalua3.modulo2.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua3.modulo2.PensamientoAnalogico;
 import cl.figonzal.evaluatool.evalua3.modulo2.Reflexividad;
-import cl.figonzal.evaluatool.evalua3.modulo2.ValoracionInterfaceGlobalBases;
+import cl.figonzal.evaluatool.evalua3.modulo2.ValoracionGlobalBases;
 import cl.figonzal.evaluatool.evalua3.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.evalua3.modulo4.ExactitudLectora;
 import cl.figonzal.evaluatool.evalua3.modulo4.ValoracionGlobalLectura;
@@ -164,7 +164,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ValoracionInterfaceGlobalBases.class,
+                        ValoracionGlobalBases.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
