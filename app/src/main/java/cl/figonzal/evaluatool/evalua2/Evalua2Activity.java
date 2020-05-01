@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 17:31                                                 -
+ Last modified 30-04-20 21:29                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -34,6 +34,8 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
+import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
+import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -70,6 +72,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
 
         List<Evalua> subItems1 = new ArrayList<>();
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_1)));
+        subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_2)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
@@ -91,6 +94,13 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         PensamientoAnalogico.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptiva.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
             }
         }

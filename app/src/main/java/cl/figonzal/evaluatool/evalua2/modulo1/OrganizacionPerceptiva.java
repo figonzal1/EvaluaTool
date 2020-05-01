@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 19:17                                                 -
+ Last modified 30-04-20 21:33                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua2;
+package cl.figonzal.evaluatool.evalua2.modulo1;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -39,31 +39,45 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInterface {
+public class OrganizacionPerceptiva extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 5.16;
-    private static final double MEDIA = 12.75;
+    private static final double DESVIACION = 8.17;
+    private static final double MEDIA = 26.64;
     private final Integer[][] perc = new Integer[][]{
-            {20, 99},
-            {19, 90},
-            {18, 80},
-            {17, 75},
-            {16, 70},
-            {15, 65},
-            {14, 60},
-            {13, 55},
-            {12, 50},
-            {11, 40},
-            {10, 35},
-            {9, 30},
-            {8, 20},
-            {7, 15},
-            {6, 13},
-            {5, 10},
-            {4, 8},
-            {3, 7},
-            {2, 5},
-            {1, 3},
+            {34, 95},
+            {33, 95},
+            {32, 85},
+            {31, 85},
+            {30, 75},
+            {29, 75},
+            {28, 60},
+            {27, 60},
+            {26, 50},
+            {25, 50},
+            {24, 40},
+            {23, 40},
+            {22, 35},
+            {21, 35},
+            {20, 25},
+            {19, 25},
+            {18, 20},
+            {17, 20},
+            {16, 15},
+            {15, 15},
+            {14, 13},
+            {13, 13},
+            {12, 12},
+            {11, 12},
+            {10, 10},
+            {9, 10},
+            {8, 7},
+            {7, 7},
+            {6, 5},
+            {5, 5},
+            {4, 3},
+            {3, 3},
+            {2, 2},
+            {1, 2},
             {0, 1}
     };
     //TAREA 1
@@ -72,7 +86,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     private int aprobadas_t1 = 0;
     private int reprobadas_t1 = 0;
 
-    //TAREA 1
+    //TAREA 2
     private TextInputEditText et_aprobadas_t2;
     private TextInputEditText et_reprobadas_t2;
     private int aprobadas_t2 = 0;
@@ -96,7 +110,8 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pensamiento_analogico2);
+        setContentView(R.layout.activity_organizacion_perceptiva4);
+
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -107,13 +122,14 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO));
+        actionBar.setTitle(getString(R.string.TOOLBAR_ORG_PERCEPTIVA));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
 
         textWatcherTarea2();
+
     }
 
     /**
@@ -354,9 +370,9 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_PERNSAMIENTO_ANALOGICO), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_ORG_PERCEPTIVA), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_PERNSAMIENTO_ANALOGICO) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_ORG_PERCEPTIVA) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;
