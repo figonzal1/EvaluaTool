@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-04-20 23:00                                                ~
+  Last modified 01-05-20 13:58                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -274,6 +274,80 @@
     <string name="EVALUA_9">Evalúa 9</string>
     <string name="EVALUA_10">Evalúa 10</string>
     <string name="EVALUA_7">Evalúa 7</string>
+
+    <!-- XML STRINGs -->
+    <string name="tarea_1">Tarea 1</string>
+    <string name="aprobadas">Aprobadas</string>
+    <string name="reprobadas">Reprobadas</string>
+    <string name="tarea_2">Tarea 2</string>
+    <string name="desviacion_tipica">Desviación Típica</string>
+    <string name="media">Media</string>
+    <string name="estadisticos">Estadísticos</string>
+    <string name="pd_subtotales">PD subtotales</string>
+    <string name="tarea_1_0_pts">Tarea 1: 0 pts</string>
+    <string name="tarea_2_0_pts">Tarea 2: 0 pts</string>
+    <string name="pd_total">PD Total</string>
+    <string name="_0_pts">0 pts</string>
+    <string name="pd_total_corregido">PD Total corregido</string>
+    <string name="percentil_calculado">Percentil calculado</string>
+    <string name="nivel_obtenido">Nivel obtenido</string>
+    <string name="guion_bajo">-</string>
+    <string name="puntaje_tipificado">Puntaje Tipificado</string>
+    <string name="omitidas">Omitidas</string>
+    <string name="errores">Errores</string>
+    <string name="caballo">Caballo</string>
+    <string name="dinosaurio">Dinosaurio</string>
+    <string name="uvas">Uvas</string>
+    <string name="pl_tanos">Plátanos</string>
+    <string name="caballo_0_pts">Caballo: 0 pts</string>
+    <string name="dinosaurio_0_pts">Dinosaurio: 0 pts</string>
+    <string name="uvas_0_pts">Uvas: 0 pts</string>
+    <string name="pl_tanos_0_pts">Plátanos: 0 pts</string>
+    <string name="tarea_3">Tarea 3</string>
+    <string name="tarea_3_0_pts">Tarea 3: 0 pts</string>
+    <string name="ingresa_el_error_total_de_los_6_ejercicios">Ingresa el error total de los 6 ejercicios</string>
+    <string name="tarea_4">Tarea 4</string>
+    <string name="tarea_4_0_pts">Tarea 4: 0 pts</string>
+    <string name="tarea_5">Tarea 5</string>
+    <string name="tarea_6">Tarea 6</string>
+    <string name="tarea_5_0_pts">Tarea 5: 0 pts</string>
+    <string name="tarea_6_0_pts">Tarea 6: 0 pts</string>
+    <string name="series">Series</string>
+    <string name="se_0_pts">SE: 0 pts</string>
+    <string name="tareas">Tareas</string>
+    <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
+    <string name="tareas_0_pts">Tareas: 0 pts</string>
+    <string name="analog_as">Analogías</string>
+    <string name="clasificaciones">Clasificaciones</string>
+    <string name="ca_0_pts">CA: 0 pts</string>
+    <string name="op_0_pts">OP: 0 pts</string>
+    <string name="pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
+    <string name="reflexividad">Reflexividad</string>
+    <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
+    <string name="re_0_pts">RE: 0 pts</string>
+    <string name="pa_0_pts">PA: 0 pts</string>
+    <string name="org_perceptiva">Org. perceptiva</string>
+    <string name="pruebas_lecturas">Pruebas Lecturas</string>
+    <string name="comp_lectora">Comp. Lectora</string>
+    <string name="exactitud_lectora">Exactitud Lectora</string>
+    <string name="cl_0_pts">CL: 0 pts</string>
+    <string name="el_0_pts">EL: 0 pts</string>
+    <string name="pruebas_escritura">Pruebas Escritura</string>
+    <string name="ort_fon_tica">Ort. fonética</string>
+    <string name="graf_a_expresi_n_escrita">Grafía / Expresión escrita</string>
+    <string name="ort_visual">Ort. Visual</string>
+    <string name="of_0_pts">OF: 0 pts</string>
+    <string name="gr_0_pts">GR: 0 pts</string>
+    <string name="or_0_pts">OR: 0 pts</string>
+    <string name="pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
+    <string name="c_lculo_numeraci_n">Cálculo / Numeración</string>
+    <string name="res_problemas">Res. Problemas</string>
+    <string name="cn_0_pts">CN: 0 pts</string>
+    <string name="rp_0_pts">RP: 0 pts</string>
+    <string name="comprensi_n">Comprensión</string>
+    <string name="segundos_empleados">Segundos empleados</string>
+    <string name="_0_seg">0 seg</string>
+    <string name="puntaje_directo">Puntaje directo</string>
 
 
 </resources>
