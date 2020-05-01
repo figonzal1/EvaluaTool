@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 19:12                                                 -
+ Last modified 30-04-20 22:42                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
-        MobileAds.initialize(this, getString(R.string.ADMOB_MASTER_KEY));
+        MobileAds.initialize(this);
 
         InterstitialAd mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getString(R.string.ADMOB_ID_INTERSITIAL));

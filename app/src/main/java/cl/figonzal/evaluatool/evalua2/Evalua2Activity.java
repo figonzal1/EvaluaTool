@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 21:29                                                 -
+ Last modified 30-04-20 21:43                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -34,6 +34,7 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
+import cl.figonzal.evaluatool.evalua2.modulo1.Clasificaciones;
 import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
@@ -73,6 +74,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems1 = new ArrayList<>();
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_1)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_2)));
+        subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_3)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
@@ -101,6 +103,13 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         OrganizacionPerceptiva.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+                abrirActividad(
+                        this,
+                        Clasificaciones.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CLASIFICACION)
                 );
             }
         }
