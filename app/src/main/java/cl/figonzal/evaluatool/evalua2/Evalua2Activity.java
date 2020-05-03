@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 23:00                                                 -
+ Last modified 03-05-20 17:51                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -35,9 +35,11 @@ import java.util.List;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua2.modulo1.Clasificaciones;
+import cl.figonzal.evaluatool.evalua2.modulo1.IndiceGeneralCognitivo;
 import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
 import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamiento;
+import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencion;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -77,9 +79,14 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_2)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_M1_SI_3)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_2_EVALUA_GLOBAL)));
+        subItems1.add(new Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO)));
+
+        List<Evalua> subItems2 = new ArrayList<>();
+        subItems2.add(new Evalua(getString(R.string.EVALUA_2_M2_SI_1)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_2), subItems2, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -119,6 +126,25 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         ValoracionGlobalRazonamiento.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
+                abrirActividad(
+                        this,
+                        IndiceGeneralCognitivo.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+                );
+            }
+        }
+
+        //Modulo2
+        else if (getString(R.string.EVALUA_2_MODULO_2).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+                abrirActividad(
+                        this,
+                        MemoriaAtencion.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_MEMORIA_ATENCION)
                 );
             }
         }
