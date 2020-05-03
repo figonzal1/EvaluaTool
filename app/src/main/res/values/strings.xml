@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-05-20 13:58                                                ~
+  Last modified 03-05-20 17:08                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -75,10 +75,14 @@
     <!-- EVALUA 2-->
     <string name="TOOLBAR_EVALUA_2">Evalúa 2</string>
     <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
+    <string name="EVALUA_2_MODULO_2">Memoria y Atención</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
+    <string name="EVALUA_2_M2_SI_1">Memoria y Atención [MA-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
+    <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
 
     <!-- EVALUA 3-->
     <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
@@ -159,6 +163,7 @@
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
+    <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
     <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
     <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
     <string name="TAG_LETRAS_NUMEROS">D/LETRAS_NUMEROS_ACT: </string>
@@ -186,6 +191,7 @@
     <string name="TAG_MEMORIA_ATENCION">D/MEMORIA_ATENCION_ACT: </string>
     <string name="TAG_EXACTITUD_LECTORA">D/EXACTITUD_LECTORA_ACT: </string>
     <string name="TAG_VALORACION_GLOBAL">D/VALORACION_GLOBAL_ACT: </string>
+    <string name="TAG_INDICE_GENERAL">D/INDICE_GENERAL_ACT: </string>
     <string name="TAG_COMPR_LECTURA">D/COMP_LECTURA_ACT: </string>
     <string name="TAG_REFLEXIVIDAD">D/REFLEXIVIDAD_ACT: </string>
     <string name="TAG_PERNSAMIENTO_ANALOGICO">D/PERNSAMIENTO_ANALOGICO_ACT: </string>
@@ -348,6 +354,7 @@
     <string name="segundos_empleados">Segundos empleados</string>
     <string name="_0_seg">0 seg</string>
     <string name="puntaje_directo">Puntaje directo</string>
+    <string name="comprension">Comprensión</string>
 
 
 </resources>

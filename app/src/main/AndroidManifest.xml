@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-04-20 22:56                                                ~
+  Last modified 03-05-20 15:40                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +24,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua2.modulo1.ValoracionGlobalRazonamiento"></activity>
+        <activity android:name=".evalua2.modulo2.MemoriaAtencion"></activity>
+        <activity android:name=".evalua2.modulo1.IndiceGeneralCognitivo" />
+        <activity android:name=".evalua2.modulo1.ValoracionGlobalRazonamiento" />
         <activity android:name=".evalua2.modulo1.Clasificaciones" />
         <activity android:name=".evalua2.modulo1.OrganizacionPerceptiva" />
         <activity android:name=".evalua2.Evalua2Activity" />
