@@ -8,13 +8,11 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 20:44                                                ~
+  Last modified 03-05-20 21:13                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
     <string name="app_name">EvaluaTool</string>
-
-    <string name="ADMOB_MASTER_KEY">ca-app-pub-6355378855577476~8089782740</string>
 
     <!--TEST AD-->
     <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
@@ -77,11 +75,13 @@
     <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
     <string name="EVALUA_2_MODULO_2">Memoria y Atención</string>
     <string name="EVALUA_2_MODULO_4">Lectura</string>
+    <string name="EVALUA_2_MODULO_5">Escritura</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
     <string name="EVALUA_2_M2_SI_1">Memoria y Atención [MA-2]</string>
     <string name="EVALUA_2_M4_SI_1">Comprensión Lectora [CL-2]</string>
+    <string name="EVALUA_2_M5_SI_1">Grafía [GR-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
@@ -256,10 +256,6 @@
     <string name="TAG_BTN_REWARD_DATE" translatable="false">D/BUTTON_REWARD_DATE: </string>
     <string name="TAG_ADS_PERMITIDOS" translatable="false">ADS PERMITIDOS</string>
     <string name="TAG_ADS_NO_PERMITIDOS" translatable="false">ADS NO PERMITIDOS</string>
-    <string name="TAG_ADMOB_AD_STATUS" translatable="false">ADMOB_AD</string>
-    <string name="TAG_ADMOB_AD_STATUS_FAILED" translatable="false">FAILED TO LOAD</string>
-    <string name="TAG_ADMOB_AD_STATUS_LOADED" translatable="false">ADD LOADED</string>
-    <string name="TAG_ADMOB_AD_STATUS_OPEN" translatable="false">ADD OPEN</string>
     <string name="TAG_INTERSITIAL_STATUS">D/INTERSITIAL: </string>
     <string name="INTERSITIAL_CARGADO">CARGADO</string>
     <string name="INTERSITIAL_NO_CARGADO">NO CARGADO</string>
@@ -350,7 +346,6 @@
     <string name="res_problemas">Res. Problemas</string>
     <string name="cn_0_pts">CN: 0 pts</string>
     <string name="rp_0_pts">RP: 0 pts</string>
-    <string name="comprensi_n">Comprensión</string>
     <string name="segundos_empleados">Segundos empleados</string>
     <string name="_0_seg">0 seg</string>
     <string name="puntaje_directo">Puntaje directo</string>
