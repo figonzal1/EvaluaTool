@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:57                                                 -
+ Last modified 03-05-20 20:31                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo4;
@@ -138,7 +138,7 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_COMP_LECTORA));
+        actionBar.setTitle(getString(R.string.TOOLBAR_COMPREN_LECTORA));
 
         instanciarRecursosInterfaz();
 
@@ -550,9 +550,9 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_COMPR_LECTURA), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_COMPREN_LECTORA), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_COMPR_LECTURA) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_COMPREN_LECTORA) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

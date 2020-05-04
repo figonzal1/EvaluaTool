@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 17:08                                                ~
+  Last modified 03-05-20 20:44                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -76,10 +76,12 @@
     <string name="TOOLBAR_EVALUA_2">Evalúa 2</string>
     <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
     <string name="EVALUA_2_MODULO_2">Memoria y Atención</string>
+    <string name="EVALUA_2_MODULO_4">Lectura</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
     <string name="EVALUA_2_M2_SI_1">Memoria y Atención [MA-2]</string>
+    <string name="EVALUA_2_M4_SI_1">Comprensión Lectora [CL-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
@@ -89,7 +91,6 @@
     <string name="TOOLBAR_MEMORIA_ATENCION">Memoria y Atención</string>
     <string name="TOOLBAR_REFLEXIVIDAD">Reflexividad</string>
     <string name="TOOLBAR_PENSAMIENTO_ANALOGICO">Pensamiento Analógico</string>
-    <string name="TOOLBAR_COMP_LECTORA">Comprensión Lectora</string>
     <string name="TOOLBAR_VALORACION_GLOBAL">Valoración Global</string>
     <string name="TOOLBAR_RESOLUCION_PROBLEMAS">Resolución Problemas</string>
     <string name="TOOLBAR_EXACTITUD_LECTORA">Exactitud Lectora</string>
@@ -192,7 +193,6 @@
     <string name="TAG_EXACTITUD_LECTORA">D/EXACTITUD_LECTORA_ACT: </string>
     <string name="TAG_VALORACION_GLOBAL">D/VALORACION_GLOBAL_ACT: </string>
     <string name="TAG_INDICE_GENERAL">D/INDICE_GENERAL_ACT: </string>
-    <string name="TAG_COMPR_LECTURA">D/COMP_LECTURA_ACT: </string>
     <string name="TAG_REFLEXIVIDAD">D/REFLEXIVIDAD_ACT: </string>
     <string name="TAG_PERNSAMIENTO_ANALOGICO">D/PERNSAMIENTO_ANALOGICO_ACT: </string>
     <string name="TAG_CALCU_NUMERACION">D/CALCU_NUMERACION_ACT: </string>

@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-05-20 20:31                                                 -
+ Last modified 03-05-20 20:50                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo4;
+package cl.figonzal.evaluatool.evalua2.modulo4;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -41,46 +41,46 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
 public class ComprensionLectora extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 8.25;
-    private static final double MEDIA = 40.23;
+    private static final double DESVIACION = 5.68;
+    private static final double MEDIA = 12.27;
     private final Integer[][] perc = new Integer[][]{
-            {49, 95},
-            {48, 85},
-            {47, 75},
-            {46, 70},
-            {45, 65},
-            {44, 60},
-            {43, 55},
-            {42, 50},
-            {41, 45},
-            {40, 42},
-            {39, 40},
-            {38, 37},
-            {37, 35},
-            {36, 32},
-            {35, 30},
-            {34, 27},
-            {33, 25},
-            {32, 20},
-            {31, 15},
-            {30, 10},
-            {25, 7},
-            {20, 5},
-            {15, 3},
-            {10, 1}
-
+            {25, 99},
+            {24, 98},
+            {23, 97},
+            {22, 96},
+            {21, 95},
+            {20, 93},
+            {19, 92},
+            {18, 90},
+            {17, 85},
+            {16, 80},
+            {15, 70},
+            {14, 65},
+            {13, 60},
+            {12, 50},
+            {11, 45},
+            {10, 40},
+            {9, 35},
+            {8, 30},
+            {7, 25},
+            {6, 20},
+            {5, 15},
+            {4, 10},
+            {3, 7},
+            {2, 5},
+            {1, 1}
     };
+
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
-    private TextInputEditText et_omitidas_t1;
     private TextInputEditText et_reprobadas_t1;
     private int aprobadas_t1 = 0;
-    private int omitidas_t1 = 0;
     private int reprobadas_t1 = 0;
-
     //TAREA 2
     private TextInputEditText et_aprobadas_t2;
+    private TextInputEditText et_reprobadas_t2;
     private int aprobadas_t2 = 0;
+    private int reprobadas_t2 = 0;
     //TAREA 3
     private TextInputEditText et_aprobadas_t3;
     private int aprobadas_t3 = 0;
@@ -105,7 +105,8 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comprension_lectora3);
+        setContentView(R.layout.activity_comprension_lectora4);
+
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -142,12 +143,12 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
         //TAREA 1
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
-        et_omitidas_t1 = findViewById(R.id.et_omitidas_t1);
         et_reprobadas_t1 = findViewById(R.id.et_reprobadas_t1);
 
         //TAREA 2
         tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
         et_aprobadas_t2 = findViewById(R.id.et_aprobadas_t2);
+        et_reprobadas_t2 = findViewById(R.id.et_reprobadas_t2);
 
         //TAREA 3
         tv_sub_total_t3 = findViewById(R.id.tv_pd_subtotal_t3);
@@ -173,7 +174,6 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
             dialogFragment.setCancelable(false);
             dialogFragment.show(getSupportFragmentManager(), getString(R.string.DIALOGO_AYUDA));
         });
-
     }
 
     /**
@@ -200,33 +200,11 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
 
-        et_omitidas_t1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t1 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    omitidas_t1 = 0;
-                } else if (s.length() > 0) {
-                    omitidas_t1 = Integer.parseInt(Objects.requireNonNull(et_omitidas_t1.getText()).toString());
-                }
-                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
-                calcularResultado();
-            }
-        });
 
         et_reprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
@@ -246,7 +224,7 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
                 } else if (s.length() > 0) {
                     reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -272,7 +250,30 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
                 } else if (s.length() > 0) {
                     aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, null);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
+                calcularResultado();
+            }
+        });
+
+        et_reprobadas_t2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t2 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    reprobadas_t2 = 0;
+                } else if (s.length() > 0) {
+                    reprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t2.getText()).toString());
+                }
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -298,7 +299,7 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
                 } else if (s.length() > 0) {
                     aprobadas_t3 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t3.getText()).toString());
                 }
-                subtotal_pd_t3 = calcularTarea(2, tv_sub_total_t3, "Tarea 3: ", aprobadas_t3, null, null);
+                subtotal_pd_t3 = calcularTarea(3, tv_sub_total_t3, "Tarea 3: ", aprobadas_t3, null, null);
                 calcularResultado();
             }
         });
@@ -309,12 +310,14 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
         double total = 0;
 
         if (n_tarea == 1) {
-            total = aprobadas - (reprobadas + omitidas);
+            total = aprobadas - (reprobadas / 3.0);
             total = Math.floor(total);
         } else if (n_tarea == 2) {
-            total = aprobadas;
+            total = aprobadas - (reprobadas);
+            total = Math.floor(total);
         } else if (n_tarea == 3) {
-            total = aprobadas * 2;
+            total = aprobadas * 4.0;
+            total = Math.floor(total);
         }
 
         if (total < 0) {
@@ -385,16 +388,6 @@ public class ComprensionLectora extends AppCompatActivity implements EvaluaInter
             //Verificar si pd_actual esta en la lista
             for (Integer[] item : perc) {
                 if (pd_total == item[0]) {
-                    return item[0];
-                } else if (pd_total - 1 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 2 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 3 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 4 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 5 == item[0]) {
                     return item[0];
                 }
             }
