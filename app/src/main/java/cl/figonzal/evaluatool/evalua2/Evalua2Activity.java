@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-05-20 17:51                                                 -
+ Last modified 03-05-20 20:44                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -40,6 +40,7 @@ import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
 import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamiento;
 import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencion;
+import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectora;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -84,9 +85,13 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_2_M2_SI_1)));
 
+        List<Evalua> subItems4 = new ArrayList<>();
+        subItems4.add(new Evalua(getString(R.string.EVALUA_2_M4_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_2), subItems2, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_4), subItems4, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -145,6 +150,18 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         MemoriaAtencion.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_ATENCION)
+                );
+            }
+        }
+
+        //Modulo4
+        else if (getString(R.string.EVALUA_2_MODULO_4).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+                abrirActividad(
+                        this,
+                        ComprensionLectora.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_COMPRENSION_LECTORA)
                 );
             }
         }
