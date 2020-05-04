@@ -8,13 +8,13 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 20:50                                                ~
+  Last modified 03-05-20 21:14                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo3.NivelesAdaptacion">
+    tools:context=".evalua2.modulo5.Ortografia">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

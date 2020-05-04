@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="text_margin">16dp</dimen>
-</resources>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                              ~
+  This file is subject to the terms and conditions defined in                 ~
+  file 'LICENSE', which is part of this source code package                   ~
+                                                                              ~
+  Autor: Felipe González                                                      ~
+  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
+                                                                              ~
+  Copyright (c) 2020                                                          ~
+                                                                              ~
+  Last modified 03-05-20 21:13                                                ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<resources></resources>
