@@ -24,8 +24,8 @@
         <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/figonzal1/EvaluaTool">
   </a>
   
-  <a href="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=blue" alt="Last Commit">
-        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=blue">
+  <a href="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=orange" alt="Last Commit">
+        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=orange">
   </a>
 </p>
 
@@ -33,16 +33,14 @@ Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenec
 
 ## Versiones soportadas
 - [x] v2.0
-
-## Baterías disponibles
-- [x] Evalúa - 0
-- [x] Evalúa - 1
-- [ ] Evalúa - 2
-- [x] Evalúa - 3
-- [ ] Evalúa - 4
-- [ ] Evalúa - 5
-- [ ] Evalúa - 6
-- [x] Evalúa - 7
-- [ ] Evalúa - 8
-- [ ] Evalúa - 9
-- [ ] Evalúa - 10
+  - [x] Evalúa - 0
+  - [x] Evalúa - 1
+  - [ ] Evalúa - 2
+  - [x] Evalúa - 3
+  - [ ] Evalúa - 4
+  - [ ] Evalúa - 5
+  - [ ] Evalúa - 6
+  - [x] Evalúa - 7
+  - [ ] Evalúa - 8
+  - [ ] Evalúa - 9
+  - [ ] Evalúa - 10
