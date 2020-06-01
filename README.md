@@ -24,8 +24,8 @@
         <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/figonzal1/EvaluaTool">
   </a>
   
-  <a href="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=blue" alt="Last Commit">
-        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=blue">
+  <a href="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=orange" alt="Last Commit">
+        <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=orange">
   </a>
 </p>
 
