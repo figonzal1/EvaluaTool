@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 21:13                                                ~
+  Last modified 30-06-20 17:22                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -46,6 +46,7 @@
     <string name="EVALUA_0_M1_SI_3">Organización Perceptiva [OP-0]</string>
     <string name="EVALUA_0_M1_SI_4">Letras y Números [LN-0]</string>
     <string name="EVALUA_0_M1_SI_5">Memoria Verbal [MV-0]</string>
+    <string name="EVALUA_0_M1_SI_6">Índice General Cognitivo</string>
     <string name="EVALUA_0_M2_SI_1">Copia de Dibujos [CD-0]</string>
     <string name="EVALUA_0_M2_SI_2">Grafomotricidad [GR-0]</string>
     <string name="EVALUA_0_M3_SI_1">Palabras y Frases [PF-0]</string>
@@ -324,6 +325,7 @@
     <string name="ca_0_pts">CA: 0 pts</string>
     <string name="op_0_pts">OP: 0 pts</string>
     <string name="pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
+    <string name="pruebas_capacidades_cognitivas">Pruebas Capacidades Cognitivas</string>
     <string name="reflexividad">Reflexividad</string>
     <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
     <string name="re_0_pts">RE: 0 pts</string>

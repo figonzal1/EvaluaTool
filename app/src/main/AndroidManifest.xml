@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 21:08                                                ~
+  Last modified 30-06-20 16:58                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua2.modulo5.Ortografia"></activity>
+        <activity android:name=".evalua0.modulo1.IndiceGeneralCognitivoE0M1"></activity>
+        <activity android:name=".evalua2.modulo5.Ortografia" />
         <activity android:name=".evalua2.modulo4.ComprensionLectora" />
         <activity android:name=".evalua2.modulo2.MemoriaAtencion" />
         <activity android:name=".evalua2.modulo1.IndiceGeneralCognitivo" />

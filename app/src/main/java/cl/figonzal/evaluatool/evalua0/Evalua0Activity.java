@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 30-06-20 17:35                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0;
@@ -34,6 +34,7 @@ import java.util.List;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua0.modulo1.Clasificacion;
+import cl.figonzal.evaluatool.evalua0.modulo1.IndiceGeneralCognitivoE0M1;
 import cl.figonzal.evaluatool.evalua0.modulo1.LetrasYNumeros;
 import cl.figonzal.evaluatool.evalua0.modulo1.MemoriaVerbal;
 import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptiva;
@@ -84,6 +85,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems1.add(new Evalua(getString(R.string.EVALUA_0_M1_SI_3)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_0_M1_SI_4)));
         subItems1.add(new Evalua(getString(R.string.EVALUA_0_M1_SI_5)));
+        subItems1.add(new Evalua(getString(R.string.EVALUA_0_M1_SI_6)));
 
         //SUBMODULO 2
         List<Evalua> subItems2 = new ArrayList<>();
@@ -151,7 +153,15 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_VERBAL)
                 );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 5) {
+                abrirActividad(
+                        this,
+                        IndiceGeneralCognitivoE0M1.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+                );
             }
+
         } else if (getString(R.string.EVALUA_0_MODULO_2).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
