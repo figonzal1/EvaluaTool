@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 17:57                                                 -
+ Last modified 30-06-20 16:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo1;
@@ -182,7 +182,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -206,7 +206,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     omitidas_t1 = Integer.parseInt(Objects.requireNonNull(et_omitidas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
                 calcularResultado();
 
             }
@@ -230,7 +230,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -259,7 +259,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -283,7 +283,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     omitidas_t2 = Integer.parseInt(Objects.requireNonNull(et_omitidas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -306,7 +306,7 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
                 } else if (s.length() > 0) {
                     reprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, omitidas_t2, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -314,8 +314,15 @@ public class LetrasYNumeros extends AppCompatActivity implements EvaluaInterface
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
-        double total = aprobadas - ((omitidas + reprobadas) / 6.0);
-        total = Math.floor(total);
+        double total = 0;
+
+        if (n_tarea == 1) {
+            total = aprobadas - ((omitidas + reprobadas) / 4.0);
+            total = Math.floor(total);
+        } else if (n_tarea == 2) {
+            total = aprobadas - ((omitidas + reprobadas) / 6.0);
+            total = Math.floor(total);
+        }
 
         if (total < 0) {
             total = 0;
