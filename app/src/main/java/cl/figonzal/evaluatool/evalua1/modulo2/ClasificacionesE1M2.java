@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 13:03                                                 -
+ Last modified 01-07-20 0:56                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo4;
+package cl.figonzal.evaluatool.evalua1.modulo2;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -39,86 +39,43 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class ExactitudLectora extends AppCompatActivity implements EvaluaInterface {
+public class ClasificacionesE1M2 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 25.02;
-    private static final double MEDIA = 98.38;
+    private static final double DESVIACION = 4.87;
+    private static final double MEDIA = 8.80;
     private final Integer[][] perc = new Integer[][]{
-            {146, 99},
-            {143, 97},
-            {140, 95},
-            {137, 90},
-            {134, 85},
-            {131, 80},
-            {128, 75},
-            {125, 70},
-            {122, 65},
-            {119, 60},
-            {116, 57},
-            {113, 55},
-            {110, 52},
-            {107, 50},
-            {104, 48},
-            {101, 45},
-            {98, 42},
-            {95, 40},
-            {92, 38},
-            {89, 35},
-            {86, 34},
-            {83, 32},
-            {80, 31},
-            {77, 30},
-            {74, 29},
-            {71, 28},
-            {68, 27},
-            {65, 26},
-            {62, 25},
-            {59, 22},
-            {56, 20},
-            {53, 15},
-            {50, 12},
-            {47, 10},
-            {44, 5},
-            {41, 1}
+            {20, 99},
+            {19, 98},
+            {18, 97},
+            {17, 95},
+            {16, 92},
+            {15, 90},
+            {14, 85},
+            {13, 80},
+            {12, 70},
+            {11, 65},
+            {10, 55},
+            {9, 50},
+            {8, 45},
+            {7, 40},
+            {6, 30},
+            {5, 25},
+            {4, 20},
+            {3, 15},
+            {2, 10},
+            {1, 5},
+            {0, 1}
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
+    private TextInputEditText et_reprobadas_t1;
     private int aprobadas_t1 = 0;
-
-    //TAREA 2
-    private TextInputEditText et_aprobadas_t2;
-    private int aprobadas_t2 = 0;
-
-    //TAREA 3
-    private TextInputEditText et_aprobadas_t3;
-    private int aprobadas_t3 = 0;
-
-    //TAREA 4
-    private TextInputEditText et_aprobadas_t4;
-    private int aprobadas_t4 = 0;
-
-    //TAREA 5
-    private TextInputEditText et_aprobadas_t5;
-    private int aprobadas_t5 = 0;
-
-    //TAREA 6
-    private TextInputEditText et_aprobadas_t6;
-    private int aprobadas_t6 = 0;
+    private int reprobadas_t1 = 0;
 
     //SUBTOTALES
     private TextView tv_sub_total_t1;
-    private TextView tv_sub_total_t2;
-    private TextView tv_sub_total_t3;
-    private TextView tv_sub_total_t4;
-    private TextView tv_sub_total_t5;
-    private TextView tv_sub_total_t6;
 
     private double subtotal_pd_t1 = 0;
-    private double subtotal_pd_t2 = 0;
-    private double subtotal_pd_t3 = 0;
-    private double subtotal_pd_t4 = 0;
-    private double subtotal_pd_t5 = 0;
-    private double subtotal_pd_t6 = 0;
 
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
@@ -131,8 +88,7 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exactitud_lectora2);
-
+        setContentView(R.layout.activity_clasificaciones_e1_m2);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -143,21 +99,11 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_EXACTITUD_LECTORA));
+        actionBar.setTitle(getString(R.string.TOOLBAR_CLASIFICACION));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
-
-        textWatcherTarea2();
-
-        textWatcherTarea3();
-
-        textWatcherTarea4();
-
-        textWatcherTarea5();
-
-        textWatcherTarea6();
     }
 
     /**
@@ -175,26 +121,7 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
         //TAREA 1
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
-
-        //TAREA 2
-        tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
-        et_aprobadas_t2 = findViewById(R.id.et_aprobadas_t2);
-
-        //TAREA 3
-        tv_sub_total_t3 = findViewById(R.id.tv_pd_subtotal_t3);
-        et_aprobadas_t3 = findViewById(R.id.et_aprobadas_t3);
-
-        //TAREA 4
-        tv_sub_total_t4 = findViewById(R.id.tv_pd_subtotal_t4);
-        et_aprobadas_t4 = findViewById(R.id.et_aprobadas_t4);
-
-        //TAREA 5
-        tv_sub_total_t5 = findViewById(R.id.tv_pd_subtotal_t5);
-        et_aprobadas_t5 = findViewById(R.id.et_aprobadas_t5);
-
-        //TAREA 6
-        tv_sub_total_t6 = findViewById(R.id.tv_pd_subtotal_t6);
-        et_aprobadas_t6 = findViewById(R.id.et_aprobadas_t6);
+        et_reprobadas_t1 = findViewById(R.id.et_reprobadas_t1);
 
         //TOTAL
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
@@ -242,139 +169,30 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, null);
+                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
-    }
 
-    private void textWatcherTarea2() {
-        et_aprobadas_t2.addTextChangedListener(new TextWatcher() {
+        et_reprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t2 = 0;
+                subtotal_pd_t1 = 0;
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
 
             }
 
             @Override
             public void afterTextChanged(Editable s) {
                 if (s.length() == 0) {
-                    aprobadas_t2 = 0;
+                    reprobadas_t1 = 0;
                 } else if (s.length() > 0) {
-                    aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
+                    reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, null);
-                calcularResultado();
-            }
-        });
-
-
-    }
-
-    private void textWatcherTarea3() {
-        et_aprobadas_t3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t3 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    aprobadas_t3 = 0;
-                } else if (s.length() > 0) {
-                    aprobadas_t3 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t3.getText()).toString());
-                }
-                subtotal_pd_t3 = calcularTarea(null, tv_sub_total_t3, "Tarea 3: ", aprobadas_t3, null, null);
-                calcularResultado();
-            }
-        });
-    }
-
-    private void textWatcherTarea4() {
-        et_aprobadas_t4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t4 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    aprobadas_t4 = 0;
-                } else if (s.length() > 0) {
-                    aprobadas_t4 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t4.getText()).toString());
-                }
-                subtotal_pd_t4 = calcularTarea(null, tv_sub_total_t4, "Tarea 4: ", aprobadas_t4, null, null);
-                calcularResultado();
-            }
-        });
-    }
-
-    private void textWatcherTarea5() {
-        et_aprobadas_t5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t5 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    aprobadas_t5 = 0;
-                } else if (s.length() > 0) {
-                    aprobadas_t5 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t5.getText()).toString());
-                }
-                subtotal_pd_t5 = calcularTarea(null, tv_sub_total_t5, "Tarea 5: ", aprobadas_t5, null, null);
-                calcularResultado();
-            }
-        });
-    }
-
-    private void textWatcherTarea6() {
-        et_aprobadas_t6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t6 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    aprobadas_t6 = 0;
-                } else if (s.length() > 0) {
-                    aprobadas_t6 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t6.getText()).toString());
-                }
-                subtotal_pd_t6 = calcularTarea(null, tv_sub_total_t6, "Tarea 6: ", aprobadas_t6, null, null);
+                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -384,7 +202,7 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
         double total;
 
-        total = aprobadas;
+        total = aprobadas - (reprobadas / 4.0);
         total = Math.floor(total);
 
         if (total < 0) {
@@ -401,7 +219,7 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
 
         //TOTALES
         double total_pd;
-        total_pd = subtotal_pd_t1 + subtotal_pd_t2 + subtotal_pd_t3 + subtotal_pd_t4 + subtotal_pd_t5 + subtotal_pd_t6;
+        total_pd = subtotal_pd_t1;
 
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
 
@@ -456,12 +274,6 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
             for (Integer[] item : perc) {
                 if (pd_total == item[0]) {
                     return item[0];
-                } else if (pd_total - 1 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 2 == item[0]) {
-                    return item[0];
-                } else if (pd_total - 3 == item[0]) {
-                    return item[0];
                 }
             }
         }
@@ -475,9 +287,9 @@ public class ExactitudLectora extends AppCompatActivity implements EvaluaInterfa
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_EXACTITUD_LECTORA), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_SERIES), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_EXACTITUD_LECTORA) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_SERIES) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:30                                                 -
+ Last modified 01-07-20 1:44                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo4;
@@ -33,7 +33,7 @@ public class ComprencionLectoraTest {
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private ComprensionLectora m1;
+    private ComprensionLectoraE1M4 m1;
 
     public ComprencionLectoraTest(double pd_total, double percentil_esperado,
                                   double desviacion_esperada) {
@@ -80,7 +80,7 @@ public class ComprencionLectoraTest {
 
     @Before
     public void setUp() {
-        m1 = new ComprensionLectora();
+        m1 = new ComprensionLectoraE1M4();
     }
 
     @Test

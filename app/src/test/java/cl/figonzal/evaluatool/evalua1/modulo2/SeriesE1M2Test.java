@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:28                                                 -
+ Last modified 01-07-20 0:47                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo2;
@@ -27,17 +27,17 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class SeriesTest {
+public class SeriesE1M2Test {
 
     private static final double DESVIACION = 8.00;
     private static final double MEDIA = 14.50;
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private Series m1;
+    private SeriesE1M2 m1;
 
-    public SeriesTest(double pd_total, double percentil_esperado,
-                      double desviacion_esperada) {
+    public SeriesE1M2Test(double pd_total, double percentil_esperado,
+                          double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
@@ -79,7 +79,7 @@ public class SeriesTest {
 
     @Before
     public void setUp() {
-        m1 = new Series();
+        m1 = new SeriesE1M2();
     }
 
     @Test

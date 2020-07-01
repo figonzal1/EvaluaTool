@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 17:21                                                 -
+ Last modified 01-07-20 2:22                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo5;
+package cl.figonzal.evaluatool.evalua1.modulo6;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -31,7 +31,6 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
-import java.util.Locale;
 import java.util.Objects;
 
 import cl.figonzal.evaluatool.R;
@@ -39,43 +38,47 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterface {
+public class CalculoNumeracionE1M6 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 7.57;
-    private static final double MEDIA = 14.59;
-    //PD,PC CHILE
+    private static final double DESVIACION = 8.83;
+    private static final double MEDIA = 31.08;
     private final Integer[][] perc = new Integer[][]{
-            {28, 99},
-            {27, 97},
-            {26, 95},
-            {25, 90},
-            {24, 87},
-            {23, 85},
-            {22, 82},
-            {21, 80},
-            {20, 75},
-            {19, 65},
-            {18, 60},
-            {17, 55},
-            {16, 52},
-            {15, 50},
-            {13, 45},
-            {11, 40},
-            {10, 35},
-            {8, 30},
-            {6, 25},
-            {5, 20},
-            {4, 15},
-            {3, 10}
-
+            {47, 99},
+            {46, 97},
+            {45, 95},
+            {44, 90},
+            {43, 85},
+            {42, 82},
+            {41, 80},
+            {40, 77},
+            {39, 75},
+            {38, 70},
+            {37, 67},
+            {36, 62},
+            {35, 60},
+            {34, 57},
+            {33, 55},
+            {32, 50},
+            {31, 45},
+            {30, 40},
+            {29, 35},
+            {28, 32},
+            {27, 30},
+            {26, 27},
+            {25, 25},
+            {21, 20},
+            {19, 15},
+            {16, 10},
+            {13, 5},
+            {10, 1}
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
-    private TextView tv_sub_total_t1;
     private int aprobadas_t1 = 0;
-    private double subtotal_pd_t1 = 0;
-
-    //Tetview para total
+    //SUBTOTALES
+    private TextView tv_sub_total_t1;
+    private double total_pd_t1 = 0;
+    //TOTAL
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
     private TextView tv_percentil;
@@ -88,7 +91,7 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ortografia_visual);
+        setContentView(R.layout.activity_calculo_numeracion_e1_m6);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -99,29 +102,25 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_ORTOGRAFIA_VISUAL));
+        actionBar.setTitle(getString(R.string.TOOLBAR_CALC_NUMERACION));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
     }
 
-    /**
-     * Funcion encargada de instanciar los recursos de la interfaz gráfica
-     */
     private void instanciarRecursosInterfaz() {
 
-        //Promedio y desviacion
         TextView tv_media = findViewById(R.id.tv_media_value);
         TextView tv_desviacion = findViewById(R.id.tv_desviacion_value);
         tv_media.setText(String.valueOf(MEDIA));
         tv_desviacion.setText(String.valueOf(DESVIACION));
 
-        //TAREA 1
+        //SUBTOTALES
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
 
-        //TOTAL
+        //TOTALES
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
         tv_pd_corregido = findViewById(R.id.tv_pd_total_corregido_value);
         tv_percentil = findViewById(R.id.tv_percentil_value);
@@ -143,59 +142,59 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
         });
     }
 
-    /**
-     * Funcion encargada de la logica de los TextWatcher de la tarea 1
-     */
     private void textWatcherTarea1() {
         et_aprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t1 = 0;
+                total_pd_t1 = 0;
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
-
             }
 
             @Override
             public void afterTextChanged(Editable s) {
+
                 if (s.length() == 0) {
                     aprobadas_t1 = 0;
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, null);
+                total_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tareas: ", aprobadas_t1, null, null);
                 calcularResultado();
             }
         });
-
     }
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
+        //FORMULA PARA RAZONAMIENTO DEDUCTIVO
         double total = aprobadas;
+        //Aproximacion piso
         total = Math.floor(total);
 
         if (total < 0) {
             total = 0;
         }
 
-        tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
+        tv_sub_total.setText(String.format("%s%s pts", tarea, total));
         return total;
     }
 
     @Override
     public void calcularResultado() {
 
+        //TOTALES
         double total_pd;
-        total_pd = subtotal_pd_t1;
+        total_pd = total_pd_t1;
 
-        tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
+        tv_pd_total.setText(String.format("%s pts", total_pd));
 
         double pd_corregido = corregirPD(perc, total_pd);
         tv_pd_corregido.setText(String.format("%s pts", pd_corregido));
+
         int percentil = calcularPercentil(pd_corregido);
         tv_percentil.setText(String.valueOf(percentil));
 
@@ -211,20 +210,12 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
         tv_desviacion_calculada.setText(String.valueOf(desviacion));
     }
 
-    /**
-     * Tabla percentil
-     *
-     * @param pd_total Puntaje directo total obtenido
-     * @return Percentil del alumno
-     */
+    @Override
     public int calcularPercentil(double pd_total) {
 
-        //Limite superior
         if (pd_total > perc[0][0]) {
             return perc[0][1];
-        }
-        //Limite inferior
-        else if (pd_total < perc[perc.length - 1][0]) {
+        } else if (pd_total < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][1];
         } else {
             for (Integer[] item : perc) {
@@ -233,7 +224,6 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
                 }
             }
         }
-
         //Percentil no encontrado
         Log.d(getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
 
@@ -254,9 +244,13 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
             for (Integer[] item : perc) {
                 if (pd_actual == item[0]) {
                     return item[0];
-                } else if (pd_actual - 1 == item[0]) {
+                } else if ((pd_actual - 1) == item[0]) {
                     return item[0];
-                } else if (pd_actual - 2 == item[0]) {
+                } else if ((pd_actual - 2) == item[0]) {
+                    return item[0];
+                } else if ((pd_actual - 3) == item[0]) {
+                    return item[0];
+                } else if ((pd_actual - 4) == item[0]) {
                     return item[0];
                 }
             }
@@ -270,9 +264,9 @@ public class OrtografiaVisual extends AppCompatActivity implements EvaluaInterfa
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Log.d(getString(R.string.TAG_ORT_VIS), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_CALCU_NUMERACION), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_ORT_VIS) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_CALCU_NUMERACION) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

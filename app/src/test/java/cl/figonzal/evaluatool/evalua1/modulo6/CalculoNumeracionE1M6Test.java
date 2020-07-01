@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:16                                                 -
+ Last modified 01-07-20 2:22                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo1;
+package cl.figonzal.evaluatool.evalua1.modulo6;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,17 +26,16 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class MemoriaAtencionTest {
-
-    private static final double DESVIACION = 12.90;
-    private static final double MEDIA = 49.39;
+public class CalculoNumeracionE1M6Test {
+    private static final double DESVIACION = 8.83;
+    private static final double MEDIA = 31.08;
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private MemoriaAtencion m1;
+    private CalculoNumeracionE1M6 m1;
 
-    public MemoriaAtencionTest(double pd_total, double percentil_esperado,
-                               double desviacion_esperada) {
+    public CalculoNumeracionE1M6Test(double pd_total, double percentil_esperado,
+                                     double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
@@ -45,51 +44,46 @@ public class MemoriaAtencionTest {
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {68, 99, 1.44},
-                {67, 97, 1.37},
-                {66, 95, 1.29},
-                {65, 93, 1.21},
-                {64, 90, 1.13},
-                {63, 87, 1.06},
-                {62, 85, 0.98},
-                {61, 80, 0.9},
-                {60, 75, 0.82},
-                {59, 72, 0.74},
-                {58, 70, 0.67},
-                {57, 65, 0.59},
-                {56, 62, 0.51},
-                {55, 60, 0.43},
-                {54, 57, 0.36},
-                {53, 55, 0.28},
-                {52, 52, 0.2},
-                {51, 50, 0.12},
-                {50, 47, 0.05},
-                {49, 45, -0.03},
-                {48, 43, -0.11},
-                {47, 40, -0.19},
-                {46, 37, -0.26},
-                {45, 35, -0.34},
-                {44, 32, -0.42},
-                {43, 30, -0.5},
-                {40, 25, -0.73},
-                {37, 20, -0.96},
-                {34, 15, -1.19},
-                {31, 10, -1.43},
-                {28, 7, -1.66},
-                {25, 5, -1.89},
-                {22, 1, -2.12},
-
+                {47, 99, 1.8},
+                {46, 97, 1.69},
+                {45, 95, 1.58},
+                {44, 90, 1.46},
+                {43, 85, 1.35},
+                {42, 82, 1.24},
+                {41, 80, 1.12},
+                {40, 77, 1.01},
+                {39, 75, 0.9},
+                {38, 70, 0.78},
+                {37, 67, 0.67},
+                {36, 62, 0.56},
+                {35, 60, 0.44},
+                {34, 57, 0.33},
+                {33, 55, 0.22},
+                {32, 50, 0.1},
+                {31, 45, -0.01},
+                {30, 40, -0.12},
+                {29, 35, -0.24},
+                {28, 32, -0.35},
+                {27, 30, -0.46},
+                {26, 27, -0.58},
+                {25, 25, -0.69},
+                {21, 20, -1.14},
+                {19, 15, -1.37},
+                {16, 10, -1.71},
+                {13, 5, -2.05},
+                {10, 1, -2.39},
 
                 //LIMITES
-                {21, 1, -2.2},
-                {69, 99, 1.52}
+                {9, 1, -2.5},
+                {48, 99, 1.92}
+
 
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new MemoriaAtencion();
+        m1 = new CalculoNumeracionE1M6();
     }
 
     @Test

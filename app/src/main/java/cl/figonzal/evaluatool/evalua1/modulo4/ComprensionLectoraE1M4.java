@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 15:47                                                 -
+ Last modified 01-07-20 1:44                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo6;
+package cl.figonzal.evaluatool.evalua1.modulo4;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -31,6 +31,7 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
+import java.util.Locale;
 import java.util.Objects;
 
 import cl.figonzal.evaluatool.R;
@@ -38,47 +39,60 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterface {
+public class ComprensionLectoraE1M4 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 8.83;
-    private static final double MEDIA = 31.08;
+    private static final double DESVIACION = 8.25;
+    private static final double MEDIA = 40.23;
     private final Integer[][] perc = new Integer[][]{
-            {47, 99},
-            {46, 97},
-            {45, 95},
-            {44, 90},
-            {43, 85},
-            {42, 82},
-            {41, 80},
-            {40, 77},
-            {39, 75},
-            {38, 70},
-            {37, 67},
-            {36, 62},
-            {35, 60},
-            {34, 57},
-            {33, 55},
-            {32, 50},
-            {31, 45},
-            {30, 40},
-            {29, 35},
-            {28, 32},
-            {27, 30},
-            {26, 27},
-            {25, 25},
-            {21, 20},
-            {19, 15},
-            {16, 10},
-            {13, 5},
+            {49, 95},
+            {48, 85},
+            {47, 75},
+            {46, 70},
+            {45, 65},
+            {44, 60},
+            {43, 55},
+            {42, 50},
+            {41, 45},
+            {40, 42},
+            {39, 40},
+            {38, 37},
+            {37, 35},
+            {36, 32},
+            {35, 30},
+            {34, 27},
+            {33, 25},
+            {32, 20},
+            {31, 15},
+            {30, 10},
+            {25, 7},
+            {20, 5},
+            {15, 3},
             {10, 1}
+
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
+    private TextInputEditText et_omitidas_t1;
+    private TextInputEditText et_reprobadas_t1;
     private int aprobadas_t1 = 0;
+    private int omitidas_t1 = 0;
+    private int reprobadas_t1 = 0;
+
+    //TAREA 2
+    private TextInputEditText et_aprobadas_t2;
+    private int aprobadas_t2 = 0;
+    //TAREA 3
+    private TextInputEditText et_aprobadas_t3;
+    private int aprobadas_t3 = 0;
+
     //SUBTOTALES
     private TextView tv_sub_total_t1;
-    private double total_pd_t1 = 0;
-    //TOTAL
+    private TextView tv_sub_total_t2;
+    private TextView tv_sub_total_t3;
+    private double subtotal_pd_t1 = 0;
+    private double subtotal_pd_t2 = 0;
+    private double subtotal_pd_t3 = 0;
+
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
     private TextView tv_percentil;
@@ -91,7 +105,7 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculo_numeracion3);
+        setContentView(R.layout.activity_comprension_lectora_e1_m4);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -102,25 +116,44 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_CALC_NUMERACION));
+        actionBar.setTitle(getString(R.string.TOOLBAR_COMPREN_LECTORA));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
+
+        textWatcherTarea2();
+
+        textWatcherTarea3();
     }
 
+    /**
+     * Funcion encargada de instanciar los recursos de la interfaz gráfica
+     */
     private void instanciarRecursosInterfaz() {
 
+        //Promedio y desviacion
+        //TetView desviacion y media
         TextView tv_media = findViewById(R.id.tv_media_value);
         TextView tv_desviacion = findViewById(R.id.tv_desviacion_value);
         tv_media.setText(String.valueOf(MEDIA));
         tv_desviacion.setText(String.valueOf(DESVIACION));
 
-        //SUBTOTALES
+        //TAREA 1
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
+        et_omitidas_t1 = findViewById(R.id.et_omitidas_t1);
+        et_reprobadas_t1 = findViewById(R.id.et_reprobadas_t1);
 
-        //TOTALES
+        //TAREA 2
+        tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
+        et_aprobadas_t2 = findViewById(R.id.et_aprobadas_t2);
+
+        //TAREA 3
+        tv_sub_total_t3 = findViewById(R.id.tv_pd_subtotal_t3);
+        et_aprobadas_t3 = findViewById(R.id.et_aprobadas_t3);
+
+        //TOTAL
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
         tv_pd_corregido = findViewById(R.id.tv_pd_total_corregido_value);
         tv_percentil = findViewById(R.id.tv_percentil_value);
@@ -140,13 +173,42 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
             dialogFragment.setCancelable(false);
             dialogFragment.show(getSupportFragmentManager(), getString(R.string.DIALOGO_AYUDA));
         });
+
     }
 
+    /**
+     * Funcion encargada de la logica de los TextWatcher de la tarea 1
+     */
     private void textWatcherTarea1() {
+
         et_aprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                total_pd_t1 = 0;
+                subtotal_pd_t1 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    aprobadas_t1 = 0;
+                } else if (s.length() > 0) {
+                    aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
+                }
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                calcularResultado();
+            }
+        });
+
+        et_omitidas_t1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t1 = 0;
             }
 
             @Override
@@ -156,13 +218,87 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
 
             @Override
             public void afterTextChanged(Editable s) {
-
                 if (s.length() == 0) {
-                    aprobadas_t1 = 0;
+                    omitidas_t1 = 0;
                 } else if (s.length() > 0) {
-                    aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
+                    omitidas_t1 = Integer.parseInt(Objects.requireNonNull(et_omitidas_t1.getText()).toString());
                 }
-                total_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tareas: ", aprobadas_t1, null, null);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                calcularResultado();
+            }
+        });
+
+        et_reprobadas_t1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t1 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    reprobadas_t1 = 0;
+                } else if (s.length() > 0) {
+                    reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
+                }
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, omitidas_t1, reprobadas_t1);
+                calcularResultado();
+            }
+        });
+    }
+
+    private void textWatcherTarea2() {
+        et_aprobadas_t2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t2 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    aprobadas_t2 = 0;
+                } else if (s.length() > 0) {
+                    aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
+                }
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, null);
+                calcularResultado();
+            }
+        });
+    }
+
+    private void textWatcherTarea3() {
+        et_aprobadas_t3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t3 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    aprobadas_t3 = 0;
+                } else if (s.length() > 0) {
+                    aprobadas_t3 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t3.getText()).toString());
+                }
+                subtotal_pd_t3 = calcularTarea(2, tv_sub_total_t3, "Tarea 3: ", aprobadas_t3, null, null);
                 calcularResultado();
             }
         });
@@ -170,16 +306,23 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
-        //FORMULA PARA RAZONAMIENTO DEDUCTIVO
-        double total = aprobadas;
-        //Aproximacion piso
-        total = Math.floor(total);
+        double total = 0;
+
+        if (n_tarea == 1) {
+            total = aprobadas - (reprobadas + omitidas);
+            total = Math.floor(total);
+        } else if (n_tarea == 2) {
+            total = aprobadas;
+        } else if (n_tarea == 3) {
+            total = aprobadas * 2;
+        }
 
         if (total < 0) {
             total = 0;
         }
 
-        tv_sub_total.setText(String.format("%s%s pts", tarea, total));
+        tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
+
         return total;
     }
 
@@ -188,13 +331,12 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
 
         //TOTALES
         double total_pd;
-        total_pd = total_pd_t1;
+        total_pd = subtotal_pd_t1 + subtotal_pd_t2 + subtotal_pd_t3;
 
-        tv_pd_total.setText(String.format("%s pts", total_pd));
+        tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
 
         double pd_corregido = corregirPD(perc, total_pd);
         tv_pd_corregido.setText(String.format("%s pts", pd_corregido));
-
         int percentil = calcularPercentil(pd_corregido);
         tv_percentil.setText(String.valueOf(percentil));
 
@@ -232,25 +374,27 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
     }
 
     @Override
-    public double corregirPD(Integer[][] perc, double pd_actual) {
-        if (pd_actual < 0) {
+    public double corregirPD(Integer[][] perc, double pd_total) {
+        if (pd_total < 0) {
             return 0;
-        } else if (pd_actual > perc[0][0]) {
+        } else if (pd_total > perc[0][0]) {
             return perc[0][0];
-        } else if (pd_actual < perc[perc.length - 1][0]) {
+        } else if (pd_total < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][0];
         } else {
             //Verificar si pd_actual esta en la lista
             for (Integer[] item : perc) {
-                if (pd_actual == item[0]) {
+                if (pd_total == item[0]) {
                     return item[0];
-                } else if ((pd_actual - 1) == item[0]) {
+                } else if (pd_total - 1 == item[0]) {
                     return item[0];
-                } else if ((pd_actual - 2) == item[0]) {
+                } else if (pd_total - 2 == item[0]) {
                     return item[0];
-                } else if ((pd_actual - 3) == item[0]) {
+                } else if (pd_total - 3 == item[0]) {
                     return item[0];
-                } else if ((pd_actual - 4) == item[0]) {
+                } else if (pd_total - 4 == item[0]) {
+                    return item[0];
+                } else if (pd_total - 5 == item[0]) {
                     return item[0];
                 }
             }
@@ -264,9 +408,10 @@ public class CalculoNumeracion extends AppCompatActivity implements EvaluaInterf
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Log.d(getString(R.string.TAG_CALCU_NUMERACION), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_CALCU_NUMERACION) + getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_COMPREN_LECTORA), getString(R.string.ACTIVIDAD_CERRADA));
+
+            crashlytics.log(getString(R.string.TAG_COMPREN_LECTORA) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

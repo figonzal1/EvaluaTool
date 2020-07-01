@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:32                                                 -
+ Last modified 01-07-20 1:44                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo4;
@@ -26,17 +26,17 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ExactitudLectoraTest {
+public class ExactitudLectoraE1M4Test {
 
     private static final double DESVIACION = 25.02;
     private static final double MEDIA = 98.38;
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private ExactitudLectora m1;
+    private ExactitudLectoraE1M4 m1;
 
-    public ExactitudLectoraTest(double pd_total, double percentil_esperado,
-                                double desviacion_esperada) {
+    public ExactitudLectoraE1M4Test(double pd_total, double percentil_esperado,
+                                    double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
@@ -90,7 +90,7 @@ public class ExactitudLectoraTest {
 
     @Before
     public void setUp() {
-        m1 = new ExactitudLectora();
+        m1 = new ExactitudLectoraE1M4();
     }
 
     @Test
