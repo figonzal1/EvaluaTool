@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 18:20                                                 -
+ Last modified 01-07-20 18:39                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7;
@@ -33,17 +33,17 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracion;
-import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivo;
-import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacial;
-import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoInductivo;
-import cl.figonzal.evaluatool.evalua7.modulo4.ComprensionLectora;
-import cl.figonzal.evaluatool.evalua7.modulo4.EficaciaLectora;
-import cl.figonzal.evaluatool.evalua7.modulo4.VelocidadLectora;
-import cl.figonzal.evaluatool.evalua7.modulo5.ExpresionEscrita;
-import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaFonetica;
-import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaVisualReglada;
-import cl.figonzal.evaluatool.evalua7.modulo6.CalculoNumeracion;
+import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracionE7M1;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivoE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacialE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoInductivoE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo4.ComprensionLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo4.EficaciaLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo4.VelocidadLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo5.ExpresionEscritaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaFoneticaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaVisualRegladaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo6.CalculoNumeracionE7M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -155,7 +155,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
                 abrirActividad(
-                        this, AtencionConcentracion.class,
+                        this, AtencionConcentracionE7M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ATEN_CONCENTRACION)
                 );
@@ -165,7 +165,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
                 abrirActividad(
                         this,
-                        RazonamientoDeductivo.class,
+                        RazonamientoDeductivoE7M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_RAZON_DEDUCTIVO)
                 );
@@ -173,7 +173,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        RazonamientoInductivo.class,
+                        RazonamientoInductivoE7M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_RAZON_INDUCTIVO)
                 );
@@ -181,7 +181,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        RazonamientoEspacial.class,
+                        RazonamientoEspacialE7M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_RAZON_ESPACIAL)
                 );
@@ -191,7 +191,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        EficaciaLectora.class,
+                        EficaciaLectoraE7M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_EFICACIA_LECTORA)
                 );
@@ -199,7 +199,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ComprensionLectora.class,
+                        ComprensionLectoraE7M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPRENSION_LECTORA)
                 );
@@ -207,7 +207,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        VelocidadLectora.class,
+                        VelocidadLectoraE7M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VELOCIDAD_LECTORA)
                 );
@@ -217,7 +217,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrtografiaFonetica.class,
+                        OrtografiaFoneticaE7M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
                 );
@@ -225,14 +225,14 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ExpresionEscrita.class,
+                        ExpresionEscritaE7M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_EXP_ESCRITA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        OrtografiaVisualReglada.class,
+                        OrtografiaVisualRegladaE7M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORT_VIS_REGLADA)
                 );
@@ -243,7 +243,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        CalculoNumeracion.class,
+                        CalculoNumeracionE7M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_NUMERACION)
                 );
