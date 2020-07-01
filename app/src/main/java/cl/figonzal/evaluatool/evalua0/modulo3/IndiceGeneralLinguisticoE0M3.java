@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 21:53                                                 -
+ Last modified 01-07-20 0:05                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo3;
@@ -55,7 +55,7 @@ public class IndiceGeneralLinguisticoE0M3 extends AppCompatActivity implements V
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_indice_general_linguistico);
+        setContentView(R.layout.activity_indice_general_linguistico_e0_m3);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
