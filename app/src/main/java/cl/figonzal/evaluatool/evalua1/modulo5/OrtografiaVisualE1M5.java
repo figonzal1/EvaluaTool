@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-04-20 19:17                                                 -
+ Last modified 01-07-20 2:22                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo2;
+package cl.figonzal.evaluatool.evalua1.modulo5;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -39,56 +39,56 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class Clasificaciones extends AppCompatActivity implements EvaluaInterface {
+public class OrtografiaVisualE1M5 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 4.87;
-    private static final double MEDIA = 8.80;
+    private static final double DESVIACION = 7.57;
+    private static final double MEDIA = 14.59;
+    //PD,PC CHILE
     private final Integer[][] perc = new Integer[][]{
-            {20, 99},
-            {19, 98},
-            {18, 97},
-            {17, 95},
-            {16, 92},
-            {15, 90},
-            {14, 85},
-            {13, 80},
-            {12, 70},
-            {11, 65},
-            {10, 55},
-            {9, 50},
-            {8, 45},
-            {7, 40},
-            {6, 30},
-            {5, 25},
-            {4, 20},
-            {3, 15},
-            {2, 10},
-            {1, 5},
-            {0, 1}
+            {28, 99},
+            {27, 97},
+            {26, 95},
+            {25, 90},
+            {24, 87},
+            {23, 85},
+            {22, 82},
+            {21, 80},
+            {20, 75},
+            {19, 65},
+            {18, 60},
+            {17, 55},
+            {16, 52},
+            {15, 50},
+            {13, 45},
+            {11, 40},
+            {10, 35},
+            {8, 30},
+            {6, 25},
+            {5, 20},
+            {4, 15},
+            {3, 10}
+
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
-    private TextInputEditText et_reprobadas_t1;
-    private int aprobadas_t1 = 0;
-    private int reprobadas_t1 = 0;
-
-    //SUBTOTALES
     private TextView tv_sub_total_t1;
-
+    private int aprobadas_t1 = 0;
     private double subtotal_pd_t1 = 0;
 
+    //Tetview para total
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
     private TextView tv_percentil;
     private TextView tv_nivel;
     private TextView tv_desviacion_calculada;
     private ProgressBar progressBar;
+
     private FirebaseCrashlytics crashlytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clasificaciones);
+        setContentView(R.layout.activity_ortografia_visual_e1_m5);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -99,7 +99,7 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_CLASIFICACION));
+        actionBar.setTitle(getString(R.string.TOOLBAR_ORTOGRAFIA_VISUAL));
 
         instanciarRecursosInterfaz();
 
@@ -112,7 +112,6 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
     private void instanciarRecursosInterfaz() {
 
         //Promedio y desviacion
-        //TetView desviacion y media
         TextView tv_media = findViewById(R.id.tv_media_value);
         TextView tv_desviacion = findViewById(R.id.tv_desviacion_value);
         tv_media.setText(String.valueOf(MEDIA));
@@ -121,7 +120,6 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         //TAREA 1
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
-        et_reprobadas_t1 = findViewById(R.id.et_reprobadas_t1);
 
         //TOTAL
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
@@ -149,7 +147,6 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
      * Funcion encargada de la logica de los TextWatcher de la tarea 1
      */
     private void textWatcherTarea1() {
-
         et_aprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -169,40 +166,16 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, null);
                 calcularResultado();
             }
         });
 
-        et_reprobadas_t1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                subtotal_pd_t1 = 0;
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                if (s.length() == 0) {
-                    reprobadas_t1 = 0;
-                } else if (s.length() > 0) {
-                    reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
-                }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
-                calcularResultado();
-            }
-        });
     }
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
-        double total;
-
-        total = aprobadas - (reprobadas / 4.0);
+        double total = aprobadas;
         total = Math.floor(total);
 
         if (total < 0) {
@@ -210,14 +183,12 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         }
 
         tv_sub_total.setText(String.format(Locale.US, "%s%s pts", tarea, total));
-
         return total;
     }
 
     @Override
     public void calcularResultado() {
 
-        //TOTALES
         double total_pd;
         total_pd = subtotal_pd_t1;
 
@@ -240,12 +211,20 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         tv_desviacion_calculada.setText(String.valueOf(desviacion));
     }
 
-    @Override
+    /**
+     * Tabla percentil
+     *
+     * @param pd_total Puntaje directo total obtenido
+     * @return Percentil del alumno
+     */
     public int calcularPercentil(double pd_total) {
 
+        //Limite superior
         if (pd_total > perc[0][0]) {
             return perc[0][1];
-        } else if (pd_total < perc[perc.length - 1][0]) {
+        }
+        //Limite inferior
+        else if (pd_total < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][1];
         } else {
             for (Integer[] item : perc) {
@@ -254,6 +233,7 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
                 }
             }
         }
+
         //Percentil no encontrado
         Log.d(getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO));
 
@@ -262,17 +242,21 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
     }
 
     @Override
-    public double corregirPD(Integer[][] perc, double pd_total) {
-        if (pd_total < 0) {
+    public double corregirPD(Integer[][] perc, double pd_actual) {
+        if (pd_actual < 0) {
             return 0;
-        } else if (pd_total > perc[0][0]) {
+        } else if (pd_actual > perc[0][0]) {
             return perc[0][0];
-        } else if (pd_total < perc[perc.length - 1][0]) {
+        } else if (pd_actual < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][0];
         } else {
             //Verificar si pd_actual esta en la lista
             for (Integer[] item : perc) {
-                if (pd_total == item[0]) {
+                if (pd_actual == item[0]) {
+                    return item[0];
+                } else if (pd_actual - 1 == item[0]) {
+                    return item[0];
+                } else if (pd_actual - 2 == item[0]) {
                     return item[0];
                 }
             }
@@ -286,10 +270,9 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
+            Log.d(getString(R.string.TAG_ORT_VIS), getString(R.string.ACTIVIDAD_CERRADA));
 
-            Log.d(getString(R.string.TAG_SERIES), getString(R.string.ACTIVIDAD_CERRADA));
-
-            crashlytics.log(getString(R.string.TAG_SERIES) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_ORT_VIS) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

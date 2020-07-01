@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:24                                                 -
+ Last modified 01-07-20 1:04                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo2;
@@ -26,17 +26,17 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class OrganizacionPerceptivaTest {
+public class OrganizacionPerceptivaE1M2Test {
 
     private static final double DESVIACION = 11.36;
     private static final double MEDIA = 38.01;
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private OrganizacionPerceptiva m1;
+    private OrganizacionPerceptivaE1M2 m1;
 
-    public OrganizacionPerceptivaTest(double pd_total, double percentil_esperado,
-                                      double desviacion_esperada) {
+    public OrganizacionPerceptivaE1M2Test(double pd_total, double percentil_esperado,
+                                          double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
@@ -85,7 +85,7 @@ public class OrganizacionPerceptivaTest {
 
     @Before
     public void setUp() {
-        m1 = new OrganizacionPerceptiva();
+        m1 = new OrganizacionPerceptivaE1M2();
     }
 
     @Test
