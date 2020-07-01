@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-04-20 15:38                                                 -
+ Last modified 01-07-20 1:44                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo4;
@@ -33,7 +33,7 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class ValoracionGlobalLectura extends AppCompatActivity implements ValoracionInterface {
+public class ValoracionGlobalLecturaE1M4 extends AppCompatActivity implements ValoracionInterface {
 
     //TAREA 1
     private TextInputEditText et_totales_t1;
@@ -52,7 +52,7 @@ public class ValoracionGlobalLectura extends AppCompatActivity implements Valora
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valoracion_global_lectura2);
+        setContentView(R.layout.activity_valoracion_global_lectura_e1_m4);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 

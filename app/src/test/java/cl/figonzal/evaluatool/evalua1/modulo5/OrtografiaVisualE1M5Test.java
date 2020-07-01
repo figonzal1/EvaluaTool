@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 15-04-20 21:19                                                 -
+ Last modified 01-07-20 2:22                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua1.modulo2;
+package cl.figonzal.evaluatool.evalua1.modulo5;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,17 +26,17 @@ import cl.figonzal.evaluatool.Utilidades;
 import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
-public class ClasificacionesTest {
+public class OrtografiaVisualE1M5Test {
 
-    private static final double DESVIACION = 4.87;
-    private static final double MEDIA = 8.80;
+    private static final double DESVIACION = 7.57;
+    private static final double MEDIA = 14.59;
     private final double percentil_esperado;
     private final double pd_total;
     private final double desviacion_esperada;
-    private Clasificaciones m1;
+    private OrtografiaVisualE1M5 m1;
 
-    public ClasificacionesTest(double pd_total, double percentil_esperado,
-                               double desviacion_esperada) {
+    public OrtografiaVisualE1M5Test(double pd_total, double percentil_esperado,
+                                    double desviacion_esperada) {
         this.percentil_esperado = percentil_esperado;
         this.pd_total = pd_total;
         this.desviacion_esperada = desviacion_esperada;
@@ -45,38 +45,39 @@ public class ClasificacionesTest {
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {20, 99, 2.3},
-                {19, 98, 2.09},
-                {18, 97, 1.89},
-                {17, 95, 1.68},
-                {16, 92, 1.48},
-                {15, 90, 1.27},
-                {14, 85, 1.07},
-                {13, 80, 0.86},
-                {12, 70, 0.66},
-                {11, 65, 0.45},
-                {10, 55, 0.25},
-                {9, 50, 0.04},
-                {8, 45, -0.16},
-                {7, 40, -0.37},
-                {6, 30, -0.57},
-                {5, 25, -0.78},
-                {4, 20, -0.99},
-                {3, 15, -1.19},
-                {2, 10, -1.4},
-                {1, 5, -1.6},
-                {0, 1, -1.81},
+                {28, 99, 1.77},
+                {27, 97, 1.64},
+                {26, 95, 1.51},
+                {25, 90, 1.38},
+                {24, 87, 1.24},
+                {23, 85, 1.11},
+                {22, 82, 0.98},
+                {21, 80, 0.85},
+                {20, 75, 0.71},
+                {19, 65, 0.58},
+                {18, 60, 0.45},
+                {17, 55, 0.32},
+                {16, 52, 0.19},
+                {15, 50, 0.05},
+                {13, 45, -0.21},
+                {11, 40, -0.47},
+                {10, 35, -0.61},
+                {8, 30, -0.87},
+                {6, 25, -1.13},
+                {5, 20, -1.27},
+                {4, 15, -1.4},
+                {3, 10, -1.53},
 
                 //LIMITE
-                {-1, 1, -2.01},
-                {21, 99, 2.51}
+                {2, 10, -1.66},
+                {29, 99, 1.9}
 
         });
     }
 
     @Before
     public void setUp() {
-        m1 = new Clasificaciones();
+        m1 = new OrtografiaVisualE1M5();
     }
 
     @Test

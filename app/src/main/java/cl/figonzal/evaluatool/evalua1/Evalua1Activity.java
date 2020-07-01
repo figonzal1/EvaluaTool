@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 22:49                                                 -
+ Last modified 01-07-20 2:22                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -33,17 +33,17 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencion;
-import cl.figonzal.evaluatool.evalua1.modulo2.Clasificaciones;
-import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptiva;
-import cl.figonzal.evaluatool.evalua1.modulo2.Series;
-import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionGlobalBases;
-import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectora;
-import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectora;
-import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLectura;
-import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFonetica;
-import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisual;
-import cl.figonzal.evaluatool.evalua1.modulo6.CalculoNumeracion;
+import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencionE1M1;
+import cl.figonzal.evaluatool.evalua1.modulo2.ClasificacionesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptivaE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.SeriesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionGlobalBasesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectoraE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectoraE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLecturaE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFoneticaE1M5;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisualE1M5;
+import cl.figonzal.evaluatool.evalua1.modulo6.CalculoNumeracionE1M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -122,7 +122,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        MemoriaAtencion.class,
+                        MemoriaAtencionE1M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_ATENCION)
                 );
@@ -135,7 +135,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        Series.class,
+                        SeriesE1M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_SERIES)
                 );
@@ -143,7 +143,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        Clasificaciones.class,
+                        ClasificacionesE1M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
@@ -151,7 +151,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrganizacionPerceptiva.class,
+                        OrganizacionPerceptivaE1M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
@@ -159,7 +159,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ValoracionGlobalBases.class,
+                        ValoracionGlobalBasesE1M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
@@ -172,21 +172,21 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ComprensionLectora.class,
+                        ComprensionLectoraE1M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPRENSION_LECTORA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
                 abrirActividad(
                         this,
-                        ExactitudLectora.class,
+                        ExactitudLectoraE1M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_EXACTITUD_LECTORA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        ValoracionGlobalLectura.class,
+                        ValoracionGlobalLecturaE1M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
@@ -199,7 +199,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrtografiaFonetica.class,
+                        OrtografiaFoneticaE1M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
                 );
@@ -207,7 +207,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrtografiaVisual.class,
+                        OrtografiaVisualE1M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
                 );
@@ -220,7 +220,7 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        CalculoNumeracion.class,
+                        CalculoNumeracionE1M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_NUMERACION)
                 );
