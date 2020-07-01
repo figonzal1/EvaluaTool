@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-06-20 21:53                                                ~
+  Last modified 30-06-20 22:30                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -293,12 +293,14 @@
     <string name="media">Media</string>
     <string name="estadisticos">Estadísticos</string>
     <string name="pd_subtotales">PD subtotales</string>
+    <string name="pc_subtotales">PC subtotales</string>
     <string name="tarea_1_0_pts">Tarea 1: 0 pts</string>
     <string name="tarea_2_0_pts">Tarea 2: 0 pts</string>
     <string name="pd_total">PD Total</string>
+    <string name="pc_total">PC Total</string>
     <string name="_0_pts">0 pts</string>
     <string name="pd_total_corregido">PD Total corregido</string>
-    <string name="percentil_calculado">Percentil calculado</string>
+    <string name="puntaje_centil">Puntaje Centil</string>
     <string name="nivel_obtenido">Nivel obtenido</string>
     <string name="guion_bajo">-</string>
     <string name="puntaje_tipificado">Puntaje Tipificado</string>

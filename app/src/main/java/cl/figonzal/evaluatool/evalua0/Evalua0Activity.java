@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 21:53                                                 -
+ Last modified 01-07-20 0:05                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0;
@@ -33,19 +33,19 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua0.modulo1.Clasificacion;
+import cl.figonzal.evaluatool.evalua0.modulo1.ClasificacionE0M1;
 import cl.figonzal.evaluatool.evalua0.modulo1.IndiceGeneralCognitivoE0M1;
-import cl.figonzal.evaluatool.evalua0.modulo1.LetrasYNumeros;
-import cl.figonzal.evaluatool.evalua0.modulo1.MemoriaVerbal;
-import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptiva;
-import cl.figonzal.evaluatool.evalua0.modulo1.Series;
-import cl.figonzal.evaluatool.evalua0.modulo2.CopiaDibujos;
-import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidad;
+import cl.figonzal.evaluatool.evalua0.modulo1.LetrasYNumerosE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.MemoriaVerbalE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptivaE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.SeriesE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo2.CopiaDibujosE0M2;
+import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidadE0M2;
 import cl.figonzal.evaluatool.evalua0.modulo2.IndiceGeneralEspacialE0M2;
-import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicas;
+import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicasE0M3;
 import cl.figonzal.evaluatool.evalua0.modulo3.IndiceGeneralLinguisticoE0M3;
-import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrases;
-import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacion;
+import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrasesE0M3;
+import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -121,7 +121,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        Clasificacion.class,
+                        ClasificacionE0M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
@@ -129,7 +129,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        Series.class,
+                        SeriesE0M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_SERIES)
                 );
@@ -137,7 +137,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        OrganizacionPerceptiva.class,
+                        OrganizacionPerceptivaE0M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
@@ -145,7 +145,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        LetrasYNumeros.class,
+                        LetrasYNumerosE0M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_LETRAS_NUMEROS)
                 );
@@ -153,7 +153,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
                 abrirActividad(
                         this,
-                        MemoriaVerbal.class,
+                        MemoriaVerbalE0M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_VERBAL)
                 );
@@ -171,7 +171,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        CopiaDibujos.class,
+                        CopiaDibujosE0M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COPIA_DIBUJOS)
                 );
@@ -180,7 +180,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        GrafoMotricidad.class,
+                        GrafoMotricidadE0M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_GRAFO_MOTRICIDAD)
                 );
@@ -198,7 +198,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        PalabrasYFrases.class,
+                        PalabrasYFrasesE0M3.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_PALABRAS_FRASES)
                 );
@@ -207,7 +207,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        RecepcionAuditivaArticulacion.class,
+                        RecepcionAuditivaArticulacionE0M3.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_RECEPCION_AUDITIVA)
                 );
@@ -216,7 +216,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        HabilidadesFonologicas.class,
+                        HabilidadesFonologicasE0M3.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_HABILIDADES_FONOLOGICAS)
                 );
