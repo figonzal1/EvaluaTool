@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 17:35                                                 -
+ Last modified 30-06-20 18:29                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0;
@@ -41,6 +41,7 @@ import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua0.modulo1.Series;
 import cl.figonzal.evaluatool.evalua0.modulo2.CopiaDibujos;
 import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidad;
+import cl.figonzal.evaluatool.evalua0.modulo2.IndiceGeneralEspacialE0M1;
 import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicas;
 import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrases;
 import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacion;
@@ -91,6 +92,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_0_M2_SI_1)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_0_M2_SI_2)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_0_M2_SI_3)));
 
         //SUBSMODULO 3
         List<Evalua> subItems3 = new ArrayList<>();
@@ -179,6 +181,14 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
                         GrafoMotricidad.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_GRAFO_MOTRICIDAD)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+
+                abrirActividad(
+                        this,
+                        IndiceGeneralEspacialE0M1.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_ESPACIAL)
                 );
             }
         } else if (getString(R.string.EVALUA_0_MODULO_3).equals(sectionTitle)) {

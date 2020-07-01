@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-06-20 17:22                                                ~
+  Last modified 30-06-20 18:29                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -38,6 +38,7 @@
     <string name="TOOLBAR_RECEPCION_AUDITIVA">Recepción Auditiva y Articulación</string>
     <string name="TOOLBAR_HABILIDADES_FONOLOGICAS">Habilidades Fonológicas</string>
     <string name="TOOLBAR_GRAFOMOTRICIDAD">Grafomotricidad</string>
+    <string name="TOOLBAR_INDICE_GENERAL_ESPACIAL">Índice General Espacial</string>
     <string name="EVALUA_0_MODULO_1">Capacidades Cognitivas</string>
     <string name="EVALUA_0_MODULO_2">Capacidades Espaciales</string>
     <string name="EVALUA_0_MODULO_3">Capacidades Linguísticas</string>
@@ -49,6 +50,7 @@
     <string name="EVALUA_0_M1_SI_6">Índice General Cognitivo</string>
     <string name="EVALUA_0_M2_SI_1">Copia de Dibujos [CD-0]</string>
     <string name="EVALUA_0_M2_SI_2">Grafomotricidad [GR-0]</string>
+    <string name="EVALUA_0_M2_SI_3">Índice General Espacial</string>
     <string name="EVALUA_0_M3_SI_1">Palabras y Frases [PF-0]</string>
     <string name="EVALUA_0_M3_SI_2">Recepción Auditiva y Articulación [RA-0]</string>
     <string name="EVALUA_0_M3_SI_3">Habilidades Fonológicas [HF-0]</string>
@@ -173,6 +175,7 @@
     <string name="TAG_COPIA_DIBUJOS">D/COPIA_DIBUJOS_ACT: </string>
     <string name="CLICK_COPIA_DIBUJOS">click_copia_dibujos</string>
     <string name="CLICK_GRAFO_MOTRICIDAD">click_grafo_motricidad</string>
+    <string name="CLICK_INDICE_GENERAL_ESPACIAL">click_indice_general_espacial</string>
     <string name="TAG_GRAFO_MOTRICIDAD">D/GRAFO_MOTRICIDAD_ACT: </string>
     <string name="TAG_PALABRAS_FRASES">D/PALABRAS_FRASES_ACT: </string>
     <string name="TAG_RECEPCION_AUDITIVA">D/RECEPCION_AUDITIVA_ACT: </string>
@@ -316,16 +319,20 @@
     <string name="tarea_5_0_pts">Tarea 5: 0 pts</string>
     <string name="tarea_6_0_pts">Tarea 6: 0 pts</string>
     <string name="series">Series</string>
+    <string name="grafomotricidad">Grafomotricidad</string>
     <string name="se_0_pts">SE: 0 pts</string>
     <string name="tareas">Tareas</string>
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="clasificaciones">Clasificaciones</string>
+    <string name="copia_dibujos">Copia dibujos</string>
     <string name="ca_0_pts">CA: 0 pts</string>
+    <string name="cd_0_pts">CD: 0 pts</string>
     <string name="op_0_pts">OP: 0 pts</string>
     <string name="pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
     <string name="pruebas_capacidades_cognitivas">Pruebas Capacidades Cognitivas</string>
+    <string name="pruebas_capacidades_espaciales">Pruebas Capacidades Espaciales</string>
     <string name="reflexividad">Reflexividad</string>
     <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
     <string name="re_0_pts">RE: 0 pts</string>
