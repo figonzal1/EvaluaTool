@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-06-20 18:03                                                ~
+  Last modified 30-06-20 21:53                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,7 +24,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua0.modulo2.IndiceGeneralEspacialE0M1"></activity>
+        <activity android:name=".evalua0.modulo3.IndiceGeneralLinguisticoE0M3"></activity>
+        <activity android:name=".evalua0.modulo2.IndiceGeneralEspacialE0M2" />
         <activity android:name=".evalua0.modulo1.IndiceGeneralCognitivoE0M1" />
         <activity android:name=".evalua2.modulo5.Ortografia" />
         <activity android:name=".evalua2.modulo4.ComprensionLectora" />

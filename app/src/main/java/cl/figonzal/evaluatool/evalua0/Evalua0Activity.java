@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 18:29                                                 -
+ Last modified 30-06-20 21:53                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0;
@@ -41,8 +41,9 @@ import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptiva;
 import cl.figonzal.evaluatool.evalua0.modulo1.Series;
 import cl.figonzal.evaluatool.evalua0.modulo2.CopiaDibujos;
 import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidad;
-import cl.figonzal.evaluatool.evalua0.modulo2.IndiceGeneralEspacialE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo2.IndiceGeneralEspacialE0M2;
 import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicas;
+import cl.figonzal.evaluatool.evalua0.modulo3.IndiceGeneralLinguisticoE0M3;
 import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrases;
 import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacion;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
@@ -99,6 +100,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems3.add(new Evalua(getString(R.string.EVALUA_0_M3_SI_1)));
         subItems3.add(new Evalua(getString(R.string.EVALUA_0_M3_SI_2)));
         subItems3.add(new Evalua(getString(R.string.EVALUA_0_M3_SI_3)));
+        subItems3.add(new Evalua(getString(R.string.EVALUA_0_M3_SI_4)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_1), subItems1, this));
@@ -186,7 +188,7 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        IndiceGeneralEspacialE0M1.class,
+                        IndiceGeneralEspacialE0M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_INDICE_GENERAL_ESPACIAL)
                 );
@@ -217,6 +219,14 @@ public class Evalua0Activity extends AppCompatActivity implements EvaluaAdapter.
                         HabilidadesFonologicas.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_HABILIDADES_FONOLOGICAS)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        IndiceGeneralLinguisticoE0M3.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_LINGUISTICO)
                 );
             }
         }
