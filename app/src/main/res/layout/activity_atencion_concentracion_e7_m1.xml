@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-07-20 18:39                                                ~
+  Last modified 01-07-20 17:53                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua7.modulo5.OrtografiaVisualRegladaE7M5">
+    tools:context=".evalua7.modulo1.AtencionConcentracionE7M1">
 
     <include
         android:id="@+id/include"
@@ -279,7 +279,7 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include10"
+                android:id="@+id/include13"
                 layout="@layout/card_view_estadisticos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -299,7 +299,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include10"
+                app:layout_constraintTop_toBottomOf="@+id/include13"
                 app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout

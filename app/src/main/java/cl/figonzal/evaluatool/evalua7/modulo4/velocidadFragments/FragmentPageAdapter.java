@@ -1,15 +1,15 @@
-/*--------------------------------------------------------------
-                                                               -
- This file is subject to the terms and conditions defined in   -
- file 'LICENSE', which is part of this source code package.    -
-                                                               -
- Autor: Felipe González                                        -
- Email: felipe.gonzalezalarcon94@gmail.com                     -
-                                                               -
- Copyright (c) 2020.                                           -
-                                                               -
- Last modified 09-03-20 17:21                                  -
- --------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+                                                                              -
+ This file is subject to the terms and conditions defined in                  -
+ file 'LICENSE', which is part of this source code package                    -
+                                                                              -
+ Autor: Felipe González                                                       -
+ Email: felipe.gonzalezalarcon94@gmail.com                                    -
+                                                                              -
+ Copyright (c) 2020                                                           -
+                                                                              -
+ Last modified 01-07-20 18:39                                                 -
+ -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments;
 
@@ -37,10 +37,10 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                f = VelocidadFragment.newInstance();
+                f = VelocidadFragmentE7M4.newInstance();
                 break;
             case 1:
-                f = ComprensionFragment.newInstance();
+                f = ComprensionFragmentE7M4.newInstance();
                 break;
             default:
                 break;
