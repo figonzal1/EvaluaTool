@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-06-20 21:53                                                ~
+  Last modified 01-07-20 0:05                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -47,34 +47,34 @@
             android:name=".evalua0.Evalua0Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua0.modulo3.HabilidadesFonologicas"
+            android:name=".evalua0.modulo3.HabilidadesFonologicasE0M3"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo3.RecepcionAuditivaArticulacion"
+            android:name=".evalua0.modulo3.RecepcionAuditivaArticulacionE0M3"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo3.PalabrasYFrases"
+            android:name=".evalua0.modulo3.PalabrasYFrasesE0M3"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo2.GrafoMotricidad"
+            android:name=".evalua0.modulo2.GrafoMotricidadE0M2"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo2.CopiaDibujos"
+            android:name=".evalua0.modulo2.CopiaDibujosE0M2"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.MemoriaVerbal"
+            android:name=".evalua0.modulo1.MemoriaVerbalE0M1"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.LetrasYNumeros"
-            android:parentActivityName=".evalua0.modulo1.LetrasYNumeros" />
+            android:name=".evalua0.modulo1.LetrasYNumerosE0M1"
+            android:parentActivityName=".evalua0.modulo1.LetrasYNumerosE0M1" />
         <activity
-            android:name=".evalua0.modulo1.Clasificacion"
+            android:name=".evalua0.modulo1.ClasificacionE0M1"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.OrganizacionPerceptiva"
+            android:name=".evalua0.modulo1.OrganizacionPerceptivaE0M1"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.Series"
+            android:name=".evalua0.modulo1.SeriesE0M1"
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
             android:name=".evalua1.Evalua1Activity"
@@ -92,7 +92,7 @@
             android:name=".evalua1.modulo5.OrtografiaFonetica"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo4.ValoracionGlobalLectura"
+            android:name=".evalua1.modulo4.ValoracionGlobalLecturaE1M4"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua1.modulo4.ExactitudLectora"
@@ -101,7 +101,7 @@
             android:name=".evalua1.modulo4.ComprensionLectora"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo2.ValoracionGlobalBases"
+            android:name=".evalua1.modulo2.ValoracionGlobalBasesE1M2"
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua1.modulo2.OrganizacionPerceptiva"

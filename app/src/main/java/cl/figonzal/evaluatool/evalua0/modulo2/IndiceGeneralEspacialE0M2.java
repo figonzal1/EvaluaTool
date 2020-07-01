@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 21:53                                                 -
+ Last modified 01-07-20 0:05                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua0.modulo2;
@@ -50,7 +50,7 @@ public class IndiceGeneralEspacialE0M2 extends AppCompatActivity implements Valo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_indice_general_espacial_e0_m1);
+        setContentView(R.layout.activity_indice_general_espacial_e0_m2);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
