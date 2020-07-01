@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-07-20 18:39                                                ~
+  Last modified 01-07-20 18:07                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua7.modulo5.OrtografiaVisualRegladaE7M5">
+    tools:context=".evalua7.modulo2.RazonamientoEspacialE7M2">
 
     <include
         android:id="@+id/include"
@@ -74,7 +74,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_aprobadas_t1"
+                        android:id="@+id/il_aprobadas_t1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -100,30 +100,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_omitidas_t1"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/omitidas"
-                        app:hintTextColor="@android:color/darker_gray"
-                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t1"
-                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t1">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_omitidas_t1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
-                            android:textSize="14sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t1"
+                        android:id="@+id/il_reprobadas_t1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -131,9 +108,9 @@
                         android:hint="@string/reprobadas"
                         app:hintTextColor="@android:color/holo_red_dark"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_omitidas_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_omitidas_t1"
-                        app:layout_constraintTop_toBottomOf="@+id/it_omitidas_t1">
+                        app:layout_constraintEnd_toEndOf="@+id/il_aprobadas_t1"
+                        app:layout_constraintStart_toStartOf="@+id/il_aprobadas_t1"
+                        app:layout_constraintTop_toBottomOf="@+id/il_aprobadas_t1">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_reprobadas_t1"
@@ -168,7 +145,7 @@
                 android:id="@+id/card_view_t2"
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 app:layout_constraintBottom_toBottomOf="@+id/card_view_t1"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
@@ -221,29 +198,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_omitidas_t2"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/omitidas"
-                        app:hintTextColor="@android:color/darker_gray"
-                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t2"
-                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t2"
-                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t2">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_omitidas_t2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
-                            android:textSize="14sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/it_reprobadas_t2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
@@ -252,9 +206,9 @@
                         android:hint="@string/reprobadas"
                         app:hintTextColor="@android:color/holo_red_dark"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_omitidas_t2"
-                        app:layout_constraintStart_toStartOf="@+id/it_omitidas_t2"
-                        app:layout_constraintTop_toBottomOf="@+id/it_omitidas_t2">
+                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t2"
+                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t2"
+                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t2">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_reprobadas_t2"
@@ -267,6 +221,7 @@
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </com.google.android.material.card.MaterialCardView>
@@ -279,7 +234,7 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include10"
+                android:id="@+id/include3"
                 layout="@layout/card_view_estadisticos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -299,7 +254,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include10"
+                app:layout_constraintTop_toBottomOf="@+id/include3"
                 app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout

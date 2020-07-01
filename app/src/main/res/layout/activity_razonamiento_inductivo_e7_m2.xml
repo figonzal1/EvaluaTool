@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-07-20 18:39                                                ~
+  Last modified 01-07-20 18:26                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua7.modulo5.OrtografiaVisualRegladaE7M5">
+    tools:context=".evalua7.modulo4.ComprensionLectoraE7M4">
 
     <include
         android:id="@+id/include"
@@ -30,7 +30,6 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,29 +99,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_omitidas_t1"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:hint="@string/omitidas"
-                        app:hintTextColor="@android:color/darker_gray"
-                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t1"
-                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t1">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_omitidas_t1"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits="0123456789"
-                            android:fontFamily="@font/roboto"
-                            android:inputType="numberDecimal"
-                            android:maxLength="3"
-                            android:textSize="14sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/it_reprobadas_t1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
@@ -131,9 +107,9 @@
                         android:hint="@string/reprobadas"
                         app:hintTextColor="@android:color/holo_red_dark"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_omitidas_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_omitidas_t1"
-                        app:layout_constraintTop_toBottomOf="@+id/it_omitidas_t1">
+                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t1"
+                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t1"
+                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t1">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_reprobadas_t1"
@@ -168,12 +144,12 @@
                 android:id="@+id/card_view_t2"
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginStart="4dp"
-                app:layout_constraintBottom_toBottomOf="@+id/card_view_t1"
-                app:layout_constraintEnd_toStartOf="@+id/guia_der"
-                app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toTopOf="@+id/card_view_t1">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/guia_central"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -221,18 +197,79 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_omitidas_t2"
+                        android:id="@+id/it_reprobadas_t2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/omitidas"
-                        app:hintTextColor="@android:color/darker_gray"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/reprobadas"
+                        app:hintTextColor="@android:color/holo_red_dark"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t2"
                         app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t2"
                         app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t2">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_omitidas_t2"
+                            android:id="@+id/et_reprobadas_t2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_t3"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/guia_central"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_tarea_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_3"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_aprobadas_t3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:hint="@string/aprobadas"
+                        app:hintTextColor="@android:color/holo_green_dark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tarea_3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_aprobadas_t3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="0123456789"
@@ -244,7 +281,7 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t2"
+                        android:id="@+id/it_reprobadas_t3"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -252,12 +289,182 @@
                         android:hint="@string/reprobadas"
                         app:hintTextColor="@android:color/holo_red_dark"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_omitidas_t2"
-                        app:layout_constraintStart_toStartOf="@+id/it_omitidas_t2"
-                        app:layout_constraintTop_toBottomOf="@+id/it_omitidas_t2">
+                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t3"
+                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t3"
+                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t3">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_reprobadas_t2"
+                            android:id="@+id/et_reprobadas_t3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_t4"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/guia_central"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t3">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_tarea_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_4"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_aprobadas_t4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:hint="@string/aprobadas"
+                        app:hintTextColor="@android:color/holo_green_dark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tarea_4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_aprobadas_t4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_reprobadas_t4"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/reprobadas"
+                        app:hintTextColor="@android:color/holo_red_dark"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t4"
+                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t4"
+                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t4">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_reprobadas_t4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_t5"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guia_central"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t4">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_tarea_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_5"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_aprobadas_t5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:hint="@string/aprobadas"
+                        app:hintTextColor="@android:color/holo_green_dark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tarea_5">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_aprobadas_t5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_reprobadas_t5"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/reprobadas"
+                        app:hintTextColor="@android:color/holo_red_dark"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/it_aprobadas_t5"
+                        app:layout_constraintStart_toStartOf="@+id/it_aprobadas_t5"
+                        app:layout_constraintTop_toBottomOf="@+id/it_aprobadas_t5">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_reprobadas_t5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits="0123456789"
@@ -279,28 +486,25 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include10"
+                android:id="@+id/include4"
                 layout="@layout/card_view_estadisticos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                app:layout_constraintEnd_toStartOf="@+id/guia_central"
-                app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/card_view_t1" />
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
+                app:layout_constraintStart_toStartOf="@+id/guia_central"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_subtotales"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guia_central"
-                app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include10"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
+                app:layout_constraintStart_toStartOf="@+id/guia_central"
+                app:layout_constraintTop_toBottomOf="@+id/include4">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -363,7 +567,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t5" />
 
                     <TextView
                         android:id="@+id/tv_pd_total_value"
@@ -382,6 +586,45 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_pd_total" />
+
+                    <TextView
+                        android:id="@+id/tv_pd_subtotal_t3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_3_0_pts"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tv_pd_subtotal_t2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
+
+                    <TextView
+                        android:id="@+id/tv_pd_subtotal_t4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_4_0_pts"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/tv_pd_subtotal_t3"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t3" />
+
+                    <TextView
+                        android:id="@+id/tv_pd_subtotal_t5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_5_0_pts"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="@+id/tv_pd_subtotal_t4"
+                        app:layout_constraintStart_toStartOf="@+id/tv_pd_subtotal_t4"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t4" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -392,11 +635,9 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/card_view_t2"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toBottomOf="@+id/card_view_subtotales" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

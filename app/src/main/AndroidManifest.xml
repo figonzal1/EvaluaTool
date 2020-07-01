@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-07-20 17:21                                                ~
+  Last modified 01-07-20 18:39                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -158,77 +158,77 @@
             android:name=".evalua7.Evalua7Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua7.modulo1.AtencionConcentracion"
+            android:name=".evalua7.modulo1.AtencionConcentracionE7M1"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoDeductivo"
+            android:name=".evalua7.modulo2.RazonamientoDeductivoE7M2"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoInductivo"
+            android:name=".evalua7.modulo2.RazonamientoInductivoE7M2"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoEspacial"
+            android:name=".evalua7.modulo2.RazonamientoEspacialE7M2"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.EficaciaLectora"
+            android:name=".evalua7.modulo4.EficaciaLectoraE7M4"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.VelocidadLectora"
+            android:name=".evalua7.modulo4.VelocidadLectoraE7M4"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.OrtografiaFonetica"
+            android:name=".evalua7.modulo5.OrtografiaFoneticaE7M5"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.ExpresionEscrita"
+            android:name=".evalua7.modulo5.ExpresionEscritaE7M5"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.OrtografiaVisualReglada"
+            android:name=".evalua7.modulo5.OrtografiaVisualRegladaE7M5"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo6.CalculoNumeracion"
+            android:name=".evalua7.modulo6.CalculoNumeracionE7M6"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.ComprensionLectora"
+            android:name=".evalua7.modulo4.ComprensionLectoraE7M4"
             android:parentActivityName=".evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
