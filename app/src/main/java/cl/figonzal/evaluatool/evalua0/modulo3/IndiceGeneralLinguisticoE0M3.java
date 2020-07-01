@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-06-20 20:00                                                 -
+ Last modified 30-06-20 21:53                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua0.modulo2;
+package cl.figonzal.evaluatool.evalua0.modulo3;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -33,7 +33,8 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements ValoracionInterface {
+public class IndiceGeneralLinguisticoE0M3 extends AppCompatActivity implements ValoracionInterface {
+
     //TAREA 1
     private TextInputEditText et_totales_t1;
     private TextView tv_sub_total_t1;
@@ -42,6 +43,10 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
     private TextInputEditText et_totales_t2;
     private TextView tv_sub_total_t2;
     private double sub_total_t2;
+    //TAREA 3
+    private TextInputEditText et_totales_t3;
+    private TextView tv_sub_total_t3;
+    private double sub_total_t3;
 
     private TextView tv_pd_total;
 
@@ -50,7 +55,7 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_indice_general_espacial_e0_m1);
+        setContentView(R.layout.activity_indice_general_linguistico);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
@@ -62,7 +67,7 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(R.string.TOOLBAR_INDICE_GENERAL_ESPACIAL);
+        actionBar.setTitle(R.string.TOOLBAR_INDICE_GENERAL_LINGUISTICO);
 
         instanciarRecursosInterfaz();
 
@@ -73,10 +78,12 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
 
         et_totales_t1 = findViewById(R.id.et_totales_t1);
         et_totales_t2 = findViewById(R.id.et_totales_t2);
+        et_totales_t3 = findViewById(R.id.et_totales_t3);
 
         //SUBTOTAL
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
+        tv_sub_total_t3 = findViewById(R.id.tv_pd_subtotal_t3);
         //TOTAL
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
     }
@@ -103,7 +110,7 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t1 = Double.parseDouble(String.valueOf(et_totales_t1.getText()));
                 }
-                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "PA", sub_total_t1));
+                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "PF", sub_total_t1));
                 calcularResultado();
             }
         });
@@ -127,18 +134,41 @@ public class IndiceGeneralEspacialE0M1 extends AppCompatActivity implements Valo
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t2 = Double.parseDouble(String.valueOf(et_totales_t2.getText()));
                 }
-                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "CA", sub_total_t2));
+                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "RA", sub_total_t2));
                 calcularResultado();
             }
         });
 
+        et_totales_t3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                sub_total_t3 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    sub_total_t3 = 0;
+                } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
+                    sub_total_t3 = Double.parseDouble(String.valueOf(et_totales_t3.getText()));
+                }
+                tv_sub_total_t3.setText(String.format(Locale.US, "%s: %s pts", "HF", sub_total_t3));
+                calcularResultado();
+            }
+        });
     }
 
     @Override
     public void calcularResultado() {
         //TOTALES
-        double total_pd = sub_total_t1 + sub_total_t2;
-        total_pd /= 2.0;
+        double total_pd = sub_total_t1 + sub_total_t2 + sub_total_t3;
+        total_pd /= 3.0;
         total_pd = Math.round(total_pd * 100.0) / 100.0;
 
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
