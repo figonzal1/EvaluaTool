@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 22:56                                                 -
+ Last modified 01-07-20 17:21                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3;
@@ -33,20 +33,19 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua3.modulo1.MemoriaAtencion;
-import cl.figonzal.evaluatool.evalua3.modulo2.OrganizacionPerceptiva;
-import cl.figonzal.evaluatool.evalua3.modulo2.PensamientoAnalogico;
-import cl.figonzal.evaluatool.evalua3.modulo2.Reflexividad;
-import cl.figonzal.evaluatool.evalua3.modulo2.ValoracionGlobalBases;
-import cl.figonzal.evaluatool.evalua3.modulo4.ComprensionLectora;
-import cl.figonzal.evaluatool.evalua3.modulo4.ExactitudLectora;
-import cl.figonzal.evaluatool.evalua3.modulo4.ValoracionGlobalLectura;
-import cl.figonzal.evaluatool.evalua3.modulo5.OrtografiaFonetica;
-import cl.figonzal.evaluatool.evalua3.modulo5.OrtografiaVisualReglada;
-import cl.figonzal.evaluatool.evalua3.modulo5.ValoracionGlobalEscritura;
-import cl.figonzal.evaluatool.evalua3.modulo6.CalculoNumeracion;
-import cl.figonzal.evaluatool.evalua3.modulo6.ResolucionProblemas;
-import cl.figonzal.evaluatool.evalua3.modulo6.ValoracionGlobalAprenMatemat;
+import cl.figonzal.evaluatool.evalua3.modulo1.MemoriaAtencionE3M1;
+import cl.figonzal.evaluatool.evalua3.modulo2.OrganizacionPerceptivaE3M2;
+import cl.figonzal.evaluatool.evalua3.modulo2.PensamientoAnalogicoE3M2;
+import cl.figonzal.evaluatool.evalua3.modulo2.ReflexividadE3M2;
+import cl.figonzal.evaluatool.evalua3.modulo2.ValoracionGlobalBasesE3M2;
+import cl.figonzal.evaluatool.evalua3.modulo4.ComprensionLectoraE3M4;
+import cl.figonzal.evaluatool.evalua3.modulo4.ExactitudLectoraE3M4;
+import cl.figonzal.evaluatool.evalua3.modulo4.ValoracionGlobalLecturaE3M4;
+import cl.figonzal.evaluatool.evalua3.modulo5.OrtografiaFoneticaE3M5;
+import cl.figonzal.evaluatool.evalua3.modulo5.OrtografiaVisualRegladaE3M5;
+import cl.figonzal.evaluatool.evalua3.modulo6.CalculoNumeracionE3M6;
+import cl.figonzal.evaluatool.evalua3.modulo6.ResolucionProblemasE3M6;
+import cl.figonzal.evaluatool.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -127,7 +126,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        MemoriaAtencion.class,
+                        MemoriaAtencionE3M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_ATENCION)
                 );
@@ -140,7 +139,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        Reflexividad.class,
+                        ReflexividadE3M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_REFLEXIVIDAD)
                 );
@@ -148,7 +147,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        PensamientoAnalogico.class,
+                        PensamientoAnalogicoE3M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
                 );
@@ -156,7 +155,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrganizacionPerceptiva.class,
+                        OrganizacionPerceptivaE3M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
@@ -164,7 +163,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ValoracionGlobalBases.class,
+                        ValoracionGlobalBasesE3M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
@@ -177,7 +176,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ComprensionLectora.class,
+                        ComprensionLectoraE3M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPR_LECTORA)
                 );
@@ -185,14 +184,14 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ExactitudLectora.class,
+                        ExactitudLectoraE3M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_EXACTITUD_LECTORA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        ValoracionGlobalLectura.class,
+                        ValoracionGlobalLecturaE3M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
@@ -205,7 +204,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrtografiaFonetica.class,
+                        OrtografiaFoneticaE3M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
                 );
@@ -214,7 +213,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        OrtografiaVisualReglada.class,
+                        OrtografiaVisualRegladaE3M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORT_VIS_REGLADA)
                 );
@@ -235,7 +234,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        CalculoNumeracion.class,
+                        CalculoNumeracionE3M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_NUMERACION)
                 );
@@ -243,14 +242,14 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        ResolucionProblemas.class,
+                        ResolucionProblemasE3M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_RES_PROBLEMAS)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        ValoracionGlobalAprenMatemat.class,
+                        ValoracionGlobalAprenMatematE3M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
