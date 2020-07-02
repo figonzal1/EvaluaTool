@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 18:39                                                 -
+ Last modified 02-07-20 16:40                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo5;
@@ -109,7 +109,7 @@ public class OrtografiaVisualRegladaE7M5 extends AppCompatActivity implements Ev
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
-        setContentView(R.layout.activity_ortografia_visual_reglada);
+        setContentView(R.layout.activity_ortografia_visual_reglada_e7_m5);
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitleTextColor(getResources().getColor(R.color.colorOnPrimary, getTheme()));
         setSupportActionBar(toolbar);
