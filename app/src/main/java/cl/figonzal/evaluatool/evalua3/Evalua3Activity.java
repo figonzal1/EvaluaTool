@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 17:21                                                 -
+ Last modified 01-07-20 21:42                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3;
@@ -216,14 +216,6 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
                         OrtografiaVisualRegladaE3M5.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORT_VIS_REGLADA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalEscritura.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             }
         }

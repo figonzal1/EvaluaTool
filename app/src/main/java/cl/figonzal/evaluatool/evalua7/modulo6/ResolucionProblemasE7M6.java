@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 22:52                                                 -
+ Last modified 02-07-20 0:03                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7.modulo6;
@@ -38,45 +38,45 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaInterface {
+public class ResolucionProblemasE7M6 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 12.29;
-    private static final double MEDIA = 33.70;
+    private static final double DESVIACION = 8.62;
+    private static final double MEDIA = 10.51;
     private final Integer[][] perc = new Integer[][]{
-            {79, 99},
-            {76, 98},
-            {73, 97},
-            {70, 96},
-            {67, 95},
-            {64, 92},
-            {61, 90},
-            {58, 87},
-            {55, 85},
-            {52, 82},
-            {49, 80},
-            {46, 75},
-            {43, 70},
-            {40, 65},
-            {37, 60},
-            {34, 50},
-            {31, 40},
-            {28, 35},
-            {25, 30},
-            {22, 25},
-            {19, 20},
-            {16, 17},
-            {13, 15},
-            {10, 10},
-            {7, 5},
-            {4, 3},
-            {1, 1}
+            {58, 99},
+            {55, 98},
+            {52, 97},
+            {49, 96},
+            {46, 95},
+            {43, 94},
+            {40, 93},
+            {37, 92},
+            {34, 91},
+            {31, 90},
+            {28, 87},
+            {25, 85},
+            {22, 82},
+            {19, 80},
+            {16, 70},
+            {13, 60},
+            {10, 50},
+            {8, 40},
+            {6, 30},
+            {4, 20},
+            {2, 10}
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
     private int aprobadas_t1 = 0;
+
+    //TAREA 2
+    private TextInputEditText et_aprobadas_t2;
+    private int aprobadas_t2 = 0;
     //SUBTOTALES
     private TextView tv_sub_total_t1;
     private double total_pd_t1 = 0;
+    private TextView tv_sub_total_t2;
+    private double total_pd_t2 = 0;
     //TOTAL
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
@@ -90,7 +90,7 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calculo_numeracion_e7_m6);
+        setContentView(R.layout.activity_resolucion_problemas_e7_m6);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
@@ -102,11 +102,13 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_CALC_NUMERACION));
+        actionBar.setTitle(getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
+
+        textWatcherTarea2();
     }
 
     private void instanciarRecursosInterfaz() {
@@ -119,6 +121,8 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
         //SUBTOTALES
         tv_sub_total_t1 = findViewById(R.id.tv_pd_subtotal_t1);
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
+        tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
+        et_aprobadas_t2 = findViewById(R.id.et_aprobadas_t2);
 
         //TOTALES
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
@@ -162,7 +166,33 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                total_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tareas: ", aprobadas_t1, null, null);
+                total_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tareas: ", aprobadas_t1, null, null);
+                calcularResultado();
+            }
+        });
+    }
+
+    private void textWatcherTarea2() {
+        et_aprobadas_t2.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                total_pd_t2 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if (s.length() == 0) {
+                    aprobadas_t2 = 0;
+                } else if (s.length() > 0) {
+                    aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
+                }
+                total_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tareas: ", aprobadas_t2, null, null);
                 calcularResultado();
             }
         });
@@ -170,9 +200,17 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
-        double total = aprobadas;
-        //Aproximacion piso
-        total = Math.floor(total);
+        double total = 0;
+
+        if (n_tarea == 1) {
+
+            total = aprobadas;
+            total = Math.floor(total);
+        } else if (n_tarea == 2) {
+
+            total = 4 * aprobadas;
+            total = Math.floor(total);
+        }
 
         if (total < 0) {
             total = 0;
@@ -187,7 +225,7 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
 
         //TOTALES
         double total_pd;
-        total_pd = total_pd_t1;
+        total_pd = total_pd_t1 + total_pd_t2;
 
         tv_pd_total.setText(String.format("%s pts", total_pd));
 
@@ -247,6 +285,8 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
                     return item[0];
                 } else if ((pd_actual - 2) == item[0]) {
                     return item[0];
+                } else if ((pd_actual - 3) == item[0]) {
+                    return item[0];
                 }
             }
         }
@@ -259,9 +299,9 @@ public class CalculoNumeracionE7M6 extends AppCompatActivity implements EvaluaIn
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
-            Log.d(getString(R.string.TAG_CALCU_NUMERACION), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_RESOLUCION_PROBLEMAS), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_CALCU_NUMERACION) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_RESOLUCION_PROBLEMAS) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

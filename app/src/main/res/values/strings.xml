@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-06-20 22:30                                                ~
+  Last modified 01-07-20 21:32                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -120,21 +120,22 @@
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
     <string name="EVALUA_7_MODULO_1">Atención - Concentración</string>
     <string name="EVALUA_7_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_7_MODULO_3">Lectura</string>
-    <string name="EVALUA_7_MODULO_4">Escritura</string>
-    <string name="EVALUA_7_MODULO_5">Aprendizaje Automático</string>
+    <string name="EVALUA_7_MODULO_4">Lectura</string>
+    <string name="EVALUA_7_MODULO_5">Escritura</string>
+    <string name="EVALUA_7_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_3_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_7_M1_SI_1">Atención y Concentración [MA-7]</string>
     <string name="EVALUA_7_M2_SI_1">Razonamiento Deductivo [RD-7]</string>
     <string name="EVALUA_7_M2_SI_2">Razonamiento Inductivo [RI-7]</string>
     <string name="EVALUA_7_M2_SI_3">Razonamiento Espacial [RE-7]</string>
-    <string name="EVALUA_7_M3_SI_1">Eficacia Lectora [EL-7]</string>
-    <string name="EVALUA_7_M3_SI_2">Comprensión Lectora [CL-7]</string>
-    <string name="EVALUA_7_M3_SI_3">Velocidad Lectora [VL-7]</string>
-    <string name="EVALUA_7_M4_SI_1">Ortografía Fonética [OF-7]</string>
-    <string name="EVALUA_7_M4_SI_2">Expresión Escrita [EE-7]</string>
-    <string name="EVALUA_7_M4_SI_3">Ortografía Visual Reglada [OV-7]</string>
-    <string name="EVALUA_7_M5_SI_1">Cálculo y Numeración [CN-7]</string>
+    <string name="EVALUA_7_M4_SI_1">Eficacia Lectora [EL-7]</string>
+    <string name="EVALUA_7_M4_SI_2">Comprensión Lectora [CL-7]</string>
+    <string name="EVALUA_7_M4_SI_3">Velocidad Lectora [VL-7]</string>
+    <string name="EVALUA_7_M5_SI_1">Ortografía Fonética [OF-7]</string>
+    <string name="EVALUA_7_M5_SI_2">Expresión Escrita [EE-7]</string>
+    <string name="EVALUA_7_M5_SI_3">Ortografía Visual Reglada [OV-7]</string>
+    <string name="EVALUA_7_M6_SI_1">Cálculo y Numeración [CN-7]</string>
+    <string name="EVALUA_7_M6_SI_2">Resolución de Problemas [RP-7]</string>
     <string name="TOOLBAR_ATENCION_CONCENTRACION">Atención y Concentración</string>
     <string name="TOOLBAR_RAZON_DEDUCTIVO">Razonamiento Deductivo</string>
     <string name="TOOLBAR_RAZON_ESPACIAL">Razonamiento Espacial</string>
@@ -330,6 +331,8 @@
     <string name="ra_0_pts">RA: 0 pts</string>
     <string name="tareas">Tareas</string>
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
+    <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los 7 primeros problemas (ítems 1–26)</string>
+    <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los 8 siguientes (ítems 27–34)</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="clasificaciones">Clasificaciones</string>

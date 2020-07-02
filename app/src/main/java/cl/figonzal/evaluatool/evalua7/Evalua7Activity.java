@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 18:39                                                 -
+ Last modified 01-07-20 21:59                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua7;
@@ -44,6 +44,7 @@ import cl.figonzal.evaluatool.evalua7.modulo5.ExpresionEscritaE7M5;
 import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaFoneticaE7M5;
 import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaVisualRegladaE7M5;
 import cl.figonzal.evaluatool.evalua7.modulo6.CalculoNumeracionE7M6;
+import cl.figonzal.evaluatool.evalua7.modulo6.ResolucionProblemasE7M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -87,23 +88,24 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems2.add(new Evalua(getString(R.string.EVALUA_7_M2_SI_3)));
 
         List<Evalua> subItems4 = new ArrayList<>();
-        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M3_SI_1)));
-        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M3_SI_2)));
-        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M3_SI_3)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_1)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_2)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_3)));
 
         List<Evalua> subItems5 = new ArrayList<>();
-        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_1)));
-        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_2)));
-        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M4_SI_3)));
+        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M5_SI_1)));
+        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M5_SI_2)));
+        subItems5.add(new Evalua(getString(R.string.EVALUA_7_M5_SI_3)));
 
         List<Evalua> subItems6 = new ArrayList<>();
-        subItems6.add(new Evalua(getString(R.string.EVALUA_7_M5_SI_1)));
+        subItems6.add(new Evalua(getString(R.string.EVALUA_7_M6_SI_1)));
+        subItems6.add(new Evalua(getString(R.string.EVALUA_7_M6_SI_2)));
 
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_2), subItems2, this));
-        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_3), subItems4, this));
-        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_4), subItems5, this));
-        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_5), subItems6, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_4), subItems4, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_5), subItems5, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_6), subItems6, this));
 
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
@@ -186,7 +188,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
                         getString(R.string.CLICK_RAZON_ESPACIAL)
                 );
             }
-        } else if (getString(R.string.EVALUA_7_MODULO_3).equals(sectionTitle)) {
+        } else if (getString(R.string.EVALUA_7_MODULO_4).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
                 abrirActividad(
@@ -212,7 +214,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
                         getString(R.string.CLICK_VELOCIDAD_LECTORA)
                 );
             }
-        } else if (getString(R.string.EVALUA_7_MODULO_4).equals(sectionTitle)) {
+        } else if (getString(R.string.EVALUA_7_MODULO_5).equals(sectionTitle)) {
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
                 abrirActividad(
@@ -237,7 +239,7 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
                         getString(R.string.CLICK_ORT_VIS_REGLADA)
                 );
             }
-        } else if (getString(R.string.EVALUA_7_MODULO_5).equals(sectionTitle)) {
+        } else if (getString(R.string.EVALUA_7_MODULO_6).equals(sectionTitle)) {
 
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
 
@@ -246,6 +248,14 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
                         CalculoNumeracionE7M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_NUMERACION)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+
+                abrirActividad(
+                        this,
+                        ResolucionProblemasE7M6.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_CAL_RES_PROBLEMAS)
                 );
             }
         }
