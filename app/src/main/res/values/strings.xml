@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-07-20 21:32                                                ~
+  Last modified 02-07-20 18:11                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -59,8 +59,10 @@
 
     <!-- Evalua 1-->
     <string name="TOOLBAR_EVALUA_1">Evalúa 1</string>
+    <string name="TOOLBAR_NIVELES_ADAPTACION">Niveles de Adaptación</string>
     <string name="EVALUA_1_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_1_MODULO_2">Bases del Razonamiento</string>
+    <string name="EVALUA_1_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_1_MODULO_4">Lectura</string>
     <string name="EVALUA_1_MODULO_5">Escritura</string>
     <string name="EVALUA_1_MODULO_6">Aprendizajes Matemáticos</string>
@@ -68,6 +70,7 @@
     <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
     <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
+    <string name="EVALUA_1_M3_SI_1">Niveles de Adaptación [NA-1]</string>
     <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
     <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
@@ -192,6 +195,7 @@
     <string name="TAG_RAZON_INDUCTIVO">D/RAZON_INDUCTIVO_ACT: </string>
     <string name="TAG_EFICACIA_LECTORA">D/EFICACIA_LECTORA_ACT: </string>
     <string name="TAG_VELOCIDAD_LECTORA">D/VELOCIDAD_LECTORA_ACT: </string>
+    <string name="TAG_NIVELES_ADAPTACION">D/NIVELES_ADAPTACION_ACT: </string>
     <string name="TAG_COMPREN_LECTORA">D/COMPREN_LECTORA_ACT: </string>
     <string name="TAG_EXP_ESCRITA">D/EXP_ESCRITA_ACT: </string>
     <string name="TAG_ORTO_FONETICA">D/ORTO_FONETICA_ACT: </string>
@@ -212,6 +216,7 @@
     <string name="CLICK_RAZON_ESPACIAL">click_razonamiento_espacial</string>
     <string name="CLICK_EFICACIA_LECTORA">click_eficacia_lectora</string>
     <string name="CLICK_COMPRENSION_LECTORA">click_comprension_lectora</string>
+    <string name="CLICK_NIVELES_ADAPTACION">click_niveles_adaptacion</string>
     <string name="CLICK_VELOCIDAD_LECTORA">click_velocidad_lectora</string>
     <string name="CLICK_ORTOGRAFIA_FONETICA">click_ortografia_fonectica</string>
     <string name="CLICK_ORTOGRAFIA_VISUAL">click_ortografia_visual</string>
@@ -333,6 +338,7 @@
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
     <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los 7 primeros problemas (ítems 1–26)</string>
     <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los 8 siguientes (ítems 27–34)</string>
+    <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ítems 1–15</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="clasificaciones">Clasificaciones</string>
@@ -374,6 +380,8 @@
     <string name="_0_seg">0 seg</string>
     <string name="puntaje_directo">Puntaje directo</string>
     <string name="comprension">Comprensión</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
