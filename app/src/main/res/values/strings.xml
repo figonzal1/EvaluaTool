@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 02-07-20 20:27                                                ~
+  Last modified 02-07-20 21:28                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -340,6 +340,8 @@
     <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los 8 siguientes (ítems 27–34)</string>
     <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ítems 1–15</string>
     <string name="indica_el_puntaje_items_16_25">Indica el puntaje de los ítems 16–25</string>
+    <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ítems 26–35</string>
+    <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ítems 36–45</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="clasificaciones">Clasificaciones</string>
