@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 02-07-20 20:34                                                ~
+  Last modified 02-07-20 21:16                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -57,7 +57,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/tareas"
+                        android:text="@string/tarea_2"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"
