@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-07-20 1:17                                                 ~
+  Last modified 03-07-20 15:34                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -17,7 +17,7 @@
     <!--TEST AD-->
     <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
     <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
-    
+
     <!--PROD AD-->
     <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
     <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
@@ -83,12 +83,14 @@
     <string name="TOOLBAR_EVALUA_2">Evalúa 2</string>
     <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
     <string name="EVALUA_2_MODULO_2">Memoria y Atención</string>
+    <string name="EVALUA_2_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_2_MODULO_4">Lectura</string>
     <string name="EVALUA_2_MODULO_5">Escritura</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
     <string name="EVALUA_2_M2_SI_1">Memoria y Atención [MA-2]</string>
+    <string name="EVALUA_2_M3_SI_1">Niveles de Adaptación [NA-2]</string>
     <string name="EVALUA_2_M4_SI_1">Comprensión Lectora [CL-2]</string>
     <string name="EVALUA_2_M5_SI_1">Grafía [GR-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>

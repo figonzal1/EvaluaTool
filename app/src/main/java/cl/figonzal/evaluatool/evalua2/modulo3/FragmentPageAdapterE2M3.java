@@ -8,21 +8,26 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 16:11                                                 -
+ Last modified 03-07-20 16:18                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo3.adaptacionFragments;
+package cl.figonzal.evaluatool.evalua2.modulo3;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class FragmentPageAdapterE3M3 extends FragmentPagerAdapter {
+import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.AutoControlFragmentE2M3;
+import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.AutoEstimaFragmentE2M3;
+import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.ConductaProSocialFragmentE2M3;
+import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.MotivacionFragmentE2M3;
+
+public class FragmentPageAdapterE2M3 extends FragmentPagerAdapter {
 
     private static final String[] tabs = new String[4];
 
-    public FragmentPageAdapterE3M3(@NonNull FragmentManager fm) {
+    public FragmentPageAdapterE2M3(@NonNull FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         tabs[0] = "Motivación";
         tabs[1] = "Autocontrol";
@@ -39,19 +44,19 @@ public class FragmentPageAdapterE3M3 extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                f = MotivacionFragmentE3M3.newInstance();
+                f = MotivacionFragmentE2M3.newInstance();
                 break;
 
             case 1:
-                f = AutoControlFragmentE3M3.newInstance();
+                f = AutoControlFragmentE2M3.newInstance();
                 break;
 
             case 2:
-                f = ConductaProSocialFragmentE3M3.newInstance();
+                f = ConductaProSocialFragmentE2M3.newInstance();
                 break;
 
             case 3:
-                f = AutoEstimaFragmentE3M3.newInstance();
+                f = AutoEstimaFragmentE2M3.newInstance();
                 break;
         }
 

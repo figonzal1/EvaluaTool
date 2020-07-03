@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                               ~
   This file is subject to the terms and conditions defined in                 ~
   file 'LICENSE', which is part of this source code package                   ~
@@ -8,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-07-20 1:16                                                 ~
+  Last modified 03-07-20 13:26                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,16 +23,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
+        <activity android:name=".evalua2.modulo3.NivelesAdaptacionE2M3"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!--EVALUA 0-->
+        </activity> <!-- EVALUA 0 -->
         <activity
             android:name=".evalua0.Evalua0Activity"
             android:parentActivityName=".MainActivity" />
@@ -73,10 +72,7 @@
             android:parentActivityName=".evalua0.Evalua0Activity" />
         <activity
             android:name=".evalua0.modulo3.IndiceGeneralLinguisticoE0M3"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
-
-        <!-- EVALUA 1 -->
-
+            android:parentActivityName=".evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
         <activity
             android:name=".evalua1.Evalua1Activity"
             android:parentActivityName=".MainActivity" />
@@ -115,10 +111,7 @@
             android:parentActivityName=".evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua1.modulo2.SeriesE1M2"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
-
-
-        <!-- EVALUA 3 -->
+            android:parentActivityName=".evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
         <activity
             android:name=".evalua3.Evalua3Activity"
             android:parentActivityName=".MainActivity" />
@@ -163,9 +156,7 @@
             android:parentActivityName=".evalua3.Evalua3Activity" />
         <activity
             android:name=".evalua3.modulo3.NivelesAdaptacionE3M3"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
-
-        <!-- EVALUA 7-->
+            android:parentActivityName=".evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
         <activity
             android:name=".evalua7.Evalua7Activity"
             android:parentActivityName=".MainActivity" />
@@ -248,10 +239,7 @@
         </activity>
         <activity
             android:name=".evalua7.modulo6.ResolucionProblemasE7M6"
-            android:parentActivityName=".evalua7.Evalua7Activity" />
-
-
-        <!-- EVALUA 2 -->
+            android:parentActivityName=".evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
         <activity android:name=".evalua2.modulo5.Ortografia" />
         <activity android:name=".evalua2.modulo4.ComprensionLectoraE2M4" />
         <activity android:name=".evalua2.modulo2.MemoriaAtencionE2M2" />
@@ -260,18 +248,14 @@
         <activity android:name=".evalua2.modulo1.ClasificacionesE2M1" />
         <activity android:name=".evalua2.modulo1.OrganizacionPerceptivaE2M1" />
         <activity android:name=".evalua2.Evalua2Activity" />
-        <activity android:name=".evalua2.modulo1.PensamientoAnalogicoE2M1" />
-
-
-        <!-- Desabilita performance en compilacion -->
+        <activity android:name=".evalua2.modulo1.PensamientoAnalogicoE2M1" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
             android:value="true" />
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="true" />
-        <!-- ADMOB -->
+            android:value="true" /> <!-- ADMOB -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6355378855577476~8089782740" />
