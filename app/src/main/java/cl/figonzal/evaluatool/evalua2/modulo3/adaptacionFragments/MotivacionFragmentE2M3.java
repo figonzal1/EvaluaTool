@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 0:06                                                  -
+ Last modified 03-07-20 16:24                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo3.adaptacionFragments;
+package cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -38,27 +38,23 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class ConductaProSocialE3M3 extends Fragment implements EvaluaInterface {
+public class MotivacionFragmentE2M3 extends Fragment implements EvaluaInterface {
 
-    private static final double DESVIACION = 2.87;
-    private static final double MEDIA = 3.07;
+    private static final double DESVIACION = 4.44;
+    private static final double MEDIA = 34.65;
     private final Integer[][] perc = new Integer[][]{
-            {0, 95},
-            {1, 80},
-            {2, 65},
-            {3, 60},
-            {4, 50},
-            {5, 40},
-            {6, 30},
-            {7, 25},
-            {8, 20},
-            {9, 17},
-            {10, 15},
-            {12, 10},
-            {14, 8},
-            {16, 6},
-            {18, 4},
-            {20, 1}
+            {40, 99},
+            {39, 90},
+            {38, 80},
+            {37, 70},
+            {35, 60},
+            {32, 50},
+            {30, 40},
+            {29, 30},
+            {27, 20},
+            {25, 10},
+            {22, 5}
+
     };
     private TextInputEditText et_aprobadas_t1;
     private int aprobadas_t1 = 0;
@@ -76,12 +72,12 @@ public class ConductaProSocialE3M3 extends Fragment implements EvaluaInterface {
 
     private FirebaseCrashlytics crashlytics;
 
-    public ConductaProSocialE3M3() {
+    public MotivacionFragmentE2M3() {
         // Required empty public constructor
     }
 
-    public static ConductaProSocialE3M3 newInstance() {
-        return new ConductaProSocialE3M3();
+    public static MotivacionFragmentE2M3 newInstance() {
+        return new MotivacionFragmentE2M3();
     }
 
     @Override
@@ -93,7 +89,7 @@ public class ConductaProSocialE3M3 extends Fragment implements EvaluaInterface {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_conducta_pro_social_e3_m3, container, false);
+        View v = inflater.inflate(R.layout.fragment_motivacion_e2_m3, container, false);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         instanciarRecursosInterfaz(v);
@@ -206,15 +202,15 @@ public class ConductaProSocialE3M3 extends Fragment implements EvaluaInterface {
         String nivel = Utilidades.calcularNivel(percentil);
         tv_nivel.setText(nivel);
 
-        double desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pd_corregido, true);
+        double desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pd_corregido, false);
         tv_desviacion_calculada.setText(String.valueOf(desviacion));
     }
 
     @Override
     public int calcularPercentil(double pd_total) {
-        if (pd_total < perc[0][0]) {
+        if (pd_total > perc[0][0]) {
             return perc[0][1];
-        } else if (pd_total > perc[perc.length - 1][0]) {
+        } else if (pd_total < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][1];
         } else {
             for (Integer[] item : perc) {
@@ -232,17 +228,17 @@ public class ConductaProSocialE3M3 extends Fragment implements EvaluaInterface {
 
     @Override
     public double corregirPD(Integer[][] perc, double pd_actual) {
-        if (pd_actual < perc[0][0]) {
+        if (pd_actual > perc[0][0]) {
             return perc[0][0];
-        } else if (pd_actual > perc[perc.length - 1][0]) {
+        } else if (pd_actual < perc[perc.length - 1][0]) {
             return perc[perc.length - 1][0];
         } else {
             for (Integer[] item : perc) {
                 if (pd_actual == item[0]) {
                     return item[0];
-                } else if (pd_actual + 1 == item[0]) {
+                } else if (pd_actual - 1 == item[0]) {
                     return item[0];
-                } else if (pd_actual + 2 == item[0]) {
+                } else if (pd_actual - 2 == item[0]) {
                     return item[0];
                 }
             }
