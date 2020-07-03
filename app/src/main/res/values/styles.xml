@@ -1,3 +1,16 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                              ~
+  This file is subject to the terms and conditions defined in                 ~
+  file 'LICENSE', which is part of this source code package                   ~
+                                                                              ~
+  Autor: Felipe González                                                      ~
+  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
+                                                                              ~
+  Copyright (c) 2020                                                          ~
+                                                                              ~
+  Last modified 03-07-20 1:16                                                 ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
 <resources>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
@@ -17,6 +30,8 @@
         <item name="materialButtonStyle">@style/ButtonTheme</item>
 
         <item name="android:windowBackground">@color/grey</item>
+
+        <item name="android:fontFamily">@font/roboto</item>
 
     </style>
 

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-05-20 21:14                                                 -
+ Last modified 03-07-20 1:16                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo5;
@@ -16,6 +16,8 @@ package cl.figonzal.evaluatool.evalua2.modulo5;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import cl.figonzal.evaluatool.R;
 
 public class Ortografia extends AppCompatActivity {
 
