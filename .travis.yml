@@ -30,7 +30,7 @@ jobs:
       deploy:
         provider: releases
         api_key:
-          secure: RWTMq8NzjGAFJpfobMK2ontBHOf0nRZdsRD4fWZl5rID0zENaWQt1oQnWTTKtWlX6VWogWIJvL81VpH3Wn1zdXaO+V7jU9BsGwrlV1M19Gdtd9E+VRwX1dYvCGTjiLMDWYcIScJPLCMpOtSOmx6pjpvP1mG/6cq6omjAAzghjlrPDqQt/gOpbDGfl/489+FmC+jnwVg0L7Fsw0n+ct8n+cAkHObyLWGfZ3K+OI7N88Xoo99g8MIYAFWIrnqrmW8Y/FDD31V3seXkjwX3cU1IgCyTLOqmkWqUqGPU+4UUBSNmtWZWpNP94Z45c4ADo9dz1vsryamM0zhy1bIqZIQtultUY2plYKXNhKb+PL+DCxe+5+byS2Kbu7k5C6pk/GH5iavouH9uTgQelOjy9aH4n+Qwo4yQN2/ivuuTe2vSS8WqjfSz+a8SKKGEsBb7vQh+WKLEP2aYTR1SrgHHAOqQRmSDcF778L0dsisQk0Lw3e3wE2Uuubf+Z/DTEqEdoR6f4Sau81Mu06ZLvugmZ9uIzhI23k0gF89ktKIIoBf4IvoeP6VCdZ6emG7PHVXZnRfdhPjjGbvtpxbRbSqq8JeFxS9jaPGqdSzl5J92559bXmlZXr8+VqwcnrhRZry0i0Gi9vAXYsN8cRwkB5wrU5fQ2nfmCu1R7YoCZpCKxoHtxPo=
+          secure: iueF0FXj8IoWlDBfbv+O/3iPAFDX+RIIUvPcHuW4PPphOp71LKGZNUxfjRdfO7WQsYpRfhxT55lxp9TeU4gcPegL/WKHMER82DwfPPYM0wFFZfWvZ6bC6yTSN9fT7kkCFc2UAHAtjI9iteYvM5vcduvqfUeb89kYvOIgVkoUB21ykAE+S/bTwmC9rdgdOfsMYrenRGx1VcIbmVmcKEhWb2KaG4mOwRIwzgbbgLMRMX/tC6Kqjy9HATKbKbV+2hRPeZdIbfx/cUpQN/fAX1TU1O9/xPChkr6YDRmJleZsKKzng9IXhD2H5OlYnD2oGQAFWU20o1cO+g/aWW6gu1Kpq/lzf8mtLtNYBmcOY7ufmcBHlaMv/HeQ/kQ9ZSohaB6k4R7C/Whc0+3wZ0ir0XEzCwEBL3XbmTRCyroJAWLfpOUDbFowXSg0cH3OyLUfTYC6QHgw8xVLUrCVJ0Bx1C+E3VmiKEeQnuy3uYB3WFWRzGKZQ1TT8NhyKLz/Cx3TkIWCe6/Q/yEJC6u1V4Bhu+M07nVZfgLzQKx7/WliAqudTxS08oaWH56rG21SzzcRG/1YEUgrD4qjkLeCFmNjjB4zodka6LgXy0wvrGrwAiVFVnH3KSVNht0Jj+AhUGG0hIfxFQut/Zsuxv3h7RJmNcpAamac87mtpFbwqq4FX0CiaMI=
         file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/app-release.apk
         skip_cleanup: true
         overwrite: true
