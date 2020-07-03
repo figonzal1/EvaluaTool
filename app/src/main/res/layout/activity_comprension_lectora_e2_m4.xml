@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 01-05-20 20:03                                                ~
+  Last modified 03-07-20 16:28                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,8 +17,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo1.PensamientoAnalogico">
+    tools:context=".evalua2.modulo4.ComprensionLectoraE2M4">
 
+    <!-- TODO: agregar descripciones para items -->
     <include
         android:id="@+id/include"
         layout="@layout/toolbar_layout"
@@ -128,6 +129,20 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guia_izq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guia_der"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t2"
                 style="@style/Widget.MaterialComponents.CardView"
@@ -135,11 +150,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
-                app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@id/card_view_t1">
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t1">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -155,9 +168,10 @@
                         android:text="@string/tarea_2"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.01"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
+
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/it_aprobadas_t2"
@@ -209,24 +223,71 @@
                             android:textSize="14sp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
+
             </com.google.android.material.card.MaterialCardView>
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guia_izq"
-                android:layout_width="wrap_content"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_view_t3"
+                style="@style/Widget.MaterialComponents.CardView"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_begin="16dp" />
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toStartOf="@+id/guia_central"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_t2">
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guia_der"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_end="16dp" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
+                    <TextView
+                        android:id="@+id/tv_tarea_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_3"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/it_aprobadas_t3"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/aprobadas"
+                        app:hintTextColor="@android:color/holo_green_dark"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_tarea_3">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_aprobadas_t3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:digits="0123456789"
+                            android:fontFamily="@font/roboto"
+                            android:inputType="numberDecimal"
+                            android:maxLength="3"
+                            android:textSize="14sp" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guia_central"
@@ -236,7 +297,7 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include39"
+                android:id="@+id/include5"
                 layout="@layout/card_view_estadisticos"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -250,14 +311,11 @@
                 android:id="@+id/card_view_subtotales"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/guia_central"
-                app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/card_view_t2"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
+                app:layout_constraintStart_toStartOf="@+id/guia_central"
+                app:layout_constraintTop_toBottomOf="@+id/include5">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -320,7 +378,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t3" />
 
                     <TextView
                         android:id="@+id/tv_pd_total_value"
@@ -339,6 +397,21 @@
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_pd_total" />
+
+                    <TextView
+                        android:id="@+id/tv_pd_subtotal_t3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="16dp"
+                        android:fontFamily="@font/roboto"
+                        android:text="@string/tarea_3_0_pts"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/colorOnSurface"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tv_pd_subtotal_t2"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -348,9 +421,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/include39" />
+                app:layout_constraintTop_toBottomOf="@+id/card_view_subtotales" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

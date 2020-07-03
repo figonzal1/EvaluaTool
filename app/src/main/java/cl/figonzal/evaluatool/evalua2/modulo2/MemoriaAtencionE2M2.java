@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-05-20 18:07                                                 -
+ Last modified 03-07-20 16:28                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo2;
@@ -39,7 +39,7 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class MemoriaAtencion extends AppCompatActivity implements EvaluaInterface {
+public class MemoriaAtencionE2M2 extends AppCompatActivity implements EvaluaInterface {
 
     private static final double DESVIACION = 13.04;
     private static final double MEDIA = 59.35;
@@ -213,7 +213,7 @@ public class MemoriaAtencion extends AppCompatActivity implements EvaluaInterfac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_memoria_atencion3);
+        setContentView(R.layout.activity_memoria_atencion_e2_m2);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
