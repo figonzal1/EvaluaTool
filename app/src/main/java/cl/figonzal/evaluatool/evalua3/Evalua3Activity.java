@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 21:42                                                 -
+ Last modified 03-07-20 0:06                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3;
@@ -38,6 +38,7 @@ import cl.figonzal.evaluatool.evalua3.modulo2.OrganizacionPerceptivaE3M2;
 import cl.figonzal.evaluatool.evalua3.modulo2.PensamientoAnalogicoE3M2;
 import cl.figonzal.evaluatool.evalua3.modulo2.ReflexividadE3M2;
 import cl.figonzal.evaluatool.evalua3.modulo2.ValoracionGlobalBasesE3M2;
+import cl.figonzal.evaluatool.evalua3.modulo3.NivelesAdaptacionE3M3;
 import cl.figonzal.evaluatool.evalua3.modulo4.ComprensionLectoraE3M4;
 import cl.figonzal.evaluatool.evalua3.modulo4.ExactitudLectoraE3M4;
 import cl.figonzal.evaluatool.evalua3.modulo4.ValoracionGlobalLecturaE3M4;
@@ -90,6 +91,9 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         subItem2.add(new Evalua(getString(R.string.EVALUA_3_M2_SI_3)));
         subItem2.add(new Evalua(getString(R.string.EVALUA_3_EVALUA_GLOBAL)));
 
+        List<Evalua> subItem3 = new ArrayList<>();
+        subItem3.add(new Evalua(getString(R.string.EVALUA_3_M3_SI_1)));
+
         List<Evalua> subItem4 = new ArrayList<>();
         subItem4.add(new Evalua(getString(R.string.EVALUA_3_M4_SI_1)));
         subItem4.add(new Evalua(getString(R.string.EVALUA_3_M4_SI_2)));
@@ -108,6 +112,7 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_2), subItem2, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_3), subItem3, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_4), subItem4, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_5), subItem5, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_6), subItem6, this));
@@ -166,6 +171,19 @@ public class Evalua3Activity extends AppCompatActivity implements EvaluaAdapter.
                         ValoracionGlobalBasesE3M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            }
+        }
+
+        //MODULO 3
+        else if (getString(R.string.EVALUA_3_MODULO_3).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        NivelesAdaptacionE3M3.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_NIVELES_ADAPTACION)
                 );
             }
         }
