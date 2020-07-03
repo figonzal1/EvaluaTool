@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 02-07-20 21:28                                                ~
+  Last modified 02-07-20 23:19                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -105,12 +105,14 @@
     <string name="TOOLBAR_ORTOGRAFIA_VISUAL">Ortografía Visual</string>
     <string name="EVALUA_3_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_3_MODULO_2">Bases del Razonamiento</string>
+    <string name="EVALUA_3_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_3_MODULO_4">Lectura</string>
     <string name="EVALUA_3_MODULO_5">Escritura</string>
     <string name="EVALUA_3_M1_SI_1">Memoria y Atención [MA-3]</string>
     <string name="EVALUA_3_M2_SI_1">Reflexividad [RE-3]</string>
     <string name="EVALUA_3_M2_SI_2">Pensamiento Analógico [PA-3]</string>
     <string name="EVALUA_3_M2_SI_3">Organización Perceptiva [OP-3]</string>
+    <string name="EVALUA_3_M3_SI_1">Niveles de Adaptación [NA-3]</string>
     <string name="EVALUA_3_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_3_M4_SI_1">Comprensión Lectora [CL-3]</string>
     <string name="EVALUA_3_M4_SI_2">Exactitud Lectora [EL-3]</string>
