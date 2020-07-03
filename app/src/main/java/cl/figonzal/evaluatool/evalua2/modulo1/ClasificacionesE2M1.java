@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 20:43                                                 -
+ Last modified 03-07-20 16:28                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo1;
@@ -39,32 +39,35 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInterface {
+public class ClasificacionesE2M1 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 5.16;
-    private static final double MEDIA = 12.75;
+    private static final double DESVIACION = 6.97;
+    private static final double MEDIA = 19.18;
     private final Integer[][] perc = new Integer[][]{
-            {20, 99},
-            {19, 90},
-            {18, 80},
-            {17, 75},
-            {16, 70},
-            {15, 65},
-            {14, 60},
-            {13, 55},
-            {12, 50},
-            {11, 40},
-            {10, 35},
-            {9, 30},
-            {8, 20},
-            {7, 15},
-            {6, 13},
-            {5, 10},
-            {4, 8},
-            {3, 7},
-            {2, 5},
-            {1, 3},
-            {0, 1}
+            {29, 99},
+            {28, 98},
+            {27, 95},
+            {26, 90},
+            {25, 85},
+            {24, 75},
+            {23, 70},
+            {22, 60},
+            {21, 55},
+            {20, 50},
+            {19, 45},
+            {18, 40},
+            {17, 35},
+            {16, 30},
+            {15, 27},
+            {14, 25},
+            {13, 22},
+            {12, 20},
+            {11, 15},
+            {10, 12},
+            {9, 10},
+            {8, 7},
+            {7, 5},
+            {6, 3}
     };
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
@@ -72,7 +75,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     private int aprobadas_t1 = 0;
     private int reprobadas_t1 = 0;
 
-    //TAREA 1
+    //TAREA 2
     private TextInputEditText et_aprobadas_t2;
     private TextInputEditText et_reprobadas_t2;
     private int aprobadas_t2 = 0;
@@ -96,7 +99,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pensamiento_analogico2);
+        setContentView(R.layout.activity_clasificaciones_e2_m1);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -107,7 +110,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO));
+        actionBar.setTitle(getString(R.string.TOOLBAR_CLASIFICACIONES));
 
         instanciarRecursosInterfaz();
 
@@ -183,7 +186,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
                 } else if (s.length() > 0) {
                     aprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -206,7 +209,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
                 } else if (s.length() > 0) {
                     reprobadas_t1 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t1.getText()).toString());
                 }
-                subtotal_pd_t1 = calcularTarea(null, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
+                subtotal_pd_t1 = calcularTarea(1, tv_sub_total_t1, "Tarea 1: ", aprobadas_t1, null, reprobadas_t1);
                 calcularResultado();
             }
         });
@@ -236,7 +239,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
                 } else if (s.length() > 0) {
                     aprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -259,7 +262,7 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
                 } else if (s.length() > 0) {
                     reprobadas_t2 = Integer.parseInt(Objects.requireNonNull(et_reprobadas_t2.getText()).toString());
                 }
-                subtotal_pd_t2 = calcularTarea(null, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
+                subtotal_pd_t2 = calcularTarea(2, tv_sub_total_t2, "Tarea 2: ", aprobadas_t2, null, reprobadas_t2);
                 calcularResultado();
             }
         });
@@ -267,10 +270,15 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
 
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
-        double total;
+        double total = 0;
 
-        total = aprobadas - (reprobadas / 3.0);
-        total = Math.floor(total);
+        if (n_tarea == 1) {
+            total = aprobadas - (reprobadas / 3.0);
+            total = Math.floor(total);
+        } else if (n_tarea == 2) {
+            total = aprobadas - (reprobadas / 4.0);
+            total = Math.floor(total);
+        }
 
         if (total < 0) {
             total = 0;
@@ -354,9 +362,9 @@ public class PensamientoAnalogico extends AppCompatActivity implements EvaluaInt
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_PERNSAMIENTO_ANALOGICO), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_CLASIFICACION), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_PERNSAMIENTO_ANALOGICO) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_CLASIFICACION) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-05-20 18:07                                                 -
+ Last modified 03-07-20 16:28                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo1;
@@ -33,7 +33,7 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class IndiceGeneralCognitivo extends AppCompatActivity implements ValoracionInterface {
+public class ValoracionGlobalRazonamientoE2M1 extends AppCompatActivity implements ValoracionInterface {
 
     //TAREA 1
     private TextInputEditText et_totales_t1;
@@ -55,7 +55,8 @@ public class IndiceGeneralCognitivo extends AppCompatActivity implements Valorac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_indice_general_cognitivo);
+        setContentView(R.layout.activity_valoracion_global_razonamiento_e2_m1);
+
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -66,7 +67,7 @@ public class IndiceGeneralCognitivo extends AppCompatActivity implements Valorac
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(R.string.TOOLBAR_INDICE_GENERAL_COGNITIVO);
+        actionBar.setTitle(R.string.TOOLBAR_VALORACION_GLOBAL);
 
         instanciarRecursosInterfaz();
 
@@ -178,9 +179,9 @@ public class IndiceGeneralCognitivo extends AppCompatActivity implements Valorac
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_INDICE_GENERAL), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_VALORACION_GLOBAL), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_INDICE_GENERAL) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_VALORACION_GLOBAL) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 23:00                                                 -
+ Last modified 03-07-20 16:28                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo1;
@@ -33,7 +33,7 @@ import java.util.Locale;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.interfaces.ValoracionInterface;
 
-public class ValoracionGlobalRazonamiento extends AppCompatActivity implements ValoracionInterface {
+public class IndiceGeneralCognitivoE2M1 extends AppCompatActivity implements ValoracionInterface {
 
     //TAREA 1
     private TextInputEditText et_totales_t1;
@@ -55,8 +55,7 @@ public class ValoracionGlobalRazonamiento extends AppCompatActivity implements V
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_valoracion_global_razonamiento);
-
+        setContentView(R.layout.activity_indice_general_cognitivo_e2_m1);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -67,7 +66,7 @@ public class ValoracionGlobalRazonamiento extends AppCompatActivity implements V
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(R.string.TOOLBAR_VALORACION_GLOBAL);
+        actionBar.setTitle(R.string.TOOLBAR_INDICE_GENERAL_COGNITIVO);
 
         instanciarRecursosInterfaz();
 
@@ -111,7 +110,7 @@ public class ValoracionGlobalRazonamiento extends AppCompatActivity implements V
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t1 = Double.parseDouble(String.valueOf(et_totales_t1.getText()));
                 }
-                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "SE", sub_total_t1));
+                tv_sub_total_t1.setText(String.format(Locale.US, "%s: %s pts", "PA", sub_total_t1));
                 calcularResultado();
             }
         });
@@ -135,7 +134,7 @@ public class ValoracionGlobalRazonamiento extends AppCompatActivity implements V
                 } else if (s.length() > 0 && !s.toString().equals("-") && !s.toString().equals(".")) {
                     sub_total_t2 = Double.parseDouble(String.valueOf(et_totales_t2.getText()));
                 }
-                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "CL", sub_total_t2));
+                tv_sub_total_t2.setText(String.format(Locale.US, "%s: %s pts", "CA", sub_total_t2));
                 calcularResultado();
             }
         });
@@ -179,9 +178,9 @@ public class ValoracionGlobalRazonamiento extends AppCompatActivity implements V
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_VALORACION_GLOBAL), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_INDICE_GENERAL), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_VALORACION_GLOBAL) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_INDICE_GENERAL) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;
