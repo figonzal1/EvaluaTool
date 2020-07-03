@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 16:43                                                 -
+ Last modified 03-07-20 1:40                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua3.modulo2;
@@ -44,7 +44,7 @@ public class OrganizacionPerceptivaE3M2Test {
     @Parameterized.Parameters()
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
-                {20, 99, 1.55},
+                {20, 99, 1.54},
                 {19, 95, 1.37},
                 {18, 90, 1.2},
                 {17, 80, 1.03},
@@ -55,7 +55,7 @@ public class OrganizacionPerceptivaE3M2Test {
                 {12, 55, 0.18},
                 {11, 50, 0.01},
                 {10, 47, -0.16},
-                {9, 42, -0.34},
+                {9, 42, -0.33},
                 {8, 40, -0.51},
                 {7, 35, -0.68},
                 {6, 30, -0.85},
@@ -67,7 +67,7 @@ public class OrganizacionPerceptivaE3M2Test {
 
                 //LIMITE
                 {0, 1, -1.87},
-                {21, 99, 1.72}
+                {21, 99, 1.71}
         });
     }
 
