@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 02-07-20 18:40                                                 -
+ Last modified 02-07-20 20:34                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1.modulo3.adaptacionFragments;
@@ -38,23 +38,23 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class MotivacionFragmentE1M3 extends Fragment implements EvaluaInterface {
+public class AutoControlFragmentE1M3 extends Fragment implements EvaluaInterface {
 
-    private static final double DESVIACION = 6.64;
-    private static final double MEDIA = 33.46;
+    private static final double DESVIACION = 5.06;
+    private static final double MEDIA = 22.24;
     //PD,PC CHILE
     private final Integer[][] perc = new Integer[][]{
-            {45, 99},
-            {40, 90},
-            {38, 80},
-            {37, 70},
-            {36, 60},
-            {34, 50},
-            {33, 40},
-            {30, 30},
-            {25, 20},
-            {20, 10},
-            {15, 5}
+            {30, 99},
+            {29, 90},
+            {28, 80},
+            {26, 70},
+            {24, 60},
+            {22, 50},
+            {20, 40},
+            {16, 30},
+            {15, 20},
+            {10, 10},
+            {8, 5}
     };
     private TextInputEditText et_aprobadas_t1;
     private int aprobadas_t1 = 0;
@@ -72,12 +72,13 @@ public class MotivacionFragmentE1M3 extends Fragment implements EvaluaInterface 
 
     private FirebaseCrashlytics crashlytics;
 
-
-    public MotivacionFragmentE1M3() {
+    public AutoControlFragmentE1M3() {
+        // Required empty public constructor
     }
 
-    public static MotivacionFragmentE1M3 newInstance() {
-        return new MotivacionFragmentE1M3();
+    public static AutoControlFragmentE1M3 newInstance() {
+        return new AutoControlFragmentE1M3();
+
     }
 
     @Override
@@ -89,8 +90,7 @@ public class MotivacionFragmentE1M3 extends Fragment implements EvaluaInterface 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_motivacion_e1_m3, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_auto_control_e1_m3, container, false);
         crashlytics = FirebaseCrashlytics.getInstance();
 
         instanciarRecursosInterfaz(v);
