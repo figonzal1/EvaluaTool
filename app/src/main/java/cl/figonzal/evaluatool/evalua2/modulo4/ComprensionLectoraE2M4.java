@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-04-20 22:42                                                 -
+ Last modified 03-07-20 16:28                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua2.modulo1;
+package cl.figonzal.evaluatool.evalua2.modulo4;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -39,54 +39,59 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class Clasificaciones extends AppCompatActivity implements EvaluaInterface {
+public class ComprensionLectoraE2M4 extends AppCompatActivity implements EvaluaInterface {
 
-    private static final double DESVIACION = 6.97;
-    private static final double MEDIA = 19.18;
+    private static final double DESVIACION = 5.68;
+    private static final double MEDIA = 12.27;
     private final Integer[][] perc = new Integer[][]{
-            {29, 99},
-            {28, 98},
-            {27, 95},
-            {26, 90},
-            {25, 85},
-            {24, 75},
-            {23, 70},
-            {22, 60},
-            {21, 55},
-            {20, 50},
-            {19, 45},
-            {18, 40},
-            {17, 35},
-            {16, 30},
-            {15, 27},
-            {14, 25},
-            {13, 22},
-            {12, 20},
-            {11, 15},
-            {10, 12},
-            {9, 10},
-            {8, 7},
-            {7, 5},
-            {6, 3}
+            {25, 99},
+            {24, 98},
+            {23, 97},
+            {22, 96},
+            {21, 95},
+            {20, 93},
+            {19, 92},
+            {18, 90},
+            {17, 85},
+            {16, 80},
+            {15, 70},
+            {14, 65},
+            {13, 60},
+            {12, 50},
+            {11, 45},
+            {10, 40},
+            {9, 35},
+            {8, 30},
+            {7, 25},
+            {6, 20},
+            {5, 15},
+            {4, 10},
+            {3, 7},
+            {2, 5},
+            {1, 1}
     };
+
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
     private TextInputEditText et_reprobadas_t1;
     private int aprobadas_t1 = 0;
     private int reprobadas_t1 = 0;
-
     //TAREA 2
     private TextInputEditText et_aprobadas_t2;
     private TextInputEditText et_reprobadas_t2;
     private int aprobadas_t2 = 0;
     private int reprobadas_t2 = 0;
+    //TAREA 3
+    private TextInputEditText et_aprobadas_t3;
+    private int aprobadas_t3 = 0;
 
     //SUBTOTALES
     private TextView tv_sub_total_t1;
     private TextView tv_sub_total_t2;
-
+    private TextView tv_sub_total_t3;
     private double subtotal_pd_t1 = 0;
     private double subtotal_pd_t2 = 0;
+    private double subtotal_pd_t3 = 0;
 
     private TextView tv_pd_total;
     private TextView tv_pd_corregido;
@@ -94,12 +99,14 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
     private TextView tv_nivel;
     private TextView tv_desviacion_calculada;
     private ProgressBar progressBar;
+
     private FirebaseCrashlytics crashlytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_clasificaciones2);
+        setContentView(R.layout.activity_comprension_lectora_e2_m4);
+
         crashlytics = FirebaseCrashlytics.getInstance();
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -110,13 +117,15 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
-        actionBar.setTitle(getString(R.string.TOOLBAR_CLASIFICACIONES));
+        actionBar.setTitle(getString(R.string.TOOLBAR_COMPREN_LECTORA));
 
         instanciarRecursosInterfaz();
 
         textWatcherTarea1();
 
         textWatcherTarea2();
+
+        textWatcherTarea3();
     }
 
     /**
@@ -136,9 +145,14 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         et_aprobadas_t1 = findViewById(R.id.et_aprobadas_t1);
         et_reprobadas_t1 = findViewById(R.id.et_reprobadas_t1);
 
+        //TAREA 2
         tv_sub_total_t2 = findViewById(R.id.tv_pd_subtotal_t2);
         et_aprobadas_t2 = findViewById(R.id.et_aprobadas_t2);
         et_reprobadas_t2 = findViewById(R.id.et_reprobadas_t2);
+
+        //TAREA 3
+        tv_sub_total_t3 = findViewById(R.id.tv_pd_subtotal_t3);
+        et_aprobadas_t3 = findViewById(R.id.et_aprobadas_t3);
 
         //TOTAL
         tv_pd_total = findViewById(R.id.tv_pd_total_value);
@@ -191,6 +205,7 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
             }
         });
 
+
         et_reprobadas_t1.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -215,11 +230,7 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         });
     }
 
-    /**
-     * Funcion encargada de la logica de los TextWatcher de la tarea 1
-     */
     private void textWatcherTarea2() {
-
         et_aprobadas_t2.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -268,6 +279,32 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
         });
     }
 
+    private void textWatcherTarea3() {
+        et_aprobadas_t3.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                subtotal_pd_t3 = 0;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if (s.length() == 0) {
+                    aprobadas_t3 = 0;
+                } else if (s.length() > 0) {
+                    aprobadas_t3 = Integer.parseInt(Objects.requireNonNull(et_aprobadas_t3.getText()).toString());
+                }
+                subtotal_pd_t3 = calcularTarea(3, tv_sub_total_t3, "Tarea 3: ", aprobadas_t3, null, null);
+                calcularResultado();
+            }
+        });
+    }
+
     @Override
     public double calcularTarea(Integer n_tarea, TextView tv_sub_total, String tarea, Integer aprobadas, Integer omitidas, Integer reprobadas) {
         double total = 0;
@@ -276,7 +313,10 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
             total = aprobadas - (reprobadas / 3.0);
             total = Math.floor(total);
         } else if (n_tarea == 2) {
-            total = aprobadas - (reprobadas / 4.0);
+            total = aprobadas - (reprobadas);
+            total = Math.floor(total);
+        } else if (n_tarea == 3) {
+            total = aprobadas * 4.0;
             total = Math.floor(total);
         }
 
@@ -294,7 +334,7 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
 
         //TOTALES
         double total_pd;
-        total_pd = subtotal_pd_t1 + subtotal_pd_t2;
+        total_pd = subtotal_pd_t1 + subtotal_pd_t2 + subtotal_pd_t3;
 
         tv_pd_total.setText(String.format(Locale.US, "%s pts", total_pd));
 
@@ -362,9 +402,9 @@ public class Clasificaciones extends AppCompatActivity implements EvaluaInterfac
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
 
-            Log.d(getString(R.string.TAG_CLASIFICACION), getString(R.string.ACTIVIDAD_CERRADA));
+            Log.d(getString(R.string.TAG_COMPREN_LECTORA), getString(R.string.ACTIVIDAD_CERRADA));
 
-            crashlytics.log(getString(R.string.TAG_CLASIFICACION) + getString(R.string.ACTIVIDAD_CERRADA));
+            crashlytics.log(getString(R.string.TAG_COMPREN_LECTORA) + getString(R.string.ACTIVIDAD_CERRADA));
 
             finish();
             return true;

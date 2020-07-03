@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 15:34                                                 -
+ Last modified 03-07-20 16:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -34,14 +34,14 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua2.modulo1.Clasificaciones;
-import cl.figonzal.evaluatool.evalua2.modulo1.IndiceGeneralCognitivo;
-import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptiva;
-import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogico;
-import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamiento;
-import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencion;
+import cl.figonzal.evaluatool.evalua2.modulo1.ClasificacionesE2M1;
+import cl.figonzal.evaluatool.evalua2.modulo1.IndiceGeneralCognitivoE2M1;
+import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptivaE2M1;
+import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogicoE2M1;
+import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1;
+import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencionE2M2;
 import cl.figonzal.evaluatool.evalua2.modulo3.NivelesAdaptacionE2M3;
-import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectora;
+import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectoraE2M4;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -116,35 +116,35 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
 
                 abrirActividad(
                         this,
-                        PensamientoAnalogico.class,
+                        PensamientoAnalogicoE2M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
                 abrirActividad(
                         this,
-                        OrganizacionPerceptiva.class,
+                        OrganizacionPerceptivaE2M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
                 abrirActividad(
                         this,
-                        Clasificaciones.class,
+                        ClasificacionesE2M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CLASIFICACION)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
                 abrirActividad(
                         this,
-                        ValoracionGlobalRazonamiento.class,
+                        ValoracionGlobalRazonamientoE2M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
                 abrirActividad(
                         this,
-                        IndiceGeneralCognitivo.class,
+                        IndiceGeneralCognitivoE2M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
                 );
@@ -156,7 +156,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
                 abrirActividad(
                         this,
-                        MemoriaAtencion.class,
+                        MemoriaAtencionE2M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_ATENCION)
                 );
@@ -180,7 +180,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
             if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
                 abrirActividad(
                         this,
-                        ComprensionLectora.class,
+                        ComprensionLectoraE2M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPRENSION_LECTORA)
                 );
