@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 05-07-20 17:08                                                 -
+ Last modified 05-07-20 17:46                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -44,7 +44,9 @@ import cl.figonzal.evaluatool.evalua2.modulo3.NivelesAdaptacionE2M3;
 import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectoraE2M4;
 import cl.figonzal.evaluatool.evalua2.modulo5.OrtografiaE2M5;
 import cl.figonzal.evaluatool.evalua2.modulo6.CalculoNumeracionE2M6;
+import cl.figonzal.evaluatool.evalua2.modulo6.IndiceGeneralMatematicoE2M6;
 import cl.figonzal.evaluatool.evalua2.modulo6.ResolucionProblemasE2M6;
+import cl.figonzal.evaluatool.evalua2.modulo6.ValoracionGlobalMatematicasE2M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -101,6 +103,8 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems6 = new ArrayList<>();
         subItems6.add(new Evalua(getString(R.string.EVALUA_2_M6_SI_1)));
         subItems6.add(new Evalua(getString(R.string.EVALUA_2_M6_SI_2)));
+        subItems6.add(new Evalua(getString(R.string.EVALUA_2_EVALUA_GLOBAL)));
+        subItems6.add(new Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this));
@@ -222,6 +226,20 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         ResolucionProblemasE2M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_RES_PROBLEMAS)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+                abrirActividad(
+                        this,
+                        ValoracionGlobalMatematicasE2M6.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+                abrirActividad(
+                        this,
+                        IndiceGeneralMatematicoE2M6.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
                 );
             }
         }

@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 17:08                                                ~
+  Last modified 05-07-20 17:46                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -98,7 +98,9 @@
     <string name="EVALUA_2_M6_SI_2">Resolución de Problemas [RP-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_2_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="TOOLBAR_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_ORTOGRAFIA">Ortografía</string>
 
     <!-- EVALUA 3-->
@@ -183,6 +185,7 @@
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
+    <string name="CLICK_INDICE_GENERAL_MATEMATICO">click_indice_general_matematico</string>
     <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
     <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
     <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
@@ -359,6 +362,7 @@
     <string name="indica_el_puntaje_items_50_55">Indica el puntaje de los ítems 50–55</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
+    <string name="calculo">Cálculo</string>
     <string name="clasificaciones">Clasificaciones</string>
     <string name="palabras_y_frases">Palabras y Frases</string>
     <string name="copia_dibujos">Copia dibujos</string>
@@ -399,6 +403,7 @@
     <string name="puntaje_directo">Puntaje directo</string>
     <string name="comprension">Comprensión</string>
     <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
+    <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
 
 
 </resources>
