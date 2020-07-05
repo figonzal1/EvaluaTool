@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 16:24                                                 -
+ Last modified 04-07-20 23:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2.modulo3;
@@ -27,6 +27,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.FragmentPageAdapterE2M3;
 
 public class NivelesAdaptacionE2M3 extends AppCompatActivity {
 

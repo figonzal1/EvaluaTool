@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-07-20 16:33                                                ~
+  Last modified 05-07-20 1:01                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -243,7 +243,7 @@
 
         <!-- EVALUA 2 -->
         <activity
-            android:name=".evalua2.modulo5.Ortografia"
+            android:name=".evalua2.modulo5.OrtografiaE2M5"
             android:parentActivityName=".evalua2.Evalua2Activity" />
         <activity
             android:name=".evalua2.modulo4.ComprensionLectoraE2M4"
@@ -267,6 +267,8 @@
             android:name=".evalua2.modulo1.OrganizacionPerceptivaE2M1"
             android:parentActivityName=".evalua2.Evalua2Activity" />
         <activity android:name=".evalua2.Evalua2Activity" />
+
+
         <activity
             android:name=".evalua2.modulo1.PensamientoAnalogicoE2M1"
             android:parentActivityName=".evalua2.Evalua2Activity" /> <!-- Desabilita performance en compilacion -->
