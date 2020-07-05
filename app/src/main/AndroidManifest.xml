@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 17:15                                                ~
+  Last modified 05-07-20 17:50                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -268,6 +268,12 @@
             android:parentActivityName=".evalua2.Evalua2Activity" />
         <activity
             android:name=".evalua2.modulo1.PensamientoAnalogicoE2M1"
+            android:parentActivityName=".evalua2.Evalua2Activity" />
+        <activity
+            android:name=".evalua2.modulo6.IndiceGeneralMatematicoE2M6"
+            android:parentActivityName=".evalua2.Evalua2Activity" />
+        <activity
+            android:name=".evalua2.modulo6.ValoracionGlobalMatematicasE2M6"
             android:parentActivityName=".evalua2.Evalua2Activity" />
         <activity
             android:name=".evalua2.modulo6.ResolucionProblemasE2M6"

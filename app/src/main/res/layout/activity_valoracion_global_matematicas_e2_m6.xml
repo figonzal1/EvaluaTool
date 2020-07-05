@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 17:27                                                ~
+  Last modified 05-07-20 18:02                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo1.ValoracionGlobalRazonamientoE2M1">
+    tools:context=".evalua2.modulo6.ValoracionGlobalMatematicasE2M6">
 
     <include
         android:id="@+id/include"
@@ -71,7 +71,7 @@
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/pruebas_bases_del_razonamiento"
+                        android:text="@string/pruebas_aprendizaje_matem_tico"
                         android:textAppearance="@style/TextAppearance.AppCompat.Small"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"
@@ -99,8 +99,9 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:hint="@string/analog_as"
+                        android:hint="@string/calculo"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_descripcion">
@@ -122,37 +123,15 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/clasificaciones"
+                        android:layout_marginBottom="8dp"
+                        android:hint="@string/res_problemas"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
                         app:layout_constraintStart_toStartOf="@+id/it_totales_t1"
                         app:layout_constraintTop_toBottomOf="@+id/it_totales_t1">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_totales_t2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits=".-0123456789"
-                            android:fontFamily="@font/roboto"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:textSize="14sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_totales_t3"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:hint="@string/org_perceptiva"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_totales_t2"
-                        app:layout_constraintTop_toBottomOf="@+id/it_totales_t2">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_totales_t3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits=".-0123456789"
@@ -227,7 +206,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/pa_0_pts"
+                        android:text="@string/cn_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -242,28 +221,13 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="@font/roboto"
-                        android:text="@string/ca_0_pts"
+                        android:text="@string/rp_0_pts"
                         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                         android:textColor="@color/colorOnSurface"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t1" />
-
-                    <TextView
-                        android:id="@+id/tv_pd_subtotal_t3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="16dp"
-                        android:fontFamily="@font/roboto"
-                        android:text="@string/op_0_pts"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="@color/colorOnSurface"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
 
                     <TextView
                         android:id="@+id/tv_pd_total"
@@ -277,7 +241,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t3" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
 
                     <TextView
                         android:id="@+id/tv_pd_total_value"
