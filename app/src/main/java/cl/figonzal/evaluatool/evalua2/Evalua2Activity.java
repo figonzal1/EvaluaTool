@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 16:33                                                 -
+ Last modified 05-07-20 0:57                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -42,6 +42,7 @@ import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1;
 import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencionE2M2;
 import cl.figonzal.evaluatool.evalua2.modulo3.NivelesAdaptacionE2M3;
 import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectoraE2M4;
+import cl.figonzal.evaluatool.evalua2.modulo5.OrtografiaE2M5;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -100,7 +101,7 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_3), subItems3, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_4), subItems4, this));
-        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_5), subItems4, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_5), subItems5, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -183,6 +184,18 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
                         ComprensionLectoraE2M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPRENSION_LECTORA)
+                );
+            }
+        }
+
+        //Modulo5
+        else if (getString(R.string.EVALUA_2_MODULO_5).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+                abrirActividad(
+                        this,
+                        OrtografiaE2M5.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORTOGRAFIA)
                 );
             }
         }
