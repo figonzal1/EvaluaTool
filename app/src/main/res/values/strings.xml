@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 0:38                                                 ~
+  Last modified 05-07-20 16:14                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -86,6 +86,7 @@
     <string name="EVALUA_2_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_2_MODULO_4">Lectura</string>
     <string name="EVALUA_2_MODULO_5">Escritura</string>
+    <string name="EVALUA_2_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
     <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
     <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
@@ -93,6 +94,7 @@
     <string name="EVALUA_2_M3_SI_1">Niveles de Adaptación [NA-2]</string>
     <string name="EVALUA_2_M4_SI_1">Comprensión Lectora [CL-2]</string>
     <string name="EVALUA_2_M5_SI_1">Ortografía [OR-2]</string>
+    <string name="EVALUA_2_M6_SI_1">Cálculo y Numeración [CN-2]</string>
     <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
@@ -352,6 +354,8 @@
     <string name="indica_el_puntaje_items_22">Indica el puntaje del ítem 22</string>
     <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ítems 26–35</string>
     <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ítems 36–45</string>
+    <string name="indica_el_puntaje_items_1_49">Indica el puntaje de los ítems 1–49</string>
+    <string name="indica_el_puntaje_items_50_55">Indica el puntaje de los ítems 50–55</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="clasificaciones">Clasificaciones</string>
