@@ -8,20 +8,15 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 16:18                                                 -
+ Last modified 05-07-20 1:01                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua2.modulo3;
+package cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-
-import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.AutoControlFragmentE2M3;
-import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.AutoEstimaFragmentE2M3;
-import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.ConductaProSocialFragmentE2M3;
-import cl.figonzal.evaluatool.evalua2.modulo3.adaptacionFragments.MotivacionFragmentE2M3;
 
 public class FragmentPageAdapterE2M3 extends FragmentPagerAdapter {
 
