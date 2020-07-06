@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 02-07-20 16:40                                                 -
+ Last modified 05-07-20 23:54                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.dialogs;
@@ -23,19 +23,21 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Objects;
 
+import cl.figonzal.evaluatool.Admob;
 import cl.figonzal.evaluatool.R;
 
 public class RewardDialogFragment extends DialogFragment {
 
-    private final RewardedVideoAd rewardedVideoAd;
+    private Admob admob;
+    private FirebaseCrashlytics crashlytics;
 
-    public RewardDialogFragment(RewardedVideoAd rewardedVideoAd) {
-        this.rewardedVideoAd = rewardedVideoAd;
+    public RewardDialogFragment(Admob admob, FirebaseCrashlytics crashlytics) {
+        this.admob = admob;
+        this.crashlytics = crashlytics;
     }
 
     @NonNull
@@ -50,25 +52,28 @@ public class RewardDialogFragment extends DialogFragment {
         builder.setTitle("¡Apoya a la aplicación!");
         builder.setMessage("Ve el video, apoya gratis monetariamente y recibe 1 hora libre de publicidad");
         builder.setPositiveButton("Ver video", (dialog, which) -> {
-            if (rewardedVideoAd.isLoaded()) {
+
+            if (admob.getRewardedVideoAd().isLoaded()) {
                 dismiss();
-                rewardedVideoAd.show();
+                admob.getRewardedVideoAd().show();
+
                 Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
                         .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
-                FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
+                crashlytics.log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
                         .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
             }
 
-            FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
+            crashlytics.log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
                     .TAG_REWARD_DIALOG_BTN_VER_VIDEO));
 
             dismiss();
         });
 
         builder.setNegativeButton("Cancelar", (dialog, which) -> {
+
             Log.d(getString(R.string.TAG_REWARD_DIALOG), getString(R.string
                     .TAG_REWARD_DIALOG_BTN_CANCEL));
-            FirebaseCrashlytics.getInstance().log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
+            crashlytics.log(getString(R.string.TAG_REWARD_DIALOG) + getString(R.string
                     .TAG_REWARD_DIALOG_BTN_CANCEL));
             dismiss();
         });
