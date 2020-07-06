@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 03-07-20 15:31                                                 -
+ Last modified 05-07-20 23:54                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -25,13 +25,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
@@ -46,7 +39,7 @@ import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean testMode = true;
+    private final Boolean TEST_MODE = true;
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
@@ -60,101 +53,27 @@ public class MainActivity extends AppCompatActivity {
     private MaterialButton btn_evalua_8;
     private MaterialButton btn_evalua_9;
     private MaterialButton btn_evalua_10;
-    private RewardedVideoAd rewardedVideoAd;
+
     private SharedPreferences sharedPreferences;
 
     private FirebaseCrashlytics crashlytics;
+
+    private Admob admob;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        crashlytics = FirebaseCrashlytics.getInstance();
-
-        MobileAds.initialize(this);
-
-        InterstitialAd mInterstitialAd = new InterstitialAd(this);
-        mInterstitialAd.setAdUnitId(getString(R.string.ADMOB_ID_INTERSITIAL));
-        mInterstitialAd.loadAd(new AdRequest.Builder().build());
-
         instanciarRecursos();
+
+        loadAds();
 
         rewardDialog();
 
         animaciones();
 
-        clickListeners(mInterstitialAd);
-    }
-
-    private void clickListeners(final InterstitialAd mInterstitialAd) {
-        btn_evalua_0.setOnClickListener(v -> {
-            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
-
-            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_0));
-
-            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua0Activity.class);
-        });
-
-        btn_evalua_1.setOnClickListener(v -> {
-            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1));
-
-            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_1));
-
-            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua1Activity.class);
-        });
-
-        btn_evalua_2.setOnClickListener(v -> {
-            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2));
-
-            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_2));
-
-            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua2Activity.class);
-        });
-
-        btn_evalua_3.setOnClickListener(v -> {
-            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
-
-            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_3));
-
-            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua3Activity.class);
-        });
-
-        btn_evalua_7.setOnClickListener(v -> {
-            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
-
-            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_7));
-
-            checkearPermisoIntersitial(testMode, mInterstitialAd, Evalua7Activity.class);
-        });
-    }
-
-    private void checkearPermisoIntersitial(boolean testMode, InterstitialAd mInterstitialAd, Class<? extends Activity> ActivityToOpen) {
-        Date reward_date =
-                new Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0));
-
-        Log.d(getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(getApplicationContext(), reward_date));
-
-        crashlytics.log(getString(R.string.TAG_BTN_REWARD_DATE) + Utilidades.dateToString(getApplicationContext(), reward_date));
-
-        Date now_date = new Date();
-
-        //si las 24 horas ya pasaron, cargar los ads nuevamente
-        if (now_date.after(reward_date) && !testMode) {
-            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS));
-
-            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_PERMITIDOS));
-
-            configurarIntersitial(mInterstitialAd, ActivityToOpen);
-
-        } else {
-            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS));
-
-            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_NO_PERMITIDOS));
-
-            Intent intent = new Intent(MainActivity.this, ActivityToOpen);
-            startActivity(intent);
-        }
+        clickListeners();
     }
 
     private void instanciarRecursos() {
@@ -198,6 +117,61 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_10.setAlpha(0.6f);
 
         sharedPreferences = getSharedPreferences(getString(R.string.MAIN_SHARED_PREF), Context.MODE_PRIVATE);
+
+        crashlytics = FirebaseCrashlytics.getInstance();
+    }
+
+    private void loadAds() {
+        admob = new Admob(this, getApplicationContext(), crashlytics);
+        admob.loadIntersitial();
+        admob.loadRewardVideo(sharedPreferences);
+    }
+
+    /**
+     * Funcion que realiza la configuracion de reward dialog
+     */
+    private void rewardDialog() {
+
+        Date reward_date = new Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0));
+        Date now_date = new Date();
+
+        admob.loadRewardVideo(sharedPreferences);
+
+        //Si la hora del celular es posterior a reward date
+        if (now_date.after(reward_date)) {
+
+            Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
+                    .TAG_REWARD_STATUS_EN_PERIODO));
+            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
+                    .TAG_REWARD_STATUS_EN_PERIODO));
+
+            //Generar % de aparicion de dialogo
+            boolean showDialog = Utilidades.generateRandomNumber();
+            if (showDialog) {
+
+                //Mostrar dialog
+                RewardDialogFragment fragment = new RewardDialogFragment(admob, crashlytics);
+                fragment.setCancelable(false);
+                fragment.show(getSupportFragmentManager(), getString(R.string.REWARD_DIALOG));
+
+                Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
+                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
+            } else {
+                Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
+                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
+                        .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
+            }
+        }
+        //Si el periodo de reward aun no pasa
+        else if (now_date.before(reward_date)) {
+            Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
+                    .TAG_REWARD_STATUS_PERIODO_INACTIVO));
+            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
+                    .TAG_REWARD_STATUS_PERIODO_INACTIVO));
+        }
     }
 
     private void animaciones() {
@@ -248,180 +222,78 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_10.startAnimation(fade_evalua_10);
     }
 
-    private void configurarIntersitial(final InterstitialAd interstitialAd, final Class<? extends Activity> ActivityToOpen) {
+    private void clickListeners() {
+        btn_evalua_0.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0));
 
-        if (interstitialAd.isLoaded()) {
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_0));
 
-            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_CARGADO));
-
-            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_CARGADO));
-
-            interstitialAd.setAdListener(new AdListener() {
-                @Override
-                public void onAdClosed() {
-                    super.onAdClosed();
-
-                    Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_CERRADO));
-                    crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_CERRADO));
-
-                    Intent intent = new Intent(MainActivity.this, ActivityToOpen);
-                    startActivity(intent);
-
-                    interstitialAd.loadAd(new AdRequest.Builder().build());
-                }
-
-                @Override
-                public void onAdFailedToLoad(int i) {
-                    super.onAdFailedToLoad(i);
-
-                    Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_FALLADO));
-                    crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_FALLADO));
-
-                    Intent intent = new Intent(MainActivity.this, ActivityToOpen);
-                    startActivity(intent);
-                }
-            });
-            interstitialAd.show();
-        } else {
-            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.INTERSITIAL_NO_CARGADO));
-            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.INTERSITIAL_NO_CARGADO));
-
-            Intent intent = new Intent(MainActivity.this, ActivityToOpen);
-            startActivity(intent);
-        }
-    }
-
-    /**
-     * Funcion que realiza la configuracion de reward dialog
-     */
-    private void rewardDialog() {
-
-        Date reward_date = new Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0));
-        Date now_date = new Date();
-
-        rewardedVideoAd = MobileAds.getRewardedVideoAdInstance(this);
-        rewardedVideoAd.setRewardedVideoAdListener(new RewardedVideoAdListener() {
-            @Override
-            public void onRewardedVideoAdLoaded() {
-                Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
-                        .TAG_VIDEO_REWARD_STATUS_LOADED));
-
-                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED));
-            }
-
-            @Override
-            public void onRewardedVideoAdOpened() {
-            }
-
-            @Override
-            public void onRewardedVideoStarted() {
-            }
-
-            @Override
-            public void onRewardedVideoAdClosed() {
-            }
-
-            @Override
-            public void onRewarded(RewardItem rewardItem) {
-                Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
-                        .TAG_VIDEO_REWARD_STATUS_REWARDED));
-
-                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED));
-            }
-
-            @Override
-            public void onRewardedVideoAdLeftApplication() {
-            }
-
-            @Override
-            public void onRewardedVideoAdFailedToLoad(int i) {
-                Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
-                        .TAG_VIDEO_REWARD_STATUS_FAILED));
-
-                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED));
-            }
-
-            @Override
-            public void onRewardedVideoCompleted() {
-
-                Log.d(getString(R.string.TAG_VIDEO_REWARD_STATUS), getString(R.string
-                        .TAG_VIDEO_REWARD_STATUS_COMPLETED));
-                crashlytics.log(getString(R.string.TAG_VIDEO_REWARD_STATUS) + getString(R.string.TAG_VIDEO_REWARD_STATUS_COMPLETED));
-
-                Date date_now = new Date();
-
-                Log.d(getString(R.string.TAG_HORA_AHORA), Utilidades.dateToString(getApplicationContext(), date_now));
-                crashlytics.log(getString(R.string.TAG_HORA_AHORA) + Utilidades.dateToString(getApplicationContext(), date_now));
-
-                //sumar 1 horas al tiempo del celular
-                Date date_new = Utilidades.addHoursToJavaUtilDate(date_now, 1);
-
-                Log.d(getString(R.string.TAG_HORA_REWARD), Utilidades.dateToString(getApplicationContext(), date_new));
-                crashlytics.log(getString(R.string.TAG_HORA_REWARD) + Utilidades.dateToString(getApplicationContext(), date_new));
-
-                //Guardar fecha de termino de reward
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), date_new.getTime()).apply();
-                recreate();
-            }
+            checkearPermisoIntersitial(TEST_MODE, Evalua0Activity.class);
         });
 
-        //Si la hora del celular es posterior a reward date
-        if (now_date.after(reward_date)) {
+        btn_evalua_1.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1));
 
-            Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
-                    .TAG_REWARD_STATUS_EN_PERIODO));
-            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
-                    .TAG_REWARD_STATUS_EN_PERIODO));
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_1));
 
-            //Cargar video
-            loadRewardedVideo();
+            checkearPermisoIntersitial(TEST_MODE, Evalua1Activity.class);
+        });
 
-            //Generar % de aparicion de dialogo
-            boolean showDialog = Utilidades.generateRandomNumber();
-            if (showDialog) {
+        btn_evalua_2.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2));
 
-                //Cargar dialog
-                mostrarDialog();
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_2));
 
-                Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
-                        .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
-                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
-                        .TAG_RANDOM_SHOW_REWARD_DIALOG_ON));
-            } else {
-                Log.d(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string
-                        .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
-                crashlytics.log(getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG) + getString(R.string
-                        .TAG_RANDOM_SHOW_REWARD_DIALOG_OFF));
-            }
-        }
-        //Si el periodo de reward aun no pasa
-        else if (now_date.before(reward_date)) {
-            Log.d(getString(R.string.TAG_REWARD_STATUS), getString(R.string
-                    .TAG_REWARD_STATUS_PERIODO_INACTIVO));
-            crashlytics.log(getString(R.string.TAG_REWARD_STATUS) + getString(R.string
-                    .TAG_REWARD_STATUS_PERIODO_INACTIVO));
+            checkearPermisoIntersitial(TEST_MODE, Evalua2Activity.class);
+        });
+
+        btn_evalua_3.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3));
+
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_3));
+
+            checkearPermisoIntersitial(TEST_MODE, Evalua3Activity.class);
+        });
+
+        btn_evalua_7.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7));
+
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_7));
+
+            checkearPermisoIntersitial(TEST_MODE, Evalua7Activity.class);
+        });
+    }
+
+    private void checkearPermisoIntersitial(boolean testMode, Class<? extends Activity> ActivityToOpen) {
+        Date reward_date =
+                new Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0));
+
+        Log.d(getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(getApplicationContext(), reward_date));
+
+        crashlytics.log(getString(R.string.TAG_BTN_REWARD_DATE) + Utilidades.dateToString(getApplicationContext(), reward_date));
+
+        Date now_date = new Date();
+
+        //si las 24 horas ya pasaron, cargar los ads nuevamente
+        if (now_date.after(reward_date) && !testMode) {
+
+            admob.configIntersitialIntents(ActivityToOpen);
+
+            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS));
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_PERMITIDOS));
+
+        } else {
+            Intent intent = new Intent(MainActivity.this, ActivityToOpen);
+            startActivity(intent);
+
+            Log.d(getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS));
+            crashlytics.log(getString(R.string.TAG_INTERSITIAL_STATUS) + getString(R.string.TAG_ADS_NO_PERMITIDOS));
         }
     }
 
-    /**
-     * Funcion encargada
-     * de cargar
-     * el video
-     * de bonificacion
-     */
-    private void loadRewardedVideo() {
-        rewardedVideoAd.loadAd(getString(R.string.ADMOB_ID_VIDEO), new AdRequest.Builder()
-                .build());
-    }
-
-    /**
-     * Funcion encargada de mostrar el dialog de rewards
-     */
-    private void mostrarDialog() {
-
-        RewardDialogFragment fragment = new RewardDialogFragment(rewardedVideoAd);
-        fragment.setCancelable(false);
-        fragment.show(getSupportFragmentManager(), getString(R.string.REWARD_DIALOG));
+    @Override
+    protected void onResume() {
+        super.onResume();
+        rewardDialog();
     }
 }
