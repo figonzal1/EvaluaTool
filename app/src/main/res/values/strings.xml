@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 09-07-20 0:59                                                 ~
+  Last modified 09-07-20 1:23                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -133,7 +133,9 @@
     <!-- EVALUA 4 -->
     <string name="TOOLBAR_EVALUA_4">Evalúa 4</string>
     <string name="EVALUA_4_MODULO_1">Memoria y Atención</string>
+    <string name="EVALUA_4_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
+    <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
