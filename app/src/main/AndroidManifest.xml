@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 17:50                                                ~
+  Last modified 09-07-20 1:08                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -280,7 +280,17 @@
             android:parentActivityName=".evalua2.Evalua2Activity" />
         <activity
             android:name=".evalua2.Evalua2Activity"
-            android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".MainActivity" />
+
+        <!-- EVALUA 4 -->
+        <activity
+            android:name=".evalua4.modulo1.MemoriaAtencionE4M1"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.Evalua4Activity"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
