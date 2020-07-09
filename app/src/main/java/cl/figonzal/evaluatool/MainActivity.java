@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 05-07-20 23:54                                                 -
+ Last modified 09-07-20 1:03                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -35,6 +35,7 @@ import cl.figonzal.evaluatool.evalua0.Evalua0Activity;
 import cl.figonzal.evaluatool.evalua1.Evalua1Activity;
 import cl.figonzal.evaluatool.evalua2.Evalua2Activity;
 import cl.figonzal.evaluatool.evalua3.Evalua3Activity;
+import cl.figonzal.evaluatool.evalua4.Evalua4Activity;
 import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
@@ -91,8 +92,6 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_3 = findViewById(R.id.btn_evalua_3);
 
         btn_evalua_4 = findViewById(R.id.btn_evalua_4);
-        btn_evalua_4.setEnabled(false);
-        btn_evalua_4.setAlpha(0.6f);
 
         btn_evalua_5 = findViewById(R.id.btn_evalua_5);
         btn_evalua_5.setEnabled(false);
@@ -253,6 +252,14 @@ public class MainActivity extends AppCompatActivity {
             crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_3));
 
             checkearPermisoIntersitial(TEST_MODE, Evalua3Activity.class);
+        });
+
+        btn_evalua_4.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_4));
+
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_4));
+
+            checkearPermisoIntersitial(TEST_MODE, Evalua4Activity.class);
         });
 
         btn_evalua_7.setOnClickListener(v -> {
