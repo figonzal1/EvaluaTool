@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 09-07-20 1:23                                                 ~
+  Last modified 10-07-20 16:10                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -136,6 +136,11 @@
     <string name="EVALUA_4_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
     <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
+    <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
+    <string name="EVALUA_4_M2_SI_3">Organización Perceptiva [OP-4]</string>
+    <string name="EVALUA_4_M2_SI_4">Índice General Cognitivo</string>
+    <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
+
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>

@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 09-07-20 1:23                                                  -
+ Last modified 10-07-20 16:27                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
@@ -34,7 +34,11 @@ import java.util.List;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua4.modulo1.MemoriaAtencionE4M1;
+import cl.figonzal.evaluatool.evalua4.modulo2.IndiceGeneralCognitivoE4M2;
+import cl.figonzal.evaluatool.evalua4.modulo2.OrganizacionPerceptivaE4M2;
+import cl.figonzal.evaluatool.evalua4.modulo2.PensamientoAnalogicoE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo2.ReflexividadE4M2;
+import cl.figonzal.evaluatool.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -74,6 +78,10 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
 
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_4_M2_SI_1)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_4_M2_SI_2)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_4_M2_SI_3)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_4_M2_SI_4)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_1), subItems1, this));
@@ -109,6 +117,38 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
                         ReflexividadE4M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_REFLEXIVIDAD)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
+
+                abrirActividad(
+                        this,
+                        PensamientoAnalogicoE4M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptivaE4M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        ValoracionGlobalRazonamientoE4M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
+
+                abrirActividad(
+                        this,
+                        IndiceGeneralCognitivoE4M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
                 );
             }
         }
