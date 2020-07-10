@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 09-07-20 1:22                                                 ~
+  Last modified 10-07-20 16:26                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +23,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -287,6 +286,18 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo2.ReflexividadE4M2"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo2.IndiceGeneralCognitivoE4M2"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo2.ValoracionGlobalRazonamientoE4M2"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo2.OrganizacionPerceptivaE4M2"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo2.PensamientoAnalogicoE4M2"
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.Evalua4Activity"
