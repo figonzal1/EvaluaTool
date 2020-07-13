@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-07-20 12:39                                                 -
+ Last modified 13-07-20 17:11                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
@@ -40,6 +40,7 @@ import cl.figonzal.evaluatool.evalua4.modulo2.PensamientoAnalogicoE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo2.ReflexividadE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo3.NivelesAdaptacionE4M3;
+import cl.figonzal.evaluatool.evalua4.modulo4.ComprensionLectoraE4M4;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -87,10 +88,14 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems3 = new ArrayList<>();
         subItems3.add(new Evalua(getString(R.string.EVALUA_4_M3_SI_1)));
 
+        List<Evalua> subItems4 = new ArrayList<>();
+        subItems4.add(new Evalua(getString(R.string.EVALUA_4_M4_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_3), subItems3, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_4), subItems4, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -167,6 +172,19 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
                         NivelesAdaptacionE4M3.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_NIVELES_ADAPTACION)
+                );
+            }
+        }
+
+        //MOdulo 4
+        else if (getString(R.string.EVALUA_4_MODULO_4).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        ComprensionLectoraE4M4.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_COMPRENSION_LECTORA)
                 );
             }
         }

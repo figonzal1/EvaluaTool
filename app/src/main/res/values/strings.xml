@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-07-20 12:56                                                ~
+  Last modified 13-07-20 17:00                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -135,12 +135,14 @@
     <string name="EVALUA_4_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_4_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_4_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_4_MODULO_4">Lectura</string>
     <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
     <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
     <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
     <string name="EVALUA_4_M2_SI_3">Organización Perceptiva [OP-4]</string>
     <string name="EVALUA_4_M2_SI_4">Índice General Cognitivo</string>
     <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
+    <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
     <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
 
@@ -369,8 +371,10 @@
     <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los 7 primeros problemas (ítems 1–26)</string>
     <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los 8 siguientes (ítems 27–34)</string>
     <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ítems 1–15</string>
+    <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ítems 1–17</string>
     <string name="indica_el_puntaje_items_16_25">Indica el puntaje de los ítems 16–25</string>
     <string name="indica_el_puntaje_items_16_21">Indica el puntaje de los ítems 16–21</string>
+    <string name="indica_el_puntaje_items_18_33">Indica el puntaje de los ítems 18–33</string>
     <string name="indica_el_puntaje_items_22">Indica el puntaje del ítem 22</string>
     <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ítems 26–35</string>
     <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ítems 36–45</string>
