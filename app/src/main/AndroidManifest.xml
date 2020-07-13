@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-07-20 17:16                                                ~
+  Last modified 13-07-20 17:21                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,6 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".evalua4.modulo5.OrtografiaVisualRegladaE4M5"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -307,8 +308,7 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.Evalua4Activity"
-            android:parentActivityName=".MainActivity" />
-        <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
