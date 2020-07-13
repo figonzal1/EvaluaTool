@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 11-07-20 14:48                                                 -
+ Last modified 13-07-20 13:26                                                 -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua3.modulo3.adaptacionFragments;
+package cl.figonzal.evaluatool.evalua4.modulo3.adaptacionFragments;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -38,32 +38,37 @@ import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment;
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface;
 
-public class MotivacionFragmentE3M3 extends Fragment implements EvaluaInterface {
+public class MotivacionFragmentE4M3 extends Fragment implements EvaluaInterface {
 
-    private static final double DESVIACION = 4.5;
-    private static final double MEDIA = 6.95;
+    private static final double DESVIACION = 3.54;
+    private static final double MEDIA = 6.90;
     private final Integer[][] perc = new Integer[][]{
             {0, 99},
             {1, 98},
             {2, 95},
             {3, 90},
             {4, 85},
-            {5, 75},
-            {6, 65},
-            {7, 60},
-            {8, 50},
-            {9, 45},
-            {10, 40},
-            {12, 30},
-            {14, 27},
-            {16, 25},
-            {18, 20},
-            {20, 15},
-            {22, 10},
-            {24, 7},
-            {26, 5},
-            {28, 3},
-            {30, 1},
+            {5, 80},
+            {6, 70},
+            {7, 65},
+            {8, 60},
+            {9, 55},
+            {10, 50},
+            {11, 40},
+            {12, 35},
+            {13, 30},
+            {14, 25},
+            {15, 20},
+            {16, 18},
+            {17, 15},
+            {18, 12},
+            {19, 10},
+            {20, 9},
+            {22, 7},
+            {24, 5},
+            {26, 3},
+            {28, 2},
+            {30, 1}
     };
     private TextInputEditText et_aprobadas_t1;
     private int aprobadas_t1 = 0;
@@ -81,12 +86,12 @@ public class MotivacionFragmentE3M3 extends Fragment implements EvaluaInterface 
 
     private FirebaseCrashlytics crashlytics;
 
-    public MotivacionFragmentE3M3() {
+    public MotivacionFragmentE4M3() {
         // Required empty public constructor
     }
 
-    public static MotivacionFragmentE3M3 newInstance() {
-        return new MotivacionFragmentE3M3();
+    public static MotivacionFragmentE4M3 newInstance() {
+        return new MotivacionFragmentE4M3();
     }
 
     @Override
@@ -98,7 +103,7 @@ public class MotivacionFragmentE3M3 extends Fragment implements EvaluaInterface 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_motivacion_e3_m3, container, false);
+        View v = inflater.inflate(R.layout.fragment_motivacion_e4_m3, container, false);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
@@ -218,6 +223,7 @@ public class MotivacionFragmentE3M3 extends Fragment implements EvaluaInterface 
 
     @Override
     public int calcularPercentil(double pd_total) {
+
         if (pd_total < perc[0][0]) {
             return perc[0][1];
         } else if (pd_total > perc[perc.length - 1][0]) {

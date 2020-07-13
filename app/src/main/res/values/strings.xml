@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 10-07-20 16:10                                                ~
+  Last modified 13-07-20 12:56                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -134,11 +134,13 @@
     <string name="TOOLBAR_EVALUA_4">Evalúa 4</string>
     <string name="EVALUA_4_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_4_MODULO_2">Bases del Razonamiento</string>
+    <string name="EVALUA_4_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
     <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
     <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
     <string name="EVALUA_4_M2_SI_3">Organización Perceptiva [OP-4]</string>
     <string name="EVALUA_4_M2_SI_4">Índice General Cognitivo</string>
+    <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
     <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
 
@@ -418,6 +420,7 @@
     <string name="comprension">Comprensión</string>
     <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
     <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
+    <string name="acumulado">Acumulado</string>
 
 
 </resources>
