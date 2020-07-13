@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                               ~
   This file is subject to the terms and conditions defined in                 ~
   file 'LICENSE', which is part of this source code package                   ~
@@ -9,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 10-07-20 16:26                                                ~
+  Last modified 13-07-20 12:39                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -284,6 +283,8 @@
         <activity
             android:name=".evalua4.modulo1.MemoriaAtencionE4M1"
             android:parentActivityName=".evalua4.Evalua4Activity" />
+
+
         <activity
             android:name=".evalua4.modulo2.ReflexividadE4M2"
             android:parentActivityName=".evalua4.Evalua4Activity" />
@@ -298,6 +299,10 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo2.PensamientoAnalogicoE4M2"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+
+        <activity
+            android:name=".evalua4.modulo3.NivelesAdaptacionE4M3"
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.Evalua4Activity"
