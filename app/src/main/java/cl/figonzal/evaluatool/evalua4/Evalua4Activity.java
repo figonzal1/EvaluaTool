@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 13-07-20 17:11                                                 -
+ Last modified 13-07-20 17:25                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
@@ -41,6 +41,7 @@ import cl.figonzal.evaluatool.evalua4.modulo2.ReflexividadE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo3.NivelesAdaptacionE4M3;
 import cl.figonzal.evaluatool.evalua4.modulo4.ComprensionLectoraE4M4;
+import cl.figonzal.evaluatool.evalua4.modulo5.OrtografiaVisualRegladaE4M5;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -91,11 +92,16 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems4 = new ArrayList<>();
         subItems4.add(new Evalua(getString(R.string.EVALUA_4_M4_SI_1)));
 
+        List<Evalua> subItems5 = new ArrayList<>();
+        subItems5.add(new Evalua(getString(R.string.EVALUA_4_M5_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_3), subItems3, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_4), subItems4, this));
+        //TODO: Pendiente Velocidad Lectora [VL-4], valoraciones globales e indice general de lectura
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_5), subItems5, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -185,6 +191,19 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
                         ComprensionLectoraE4M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_COMPRENSION_LECTORA)
+                );
+            }
+        }
+
+        //MOdulo 5
+        else if (getString(R.string.EVALUA_4_MODULO_5).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        OrtografiaVisualRegladaE4M5.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORT_VIS_REGLADA)
                 );
             }
         }
