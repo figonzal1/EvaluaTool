@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-07-20 17:25                                                ~
+  Last modified 14-07-20 0:00                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -137,6 +137,7 @@
     <string name="EVALUA_4_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_4_MODULO_4">Lectura</string>
     <string name="EVALUA_4_MODULO_5">Escritura</string>
+    <string name="EVALUA_4_MODULO_6">Aprendizajes Matemático</string>
     <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
     <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
     <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
@@ -145,6 +146,7 @@
     <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
     <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
     <string name="EVALUA_4_M5_SI_1">Ortografía Visual Reglada [OR-4]</string>
+    <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
     <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
 
