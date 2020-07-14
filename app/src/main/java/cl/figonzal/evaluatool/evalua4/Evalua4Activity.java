@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-07-20 12:33                                                 -
+ Last modified 14-07-20 15:30                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
@@ -43,6 +43,7 @@ import cl.figonzal.evaluatool.evalua4.modulo3.NivelesAdaptacionE4M3;
 import cl.figonzal.evaluatool.evalua4.modulo4.ComprensionLectoraE4M4;
 import cl.figonzal.evaluatool.evalua4.modulo5.OrtografiaVisualRegladaE4M5;
 import cl.figonzal.evaluatool.evalua4.modulo6.CalculoNumeracionE4M6;
+import cl.figonzal.evaluatool.evalua4.modulo6.IndiceGeneralMatematicoE4M6;
 import cl.figonzal.evaluatool.evalua4.modulo6.ResolucionProblemasE4M6;
 import cl.figonzal.evaluatool.evalua4.modulo6.ValoracionGlobalMatematicasE4M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
@@ -102,6 +103,7 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems6.add(new Evalua(getString(R.string.EVALUA_4_M6_SI_1)));
         subItems6.add(new Evalua(getString(R.string.EVALUA_4_M6_SI_2)));
         subItems6.add(new Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)));
+        subItems6.add(new Evalua(getString(R.string.EVALUA_4_M6_SI_4)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_4_MODULO_1), subItems1, this));
@@ -242,6 +244,14 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
                         ValoracionGlobalMatematicasE4M6.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_CAL_RES_PROBLEMAS)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        IndiceGeneralMatematicoE4M6.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
                 );
             }
         }
