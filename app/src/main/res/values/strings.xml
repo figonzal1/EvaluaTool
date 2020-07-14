@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-07-20 1:49                                                 ~
+  Last modified 14-07-20 12:24                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -430,6 +430,7 @@
     <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
     <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
     <string name="acumulado">Acumulado</string>
+    <string name="calculo_y_numeracion">Cálculo y Numeración</string>
 
 
 </resources>
