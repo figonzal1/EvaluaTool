@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 13-07-20 23:42                                                ~
+  Last modified 14-07-20 0:34                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,8 +23,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua4.modulo6.CalculoNumeracionE4M6"></activity>
-        <activity android:name=".evalua4.modulo5.OrtografiaVisualRegladaE4M5" />
+        <activity android:name=".evalua4.modulo6.ResolucionProblemasE4M6"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -306,6 +305,12 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo4.ComprensionLectoraE4M4"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo6.CalculoNumeracionE4M6"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo5.OrtografiaVisualRegladaE4M5"
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.Evalua4Activity"
