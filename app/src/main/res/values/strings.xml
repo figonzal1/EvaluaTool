@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-07-20 12:24                                                ~
+  Last modified 14-07-20 15:26                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -148,6 +148,7 @@
     <string name="EVALUA_4_M5_SI_1">Ortografía Visual Reglada [OR-4]</string>
     <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
     <string name="EVALUA_4_M6_SI_2">Resolución de Problemas [RP-4]</string>
+    <string name="EVALUA_4_M6_SI_4">Índice General Matemático</string>
     <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
 
