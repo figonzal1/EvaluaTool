@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-07-20 15:26                                                ~
+  Last modified 17-07-20 0:55                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -313,6 +313,9 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo6.ValoracionGlobalMatematicasE4M6"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo4.VelocidadLectoraE4M4"
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo6.ResolucionProblemasE4M6"

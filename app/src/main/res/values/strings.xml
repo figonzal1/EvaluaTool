@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-07-20 15:26                                                ~
+  Last modified 17-07-20 0:06                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -145,6 +145,7 @@
     <string name="EVALUA_4_M2_SI_4">Índice General Cognitivo</string>
     <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
     <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
+    <string name="EVALUA_4_M4_SI_2">Velocidad Lectora [VL-4]</string>
     <string name="EVALUA_4_M5_SI_1">Ortografía Visual Reglada [OR-4]</string>
     <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
     <string name="EVALUA_4_M6_SI_2">Resolución de Problemas [RP-4]</string>
@@ -432,6 +433,8 @@
     <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
     <string name="acumulado">Acumulado</string>
     <string name="calculo_y_numeracion">Cálculo y Numeración</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
