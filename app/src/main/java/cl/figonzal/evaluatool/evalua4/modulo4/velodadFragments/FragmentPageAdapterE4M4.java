@@ -8,21 +8,21 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 01-07-20 18:39                                                 -
+ Last modified 17-07-20 0:17                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments;
+package cl.figonzal.evaluatool.evalua4.modulo4.velodadFragments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class FragmentPageAdapter extends FragmentPagerAdapter {
+public class FragmentPageAdapterE4M4 extends FragmentPagerAdapter {
 
     private static final String[] tabs = new String[2];
 
-    public FragmentPageAdapter(@NonNull FragmentManager fm) {
+    public FragmentPageAdapterE4M4(@NonNull FragmentManager fm) {
         super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         tabs[0] = "Velocidad";
         tabs[1] = "Comprensión";
@@ -37,10 +37,10 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                f = VelocidadFragmentE7M4.newInstance();
+                f = VelocidadFragmentE4M4.newInstance();
                 break;
             case 1:
-                f = ComprensionFragmentE7M4.newInstance();
+                f = ComprensionFragmentE4M4.newInstance();
                 break;
             default:
                 break;
@@ -59,3 +59,4 @@ public class FragmentPageAdapter extends FragmentPagerAdapter {
         return tabs[position];
     }
 }
+
