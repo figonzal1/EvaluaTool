@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 16-07-20 23:57                                                 -
+ Last modified 17-07-20 0:55                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua7.modulo4;
+package cl.figonzal.evaluatool.evalua4.modulo4;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -27,16 +27,16 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import cl.figonzal.evaluatool.R;
-import cl.figonzal.evaluatool.evalua7.modulo4.velocidadFragments.FragmentPageAdapterE7M4;
+import cl.figonzal.evaluatool.evalua4.modulo4.velodadFragments.FragmentPageAdapterE4M4;
 
-public class VelocidadLectoraE7M4 extends AppCompatActivity {
+public class VelocidadLectoraE4M4 extends AppCompatActivity {
 
     private FirebaseCrashlytics crashlytics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_velocidad_lectora_e7_m4);
+        setContentView(R.layout.activity_velocidad_lectora_e4_m4);
 
         crashlytics = FirebaseCrashlytics.getInstance();
 
@@ -52,7 +52,7 @@ public class VelocidadLectoraE7M4 extends AppCompatActivity {
 
         //View pager
         ViewPager viewPager = findViewById(R.id.view_pager_velocidad);
-        viewPager.setAdapter(new FragmentPageAdapterE7M4(getSupportFragmentManager()));
+        viewPager.setAdapter(new FragmentPageAdapterE4M4(getSupportFragmentManager()));
 
         //TabLayout
         TabLayout tabLayout = findViewById(R.id.tabs_velocidad);
