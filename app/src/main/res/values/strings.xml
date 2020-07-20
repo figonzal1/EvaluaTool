@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 17-07-20 0:06                                                 ~
+  Last modified 20-07-20 13:27                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -100,6 +100,7 @@
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="EVALUA_2_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="TOOLBAR_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
     <string name="TOOLBAR_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_ORTOGRAFIA">Ortografía</string>
 
@@ -146,6 +147,7 @@
     <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
     <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
     <string name="EVALUA_4_M4_SI_2">Velocidad Lectora [VL-4]</string>
+    <string name="EVALUA_4_M4_SI_3">Índice General de Lectura</string>
     <string name="EVALUA_4_M5_SI_1">Ortografía Visual Reglada [OR-4]</string>
     <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
     <string name="EVALUA_4_M6_SI_2">Resolución de Problemas [RP-4]</string>
@@ -211,6 +213,7 @@
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
     <string name="CLICK_INDICE_GENERAL_MATEMATICO">click_indice_general_matematico</string>
+    <string name="CLICK_INDICE_GENERAL_LECTURA">click_indice_general_lectura</string>
     <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
     <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
     <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
@@ -404,8 +407,10 @@
     <string name="pruebas_capacidades_linguisticas">Pruebas Capacidades Linguísticas</string>
     <string name="reflexividad">Reflexividad</string>
     <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
+    <string name="vel_lectora">Velocidad Lectora</string>
     <string name="re_0_pts">RE: 0 pts</string>
     <string name="pa_0_pts">PA: 0 pts</string>
+    <string name="vl_0_pts">VL: 0 pts</string>
     <string name="org_perceptiva">Org. perceptiva</string>
     <string name="hab_fonologicas">Hab. Fonológicas</string>
     <string name="pruebas_lecturas">Pruebas Lecturas</string>
@@ -429,12 +434,15 @@
     <string name="_0_seg">0 seg</string>
     <string name="puntaje_directo">Puntaje directo</string>
     <string name="comprension">Comprensión</string>
-    <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
     <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
     <string name="acumulado">Acumulado</string>
     <string name="calculo_y_numeracion">Cálculo y Numeración</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
+    <string name="pt_subtotales">PT Subtotales</string>
+    <string name="igl_total">IGL Total</string>
+    <string name="igc_total">IGC Total</string>
+    <string name="igm_total">IGM Total</string>
+    <string name="ige_total">IGE Total</string>
 
 
 </resources>
