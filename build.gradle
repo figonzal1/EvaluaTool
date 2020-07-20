@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 03-07-20 1:16
+ * Last modified 19-07-20 20:17
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -19,7 +19,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.0'
+        classpath 'com.android.tools.build:gradle:4.0.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
