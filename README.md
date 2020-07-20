@@ -39,9 +39,9 @@ Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenec
 - [x] v2.0
   - [x] Evalúa - 0
   - [x] Evalúa - 1
-  - [ ] Evalúa - 2
+  - [x] Evalúa - 2
   - [x] Evalúa - 3
-  - [ ] Evalúa - 4
+  - [x] Evalúa - 4
   - [ ] Evalúa - 5
   - [ ] Evalúa - 6
   - [x] Evalúa - 7
