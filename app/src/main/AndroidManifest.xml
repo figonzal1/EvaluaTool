@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 17-07-20 0:55                                                 ~
+  Last modified 20-07-20 13:33                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -322,6 +322,12 @@
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.modulo5.OrtografiaVisualRegladaE4M5"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo4.IndiceGeneralLecturaE4M4"
+            android:parentActivityName=".evalua4.Evalua4Activity" />
+        <activity
+            android:name=".evalua4.modulo4.ValoracionGlobalLectoraE4M4"
             android:parentActivityName=".evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua4.Evalua4Activity"

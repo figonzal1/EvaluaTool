@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 17-07-20 0:15                                                  -
+ Last modified 20-07-20 13:18                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
@@ -41,6 +41,8 @@ import cl.figonzal.evaluatool.evalua4.modulo2.ReflexividadE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2;
 import cl.figonzal.evaluatool.evalua4.modulo3.NivelesAdaptacionE4M3;
 import cl.figonzal.evaluatool.evalua4.modulo4.ComprensionLectoraE4M4;
+import cl.figonzal.evaluatool.evalua4.modulo4.IndiceGeneralLecturaE4M4;
+import cl.figonzal.evaluatool.evalua4.modulo4.ValoracionGlobalLectoraE4M4;
 import cl.figonzal.evaluatool.evalua4.modulo4.VelocidadLectoraE4M4;
 import cl.figonzal.evaluatool.evalua4.modulo5.OrtografiaVisualRegladaE4M5;
 import cl.figonzal.evaluatool.evalua4.modulo6.CalculoNumeracionE4M6;
@@ -97,6 +99,8 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems4 = new ArrayList<>();
         subItems4.add(new Evalua(getString(R.string.EVALUA_4_M4_SI_1)));
         subItems4.add(new Evalua(getString(R.string.EVALUA_4_M4_SI_2)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_4_M4_SI_3)));
 
         List<Evalua> subItems5 = new ArrayList<>();
         subItems5.add(new Evalua(getString(R.string.EVALUA_4_M5_SI_1)));
@@ -211,6 +215,22 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
                         VelocidadLectoraE4M4.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_VELOCIDAD_LECTORA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+
+                abrirActividad(
+                        this,
+                        ValoracionGlobalLectoraE4M4.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        IndiceGeneralLecturaE4M4.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_INDICE_GENERAL_LECTURA)
                 );
             }
         }
