@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 2:18                                                  -
+ Last modified 27-07-20 12:56                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -37,6 +37,7 @@ import cl.figonzal.evaluatool.evalua5.modulo1.MemoriaAtencionE5M1;
 import cl.figonzal.evaluatool.evalua5.modulo2.OrganizacionPerceptivaE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.PensamientoAnalogicoE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.ReflexividadE5M2;
+import cl.figonzal.evaluatool.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -79,6 +80,7 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_1)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_2)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_3)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));
@@ -130,6 +132,14 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
                         OrganizacionPerceptivaE5M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_ORG_PERCEPTIVA)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
+
+                abrirActividad(
+                        this,
+                        ValoracionGlobalRazonamientoE5M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_VALORACION_GLOBAL)
                 );
             }
         }
