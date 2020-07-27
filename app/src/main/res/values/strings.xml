@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 27-07-20 1:18                                                 ~
+  Last modified 27-07-20 1:59                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -159,6 +159,7 @@
     <string name="EVALUA_5_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_5_M1_SI_1">Memoria y Atención [MA-5]</string>
     <string name="EVALUA_5_M2_SI_1">Reflexividad [RE-5]</string>
+    <string name="EVALUA_5_M2_SI_2">Pensamiento Analógico [PA-5]</string>
 
 
     <!-- EVALUA 7-->
