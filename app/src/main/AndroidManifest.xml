@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 20-07-20 13:49                                                ~
+  Last modified 27-07-20 0:16                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,6 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".evalua5.MemoriaAtencionE5M1"></activity>
+        <activity android:name=".evalua5.Evalua5Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -335,10 +337,10 @@
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="true" /> <!-- ADMOB -->
+            android:value="false" /> <!-- ADMOB -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6355378855577476~8089782740" />

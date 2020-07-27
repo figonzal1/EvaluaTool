@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 09-07-20 1:03                                                  -
+ Last modified 27-07-20 0:14                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -36,11 +36,12 @@ import cl.figonzal.evaluatool.evalua1.Evalua1Activity;
 import cl.figonzal.evaluatool.evalua2.Evalua2Activity;
 import cl.figonzal.evaluatool.evalua3.Evalua3Activity;
 import cl.figonzal.evaluatool.evalua4.Evalua4Activity;
+import cl.figonzal.evaluatool.evalua5.Evalua5Activity;
 import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final Boolean TEST_MODE = true;
+    private final Boolean TEST_MODE = true; //TODO: Cambiar en produccion
     private TextView tv_nombre_app;
     private TextView tv_version;
     private MaterialButton btn_evalua_0;
@@ -94,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
         btn_evalua_4 = findViewById(R.id.btn_evalua_4);
 
         btn_evalua_5 = findViewById(R.id.btn_evalua_5);
-        btn_evalua_5.setEnabled(false);
-        btn_evalua_5.setAlpha(0.6f);
 
         btn_evalua_6 = findViewById(R.id.btn_evalua_6);
         btn_evalua_6.setEnabled(false);
@@ -260,6 +259,14 @@ public class MainActivity extends AppCompatActivity {
             crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_4));
 
             checkearPermisoIntersitial(TEST_MODE, Evalua4Activity.class);
+        });
+
+        btn_evalua_5.setOnClickListener(v -> {
+            Log.d(getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_5));
+
+            crashlytics.log(getString(R.string.BUTTON_MAIN) + getString(R.string.BTN_EVALUA_5));
+
+            checkearPermisoIntersitial(TEST_MODE, Evalua5Activity.class);
         });
 
         btn_evalua_7.setOnClickListener(v -> {
