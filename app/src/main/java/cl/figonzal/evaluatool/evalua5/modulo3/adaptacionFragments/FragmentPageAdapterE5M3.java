@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 16:05                                                 -
+ Last modified 27-07-20 16:16                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5.modulo3.adaptacionFragments;
@@ -56,7 +56,7 @@ public class FragmentPageAdapterE5M3 extends FragmentPagerAdapter {
                 break;
 
             case 3:
-                f = AutoEstimaFragmentE4M3.newInstance();
+                f = AutoEstimaFragmentE5M3.newInstance();
                 break;
         }
 
