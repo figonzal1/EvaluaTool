@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 27-07-20 2:18                                                 ~
+  Last modified 27-07-20 12:56                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -161,6 +161,7 @@
     <string name="EVALUA_5_M2_SI_1">Reflexividad [RE-5]</string>
     <string name="EVALUA_5_M2_SI_2">Pensamiento Analógico [PA-5]</string>
     <string name="EVALUA_5_M2_SI_3">Organización Perceptiva [OP-5]</string>
+    <string name="EVALUA_5_EVALUA_GLOBAL">Valoración Global</string>
 
 
     <!-- EVALUA 7-->
