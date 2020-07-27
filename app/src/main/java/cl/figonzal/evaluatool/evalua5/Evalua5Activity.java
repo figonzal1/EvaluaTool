@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 0:55                                                  -
+ Last modified 27-07-20 1:26                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -33,6 +33,8 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
+import cl.figonzal.evaluatool.evalua5.modulo1.MemoriaAtencionE5M1;
+import cl.figonzal.evaluatool.evalua5.modulo2.ReflexividadE5M2;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -71,9 +73,13 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems1 = new ArrayList<>();
         subItems1.add(new Evalua(getString(R.string.EVALUA_5_M1_SI_1)));
 
+        List<Evalua> subItems2 = new ArrayList<>();
+        subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_1)));
+
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_2), subItems2, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -92,6 +98,19 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
                         MemoriaAtencionE5M1.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_MEMORIA_ATENCION)
+                );
+            }
+        }
+
+        //MOdulo 1
+        else if (getString(R.string.EVALUA_5_MODULO_2).equals(sectionTitle)) {
+            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
+
+                abrirActividad(
+                        this,
+                        ReflexividadE5M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_REFLEXIVIDAD)
                 );
             }
         }
