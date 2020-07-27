@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 27-07-20 1:28                                                 ~
+  Last modified 27-07-20 2:05                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua5.modulo2.PensamientoAnalogicoE5M2"></activity>
+        <activity android:name=".evalua5.modulo2.OrganizacionPerceptivaE5M2"></activity>
+        <activity android:name=".evalua5.modulo2.PensamientoAnalogicoE5M2" />
         <activity android:name=".evalua5.modulo2.ReflexividadE5M2" />
         <activity android:name=".evalua5.modulo1.MemoriaAtencionE5M1" />
         <activity android:name=".evalua5.Evalua5Activity" />

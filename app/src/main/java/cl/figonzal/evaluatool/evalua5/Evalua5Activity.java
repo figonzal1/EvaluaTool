@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 2:01                                                  -
+ Last modified 27-07-20 2:18                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -34,6 +34,7 @@ import java.util.List;
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
 import cl.figonzal.evaluatool.evalua5.modulo1.MemoriaAtencionE5M1;
+import cl.figonzal.evaluatool.evalua5.modulo2.OrganizacionPerceptivaE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.PensamientoAnalogicoE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.ReflexividadE5M2;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
@@ -77,6 +78,7 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems2 = new ArrayList<>();
         subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_1)));
         subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_2)));
+        subItems2.add(new Evalua(getString(R.string.EVALUA_5_M2_SI_3)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));
@@ -120,6 +122,14 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
                         PensamientoAnalogicoE5M2.class,
                         getString(R.string.SUB_ITEM_CLICK),
                         getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+                );
+            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
+
+                abrirActividad(
+                        this,
+                        OrganizacionPerceptivaE5M2.class,
+                        getString(R.string.SUB_ITEM_CLICK),
+                        getString(R.string.CLICK_ORG_PERCEPTIVA)
                 );
             }
         }
