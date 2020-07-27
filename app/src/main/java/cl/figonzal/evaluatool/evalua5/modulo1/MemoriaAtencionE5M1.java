@@ -8,10 +8,10 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 0:55                                                  -
+ Last modified 27-07-20 0:56                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua5;
+package cl.figonzal.evaluatool.evalua5.modulo1;
 
 import android.os.Build;
 import android.os.Bundle;
