@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 20-07-20 13:49                                                ~
+  Last modified 27-07-20 0:47                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -153,6 +153,11 @@
     <string name="EVALUA_4_M6_SI_4">Índice General Matemático</string>
     <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
+    <!--EVALUA 5 -->
+    <string name="TOOLBAR_EVALUA_5">Evalúa 5</string>
+    <string name="EVALUA_5_MODULO_1">Memoria y Atención</string>
+    <string name="EVALUA_5_M1_SI_1">Memoria y Atención [MA-5]</string>
+
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
@@ -202,12 +207,14 @@
     <string name="CLOSE_EVALUA_1">D/EVALUA_1_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
+    <string name="CLOSE_EVALUA_5">D/EVALUA_5_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_2">D/EVALUA_2_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
     <string name="BTN_EVALUA_2">btn_evalua_2</string>
     <string name="BTN_EVALUA_3">btn_evalua_3</string>
     <string name="BTN_EVALUA_4">btn_evalua_4</string>
+    <string name="BTN_EVALUA_5">btn_evalua_5</string>
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
