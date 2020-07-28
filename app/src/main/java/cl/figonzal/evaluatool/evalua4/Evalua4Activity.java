@@ -8,13 +8,11 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 20-07-20 13:18                                                 -
+ Last modified 27-07-20 23:14                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua4;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,30 +29,15 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.figonzal.evaluatool.ConfigRoutes;
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua4.modulo1.MemoriaAtencionE4M1;
-import cl.figonzal.evaluatool.evalua4.modulo2.IndiceGeneralCognitivoE4M2;
-import cl.figonzal.evaluatool.evalua4.modulo2.OrganizacionPerceptivaE4M2;
-import cl.figonzal.evaluatool.evalua4.modulo2.PensamientoAnalogicoE4M2;
-import cl.figonzal.evaluatool.evalua4.modulo2.ReflexividadE4M2;
-import cl.figonzal.evaluatool.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2;
-import cl.figonzal.evaluatool.evalua4.modulo3.NivelesAdaptacionE4M3;
-import cl.figonzal.evaluatool.evalua4.modulo4.ComprensionLectoraE4M4;
-import cl.figonzal.evaluatool.evalua4.modulo4.IndiceGeneralLecturaE4M4;
-import cl.figonzal.evaluatool.evalua4.modulo4.ValoracionGlobalLectoraE4M4;
-import cl.figonzal.evaluatool.evalua4.modulo4.VelocidadLectoraE4M4;
-import cl.figonzal.evaluatool.evalua4.modulo5.OrtografiaVisualRegladaE4M5;
-import cl.figonzal.evaluatool.evalua4.modulo6.CalculoNumeracionE4M6;
-import cl.figonzal.evaluatool.evalua4.modulo6.IndiceGeneralMatematicoE4M6;
-import cl.figonzal.evaluatool.evalua4.modulo6.ResolucionProblemasE4M6;
-import cl.figonzal.evaluatool.evalua4.modulo6.ValoracionGlobalMatematicasE4M6;
-import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
+public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -127,163 +110,13 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
     @Override
     public void onItemRootViewClicked(@NonNull String sectionTitle, int itemAdapterPosition) {
 
-        //MOdulo 1
-        if (getString(R.string.EVALUA_4_MODULO_1).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        MemoriaAtencionE4M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_MEMORIA_ATENCION)
-                );
-            }
-        }
-
-        //MOdulo 2
-        if (getString(R.string.EVALUA_4_MODULO_2).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        ReflexividadE4M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_REFLEXIVIDAD)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        PensamientoAnalogicoE4M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        OrganizacionPerceptivaE4M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORG_PERCEPTIVA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalRazonamientoE4M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
-
-                abrirActividad(
-                        this,
-                        IndiceGeneralCognitivoE4M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
-                );
-            }
-        }
-
-        //MOdulo 3
-        else if (getString(R.string.EVALUA_4_MODULO_3).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        NivelesAdaptacionE4M3.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_NIVELES_ADAPTACION)
-                );
-            }
-        }
-
-        //MOdulo 4
-        else if (getString(R.string.EVALUA_4_MODULO_4).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        ComprensionLectoraE4M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_COMPRENSION_LECTORA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        VelocidadLectoraE4M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VELOCIDAD_LECTORA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalLectoraE4M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-
-                abrirActividad(
-                        this,
-                        IndiceGeneralLecturaE4M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_INDICE_GENERAL_LECTURA)
-                );
-            }
-        }
-
-        //MOdulo 5
-        else if (getString(R.string.EVALUA_4_MODULO_5).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        OrtografiaVisualRegladaE4M5.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORT_VIS_REGLADA)
-                );
-            }
-        }
-
-        //MOdulo 6
-        else if (getString(R.string.EVALUA_4_MODULO_6).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        CalculoNumeracionE4M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_NUMERACION)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        ResolucionProblemasE4M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_RES_PROBLEMAS)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalMatematicasE4M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_RES_PROBLEMAS)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-
-                abrirActividad(
-                        this,
-                        IndiceGeneralMatematicoE4M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
-                );
-            }
-        }
+        Utilidades.handleRoutes(
+                new ConfigRoutes(this).getRouteMapEvalua4(),
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
+        );
     }
 
     @Override
@@ -318,16 +151,6 @@ public class Evalua4Activity extends AppCompatActivity implements EvaluaAdapter.
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
-
-        Log.d(log_title, log_reponse);
-        crashlytics.log("D/" + log_title + ": " + log_reponse);
-
-        Intent intent = new Intent(activity, calledActivity);
-        startActivity(intent);
     }
 
 }
