@@ -8,13 +8,11 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 13:45                                                 -
+ Last modified 27-07-20 22:25                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -31,20 +29,15 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.figonzal.evaluatool.ConfigRoutes;
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua5.modulo1.MemoriaAtencionE5M1;
-import cl.figonzal.evaluatool.evalua5.modulo2.OrganizacionPerceptivaE5M2;
-import cl.figonzal.evaluatool.evalua5.modulo2.PensamientoAnalogicoE5M2;
-import cl.figonzal.evaluatool.evalua5.modulo2.ReflexividadE5M2;
-import cl.figonzal.evaluatool.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2;
-import cl.figonzal.evaluatool.evalua5.modulo3.NivelesAdaptacionE5M3;
-import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
+public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -100,68 +93,12 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
     @Override
     public void onItemRootViewClicked(@NonNull String sectionTitle, int itemAdapterPosition) {
 
-        //MOdulo 1
-        if (getString(R.string.EVALUA_5_MODULO_1).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        MemoriaAtencionE5M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_MEMORIA_ATENCION)
-                );
-            }
-        }
-
-        //MOdulo 2
-        else if (getString(R.string.EVALUA_5_MODULO_2).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        ReflexividadE5M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_REFLEXIVIDAD)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        PensamientoAnalogicoE5M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        OrganizacionPerceptivaE5M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORG_PERCEPTIVA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalRazonamientoE5M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            }
-        }
-
-        //MOdulo 3
-        if (getString(R.string.EVALUA_5_MODULO_3).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        NivelesAdaptacionE5M3.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_NIVELES_ADAPTACION)
-                );
-            }
-        }
+        Utilidades.handleRoutes(
+                new ConfigRoutes(this).getRouteMapEvalua5(),
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this);
     }
 
     @Override
@@ -196,16 +133,6 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
-
-        Log.d(log_title, log_reponse);
-        crashlytics.log("D/" + log_title + ": " + log_reponse);
-
-        Intent intent = new Intent(activity, calledActivity);
-        startActivity(intent);
     }
 
 }
