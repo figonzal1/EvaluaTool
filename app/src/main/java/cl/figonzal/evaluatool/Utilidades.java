@@ -8,12 +8,14 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 04-04-20 19:37                                                 -
+ Last modified 27-07-20 22:25                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
@@ -21,8 +23,12 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Random;
+
+import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
 public class Utilidades {
 
@@ -108,5 +114,56 @@ public class Utilidades {
         Random random = new Random();
         int item = random.nextInt(10);
         return item % 3 == 0;
+    }
+
+    /**
+     * Funcion encargada de manejar las actividades del listado de subItems de cada Evalua
+     *
+     * @param routeMapEvalua               Route map con la configuracion
+     * @param sectionTitle                 Titulo seccion
+     * @param sectionedRecyclerViewAdapter RecyclerView seccionado
+     * @param itemAdapterPosition          PosisionAdapter
+     * @param currentActivity              Actividad que llama
+     */
+    public static void handleRoutes(Map<String, List<Object[]>> routeMapEvalua, String sectionTitle, SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter, int itemAdapterPosition, Activity currentActivity) {
+        for (Map.Entry<String, List<Object[]>> entry : routeMapEvalua.entrySet()) {
+
+            String moduleName = entry.getKey();
+            List<Object[]> subItems = entry.getValue();
+
+            if (moduleName.equals(sectionTitle)) {
+
+                for (int i = 0; i < subItems.size(); i++) {
+
+                    if (i == sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition)) {
+
+                        Object[] objects = subItems.get(i);
+
+                        Class<?> activity = (Class<?>) objects[1];
+                        String titleLog = currentActivity.getString(R.string.SUB_ITEM_CLICK);
+                        String responseLog = (String) objects[2];
+
+                        abrirActividad(currentActivity, activity, titleLog, responseLog);
+                    }
+                }
+            }
+        }
+    }
+
+    /**
+     * Funcion encargada de abrir las actividades
+     *
+     * @param activity       Actividad Padre
+     * @param calledActivity Actividad hijo
+     * @param log_title      Titulo del log
+     * @param log_reponse    Respuesta del log
+     */
+    private static void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
+
+        Log.d(log_title, log_reponse);
+        FirebaseCrashlytics.getInstance().log("D/" + log_title + ": " + log_reponse);
+
+        Intent intent = new Intent(activity, calledActivity);
+        activity.startActivity(intent);
     }
 }
