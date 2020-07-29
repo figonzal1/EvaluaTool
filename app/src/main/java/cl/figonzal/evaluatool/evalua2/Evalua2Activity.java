@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 05-07-20 17:46                                                 -
+ Last modified 28-07-20 21:44                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua2;
@@ -32,21 +32,10 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.figonzal.evaluatool.ConfigRoutes;
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua2.modulo1.ClasificacionesE2M1;
-import cl.figonzal.evaluatool.evalua2.modulo1.IndiceGeneralCognitivoE2M1;
-import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptivaE2M1;
-import cl.figonzal.evaluatool.evalua2.modulo1.PensamientoAnalogicoE2M1;
-import cl.figonzal.evaluatool.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1;
-import cl.figonzal.evaluatool.evalua2.modulo2.MemoriaAtencionE2M2;
-import cl.figonzal.evaluatool.evalua2.modulo3.NivelesAdaptacionE2M3;
-import cl.figonzal.evaluatool.evalua2.modulo4.ComprensionLectoraE2M4;
-import cl.figonzal.evaluatool.evalua2.modulo5.OrtografiaE2M5;
-import cl.figonzal.evaluatool.evalua2.modulo6.CalculoNumeracionE2M6;
-import cl.figonzal.evaluatool.evalua2.modulo6.IndiceGeneralMatematicoE2M6;
-import cl.figonzal.evaluatool.evalua2.modulo6.ResolucionProblemasE2M6;
-import cl.figonzal.evaluatool.evalua2.modulo6.ValoracionGlobalMatematicasE2M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -122,127 +111,13 @@ public class Evalua2Activity extends AppCompatActivity implements EvaluaAdapter.
     @Override
     public void onItemRootViewClicked(@NonNull String sectionTitle, int itemAdapterPosition) {
 
-        //MOdulo 1
-        if (getString(R.string.EVALUA_2_MODULO_1).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        PensamientoAnalogicoE2M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                abrirActividad(
-                        this,
-                        OrganizacionPerceptivaE2M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORG_PERCEPTIVA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                abrirActividad(
-                        this,
-                        ClasificacionesE2M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-                abrirActividad(
-                        this,
-                        ValoracionGlobalRazonamientoE2M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 4) {
-                abrirActividad(
-                        this,
-                        IndiceGeneralCognitivoE2M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
-                );
-            }
-        }
-
-        //Modulo2
-        else if (getString(R.string.EVALUA_2_MODULO_2).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                abrirActividad(
-                        this,
-                        MemoriaAtencionE2M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_MEMORIA_ATENCION)
-                );
-            }
-        }
-
-        //Modulo3
-        else if (getString(R.string.EVALUA_2_MODULO_3).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                abrirActividad(
-                        this,
-                        NivelesAdaptacionE2M3.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_NIVELES_ADAPTACION)
-                );
-            }
-        }
-
-        //Modulo4
-        else if (getString(R.string.EVALUA_2_MODULO_4).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                abrirActividad(
-                        this,
-                        ComprensionLectoraE2M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_COMPRENSION_LECTORA)
-                );
-            }
-        }
-
-        //Modulo5
-        else if (getString(R.string.EVALUA_2_MODULO_5).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                abrirActividad(
-                        this,
-                        OrtografiaE2M5.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORTOGRAFIA)
-                );
-            }
-        }
-
-        //Modulo6
-        else if (getString(R.string.EVALUA_2_MODULO_6).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-                abrirActividad(
-                        this,
-                        CalculoNumeracionE2M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_NUMERACION)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                abrirActividad(
-                        this,
-                        ResolucionProblemasE2M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_RES_PROBLEMAS)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                abrirActividad(
-                        this,
-                        ValoracionGlobalMatematicasE2M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-                abrirActividad(
-                        this,
-                        IndiceGeneralMatematicoE2M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
-                );
-            }
-        }
+        Utilidades.handleRoutes(
+                new ConfigRoutes(this).getRouteMapEvalua2(),
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
+        );
     }
 
     @Override
