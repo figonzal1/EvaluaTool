@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 1:18                                                  -
+ Last modified 29-07-20 1:51                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -20,6 +20,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cl.figonzal.evaluatool.evalua0.modulo1.ClasificacionE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.IndiceGeneralCognitivoE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.LetrasYNumerosE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.MemoriaVerbalE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.OrganizacionPerceptivaE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo1.SeriesE0M1;
+import cl.figonzal.evaluatool.evalua0.modulo2.CopiaDibujosE0M2;
+import cl.figonzal.evaluatool.evalua0.modulo2.GrafoMotricidadE0M2;
+import cl.figonzal.evaluatool.evalua0.modulo2.IndiceGeneralEspacialE0M2;
+import cl.figonzal.evaluatool.evalua0.modulo3.HabilidadesFonologicasE0M3;
+import cl.figonzal.evaluatool.evalua0.modulo3.IndiceGeneralLinguisticoE0M3;
+import cl.figonzal.evaluatool.evalua0.modulo3.PalabrasYFrasesE0M3;
+import cl.figonzal.evaluatool.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3;
 import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencionE1M1;
 import cl.figonzal.evaluatool.evalua1.modulo2.ClasificacionesE1M2;
 import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptivaE1M2;
@@ -85,6 +98,7 @@ public class ConfigRoutes {
 
     private Context context;
 
+    private Map<String, List<Object[]>> routeMapEvalua0;
     private Map<String, List<Object[]>> routeMapEvalua1;
     private Map<String, List<Object[]>> routeMapEvalua2;
     private Map<String, List<Object[]>> routeMapEvalua3;
@@ -94,6 +108,7 @@ public class ConfigRoutes {
     public ConfigRoutes(Context context) {
         this.context = context;
 
+        setRouteMapEvalua0();
         setRouteMapEvalua1();
         setRouteMapEvalua2();
         setRouteMapEvalua3();
@@ -103,6 +118,59 @@ public class ConfigRoutes {
 
 
     //SETTER
+    private void setRouteMapEvalua0() {
+        routeMapEvalua0 = new HashMap<>();
+
+        List<Object[]> subItems1 = new ArrayList<>();
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_1), ClasificacionE0M1.class, context.getString(R.string.CLICK_CLASIFICACION)
+        });
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_2), SeriesE0M1.class, context.getString(R.string.CLICK_SERIES)
+        });
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_3), OrganizacionPerceptivaE0M1.class, context.getString(R.string.CLICK_ORG_PERCEPTIVA)
+        });
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_4), LetrasYNumerosE0M1.class, context.getString(R.string.CLICK_LETRAS_NUMEROS)
+        });
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_5), MemoriaVerbalE0M1.class, context.getString(R.string.CLICK_MEMORIA_VERBAL)
+        });
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M1_SI_6), IndiceGeneralCognitivoE0M1.class, context.getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+        });
+
+        List<Object[]> subItems2 = new ArrayList<>();
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M2_SI_1), CopiaDibujosE0M2.class, context.getString(R.string.CLICK_COPIA_DIBUJOS)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M2_SI_2), GrafoMotricidadE0M2.class, context.getString(R.string.CLICK_GRAFO_MOTRICIDAD)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M2_SI_3), IndiceGeneralEspacialE0M2.class, context.getString(R.string.CLICK_INDICE_GENERAL_ESPACIAL)
+        });
+
+        List<Object[]> subItems3 = new ArrayList<>();
+        subItems3.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M3_SI_1), PalabrasYFrasesE0M3.class, context.getString(R.string.CLICK_PALABRAS_FRASES)
+        });
+        subItems3.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M3_SI_2), RecepcionAuditivaArticulacionE0M3.class, context.getString(R.string.CLICK_RECEPCION_AUDITIVA)
+        });
+        subItems3.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M3_SI_3), HabilidadesFonologicasE0M3.class, context.getString(R.string.CLICK_HABILIDADES_FONOLOGICAS)
+        });
+        subItems3.add(new Object[]{
+                context.getString(R.string.EVALUA_0_M3_SI_4), IndiceGeneralLinguisticoE0M3.class, context.getString(R.string.CLICK_INDICE_GENERAL_LINGUISTICO)
+        });
+
+        routeMapEvalua0.put(context.getString(R.string.EVALUA_0_MODULO_1), subItems1);
+        routeMapEvalua0.put(context.getString(R.string.EVALUA_0_MODULO_2), subItems2);
+        routeMapEvalua0.put(context.getString(R.string.EVALUA_0_MODULO_3), subItems3);
+    }
+
     private void setRouteMapEvalua1() {
         routeMapEvalua1 = new HashMap<>();
 
@@ -404,6 +472,10 @@ public class ConfigRoutes {
     }
 
     //GETTERS
+    public Map<String, List<Object[]>> getRouteMapEvalua0() {
+        return routeMapEvalua0;
+    }
+
     public Map<String, List<Object[]>> getRouteMapEvalua1() {
         return routeMapEvalua1;
     }
