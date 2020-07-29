@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 28-07-20 21:14                                                 -
+ Last modified 29-07-20 1:18                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -20,6 +20,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencionE1M1;
+import cl.figonzal.evaluatool.evalua1.modulo2.ClasificacionesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptivaE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.SeriesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionGlobalBasesE1M2;
+import cl.figonzal.evaluatool.evalua1.modulo3.NivelesAdaptacionE1M3;
+import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectoraE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectoraE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLecturaE1M4;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFoneticaE1M5;
+import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisualE1M5;
+import cl.figonzal.evaluatool.evalua1.modulo6.CalculoNumeracionE1M6;
 import cl.figonzal.evaluatool.evalua2.modulo1.ClasificacionesE2M1;
 import cl.figonzal.evaluatool.evalua2.modulo1.IndiceGeneralCognitivoE2M1;
 import cl.figonzal.evaluatool.evalua2.modulo1.OrganizacionPerceptivaE2M1;
@@ -73,6 +85,7 @@ public class ConfigRoutes {
 
     private Context context;
 
+    private Map<String, List<Object[]>> routeMapEvalua1;
     private Map<String, List<Object[]>> routeMapEvalua2;
     private Map<String, List<Object[]>> routeMapEvalua3;
     private Map<String, List<Object[]>> routeMapEvalua4;
@@ -81,13 +94,77 @@ public class ConfigRoutes {
     public ConfigRoutes(Context context) {
         this.context = context;
 
+        setRouteMapEvalua1();
         setRouteMapEvalua2();
         setRouteMapEvalua3();
         setRouteMapEvalua4();
         setRouteMapEvalua5();
     }
 
+
     //SETTER
+    private void setRouteMapEvalua1() {
+        routeMapEvalua1 = new HashMap<>();
+
+        List<Object[]> subItems1 = new ArrayList<>();
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M1_SI_1), MemoriaAtencionE1M1.class, context.getString(R.string.CLICK_MEMORIA_ATENCION)
+        });
+
+        List<Object[]> subItems2 = new ArrayList<>();
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M1_SI_1), SeriesE1M2.class, context.getString(R.string.CLICK_SERIES)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2.class, context.getString(R.string.CLICK_CLASIFICACION)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2.class, context.getString(R.string.CLICK_ORG_PERCEPTIVA)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2.class, context.getString(R.string.CLICK_ORG_PERCEPTIVA)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalBasesE1M2.class, context.getString(R.string.CLICK_VALORACION_GLOBAL)
+        });
+
+        List<Object[]> subItems3 = new ArrayList<>();
+        subItems3.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M3_SI_1), NivelesAdaptacionE1M3.class, context.getString(R.string.CLICK_NIVELES_ADAPTACION)
+        });
+
+        List<Object[]> subItems4 = new ArrayList<>();
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M4_SI_1), ComprensionLectoraE1M4.class, context.getString(R.string.CLICK_COMPRENSION_LECTORA)
+        });
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M4_SI_2), ExactitudLectoraE1M4.class, context.getString(R.string.CLICK_EXACTITUD_LECTORA)
+        });
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalLecturaE1M4.class, context.getString(R.string.CLICK_VALORACION_GLOBAL)
+        });
+
+        List<Object[]> subItems5 = new ArrayList<>();
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M5_SI_1), OrtografiaFoneticaE1M5.class, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+        });
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M5_SI_2), OrtografiaVisualE1M5.class, context.getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
+        });
+
+        List<Object[]> subItems6 = new ArrayList<>();
+        subItems6.add(new Object[]{
+                context.getString(R.string.EVALUA_1_M6_SI_1), CalculoNumeracionE1M6.class, context.getString(R.string.CLICK_CAL_NUMERACION)
+        });
+
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_1), subItems1);
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_2), subItems2);
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_3), subItems3);
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_4), subItems4);
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_5), subItems5);
+        routeMapEvalua1.put(context.getString(R.string.EVALUA_1_MODULO_6), subItems6);
+    }
+
     private void setRouteMapEvalua2() {
         routeMapEvalua2 = new HashMap<>();
 
@@ -327,6 +404,10 @@ public class ConfigRoutes {
     }
 
     //GETTERS
+    public Map<String, List<Object[]>> getRouteMapEvalua1() {
+        return routeMapEvalua1;
+    }
+
     public Map<String, List<Object[]>> getRouteMapEvalua2() {
         return routeMapEvalua2;
     }

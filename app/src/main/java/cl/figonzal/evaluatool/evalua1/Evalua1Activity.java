@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 02-07-20 18:11                                                 -
+ Last modified 29-07-20 1:22                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua1;
@@ -31,20 +31,10 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.ArrayList;
 import java.util.List;
 
+import cl.figonzal.evaluatool.ConfigRoutes;
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.Utilidades;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.evalua1.modulo1.MemoriaAtencionE1M1;
-import cl.figonzal.evaluatool.evalua1.modulo2.ClasificacionesE1M2;
-import cl.figonzal.evaluatool.evalua1.modulo2.OrganizacionPerceptivaE1M2;
-import cl.figonzal.evaluatool.evalua1.modulo2.SeriesE1M2;
-import cl.figonzal.evaluatool.evalua1.modulo2.ValoracionGlobalBasesE1M2;
-import cl.figonzal.evaluatool.evalua1.modulo3.NivelesAdaptacionE1M3;
-import cl.figonzal.evaluatool.evalua1.modulo4.ComprensionLectoraE1M4;
-import cl.figonzal.evaluatool.evalua1.modulo4.ExactitudLectoraE1M4;
-import cl.figonzal.evaluatool.evalua1.modulo4.ValoracionGlobalLecturaE1M4;
-import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaFoneticaE1M5;
-import cl.figonzal.evaluatool.evalua1.modulo5.OrtografiaVisualE1M5;
-import cl.figonzal.evaluatool.evalua1.modulo6.CalculoNumeracionE1M6;
 import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
@@ -122,129 +112,13 @@ public class Evalua1Activity extends AppCompatActivity implements EvaluaAdapter.
     @Override
     public void onItemRootViewClicked(@NonNull String sectionTitle, int itemAdapterPosition) {
 
-        //MOdulo 1
-        if (getString(R.string.EVALUA_1_MODULO_1).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        MemoriaAtencionE1M1.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_MEMORIA_ATENCION)
-                );
-            }
-        }
-
-        //Modulo 2
-        else if (getString(R.string.EVALUA_1_MODULO_2).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        SeriesE1M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_SERIES)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        ClasificacionesE1M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CLASIFICACION)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-
-                abrirActividad(
-                        this,
-                        OrganizacionPerceptivaE1M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORG_PERCEPTIVA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 3) {
-
-                abrirActividad(
-                        this,
-                        ValoracionGlobalBasesE1M2.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            }
-        }
-
-        //Modulo 3
-        else if (getString(R.string.EVALUA_1_MODULO_3).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        NivelesAdaptacionE1M3.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_NIVELES_ADAPTACION)
-                );
-            }
-        }
-
-        //MOdulo 4
-        else if (getString(R.string.EVALUA_1_MODULO_4).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        ComprensionLectoraE1M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_COMPRENSION_LECTORA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-                abrirActividad(
-                        this,
-                        ExactitudLectoraE1M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_EXACTITUD_LECTORA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 2) {
-                abrirActividad(
-                        this,
-                        ValoracionGlobalLecturaE1M4.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_VALORACION_GLOBAL)
-                );
-            }
-        }
-
-        //MOdulo 5
-        else if (getString(R.string.EVALUA_1_MODULO_5).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        OrtografiaFoneticaE1M5.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
-                );
-            } else if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 1) {
-
-                abrirActividad(
-                        this,
-                        OrtografiaVisualE1M5.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
-                );
-            }
-        }
-
-        //Modulo6
-        else if (getString(R.string.EVALUA_1_MODULO_6).equals(sectionTitle)) {
-            if (sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) == 0) {
-
-                abrirActividad(
-                        this,
-                        CalculoNumeracionE1M6.class,
-                        getString(R.string.SUB_ITEM_CLICK),
-                        getString(R.string.CLICK_CAL_NUMERACION)
-                );
-            }
-        }
+        Utilidades.handleRoutes(
+                new ConfigRoutes(this).getRouteMapEvalua1(),
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
+        );
     }
 
     @Override
