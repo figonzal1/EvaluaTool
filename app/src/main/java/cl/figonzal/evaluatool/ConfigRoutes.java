@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 1:51                                                  -
+ Last modified 29-07-20 2:24                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -93,6 +93,18 @@ import cl.figonzal.evaluatool.evalua5.modulo2.PensamientoAnalogicoE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.ReflexividadE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2;
 import cl.figonzal.evaluatool.evalua5.modulo3.NivelesAdaptacionE5M3;
+import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracionE7M1;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivoE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacialE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoInductivoE7M2;
+import cl.figonzal.evaluatool.evalua7.modulo4.ComprensionLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo4.EficaciaLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo4.VelocidadLectoraE7M4;
+import cl.figonzal.evaluatool.evalua7.modulo5.ExpresionEscritaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaFoneticaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo5.OrtografiaVisualRegladaE7M5;
+import cl.figonzal.evaluatool.evalua7.modulo6.CalculoNumeracionE7M6;
+import cl.figonzal.evaluatool.evalua7.modulo6.ResolucionProblemasE7M6;
 
 public class ConfigRoutes {
 
@@ -104,6 +116,7 @@ public class ConfigRoutes {
     private Map<String, List<Object[]>> routeMapEvalua3;
     private Map<String, List<Object[]>> routeMapEvalua4;
     private Map<String, List<Object[]>> routeMapEvalua5;
+    private Map<String, List<Object[]>> routeMapEvalua7;
 
     public ConfigRoutes(Context context) {
         this.context = context;
@@ -114,8 +127,8 @@ public class ConfigRoutes {
         setRouteMapEvalua3();
         setRouteMapEvalua4();
         setRouteMapEvalua5();
+        setRouteMapEvalua7();
     }
-
 
     //SETTER
     private void setRouteMapEvalua0() {
@@ -471,6 +484,62 @@ public class ConfigRoutes {
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_3), subItems3);
     }
 
+    private void setRouteMapEvalua7() {
+        routeMapEvalua7 = new HashMap<>();
+
+        List<Object[]> subItems1 = new ArrayList<>();
+        subItems1.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M1_SI_1), AtencionConcentracionE7M1.class, context.getString(R.string.CLICK_ATEN_CONCENTRACION)
+        });
+
+        List<Object[]> subItems2 = new ArrayList<>();
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M2_SI_1), RazonamientoDeductivoE7M2.class, context.getString(R.string.CLICK_RAZON_DEDUCTIVO)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M2_SI_2), RazonamientoInductivoE7M2.class, context.getString(R.string.CLICK_RAZON_INDUCTIVO)
+        });
+        subItems2.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M2_SI_3), RazonamientoEspacialE7M2.class, context.getString(R.string.CLICK_RAZON_ESPACIAL)
+        });
+
+        List<Object[]> subItems4 = new ArrayList<>();
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M4_SI_1), EficaciaLectoraE7M4.class, context.getString(R.string.CLICK_EFICACIA_LECTORA)
+        });
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M4_SI_2), ComprensionLectoraE7M4.class, context.getString(R.string.CLICK_COMPRENSION_LECTORA)
+        });
+        subItems4.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M4_SI_3), VelocidadLectoraE7M4.class, context.getString(R.string.CLICK_VELOCIDAD_LECTORA)
+        });
+
+        List<Object[]> subItems5 = new ArrayList<>();
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M5_SI_1), OrtografiaFoneticaE7M5.class, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+        });
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M5_SI_2), ExpresionEscritaE7M5.class, context.getString(R.string.CLICK_EXP_ESCRITA)
+        });
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M5_SI_3), OrtografiaVisualRegladaE7M5.class, context.getString(R.string.CLICK_ORT_VIS_REGLADA)
+        });
+
+        List<Object[]> subItems6 = new ArrayList<>();
+        subItems6.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M6_SI_1), CalculoNumeracionE7M6.class, context.getString(R.string.CLICK_CAL_NUMERACION)
+        });
+        subItems6.add(new Object[]{
+                context.getString(R.string.EVALUA_7_M6_SI_2), ResolucionProblemasE7M6.class, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)
+        });
+
+        routeMapEvalua7.put(context.getString(R.string.EVALUA_7_MODULO_1), subItems1);
+        routeMapEvalua7.put(context.getString(R.string.EVALUA_7_MODULO_2), subItems2);
+        routeMapEvalua7.put(context.getString(R.string.EVALUA_7_MODULO_4), subItems4);
+        routeMapEvalua7.put(context.getString(R.string.EVALUA_7_MODULO_5), subItems5);
+        routeMapEvalua7.put(context.getString(R.string.EVALUA_7_MODULO_6), subItems6);
+    }
+
     //GETTERS
     public Map<String, List<Object[]>> getRouteMapEvalua0() {
         return routeMapEvalua0;
@@ -488,11 +557,15 @@ public class ConfigRoutes {
         return routeMapEvalua3;
     }
 
+    public Map<String, List<Object[]>> getRouteMapEvalua4() {
+        return routeMapEvalua4;
+    }
+
     public Map<String, List<Object[]>> getRouteMapEvalua5() {
         return routeMapEvalua5;
     }
 
-    public Map<String, List<Object[]>> getRouteMapEvalua4() {
-        return routeMapEvalua4;
+    public Map<String, List<Object[]>> getRouteMapEvalua7() {
+        return routeMapEvalua7;
     }
 }
