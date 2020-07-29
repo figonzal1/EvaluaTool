@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 27-07-20 13:45                                                ~
+  Last modified 29-07-20 15:59                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -158,12 +158,14 @@
     <string name="EVALUA_5_MODULO_1">Memoria y Atención</string>
     <string name="EVALUA_5_MODULO_2">Bases del Razonamiento</string>
     <string name="EVALUA_5_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_5_MODULO_4">Lectura</string>
     <string name="EVALUA_5_M1_SI_1">Memoria y Atención [MA-5]</string>
     <string name="EVALUA_5_M2_SI_1">Reflexividad [RE-5]</string>
     <string name="EVALUA_5_M2_SI_2">Pensamiento Analógico [PA-5]</string>
     <string name="EVALUA_5_M2_SI_3">Organización Perceptiva [OP-5]</string>
     <string name="EVALUA_5_EVALUA_GLOBAL">Valoración Global</string>
     <string name="EVALUA_5_M3_SI_1">Niveles Adaptación [NA-5]</string>
+    <string name="EVALUA_5_M4_SI_1">Comprensión Lectora [CL-5]</string>
 
 
     <!-- EVALUA 7-->
