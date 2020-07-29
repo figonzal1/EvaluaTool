@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 16:57                                                 -
+ Last modified 29-07-20 18:57                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -84,6 +84,7 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         List<Evalua> subItems4 = new ArrayList<>();
         subItems4.add(new Evalua(getString(R.string.EVALUA_5_M4_SI_1)));
         subItems4.add(new Evalua(getString(R.string.EVALUA_5_M4_SI_2)));
+        subItems4.add(new Evalua(getString(R.string.EVALUA_5_M4_SI_3)));
 
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));

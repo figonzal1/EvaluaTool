@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 29-07-20 16:30                                                ~
+  Last modified 29-07-20 17:18                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua5.modulo4.VelocidadLectoraE5M4"></activity>
+        <activity android:name=".evalua5.modulo4.ExactitudLectoraE5M4"></activity>
+        <activity android:name=".evalua5.modulo4.VelocidadLectoraE5M4" />
         <activity android:name=".evalua5.modulo4.ComprensionLectoraE5M4" />
         <activity android:name=".evalua5.modulo3.NivelesAdaptacionE5M3" />
         <activity android:name=".evalua5.modulo2.ValoracionGlobalRazonamientoE5M2" />
