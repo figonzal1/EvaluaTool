@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 30-07-20 2:00                                                  -
+ Last modified 30-07-20 17:21                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -100,6 +100,7 @@ import cl.figonzal.evaluatool.evalua5.modulo4.VelocidadLectoraE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo5.OrtografiaFoneticaE5M5;
 import cl.figonzal.evaluatool.evalua5.modulo5.OrtografiaVisualRegladaE5M5;
 import cl.figonzal.evaluatool.evalua5.modulo6.CalculoNumeracionE5M6;
+import cl.figonzal.evaluatool.evalua5.modulo6.ResolucionProblemasE5M6;
 import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracionE7M1;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivoE7M2;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacialE7M2;
@@ -511,6 +512,9 @@ public class ConfigRoutes {
         List<Object[]> subItems6 = new ArrayList<>();
         subItems6.add(new Object[]{
                 context.getString(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6.class, context.getString(R.string.CLICK_CAL_NUMERACION)
+        });
+        subItems6.add(new Object[]{
+                context.getString(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6.class, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)
         });
 
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_1), subItems1);
