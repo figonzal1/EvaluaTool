@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 22:11                                                 -
+ Last modified 30-07-20 2:00                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -99,6 +99,7 @@ import cl.figonzal.evaluatool.evalua5.modulo4.ValoracionGlobalLecturaE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo4.VelocidadLectoraE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo5.OrtografiaFoneticaE5M5;
 import cl.figonzal.evaluatool.evalua5.modulo5.OrtografiaVisualRegladaE5M5;
+import cl.figonzal.evaluatool.evalua5.modulo6.CalculoNumeracionE5M6;
 import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracionE7M1;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivoE7M2;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacialE7M2;
@@ -507,11 +508,17 @@ public class ConfigRoutes {
                 context.getString(R.string.EVALUA_5_M5_SI_1), OrtografiaVisualRegladaE5M5.class, context.getString(R.string.CLICK_ORTOGRAFIA_VISUAL)
         });
 
+        List<Object[]> subItems6 = new ArrayList<>();
+        subItems6.add(new Object[]{
+                context.getString(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6.class, context.getString(R.string.CLICK_CAL_NUMERACION)
+        });
+
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_1), subItems1);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_2), subItems2);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_3), subItems3);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_4), subItems4);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_5), subItems5);
+        routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_6), subItems6);
     }
 
     private void setRouteMapEvalua7() {
