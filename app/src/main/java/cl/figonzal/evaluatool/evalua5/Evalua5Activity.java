@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 22:11                                                 -
+ Last modified 30-07-20 1:55                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -92,12 +92,17 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems5.add(new Evalua(getString(R.string.EVALUA_5_M5_SI_1)));
         subItems5.add(new Evalua(getString(R.string.EVALUA_5_M5_SI_2)));
 
+        //MODULO 6
+        List<Evalua> subItems6 = new ArrayList<>();
+        subItems6.add(new Evalua(getString(R.string.EVALUA_5_M6_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_3), subItems3, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_4), subItems4, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_5), subItems5, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_6), subItems6, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
