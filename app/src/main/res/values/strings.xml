@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-07-20 2:00                                                 ~
+  Last modified 30-07-20 17:21                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -173,6 +173,7 @@
     <string name="EVALUA_5_M5_SI_1">Ortografía Fonética [OF-5]</string>
     <string name="EVALUA_5_M5_SI_2">Ortografía Visual Reglada [OV-5]</string>
     <string name="EVALUA_5_M6_SI_1">Cálculo y Numeración [CN-5]</string>
+    <string name="EVALUA_5_M6_SI_2">Resolución Problemas[RP-5]</string>
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
