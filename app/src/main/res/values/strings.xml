@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 29-07-20 21:33                                                ~
+  Last modified 29-07-20 22:11                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -169,7 +169,8 @@
     <string name="EVALUA_5_M4_SI_2">Velocidad Lectora [VL-5]</string>
     <string name="EVALUA_5_M4_SI_3">Exactitud Lectora [EL-5]</string>
     <string name="EVALUA_5_EVALUA_GLOBAL">Valoración Global</string>
-    <string name="EVALUA_5_M5_SI_1">Ortografía Fonétia [OF-5]</string>
+    <string name="EVALUA_5_M5_SI_1">Ortografía Fonética [OF-5]</string>
+    <string name="EVALUA_5_M5_SI_2">Ortografía Visual Reglada [OV-5]</string>
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
