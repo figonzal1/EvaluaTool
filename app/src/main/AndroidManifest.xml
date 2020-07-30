@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 30-07-20 0:44                                                 ~
+  Last modified 30-07-20 16:16                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua5.modulo6.CalculoNumeracionE5M6"></activity>
+        <activity android:name=".evalua5.modulo6.ResolucionProblemasE5M6"></activity>
+        <activity android:name=".evalua5.modulo6.CalculoNumeracionE5M6" />
         <activity android:name=".evalua5.modulo5.OrtografiaVisualRegladaE5M5" />
         <activity android:name=".evalua5.modulo5.OrtografiaFoneticaE5M5" />
         <activity android:name=".evalua5.modulo4.ValoracionGlobalLecturaE5M4" />
