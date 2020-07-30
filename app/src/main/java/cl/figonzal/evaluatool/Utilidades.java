@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 27-07-20 22:25                                                 -
+ Last modified 29-07-20 21:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -146,6 +146,8 @@ public class Utilidades {
                         abrirActividad(currentActivity, activity, titleLog, responseLog);
                     }
                 }
+
+                break;
             }
         }
     }
