@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 20:48                                                 -
+ Last modified 29-07-20 21:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -97,6 +97,7 @@ import cl.figonzal.evaluatool.evalua5.modulo4.ComprensionLectoraE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo4.ExactitudLectoraE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo4.ValoracionGlobalLecturaE5M4;
 import cl.figonzal.evaluatool.evalua5.modulo4.VelocidadLectoraE5M4;
+import cl.figonzal.evaluatool.evalua5.modulo5.OrtografiaFoneticaE5M5;
 import cl.figonzal.evaluatool.evalua7.modulo1.AtencionConcentracionE7M1;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoDeductivoE7M2;
 import cl.figonzal.evaluatool.evalua7.modulo2.RazonamientoEspacialE7M2;
@@ -497,10 +498,16 @@ public class ConfigRoutes {
                 context.getString(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalLecturaE5M4.class, context.getString(R.string.CLICK_VALORACION_GLOBAL)
         });
 
+        List<Object[]> subItems5 = new ArrayList<>();
+        subItems5.add(new Object[]{
+                context.getString(R.string.EVALUA_5_M5_SI_1), OrtografiaFoneticaE5M5.class, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)
+        });
+
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_1), subItems1);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_2), subItems2);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_3), subItems3);
         routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_4), subItems4);
+        routeMapEvalua5.put(context.getString(R.string.EVALUA_5_MODULO_5), subItems5);
     }
 
     private void setRouteMapEvalua7() {

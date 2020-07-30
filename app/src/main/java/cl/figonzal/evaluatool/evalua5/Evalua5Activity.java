@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 29-07-20 20:48                                                 -
+ Last modified 29-07-20 21:33                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua5;
@@ -87,11 +87,16 @@ public class Evalua5Activity extends AppCompatActivity implements EvaluaAdapter.
         subItems4.add(new Evalua(getString(R.string.EVALUA_5_M4_SI_3)));
         subItems4.add(new Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL)));
 
+        //MODULO 5
+        List<Evalua> subItems5 = new ArrayList<>();
+        subItems5.add(new Evalua(getString(R.string.EVALUA_5_M4_SI_1)));
+
         //HEADERS
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_1), subItems1, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_2), subItems2, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_3), subItems3, this));
         sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_4), subItems4, this));
+        sectionedRecyclerViewAdapter.addSection(new EvaluaAdapter(getString(R.string.EVALUA_5_MODULO_5), subItems5, this));
 
         final RecyclerView recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
