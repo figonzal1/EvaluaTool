@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 05-07-20 23:54                                                 -
+ Last modified 14-08-20 1:02                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -29,6 +29,8 @@ import com.google.android.gms.ads.reward.RewardedVideoAdListener;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Date;
+
+import cl.figonzal.evaluatool.utilidades.Utilidades;
 
 public class Admob {
 

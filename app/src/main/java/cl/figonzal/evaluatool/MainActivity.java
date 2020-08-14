@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 28-07-20 21:13                                                 -
+ Last modified 14-08-20 1:02                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -31,13 +31,14 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics;
 import java.util.Date;
 
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment;
-import cl.figonzal.evaluatool.evalua0.Evalua0Activity;
-import cl.figonzal.evaluatool.evalua1.Evalua1Activity;
-import cl.figonzal.evaluatool.evalua2.Evalua2Activity;
-import cl.figonzal.evaluatool.evalua3.Evalua3Activity;
-import cl.figonzal.evaluatool.evalua4.Evalua4Activity;
-import cl.figonzal.evaluatool.evalua5.Evalua5Activity;
-import cl.figonzal.evaluatool.evalua7.Evalua7Activity;
+import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity;
+import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity;
+import cl.figonzal.evaluatool.evalua.evalua2.Evalua2Activity;
+import cl.figonzal.evaluatool.evalua.evalua3.Evalua3Activity;
+import cl.figonzal.evaluatool.evalua.evalua4.Evalua4Activity;
+import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity;
+import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity;
+import cl.figonzal.evaluatool.utilidades.Utilidades;
 
 public class MainActivity extends AppCompatActivity {
 

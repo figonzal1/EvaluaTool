@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 02-07-20 12:53                                                ~
+  Last modified 14-08-20 0:53                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua1.modulo4.ExactitudLectoraE1M4">
+    tools:context=".evalua.evalua1.modulo4.ExactitudLectoraE1M4">
 
     <include
         android:id="@+id/include"

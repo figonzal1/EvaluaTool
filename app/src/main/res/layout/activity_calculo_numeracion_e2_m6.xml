@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 16:35                                                ~
+  Last modified 14-08-20 0:58                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo6.CalculoNumeracionE2M6">
+    tools:context=".evalua.evalua2.modulo6.CalculoNumeracionE2M6">
 
     <include
         android:id="@+id/include"

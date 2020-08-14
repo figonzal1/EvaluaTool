@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 27-07-20 1:18                                                 ~
+  Last modified 14-08-20 0:58                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua5.modulo2.ReflexividadE5M2">
+    tools:context=".evalua.evalua5.modulo2.ReflexividadE5M2">
 
     <include
         android:id="@+id/include"
