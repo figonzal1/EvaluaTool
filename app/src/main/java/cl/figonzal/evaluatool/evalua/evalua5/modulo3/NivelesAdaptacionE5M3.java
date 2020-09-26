@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:09                                                  -
+ Last modified 26-09-20 1:20                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo3;
@@ -21,13 +21,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import cl.figonzal.evaluatool.R;
-import cl.figonzal.evaluatool.evalua.evalua5.modulo3.adaptacionFragments.FragmentPageAdapterE5M3;
+import cl.figonzal.evaluatool.evalua.evalua5.modulo3.adaptacionFragments.FragmentStateAdapterE5M3;
 
 public class NivelesAdaptacionE5M3 extends AppCompatActivity {
 
@@ -50,12 +51,12 @@ public class NivelesAdaptacionE5M3 extends AppCompatActivity {
         actionBar.setTitle(getString(R.string.TOOLBAR_NIVELES_ADAPTACION));
 
         //View pager
-        ViewPager viewPager = findViewById(R.id.view_pager_niveles_adaptacion);
-        viewPager.setAdapter(new FragmentPageAdapterE5M3(getSupportFragmentManager()));
+        ViewPager2 viewPager2 = findViewById(R.id.view_pager_niveles_adaptacion);
+        viewPager2.setAdapter(new FragmentStateAdapterE5M3(this));
 
         //TabLayout
         TabLayout tabLayout = findViewById(R.id.tabs_niveles_adaptacion);
-        tabLayout.setupWithViewPager(viewPager);
+        new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> tab.setText(FragmentStateAdapterE5M3.getTabs()[position])).attach();
     }
 
     @Override

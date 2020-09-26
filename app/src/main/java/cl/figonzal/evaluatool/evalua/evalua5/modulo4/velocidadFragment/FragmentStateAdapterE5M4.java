@@ -8,50 +8,43 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 0:58                                                  -
+ Last modified 26-09-20 1:36                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments;
+package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentPageAdapterE3M3 extends FragmentPagerAdapter {
+public class FragmentStateAdapterE5M4 extends FragmentStateAdapter {
 
-    private static final String[] tabs = new String[4];
+    private static final String[] tabs = new String[2];
 
-    public FragmentPageAdapterE3M3(@NonNull FragmentManager fm) {
-        super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        tabs[0] = "Motivación";
-        tabs[1] = "Autocontrol";
-        tabs[2] = "Conductas Pro-sociales";
-        tabs[3] = "Autoestima";
+    public FragmentStateAdapterE5M4(@NonNull FragmentActivity fa) {
+        super(fa);
+        tabs[0] = "Velocidad";
+        tabs[1] = "Comprensión";
     }
 
+    public static String[] getTabs() {
+        return tabs;
+    }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-
+    public Fragment createFragment(int position) {
         Fragment f = new Fragment();
 
         switch (position) {
             case 0:
-                f = MotivacionFragmentE3M3.newInstance();
+                f = VelocidadFragmentE5M4.newInstance();
                 break;
-
             case 1:
-                f = AutoControlFragmentE3M3.newInstance();
+                f = ComprensionFragmentE5M4.newInstance();
                 break;
-
-            case 2:
-                f = ConductaProSocialFragmentE3M3.newInstance();
-                break;
-
-            case 3:
-                f = AutoEstimaFragmentE3M3.newInstance();
+            default:
                 break;
         }
 
@@ -59,12 +52,8 @@ public class FragmentPageAdapterE3M3 extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return tabs.length;
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return tabs[position];
-    }
 }
+

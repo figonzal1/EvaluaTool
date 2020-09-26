@@ -8,50 +8,52 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 0:58                                                  -
+ Last modified 26-09-20 1:36                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments;
+package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentPageAdapterE4M3 extends FragmentPagerAdapter {
+public class FragmentStateAdapterE1M3 extends FragmentStateAdapter {
 
     private static final String[] tabs = new String[4];
 
-    public FragmentPageAdapterE4M3(@NonNull FragmentManager fm) {
-        super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+    public FragmentStateAdapterE1M3(@NonNull FragmentActivity fa) {
+        super(fa);
         tabs[0] = "Motivación";
         tabs[1] = "Autocontrol";
         tabs[2] = "Conductas Pro-sociales";
         tabs[3] = "Autoestima";
     }
 
+    public static String[] getTabs() {
+        return tabs;
+    }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-
+    public Fragment createFragment(int position) {
         Fragment f = new Fragment();
 
         switch (position) {
             case 0:
-                f = MotivacionFragmentE4M3.newInstance();
+                f = MotivacionFragmentE1M3.newInstance();
                 break;
 
             case 1:
-                f = AutoControlFragmentE4M3.newInstance();
+                f = AutoControlFragmentE1M3.newInstance();
                 break;
 
             case 2:
-                f = ConductaProSocialFragmentE4M3.newInstance();
+                f = ConductaProSocialE1M3.newInstance();
                 break;
 
             case 3:
-                f = AutoEstimaFragmentE4M3.newInstance();
+                f = AutoEstimaFragmentE1M3.newInstance();
                 break;
         }
 
@@ -59,12 +61,7 @@ public class FragmentPageAdapterE4M3 extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return tabs.length;
-    }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return tabs[position];
     }
 }
