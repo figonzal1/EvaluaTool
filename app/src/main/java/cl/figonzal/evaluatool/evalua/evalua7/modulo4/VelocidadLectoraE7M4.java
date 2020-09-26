@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 0:58                                                  -
+ Last modified 26-09-20 1:36                                                  -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4;
@@ -21,13 +21,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import cl.figonzal.evaluatool.R;
-import cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments.FragmentPageAdapterE7M4;
+import cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments.FragmentStateAdapterE7M4;
 
 public class VelocidadLectoraE7M4 extends AppCompatActivity {
 
@@ -51,12 +52,12 @@ public class VelocidadLectoraE7M4 extends AppCompatActivity {
         actionBar.setTitle(getString(R.string.TOOLBAR_VELOCIDAD_LECTORA));
 
         //View pager
-        ViewPager viewPager = findViewById(R.id.view_pager_velocidad);
-        viewPager.setAdapter(new FragmentPageAdapterE7M4(getSupportFragmentManager()));
+        ViewPager2 viewPager2 = findViewById(R.id.view_pager_velocidad);
+        viewPager2.setAdapter(new FragmentStateAdapterE7M4(this));
 
         //TabLayout
         TabLayout tabLayout = findViewById(R.id.tabs_velocidad);
-        tabLayout.setupWithViewPager(viewPager);
+        new TabLayoutMediator(tabLayout, viewPager2, (tab, position) -> tab.setText(FragmentStateAdapterE7M4.getTabs()[position])).attach();
     }
 
 
