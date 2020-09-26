@@ -8,39 +8,41 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 0:58                                                  -
+ Last modified 26-09-20 1:36                                                  -
  -----------------------------------------------------------------------------*/
 
-package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments;
+package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class FragmentPageAdapterE4M4 extends FragmentPagerAdapter {
+public class FragmentStateAdapterE7M4 extends FragmentStateAdapter {
 
     private static final String[] tabs = new String[2];
 
-    public FragmentPageAdapterE4M4(@NonNull FragmentManager fm) {
-        super(fm, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+    public FragmentStateAdapterE7M4(@NonNull FragmentActivity fa) {
+        super(fa);
         tabs[0] = "Velocidad";
         tabs[1] = "Comprensión";
     }
 
+    public static String[] getTabs() {
+        return tabs;
+    }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-
+    public Fragment createFragment(int position) {
         Fragment f = new Fragment();
 
         switch (position) {
             case 0:
-                f = VelocidadFragmentE4M4.newInstance();
+                f = VelocidadFragmentE7M4.newInstance();
                 break;
             case 1:
-                f = ComprensionFragmentE4M4.newInstance();
+                f = ComprensionFragmentE7M4.newInstance();
                 break;
             default:
                 break;
@@ -50,13 +52,7 @@ public class FragmentPageAdapterE4M4 extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getItemCount() {
         return tabs.length;
     }
-
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return tabs[position];
-    }
 }
-
