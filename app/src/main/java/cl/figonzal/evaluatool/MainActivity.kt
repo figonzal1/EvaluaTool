@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 16:30
+ * Last modified 07-11-20 19:59
  */
 package cl.figonzal.evaluatool
 
@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.utilidades.Utilidades
 import com.google.android.material.button.MaterialButton
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import timber.log.Timber
 import java.util.*
 
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnEvalua10: MaterialButton
 
     private var sharedPreferences: SharedPreferences? = null
-    private var crashlytics: FirebaseCrashlytics? = null
     private var adsService: AdsService? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -98,11 +96,10 @@ class MainActivity : AppCompatActivity() {
         btnEvalua10.alpha = 0.6f
 
         sharedPreferences = getSharedPreferences(getString(R.string.MAIN_SHARED_PREF), MODE_PRIVATE)
-        crashlytics = FirebaseCrashlytics.getInstance()
     }
 
     private fun loadAds() {
-        adsService = AdsService(this, applicationContext, crashlytics)
+        adsService = AdsService(this, applicationContext)
         adsService!!.loadIntersitial()
         adsService!!.loadRewardVideo(sharedPreferences)
     }

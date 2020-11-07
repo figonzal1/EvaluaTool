@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 07-11-20 17:53                                                 -
+ Last modified 07-11-20 19:59                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -26,7 +26,6 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
 import java.util.Date;
 
@@ -38,13 +37,11 @@ public class AdsService {
     private RewardedVideoAd rewardedVideoAd;
     private final Context context;
     private final Activity activity;
-    private final FirebaseCrashlytics crashlytics;
 
-    public AdsService(Activity activity, Context context, FirebaseCrashlytics crashlytics) {
+    public AdsService(Activity activity, Context context) {
 
         MobileAds.initialize(context);
         this.context = context;
-        this.crashlytics = crashlytics;
         this.activity = activity;
     }
 
@@ -65,14 +62,12 @@ public class AdsService {
 
             Log.d(context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CARGADO));
 
-            crashlytics.log(context.getString(R.string.TAG_INTERSITIAL_STATUS) + context.getString(R.string.INTERSITIAL_CARGADO));
             interstitialAd.setAdListener(new AdListener() {
                 @Override
                 public void onAdClosed() {
                     super.onAdClosed();
 
                     Log.d(context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CERRADO));
-                    crashlytics.log(context.getString(R.string.TAG_INTERSITIAL_STATUS) + context.getString(R.string.INTERSITIAL_CERRADO));
 
                     Intent intent = new Intent(context, ActivityToOpen);
                     context.startActivity(intent);
@@ -86,7 +81,6 @@ public class AdsService {
                     super.onAdFailedToLoad(i);
 
                     Log.d(context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_FALLADO));
-                    crashlytics.log(context.getString(R.string.TAG_INTERSITIAL_STATUS) + context.getString(R.string.INTERSITIAL_FALLADO));
 
                     Intent intent = new Intent(context, ActivityToOpen);
                     context.startActivity(intent);
@@ -97,7 +91,6 @@ public class AdsService {
 
         } else {
             Log.d(context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_NO_CARGADO));
-            crashlytics.log(context.getString(R.string.TAG_INTERSITIAL_STATUS) + context.getString(R.string.INTERSITIAL_NO_CARGADO));
 
             Intent intent = new Intent(context, ActivityToOpen);
             context.startActivity(intent);
@@ -113,7 +106,6 @@ public class AdsService {
             public void onRewardedVideoAdLoaded() {
                 Log.d(context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED));
 
-                crashlytics.log(context.getString(R.string.TAG_VIDEO_REWARD_STATUS) + context.getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED));
             }
 
             @Override
@@ -131,8 +123,6 @@ public class AdsService {
             @Override
             public void onRewarded(RewardItem rewardItem) {
                 Log.d(context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED));
-
-                crashlytics.log(context.getString(R.string.TAG_VIDEO_REWARD_STATUS) + context.getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED));
             }
 
             @Override
@@ -143,25 +133,21 @@ public class AdsService {
             public void onRewardedVideoAdFailedToLoad(int i) {
                 Log.d(context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED));
 
-                crashlytics.log(context.getString(R.string.TAG_VIDEO_REWARD_STATUS) + context.getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED));
             }
 
             @Override
             public void onRewardedVideoCompleted() {
 
                 Log.d(context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_COMPLETED));
-                crashlytics.log(context.getString(R.string.TAG_VIDEO_REWARD_STATUS) + context.getString(R.string.TAG_VIDEO_REWARD_STATUS_COMPLETED));
 
                 Date date_now = new Date();
 
                 Log.d(context.getString(R.string.TAG_HORA_AHORA), Utilidades.dateToString(context, date_now));
-                crashlytics.log(context.getString(R.string.TAG_HORA_AHORA) + Utilidades.dateToString(context, date_now));
 
                 //sumar 1 horas al tiempo del celular
                 Date date_new = Utilidades.addHoursToJavaUtilDate(date_now, 1);
 
                 Log.d(context.getString(R.string.TAG_HORA_REWARD), Utilidades.dateToString(context, date_new));
-                crashlytics.log(context.getString(R.string.TAG_HORA_REWARD) + Utilidades.dateToString(context, date_new));
 
                 //Guardar fecha de termino de reward
                 SharedPreferences.Editor editor = sharedPreferences.edit();
