@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 15:43
+ * Last modified 07-11-20 19:59
  */
 package cl.figonzal.evaluatool.evalua.evalua0
 
@@ -24,7 +24,6 @@ import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
 import cl.figonzal.evaluatool.modelo.Evalua
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.Utilidades
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 import java.util.*
@@ -32,14 +31,11 @@ import java.util.*
 class Evalua0Activity : AppCompatActivity(), ClickListener {
 
     private lateinit var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter
-    private var crashlytics: FirebaseCrashlytics? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_evalua0)
-
-        crashlytics = FirebaseCrashlytics.getInstance()
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))

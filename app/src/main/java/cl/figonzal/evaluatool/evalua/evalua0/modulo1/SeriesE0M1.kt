@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 17:53
+ * Last modified 07-11-20 19:59
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -366,14 +366,19 @@ class SeriesE0M1 : AppCompatActivity(), EvaluaInterface {
             else -> {
                 //Verificar si pd_actual esta en la lista
                 for (item in perc) {
-                    if (pd_actual == item[0].toDouble()) {
-                        return item[0].toDouble()
-                    } else if (pd_actual - 1 == item[0].toDouble()) {
-                        return item[0].toDouble()
-                    } else if (pd_actual - 2 == item[0].toDouble()) {
-                        return item[0].toDouble()
-                    } else if (pd_actual - 3 == item[0].toDouble()) {
-                        return item[0].toDouble()
+                    when {
+                        pd_actual == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 1 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 2 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 3 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
                     }
                 }
             }
