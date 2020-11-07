@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:02                                                  -
+ Last modified 07-11-20 17:53                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool;
@@ -32,15 +32,15 @@ import java.util.Date;
 
 import cl.figonzal.evaluatool.utilidades.Utilidades;
 
-public class Admob {
+public class AdsService {
 
     private InterstitialAd interstitialAd;
     private RewardedVideoAd rewardedVideoAd;
-    private Context context;
-    private Activity activity;
-    private FirebaseCrashlytics crashlytics;
+    private final Context context;
+    private final Activity activity;
+    private final FirebaseCrashlytics crashlytics;
 
-    public Admob(Activity activity, Context context, FirebaseCrashlytics crashlytics) {
+    public AdsService(Activity activity, Context context, FirebaseCrashlytics crashlytics) {
 
         MobileAds.initialize(context);
         this.context = context;
