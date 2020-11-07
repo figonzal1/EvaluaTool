@@ -8,13 +8,11 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:09                                                  -
+ Last modified 07-11-20 16:16                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua.evalua7;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -33,14 +31,13 @@ import java.util.List;
 
 import cl.figonzal.evaluatool.R;
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter;
-import cl.figonzal.evaluatool.interfaces.AbrirActivity;
 import cl.figonzal.evaluatool.modelo.Evalua;
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes;
 import cl.figonzal.evaluatool.utilidades.Utilidades;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionAdapter;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
-public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener, AbrirActivity {
+public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.ClickListener {
 
     private SectionedRecyclerViewAdapter sectionedRecyclerViewAdapter;
 
@@ -148,15 +145,6 @@ public class Evalua7Activity extends AppCompatActivity implements EvaluaAdapter.
                 itemAdapterPosition,
                 this
         );
-    }
-
-    @Override
-    public void abrirActividad(Activity activity, Class<?> calledActivity, String log_title, String log_reponse) {
-        Log.d(log_title, log_reponse);
-        crashlytics.log("D/" + log_title + ": " + log_reponse);
-
-        Intent intent = new Intent(activity, calledActivity);
-        startActivity(intent);
     }
 }
 
