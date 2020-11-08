@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 16:30
+ * Last modified 08-11-20 12:14
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -21,6 +21,9 @@ import cl.figonzal.evaluatool.AdsService
 import cl.figonzal.evaluatool.R
 import timber.log.Timber
 
+/**
+ * Dialog fragment con layout por defecto
+ */
 class RewardDialogFragment(private val adsService: AdsService) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

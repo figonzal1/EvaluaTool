@@ -1,20 +1,20 @@
-/*-----------------------------------------------------------------------------
-                                                                              -
- This file is subject to the terms and conditions defined in                  -
- file 'LICENSE', which is part of this source code package                    -
-                                                                              -
- Autor: Felipe González                                                       -
- Email: felipe.gonzalezalarcon94@gmail.com                                    -
-                                                                              -
- Copyright (c) 2020                                                           -
-                                                                              -
- Last modified 14-08-20 0:53                                                  -
- -----------------------------------------------------------------------------*/
+/*
+ *
+ * This file is subject to the terms and conditions defined in
+ * file 'LICENSE', which is part of this source code package
+ *
+ * Autor: Felipe González
+ * Email: felipe.gonzalezalarcon94@gmail.com
+ *
+ * Copyright (c) 2020
+ *
+ * Last modified 07-11-20 21:13
+ */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
+import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +24,7 @@ import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
-import android.os.Bundleimport android.text.Editableimport android.text.TextWatcherimport android.view.MenuItemimport android.widget.TextViewimport androidx.appcompat.app.AppCompatActivityimport androidx.appcompat.widget.Toolbarimport cl.figonzal.evaluatool.Rimport cl.figonzal.evaluatool.interfaces.IndiceValorInterfaceimport com.google.android.material.textfield.TextInputEditTextimport timber.log.Timberimport java.util.*import kotlin.math.roundToIntimport kotlin.math.roundToInt
+import kotlin.math.roundToInt
 
 class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
 
