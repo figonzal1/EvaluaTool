@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+<?xml version="1.0" encoding="utf-8"?>
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                                                                               ~
   This file is subject to the terms and conditions defined in                 ~
   file 'LICENSE', which is part of this source code package                   ~
@@ -8,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 07-11-20 19:32                                                ~
+  Last modified 08-11-20 18:49                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,6 +17,7 @@
     package="cl.figonzal.evaluatool">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ApplicationController"
         android:allowBackup="false"
@@ -332,9 +334,7 @@
             android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua.evalua4.Evalua4Activity"
-            android:parentActivityName=".MainActivity" />
-
-        <!-- EVALUA 5-->
+            android:parentActivityName=".MainActivity" /> <!-- EVALUA 5 -->
         <activity
             android:name=".evalua.evalua5.modulo6.ResolucionProblemasE5M6"
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
@@ -379,10 +379,7 @@
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
             android:name=".evalua.evalua5.Evalua5Activity"
-            android:parentActivityName=".MainActivity" />
-
-
-        <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"

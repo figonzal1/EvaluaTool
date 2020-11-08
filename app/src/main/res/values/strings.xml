@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 07-11-20 17:03                                                ~
+  Last modified 08-11-20 20:07                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -289,6 +289,7 @@
     <string name="CLICK_CAL_NUMERACION">click_calculo_numeracion</string>
     <string name="CLICK_CAL_RES_PROBLEMAS">click_res_problemas</string>
     <string name="DIALOGO_AYUDA_MSG_CERRADO">dialogo ayuda cerrado</string>
+    <string name="DIALOGO_BAREMO_CERRADO">dialogo baremo cerrado</string>
     <string name="REWARD_DIALOG">RewardDialog</string>
 
     <!-- Shared pref -->
@@ -467,6 +468,8 @@
     <string name="ige_total">IGE Total</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="PUNTAJE_DIRECTO">PD</string>
+    <string name="PERCENTIL_CHILENO">Pc Chileno</string>
 
 
 </resources>
