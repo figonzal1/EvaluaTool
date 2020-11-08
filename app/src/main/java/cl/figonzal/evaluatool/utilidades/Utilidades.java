@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:06                                                  -
+ Last modified 08-11-20 20:11                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.utilidades;
@@ -16,7 +16,16 @@ package cl.figonzal.evaluatool.utilidades;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.text.Spannable;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
 
@@ -29,6 +38,7 @@ import java.util.Map;
 import java.util.Random;
 
 import cl.figonzal.evaluatool.R;
+import cl.figonzal.evaluatool.dialogs.BaremoDialogFragment;
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter;
 
 public class Utilidades {
@@ -168,5 +178,20 @@ public class Utilidades {
 
         Intent intent = new Intent(activity, calledActivity);
         activity.startActivity(intent);
+    }
+
+    public static void configurarTextoBaremo(FragmentManager fragmentManager, TextView tvBaremo, Integer[][] perc) {
+
+        tvBaremo.setMovementMethod(LinkMovementMethod.getInstance());
+        Spannable spans = (Spannable) tvBaremo.getText();
+        ClickableSpan clickSpan = new ClickableSpan() {
+
+            @Override
+            public void onClick(@NonNull View widget) {
+                DialogFragment dialogFragment = new BaremoDialogFragment(perc);
+                dialogFragment.show(fragmentManager, "Dialogo baremo");
+            }
+        };
+        spans.setSpan(clickSpan, 0, spans.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 }

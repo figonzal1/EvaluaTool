@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 17:53
+ * Last modified 08-11-20 20:11
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -30,6 +30,7 @@ import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
 import kotlin.math.floor
+
 
 class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
 
@@ -137,6 +138,10 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.isCancelable = false
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
+
+        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc)
+
     }
 
     /**
