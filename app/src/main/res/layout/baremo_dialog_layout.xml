@@ -8,12 +8,13 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 08-11-20 20:11                                                ~
+  Last modified 08-11-20 21:29                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="500dp"
     app:cardBackgroundColor="@color/colorSurface"
@@ -32,7 +33,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="24dp"
             android:fontFamily="@font/roboto"
-            android:text="Tabla Baremo"
+            android:text="@string/dialogo_baremo_titulo"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             android:textColor="@color/colorOnSecondary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,14 +41,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/tv_baremo_descripcion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Puntajes de tabla baremo de ítem XX"
             app:layout_constraintEnd_toEndOf="@+id/tv_titulo"
             app:layout_constraintStart_toStartOf="@+id/tv_titulo"
-            app:layout_constraintTop_toBottomOf="@+id/tv_titulo" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
+            tools:text="Puntajes de tabla baremo de ítem XX" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_baremo"
@@ -61,7 +62,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_default="wrap"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_description" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_baremo_descripcion" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cerrar"
@@ -70,7 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:text="Cerrar"
+            android:text="@string/dialogo_boton_cerrar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

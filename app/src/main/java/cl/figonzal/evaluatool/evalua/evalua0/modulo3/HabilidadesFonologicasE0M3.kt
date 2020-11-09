@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 19:05
+ * Last modified 08-11-20 22:09
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -199,6 +199,11 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.isCancelable = false
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
+
+
+        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_HABILIDADES_FONOLOGICAS))
+
     }
 
     /**

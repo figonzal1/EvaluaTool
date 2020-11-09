@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 14-08-20 0:58                                                 ~
+  Last modified 08-11-20 22:57                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -76,7 +76,6 @@
 
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -202,7 +201,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -243,7 +241,7 @@
 
             <include
                 android:id="@+id/include36"
-                layout="@layout/card_view_estadisticos"
+                layout="@layout/estadisticos_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -350,8 +348,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <include
-                android:id="@+id/include46"
-                layout="@layout/card_view_pd_final"
+                layout="@layout/pd_final_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

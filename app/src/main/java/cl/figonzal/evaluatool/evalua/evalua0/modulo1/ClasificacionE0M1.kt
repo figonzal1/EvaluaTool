@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 08-11-20 20:11
+ * Last modified 08-11-20 21:29
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -140,7 +140,7 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
         }
 
         val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc)
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_CLASIFICACION))
 
     }
 

@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 08-11-20 20:07                                                ~
+  Last modified 08-11-20 22:57                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -219,7 +219,6 @@
     <string name="TAG_ORTOGRAFIA">D/ORTOGRAFIA_ACT: </string>
     <string name="TAG_SERIES">D/SERIES_ACT: </string>
     <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
-    <string name="CLOSE_EVALUA_0">D/EVALUA_0_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_1">D/EVALUA_1_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
@@ -239,17 +238,10 @@
     <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
     <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
     <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
-    <string name="TAG_LETRAS_NUMEROS">D/LETRAS_NUMEROS_ACT: </string>
-    <string name="TAG_MEMORIA_VERBAL">D/MEMORIA_VERBAL_ACT: </string>
-    <string name="TAG_COPIA_DIBUJOS">D/COPIA_DIBUJOS_ACT: </string>
     <string name="CLICK_COPIA_DIBUJOS">click_copia_dibujos</string>
     <string name="CLICK_GRAFO_MOTRICIDAD">click_grafo_motricidad</string>
     <string name="CLICK_INDICE_GENERAL_ESPACIAL">click_indice_general_espacial</string>
     <string name="CLICK_INDICE_GENERAL_LINGUISTICO">click_indice_general_linguistico</string>
-    <string name="TAG_GRAFO_MOTRICIDAD">D/GRAFO_MOTRICIDAD_ACT: </string>
-    <string name="TAG_PALABRAS_FRASES">D/PALABRAS_FRASES_ACT: </string>
-    <string name="TAG_RECEPCION_AUDITIVA">D/RECEPCION_AUDITIVA_ACT: </string>
-    <string name="TAG_HABILIDADES_FONOLOGICAS">D/HABILIDADES_FONOLOGICAS_ACT: </string>
     <string name="CLICK_RECEPCION_AUDITIVA">click_recepcion_auditiva</string>
     <string name="CLICK_HABILIDADES_FONOLOGICAS">click_habilidades_fonologicas</string>
     <string name="TAG_ATENCION_CONCENTRACION">D/ATENCION_CONCENT_ACT: </string>
@@ -315,7 +307,6 @@
 
 
     <!-- REWARD DIALOG TAGS & ADS -->
-    <string name="TAG_REWARD_DIALOG" translatable="false">D/REWARD_DIALOG_STATUS: </string>
     <string name="TAG_REWARD_DIALOG_BTN_VER_VIDEO" translatable="false">BOTON VER VIDEO PRESIONADO</string>
     <string name="TAG_REWARD_DIALOG_BTN_CANCEL" translatable="false">BOTON CANCEL PRESIONADO</string>
     <string name="TAG_VIDEO_REWARD_STATUS" translatable="false">D/VIDEO_REWARD_STATUS: </string>
@@ -441,13 +432,7 @@
     <string name="exactitud_lectora">Exactitud Lectora</string>
     <string name="cl_0_pts">CL: 0 pts</string>
     <string name="el_0_pts">EL: 0 pts</string>
-    <string name="pruebas_escritura">Pruebas Escritura</string>
-    <string name="ort_fon_tica">Ort. fonética</string>
-    <string name="graf_a_expresi_n_escrita">Grafía / Expresión escrita</string>
-    <string name="ort_visual">Ort. Visual</string>
-    <string name="of_0_pts">OF: 0 pts</string>
     <string name="gr_0_pts">GR: 0 pts</string>
-    <string name="or_0_pts">OR: 0 pts</string>
     <string name="pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
     <string name="c_lculo_numeraci_n">Cálculo / Numeración</string>
     <string name="res_problemas">Res. Problemas</string>
@@ -459,7 +444,6 @@
     <string name="comprension">Comprensión</string>
     <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
     <string name="acumulado">Acumulado</string>
-    <string name="calculo_y_numeracion">Cálculo y Numeración</string>
     <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
     <string name="pt_subtotales">PT Subtotales</string>
     <string name="igl_total">IGL Total</string>
@@ -467,9 +451,13 @@
     <string name="igm_total">IGM Total</string>
     <string name="ige_total">IGE Total</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="PUNTAJE_DIRECTO">PD</string>
     <string name="PERCENTIL_CHILENO">Pc Chileno</string>
+    <string name="icono_tabla_baremo">Icono tabla baremo</string>
+    <string name="ver_tabla_de_baremos">Ver tabla de baremos</string>
+    <string name="dialogo_boton_cerrar">Cerrar</string>
+    <string name="dialogo_baremo_titulo">Tabla Baremo</string>
+    <string name="dialogo_baremo_descripcion">Puntajes de tabla baremo de ítem</string>
 
 
 </resources>
