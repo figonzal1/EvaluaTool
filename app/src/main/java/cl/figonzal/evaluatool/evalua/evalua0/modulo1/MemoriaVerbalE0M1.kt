@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 17:59
+ * Last modified 08-11-20 21:32
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -134,6 +134,9 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.isCancelable = false
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
+
+        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_MEMORIA_VERBAL))
     }
 
     /**

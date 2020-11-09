@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 18:29
+ * Last modified 08-11-20 22:09
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -138,6 +138,11 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.isCancelable = false
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
+
+
+        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_GRAFOMOTRICIDAD))
+
     }
 
     /**
