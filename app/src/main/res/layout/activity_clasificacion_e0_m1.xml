@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 08-11-20 20:11                                                ~
+  Last modified 08-11-20 22:58                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -42,44 +42,27 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
-            <ImageView
-                android:id="@+id/ivBaremo"
-                android:layout_width="wrap_content"
+            <include
+                android:id="@+id/include48"
+                layout="@layout/baremo_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:contentDescription="Icono tabla baremo"
-                app:layout_constraintEnd_toStartOf="@+id/tvBaremo"
+                android:layout_width="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_stars_24" />
-
-            <TextView
-                android:id="@+id/tvBaremo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:gravity="center_horizontal"
-                android:text="Ver tabla de baremos"
-                app:layout_constraintBottom_toBottomOf="@+id/ivBaremo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/ivBaremo"
-                app:layout_constraintTop_toTopOf="@+id/ivBaremo" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t1"
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="4dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/ivBaremo">
+                app:layout_constraintTop_toBottomOf="@+id/include48">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -126,7 +109,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -173,10 +155,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/ivBaremo">
+                app:layout_constraintTop_toBottomOf="@+id/include48">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -224,7 +205,6 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/it_reprobadas_t2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -261,7 +241,7 @@
 
             <include
                 android:id="@+id/include12"
-                layout="@layout/card_view_estadisticos"
+                layout="@layout/estadisticos_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -367,7 +347,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <include
-                layout="@layout/card_view_pd_final"
+                layout="@layout/pd_final_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

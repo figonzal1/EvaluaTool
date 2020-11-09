@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 08-11-20 20:11                                                 -
+ Last modified 08-11-20 22:58                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.utilidades;
@@ -180,7 +180,7 @@ public class Utilidades {
         activity.startActivity(intent);
     }
 
-    public static void configurarTextoBaremo(FragmentManager fragmentManager, TextView tvBaremo, Integer[][] perc) {
+    public static void configurarTextoBaremo(FragmentManager fragmentManager, TextView tvBaremo, Integer[][] perc, String itemName) {
 
         tvBaremo.setMovementMethod(LinkMovementMethod.getInstance());
         Spannable spans = (Spannable) tvBaremo.getText();
@@ -188,7 +188,7 @@ public class Utilidades {
 
             @Override
             public void onClick(@NonNull View widget) {
-                DialogFragment dialogFragment = new BaremoDialogFragment(perc);
+                DialogFragment dialogFragment = new BaremoDialogFragment(perc, itemName);
                 dialogFragment.show(fragmentManager, "Dialogo baremo");
             }
         };
