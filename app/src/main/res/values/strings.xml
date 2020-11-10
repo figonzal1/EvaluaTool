@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 08-11-20 22:57                                                ~
+  Last modified 10-11-20 18:36                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -217,9 +217,7 @@
     <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
     <string name="TAG_CLASIFICACION">D/CLASIFICACION_ACT: </string>
     <string name="TAG_ORTOGRAFIA">D/ORTOGRAFIA_ACT: </string>
-    <string name="TAG_SERIES">D/SERIES_ACT: </string>
     <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
-    <string name="CLOSE_EVALUA_1">D/EVALUA_1_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_5">D/EVALUA_5_ACTIVITY: </string>
@@ -255,7 +253,6 @@
     <string name="TAG_EXP_ESCRITA">D/EXP_ESCRITA_ACT: </string>
     <string name="TAG_ORTO_FONETICA">D/ORTO_FONETICA_ACT: </string>
     <string name="TAG_ORT_VIS_REGLADA">D/ORT_VIS_REGLADA_ACT: </string>
-    <string name="TAG_ORT_VIS">D/ORT_VIS_ACT: </string>
     <string name="TAG_MEMORIA_ATENCION">D/MEMORIA_ATENCION_ACT: </string>
     <string name="TAG_EXACTITUD_LECTORA">D/EXACTITUD_LECTORA_ACT: </string>
     <string name="TAG_VALORACION_GLOBAL">D/VALORACION_GLOBAL_ACT: </string>
