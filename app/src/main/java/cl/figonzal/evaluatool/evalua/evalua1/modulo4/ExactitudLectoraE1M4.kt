@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 10-11-20 18:33
+ * Last modified 10-11-20 18:53
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -404,32 +404,32 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun corregirPD(perc: Array<Array<Int>>, pd_total: Double): Double {
+    override fun corregirPD(perc: Array<Array<Int>>, pd_actual: Double): Double {
 
         when {
-            pd_total < 0 -> {
+            pd_actual < 0 -> {
                 return 0.0
             }
-            pd_total > perc[0][0] -> {
+            pd_actual > perc[0][0] -> {
                 return perc[0][0].toDouble()
             }
-            pd_total < perc[perc.size - 1][0] -> {
+            pd_actual < perc[perc.size - 1][0] -> {
                 return perc[perc.size - 1][0].toDouble()
             }
             else -> {
                 //Verificar si pd_actual esta en la lista
                 for (item in perc) {
                     when {
-                        pd_total == item[0].toDouble() -> {
+                        pd_actual == item[0].toDouble() -> {
                             return item[0].toDouble()
                         }
-                        pd_total - 1 == item[0].toDouble() -> {
+                        pd_actual - 1 == item[0].toDouble() -> {
                             return item[0].toDouble()
                         }
-                        pd_total - 2 == item[0].toDouble() -> {
+                        pd_actual - 2 == item[0].toDouble() -> {
                             return item[0].toDouble()
                         }
-                        pd_total - 3 == item[0].toDouble() -> {
+                        pd_actual - 3 == item[0].toDouble() -> {
                             return item[0].toDouble()
                         }
                     }
