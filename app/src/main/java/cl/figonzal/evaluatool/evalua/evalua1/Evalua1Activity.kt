@@ -10,7 +10,7 @@
  *
  * Last modified 10-11-20 16:21
  */
-package cl.figonzal.evaluatool.evalua.evalua0
+package cl.figonzal.evaluatool.evalua.evalua1
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -28,14 +28,13 @@ import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapt
 import timber.log.Timber
 import java.util.*
 
-class Evalua0Activity : AppCompatActivity(), ClickListener {
+class Evalua1Activity : AppCompatActivity(), ClickListener {
 
     private lateinit var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_evalua0)
+        setContentView(R.layout.activity_evalua1)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
@@ -44,7 +43,7 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_EVALUA_0)
+        actionBar.title = getString(R.string.TOOLBAR_EVALUA_1)
 
         configurarExpandedList()
     }
@@ -55,30 +54,39 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
 
         //SUBTIMES - SUBMODULO 1
         val subItems1: MutableList<Evalua> = ArrayList()
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_1)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_2)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_3)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_4)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_5)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_6)))
+        subItems1.add(Evalua(getString(R.string.EVALUA_1_M1_SI_1)))
 
-        //SUBMODULO 2
+        //Submodulo2
         val subItems2: MutableList<Evalua> = ArrayList()
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_1)))
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_2)))
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_3)))
+        subItems2.add(Evalua(getString(R.string.EVALUA_1_M2_SI_1)))
+        subItems2.add(Evalua(getString(R.string.EVALUA_1_M2_SI_2)))
+        subItems2.add(Evalua(getString(R.string.EVALUA_1_M2_SI_3)))
+        subItems2.add(Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)))
 
-        //SUBSMODULO 3
-        val subItems3: MutableList<Evalua> = ArrayList()
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_1)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_2)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_3)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_4)))
+        //Submodulo3
+        val subitems3: MutableList<Evalua> = ArrayList()
+        subitems3.add(Evalua(getString(R.string.EVALUA_1_M3_SI_1)))
+
+        //Submodulo4
+        val subItems4: MutableList<Evalua> = ArrayList()
+        subItems4.add(Evalua(getString(R.string.EVALUA_1_M4_SI_1)))
+        subItems4.add(Evalua(getString(R.string.EVALUA_1_M4_SI_2)))
+        subItems4.add(Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL)))
+        val subItems5: MutableList<Evalua> = ArrayList()
+        subItems5.add(Evalua(getString(R.string.EVALUA_1_M5_SI_1)))
+        subItems5.add(Evalua(getString(R.string.EVALUA_1_M5_SI_2)))
+
+        //Submodulo6
+        val subItems6: MutableList<Evalua> = ArrayList()
+        subItems6.add(Evalua(getString(R.string.EVALUA_1_M6_SI_1)))
 
         //HEADERS
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_1), subItems1, this))
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_2), subItems2, this))
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_3), subItems3, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_3), subitems3, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_4), subItems4, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_5), subItems5, this))
+        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_6), subItems6, this))
 
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(applicationContext)
@@ -88,7 +96,7 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
 
         Utilidades.handleRoutes(
-                ConfigRoutes(this).getRouteMapEvalua0(),
+                ConfigRoutes(this).getRouteMapEvalua1(),
                 sectionTitle,
                 sectionedRecyclerViewAdapter,
                 itemAdapterPosition,
