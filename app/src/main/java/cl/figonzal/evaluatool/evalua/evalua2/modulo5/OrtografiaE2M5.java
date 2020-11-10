@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:09                                                  -
+ Last modified 10-11-20 18:30                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5;
@@ -69,11 +69,11 @@ public class OrtografiaE2M5 extends AppCompatActivity implements EvaluaInterface
     //TAREA 1
     private TextInputEditText et_aprobadas_t1;
     private int aprobadas_t1 = 0;
-    private int reprobadas_t1 = 0;
+    private final int reprobadas_t1 = 0;
 
     //TAREA 2
     private TextInputEditText et_reprobadas_t2;
-    private int aprobadas_t2 = 0;
+    private final int aprobadas_t2 = 0;
     private int reprobadas_t2 = 0;
 
     //SUBTOTALES
