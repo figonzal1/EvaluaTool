@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 15:20
+ * Last modified 10-11-20 19:16
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -156,7 +156,6 @@ class ConfigRoutes(private val context: Context) {
         val subItems2: MutableList<Array<Any>> = ArrayList()
         subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M1_SI_1), SeriesE1M2::class.java, context.getString(R.string.CLICK_SERIES)))
         subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2::class.java, context.getString(R.string.CLICK_CLASIFICACION)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
         subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
         subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalBasesE1M2::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
 
