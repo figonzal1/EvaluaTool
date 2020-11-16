@@ -8,9 +8,9 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 19:10
+ * Last modified 16-11-20 17:58
  */
-package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
+package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
 import android.os.Build
 import android.os.Bundle
@@ -31,33 +31,44 @@ import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
 
-class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
+class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
 
     companion object {
-        private const val DESVIACION = 2.90
-        private const val MEDIA = 23.07
-        fun newInstance(): AutoEstimaFragmentE2M3 {
-            return AutoEstimaFragmentE2M3()
+        private const val DESVIACION = 3.02
+        private const val MEDIA = 6.25
+
+        @JvmStatic
+        fun newInstance(): ComprensionFragmentE7M4 {
+            return ComprensionFragmentE7M4()
         }
     }
 
     private val perc = arrayOf(
-            arrayOf(30, 99),
-            arrayOf(28, 90),
-            arrayOf(27, 80),
-            arrayOf(26, 70),
-            arrayOf(25, 60),
-            arrayOf(24, 50),
-            arrayOf(23, 40),
-            arrayOf(20, 30),
-            arrayOf(15, 20),
-            arrayOf(12, 10),
-            arrayOf(10, 5)
+            arrayOf(15, 99),
+            arrayOf(14, 97),
+            arrayOf(13, 95),
+            arrayOf(12, 90),
+            arrayOf(11, 85),
+            arrayOf(10, 80),
+            arrayOf(9, 75),
+            arrayOf(8, 75),
+            arrayOf(7, 70),
+            arrayOf(6, 65),
+            arrayOf(5, 60),
+            arrayOf(4, 55),
+            arrayOf(3, 55),
+            arrayOf(2, 50),
+            arrayOf(1, 40),
+            arrayOf(0, 30)
     )
 
     private lateinit var etAprobadasT1: TextInputEditText
+    private lateinit var etOmitidasT1: TextInputEditText
+    private lateinit var etReprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
-    private var subtotalPdT1 = 0.0
+    private var omitidasT1 = 0
+    private var reprobadasT1 = 0
+    private var totalPdT1 = 0.0
 
     //TextView para Subtotales
     private lateinit var tvSubTotalT1: TextView
@@ -65,6 +76,7 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
     //Tetview para total
     private lateinit var tvPdTotal: TextView
     private lateinit var tvPdCorregido: TextView
+    private lateinit var tvNivelComprension: TextView
     private lateinit var tvPercentil: TextView
     private lateinit var tvNivel: TextView
     private lateinit var progressBar: ProgressBar
@@ -72,8 +84,7 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_auto_estima_e2_m3, container, false)
+        val v = inflater.inflate(R.layout.fragment_comprension_e7_m4, container, false)
 
         instanciarRecursosInterfaz(v)
         textWatcherTarea1()
@@ -95,10 +106,13 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
         //TAREA 1
         tvSubTotalT1 = v.findViewById(R.id.tv_pd_subtotal_t1)
         etAprobadasT1 = v.findViewById(R.id.et_aprobadas_t1)
+        etOmitidasT1 = v.findViewById(R.id.et_omitidas_t1)
+        etReprobadasT1 = v.findViewById(R.id.et_reprobadas_t1)
 
         //TOTAL
         tvPdTotal = v.findViewById(R.id.tv_pd_total_value)
         tvPdCorregido = v.findViewById(R.id.tv_pd_total_corregido_value)
+        tvNivelComprension = v.findViewById(R.id.tv_nivel_comprension_value)
         tvPercentil = v.findViewById(R.id.tv_percentil_value)
         tvNivel = v.findViewById(R.id.tv_nivel_obtenido_value)
         tvDesviacionCalculada = v.findViewById(R.id.tv_desviacion_calculada_value)
@@ -117,7 +131,7 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
         }
 
         val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_AUTOESTIMA))
+        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_COMPREN_LECTORA))
 
     }
 
@@ -129,7 +143,7 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
         etAprobadasT1.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT1 = 0.0
+                totalPdT1 = 0.0
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -141,14 +155,54 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
                 } else if (s.isNotEmpty()) {
                     aprobadasT1 = etAprobadasT1.text.toString().toInt()
                 }
-                subtotalPdT1 = calcularTarea(null, tvSubTotalT1, "Tarea 1: ", aprobadasT1, null, null)
+                totalPdT1 = calcularTarea(null, tvSubTotalT1, "Tarea 1: ", aprobadasT1, omitidasT1, reprobadasT1)
+                calcularResultado()
+            }
+        })
+
+        etOmitidasT1.addTextChangedListener(object : TextWatcher {
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                totalPdT1 = 0.0
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable) {
+
+                if (s.isEmpty()) {
+                    omitidasT1 = 0
+                } else if (s.isNotEmpty()) {
+                    omitidasT1 = etOmitidasT1.text.toString().toInt()
+                }
+                totalPdT1 = calcularTarea(null, tvSubTotalT1, "Tarea 1: ", aprobadasT1, omitidasT1, reprobadasT1)
+                calcularResultado()
+            }
+        })
+
+        etReprobadasT1.addTextChangedListener(object : TextWatcher {
+
+            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                totalPdT1 = 0.0
+            }
+
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable) {
+
+                if (s.isEmpty()) {
+                    reprobadasT1 = 0
+                } else if (s.isNotEmpty()) {
+                    reprobadasT1 = etReprobadasT1.text.toString().toInt()
+                }
+                totalPdT1 = calcularTarea(null, tvSubTotalT1, "Tarea 1: ", aprobadasT1, omitidasT1, reprobadasT1)
                 calcularResultado()
             }
         })
     }
 
     override fun calcularTarea(n_tarea: Int?, tv_sub_total: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = aprobadas!!
+        var total = aprobadas!! - (omitidas!! + reprobadas!!)
         if (total < 0) {
             total = 0
         }
@@ -158,12 +212,14 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
 
     override fun calcularResultado() {
 
-        //TOTALES
-        val totalPd: Double = subtotalPdT1
+        val totalPd: Double = totalPdT1
         tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
 
         val pdCorregido = corregirPD(perc, totalPd)
         tvPdCorregido.text = String.format("%s pts", pdCorregido)
+
+        val comprension = calcularComprension(pdCorregido)
+        tvNivelComprension.text = comprension
 
         val percentil = calcularPercentil(pdCorregido)
         tvPercentil.text = percentil.toString()
@@ -204,36 +260,49 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
 
     override fun corregirPD(perc: Array<Array<Int>>, pd_actual: Double): Double {
         when {
-            pd_actual > perc[0][0] -> {
-                return perc[0][0].toDouble()
+            pd_actual > this.perc[0][0] -> {
+                return this.perc[0][0].toDouble()
             }
-            pd_actual < perc[perc.size - 1][0] -> {
-                return perc[perc.size - 1][0].toDouble()
+            pd_actual < this.perc[this.perc.size - 1][0] -> {
+                return this.perc[this.perc.size - 1][0].toDouble()
             }
             else -> {
-                for (item in perc) {
-                    when {
-                        pd_actual == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 1 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 2 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 3 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 4 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
+                for (item in this.perc) {
+                    if (pd_actual == item[0].toDouble()) {
+                        return item[0].toDouble()
                     }
                 }
             }
         }
         Timber.i("%s%s", getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO))
         return (-1).toDouble()
+    }
+
+    private fun calcularComprension(pd_actual: Double): String? {
+        when (pd_actual) {
+            in 0.0..2.0 -> {
+                return "Muy Baja"
+            }
+            in 3.0..4.0 -> {
+                return "Baja"
+            }
+            in 5.0..6.0 -> {
+                return "Media"
+            }
+            in 7.0..10.0 -> {
+                return "Alta"
+            }
+            in 11.0..15.0 -> {
+                return "Muy Alta"
+            }
+
+            //Percentil no encontrado
+            else -> {
+                Timber.i("%s%s", getString(R.string.TAG_COMPRENSION_CALCULADA), getString(R.string.COMPRENSION_NULA))
+                return null
+            }
+        }
+
     }
 
 
