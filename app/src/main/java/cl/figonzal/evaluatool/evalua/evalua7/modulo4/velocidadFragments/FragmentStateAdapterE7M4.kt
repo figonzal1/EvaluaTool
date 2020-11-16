@@ -8,15 +8,17 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 16:42
+ * Last modified 16-11-20 20:01
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import cl.figonzal.evaluatool.R
 
-class FragmentStateAdapterE7M4(fa: FragmentActivity) : FragmentStateAdapter(fa) {
+class FragmentStateAdapterE7M4(context: Context, fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         var f = Fragment()
@@ -36,7 +38,7 @@ class FragmentStateAdapterE7M4(fa: FragmentActivity) : FragmentStateAdapter(fa) 
     }
 
     init {
-        tabs[0] = "Velocidad"
-        tabs[1] = "Comprensión"
+        tabs[0] = context.getString(R.string.TOOLBAR_VELOCIDAD)
+        tabs[1] = context.getString(R.string.TOOLBAR_COMPRENSION)
     }
 }
