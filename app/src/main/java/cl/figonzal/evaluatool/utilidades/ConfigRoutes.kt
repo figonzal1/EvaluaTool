@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 10-11-20 19:16
+ * Last modified 16-11-20 17:49
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -43,6 +43,7 @@ import cl.figonzal.evaluatool.evalua.evalua2.modulo6.CalculoNumeracionE2M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.IndiceGeneralMatematicoE2M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.ResolucionProblemasE2M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.ValoracionGlobalMatematicasE2M6
+import cl.figonzal.evaluatool.evalua.evalua3.modulo1.MemoriaAtencionE3M1
 import cl.figonzal.evaluatool.evalua.evalua3.modulo2.OrganizacionPerceptivaE3M2
 import cl.figonzal.evaluatool.evalua.evalua3.modulo2.PensamientoAnalogicoE3M2
 import cl.figonzal.evaluatool.evalua.evalua3.modulo2.ReflexividadE3M2
@@ -224,7 +225,7 @@ class ConfigRoutes(private val context: Context) {
         routeMapEvalua3 = HashMap()
 
         val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_3_M1_SI_1), MemoriaAtencionE4M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        subItems1.add(arrayOf(context.getString(R.string.EVALUA_3_M1_SI_1), MemoriaAtencionE3M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
 
         val subItems2: MutableList<Array<Any>> = ArrayList()
         subItems2.add(arrayOf(context.getString(R.string.EVALUA_3_M2_SI_1), ReflexividadE3M2::class.java, context.getString(R.string.CLICK_REFLEXIVIDAD)))

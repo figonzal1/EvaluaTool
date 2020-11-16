@@ -8,9 +8,9 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 19:15
+ * Last modified 16-11-20 16:47
  */
-package cl.figonzal.evaluatool.evalua.evalua3.modulo3
+package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -18,16 +18,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewpager2.widget.ViewPager2
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments.FragmentStateAdapterE3M3
+import cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments.FragmentStateAdapterE7M4
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
 
-class NivelesAdaptacionE3M3 : AppCompatActivity() {
+class VelocidadLectoraE7M4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_niveles_adaptacion_e3_m3)
+        setContentView(R.layout.activity_velocidad_lectora_e7_m4)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
@@ -36,15 +36,15 @@ class NivelesAdaptacionE3M3 : AppCompatActivity() {
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_NIVELES_ADAPTACION)
+        actionBar.title = getString(R.string.TOOLBAR_VELOCIDAD_LECTORA)
 
         //View pager
-        val viewPager2 = findViewById<ViewPager2>(R.id.view_pager_niveles_adaptacion)
-        viewPager2.adapter = FragmentStateAdapterE3M3(this, this)
+        val viewPager2 = findViewById<ViewPager2>(R.id.view_pager_velocidad)
+        viewPager2.adapter = FragmentStateAdapterE7M4(this)
 
         //TabLayout
-        val tabLayout = findViewById<TabLayout>(R.id.tabs_niveles_adaptacion)
-        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int -> tab.text = FragmentStateAdapterE3M3.tabs[position] }.attach()
+        val tabLayout = findViewById<TabLayout>(R.id.tabs_velocidad)
+        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int -> tab.text = FragmentStateAdapterE7M4.tabs[position] }.attach()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

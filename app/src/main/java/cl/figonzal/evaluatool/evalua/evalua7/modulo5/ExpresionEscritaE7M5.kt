@@ -8,9 +8,9 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 15:43
+ * Last modified 16-11-20 16:47
  */
-package cl.figonzal.evaluatool.evalua.evalua3.modulo2
+package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
 import android.os.Build
 import android.os.Bundle
@@ -28,56 +28,30 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utilidades
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 import kotlin.math.floor
 
-class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
+class ExpresionEscritaE7M5 : AppCompatActivity(), EvaluaInterface {
 
     companion object {
-        private const val DESVIACION = 5.86
-        private const val MEDIA = 10.96
+        private const val DESVIACION = 0.843
+        private const val MEDIA = 2.45
     }
 
     private val perc = arrayOf(
-            arrayOf(20, 99),
-            arrayOf(19, 95),
-            arrayOf(18, 90),
-            arrayOf(17, 80),
-            arrayOf(16, 75),
-            arrayOf(15, 70),
-            arrayOf(14, 65),
-            arrayOf(13, 60),
-            arrayOf(12, 55),
-            arrayOf(11, 50),
-            arrayOf(10, 47),
-            arrayOf(9, 42),
-            arrayOf(8, 40),
-            arrayOf(7, 35),
-            arrayOf(6, 30),
-            arrayOf(5, 25),
-            arrayOf(4, 15),
-            arrayOf(3, 10),
-            arrayOf(2, 5),
-            arrayOf(1, 1)
+            arrayOf(5, 10),
+            arrayOf(4, 30),
+            arrayOf(3, 50),
+            arrayOf(2, 70),
+            arrayOf(1, 90)
     )
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
-    private lateinit var etReprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
-    private var reprobadasT1 = 0
-
-    //TAREA 2
-    private lateinit var etAprobadasT2: TextInputEditText
-    private lateinit var etReprobadasT2: TextInputEditText
-    private var aprobadasT2 = 0
-    private var reprobadasT2 = 0
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
-    private var subtotalPdT1 = 0.0
-    private lateinit var tvSubTotalT2: TextView
-    private var subtotalPdT2 = 0.0
+    private var totalPdT1 = 0.0
 
     //TOTAL
     private lateinit var tvPdTotal: TextView
@@ -89,7 +63,7 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_organizacion_perceptiva_e3_m2)
+        setContentView(R.layout.activity_expresion_escrita_e7_m5)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
@@ -98,33 +72,24 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_ORG_PERCEPTIVA)
+        actionBar.title = getString(R.string.TOOLBAR_EXPRESION_ESCRITA)
 
         instanciarRecursosInterfaz()
         textWatcherTarea1()
-        textWatcherTarea2()
     }
 
     private fun instanciarRecursosInterfaz() {
 
-        //Promedio y desviacion
-        //TetView desviacion y media
         val tvMedia = findViewById<TextView>(R.id.tv_media_value)
         val tvDesviacion = findViewById<TextView>(R.id.tv_desviacion_value)
         tvMedia.text = MEDIA.toString()
         tvDesviacion.text = DESVIACION.toString()
 
-        //TAREA 1
+        //SUBTOTALES
         tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
         etAprobadasT1 = findViewById(R.id.et_aprobadas_t1)
-        etReprobadasT1 = findViewById(R.id.et_reprobadas_t1)
 
-        //TAREA1
-        tvSubTotalT2 = findViewById(R.id.tv_pd_subtotal_t2)
-        etAprobadasT2 = findViewById(R.id.et_aprobadas_t2)
-        etReprobadasT2 = findViewById(R.id.et_reprobadas_t2)
-
-        //TOTAL
+        //TOTALES
         tvPdTotal = findViewById(R.id.tv_pd_total_value)
         tvPdCorregido = findViewById(R.id.tv_pd_total_corregido_value)
         tvPercentil = findViewById(R.id.tv_percentil_value)
@@ -132,7 +97,7 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
         tvDesviacionCalculada = findViewById(R.id.tv_desviacion_calculada_value)
 
         progressBar = findViewById(R.id.progressBar)
-        progressBar.max = perc[0][1]
+        progressBar.max = perc[perc.size - 1][1]
 
         val ivCorregido = findViewById<ImageView>(R.id.iv_help_pd_corregido)
         ivCorregido.setOnClickListener {
@@ -145,7 +110,7 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
         }
 
         val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_ORG_PERCEPTIVA))
+        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_EXPRESION_ESCRITA))
 
     }
 
@@ -154,7 +119,7 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
         etAprobadasT1.addTextChangedListener(object : TextWatcher {
 
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT1 = 0.0
+                totalPdT1 = 0.0
             }
 
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -166,95 +131,29 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
                 } else if (s.isNotEmpty()) {
                     aprobadasT1 = etAprobadasT1.text.toString().toInt()
                 }
-                subtotalPdT1 = calcularTarea(1, tvSubTotalT1, "Tarea 1: ", aprobadasT1, null, reprobadasT1)
-                calcularResultado()
-            }
-        })
-
-        etReprobadasT1.addTextChangedListener(object : TextWatcher {
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT1 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
-                    reprobadasT1 = 0
-                } else if (s.isNotEmpty()) {
-                    reprobadasT1 = etReprobadasT1.text.toString().toInt()
-                }
-                subtotalPdT1 = calcularTarea(1, tvSubTotalT1, "Tarea 1: ", aprobadasT1, null, reprobadasT1)
-                calcularResultado()
-            }
-        })
-    }
-
-    private fun textWatcherTarea2() {
-
-        etAprobadasT2.addTextChangedListener(object : TextWatcher {
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT2 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
-                    aprobadasT2 = 0
-                } else if (s.isNotEmpty()) {
-                    aprobadasT2 = etAprobadasT2.text.toString().toInt()
-                }
-                subtotalPdT2 = calcularTarea(2, tvSubTotalT2, "Tarea 2: ", aprobadasT2, null, reprobadasT2)
-                calcularResultado()
-            }
-        })
-        etReprobadasT2.addTextChangedListener(object : TextWatcher {
-
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT2 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
-                    reprobadasT2 = 0
-                } else if (s.isNotEmpty()) {
-                    reprobadasT2 = etReprobadasT2.text.toString().toInt()
-                }
-                subtotalPdT2 = calcularTarea(2, tvSubTotalT2, "Tarea 2: ", aprobadasT2, null, reprobadasT2)
+                totalPdT1 = calcularTarea(null, tvSubTotalT1, "Tarea 1: ", aprobadasT1, null, null)
                 calcularResultado()
             }
         })
     }
 
     override fun calcularTarea(n_tarea: Int?, tv_sub_total: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = 0.0
-        if (n_tarea == 1) {
-            total = aprobadas!! - reprobadas!! / 4.0
-            total = floor(total)
-        } else if (n_tarea == 2) {
-            total = aprobadas!! - reprobadas!! / 3.0
-            total = floor(total)
-        }
+        //FORMULA PARA RAZONAMIENTO DEDUCTIVO
+        var total = aprobadas!!.toDouble()
+        //Aproximacion piso
+        total = floor(total)
         if (total < 0) {
             total = 0.0
         }
-        tv_sub_total.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tv_sub_total.text = String.format("%s%s pts", tarea, total)
         return total
     }
 
     override fun calcularResultado() {
 
         //TOTALES
-        val totalPd: Double = subtotalPdT1 + subtotalPdT2
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        val totalPd: Double = totalPdT1
+        tvPdTotal.text = String.format("%s pts", totalPd)
 
         val pdCorregido = corregirPD(perc, totalPd)
         tvPdCorregido.text = String.format("%s pts", pdCorregido)
@@ -271,7 +170,7 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
         val nivel = Utilidades.calcularNivel(percentil)
         tvNivel.text = nivel
 
-        val desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
+        val desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 
@@ -297,22 +196,16 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun corregirPD(perc: Array<Array<Int>>, pd_actual: Double): Double {
-        when {
-            pd_actual < 0 -> {
-                return 0.0
-            }
-            pd_actual > perc[0][0] -> {
-                return perc[0][0].toDouble()
-            }
-            pd_actual < perc[perc.size - 1][0] -> {
-                return perc[perc.size - 1][0].toDouble()
-            }
-            else -> {
-                //Verificar si pd_actual esta en la lista
-                for (item in perc) {
-                    if (pd_actual == item[0].toDouble()) {
-                        return item[0].toDouble()
-                    }
+        //Excepcion pd_actual 0 sera pd
+        if (pd_actual > perc[0][0] || pd_actual <= 0) {
+            return perc[0][0].toDouble()
+        } else if (pd_actual < perc[perc.size - 1][0]) {
+            return perc[perc.size - 1][0].toDouble()
+        } else {
+            //Verificar si pd_actual esta en la lista
+            for (item in perc) {
+                if (pd_actual == item[0].toDouble()) {
+                    return item[0].toDouble()
                 }
             }
         }

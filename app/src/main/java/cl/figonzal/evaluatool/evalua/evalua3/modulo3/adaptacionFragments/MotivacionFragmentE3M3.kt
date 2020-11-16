@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 15-11-20 23:33
+ * Last modified 16-11-20 18:35
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -126,7 +126,7 @@ class MotivacionFragmentE3M3 : Fragment(), EvaluaInterface {
         }
 
         val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_NIVELES_ADAPTACION))
+        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_MOTIVACION))
 
     }
 
