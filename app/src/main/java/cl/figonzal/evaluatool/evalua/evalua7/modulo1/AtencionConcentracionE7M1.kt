@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 19:05
+ * Last modified 16-11-20 19:58
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo1
 
@@ -60,7 +60,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
             arrayOf(173, 87),
             arrayOf(172, 87),
             arrayOf(171, 87),
-            arrayOf(170, 88),
+            arrayOf(170, 87),
             arrayOf(169, 85),
             arrayOf(168, 85),
             arrayOf(167, 85),

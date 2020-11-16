@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 17:58
+ * Last modified 16-11-20 19:26
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -131,7 +131,7 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
         }
 
         val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_COMPREN_LECTORA))
+        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_COMPRENSION))
 
     }
 

@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 16-11-20 18:32                                                ~
+  Last modified 16-11-20 19:26                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -459,6 +459,8 @@
     <string name="TOOLBAR_AUTOCONTROL">Autocontrol</string>
     <string name="TOOLBAR_CONDUCTAS_PROSOCIALES">Conductas Pro-sociales</string>
     <string name="TOOLBAR_AUTOESTIMA">Autoestima</string>
+    <string name="TOOLBAR_VELOCIDAD">Velocidad</string>
+    <string name="TOOLBAR_COMPRENSION">Comprensión</string>
 
 
 </resources>

@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 16:47
+ * Last modified 16-11-20 19:26
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -40,7 +40,7 @@ class VelocidadLectoraE7M4 : AppCompatActivity() {
 
         //View pager
         val viewPager2 = findViewById<ViewPager2>(R.id.view_pager_velocidad)
-        viewPager2.adapter = FragmentStateAdapterE7M4(this)
+        viewPager2.adapter = FragmentStateAdapterE7M4(this, this)
 
         //TabLayout
         val tabLayout = findViewById<TabLayout>(R.id.tabs_velocidad)

@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 10-11-20 17:12
+ * Last modified 16-11-20 20:01
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3
 
@@ -40,7 +40,7 @@ class NivelesAdaptacionE1M3 : AppCompatActivity() {
 
         //View pager
         val viewPager2 = findViewById<ViewPager2>(R.id.view_pager_niveles_adaptacion)
-        viewPager2.adapter = FragmentStateAdapterE1M3(this)
+        viewPager2.adapter = FragmentStateAdapterE1M3(this, this)
 
         //TabLayout
         val tabLayout = findViewById<TabLayout>(R.id.tabs_niveles_adaptacion)
