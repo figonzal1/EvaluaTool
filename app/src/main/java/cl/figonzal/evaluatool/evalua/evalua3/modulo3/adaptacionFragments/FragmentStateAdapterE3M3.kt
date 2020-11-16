@@ -8,15 +8,17 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 15-11-20 22:51
+ * Last modified 16-11-20 19:15
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
+import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import cl.figonzal.evaluatool.R
 
-class FragmentStateAdapterE3M3(fa: FragmentActivity) : FragmentStateAdapter(fa) {
+class FragmentStateAdapterE3M3(context: Context, fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         var f = Fragment()
@@ -38,9 +40,9 @@ class FragmentStateAdapterE3M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
     }
 
     init {
-        tabs[0] = "Motivación"
-        tabs[1] = "Autocontrol"
-        tabs[2] = "Conductas Pro-sociales"
-        tabs[3] = "Autoestima"
+        tabs[0] = context.getString(R.string.TOOLBAR_MOTIVACION)
+        tabs[1] = context.getString(R.string.TOOLBAR_AUTOCONTROL)
+        tabs[2] = context.getString(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES)
+        tabs[3] = context.getString(R.string.TOOLBAR_AUTOESTIMA)
     }
 }
