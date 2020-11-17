@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 07-11-20 19:59
+ * Last modified 17-11-20 2:19
  */
 package cl.figonzal.evaluatool
 
@@ -34,10 +34,6 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    companion object {
-        private const val TEST_MODE = true
-    }
-
     private lateinit var tvNombreApp: TextView
     private lateinit var tvVersion: TextView
     private lateinit var btnEvalua0: MaterialButton
@@ -52,8 +48,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnEvalua9: MaterialButton
     private lateinit var btnEvalua10: MaterialButton
 
-    private var sharedPreferences: SharedPreferences? = null
-    private var adsService: AdsService? = null
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var adsService: AdsService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +57,6 @@ class MainActivity : AppCompatActivity() {
 
         instanciarRecursos()
         loadAds()
-        rewardDialog()
         animaciones()
         clickListeners()
     }
@@ -99,44 +94,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadAds() {
-        adsService = AdsService(this, applicationContext)
-        adsService!!.loadIntersitial()
-        adsService!!.loadRewardVideo(sharedPreferences)
-    }
-
-    /**
-     * Funcion que realiza la configuracion de reward dialog
-     */
-    private fun rewardDialog() {
-
-        val rewardDate = Date(sharedPreferences!!.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
-        val nowDate = Date()
-
-        adsService!!.loadRewardVideo(sharedPreferences)
-
-        //Si la hora del celular es posterior a reward date
-        if (nowDate.after(rewardDate)) {
-
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
-
-            //Generar % de aparicion de dialogo
-            val showDialog = Utilidades.generateRandomNumber()
-            if (showDialog) {
-
-                //Mostrar dialog
-                val fragment = RewardDialogFragment(adsService!!)
-
-                fragment.isCancelable = false
-                fragment.show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
-
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
-
-            } else {
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
-            }
-        } else if (nowDate.before(rewardDate)) {
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
-        }
+        adsService = AdsService(this, applicationContext, sharedPreferences)
+        adsService.loadIntersitial()
+        adsService.loadRewardVideo()
     }
 
     private fun animaciones() {
@@ -188,55 +148,88 @@ class MainActivity : AppCompatActivity() {
 
     private fun clickListeners() {
         btnEvalua0.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0))
-            checkearPermisoIntersitial(TEST_MODE, Evalua0Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0))
+            checkearPermisoIntersitial(Evalua0Activity::class.java)
         }
         btnEvalua1.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1))
-            checkearPermisoIntersitial(TEST_MODE, Evalua1Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1))
+            checkearPermisoIntersitial(Evalua1Activity::class.java)
         }
         btnEvalua2.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2))
-            checkearPermisoIntersitial(TEST_MODE, Evalua2Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2))
+            checkearPermisoIntersitial(Evalua2Activity::class.java)
         }
         btnEvalua3.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3))
-            checkearPermisoIntersitial(TEST_MODE, Evalua3Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3))
+            checkearPermisoIntersitial(Evalua3Activity::class.java)
         }
         btnEvalua4.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_4))
-            checkearPermisoIntersitial(TEST_MODE, Evalua4Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_4))
+            checkearPermisoIntersitial(Evalua4Activity::class.java)
         }
         btnEvalua5.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_5))
-            checkearPermisoIntersitial(TEST_MODE, Evalua5Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_5))
+            checkearPermisoIntersitial(Evalua5Activity::class.java)
         }
         btnEvalua7.setOnClickListener {
-            Timber.d("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7))
-            checkearPermisoIntersitial(TEST_MODE, Evalua7Activity::class.java)
+            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7))
+            checkearPermisoIntersitial(Evalua7Activity::class.java)
         }
     }
 
-    private fun checkearPermisoIntersitial(testMode: Boolean, ActivityToOpen: Class<out Activity?>) {
+    private fun checkearPermisoIntersitial(ActivityToOpen: Class<out Activity?>) {
 
-        val rewardDate = Date(sharedPreferences!!.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
+        val rewardDate = Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
 
-        Timber.d("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(applicationContext, rewardDate))
+        Timber.i("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(applicationContext, rewardDate))
 
         val nowDate = Date()
 
         //si las 24 horas ya pasaron, cargar los ads nuevamente
-        if (nowDate.after(rewardDate) && !testMode) {
+        if (nowDate.after(rewardDate)) {
 
-            adsService!!.configIntersitialIntents(ActivityToOpen)
-            Timber.d("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS))
+            adsService.showIntersitial(ActivityToOpen)
+            Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS))
 
         } else {
             val intent = Intent(this, ActivityToOpen)
 
             startActivity(intent)
 
-            Timber.d("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS))
+            Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS))
+        }
+    }
+
+    /**
+     * Funcion que realiza la configuracion de reward dialog
+     */
+    fun rewardDialog() {
+
+        val rewardDate = Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
+        val nowDate = Date()
+
+        //Si la hora del celular es posterior a reward date
+        if (nowDate.after(rewardDate)) {
+
+            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
+
+            //Generar % de aparicion de dialogo
+            val showDialog = Utilidades.generateRandomNumber()
+            if (showDialog) {
+
+                //Mostrar dialog
+                val fragment = RewardDialogFragment(adsService)
+
+                fragment.isCancelable = false
+                fragment.show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
+
+                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
+
+            } else {
+                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
+            }
+        } else if (nowDate.before(rewardDate)) {
+            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
         }
     }
 }
