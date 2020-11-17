@@ -8,19 +8,19 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 16-11-20 19:26                                                ~
+  Last modified 17-11-20 18:48                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
     <string name="app_name">EvaluaTool</string>
 
     <!--TEST AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
+    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>
 
     <!--PROD AD-->
-    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
+    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>-->
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
@@ -215,13 +215,9 @@
     <string name="CLICK_EXACTITUD_LECTORA">click_exactitud_lectora</string>
     <string name="CLICK_PENSAMIENTO_ANALOGICO">click_pensamiento_analogico</string>
     <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
-    <string name="TAG_CLASIFICACION">D/CLASIFICACION_ACT: </string>
-    <string name="TAG_ORTOGRAFIA">D/ORTOGRAFIA_ACT: </string>
     <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
-    <string name="CLOSE_EVALUA_3">D/EVALUA_3_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
     <string name="CLOSE_EVALUA_5">D/EVALUA_5_ACTIVITY: </string>
-    <string name="CLOSE_EVALUA_2">D/EVALUA_2_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
     <string name="BTN_EVALUA_2">btn_evalua_2</string>
@@ -242,15 +238,9 @@
     <string name="CLICK_INDICE_GENERAL_LINGUISTICO">click_indice_general_linguistico</string>
     <string name="CLICK_RECEPCION_AUDITIVA">click_recepcion_auditiva</string>
     <string name="CLICK_HABILIDADES_FONOLOGICAS">click_habilidades_fonologicas</string>
-    <string name="TAG_ATENCION_CONCENTRACION">D/ATENCION_CONCENT_ACT: </string>
-    <string name="TAG_RAZON_DEDUCTIVO">RAZONAMIENTO_DEDUC_ACT</string>
-    <string name="TAG_RAZON_ESPACIAL">D/RAZON_ESPACIAL_ACT: </string>
-    <string name="TAG_RAZON_INDUCTIVO">D/RAZON_INDUCTIVO_ACT: </string>
-    <string name="TAG_EFICACIA_LECTORA">D/EFICACIA_LECTORA_ACT: </string>
     <string name="TAG_VELOCIDAD_LECTORA">D/VELOCIDAD_LECTORA_ACT: </string>
     <string name="TAG_NIVELES_ADAPTACION">D/NIVELES_ADAPTACION_ACT: </string>
     <string name="TAG_COMPREN_LECTORA">D/COMPREN_LECTORA_ACT: </string>
-    <string name="TAG_EXP_ESCRITA">D/EXP_ESCRITA_ACT: </string>
     <string name="TAG_ORTO_FONETICA">D/ORTO_FONETICA_ACT: </string>
     <string name="TAG_ORT_VIS_REGLADA">D/ORT_VIS_REGLADA_ACT: </string>
     <string name="TAG_MEMORIA_ATENCION">D/MEMORIA_ATENCION_ACT: </string>
@@ -261,7 +251,6 @@
     <string name="TAG_PERNSAMIENTO_ANALOGICO">D/PERNSAMIENTO_ANALOGICO_ACT: </string>
     <string name="TAG_CALCU_NUMERACION">D/CALCU_NUMERACION_ACT: </string>
     <string name="TAG_RESOLUCION_PROBLEMAS">D/RESOLUCION_PROBLEMAS_ACT: </string>
-    <string name="CLOSE_EVALUA_7">D/EVALUA_7_ACTIVITY: </string>
     <string name="CLICK_ATEN_CONCENTRACION">click_atencion_cooncentracion</string>
     <string name="CLICK_RAZON_DEDUCTIVO">click_razonamiento_deductivo</string>
     <string name="CLICK_RAZON_INDUCTIVO">click_razonamiento_inductivo</string>
@@ -306,11 +295,11 @@
     <!-- REWARD DIALOG TAGS & ADS -->
     <string name="TAG_REWARD_DIALOG_BTN_VER_VIDEO" translatable="false">BOTON VER VIDEO PRESIONADO</string>
     <string name="TAG_REWARD_DIALOG_BTN_CANCEL" translatable="false">BOTON CANCEL PRESIONADO</string>
-    <string name="TAG_VIDEO_REWARD_STATUS" translatable="false">D/VIDEO_REWARD_STATUS: </string>
+    <string name="TAG_VIDEO_REWARD_STATUS" translatable="false">VIDEO_REWARD_STATUS: </string>
     <string name="TAG_VIDEO_REWARD_STATUS_LOADED" translatable="false">LOADED</string>
     <string name="TAG_VIDEO_REWARD_STATUS_REWARDED" translatable="false">REWARDED</string>
     <string name="TAG_VIDEO_REWARD_STATUS_FAILED" translatable="false">FAILED</string>
-    <string name="TAG_VIDEO_REWARD_STATUS_COMPLETED" translatable="false">COMPLETED</string>
+    <string name="TAG_VIDEO_REWARD_STATUS_CLOSED" translatable="false">CLOSED</string>
     <string name="TAG_HORA_AHORA" translatable="false">D/HORA_AHORA: </string>
     <string name="TAG_HORA_REWARD" translatable="false">D/HORA_REWARD: </string>
     <string name="TAG_REWARD_STATUS" translatable="false">REWARD_STATUS: </string>
