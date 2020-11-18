@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 16-11-20 19:58
+ * Last modified 18-11-20 13:14
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo1
 
@@ -39,154 +39,35 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
 
     private val perc = arrayOf(
             arrayOf(192, 99),
-            arrayOf(191, 99),
-            arrayOf(190, 99),
-            arrayOf(189, 99),
-            arrayOf(188, 99),
-            arrayOf(187, 99),
-            arrayOf(186, 99),
-            arrayOf(185, 99),
             arrayOf(184, 95),
-            arrayOf(183, 95),
-            arrayOf(182, 95),
-            arrayOf(181, 95),
-            arrayOf(180, 95),
             arrayOf(179, 90),
-            arrayOf(178, 90),
-            arrayOf(177, 90),
-            arrayOf(176, 90),
-            arrayOf(175, 90),
             arrayOf(174, 87),
-            arrayOf(173, 87),
-            arrayOf(172, 87),
-            arrayOf(171, 87),
-            arrayOf(170, 87),
             arrayOf(169, 85),
-            arrayOf(168, 85),
-            arrayOf(167, 85),
-            arrayOf(166, 85),
-            arrayOf(165, 85),
             arrayOf(164, 80),
-            arrayOf(163, 80),
-            arrayOf(162, 80),
-            arrayOf(161, 80),
-            arrayOf(160, 80),
             arrayOf(159, 78),
-            arrayOf(158, 78),
-            arrayOf(157, 78),
-            arrayOf(156, 78),
-            arrayOf(155, 78),
             arrayOf(154, 75),
-            arrayOf(153, 75),
-            arrayOf(152, 75),
-            arrayOf(151, 75),
-            arrayOf(150, 75),
             arrayOf(149, 72),
-            arrayOf(148, 72),
-            arrayOf(147, 72),
-            arrayOf(146, 72),
-            arrayOf(145, 72),
             arrayOf(144, 70),
-            arrayOf(143, 70),
-            arrayOf(142, 70),
-            arrayOf(141, 70),
-            arrayOf(140, 70),
             arrayOf(139, 65),
-            arrayOf(138, 65),
-            arrayOf(137, 65),
-            arrayOf(136, 65),
-            arrayOf(135, 65),
             arrayOf(134, 63),
-            arrayOf(133, 63),
-            arrayOf(132, 63),
-            arrayOf(131, 63),
-            arrayOf(130, 63),
             arrayOf(129, 60),
-            arrayOf(128, 60),
-            arrayOf(127, 60),
-            arrayOf(126, 60),
-            arrayOf(125, 60),
             arrayOf(124, 55),
-            arrayOf(123, 55),
-            arrayOf(122, 55),
-            arrayOf(121, 55),
-            arrayOf(120, 55),
             arrayOf(119, 50),
-            arrayOf(118, 50),
-            arrayOf(117, 50),
-            arrayOf(116, 50),
-            arrayOf(115, 50),
             arrayOf(114, 45),
-            arrayOf(113, 45),
-            arrayOf(112, 45),
-            arrayOf(111, 45),
-            arrayOf(110, 45),
             arrayOf(109, 40),
-            arrayOf(108, 40),
-            arrayOf(107, 40),
-            arrayOf(106, 40),
-            arrayOf(105, 40),
             arrayOf(104, 35),
-            arrayOf(103, 35),
-            arrayOf(102, 35),
-            arrayOf(101, 35),
-            arrayOf(100, 35),
             arrayOf(99, 30),
-            arrayOf(98, 30),
-            arrayOf(97, 30),
-            arrayOf(96, 30),
-            arrayOf(95, 30),
             arrayOf(94, 25),
-            arrayOf(93, 25),
-            arrayOf(92, 25),
-            arrayOf(91, 25),
-            arrayOf(90, 25),
             arrayOf(89, 18),
-            arrayOf(88, 18),
-            arrayOf(87, 18),
-            arrayOf(86, 18),
-            arrayOf(85, 18),
             arrayOf(84, 15),
-            arrayOf(83, 15),
-            arrayOf(82, 15),
-            arrayOf(81, 15),
-            arrayOf(80, 15),
             arrayOf(79, 12),
-            arrayOf(78, 12),
-            arrayOf(77, 12),
-            arrayOf(76, 12),
-            arrayOf(75, 12),
             arrayOf(74, 10),
-            arrayOf(73, 10),
-            arrayOf(72, 10),
-            arrayOf(71, 10),
-            arrayOf(70, 10),
             arrayOf(69, 9),
-            arrayOf(68, 9),
-            arrayOf(67, 9),
-            arrayOf(66, 9),
-            arrayOf(65, 9),
             arrayOf(64, 7),
-            arrayOf(63, 7),
-            arrayOf(62, 7),
-            arrayOf(61, 7),
-            arrayOf(60, 7),
             arrayOf(59, 5),
-            arrayOf(58, 5),
-            arrayOf(57, 5),
-            arrayOf(56, 5),
-            arrayOf(55, 5),
             arrayOf(54, 3),
-            arrayOf(53, 3),
-            arrayOf(52, 3),
-            arrayOf(51, 3),
-            arrayOf(50, 3),
             arrayOf(49, 1),
-            arrayOf(48, 1),
-            arrayOf(47, 1),
-            arrayOf(46, 1),
             arrayOf(45, 1)
-
     )
 
     private lateinit var etAprobadasT1: TextInputEditText
@@ -491,8 +372,40 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
             else -> {
                 //Verificar si pd_actual esta en la lista
                 for (item in perc) {
-                    if (pd_actual == item[0].toDouble()) {
-                        return item[0].toDouble()
+                    when {
+                        pd_actual == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 1 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 2 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 3 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 4 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 5 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 6 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 7 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 8 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 9 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
+                        pd_actual - 10 == item[0].toDouble() -> {
+                            return item[0].toDouble()
+                        }
                     }
                 }
             }
