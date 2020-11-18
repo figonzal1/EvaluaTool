@@ -8,7 +8,7 @@
                                                                               -
  Copyright (c) 2020                                                           -
                                                                               -
- Last modified 14-08-20 1:02                                                  -
+ Last modified 18-11-20 19:51                                                 -
  -----------------------------------------------------------------------------*/
 
 package cl.figonzal.evaluatool.evalua.evalua4.modulo5;
@@ -42,7 +42,7 @@ public class OrtografiaVisualRegladaE4M5Test {
         this.desviacion_esperada = desviacion_esperada;
     }
 
-    @Parameterized.Parameters()
+    @Parameterized.Parameters(name = "{index}: {0} = {1}")
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                 {80, 99, 2.46},
