@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 17-11-20 0:00
+ * Last modified 18-11-20 12:46
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -35,7 +35,7 @@ class RewardDialogFragment(private val adsService: AdsService) : DialogFragment(
 
         builder.setPositiveButton("Ver video") { _: DialogInterface, _: Int ->
 
-            if (adsService.rewardedAd.isLoaded) {
+            if (adsService.getIntersitial().isLoaded) {
                 dismiss()
                 adsService.showRewardVideo()
                 Timber.i(getString(R.string.TAG_REWARD_DIALOG_BTN_VER_VIDEO))
