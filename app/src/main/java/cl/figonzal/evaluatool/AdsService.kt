@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 17-11-20 18:48
+ * Last modified 18-11-20 12:49
  */
 package cl.figonzal.evaluatool
 
@@ -28,14 +28,20 @@ import java.util.*
 class AdsService(activity: Activity, context: Context, sharedPreferences: SharedPreferences) {
 
     private lateinit var interstitialAd: InterstitialAd
-    lateinit var rewardedAd: RewardedAd
+    private lateinit var rewardedAd: RewardedAd
     private val context: Context
     private val activity: Activity
     private val sharedPreferences: SharedPreferences
 
     //INTERSITIAL
     fun loadIntersitial() {
+        interstitialAd = InterstitialAd(context)
+        interstitialAd.adUnitId = context.getString(R.string.ADMOB_ID_INTERSITIAL)
         interstitialAd.loadAd(AdRequest.Builder().build())
+    }
+
+    fun getIntersitial(): InterstitialAd {
+        return interstitialAd
     }
 
     fun showIntersitial(ActivityToOpen: Class<out Activity?>?) {

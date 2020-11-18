@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 08-11-20 22:57                                                ~
+  Last modified 18-11-20 0:32                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -43,18 +43,27 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
+            <include
+                android:id="@+id/include48"
+                layout="@layout/baremo_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t1"
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/include48">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -408,10 +417,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/include48" />
 
 
             <com.google.android.material.card.MaterialCardView
