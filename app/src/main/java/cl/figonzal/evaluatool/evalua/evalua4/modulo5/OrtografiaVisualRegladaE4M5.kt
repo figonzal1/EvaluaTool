@@ -8,7 +8,7 @@
  *
  * Copyright (c) 2020
  *
- * Last modified 18-11-20 18:00
+ * Last modified 18-11-20 20:14
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo5
 
@@ -41,29 +41,99 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
     private val perc = arrayOf(
 
             arrayOf(80, 99),
+            arrayOf(79, 99),
+            arrayOf(78, 99),
+
             arrayOf(77, 98),
+            arrayOf(76, 98),
+            arrayOf(75, 98),
+
             arrayOf(74, 97),
+            arrayOf(73, 97),
+            arrayOf(72, 97),
+
             arrayOf(71, 96),
+            arrayOf(70, 96),
+            arrayOf(69, 96),
+
             arrayOf(68, 94),
+            arrayOf(67, 94),
+            arrayOf(66, 94),
+
             arrayOf(65, 92),
+            arrayOf(64, 92),
+            arrayOf(63, 92),
+
             arrayOf(62, 90),
+            arrayOf(61, 90),
+            arrayOf(60, 90),
+
             arrayOf(59, 85),
+            arrayOf(58, 85),
+            arrayOf(57, 85),
+
             arrayOf(56, 80),
+            arrayOf(55, 80),
+            arrayOf(54, 80),
+
             arrayOf(53, 75),
+            arrayOf(52, 75),
+            arrayOf(51, 75),
+
             arrayOf(50, 70),
+            arrayOf(49, 70),
+            arrayOf(48, 70),
+
             arrayOf(47, 60),
+            arrayOf(46, 60),
+            arrayOf(45, 60),
+
             arrayOf(44, 55),
+            arrayOf(43, 55),
+            arrayOf(42, 55),
+
             arrayOf(41, 50),
+            arrayOf(40, 50),
+            arrayOf(39, 50),
+
             arrayOf(38, 40),
+            arrayOf(37, 40),
+            arrayOf(36, 40),
+
             arrayOf(35, 35),
+            arrayOf(34, 35),
+            arrayOf(33, 35),
+
             arrayOf(32, 30),
+            arrayOf(31, 30),
+            arrayOf(30, 30),
+
             arrayOf(29, 25),
+            arrayOf(28, 25),
+            arrayOf(27, 25),
+
             arrayOf(26, 20),
+            arrayOf(25, 20),
+            arrayOf(24, 20),
+
             arrayOf(23, 17),
+            arrayOf(22, 17),
+            arrayOf(21, 17),
+
             arrayOf(20, 15),
+            arrayOf(19, 15),
+            arrayOf(18, 15),
+
             arrayOf(17, 10),
+            arrayOf(16, 10),
+            arrayOf(15, 10),
+
             arrayOf(14, 5),
+            arrayOf(13, 5),
+            arrayOf(12, 5),
+
             arrayOf(11, 1),
+            arrayOf(10, 1),
             arrayOf(9, 1)
     )
 
@@ -290,10 +360,10 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
     override fun calcularPercentil(pd_total: Double): Int {
         when {
             pd_total > perc[0][0] -> {
-                return perc[0][2]
+                return perc[0][1]
             }
-            pd_total < perc[perc.size - 1][1] -> {
-                return perc[perc.size - 1][2]
+            pd_total < perc[perc.size - 1][0] -> {
+                return perc[perc.size - 1][1]
             }
             else -> {
                 for (item in perc) {
@@ -321,17 +391,8 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
             }
             else -> {
                 for (item in perc) {
-                    when {
-                        pd_actual == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 1 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 2 == item[0].toDouble() -> {
-                            return item[0].toDouble()
-                        }
-                        pd_actual - 3 == item[0].toDouble() -> {
+                    when (pd_actual) {
+                        item[0].toDouble() -> {
                             return item[0].toDouble()
                         }
                     }
