@@ -42,7 +42,7 @@ Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenec
   - [x] Evalúa - 2
   - [x] Evalúa - 3
   - [x] Evalúa - 4
-  - [ ] Evalúa - 5
+  - [x] Evalúa - 5
   - [ ] Evalúa - 6
   - [x] Evalúa - 7
   - [ ] Evalúa - 8
