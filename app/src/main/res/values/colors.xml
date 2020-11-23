@@ -9,7 +9,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 03-05-20 21:13                                                ~
+  Last modified 08-11-20 17:34                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <resources>
@@ -26,4 +26,7 @@
     <color name="colorOnSurface">#000</color>
 
     <color name="grey">#efefef</color>
+
+    <color name="tableGreyHeader">#A1A1A1</color>
+    <color name="tableGreyRow">#80F4F4F4</color>
 </resources>

@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 05-07-20 17:10                                                ~
+  Last modified 13-11-20 22:46                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua2.modulo6.ResolucionProblemasE2M6">
+    tools:context=".evalua.evalua2.modulo6.ResolucionProblemasE2M6">
 
     <include
         android:id="@+id/include"
@@ -43,18 +43,27 @@
             android:focusable="true"
             android:focusableInTouchMode="true">
 
+            <include
+                android:id="@+id/include48"
+                layout="@layout/baremo_parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guia_der"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/guia_izq"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t1"
                 style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="4dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@+id/include48">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -131,14 +140,13 @@
 
             <include
                 android:id="@+id/include17"
-                layout="@layout/card_view_estadisticos"
+                layout="@layout/estadisticos_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/include48" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_subtotales"
@@ -222,7 +230,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <include
-                layout="@layout/card_view_pd_final"
+                layout="@layout/pd_final_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"

@@ -8,7 +8,7 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 16-07-20 23:57                                                ~
+  Last modified 26-09-20 1:35                                                 ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua4.modulo4.VelocidadLectoraE4M4">
+    tools:context=".evalua.evalua4.modulo4.VelocidadLectoraE4M4">
 
     <include
         android:id="@+id/include2"
@@ -47,10 +47,11 @@
         app:tabSelectedTextColor="@color/colorOnPrimary"
         app:tabTextColor="@color/colorOnPrimary" />
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_velocidad"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

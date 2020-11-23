@@ -9,14 +9,17 @@
                                                                               ~
   Copyright (c) 2020                                                          ~
                                                                               ~
-  Last modified 20-07-20 13:49                                                ~
+  Last modified 08-11-20 18:49                                                ~
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cl.figonzal.evaluatool">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".ApplicationController"
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,306 +34,351 @@
             </intent-filter>
         </activity> <!-- EVALUA 0 -->
         <activity
-            android:name=".evalua0.Evalua0Activity"
+            android:name=".evalua.evalua0.Evalua0Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua0.modulo3.HabilidadesFonologicasE0M3"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo3.HabilidadesFonologicasE0M3"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo3.RecepcionAuditivaArticulacionE0M3"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo3.PalabrasYFrasesE0M3"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo3.PalabrasYFrasesE0M3"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo2.GrafoMotricidadE0M2"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo2.GrafoMotricidadE0M2"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo2.CopiaDibujosE0M2"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo2.CopiaDibujosE0M2"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.MemoriaVerbalE0M1"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo1.MemoriaVerbalE0M1"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.LetrasYNumerosE0M1"
-            android:parentActivityName=".evalua0.modulo1.LetrasYNumerosE0M1" />
+            android:name=".evalua.evalua0.modulo1.LetrasYNumerosE0M1"
+            android:parentActivityName=".evalua.evalua0.modulo1.LetrasYNumerosE0M1" />
         <activity
-            android:name=".evalua0.modulo1.ClasificacionE0M1"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo1.ClasificacionE0M1"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.OrganizacionPerceptivaE0M1"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo1.OrganizacionPerceptivaE0M1"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.SeriesE0M1"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo1.SeriesE0M1"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo2.IndiceGeneralEspacialE0M2"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo2.IndiceGeneralEspacialE0M2"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo1.IndiceGeneralCognitivoE0M1"
-            android:parentActivityName=".evalua0.Evalua0Activity" />
+            android:name=".evalua.evalua0.modulo1.IndiceGeneralCognitivoE0M1"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua0.modulo3.IndiceGeneralLinguisticoE0M3"
-            android:parentActivityName=".evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
+            android:name=".evalua.evalua0.modulo3.IndiceGeneralLinguisticoE0M3"
+            android:parentActivityName=".evalua.evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
         <activity
-            android:name=".evalua1.Evalua1Activity"
+            android:name=".evalua.evalua1.Evalua1Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua1.modulo3.NivelesAdaptacionE1M3"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo3.NivelesAdaptacionE1M3"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo1.MemoriaAtencionE1M1"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo1.MemoriaAtencionE1M1"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo6.CalculoNumeracionE1M6"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo6.CalculoNumeracionE1M6"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo5.OrtografiaVisualE1M5"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo5.OrtografiaVisualE1M5"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo5.OrtografiaFoneticaE1M5"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo5.OrtografiaFoneticaE1M5"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo4.ValoracionGlobalLecturaE1M4"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo4.ValoracionGlobalLecturaE1M4"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo4.ExactitudLectoraE1M4"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo4.ExactitudLectoraE1M4"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo4.ComprensionLectoraE1M4"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo4.ComprensionLectoraE1M4"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo2.ValoracionGlobalBasesE1M2"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo2.ValoracionGlobalBasesE1M2"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo2.OrganizacionPerceptivaE1M2"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo2.OrganizacionPerceptivaE1M2"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo2.ClasificacionesE1M2"
-            android:parentActivityName=".evalua1.Evalua1Activity" />
+            android:name=".evalua.evalua1.modulo2.ClasificacionesE1M2"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua1.modulo2.SeriesE1M2"
-            android:parentActivityName=".evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
+            android:name=".evalua.evalua1.modulo2.SeriesE1M2"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
         <activity
-            android:name=".evalua3.Evalua3Activity"
+            android:name=".evalua.evalua3.Evalua3Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua3.modulo2.ReflexividadE3M2"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo2.ReflexividadE3M2"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo2.OrganizacionPerceptivaE3M2"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo2.OrganizacionPerceptivaE3M2"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo2.PensamientoAnalogicoE3M2"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo2.PensamientoAnalogicoE3M2"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo2.ValoracionGlobalBasesE3M2"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo2.ValoracionGlobalBasesE3M2"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo1.MemoriaAtencionE3M1"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo1.MemoriaAtencionE3M1"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo4.ComprensionLectoraE3M4"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo4.ComprensionLectoraE3M4"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo4.ExactitudLectoraE3M4"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo4.ExactitudLectoraE3M4"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo4.ValoracionGlobalLecturaE3M4"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo4.ValoracionGlobalLecturaE3M4"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo5.OrtografiaFoneticaE3M5"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo5.OrtografiaFoneticaE3M5"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo5.OrtografiaVisualRegladaE3M5"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo5.OrtografiaVisualRegladaE3M5"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo6.ValoracionGlobalAprenMatematE3M6"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo6.ResolucionProblemasE3M6"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo6.ResolucionProblemasE3M6"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo6.CalculoNumeracionE3M6"
-            android:parentActivityName=".evalua3.Evalua3Activity" />
+            android:name=".evalua.evalua3.modulo6.CalculoNumeracionE3M6"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua3.modulo3.NivelesAdaptacionE3M3"
-            android:parentActivityName=".evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
+            android:name=".evalua.evalua3.modulo3.NivelesAdaptacionE3M3"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
         <activity
-            android:name=".evalua7.Evalua7Activity"
+            android:name=".evalua.evalua7.Evalua7Activity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".evalua7.modulo1.AtencionConcentracionE7M1"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo1.AtencionConcentracionE7M1"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoDeductivoE7M2"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo2.RazonamientoDeductivoE7M2"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoInductivoE7M2"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo2.RazonamientoInductivoE7M2"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo2.RazonamientoEspacialE7M2"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo2.RazonamientoEspacialE7M2"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.EficaciaLectoraE7M4"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo4.EficaciaLectoraE7M4"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.VelocidadLectoraE7M4"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo4.VelocidadLectoraE7M4"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.OrtografiaFoneticaE7M5"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo5.OrtografiaFoneticaE7M5"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.ExpresionEscritaE7M5"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo5.ExpresionEscritaE7M5"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo5.OrtografiaVisualRegladaE7M5"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo5.OrtografiaVisualRegladaE7M5"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo6.CalculoNumeracionE7M6"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo6.CalculoNumeracionE7M6"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo4.ComprensionLectoraE7M4"
-            android:parentActivityName=".evalua7.Evalua7Activity">
+            android:name=".evalua.evalua7.modulo4.ComprensionLectoraE7M4"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="cl.figonzal.evaluatool.evalua7.Evalua7Activity" />
+                android:value="cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity" />
         </activity>
         <activity
-            android:name=".evalua7.modulo6.ResolucionProblemasE7M6"
-            android:parentActivityName=".evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
+            android:name=".evalua.evalua7.modulo6.ResolucionProblemasE7M6"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
         <activity
-            android:name=".evalua2.modulo5.OrtografiaE2M5"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo5.OrtografiaE2M5"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo4.ComprensionLectoraE2M4"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo4.ComprensionLectoraE2M4"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo3.NivelesAdaptacionE2M3"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo3.NivelesAdaptacionE2M3"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo2.MemoriaAtencionE2M2"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo2.MemoriaAtencionE2M2"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo1.IndiceGeneralCognitivoE2M1"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo1.IndiceGeneralCognitivoE2M1"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo1.ValoracionGlobalRazonamientoE2M1"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo1.ClasificacionesE2M1"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo1.ClasificacionesE2M1"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo1.OrganizacionPerceptivaE2M1"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo1.OrganizacionPerceptivaE2M1"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo6.CalculoNumeracionE2M6"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo6.CalculoNumeracionE2M6"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo1.PensamientoAnalogicoE2M1"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo1.PensamientoAnalogicoE2M1"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo6.IndiceGeneralMatematicoE2M6"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo6.IndiceGeneralMatematicoE2M6"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo6.ValoracionGlobalMatematicasE2M6"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo6.ValoracionGlobalMatematicasE2M6"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.modulo6.ResolucionProblemasE2M6"
-            android:parentActivityName=".evalua2.Evalua2Activity" />
+            android:name=".evalua.evalua2.modulo6.ResolucionProblemasE2M6"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua2.Evalua2Activity"
+            android:name=".evalua.evalua2.Evalua2Activity"
             android:parentActivityName=".MainActivity" /> <!-- EVALUA 4 -->
         <activity
-            android:name=".evalua4.modulo1.MemoriaAtencionE4M1"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo1.MemoriaAtencionE4M1"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo2.ReflexividadE4M2"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo2.ReflexividadE4M2"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo2.IndiceGeneralCognitivoE4M2"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo2.IndiceGeneralCognitivoE4M2"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo2.ValoracionGlobalRazonamientoE4M2"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo2.OrganizacionPerceptivaE4M2"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo2.OrganizacionPerceptivaE4M2"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo2.PensamientoAnalogicoE4M2"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo2.PensamientoAnalogicoE4M2"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo3.NivelesAdaptacionE4M3"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo3.NivelesAdaptacionE4M3"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo4.ComprensionLectoraE4M4"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo4.ComprensionLectoraE4M4"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo6.CalculoNumeracionE4M6"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo6.CalculoNumeracionE4M6"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo6.IndiceGeneralMatematicoE4M6"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo6.IndiceGeneralMatematicoE4M6"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo6.ValoracionGlobalMatematicasE4M6"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo6.ValoracionGlobalMatematicasE4M6"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo4.VelocidadLectoraE4M4"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo4.VelocidadLectoraE4M4"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo6.ResolucionProblemasE4M6"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo6.ResolucionProblemasE4M6"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo5.OrtografiaVisualRegladaE4M5"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo5.OrtografiaVisualRegladaE4M5"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo4.IndiceGeneralLecturaE4M4"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo4.IndiceGeneralLecturaE4M4"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.modulo4.ValoracionGlobalLectoraE4M4"
-            android:parentActivityName=".evalua4.Evalua4Activity" />
+            android:name=".evalua.evalua4.modulo4.ValoracionGlobalLectoraE4M4"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua4.Evalua4Activity"
+            android:name=".evalua.evalua4.Evalua4Activity"
+            android:parentActivityName=".MainActivity" /> <!-- EVALUA 5 -->
+        <activity
+            android:name=".evalua.evalua5.modulo6.ResolucionProblemasE5M6"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo6.CalculoNumeracionE5M6"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo5.OrtografiaVisualRegladaE5M5"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo5.OrtografiaFoneticaE5M5"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo4.ValoracionGlobalLecturaE5M4"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo4.ExactitudLectoraE5M4"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo4.VelocidadLectoraE5M4"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo4.ComprensionLectoraE5M4"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo3.NivelesAdaptacionE5M3"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo2.OrganizacionPerceptivaE5M2"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo2.PensamientoAnalogicoE5M2"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo2.ReflexividadE5M2"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo1.MemoriaAtencionE5M1"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.Evalua5Activity"
             android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
