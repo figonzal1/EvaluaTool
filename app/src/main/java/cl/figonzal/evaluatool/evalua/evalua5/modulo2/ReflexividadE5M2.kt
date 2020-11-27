@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 2:35
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 1:08
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo2
 
@@ -25,7 +25,7 @@ import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.EvaluaUtils
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
@@ -126,7 +126,7 @@ class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
         }
 
         val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_REFLEXIVIDAD))
+        EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_REFLEXIVIDAD))
 
     }
 
@@ -201,10 +201,10 @@ class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
         } else {
             progressBar.progress = percentil
         }
-        val nivel = Utilidades.calcularNivel(percentil)
+        val nivel = EvaluaUtils.calcularNivel(percentil)
         tvNivel.text = nivel
 
-        val desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
+        val desviacion = EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 

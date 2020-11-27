@@ -1,15 +1,15 @@
-/*-----------------------------------------------------------------------------
-                                                                              -
- This file is subject to the terms and conditions defined in                  -
- file 'LICENSE', which is part of this source code package                    -
-                                                                              -
- Autor: Felipe González                                                       -
- Email: felipe.gonzalezalarcon94@gmail.com                                    -
-                                                                              -
- Copyright (c) 2020                                                           -
-                                                                              -
- Last modified 14-08-20 1:02                                                  -
- -----------------------------------------------------------------------------*/
+/*
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 1:08
+ */
 
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2;
 
@@ -21,7 +21,7 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import cl.figonzal.evaluatool.utilidades.Utilidades;
+import cl.figonzal.evaluatool.utilidades.EvaluaUtils;
 
 import static org.junit.Assert.assertEquals;
 
@@ -85,6 +85,6 @@ public class ReflexividadE3M2Test {
 
     @Test
     public void testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, Utilidades.calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001);
+        assertEquals(desviacion_esperada, EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001);
     }
 }

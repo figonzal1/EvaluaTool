@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 17-11-20 2:19
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 18:02
  */
 package cl.figonzal.evaluatool
 
@@ -27,7 +27,8 @@ import cl.figonzal.evaluatool.evalua.evalua3.Evalua3Activity
 import cl.figonzal.evaluatool.evalua.evalua4.Evalua4Activity
 import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.ConfigRoutes
+import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.material.button.MaterialButton
 import timber.log.Timber
 import java.util.*
@@ -50,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var adsService: AdsService
+    private lateinit var dateHandler: DateHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +64,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun instanciarRecursos() {
+
+        dateHandler = DateHandler()
+
+        ConfigRoutes.setContext(applicationContext)
+
         tvNombreApp = findViewById(R.id.tv_nombre_app)
         tvVersion = findViewById(R.id.tv_version)
         tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
@@ -181,7 +188,7 @@ class MainActivity : AppCompatActivity() {
 
         val rewardDate = Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
 
-        Timber.i("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), Utilidades.dateToString(applicationContext, rewardDate))
+        Timber.i("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), dateHandler.dateToString(applicationContext, rewardDate))
 
         val nowDate = Date()
 
@@ -214,7 +221,7 @@ class MainActivity : AppCompatActivity() {
             Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
 
             //Generar % de aparicion de dialogo
-            val showDialog = Utilidades.generateRandomNumber()
+            val showDialog = generateRandomNumber()
             if (showDialog) {
 
                 //Mostrar dialog
@@ -231,5 +238,16 @@ class MainActivity : AppCompatActivity() {
         } else if (nowDate.before(rewardDate)) {
             Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
         }
+    }
+
+    /**
+     * Funcion encargada de generar un numero aleatorio para dialogs.
+     *
+     * @return Booleano con el resultado
+     */
+    private fun generateRandomNumber(): Boolean {
+        val random = Random()
+        val item = random.nextInt(10)
+        return item % 3 == 0
     }
 }

@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 16-11-20 17:49
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 13:10
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -98,8 +98,9 @@ import cl.figonzal.evaluatool.evalua.evalua7.modulo6.ResolucionProblemasE7M6
 import java.util.*
 import kotlin.collections.HashMap
 
-class ConfigRoutes(private val context: Context) {
+object ConfigRoutes {
 
+    private lateinit var context: Context
     private lateinit var routeMapEvalua0: MutableMap<String, List<Array<Any>>>
     private lateinit var routeMapEvalua1: MutableMap<String, List<Array<Any>>>
     private lateinit var routeMapEvalua2: MutableMap<String, List<Array<Any>>>
@@ -116,6 +117,10 @@ class ConfigRoutes(private val context: Context) {
         setRouteMapEvalua4()
         setRouteMapEvalua5()
         setRouteMapEvalua7()
+    }
+
+    fun setContext(context: Context) {
+        this.context = context
     }
 
     private fun setRouteMapEvalua0() {
@@ -370,31 +375,31 @@ class ConfigRoutes(private val context: Context) {
     }
 
     //GETTERS
-    fun getRouteMapEvalua0(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua0(): Map<String, List<Array<Any>>> {
         return routeMapEvalua0
     }
 
-    fun getRouteMapEvalua1(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua1(): Map<String, List<Array<Any>>> {
         return routeMapEvalua1
     }
 
-    fun getRouteMapEvalua2(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua2(): Map<String, List<Array<Any>>> {
         return routeMapEvalua2
     }
 
-    fun getRouteMapEvalua3(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua3(): Map<String, List<Array<Any>>> {
         return routeMapEvalua3
     }
 
-    fun getRouteMapEvalua4(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua4(): Map<String, List<Array<Any>>> {
         return routeMapEvalua4
     }
 
-    fun getRouteMapEvalua5(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua5(): Map<String, List<Array<Any>>> {
         return routeMapEvalua5
     }
 
-    fun getRouteMapEvalua7(): Map<String, List<Array<Any>>>? {
+    fun getRouteMapEvalua7(): Map<String, List<Array<Any>>> {
         return routeMapEvalua7
     }
 }
