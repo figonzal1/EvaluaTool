@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 16-11-20 16:47
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 18:02
  */
 package cl.figonzal.evaluatool.evalua.evalua7
 
@@ -23,7 +23,7 @@ import cl.figonzal.evaluatool.adapter.EvaluaAdapter
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
 import cl.figonzal.evaluatool.modelo.Evalua
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.RouteHandler
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 import java.util.*
@@ -110,8 +110,8 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
     }
 
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
-        Utilidades.handleRoutes(
-                ConfigRoutes(this).getRouteMapEvalua7(),
+        RouteHandler().handleRoutes(
+                ConfigRoutes.getRouteMapEvalua7(),
                 sectionTitle,
                 sectionedRecyclerViewAdapter,
                 itemAdapterPosition,

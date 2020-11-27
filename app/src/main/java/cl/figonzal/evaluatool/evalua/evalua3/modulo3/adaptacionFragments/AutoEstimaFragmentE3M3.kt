@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 16-11-20 18:35
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 1:07
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -26,7 +26,7 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.EvaluaUtils
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
@@ -122,7 +122,7 @@ class AutoEstimaFragmentE3M3 : Fragment(), EvaluaInterface {
         }
 
         val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
-        Utilidades.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_AUTOESTIMA))
+        EvaluaUtils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_AUTOESTIMA))
 
     }
 
@@ -179,10 +179,10 @@ class AutoEstimaFragmentE3M3 : Fragment(), EvaluaInterface {
             progressBar.progress = percentil
         }
 
-        val nivel = Utilidades.calcularNivel(percentil)
+        val nivel = EvaluaUtils.calcularNivel(percentil)
         tvNivel.text = nivel
 
-        val desviacion = Utilidades.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true)
+        val desviacion = EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 

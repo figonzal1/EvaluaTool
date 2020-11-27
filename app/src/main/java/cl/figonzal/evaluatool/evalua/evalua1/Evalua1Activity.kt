@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 10-11-20 16:21
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 17:31
  */
 package cl.figonzal.evaluatool.evalua.evalua1
 
@@ -23,14 +23,14 @@ import cl.figonzal.evaluatool.adapter.EvaluaAdapter
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
 import cl.figonzal.evaluatool.modelo.Evalua
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.RouteHandler
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 import java.util.*
 
 class Evalua1Activity : AppCompatActivity(), ClickListener {
 
-    private lateinit var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter
+    private var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +49,6 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
     }
 
     private fun configurarExpandedList() {
-
-        sectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
 
         //SUBTIMES - SUBMODULO 1
         val subItems1: MutableList<Evalua> = ArrayList()
@@ -95,8 +93,8 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
 
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
 
-        Utilidades.handleRoutes(
-                ConfigRoutes(this).getRouteMapEvalua1(),
+        RouteHandler().handleRoutes(
+                ConfigRoutes.getRouteMapEvalua1(),
                 sectionTitle,
                 sectionedRecyclerViewAdapter,
                 itemAdapterPosition,

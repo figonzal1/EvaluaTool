@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 12:49
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 27-11-20 17:31
  */
 package cl.figonzal.evaluatool
 
@@ -16,7 +16,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import cl.figonzal.evaluatool.utilidades.Utilidades
+import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
@@ -110,14 +110,16 @@ class AdsService(activity: Activity, context: Context, sharedPreferences: Shared
 
             override fun onUserEarnedReward(rewardItem: RewardItem) {
 
+                val dateHandler = DateHandler()
+
                 Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED))
 
                 val dateNow = Date()
-                Timber.i("%s%s", context.getString(R.string.TAG_HORA_AHORA), Utilidades.dateToString(context, dateNow))
+                Timber.i("%s%s", context.getString(R.string.TAG_HORA_AHORA), dateHandler.dateToString(context, dateNow))
 
                 //sumar 1 horas al tiempo del celular
-                val dateNew = Utilidades.addHoursToJavaUtilDate(dateNow, 1)
-                Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), Utilidades.dateToString(context, dateNew))
+                val dateNew = dateHandler.addHoursToJavaUtilDate(dateNow, 1)
+                Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), dateHandler.dateToString(context, dateNew))
 
                 //Guardar fecha de termino de reward
                 val editor = sharedPreferences.edit()
