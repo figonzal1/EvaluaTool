@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:08
+ Last modified 27-11-20 19:08
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -18,6 +18,7 @@ import cl.figonzal.evaluatool.R
 import java.text.SimpleDateFormat
 import java.util.*
 
+//TODO: Cambiar a objeto
 class DateHandler {
 
     /**

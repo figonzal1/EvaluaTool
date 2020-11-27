@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 13:10
+ Last modified 27-11-20 19:42
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -109,7 +109,14 @@ object ConfigRoutes {
     private lateinit var routeMapEvalua5: MutableMap<String, List<Array<Any>>>
     private lateinit var routeMapEvalua7: MutableMap<String, List<Array<Any>>>
 
-    init {
+
+    fun setContext(context: Context) {
+        this.context = context
+
+        initRoutes()
+    }
+
+    private fun initRoutes() {
         setRouteMapEvalua0()
         setRouteMapEvalua1()
         setRouteMapEvalua2()
@@ -117,10 +124,6 @@ object ConfigRoutes {
         setRouteMapEvalua4()
         setRouteMapEvalua5()
         setRouteMapEvalua7()
-    }
-
-    fun setContext(context: Context) {
-        this.context = context
     }
 
     private fun setRouteMapEvalua0() {
