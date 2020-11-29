@@ -1,15 +1,15 @@
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package                   ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020                                                          ~
-                                                                              ~
-  Last modified 03-07-20 1:16                                                 ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2020
+
+  Last modified 29-11-20 14:05
+  -->
 
 <resources>
 
@@ -33,12 +33,58 @@
 
         <item name="android:fontFamily">@font/roboto</item>
 
+        <!-- Text Styles -->
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1
+        </item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2
+        </item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3
+        </item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4
+        </item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5
+        </item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6
+        </item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1
+        </item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2
+        </item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+
+        <!--Material shape attributes-->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Evalua.SmallComponent
+        </item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Evalua.MediumComponent
+        </item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Evalua.LargeComponent
+        </item>
+
+        <!-- Card View Style -->
+        <item name="materialCardViewStyle">@style/CardViewTheme</item>
+
+        <!-- Toolbar Style -->
+        <item name="toolbarStyle">@style/DayToolbarTheme</item>
+
     </style>
 
     <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
 
-        <item name="backgroundTint">@color/colorSecondary</item>
-        <item name="android:textColor">@color/colorOnSecondary</item>
+        <item name="backgroundTint">?attr/colorSecondary</item>
+        <item name="android:textColor">?attr/colorOnSecondary</item>
+    </style>
+
+    <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Evalua.MaterialCardView
+        </item>
+    </style>
+
+    <style name="DayToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">?attr/colorOnPrimary</item>
     </style>
 
 </resources>

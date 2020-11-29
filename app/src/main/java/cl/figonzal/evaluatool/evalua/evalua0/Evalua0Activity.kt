@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 17:31
+ Last modified 29-11-20 14:04
  */
 package cl.figonzal.evaluatool.evalua.evalua0
 
@@ -38,7 +38,6 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
         setContentView(R.layout.activity_evalua0)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!
@@ -80,7 +79,7 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
         sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_2), subItems2, this))
         sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_3), subItems3, this))
 
-        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val recyclerView = findViewById<RecyclerView>(R.id.rv_0)
         recyclerView.layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.adapter = sectionedRecyclerViewAdapter
     }

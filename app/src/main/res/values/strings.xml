@@ -1,15 +1,15 @@
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package                   ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020                                                          ~
-                                                                              ~
-  Last modified 18-11-20 22:25                                                ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2020
+
+  Last modified 29-11-20 0:19
+  -->
 
 <resources>
     <string name="app_name">EvaluaTool</string>
@@ -450,6 +450,7 @@
     <string name="TOOLBAR_AUTOESTIMA">Autoestima</string>
     <string name="TOOLBAR_VELOCIDAD">Velocidad</string>
     <string name="TOOLBAR_COMPRENSION">Comprensión</string>
+    <string name="icono_ayuda">Icono ayuda</string>
 
 
 </resources>

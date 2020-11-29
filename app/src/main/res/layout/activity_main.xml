@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package.                  ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020.                                                         ~
-                                                                              ~
-  Last modified 02-03-20 1:55                                                 ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2020
+
+  Last modified 29-11-20 13:39
+  -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -26,7 +26,7 @@
             android:id="@+id/view"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:background="@color/colorPrimary"
+            android:background="?attr/colorPrimary"
             app:layout_constraintBottom_toTopOf="@+id/guia_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -36,11 +36,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_7"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_7"
             android:transitionName="btn_evalua_7"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_5"
@@ -77,15 +75,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_0"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:elevation="8dp"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_0"
             app:layout_constraintEnd_toStartOf="@+id/guia_central"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,15 +88,12 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_1"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:elevation="8dp"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guia_central"
@@ -109,11 +101,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_2"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_2"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_0"
             app:layout_constraintHorizontal_bias="0.0"
@@ -122,11 +112,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_3"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_3"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_1"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_1"
@@ -134,11 +122,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_4"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_4"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_2"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_2"
@@ -146,11 +132,9 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_5"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_5"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_3"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_3"
@@ -161,9 +145,7 @@
             style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:elevation="8dp"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_6"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_4"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_4"
@@ -180,12 +162,11 @@
             android:id="@+id/tv_nombre_app"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:fontFamily="@font/roboto"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
             android:text="@string/EVALUA_TOOL"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textAppearance="?attr/textAppearanceHeadline5"
             android:textColor="@color/colorOnPrimary"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -196,9 +177,9 @@
             android:id="@+id/iv_logo_app"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
             android:contentDescription="@string/ICONO_LOGO_APP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -209,10 +190,9 @@
             android:id="@+id/tv_version"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/roboto"
-            android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:textColor="@color/colorOnPrimary"
+            android:layout_marginTop="@dimen/margin_8"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="?attr/colorOnPrimary"
             app:layout_constraintBottom_toTopOf="@+id/guia_botones"
             app:layout_constraintEnd_toEndOf="@+id/tv_nombre_app"
             app:layout_constraintStart_toStartOf="@+id/tv_nombre_app"
@@ -224,8 +204,7 @@
             android:id="@+id/btn_evalua_8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_8"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_6"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_6"
@@ -235,8 +214,7 @@
             android:id="@+id/btn_evalua_9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_9"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_7"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_7"
@@ -246,9 +224,8 @@
             android:id="@+id/btn_evalua_10"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="@font/roboto"
-            android:padding="20dp"
+            android:layout_marginBottom="@dimen/margin_16"
+            android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_10"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_9"
