@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:08
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo2
 
@@ -84,7 +84,6 @@ class PensamientoAnalogicoE5M2 : AppCompatActivity(), EvaluaInterface {
         setContentView(R.layout.activity_pensamiento_analogico_e5_m2)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

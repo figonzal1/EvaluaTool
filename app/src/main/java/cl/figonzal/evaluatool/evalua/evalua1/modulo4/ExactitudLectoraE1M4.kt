@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:08
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -128,7 +128,6 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         setContentView(R.layout.activity_exactitud_lectora_e1_m4)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

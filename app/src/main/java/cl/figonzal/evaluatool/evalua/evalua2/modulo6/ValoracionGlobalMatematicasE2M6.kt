@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 14-11-20 0:00
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -44,7 +44,6 @@ class ValoracionGlobalMatematicasE2M6 : AppCompatActivity(), IndiceValorInterfac
         setContentView(R.layout.activity_valoracion_global_matematicas_e2_m6)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!
