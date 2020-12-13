@@ -8,31 +8,12 @@
 
   Copyright (c) 2020
 
-  Last modified 29-11-20 14:05
+  Last modified 12-12-20 21:00
   -->
 
 <resources>
 
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <item name="android:statusBarColor">@color/colorPrimaryVariant</item>
-
-        <item name="colorSecondary">@color/colorSecondary</item>
-        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
-        <item name="colorOnSecondary">@color/colorOnSecondary</item>
-
-        <item name="colorSurface">@color/colorSurface</item>
-        <item name="colorOnSurface">@color/colorOnSurface</item>
-
-        <item name="materialButtonStyle">@style/ButtonTheme</item>
-
-        <item name="android:windowBackground">@color/grey</item>
-
-        <item name="android:fontFamily">@font/roboto</item>
-
+    <style name="BaseTheme" parent="AppTheme">
         <!-- Text Styles -->
         <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1
         </item>
@@ -66,9 +47,30 @@
 
         <!-- Card View Style -->
         <item name="materialCardViewStyle">@style/CardViewTheme</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimaryVariant</item>
+
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <item name="materialButtonStyle">@style/ButtonTheme</item>
+
+        <item name="android:windowBackground">@color/background</item>
+
+        <item name="android:fontFamily">@font/roboto</item>
 
         <!-- Toolbar Style -->
-        <item name="toolbarStyle">@style/DayToolbarTheme</item>
+        <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
 
     </style>
 
@@ -76,6 +78,7 @@
 
         <item name="backgroundTint">?attr/colorSecondary</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>
+        <item name="android:textAppearance">?attr/textAppearanceButton</item>
     </style>
 
     <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
@@ -83,8 +86,14 @@
         </item>
     </style>
 
-    <style name="DayToolbarTheme" parent="Widget.MaterialComponents.Toolbar">
-        <item name="titleTextColor">?attr/colorOnPrimary</item>
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
 </resources>

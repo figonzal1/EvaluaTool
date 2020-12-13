@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 2:22
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4
 
@@ -48,7 +48,6 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
         setContentView(R.layout.activity_valoracion_global_lectura_e5_m4)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

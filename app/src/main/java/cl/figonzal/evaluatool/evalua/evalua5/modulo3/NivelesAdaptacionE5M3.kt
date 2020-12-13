@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 12:54
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2020
+
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo3
 
@@ -29,7 +29,6 @@ class NivelesAdaptacionE5M3 : AppCompatActivity() {
         setContentView(R.layout.activity_niveles_adaptacion_e5_m3)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!
