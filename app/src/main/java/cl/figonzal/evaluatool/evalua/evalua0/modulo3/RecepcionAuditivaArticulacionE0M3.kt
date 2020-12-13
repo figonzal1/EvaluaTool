@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:08
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -94,7 +94,6 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
         setContentView(R.layout.activity_recepcion_autitiva_articulacion_e0_m3)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

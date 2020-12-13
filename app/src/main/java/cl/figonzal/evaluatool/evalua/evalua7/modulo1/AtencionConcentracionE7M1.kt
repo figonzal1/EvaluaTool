@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:07
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo1
 
@@ -254,7 +254,6 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
         setContentView(R.layout.activity_atencion_concentracion_e7_m1)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

@@ -8,7 +8,7 @@
 
  Copyright (c) 2020
 
- Last modified 27-11-20 1:07
+ Last modified 29-11-20 14:47
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -77,7 +77,6 @@ class ResolucionProblemasE4M6 : AppCompatActivity(), EvaluaInterface {
         setContentView(R.layout.activity_resolucion_problemas_e4_m6)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        toolbar.setTitleTextColor(resources.getColor(R.color.colorOnPrimary, theme))
         setSupportActionBar(toolbar)
 
         val actionBar = supportActionBar!!

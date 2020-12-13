@@ -19,6 +19,7 @@ import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
@@ -195,7 +196,7 @@ class MainActivity : AppCompatActivity() {
         //si las 24 horas ya pasaron, cargar los ads nuevamente
         if (nowDate.after(rewardDate)) {
 
-            adsService.showIntersitial(ActivityToOpen)
+            //adsService.showIntersitial(ActivityToOpen)
             Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS))
 
         } else {

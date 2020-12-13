@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2020
+
+  Last modified 12-12-20 21:00
+  -->
+
+<resources>
+    <!-- NIGH MODE -->
+    <color name="colorPrimary">#430073</color>
+    <color name="colorPrimaryVariant">#2b004a</color>
+    <color name="colorOnPrimary">#8CFFFFFF</color>
+
+    <color name="colorSecondary">#4E7521</color>
+    <color name="colorSecondaryVariant">#274207</color>
+    <color name="colorOnSecondary">#DEFFFFFF</color>
+
+    <color name="colorSurface">#323236</color>
+    <color name="colorOnSurface">#8CFFFFFF</color>
+
+    <color name="background">#28282C</color>
+
+    <color name="hintColorGreen">#8BC34A</color>
+    <color name="hintColorRed">#F44336</color>
+</resources>
