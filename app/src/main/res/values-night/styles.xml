@@ -8,11 +8,15 @@
 
   Copyright (c) 2020
 
-  Last modified 03-12-20 17:23
+  Last modified 12-12-20 21:21
   -->
 
 <resources>
 
+    <!--
+        PARTICULAR
+        DESDE AQUI A ABAJO
+    -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -31,16 +35,6 @@
 
         <item name="materialButtonStyle">@style/ButtonTheme</item>
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
-    </style>
-
-    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
-    </style>
-
-    <style name="ThemeOverlay.App.Toolbar" parent="">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
     <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
