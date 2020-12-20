@@ -8,7 +8,7 @@
 
   Copyright (c) 2020
 
-  Last modified 03-12-20 17:16
+  Last modified 13-12-20 0:12
   -->
 
 <resources>
@@ -30,5 +30,6 @@
     <color name="tableGreyRow">#80F4F4F4</color>
 
     <color name="hintColorGreen">#8BC34A</color>
+    <color name="hintColorGrey">#A1A1A1</color>
     <color name="hintColorRed">#F44336</color>
 </resources>

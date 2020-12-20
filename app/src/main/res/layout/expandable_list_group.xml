@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package                   ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020                                                          ~
-                                                                              ~
-  Last modified 08-11-20 22:57                                                ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2020
+
+  Last modified 17-12-20 12:51
+  -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_16"
         android:fontFamily="@font/roboto"
         app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
         app:layout_constraintHorizontal_bias="0.0"
@@ -35,7 +35,7 @@
     <View
         android:layout_width="0dp"
         android:layout_height="0.5dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_16"
         android:background="?attr/dividerHorizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:id="@+id/iv_arrow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/margin_16"
         android:contentDescription="Icono dropdown menu"
         app:layout_constraintBottom_toBottomOf="@+id/tv_group"
         app:layout_constraintEnd_toEndOf="parent"
