@@ -8,7 +8,7 @@
 
   Copyright (c) 2020
 
-  Last modified 12-12-20 21:00
+  Last modified 12-12-20 21:23
   -->
 
 <resources>
@@ -25,6 +25,9 @@
     <color name="colorOnSurface">#8CFFFFFF</color>
 
     <color name="background">#28282C</color>
+
+    <color name="tableGreyHeader">#232323</color>
+    <color name="tableGreyRow">#8028282C</color>
 
     <color name="hintColorGreen">#8BC34A</color>
     <color name="hintColorRed">#F44336</color>
