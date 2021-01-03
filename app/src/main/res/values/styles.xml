@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 12-12-20 21:21
+  Last modified 21-12-20 0:10
   -->
 
 <resources>
@@ -50,19 +50,10 @@
         <item name="materialCardViewStyle">@style/CardViewTheme</item>
     </style>
 
+    <!-- Card View Theming -->
     <style name="CardViewTheme" parent="Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Evalua.MaterialCardView
         </item>
-    </style>
-
-    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
-    </style>
-
-    <style name="ThemeOverlay.App.Toolbar" parent="">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
     <!--
@@ -94,11 +85,23 @@
 
     </style>
 
+    <!-- Button Theming -->
     <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
 
         <item name="backgroundTint">?attr/colorSecondary</item>
         <item name="android:textColor">?attr/colorOnSecondary</item>
         <item name="android:textAppearance">?attr/textAppearanceButton</item>
+    </style>
+
+    <!-- Toolbar Theming -->
+    <style name="Widget.App.Toolbar" parent="Widget.MaterialComponents.Toolbar.Primary">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.Toolbar</item>
+    </style>
+
+    <style name="ThemeOverlay.App.Toolbar" parent="">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
     </style>
 
 
