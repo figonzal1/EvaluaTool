@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-01-21 22:09
+  Last modified 09-01-21 17:28
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -149,7 +149,6 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t2"
-                style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8"

@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 20-12-20 16:43
+  Last modified 09-01-21 17:28
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -242,7 +242,6 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t4"
-                style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8"
