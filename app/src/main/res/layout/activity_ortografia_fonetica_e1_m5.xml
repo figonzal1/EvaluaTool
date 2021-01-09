@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 02-01-21 23:25
+  Last modified 09-01-21 17:28
   -->
 
 
@@ -55,7 +55,6 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t1"
-                style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="@dimen/margin_4"
@@ -126,7 +125,6 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_t2"
-                style="@style/Widget.MaterialComponents.CardView"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_8"
