@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-01-21 20:42
+ Last modified 23-01-21 12:41
  */
 
 apply plugin: 'com.android.application'
@@ -79,7 +79,7 @@ dependencies {
     implementation "com.google.android.material:material:1.2.1"
 
     //Recycler view seccionado
-    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:3.1.0'
+    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:3.2.0'
 
     //FIREBASE
     implementation platform('com.google.firebase:firebase-bom:26.2.0')
