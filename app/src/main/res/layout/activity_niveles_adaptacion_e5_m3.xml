@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?><!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package                   ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020                                                          ~
-                                                                              ~
-  Last modified 26-09-20 1:35                                                 ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2021
+
+  Last modified 30-01-21 19:34
+  -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -50,8 +50,8 @@
         android:id="@+id/view_pager_niveles_adaptacion"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabs_niveles_adaptacion" />
