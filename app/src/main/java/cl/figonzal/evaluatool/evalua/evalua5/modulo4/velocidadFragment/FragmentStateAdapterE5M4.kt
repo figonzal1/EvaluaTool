@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 1:23
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 30-01-21 23:54
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -17,7 +17,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments.FragmentStateAdapterE7M4
 
 class FragmentStateAdapterE5M4(context: Context, fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
@@ -39,7 +38,7 @@ class FragmentStateAdapterE5M4(context: Context, fa: FragmentActivity) : Fragmen
     }
 
     init {
-        FragmentStateAdapterE7M4.tabs[0] = context.getString(R.string.TOOLBAR_VELOCIDAD)
-        FragmentStateAdapterE7M4.tabs[1] = context.getString(R.string.TOOLBAR_COMPRENSION)
+        tabs[0] = context.getString(R.string.TOOLBAR_VELOCIDAD)
+        tabs[1] = context.getString(R.string.TOOLBAR_COMPRENSION)
     }
 }
