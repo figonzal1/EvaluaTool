@@ -8,19 +8,19 @@
 
   Copyright (c) 2021
 
-  Last modified 09-01-21 18:48
+  Last modified 17-01-21 16:17
   -->
 
 <resources>
     <string name="app_name">EvaluaTool</string>
 
     <!--TEST AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
+    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>
 
     <!--PROD AD-->
-    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
+    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>-->
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
@@ -436,7 +436,7 @@
     <string name="igc_total">IGC Total</string>
     <string name="igm_total">IGM Total</string>
     <string name="ige_total">IGE Total</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="PUNTAJE_DIRECTO">PD</string>
     <string name="PERCENTIL_CHILENO">Pc Chileno</string>
     <string name="icono_tabla_baremo">Icono tabla baremo</string>
@@ -451,7 +451,6 @@
     <string name="TOOLBAR_VELOCIDAD">Velocidad</string>
     <string name="TOOLBAR_COMPRENSION">Comprensión</string>
     <string name="icono_ayuda">Icono ayuda</string>
-    <string name="igm_total">IGM Total</string>
 
 
 </resources>
