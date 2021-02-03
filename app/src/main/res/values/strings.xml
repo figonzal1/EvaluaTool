@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 17-01-21 16:17
+  Last modified 03-02-21 15:42
   -->
 
 <resources>
@@ -272,7 +272,7 @@
 
     <!-- Shared pref -->
     <string name="SHARED_PREF_END_REWARD_TIME">end_reward_time</string>
-    <string name="MAIN_SHARED_PREF">evalua-tool</string>
+    <string name="MAIN_SHARED_PREF">evalua_tool</string>
 
 
     <!-- TAGS GENERICOS-->
@@ -451,6 +451,10 @@
     <string name="TOOLBAR_VELOCIDAD">Velocidad</string>
     <string name="TOOLBAR_COMPRENSION">Comprensión</string>
     <string name="icono_ayuda">Icono ayuda</string>
+    <string name="NIGHT_MODE_KEY">night_mode</string>
+    <string name="TAG_NIGHT_MODE">NIGHT_MODE</string>
+    <string name="TAG_NIGHT_MODE_STATUS_OFF">OFF</string>
+    <string name="TAG_NIGHT_MODE_STATUS_ON">ON</string>
 
 
 </resources>

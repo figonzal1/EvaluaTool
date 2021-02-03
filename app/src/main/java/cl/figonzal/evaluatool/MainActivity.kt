@@ -6,18 +6,18 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 18:02
+ Last modified 03-02-21 17:58
  */
 package cl.figonzal.evaluatool
 
 import android.app.Activity
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.animation.AnimationUtils
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
@@ -31,11 +31,14 @@ import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.switchmaterial.SwitchMaterial
 import timber.log.Timber
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var sharedPrefService: SharedPrefService
+    private lateinit var switchDarkMode: SwitchMaterial
     private lateinit var tvNombreApp: TextView
     private lateinit var tvVersion: TextView
     private lateinit var btnEvalua0: MaterialButton
@@ -50,7 +53,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnEvalua9: MaterialButton
     private lateinit var btnEvalua10: MaterialButton
 
-    private lateinit var sharedPreferences: SharedPreferences
     private lateinit var adsService: AdsService
     private lateinit var dateHandler: DateHandler
 
@@ -58,10 +60,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Checkear night mode
+        sharedPrefService = SharedPrefService(this)
+        NightModeService(this, this.lifecycle, sharedPrefService)
+
         instanciarRecursos()
         loadAds()
         animaciones()
         clickListeners()
+        switchDarkModeListener()
     }
 
     private fun instanciarRecursos() {
@@ -69,6 +76,8 @@ class MainActivity : AppCompatActivity() {
         dateHandler = DateHandler()
 
         ConfigRoutes.setContext(applicationContext)
+
+        switchDarkMode = findViewById(R.id.switchMaterial)
 
         tvNombreApp = findViewById(R.id.tv_nombre_app)
         tvVersion = findViewById(R.id.tv_version)
@@ -97,12 +106,10 @@ class MainActivity : AppCompatActivity() {
 
         btnEvalua10.isEnabled = false
         btnEvalua10.alpha = 0.6f
-
-        sharedPreferences = getSharedPreferences(getString(R.string.MAIN_SHARED_PREF), MODE_PRIVATE)
     }
 
     private fun loadAds() {
-        adsService = AdsService(this, applicationContext, sharedPreferences)
+        adsService = AdsService(this, applicationContext, sharedPrefService)
         adsService.loadIntersitial()
         adsService.loadRewardVideo()
     }
@@ -187,7 +194,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkearPermisoIntersitial(ActivityToOpen: Class<out Activity?>) {
 
-        val rewardDate = Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
+        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
 
         Timber.i("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), dateHandler.dateToString(applicationContext, rewardDate))
 
@@ -196,7 +203,7 @@ class MainActivity : AppCompatActivity() {
         //si las 24 horas ya pasaron, cargar los ads nuevamente
         if (nowDate.after(rewardDate)) {
 
-            //adsService.showIntersitial(ActivityToOpen)
+            adsService.showIntersitial(ActivityToOpen)
             Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS))
 
         } else {
@@ -213,7 +220,7 @@ class MainActivity : AppCompatActivity() {
      */
     fun rewardDialog() {
 
-        val rewardDate = Date(sharedPreferences.getLong(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0))
+        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
         val nowDate = Date()
 
         //Si la hora del celular es posterior a reward date
@@ -238,6 +245,28 @@ class MainActivity : AppCompatActivity() {
             }
         } else if (nowDate.before(rewardDate)) {
             Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
+        }
+    }
+
+    private fun switchDarkModeListener() {
+
+        val nightMode = sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+        switchDarkMode.isChecked = nightMode
+
+        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+
+            if (isChecked) {
+                Toast.makeText(this, "Modo noche activado", Toast.LENGTH_LONG).show()
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+                sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
+
+            } else {
+                Toast.makeText(this, "Modo noche desactivado", Toast.LENGTH_LONG).show()
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+                sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
+            }
         }
     }
 

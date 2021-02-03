@@ -6,16 +6,15 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 17:31
+ Last modified 03-02-21 17:42
  */
 package cl.figonzal.evaluatool
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardItem
@@ -25,13 +24,12 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import timber.log.Timber
 import java.util.*
 
-class AdsService(activity: Activity, context: Context, sharedPreferences: SharedPreferences) {
+class AdsService(private var activity: Activity,
+                 private var context: Context,
+                 private var sharedPrefService: SharedPrefService) {
 
     private lateinit var interstitialAd: InterstitialAd
     private lateinit var rewardedAd: RewardedAd
-    private val context: Context
-    private val activity: Activity
-    private val sharedPreferences: SharedPreferences
 
     //INTERSITIAL
     fun loadIntersitial() {
@@ -122,8 +120,7 @@ class AdsService(activity: Activity, context: Context, sharedPreferences: Shared
                 Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), dateHandler.dateToString(context, dateNew))
 
                 //Guardar fecha de termino de reward
-                val editor = sharedPreferences.edit()
-                editor.putLong(context.getString(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time).apply()
+                sharedPrefService.saveData(context.getString(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time)
             }
 
             override fun onRewardedAdClosed() {
@@ -137,8 +134,5 @@ class AdsService(activity: Activity, context: Context, sharedPreferences: Shared
 
     init {
         MobileAds.initialize(context)
-        this.context = context
-        this.activity = activity
-        this.sharedPreferences = sharedPreferences
     }
 }
