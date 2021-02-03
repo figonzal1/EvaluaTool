@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 29-11-20 13:39
+  Last modified 03-02-21 12:46
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/include"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.button.MaterialButton
@@ -44,15 +44,6 @@
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_5"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_5"
             app:layout_constraintTop_toBottomOf="@+id/btn_evalua_5" />
-
-        <include
-            android:id="@+id/include"
-            layout="@layout/toolbar_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
         <androidx.constraintlayout.widget.Guideline
@@ -178,12 +169,12 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginTop="@dimen/margin_8"
             android:layout_marginEnd="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
             android:contentDescription="@string/ICONO_LOGO_APP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintTop_toBottomOf="@+id/include_switch"
             app:srcCompat="@drawable/ic_logo" />
 
         <TextView
@@ -232,6 +223,19 @@
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_8"
             app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8"
             app:layout_constraintVertical_bias="0.0" />
+
+        <include
+            android:id="@+id/include_switch"
+            layout="@layout/switch_modo_noche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
