@@ -8,13 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 17:35
+ Last modified 04-02-21 0:33
  */
 
-package cl.figonzal.evaluatool
+package cl.figonzal.evaluatool.servicios
 
 import android.content.Context
 import android.content.SharedPreferences
+import cl.figonzal.evaluatool.R
 
 class SharedPrefService(context: Context) {
 

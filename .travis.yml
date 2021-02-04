@@ -28,15 +28,6 @@ jobs:
       script: "./gradlew test"
     - stage: deploy
       script: "./gradlew assembleRelease"
-      deploy:
-        provider: releases
-        api_key:
-          secure: iueF0FXj8IoWlDBfbv+O/3iPAFDX+RIIUvPcHuW4PPphOp71LKGZNUxfjRdfO7WQsYpRfhxT55lxp9TeU4gcPegL/WKHMER82DwfPPYM0wFFZfWvZ6bC6yTSN9fT7kkCFc2UAHAtjI9iteYvM5vcduvqfUeb89kYvOIgVkoUB21ykAE+S/bTwmC9rdgdOfsMYrenRGx1VcIbmVmcKEhWb2KaG4mOwRIwzgbbgLMRMX/tC6Kqjy9HATKbKbV+2hRPeZdIbfx/cUpQN/fAX1TU1O9/xPChkr6YDRmJleZsKKzng9IXhD2H5OlYnD2oGQAFWU20o1cO+g/aWW6gu1Kpq/lzf8mtLtNYBmcOY7ufmcBHlaMv/HeQ/kQ9ZSohaB6k4R7C/Whc0+3wZ0ir0XEzCwEBL3XbmTRCyroJAWLfpOUDbFowXSg0cH3OyLUfTYC6QHgw8xVLUrCVJ0Bx1C+E3VmiKEeQnuy3uYB3WFWRzGKZQ1TT8NhyKLz/Cx3TkIWCe6/Q/yEJC6u1V4Bhu+M07nVZfgLzQKx7/WliAqudTxS08oaWH56rG21SzzcRG/1YEUgrD4qjkLeCFmNjjB4zodka6LgXy0wvrGrwAiVFVnH3KSVNht0Jj+AhUGG0hIfxFQut/Zsuxv3h7RJmNcpAamac87mtpFbwqq4FX0CiaMI=
-        file: $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/app-release.apk
-        skip_cleanup: true
-        overwrite: true
-        on:
-          tags: true
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_cdc0677920ab_key -iv $encrypted_cdc0677920ab_iv -in secrets.tar.gz.enc -out secrets.tar.gz -d

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 21:32
+ Last modified 04-02-21 0:33
  */
 package cl.figonzal.evaluatool
 
@@ -28,6 +28,9 @@ import cl.figonzal.evaluatool.evalua.evalua3.Evalua3Activity
 import cl.figonzal.evaluatool.evalua.evalua4.Evalua4Activity
 import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
+import cl.figonzal.evaluatool.servicios.AdsService
+import cl.figonzal.evaluatool.servicios.NightModeService
+import cl.figonzal.evaluatool.servicios.SharedPrefService
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.material.button.MaterialButton
