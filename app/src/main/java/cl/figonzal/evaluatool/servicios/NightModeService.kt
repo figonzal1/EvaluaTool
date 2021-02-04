@@ -8,16 +8,17 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 15:30
+ Last modified 04-02-21 0:33
  */
 
-package cl.figonzal.evaluatool
+package cl.figonzal.evaluatool.servicios
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
+import cl.figonzal.evaluatool.R
 import timber.log.Timber
 
 

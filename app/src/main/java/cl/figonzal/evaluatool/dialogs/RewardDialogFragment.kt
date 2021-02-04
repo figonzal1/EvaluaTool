@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 12:46
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 04-02-21 0:34
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -17,8 +17,8 @@ import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import cl.figonzal.evaluatool.AdsService
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.servicios.AdsService
 import timber.log.Timber
 
 /**
