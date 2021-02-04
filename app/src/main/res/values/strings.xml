@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 03-02-21 15:42
+  Last modified 03-02-21 22:02
   -->
 
 <resources>
@@ -455,6 +455,9 @@
     <string name="TAG_NIGHT_MODE">NIGHT_MODE</string>
     <string name="TAG_NIGHT_MODE_STATUS_OFF">OFF</string>
     <string name="TAG_NIGHT_MODE_STATUS_ON">ON</string>
+    <string name="pd_corregido">PD corregido</string>
+    <string name="que_es">¿Qué es?</string>
+    <string name="entendido">Entendido</string>
 
 
 </resources>

@@ -1,18 +1,17 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 08-11-20 20:07
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 03-02-21 22:59
  */
 package cl.figonzal.evaluatool.dialogs
 
-import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
@@ -31,7 +30,7 @@ class CorregidoDialogFragment : DialogFragment() {
         val builder = AlertDialog.Builder(activity)
         val inflater = requireActivity().layoutInflater
 
-        @SuppressLint("InflateParams") val view = inflater.inflate(R.layout.pd_corregido_dialog_layout, null)
+        val view = inflater.inflate(R.layout.pd_corregido_dialog_layout, null)
 
         builder.setView(view)
 
