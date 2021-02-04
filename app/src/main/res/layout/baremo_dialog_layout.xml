@@ -6,18 +6,17 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 17-12-20 12:51
+  Last modified 03-02-21 22:10
   -->
 
 
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="500dp"
-    app:cardBackgroundColor="@color/colorSurface"
     app:cardCornerRadius="@dimen/margin_8">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -29,13 +28,11 @@
             android:id="@+id/tv_titulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_4"
+            android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_4"
-            android:fontFamily="@font/roboto"
+            android:layout_marginEnd="@dimen/margin_16"
             android:text="@string/dialogo_baremo_titulo"
-            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-            android:textColor="@color/colorOnSecondary"
+            android:textAppearance="?attr/textAppearanceHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -45,6 +42,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
             app:layout_constraintEnd_toEndOf="@+id/tv_titulo"
             app:layout_constraintStart_toStartOf="@+id/tv_titulo"
             app:layout_constraintTop_toBottomOf="@+id/tv_titulo"
@@ -54,14 +52,13 @@
             android:id="@+id/rv_baremo"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginStart="@dimen/margin_4"
             android:layout_marginTop="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_4"
-            android:layout_marginBottom="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_8"
             app:layout_constraintBottom_toTopOf="@+id/btn_cerrar"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_baremo_descripcion"
             app:layout_constraintHeight_default="wrap"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tv_baremo_descripcion"
             app:layout_constraintTop_toBottomOf="@+id/tv_baremo_descripcion" />
 
         <com.google.android.material.button.MaterialButton
@@ -76,4 +73,4 @@
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>
