@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 17:58
+ Last modified 03-02-21 21:32
  */
 package cl.figonzal.evaluatool
 
@@ -233,10 +233,7 @@ class MainActivity : AppCompatActivity() {
             if (showDialog) {
 
                 //Mostrar dialog
-                val fragment = RewardDialogFragment(adsService)
-
-                fragment.isCancelable = false
-                fragment.show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
+                RewardDialogFragment(adsService).show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
 
                 Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
 

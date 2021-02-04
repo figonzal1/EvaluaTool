@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 17:42
+ Last modified 03-02-21 21:24
  */
 package cl.figonzal.evaluatool
 
@@ -24,7 +24,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import timber.log.Timber
 import java.util.*
 
-class AdsService(private var activity: Activity,
+class AdsService(private var activity: MainActivity,
                  private var context: Context,
                  private var sharedPrefService: SharedPrefService) {
 
@@ -53,8 +53,8 @@ class AdsService(private var activity: Activity,
                     super.onAdClosed()
 
                     Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CERRADO))
-                    val intent = Intent(context, ActivityToOpen)
-                    context.startActivity(intent)
+                    val intent = Intent(activity, ActivityToOpen)
+                    activity.startActivity(intent)
 
                     //Cargar el siguiente
                     loadIntersitial()
@@ -87,11 +87,10 @@ class AdsService(private var activity: Activity,
         val adLoadCallback: RewardedAdLoadCallback = object : RewardedAdLoadCallback() {
 
             override fun onRewardedAdLoaded() {
-                super.onRewardedAdLoaded()
                 Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED))
 
                 //Try to show dialog
-                (activity as MainActivity).rewardDialog()
+                activity.rewardDialog()
             }
 
             override fun onRewardedAdFailedToLoad(loadAdError: LoadAdError) {
