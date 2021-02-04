@@ -8,13 +8,15 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 21:24
+ Last modified 04-02-21 0:33
  */
-package cl.figonzal.evaluatool
+package cl.figonzal.evaluatool.servicios
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import cl.figonzal.evaluatool.MainActivity
+import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.rewarded.RewardItem
