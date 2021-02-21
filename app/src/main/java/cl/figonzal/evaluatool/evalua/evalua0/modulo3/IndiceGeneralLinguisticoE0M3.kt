@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:47
+ Last modified 21-02-21 19:46
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -18,8 +18,8 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralLinguisticoE0M3Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -27,6 +27,8 @@ import java.util.*
 import kotlin.math.roundToInt
 
 class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
+
+    private lateinit var binding: ActivityIndiceGeneralLinguisticoE0M3Binding
 
     //TAREA 1
     private lateinit var etTotalesT1: TextInputEditText
@@ -46,10 +48,10 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_indice_general_linguistico_e0_m3)
+        binding = ActivityIndiceGeneralLinguisticoE0M3Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -61,16 +63,16 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
     }
 
     private fun instanciarRecursosInterfaz() {
-        etTotalesT1 = findViewById(R.id.et_totales_t1)
-        etTotalesT2 = findViewById(R.id.et_totales_t2)
-        etTotalesT3 = findViewById(R.id.et_totales_t3)
+        etTotalesT1 = binding.etTotalesT1
+        etTotalesT2 = binding.etTotalesT2
+        etTotalesT3 = binding.etTotalesT3
 
         //SUBTOTAL
-        tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
-        tvSubTotalT2 = findViewById(R.id.tv_pd_subtotal_t2)
-        tvSubTotalT3 = findViewById(R.id.tv_pd_subtotal_t3)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        tvSubTotalT2 = binding.tvPdSubtotalT2
+        tvSubTotalT3 = binding.tvPdSubtotalT3
         //TOTAL
-        tvPdTotal = findViewById(R.id.tv_pd_total_value)
+        tvPdTotal = binding.tvPdTotalValue
     }
 
     private fun textWatcherTarea1() {
