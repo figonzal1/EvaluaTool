@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-02-21 0:33
+ Last modified 21-02-21 19:50
  */
 package cl.figonzal.evaluatool
 
@@ -20,6 +20,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
@@ -39,6 +40,8 @@ import timber.log.Timber
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
 
     private lateinit var sharedPrefService: SharedPrefService
     private lateinit var switchDarkMode: SwitchMaterial
@@ -61,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         //Checkear night mode
         sharedPrefService = SharedPrefService(this)
@@ -80,23 +84,23 @@ class MainActivity : AppCompatActivity() {
 
         ConfigRoutes.setContext(applicationContext)
 
-        switchDarkMode = findViewById(R.id.switchMaterial)
+        switchDarkMode = binding.includeSwitch.switchMaterial
 
-        tvNombreApp = findViewById(R.id.tv_nombre_app)
-        tvVersion = findViewById(R.id.tv_version)
+        tvNombreApp = binding.tvNombreApp
+        tvVersion = binding.tvVersion
         tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
-        btnEvalua0 = findViewById(R.id.btn_evalua_0)
-        btnEvalua1 = findViewById(R.id.btn_evalua_1)
-        btnEvalua2 = findViewById(R.id.btn_evalua_2)
-        btnEvalua3 = findViewById(R.id.btn_evalua_3)
-        btnEvalua4 = findViewById(R.id.btn_evalua_4)
-        btnEvalua5 = findViewById(R.id.btn_evalua_5)
-        btnEvalua6 = findViewById(R.id.btn_evalua_6)
-        btnEvalua7 = findViewById(R.id.btn_evalua_7)
-        btnEvalua8 = findViewById(R.id.btn_evalua_8)
-        btnEvalua9 = findViewById(R.id.btn_evalua_9)
-        btnEvalua10 = findViewById(R.id.btn_evalua_10)
+        btnEvalua0 = binding.btnEvalua0
+        btnEvalua1 = binding.btnEvalua1
+        btnEvalua2 = binding.btnEvalua2
+        btnEvalua3 = binding.btnEvalua3
+        btnEvalua4 = binding.btnEvalua4
+        btnEvalua5 = binding.btnEvalua5
+        btnEvalua6 = binding.btnEvalua6
+        btnEvalua7 = binding.btnEvalua7
+        btnEvalua8 = binding.btnEvalua8
+        btnEvalua9 = binding.btnEvalua9
+        btnEvalua10 = binding.btnEvalua10
 
         btnEvalua6.isEnabled = false
         btnEvalua6.alpha = 0.6f
