@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 09-01-21 17:28
+  Last modified 21-02-21 17:29
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,7 +43,7 @@
             android:focusableInTouchMode="true">
 
             <include
-                android:id="@+id/include48"
+                android:id="@+id/tabla_baremo"
                 layout="@layout/baremo_parent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 android:layout_marginEnd="@dimen/margin_4"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include48">
+                app:layout_constraintTop_toBottomOf="@+id/tabla_baremo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -311,14 +311,14 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include28"
+                android:id="@+id/card_view_constantes"
                 layout="@layout/estadisticos_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_4"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/include48" />
+                app:layout_constraintTop_toBottomOf="@+id/tabla_baremo" />
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/card_view_subtotales"
@@ -328,7 +328,7 @@
                 android:layout_marginTop="@dimen/margin_8"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/include28">
+                app:layout_constraintTop_toBottomOf="@+id/card_view_constantes">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -430,6 +430,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <include
+                android:id="@+id/card_view_final"
                 layout="@layout/pd_final_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
