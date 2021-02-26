@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 18:50
+ Last modified 26-02-21 19:05
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -33,10 +33,13 @@ object EvaluaUtils {
      */
     @JvmStatic
     fun calcularDesviacion(MEDIA: Double, DESVIACION: Double, pd_total: Double, reverse: Boolean): Double {
-        return if (!reverse) {
-            ((pd_total - MEDIA) / DESVIACION * 100.0).roundToInt() / 100.0
-        } else {
-            ((MEDIA - pd_total) / DESVIACION * 100.0).roundToInt() / 100.0
+        return when {
+            !reverse -> {
+                ((pd_total - MEDIA) / DESVIACION * 100.0).roundToInt() / 100.0
+            }
+            else -> {
+                ((MEDIA - pd_total) / DESVIACION * 100.0).roundToInt() / 100.0
+            }
         }
     }
 
