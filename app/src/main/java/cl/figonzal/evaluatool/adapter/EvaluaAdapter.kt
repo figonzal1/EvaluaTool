@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 07-11-20 2:13
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 26-02-21 18:01
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -40,9 +40,8 @@ class EvaluaAdapter(private val nombre_header: String, private val subItems: Lis
     override fun onBindItemViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         val itemViewHolder = holder as ItemViewHolder
-        val evalua = subItems[position]
 
-        itemViewHolder.tvItemTitle.text = evalua.nombre
+        itemViewHolder.tvItemTitle.text = subItems[position].nombre
         itemViewHolder.itemView.setOnClickListener { clickListener.onItemRootViewClicked(nombre_header, itemViewHolder.adapterPosition) }
     }
 
