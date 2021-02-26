@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 21-12-20 0:15
+  Last modified 26-02-21 16:26
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,7 @@
     tools:context=".evalua.evalua1.modulo3.NivelesAdaptacionE1M3">
 
     <include
-        android:id="@+id/include2"
+        android:id="@+id/include"
         layout="@layout/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2"
+        app:layout_constraintTop_toBottomOf="@+id/include"
         app:tabGravity="fill"
         app:tabIndicatorAnimationDuration="@android:integer/config_longAnimTime"
         app:tabIndicatorColor="@color/colorSecondary"

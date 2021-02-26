@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:47
+ Last modified 26-02-21 19:05
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
 
@@ -17,12 +17,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualE1M5Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -37,6 +36,8 @@ class OrtografiaVisualE1M5 : AppCompatActivity(), EvaluaInterface {
         private const val DESVIACION = 7.57
         private const val MEDIA = 14.59
     }
+
+    private lateinit var binding: ActivityOrtografiaVisualE1M5Binding
 
     //PD,PC CHILE
     private val perc = arrayOf(
@@ -80,10 +81,10 @@ class OrtografiaVisualE1M5 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ortografia_visual_e1_m5)
+        binding = ActivityOrtografiaVisualE1M5Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -100,26 +101,24 @@ class OrtografiaVisualE1M5 : AppCompatActivity(), EvaluaInterface {
     private fun instanciarRecursosInterfaz() {
 
         //Promedio y desviacion
-        val tvMedia = findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = findViewById(R.id.et_aprobadas_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
 
         //TOTAL
-        tvPdTotal = findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = findViewById(R.id.tv_percentil_value)
-        tvNivel = findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -129,7 +128,7 @@ class OrtografiaVisualE1M5 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_ORTOGRAFIA_VISUAL))
 
     }

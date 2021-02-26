@@ -1,14 +1,14 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 08-11-20 22:39
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 26-02-21 18:26
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -36,25 +36,26 @@ class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Co
 
     override fun onBindViewHolder(holder: BaremoViewHolder, position: Int) {
 
+        when (holder.itemViewType) {
+            TABLE_HEADER -> {
 
-        if (holder.itemViewType == TABLE_HEADER) {
+                holder.tvPD.text = context.getString(R.string.PUNTAJE_DIRECTO)
+                holder.tvPcChileno.text = context.getString(R.string.PERCENTIL_CHILENO)
 
-            holder.tvPD.text = context.getString(R.string.PUNTAJE_DIRECTO)
-            holder.tvPcChileno.text = context.getString(R.string.PERCENTIL_CHILENO)
-
-            holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyHeader, context.theme))
-        } else {
-
-            val item = perc[position - 1]
-
-            if ((position - 1) % 2 != 0) {
-                holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
-            } else {
-                holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
+                holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyHeader, context.theme))
             }
+            else -> {
 
-            holder.tvPD.text = item[0].toString()
-            holder.tvPcChileno.text = item[1].toString()
+                val item = perc[position - 1]
+
+                when {
+                    (position - 1) % 2 != 0 -> holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
+                    else -> holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
+                }
+
+                holder.tvPD.text = item[0].toString()
+                holder.tvPcChileno.text = item[1].toString()
+            }
         }
     }
 
