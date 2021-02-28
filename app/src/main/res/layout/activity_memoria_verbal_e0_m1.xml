@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 13-12-20 1:28
+  Last modified 28-02-21 14:19
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -43,7 +43,7 @@
             android:focusableInTouchMode="true">
 
             <include
-                android:id="@+id/include48"
+                android:id="@+id/tabla_baremo"
                 layout="@layout/baremo_parent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
                 android:layout_marginEnd="@dimen/margin_4"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include48">
+                app:layout_constraintTop_toBottomOf="@+id/tabla_baremo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -128,7 +128,7 @@
                 android:layout_marginStart="@dimen/margin_4"
                 app:layout_constraintEnd_toStartOf="@+id/guia_der"
                 app:layout_constraintStart_toStartOf="@+id/guia_central"
-                app:layout_constraintTop_toBottomOf="@+id/include48">
+                app:layout_constraintTop_toBottomOf="@+id/tabla_baremo">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -188,7 +188,7 @@
                 app:layout_constraintGuide_percent="0.5" />
 
             <include
-                android:id="@+id/include27"
+                android:id="@+id/card_view_constantes"
                 layout="@layout/estadisticos_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -208,7 +208,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/guia_central"
                 app:layout_constraintStart_toStartOf="@+id/guia_izq"
-                app:layout_constraintTop_toBottomOf="@+id/include27"
+                app:layout_constraintTop_toBottomOf="@+id/card_view_constantes"
                 app:layout_constraintVertical_bias="0.0">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -288,6 +288,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <include
+                android:id="@+id/card_view_final"
                 layout="@layout/pd_final_card_view"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
