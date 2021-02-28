@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:47
+ Last modified 28-02-21 2:52
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo2
 
@@ -17,12 +17,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityMemoriaAtencionE2M2Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -38,6 +37,7 @@ class MemoriaAtencionE2M2 : AppCompatActivity(), EvaluaInterface {
         private const val MEDIA = 59.35
     }
 
+    private lateinit var binding: ActivityMemoriaAtencionE2M2Binding
     private val perc = arrayOf(
             arrayOf(88, 99),
             arrayOf(87, 99),
@@ -196,10 +196,10 @@ class MemoriaAtencionE2M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_memoria_atencion_e2_m2)
+        binding = ActivityMemoriaAtencionE2M2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -222,58 +222,56 @@ class MemoriaAtencionE2M2 : AppCompatActivity(), EvaluaInterface {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = findViewById(R.id.et_aprobadas_t1)
-        etOmitidasT1 = findViewById(R.id.et_omitidas_t1)
-        etReprobadasT1 = findViewById(R.id.et_reprobadas_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
+        etOmitidasT1 = binding.etOmitidasT1
+        etReprobadasT1 = binding.etReprobadasT1
 
         //TAREA 2
-        tvSubTotalT2 = findViewById(R.id.tv_pd_subtotal_t2)
-        etAprobadasT2 = findViewById(R.id.et_aprobadas_t2)
-        etOmitidasT2 = findViewById(R.id.et_omitidas_t2)
-        etReprobadasT2 = findViewById(R.id.et_reprobadas_t2)
+        tvSubTotalT2 = binding.tvPdSubtotalT2
+        etAprobadasT2 = binding.etAprobadasT2
+        etOmitidasT2 = binding.etOmitidasT2
+        etReprobadasT2 = binding.etReprobadasT2
 
         //TAREA 3
-        tvSubTotalT3 = findViewById(R.id.tv_pd_subtotal_t3)
-        etAprobadasT3 = findViewById(R.id.et_aprobadas_t3)
-        etOmitidasT3 = findViewById(R.id.et_omitidas_t3)
-        etReprobadasT3 = findViewById(R.id.et_reprobadas_t3)
+        tvSubTotalT3 = binding.tvPdSubtotalT3
+        etAprobadasT3 = binding.etAprobadasT3
+        etOmitidasT3 = binding.etOmitidasT3
+        etReprobadasT3 = binding.etReprobadasT3
 
         //TAREA 4
-        tvSubTotalT4 = findViewById(R.id.tv_pd_subtotal_t4)
-        etAprobadasT4 = findViewById(R.id.et_aprobadas_t4)
-        etOmitidasT4 = findViewById(R.id.et_omitidas_t4)
-        etReprobadasT4 = findViewById(R.id.et_reprobadas_t4)
+        tvSubTotalT4 = binding.tvPdSubtotalT4
+        etAprobadasT4 = binding.etAprobadasT4
+        etOmitidasT4 = binding.etOmitidasT4
+        etReprobadasT4 = binding.etReprobadasT4
 
         //TAREA 5
-        tvSubTotalT5 = findViewById(R.id.tv_pd_subtotal_t5)
-        etAprobadasT5 = findViewById(R.id.et_aprobadas_t5)
-        etOmitidasT5 = findViewById(R.id.et_omitidas_t5)
-        etReprobadasT5 = findViewById(R.id.et_reprobadas_t5)
+        tvSubTotalT5 = binding.tvPdSubtotalT5
+        etAprobadasT5 = binding.etAprobadasT5
+        etOmitidasT5 = binding.etOmitidasT5
+        etReprobadasT5 = binding.etReprobadasT5
 
         //TAREA 6
-        tvSubTotalT6 = findViewById(R.id.tv_pd_subtotal_t6)
-        etAprobadasT6 = findViewById(R.id.et_aprobadas_t6)
-        etOmitidasT6 = findViewById(R.id.et_omitidas_t6)
-        etReprobadasT6 = findViewById(R.id.et_reprobadas_t6)
+        tvSubTotalT6 = binding.tvPdSubtotalT6
+        etAprobadasT6 = binding.etAprobadasT6
+        etOmitidasT6 = binding.etOmitidasT6
+        etReprobadasT6 = binding.etReprobadasT6
 
         //TOTAL
-        tvPdTotal = findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = findViewById(R.id.tv_percentil_value)
-        tvNivel = findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -283,7 +281,7 @@ class MemoriaAtencionE2M2 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_MEMORIA_ATENCION))
 
     }
