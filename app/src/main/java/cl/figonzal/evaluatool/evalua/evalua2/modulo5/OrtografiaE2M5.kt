@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:47
+ Last modified 28-02-21 2:52
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5
 
@@ -17,12 +17,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityOrtografiaE2M5Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -38,6 +37,7 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
         private const val MEDIA = 31.42
     }
 
+    private lateinit var binding: ActivityOrtografiaE2M5Binding
     private val perc = arrayOf(
             arrayOf(43, 99),
             arrayOf(42, 95),
@@ -88,10 +88,10 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ortografia_e2_m5)
+        binding = ActivityOrtografiaE2M5Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -110,28 +110,26 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = findViewById(R.id.et_aprobadas_t1)
-        tvSubTotalT2 = findViewById(R.id.tv_pd_subtotal_t2)
-        etReprobadasT2 = findViewById(R.id.et_reprobadas_t2)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
+        tvSubTotalT2 = binding.tvPdSubtotalT2
+        etReprobadasT2 = binding.etReprobadasT2
 
         //TOTAL
-        tvPdTotal = findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = findViewById(R.id.tv_percentil_value)
-        tvNivel = findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -141,7 +139,7 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_ORTOGRAFIA))
 
     }
