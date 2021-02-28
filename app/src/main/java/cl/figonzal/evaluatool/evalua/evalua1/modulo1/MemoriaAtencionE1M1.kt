@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-02-21 19:05
+ Last modified 28-02-21 1:12
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo1
 
@@ -140,10 +140,8 @@ class MemoriaAtencionE1M1 : AppCompatActivity(), EvaluaInterface {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = binding.cardViewConstantes.tvMediaValue
-        val tvDesviacion = binding.cardViewConstantes.tvDesviacionValue
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
         tvSubTotalT1 = binding.tvPdSubtotalT1
