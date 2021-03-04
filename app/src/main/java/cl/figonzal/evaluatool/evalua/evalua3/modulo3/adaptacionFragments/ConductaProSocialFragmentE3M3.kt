@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 1:07
+ Last modified 03-03-21 22:38
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -19,11 +19,11 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.FragmentConductaProSocialE3M3Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -41,6 +41,7 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
         }
     }
 
+    private lateinit var binding: FragmentConductaProSocialE3M3Binding
     private val perc = arrayOf(
             arrayOf(0, 95),
             arrayOf(1, 80),
@@ -76,42 +77,39 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_conducta_pro_social_e3_m3, container, false)
+                              savedInstanceState: Bundle?): View {
+        binding = FragmentConductaProSocialE3M3Binding.inflate(inflater, container, false)
 
-        instanciarRecursosInterfaz(v)
+        instanciarRecursosInterfaz(binding)
         textWatcherTarea1()
-        return v
+        return binding.root
     }
 
     /**
      * Funcion encargada de instanciar los recursos de la interfaz gráfica
      */
-    private fun instanciarRecursosInterfaz(v: View) {
+    private fun instanciarRecursosInterfaz(binding: FragmentConductaProSocialE3M3Binding) {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = v.findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = v.findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = v.findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = v.findViewById(R.id.et_aprobadas_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
 
         //TOTAL
-        tvPdTotal = v.findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = v.findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = v.findViewById(R.id.tv_percentil_value)
-        tvNivel = v.findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = v.findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = v.findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = v.findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -121,7 +119,7 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
             dialogFragment.show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES))
 
     }
