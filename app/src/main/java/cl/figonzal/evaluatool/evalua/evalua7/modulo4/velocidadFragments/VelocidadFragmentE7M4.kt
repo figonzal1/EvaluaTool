@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 1:07
+ Last modified 06-03-21 19:06
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -19,11 +19,11 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.FragmentVelocidadE7M4Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -36,12 +36,12 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
         private const val DESVIACION = 68.21
         private const val MEDIA = 257.12
 
-        @JvmStatic
         fun newInstance(): VelocidadFragmentE7M4 {
             return VelocidadFragmentE7M4()
         }
     }
 
+    private lateinit var binding: FragmentVelocidadE7M4Binding
     private val perc = arrayOf(
             arrayOf(100, 99),
             arrayOf(121, 97),
@@ -79,36 +79,34 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
     private lateinit var progressBar: ProgressBar
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        val v = inflater.inflate(R.layout.fragment_velocidad_e7_m4, container, false)
+                              savedInstanceState: Bundle?): View {
+        binding = FragmentVelocidadE7M4Binding.inflate(inflater, container, false)
 
-        instanciarRecursosInterfaz(v)
+        instanciarRecursosInterfaz(binding)
         textWatcherTarea1()
-        return v
+        return binding.root
     }
 
-    private fun instanciarRecursosInterfaz(v: View) {
+    private fun instanciarRecursosInterfaz(binding: FragmentVelocidadE7M4Binding) {
 
-        val tvMedia = v.findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = v.findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //SUBTOTALES
-        tvSubTotalT1 = v.findViewById(R.id.tv_pd_subtotal_t1)
-        etSegundosT1 = v.findViewById(R.id.et_segundos_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etSegundosT1 = binding.etSegundosT1
 
         //TOTALES
-        tvPdTotal = v.findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = v.findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = v.findViewById(R.id.tv_percentil_value)
-        tvNivel = v.findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = v.findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = v.findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = v.findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -118,7 +116,7 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
             dialogFragment.show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_VELOCIDAD))
 
     }
