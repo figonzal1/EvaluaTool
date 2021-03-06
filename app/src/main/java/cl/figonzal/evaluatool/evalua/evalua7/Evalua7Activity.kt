@@ -6,21 +6,20 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:04
+ Last modified 06-03-21 19:06
  */
 package cl.figonzal.evaluatool.evalua.evalua7
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
+import cl.figonzal.evaluatool.databinding.ActivityEvalua7Binding
 import cl.figonzal.evaluatool.modelo.Evalua
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.RouteHandler
@@ -30,14 +29,15 @@ import java.util.*
 
 class Evalua7Activity : AppCompatActivity(), ClickListener {
 
+    private lateinit var binding: ActivityEvalua7Binding
     private lateinit var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_evalua7)
+        binding = ActivityEvalua7Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -78,7 +78,7 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
         sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_5), subItems5, this))
         sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_6), subItems6, this))
 
-        val recyclerView = findViewById<RecyclerView>(R.id.rv_7)
+        val recyclerView = binding.rv7
         recyclerView.layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.adapter = sectionedRecyclerViewAdapter
     }
