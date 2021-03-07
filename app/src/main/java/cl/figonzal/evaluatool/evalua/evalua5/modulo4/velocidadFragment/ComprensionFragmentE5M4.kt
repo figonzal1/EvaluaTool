@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 1:08
+ Last modified 07-03-21 0:23
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -19,11 +19,11 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.FragmentComprensionE5M4Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -37,12 +37,12 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
         private const val DESVIACION = 3.71
         private const val MEDIA = 4.91
 
-        @JvmStatic
         fun newInstance(): ComprensionFragmentE5M4 {
             return ComprensionFragmentE5M4()
         }
     }
 
+    private lateinit var binding: FragmentComprensionE5M4Binding
     private val perc = arrayOf(
             arrayOf(15, 99),
             arrayOf(14, 97),
@@ -85,42 +85,40 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val v = inflater.inflate(R.layout.fragment_comprension_e5_m4, container, false)
-        instanciarRecursosInterfaz(v)
+        binding = FragmentComprensionE5M4Binding.inflate(inflater, container, false)
+        instanciarRecursosInterfaz(binding)
         textWatcherTarea1()
-        return v
+        return binding.root
     }
 
     /**
      * Funcion encargada de instanciar los recursos de la interfaz gráfica
      */
-    private fun instanciarRecursosInterfaz(v: View) {
+    private fun instanciarRecursosInterfaz(binding: FragmentComprensionE5M4Binding) {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = v.findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = v.findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = v.findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = v.findViewById(R.id.et_aprobadas_t1)
-        etOmitidasT1 = v.findViewById(R.id.et_omitidas_t1)
-        etReprobadasT1 = v.findViewById(R.id.et_reprobadas_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
+        etOmitidasT1 = binding.etOmitidasT1
+        etReprobadasT1 = binding.etReprobadasT1
 
         //TOTAL
-        tvPdTotal = v.findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = v.findViewById(R.id.tv_pd_total_corregido_value)
-        tvNivelComprension = v.findViewById(R.id.tv_nivel_comprension_value)
-        tvPercentil = v.findViewById(R.id.tv_percentil_value)
-        tvNivel = v.findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = v.findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.tvPdTotalCorregidoValue
+        tvNivelComprension = binding.tvNivelComprensionValue
+        tvPercentil = binding.tvPercentilValue
+        tvNivel = binding.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.tvDesviacionCalculadaValue
 
-        progressBar = v.findViewById(R.id.progressBar)
+        progressBar = binding.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = v.findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -130,7 +128,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
             dialogFragment.show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = v.findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_COMPRENSION))
 
     }

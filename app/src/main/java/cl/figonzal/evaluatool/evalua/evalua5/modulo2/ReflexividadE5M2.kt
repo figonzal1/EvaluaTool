@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 29-11-20 14:47
+ Last modified 07-03-21 0:23
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo2
 
@@ -17,12 +17,11 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityReflexividadE5M2Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.EvaluaUtils
@@ -33,6 +32,7 @@ import kotlin.math.floor
 
 class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
 
+    private lateinit var binding: ActivityReflexividadE5M2Binding
     private val perc = arrayOf(
             arrayOf(20, 99),
             arrayOf(19, 99),
@@ -76,10 +76,10 @@ class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_reflexividad_e5_m2)
+        binding = ActivityReflexividadE5M2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.include.toolbar)
 
         val actionBar = supportActionBar!!
         actionBar.setDisplayHomeAsUpEnabled(true)
@@ -94,27 +94,25 @@ class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
 
         //Promedio y desviacion
         //TetView desviacion y media
-        val tvMedia = findViewById<TextView>(R.id.tv_media_value)
-        val tvDesviacion = findViewById<TextView>(R.id.tv_desviacion_value)
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        binding.cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+        binding.cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
         //TAREA 1
-        tvSubTotalT1 = findViewById(R.id.tv_pd_subtotal_t1)
-        etAprobadasT1 = findViewById(R.id.et_aprobadas_t1)
-        etReprobadasT1 = findViewById(R.id.et_reprobadas_t1)
+        tvSubTotalT1 = binding.tvPdSubtotalT1
+        etAprobadasT1 = binding.etAprobadasT1
+        etReprobadasT1 = binding.etReprobadasT1
 
         //TOTAL
-        tvPdTotal = findViewById(R.id.tv_pd_total_value)
-        tvPdCorregido = findViewById(R.id.tv_pd_total_corregido_value)
-        tvPercentil = findViewById(R.id.tv_percentil_value)
-        tvNivel = findViewById(R.id.tv_nivel_obtenido_value)
-        tvDesviacionCalculada = findViewById(R.id.tv_desviacion_calculada_value)
+        tvPdTotal = binding.tvPdTotalValue
+        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
+        tvPercentil = binding.cardViewFinal.tvPercentilValue
+        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
+        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = findViewById(R.id.progressBar)
+        progressBar = binding.cardViewFinal.progressBar
         progressBar.max = perc[0][1]
 
-        val ivCorregido = findViewById<ImageView>(R.id.iv_help_pd_corregido)
+        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
         ivCorregido.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
@@ -124,7 +122,7 @@ class ReflexividadE5M2 : AppCompatActivity(), EvaluaInterface {
             dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
         }
 
-        val tvBaremo = findViewById<TextView>(R.id.tvBaremo)
+        val tvBaremo = binding.tablaBaremo.tvBaremo
         EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_REFLEXIVIDAD))
 
     }
