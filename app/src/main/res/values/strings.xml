@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 04-02-21 0:33
+  Last modified 17-03-21 19:46
   -->
 
 <resources>
@@ -217,7 +217,6 @@
     <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
     <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
     <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
-    <string name="CLOSE_EVALUA_5">D/EVALUA_5_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
     <string name="BTN_EVALUA_2">btn_evalua_2</string>
@@ -238,19 +237,6 @@
     <string name="CLICK_INDICE_GENERAL_LINGUISTICO">click_indice_general_linguistico</string>
     <string name="CLICK_RECEPCION_AUDITIVA">click_recepcion_auditiva</string>
     <string name="CLICK_HABILIDADES_FONOLOGICAS">click_habilidades_fonologicas</string>
-    <string name="TAG_VELOCIDAD_LECTORA">D/VELOCIDAD_LECTORA_ACT: </string>
-    <string name="TAG_NIVELES_ADAPTACION">D/NIVELES_ADAPTACION_ACT: </string>
-    <string name="TAG_COMPREN_LECTORA">D/COMPREN_LECTORA_ACT: </string>
-    <string name="TAG_ORTO_FONETICA">D/ORTO_FONETICA_ACT: </string>
-    <string name="TAG_ORT_VIS_REGLADA">D/ORT_VIS_REGLADA_ACT: </string>
-    <string name="TAG_MEMORIA_ATENCION">D/MEMORIA_ATENCION_ACT: </string>
-    <string name="TAG_EXACTITUD_LECTORA">D/EXACTITUD_LECTORA_ACT: </string>
-    <string name="TAG_VALORACION_GLOBAL">D/VALORACION_GLOBAL_ACT: </string>
-    <string name="TAG_INDICE_GENERAL">D/INDICE_GENERAL_ACT: </string>
-    <string name="TAG_REFLEXIVIDAD">D/REFLEXIVIDAD_ACT: </string>
-    <string name="TAG_PERNSAMIENTO_ANALOGICO">D/PERNSAMIENTO_ANALOGICO_ACT: </string>
-    <string name="TAG_CALCU_NUMERACION">D/CALCU_NUMERACION_ACT: </string>
-    <string name="TAG_RESOLUCION_PROBLEMAS">D/RESOLUCION_PROBLEMAS_ACT: </string>
     <string name="CLICK_ATEN_CONCENTRACION">click_atencion_cooncentracion</string>
     <string name="CLICK_RAZON_DEDUCTIVO">click_razonamiento_deductivo</string>
     <string name="CLICK_RAZON_INDUCTIVO">click_razonamiento_inductivo</string>
@@ -288,8 +274,6 @@
     <string name="PD_NULO">pd nulo</string>
     <string name="TAG_COMPRENSION_CALCULADA">D/COMPRENSION_CALCULADA: </string>
     <string name="COMPRENSION_NULA">nivelEsperado comprension nulo</string>
-    <string name="TAG_SEG_CORREGIDOS">D/SEGUNDOS_CORREGIDOS: </string>
-    <string name="SEG_NULOS">segundos nulos</string>
 
 
     <!-- REWARD DIALOG TAGS & ADS -->
@@ -298,8 +282,7 @@
     <string name="TAG_VIDEO_REWARD_STATUS" translatable="false">VIDEO_REWARD_STATUS: </string>
     <string name="TAG_VIDEO_REWARD_STATUS_LOADED" translatable="false">LOADED</string>
     <string name="TAG_VIDEO_REWARD_STATUS_REWARDED" translatable="false">REWARDED</string>
-    <string name="TAG_VIDEO_REWARD_STATUS_FAILED" translatable="false">FAILED</string>
-    <string name="TAG_VIDEO_REWARD_STATUS_CLOSED" translatable="false">CLOSED</string>
+    <string name="TAG_VIDEO_REWARD_STATUS_FAILED" translatable="false">FAILED TO LOAD</string>
     <string name="TAG_HORA_AHORA" translatable="false">D/HORA_AHORA: </string>
     <string name="TAG_HORA_REWARD" translatable="false">D/HORA_REWARD: </string>
     <string name="TAG_REWARD_STATUS" translatable="false">REWARD_STATUS: </string>
@@ -314,7 +297,8 @@
     <string name="TAG_INTERSITIAL_STATUS">INTERSITIAL: </string>
     <string name="INTERSITIAL_CARGADO">CARGADO</string>
     <string name="INTERSITIAL_NO_CARGADO">NO CARGADO</string>
-    <string name="INTERSITIAL_FALLADO">FALLADO</string>
+    <string name="INTERSITIAL_MOSTRADO">MOSTRADO</string>
+    <string name="INTERSITIAL_NO_MOSTRADO">NO_MOSTRADO</string>
     <string name="INTERSITIAL_CERRADO">CERRADO</string>
 
 
