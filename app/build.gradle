@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-03-21 22:52
+ Last modified 17-03-21 19:46
  */
 
 apply plugin: 'com.android.application'
@@ -86,7 +86,7 @@ dependencies {
     implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:3.2.0'
 
     //FIREBASE
-    implementation platform('com.google.firebase:firebase-bom:26.2.0')
+    implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-perf-ktx'

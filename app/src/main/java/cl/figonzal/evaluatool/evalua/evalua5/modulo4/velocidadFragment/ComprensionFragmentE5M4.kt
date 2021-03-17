@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-03-21 0:23
+ Last modified 17-03-21 19:46
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -83,7 +83,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         binding = FragmentComprensionE5M4Binding.inflate(inflater, container, false)
         instanciarRecursosInterfaz(binding)

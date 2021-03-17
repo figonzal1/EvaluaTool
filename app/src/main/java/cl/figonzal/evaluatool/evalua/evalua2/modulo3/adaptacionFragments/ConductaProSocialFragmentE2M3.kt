@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-02-21 2:52
+ Last modified 17-03-21 19:46
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -72,7 +72,7 @@ class ConductaProSocialFragmentE2M3 : Fragment(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         binding = FragmentConductaProSocialE2M3Binding.inflate(inflater, container, false)
 

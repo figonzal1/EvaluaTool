@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-03-21 2:04
+ Last modified 17-03-21 19:46
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments
 
@@ -89,7 +89,7 @@ class AutoControlFragmentE4M3 : Fragment(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         binding = FragmentAutoControlE4M3Binding.inflate(inflater, container, false)
 
         instanciarRecursosInterfaz(binding)
