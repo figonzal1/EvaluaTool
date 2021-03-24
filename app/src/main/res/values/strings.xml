@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 17-03-21 19:46
+  Last modified 24-03-21 16:40
   -->
 
 <resources>
@@ -215,8 +215,6 @@
     <string name="CLICK_EXACTITUD_LECTORA">click_exactitud_lectora</string>
     <string name="CLICK_PENSAMIENTO_ANALOGICO">click_pensamiento_analogico</string>
     <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
-    <string name="TAG_ORG_PERCEPTIVA">D/ORG_PERCEPTIVA_ACT: </string>
-    <string name="CLOSE_EVALUA_4">D/EVALUA_4_ACTIVITY: </string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
     <string name="BTN_EVALUA_1">btn_evalua_1</string>
     <string name="BTN_EVALUA_2">btn_evalua_2</string>
