@@ -1,15 +1,15 @@
-/*-----------------------------------------------------------------------------
-                                                                              -
- This file is subject to the terms and conditions defined in                  -
- file 'LICENSE', which is part of this source code package                    -
-                                                                              -
- Autor: Felipe González                                                       -
- Email: felipe.gonzalezalarcon94@gmail.com                                    -
-                                                                              -
- Copyright (c) 2020                                                           -
-                                                                              -
- Last modified 14-08-20 0:53                                                  -
- -----------------------------------------------------------------------------*/
+/*
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 24-03-21 18:24
+ */
 
 package cl.figonzal.evaluatool;
 
@@ -82,7 +82,7 @@ public class Evalua0Test {
                 allOf(withId(R.id.tv_group), withText("Capacidades Cognitivas"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.recyclerview),
+                                        withId(R.id.rv_0),
                                         0),
                                 0),
                         isDisplayed()));
@@ -92,7 +92,7 @@ public class Evalua0Test {
                 allOf(withId(R.id.tv_group), withText("Capacidades Espaciales"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.recyclerview),
+                                        withId(R.id.rv_0),
                                         1),
                                 0),
                         isDisplayed()));
@@ -102,7 +102,7 @@ public class Evalua0Test {
                 allOf(withId(R.id.tv_group), withText("Capacidades Linguísticas"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(R.id.recyclerview),
+                                        withId(R.id.rv_0),
                                         2),
                                 0),
                         isDisplayed()));
