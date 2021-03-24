@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-03-21 19:46
+ Last modified 24-03-21 16:29
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -16,8 +16,10 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
@@ -27,9 +29,10 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import timber.log.Timber
 import java.util.*
 
-class AdsService(private var activity: MainActivity,
-                 private var context: Context,
-                 private var sharedPrefService: SharedPrefService) {
+class AdsService(private val activity: MainActivity,
+                 private val supportFragmentManager: FragmentManager,
+                 private val context: Context,
+                 private val sharedPrefService: SharedPrefService) {
 
     private var interstitialAd: InterstitialAd? = null
     private lateinit var rewardedAd: RewardedAd
@@ -111,7 +114,11 @@ class AdsService(private var activity: MainActivity,
                 Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED))
 
                 //Try to show dialog
-                activity.rewardDialog()
+                try {
+                    rewardDialog()
+                } catch (e: IllegalStateException) {
+                    Timber.e(e, "Error al llamar dialog")
+                }
             }
 
             override fun onAdFailedToLoad(p0: LoadAdError) {
@@ -143,7 +150,7 @@ class AdsService(private var activity: MainActivity,
             Timber.i("%s%s", context.getString(R.string.TAG_HORA_AHORA), dateHandler.dateToString(context, dateNow))
 
             //sumar 1 horas al tiempo del celular
-            val dateNew = dateHandler.addHoursToJavaUtilDate(dateNow, 1)
+            val dateNew = dateHandler.addHoursToJavaUtilDate(dateNow, 24)
             Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), dateHandler.dateToString(context, dateNew))
 
             //Guardar fecha de termino de reward
@@ -153,6 +160,47 @@ class AdsService(private var activity: MainActivity,
         }
 
         rewardedAd.show(activity, userEarnedRewardListener)
+    }
+
+    /**
+     * Funcion que realiza la configuracion de reward dialog
+     */
+    fun rewardDialog() {
+
+        val rewardDate = Date(sharedPrefService.getData(activity.getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
+        val nowDate = Date()
+
+        //Si la hora del celular es posterior a reward date
+        if (nowDate.after(rewardDate)) {
+
+            Timber.i("%s%s", activity.getString(R.string.TAG_REWARD_STATUS), activity.getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
+
+            //Generar % de aparicion de dialogo
+            val showDialog = generateRandomNumber()
+            if (showDialog) {
+
+                //Mostrar dialog
+                RewardDialogFragment(this).show(supportFragmentManager, activity.getString(R.string.REWARD_DIALOG))
+
+                Timber.i("%s%s", activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
+
+            } else {
+                Timber.i("%s%s", activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
+            }
+        } else if (nowDate.before(rewardDate)) {
+            Timber.i("%s%s", activity.getString(R.string.TAG_REWARD_STATUS), activity.getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
+        }
+    }
+
+    /**
+     * Funcion encargada de generar un numero aleatorio para dialogs.
+     *
+     * @return Booleano con el resultado
+     */
+    private fun generateRandomNumber(): Boolean {
+        val random = Random()
+        val item = random.nextInt(10)
+        return item % 3 == 0
     }
 
     init {
