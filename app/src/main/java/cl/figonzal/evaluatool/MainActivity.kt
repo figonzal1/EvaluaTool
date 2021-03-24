@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-02-21 19:50
+ Last modified 24-03-21 18:32
  */
 package cl.figonzal.evaluatool
 
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadAds() {
-        adsService = AdsService(this, applicationContext, sharedPrefService)
+        adsService = AdsService(this, supportFragmentManager, applicationContext, sharedPrefService)
         adsService.loadIntersitial()
         adsService.loadRewardVideo()
     }
