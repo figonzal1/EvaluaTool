@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-02-21 0:33
+ Last modified 24-03-21 16:29
  */
 package cl.figonzal.evaluatool
 
@@ -20,7 +20,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
-import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
 import cl.figonzal.evaluatool.evalua.evalua2.Evalua2Activity
@@ -112,7 +111,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadAds() {
-        adsService = AdsService(this, applicationContext, sharedPrefService)
+        adsService = AdsService(this, supportFragmentManager, applicationContext, sharedPrefService)
         adsService.loadIntersitial()
         adsService.loadRewardVideo()
     }
@@ -218,35 +217,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    /**
-     * Funcion que realiza la configuracion de reward dialog
-     */
-    fun rewardDialog() {
-
-        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
-        val nowDate = Date()
-
-        //Si la hora del celular es posterior a reward date
-        if (nowDate.after(rewardDate)) {
-
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
-
-            //Generar % de aparicion de dialogo
-            val showDialog = generateRandomNumber()
-            if (showDialog) {
-
-                //Mostrar dialog
-                RewardDialogFragment(adsService).show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
-
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
-
-            } else {
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
-            }
-        } else if (nowDate.before(rewardDate)) {
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
-        }
-    }
 
     private fun switchDarkModeListener() {
 
@@ -268,16 +238,5 @@ class MainActivity : AppCompatActivity() {
                 sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
             }
         }
-    }
-
-    /**
-     * Funcion encargada de generar un numero aleatorio para dialogs.
-     *
-     * @return Booleano con el resultado
-     */
-    private fun generateRandomNumber(): Boolean {
-        val random = Random()
-        val item = random.nextInt(10)
-        return item % 3 == 0
     }
 }
