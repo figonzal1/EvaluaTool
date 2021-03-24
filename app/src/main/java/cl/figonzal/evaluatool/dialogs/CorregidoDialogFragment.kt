@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-02-21 22:59
+ Last modified 17-03-21 19:46
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -34,9 +34,7 @@ class CorregidoDialogFragment : DialogFragment() {
 
         builder.setView(view)
 
-        val materialButton: MaterialButton
-
-        materialButton = view.findViewById(R.id.btn_entendido_pd)
+        val materialButton: MaterialButton = view.findViewById(R.id.btn_entendido_pd)
         materialButton.setOnClickListener {
 
             Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_CERRADO))
