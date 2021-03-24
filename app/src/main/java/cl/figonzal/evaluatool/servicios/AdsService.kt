@@ -8,129 +8,199 @@
 
  Copyright (c) 2021
 
- Last modified 04-02-21 0:33
+ Last modified 24-03-21 16:29
  */
 package cl.figonzal.evaluatool.servicios
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.utilidades.DateHandler
 import com.google.android.gms.ads.*
-import com.google.android.gms.ads.rewarded.RewardItem
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.gms.ads.rewarded.RewardedAd
-import com.google.android.gms.ads.rewarded.RewardedAdCallback
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 import timber.log.Timber
 import java.util.*
 
-class AdsService(private var activity: MainActivity,
-                 private var context: Context,
-                 private var sharedPrefService: SharedPrefService) {
+class AdsService(private val activity: MainActivity,
+                 private val supportFragmentManager: FragmentManager,
+                 private val context: Context,
+                 private val sharedPrefService: SharedPrefService) {
 
-    private lateinit var interstitialAd: InterstitialAd
+    private var interstitialAd: InterstitialAd? = null
     private lateinit var rewardedAd: RewardedAd
 
-    //INTERSITIAL
+
     fun loadIntersitial() {
-        interstitialAd = InterstitialAd(context)
-        interstitialAd.adUnitId = context.getString(R.string.ADMOB_ID_INTERSITIAL)
-        interstitialAd.loadAd(AdRequest.Builder().build())
+
+        val interstitialAdLoadCallback = object : InterstitialAdLoadCallback() {
+
+            override fun onAdLoaded(p0: InterstitialAd) {
+                super.onAdLoaded(p0)
+                interstitialAd = p0
+                Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CARGADO))
+
+            }
+
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                super.onAdFailedToLoad(p0)
+                Timber.e("%s%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_NO_CARGADO), p0.responseInfo)
+            }
+
+        }
+
+        InterstitialAd.load(
+                context,
+                context.getString(R.string.ADMOB_ID_INTERSITIAL),
+                AdRequest.Builder().build(),
+                interstitialAdLoadCallback
+        )
     }
 
-    fun getIntersitial(): InterstitialAd {
+    fun getIntersitial(): InterstitialAd? {
         return interstitialAd
     }
 
     fun showIntersitial(ActivityToOpen: Class<out Activity?>?) {
 
-        if (interstitialAd.isLoaded) {
+        interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
 
-            Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CARGADO))
-            interstitialAd.adListener = object : AdListener() {
+            override fun onAdFailedToShowFullScreenContent(p0: AdError?) {
+                super.onAdFailedToShowFullScreenContent(p0)
+                interstitialAd = null
 
-                override fun onAdClosed() {
-                    super.onAdClosed()
+                Timber.e("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_NO_MOSTRADO))
 
-                    Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CERRADO))
-                    val intent = Intent(activity, ActivityToOpen)
-                    activity.startActivity(intent)
-
-                    //Cargar el siguiente
-                    loadIntersitial()
-                }
-
-                override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-                    super.onAdFailedToLoad(loadAdError)
-                    Timber.e("%s%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_FALLADO), loadAdError.responseInfo)
-                    val intent = Intent(context, ActivityToOpen)
-                    context.startActivity(intent)
-                }
+                val intent = Intent(activity, ActivityToOpen)
+                activity.startActivity(intent)
             }
 
-            //Lanzar intersitial
-            interstitialAd.show()
+            override fun onAdShowedFullScreenContent() {
+                super.onAdShowedFullScreenContent()
+                Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_MOSTRADO))
+            }
 
-        } else {
-            Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_NO_CARGADO))
+            override fun onAdDismissedFullScreenContent() {
+                super.onAdDismissedFullScreenContent()
+                loadIntersitial()
 
-            val intent = Intent(context, ActivityToOpen)
-            context.startActivity(intent)
+                Timber.i("%s%s", context.getString(R.string.TAG_INTERSITIAL_STATUS), context.getString(R.string.INTERSITIAL_CERRADO))
+
+                val intent = Intent(activity, ActivityToOpen)
+                activity.startActivity(intent)
+            }
         }
+
+        interstitialAd?.show(activity)
     }
 
-    //REWARDS VIDEO
-    fun loadRewardVideo() {
 
-        rewardedAd = RewardedAd(context, context.getString(R.string.ADMOB_ID_VIDEO))
+    /**
+     * Funcion encargada de cargar el video publicitario
+     */
+    fun loadRewardVideo() {
 
         val adLoadCallback: RewardedAdLoadCallback = object : RewardedAdLoadCallback() {
 
-            override fun onRewardedAdLoaded() {
+            override fun onAdLoaded(p0: RewardedAd) {
+                rewardedAd = p0
                 Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_LOADED))
 
                 //Try to show dialog
-                activity.rewardDialog()
+                try {
+                    rewardDialog()
+                } catch (e: IllegalStateException) {
+                    Timber.e(e, "Error al llamar dialog")
+                }
             }
 
-            override fun onRewardedAdFailedToLoad(loadAdError: LoadAdError) {
-                super.onRewardedAdFailedToLoad(loadAdError)
-                Timber.e("%s%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED), loadAdError.responseInfo)
+            override fun onAdFailedToLoad(p0: LoadAdError) {
+                super.onAdFailedToLoad(p0)
+                Timber.e("%s%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_FAILED), p0.responseInfo)
             }
         }
-        rewardedAd.loadAd(AdRequest.Builder().build(), adLoadCallback)
+
+        //LOAD VIDEO REWARD
+        RewardedAd.load(
+                context,
+                context.getString(R.string.ADMOB_ID_VIDEO),
+                AdRequest.Builder().build(),
+                adLoadCallback
+        )
     }
 
+    /**
+     * Funcion encargada de mostrar en pantalla el video rewarded
+     */
     fun showRewardVideo() {
 
-        val rewardedAdCallback: RewardedAdCallback = object : RewardedAdCallback() {
+        val userEarnedRewardListener = OnUserEarnedRewardListener {
+            val dateHandler = DateHandler()
 
-            override fun onUserEarnedReward(rewardItem: RewardItem) {
+            Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED))
 
-                val dateHandler = DateHandler()
+            val dateNow = Date()
+            Timber.i("%s%s", context.getString(R.string.TAG_HORA_AHORA), dateHandler.dateToString(context, dateNow))
 
-                Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_REWARDED))
+            //sumar 1 horas al tiempo del celular
+            val dateNew = dateHandler.addHoursToJavaUtilDate(dateNow, 24)
+            Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), dateHandler.dateToString(context, dateNew))
 
-                val dateNow = Date()
-                Timber.i("%s%s", context.getString(R.string.TAG_HORA_AHORA), dateHandler.dateToString(context, dateNow))
+            //Guardar fecha de termino de reward
+            sharedPrefService.saveData(context.getString(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time)
 
-                //sumar 1 horas al tiempo del celular
-                val dateNew = dateHandler.addHoursToJavaUtilDate(dateNow, 1)
-                Timber.i("%s%s", context.getString(R.string.TAG_HORA_REWARD), dateHandler.dateToString(context, dateNew))
-
-                //Guardar fecha de termino de reward
-                sharedPrefService.saveData(context.getString(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time)
-            }
-
-            override fun onRewardedAdClosed() {
-                super.onRewardedAdClosed()
-                Timber.i("%s%s", context.getString(R.string.TAG_VIDEO_REWARD_STATUS), context.getString(R.string.TAG_VIDEO_REWARD_STATUS_CLOSED))
-                activity.recreate()
-            }
+            Toast.makeText(context, "¡Dia libre de publicidad!", Toast.LENGTH_LONG).show()
         }
-        rewardedAd.show(activity, rewardedAdCallback)
+
+        rewardedAd.show(activity, userEarnedRewardListener)
+    }
+
+    /**
+     * Funcion que realiza la configuracion de reward dialog
+     */
+    fun rewardDialog() {
+
+        val rewardDate = Date(sharedPrefService.getData(activity.getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
+        val nowDate = Date()
+
+        //Si la hora del celular es posterior a reward date
+        if (nowDate.after(rewardDate)) {
+
+            Timber.i("%s%s", activity.getString(R.string.TAG_REWARD_STATUS), activity.getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
+
+            //Generar % de aparicion de dialogo
+            val showDialog = generateRandomNumber()
+            if (showDialog) {
+
+                //Mostrar dialog
+                RewardDialogFragment(this).show(supportFragmentManager, activity.getString(R.string.REWARD_DIALOG))
+
+                Timber.i("%s%s", activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
+
+            } else {
+                Timber.i("%s%s", activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), activity.getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
+            }
+        } else if (nowDate.before(rewardDate)) {
+            Timber.i("%s%s", activity.getString(R.string.TAG_REWARD_STATUS), activity.getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
+        }
+    }
+
+    /**
+     * Funcion encargada de generar un numero aleatorio para dialogs.
+     *
+     * @return Booleano con el resultado
+     */
+    private fun generateRandomNumber(): Boolean {
+        val random = Random()
+        val item = random.nextInt(10)
+        return item % 3 == 0
     }
 
     init {
