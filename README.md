@@ -9,7 +9,7 @@
   </a>
   
   <a href="https://travis-ci.com/figonzal1/EvaluaTool" alt="Travis">
-        <img src="https://travis-ci.com/figonzal1/EvaluaTool.svg?branch=master" />
+        <img src="https://travis-ci.com/figonzal1/EvaluaTool.svg?branch=test-travis" />
   </a>
   
   <a href="https://snyk.io/test/github/figonzal1/EvaluaTool?targetFile=app/build.gradle" alt="Snyk">
@@ -20,8 +20,8 @@
         <img src="https://www.codefactor.io/repository/github/figonzal1/evaluatool/badge" />
   </a>
   
-  <a href="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool" alt="Top Language">
-        <img alt="GitHub repo language" src="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool">
+  <a href="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool?color=orange" alt="Top Language">
+        <img alt="GitHub repo language" src="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool?color=orange">
   </a>
   
   <a href="https://img.shields.io/github/repo-size/figonzal1/EvaluaTool" alt="GitHub repo size">
