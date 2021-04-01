@@ -31,6 +31,10 @@
   <a href="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=yellow" alt="Last Commit">
         <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/figonzal1/EvaluaTool?color=yellow">
   </a>
+  
+  <a href="https://img.shields.io/badge/HH-145.90%20[hr]-blueviolet" alt="Hours Spent">
+        <img alt="Hours Spent" src="https://img.shields.io/badge/HH-145.90%20[hr]-blueviolet">
+  </a>
 </p>
 
 Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Versión Chile
