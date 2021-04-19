@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 19:00
+ Last modified 17-04-21 23:14
  */
 
 package cl.figonzal.evaluatool;
@@ -58,6 +58,6 @@ public class AgregarHorasTest {
 
     @Test
     public void add_hours_to_date() {
-        assertEquals(dEsperado, new DateHandler().addHoursToJavaUtilDate(dActual, dHoras));
+        assertEquals(dEsperado, new DateHandler().addHoursToDate(dActual, dHoras));
     }
 }

@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 1:08
+ Last modified 17-04-21 22:25
  */
 
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6;
@@ -21,7 +21,7 @@ import org.junit.runners.Parameterized;
 import java.util.Arrays;
 import java.util.Collection;
 
-import cl.figonzal.evaluatool.utilidades.EvaluaUtils;
+import cl.figonzal.evaluatool.utilidades.Utils;
 
 import static junit.framework.TestCase.assertEquals;
 
@@ -73,6 +73,6 @@ public class ResolucionProblemasE2M6Test {
 
     @Test
     public void testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001);
+        assertEquals(desviacion_esperada, Utils.calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001);
     }
 }

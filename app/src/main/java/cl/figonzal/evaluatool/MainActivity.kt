@@ -8,20 +8,19 @@
 
  Copyright (c) 2021
 
- Last modified 24-03-21 18:32
+ Last modified 18-04-21 22:18
  */
 package cl.figonzal.evaluatool
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
-import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
 import cl.figonzal.evaluatool.evalua.evalua2.Evalua2Activity
@@ -32,35 +31,28 @@ import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.NightModeService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
-import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.DateHandler
+import cl.figonzal.evaluatool.utilidades.disable
+import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
-import timber.log.Timber
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
+    //ViewBinding
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var sharedPrefService: SharedPrefService
+    //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
     private lateinit var tvNombreApp: TextView
     private lateinit var tvVersion: TextView
-    private lateinit var btnEvalua0: MaterialButton
-    private lateinit var btnEvalua1: MaterialButton
-    private lateinit var btnEvalua2: MaterialButton
-    private lateinit var btnEvalua3: MaterialButton
-    private lateinit var btnEvalua4: MaterialButton
-    private lateinit var btnEvalua5: MaterialButton
-    private lateinit var btnEvalua6: MaterialButton
-    private lateinit var btnEvalua7: MaterialButton
-    private lateinit var btnEvalua8: MaterialButton
-    private lateinit var btnEvalua9: MaterialButton
-    private lateinit var btnEvalua10: MaterialButton
+    private var buttonList = mutableListOf<MaterialButton>()
 
+    //Services & Handlers
     private lateinit var adsService: AdsService
-    private lateinit var dateHandler: DateHandler
+    private lateinit var sharedPrefService: SharedPrefService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,18 +63,19 @@ class MainActivity : AppCompatActivity() {
         sharedPrefService = SharedPrefService(this)
         NightModeService(this, this.lifecycle, sharedPrefService)
 
-        instanciarRecursos()
+        initResources()
         loadAds()
-        animaciones()
+        configAnimations()
         clickListeners()
         switchDarkModeListener()
     }
 
-    private fun instanciarRecursos() {
-
-        dateHandler = DateHandler()
-
-        ConfigRoutes.setContext(applicationContext)
+    /**
+     * Function that init resources that are used in this activity
+     *
+     * @return Unit
+     */
+    private fun initResources() {
 
         switchDarkMode = binding.includeSwitch.switchMaterial
 
@@ -90,198 +83,210 @@ class MainActivity : AppCompatActivity() {
         tvVersion = binding.tvVersion
         tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
-        btnEvalua0 = binding.btnEvalua0
-        btnEvalua1 = binding.btnEvalua1
-        btnEvalua2 = binding.btnEvalua2
-        btnEvalua3 = binding.btnEvalua3
-        btnEvalua4 = binding.btnEvalua4
-        btnEvalua5 = binding.btnEvalua5
-        btnEvalua6 = binding.btnEvalua6
-        btnEvalua7 = binding.btnEvalua7
-        btnEvalua8 = binding.btnEvalua8
-        btnEvalua9 = binding.btnEvalua9
-        btnEvalua10 = binding.btnEvalua10
-
-        btnEvalua6.isEnabled = false
-        btnEvalua6.alpha = 0.6f
-
-        btnEvalua8.isEnabled = false
-        btnEvalua8.alpha = 0.6f
-
-        btnEvalua9.isEnabled = false
-        btnEvalua9.alpha = 0.6f
-
-        btnEvalua10.isEnabled = false
-        btnEvalua10.alpha = 0.6f
+        configButtons()
     }
 
-    private fun loadAds() {
-        adsService = AdsService(this, supportFragmentManager, applicationContext, sharedPrefService)
-        adsService.loadIntersitial()
-        adsService.loadRewardVideo()
-    }
+    /**
+     * Binding Buttons & Disable Evalua's buttons that are not implemented yet
+     *
+     * @return Unit
+     */
+    private fun configButtons() {
 
-    private fun animaciones() {
+        buttonList = mutableListOf(
+                MaterialButton(this), //EV0
+                MaterialButton(this), //EV1
+                MaterialButton(this), //EV2
+                MaterialButton(this), //EV3
+                MaterialButton(this), //EV4
+                MaterialButton(this), //EV5
+                MaterialButton(this), //EV6
+                MaterialButton(this), //EV7
+                MaterialButton(this), //EV8
+                MaterialButton(this), //EV9
+                MaterialButton(this) //EV10
+        )
 
-        val fadeNombreApp = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeVersion = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua0 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua1 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua2 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua3 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua4 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua5 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua6 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua7 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua8 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua9 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-        val fadeEvalua10 = AnimationUtils.loadAnimation(this, R.anim.anim_fade)
-
-        val offset = 400
-
-        fadeNombreApp.startOffset = offset.toLong()
-        fadeVersion.startOffset = offset + 150.toLong()
-        fadeEvalua0.startOffset = offset + 300.toLong()
-        fadeEvalua1.startOffset = offset + 450.toLong()
-        fadeEvalua2.startOffset = offset + 600.toLong()
-        fadeEvalua3.startOffset = offset + 750.toLong()
-        fadeEvalua4.startOffset = offset + 900.toLong()
-        fadeEvalua5.startOffset = offset + 1050.toLong()
-        fadeEvalua6.startOffset = offset + 1200.toLong()
-        fadeEvalua7.startOffset = offset + 1350.toLong()
-        fadeEvalua8.startOffset = offset + 1500.toLong()
-        fadeEvalua9.startOffset = offset + 1650.toLong()
-        fadeEvalua10.startOffset = offset + 1800.toLong()
-
-        tvNombreApp.startAnimation(fadeNombreApp)
-        tvVersion.startAnimation(fadeVersion)
-        btnEvalua0.startAnimation(fadeEvalua0)
-        btnEvalua1.startAnimation(fadeEvalua1)
-        btnEvalua2.startAnimation(fadeEvalua2)
-        btnEvalua3.startAnimation(fadeEvalua3)
-        btnEvalua4.startAnimation(fadeEvalua4)
-        btnEvalua5.startAnimation(fadeEvalua5)
-        btnEvalua6.startAnimation(fadeEvalua6)
-        btnEvalua7.startAnimation(fadeEvalua7)
-        btnEvalua8.startAnimation(fadeEvalua8)
-        btnEvalua9.startAnimation(fadeEvalua9)
-        btnEvalua10.startAnimation(fadeEvalua10)
-    }
-
-    private fun clickListeners() {
-        btnEvalua0.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_0))
-            checkearPermisoIntersitial(Evalua0Activity::class.java)
+        //binding buttons
+        for (i in 0 until buttonList.size) {
+            buttonList[i] = when (i) {
+                0 -> binding.btnEvalua0
+                1 -> binding.btnEvalua1
+                2 -> binding.btnEvalua2
+                3 -> binding.btnEvalua3
+                4 -> binding.btnEvalua4
+                5 -> binding.btnEvalua5
+                6 -> binding.btnEvalua6
+                7 -> binding.btnEvalua7
+                8 -> binding.btnEvalua8
+                9 -> binding.btnEvalua9
+                10 -> binding.btnEvalua10
+                else -> binding.btnEvalua0
+            }
         }
-        btnEvalua1.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_1))
-            checkearPermisoIntersitial(Evalua1Activity::class.java)
-        }
-        btnEvalua2.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_2))
-            checkearPermisoIntersitial(Evalua2Activity::class.java)
-        }
-        btnEvalua3.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_3))
-            checkearPermisoIntersitial(Evalua3Activity::class.java)
-        }
-        btnEvalua4.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_4))
-            checkearPermisoIntersitial(Evalua4Activity::class.java)
-        }
-        btnEvalua5.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_5))
-            checkearPermisoIntersitial(Evalua5Activity::class.java)
-        }
-        btnEvalua7.setOnClickListener {
-            Timber.i("%s%s", getString(R.string.BUTTON_MAIN), getString(R.string.BTN_EVALUA_7))
-            checkearPermisoIntersitial(Evalua7Activity::class.java)
-        }
-    }
 
-    private fun checkearPermisoIntersitial(ActivityToOpen: Class<out Activity?>) {
-
-        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
-
-        Timber.i("%s%s", getString(R.string.TAG_BTN_REWARD_DATE), dateHandler.dateToString(applicationContext, rewardDate))
-
-        val nowDate = Date()
-
-        //si las 24 horas ya pasaron, cargar los ads nuevamente
-        if (nowDate.after(rewardDate)) {
-
-            adsService.showIntersitial(ActivityToOpen)
-            Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_PERMITIDOS))
-
-        } else {
-            val intent = Intent(this, ActivityToOpen)
-
-            startActivity(intent)
-
-            Timber.i("%s%s", getString(R.string.TAG_INTERSITIAL_STATUS), getString(R.string.TAG_ADS_NO_PERMITIDOS))
+        //Disable buttons
+        buttonList.apply {
+            this[6].disable() //Evalua 6
+            this[8].disable() //Evalua 8
+            this[9].disable() //Evalua 9
+            this[10].disable() //Evalua 10
         }
     }
 
     /**
-     * Funcion que realiza la configuracion de reward dialog
+     * Function in charge of start Admob Service
+     *
+     * @return Unit
      */
-    fun rewardDialog() {
-
-        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
-        val nowDate = Date()
-
-        //Si la hora del celular es posterior a reward date
-        if (nowDate.after(rewardDate)) {
-
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_EN_PERIODO))
-
-            //Generar % de aparicion de dialogo
-            val showDialog = generateRandomNumber()
-            if (showDialog) {
-
-                //Mostrar dialog
-                RewardDialogFragment(adsService).show(supportFragmentManager, getString(R.string.REWARD_DIALOG))
-
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON))
-
-            } else {
-                Timber.d("%s%s", getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG), getString(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF))
-            }
-        } else if (nowDate.before(rewardDate)) {
-            Timber.d("%s%s", getString(R.string.TAG_REWARD_STATUS), getString(R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO))
+    private fun loadAds() {
+        adsService = AdsService(this, supportFragmentManager, sharedPrefService).apply {
+            loadIntersitial()
+            loadRewardVideo()
         }
     }
 
+    /**
+     * Function that config animations for Main Actvity
+     *
+     * @return Unit
+     */
+    private fun configAnimations() {
+
+        val fadeList = mutableListOf<Animation>()
+        val offset = 400L
+        val step = 150L
+
+        (0..12).forEach { i ->
+            fadeList.add(AnimationUtils.loadAnimation(this, R.anim.anim_fade).also {
+                when (i) {
+                    0 -> it.startOffset = offset
+                    else -> it.startOffset = offset + (step * (i + 1))
+                }
+            })
+        }
+
+        //Start animations
+        tvNombreApp.startAnimation(fadeList[0])
+        tvVersion.startAnimation(fadeList[1])
+        buttonList[0].startAnimation(fadeList[2])
+        buttonList[1].startAnimation(fadeList[3])
+        buttonList[2].startAnimation(fadeList[4])
+        buttonList[3].startAnimation(fadeList[5])
+        buttonList[4].startAnimation(fadeList[6])
+        buttonList[5].startAnimation(fadeList[7])
+        buttonList[6].startAnimation(fadeList[8])
+        buttonList[7].startAnimation(fadeList[9])
+        buttonList[8].startAnimation(fadeList[10])
+        buttonList[9].startAnimation(fadeList[11])
+        buttonList[10].startAnimation(fadeList[12])
+
+    }
+
+    /**
+     * Function that handle listener for buttons in Main Activity
+     *
+     * @return Unit
+     */
+    private fun clickListeners() {
+
+        (0 until buttonList.size).forEach { i ->
+
+            buttonList[i].setOnClickListener {
+                when (i) {
+                    0 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_0)
+                        checkIntersitialLaunch(Evalua0Activity::class.java)
+                    }
+                    1 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_1)
+                        checkIntersitialLaunch(Evalua1Activity::class.java)
+                    }
+                    2 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_2)
+                        checkIntersitialLaunch(Evalua2Activity::class.java)
+                    }
+                    3 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_3)
+                        checkIntersitialLaunch(Evalua3Activity::class.java)
+                    }
+                    4 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_4)
+                        checkIntersitialLaunch(Evalua4Activity::class.java)
+                    }
+                    5 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_5)
+                        checkIntersitialLaunch(Evalua5Activity::class.java)
+                    }
+                    7 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_7)
+                        checkIntersitialLaunch(Evalua7Activity::class.java)
+                    }
+                }
+            }
+        }
+
+    }
+
+    /**
+     * Function that show the interstitial ad based on if reward date has past
+     *
+     * @param activityToOpen The destination activity
+     * @return Unit
+     */
+    private fun checkIntersitialLaunch(activityToOpen: Class<out Activity?>) {
+
+        val nowDate = Date()
+        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
+
+        logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
+
+        //si las 24 horas ya pasaron, cargar los ads nuevamente
+        when {
+            nowDate.after(rewardDate) -> {
+
+                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
+                adsService.showIntersitial(activityToOpen)
+            }
+            else -> {
+                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_PERMITIDOS)
+
+                val intent = Intent(this, activityToOpen)
+                startActivity(intent)
+
+            }
+        }
+    }
+
+    /**
+     * Function that handle the switchDarkMode in the main Activity
+     *
+     * @return Unit
+     */
     private fun switchDarkModeListener() {
 
         val nightMode = sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
-        switchDarkMode.isChecked = nightMode
 
-        switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+        with(switchDarkMode, {
+            this.isChecked = nightMode
+            this.setOnCheckedChangeListener { _, isChecked ->
 
-            if (isChecked) {
-                Toast.makeText(this, "Modo noche activado", Toast.LENGTH_LONG).show()
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                when {
+                    isChecked -> {
+                        //TODO: Extraer strings
+                        toast("Modo noche activado")
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
+                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
+                    }
+                    else -> {
+                        toast("Modo noche desactivado")
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-            } else {
-                Toast.makeText(this, "Modo noche desactivado", Toast.LENGTH_LONG).show()
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-                sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
+                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
+                    }
+                }
             }
-        }
-    }
-
-    /**
-     * Funcion encargada de generar un numero aleatorio para dialogs.
-     *
-     * @return Booleano con el resultado
-     */
-    private fun generateRandomNumber(): Boolean {
-        val random = Random()
-        val item = random.nextInt(10)
-        return item % 3 == 0
+        })
     }
 }

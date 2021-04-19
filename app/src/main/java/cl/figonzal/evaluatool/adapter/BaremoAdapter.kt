@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-02-21 18:26
+ Last modified 18-04-21 1:37
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -16,12 +16,19 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter.BaremoViewHolder
+import cl.figonzal.evaluatool.databinding.BaremoItemListBinding
+import cl.figonzal.evaluatool.utilidades.Utils
 
+/**
+ * Adapter used to show baremo table
+ *
+ * @param perc Baremo table with scores
+ * @param context Used to get Resources
+ * @version 18-04-2021
+ */
 class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Context) : RecyclerView.Adapter<BaremoViewHolder>() {
 
     companion object {
@@ -35,36 +42,13 @@ class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Co
     }
 
     override fun onBindViewHolder(holder: BaremoViewHolder, position: Int) {
-
-        when (holder.itemViewType) {
-            TABLE_HEADER -> {
-
-                holder.tvPD.text = context.getString(R.string.PUNTAJE_DIRECTO)
-                holder.tvPcChileno.text = context.getString(R.string.PERCENTIL_CHILENO)
-
-                holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyHeader, context.theme))
-            }
-            else -> {
-
-                val item = perc[position - 1]
-
-                when {
-                    (position - 1) % 2 != 0 -> holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
-                    else -> holder.baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
-                }
-
-                holder.tvPD.text = item[0].toString()
-                holder.tvPcChileno.text = item[1].toString()
-            }
-        }
+        holder.bind(holder.itemViewType, context, perc)
     }
 
     override fun getItemViewType(position: Int): Int {
         return when (position) {
             0 -> TABLE_HEADER
-            else -> {
-                TABLE_ROW
-            }
+            else -> TABLE_ROW
         }
     }
 
@@ -75,9 +59,33 @@ class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Co
 
     class BaremoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        internal val baremoItem: ConstraintLayout = itemView.findViewById(R.id.baremo_item)
-        internal val tvPD: TextView = itemView.findViewById(R.id.tv_pd)
-        internal val tvPcChileno: TextView = itemView.findViewById(R.id.tv_pc_chileno)
+        private val binding = BaremoItemListBinding.bind(itemView)
+
+        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Int>>) {
+
+            with(binding, {
+                when (itemViewType) {
+                    TABLE_HEADER -> {
+
+                        tvPd.text = Utils.get(R.string.PUNTAJE_DIRECTO)
+                        tvPcChileno.text = Utils.get(R.string.PERCENTIL_CHILENO)
+
+                        baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyHeader, context.theme))
+                    }
+                    else -> {
+                        val item = perc[adapterPosition - 1]
+                        when {
+                            (adapterPosition - 1) % 2 != 0 -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
+                            else -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
+                        }
+                        tvPd.text = item[0].toString()
+                        tvPcChileno.text = item[1].toString()
+                    }
+                }
+            })
+
+        }
+
 
     }
 }

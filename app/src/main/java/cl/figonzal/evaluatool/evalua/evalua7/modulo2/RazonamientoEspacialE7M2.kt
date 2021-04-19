@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-03-21 19:06
+ Last modified 17-04-21 22:25
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -24,7 +24,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoEspacialE7M2Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.EvaluaUtils
+import cl.figonzal.evaluatool.utilidades.Utils
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
@@ -144,7 +144,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
         }
 
         val tvBaremo = binding.tablaBaremo.tvBaremo
-        EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_RAZON_ESPACIAL))
+        Utils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_RAZON_ESPACIAL))
 
     }
 
@@ -275,11 +275,11 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
         }
 
         //CALCULO NIVEL
-        val nivel = EvaluaUtils.calcularNivel(percentil)
+        val nivel = Utils.calcularNivel(percentil)
         tvNivel.text = nivel
 
         //CALCULO DESVIACION
-        val desviacion = EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
+        val desviacion = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 

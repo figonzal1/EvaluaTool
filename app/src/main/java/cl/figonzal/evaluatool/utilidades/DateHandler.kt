@@ -6,45 +6,41 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 19:08
+ Last modified 17-04-21 23:17
  */
 
 package cl.figonzal.evaluatool.utilidades
 
-import android.content.Context
 import cl.figonzal.evaluatool.R
 import java.text.SimpleDateFormat
 import java.util.*
 
-//TODO: Cambiar a objeto
-class DateHandler {
+object DateHandler {
 
     /**
-     * Funcion que convierte una fecha date en un string
+     * Function that convert date to string
      *
-     * @param context Contexto utilizado para el uso de strings
-     * @param dFecha  Fecha que será convertida
-     * @return String de la fecha
+     * @param dFecha Date that will be converted
+     * @return String's date
      */
-    fun dateToString(context: Context, dFecha: Date): String {
-        val mFormat = SimpleDateFormat(context.getString(R.string.DATETIME_FORMAT), Locale.US)
-        return mFormat.format(dFecha)
+    fun dateToString(dFecha: Date): String {
+        return SimpleDateFormat(Utils.get(R.string.DATETIME_FORMAT), Locale.US).format(dFecha)
     }
 
-
     /**
-     * Funcion encargada de sumar horas a un date
+     * Funcion that adds time to date
      *
-     * @param date  Date al que se le sumaran horas
-     * @param hours Horas que seran sumadas
-     * @return Date con las horas ya sumadas
+     * @param date Date to which hours will be added
+     * @param hours Hours added
+     * @return Date with added hours
      */
-    fun addHoursToJavaUtilDate(date: Date, hours: Int): Date {
-        val calendar = Calendar.getInstance()
-        calendar.time = date
-        calendar.add(Calendar.HOUR_OF_DAY, hours)
-        return calendar.time
+    fun addHoursToDate(date: Date, hours: Int): Date {
+        with(Calendar.getInstance(), {
+            this.time = date
+            this.add(Calendar.HOUR_OF_DAY, hours)
+            return time
+        })
     }
 }

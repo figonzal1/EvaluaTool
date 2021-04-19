@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-02-21 2:52
+ Last modified 17-04-21 22:25
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentMotivacionE2M3Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.EvaluaUtils
+import cl.figonzal.evaluatool.utilidades.Utils
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import java.util.*
@@ -116,7 +116,7 @@ class MotivacionFragmentE2M3 : Fragment(), EvaluaInterface {
         }
 
         val tvBaremo = binding.tablaBaremo.tvBaremo
-        EvaluaUtils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_MOTIVACION))
+        Utils.configurarTextoBaremo(requireFragmentManager(), tvBaremo, perc, getString(R.string.TOOLBAR_MOTIVACION))
 
     }
 
@@ -173,10 +173,10 @@ class MotivacionFragmentE2M3 : Fragment(), EvaluaInterface {
             progressBar.progress = percentil
         }
 
-        val nivel = EvaluaUtils.calcularNivel(percentil)
+        val nivel = Utils.calcularNivel(percentil)
         tvNivel.text = nivel
 
-        val desviacion = EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
+        val desviacion = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 

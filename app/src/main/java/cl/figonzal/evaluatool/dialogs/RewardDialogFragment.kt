@@ -8,46 +8,48 @@
 
  Copyright (c) 2021
 
- Last modified 17-03-21 19:46
+ Last modified 18-04-21 22:17
  */
 package cl.figonzal.evaluatool.dialogs
 
 import android.app.Dialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.servicios.AdsService
+import cl.figonzal.evaluatool.utilidades.logInfo
 import timber.log.Timber
 
 /**
- * Dialog fragment con layout por defecto
+ * Class that handle RewardDialogFragment for eliminate ads
+ *
+ * @param adsService Services that provide ads
  */
 class RewardDialogFragment(private val adsService: AdsService) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-        val builder = AlertDialog.Builder(requireActivity())
+        //TODO: Extraer strings
+        with(AlertDialog.Builder(requireActivity()), {
+            setTitle("¡Apoya a la aplicación!")
+            setMessage("Ve el video, apoya gratis monetariamente y recibe 1 hora libre de publicidad")
 
-        builder.setTitle("¡Apoya a la aplicación!")
-        builder.setMessage("Ve el video, apoya gratis monetariamente y recibe 1 hora libre de publicidad")
-
-        builder.setPositiveButton("Ver video") { _: DialogInterface, _: Int ->
-
-            if (adsService.getIntersitial() != null) {
+            setPositiveButton("Ver video") { _, _ ->
+                if (adsService.getIntersitial() != null) {
+                    dismiss()
+                    adsService.showRewardVideo()
+                    activity?.logInfo(R.string.TAG_REWARD_DIALOG_BTN_VER_VIDEO)
+                }
                 dismiss()
-                adsService.showRewardVideo()
-                Timber.i(getString(R.string.TAG_REWARD_DIALOG_BTN_VER_VIDEO))
             }
-            dismiss()
-        }
 
-        builder.setNegativeButton("Cancelar") { _: DialogInterface, _: Int ->
+            setNegativeButton("Cancelar") { _, _ ->
 
-            Timber.i(getString(R.string.TAG_REWARD_DIALOG_BTN_CANCEL))
-            dismiss()
-        }
-        return builder.create()
+                Timber.i(getString(R.string.TAG_REWARD_DIALOG_BTN_CANCEL))
+                dismiss()
+            }
+            return create()
+        })
     }
 }

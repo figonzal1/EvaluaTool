@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-02-21 0:33
+ Last modified 18-04-21 22:17
  */
 
 package cl.figonzal.evaluatool.servicios
@@ -17,26 +17,29 @@ import android.content.Context
 import android.content.SharedPreferences
 import cl.figonzal.evaluatool.R
 
+/**
+ * Clase in charge of handling the sharedPref data service more easily
+ *
+ * @param context Context that is used in Strings Resources
+ */
 class SharedPrefService(context: Context) {
 
     private val sharedPreferences: SharedPreferences = context.getSharedPreferences(context.getString(R.string.MAIN_SHARED_PREF), Context.MODE_PRIVATE)
 
+    /**
+     * Function date save data in shared preferences
+     *
+     * @param key Key that store the data in shared preferences
+     * @param value The value which will be store in shared preferences
+     */
     fun saveData(key: String, value: Any) {
 
         with(sharedPreferences.edit()) {
             when (value) {
-                is Int -> {
-                    putInt(key, value)
-                }
-                is Boolean -> {
-                    putBoolean(key, value)
-                }
-                is Long -> {
-                    putLong(key, value)
-                }
-                is Float -> {
-                    putFloat(key, value)
-                }
+                is Int -> putInt(key, value)
+                is Boolean -> putBoolean(key, value)
+                is Long -> putLong(key, value)
+                is Float -> putFloat(key, value)
                 else -> putString(key, value as String)
             }
 
@@ -44,25 +47,26 @@ class SharedPrefService(context: Context) {
         }
     }
 
+    /**
+     * Function that retrieve data from shared preferences
+     *
+     * @param key Key that store the data in shared preferences
+     * @param defaultvalue If the store value is inaccessible
+     * @return Any
+     */
     fun getData(key: String, defaultvalue: Any): Any {
         val result: Any
 
-        when (defaultvalue) {
-            is Int -> {
-                result = sharedPreferences.getInt(key, defaultvalue)
-            }
-            is Boolean -> {
-                result = sharedPreferences.getBoolean(key, defaultvalue)
-            }
-            is Float -> {
-                result = sharedPreferences.getFloat(key, defaultvalue)
-            }
-            is Long -> {
-                result = sharedPreferences.getLong(key, defaultvalue)
-            }
-            else -> result = sharedPreferences.getString(key, defaultvalue as String)!!
+        with(sharedPreferences, {
+            result = when (defaultvalue) {
+                is Int -> getInt(key, defaultvalue)
+                is Boolean -> getBoolean(key, defaultvalue)
+                is Float -> getFloat(key, defaultvalue)
+                is Long -> getLong(key, defaultvalue)
+                else -> getString(key, defaultvalue as String)!!
 
-        }
-        return result
+            }
+            return result
+        })
     }
 }

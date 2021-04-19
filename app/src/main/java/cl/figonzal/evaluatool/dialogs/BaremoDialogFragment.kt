@@ -1,55 +1,62 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 08-11-20 21:41
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 18-04-21 22:17
  */
 package cl.figonzal.evaluatool.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
-import android.widget.TextView
+import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter
-import com.google.android.material.button.MaterialButton
+import cl.figonzal.evaluatool.databinding.BaremoDialogLayoutBinding
+import cl.figonzal.evaluatool.utilidades.Utils
 import timber.log.Timber
 
+/**
+ * Class that handle DialogFragment for Baremo Score Table
+ *
+ * @param perc Table of scores (Baremo table)
+ * @param itemName Title of item section
+ *
+ * @version 18-04-2021
+ */
 class BaremoDialogFragment(private val perc: Array<Array<Int>>, private val itemName: String) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val builder = AlertDialog.Builder(requireActivity())
-        val inflater = requireActivity().layoutInflater
-        val v = inflater.inflate(R.layout.baremo_dialog_layout, null)
 
-        val rv: RecyclerView = v.findViewById(R.id.rv_baremo)
-        rv.setHasFixedSize(true)
+        with(BaremoDialogLayoutBinding.inflate(LayoutInflater.from(context)), {
+            //Recycler view
+            rvBaremo.apply {
+                setHasFixedSize(true)
+                layoutManager = LinearLayoutManager(context)
+                adapter = BaremoAdapter(perc, requireContext())
+            }
 
-        val baremoAdapter = BaremoAdapter(perc, requireContext())
-        rv.layoutManager = LinearLayoutManager(context)
-        rv.adapter = baremoAdapter
+            //tvBaremoDescription
+            tvBaremoDescripcion.text = String.format("%s %s", Utils.get(R.string.dialogo_baremo_descripcion), itemName)
 
-        val tvDescription = v.findViewById<TextView>(R.id.tv_baremo_descripcion)
-        tvDescription.text = String.format("%s %s", getString(R.string.dialogo_baremo_descripcion), itemName)
+            //BtnCloseDialog
+            btnCerrar.setOnClickListener {
+                Timber.i(getString(R.string.DIALOGO_BAREMO_CERRADO))
+                dismiss()
+            }
 
-        val btnClose: MaterialButton = v.findViewById(R.id.btn_cerrar)
-        btnClose.setOnClickListener {
-
-            Timber.i(getString(R.string.DIALOGO_BAREMO_CERRADO))
-            dismiss()
-        }
-
-        builder.setView(v)
+            builder.setView(root)
+        })
         return builder.create()
     }
 

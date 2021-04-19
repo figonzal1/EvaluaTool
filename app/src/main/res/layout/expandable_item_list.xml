@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 17-12-20 12:51
+  Last modified 18-02-21 17:08
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,17 +20,18 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/tv_group"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_child"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
         android:layout_marginTop="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
         android:fontFamily="@font/roboto"
-        app:layout_constraintEnd_toStartOf="@+id/iv_arrow"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Nombre grupo" />
+        tools:text="Nombre child" />
+
 
     <View
         android:layout_width="0dp"
@@ -39,17 +40,14 @@
         android:background="?attr/dividerHorizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_group" />
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/tv_child" />
 
-    <ImageView
-        android:id="@+id/iv_arrow"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin_16"
-        android:contentDescription="Icono dropdown menu"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_group"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tv_group"
-        app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
