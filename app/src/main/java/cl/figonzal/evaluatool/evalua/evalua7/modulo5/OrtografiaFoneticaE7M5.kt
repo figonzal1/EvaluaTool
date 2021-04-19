@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-03-21 19:06
+ Last modified 17-04-21 22:25
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
@@ -24,7 +24,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaFoneticaE7M5Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.EvaluaUtils
+import cl.figonzal.evaluatool.utilidades.Utils
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
 import kotlin.math.floor
@@ -122,7 +122,7 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity(), EvaluaInterface {
         }
 
         val tvBaremo = binding.tablaBaremo.tvBaremo
-        EvaluaUtils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_ORTOGRAFIA_FONETICA))
+        Utils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_ORTOGRAFIA_FONETICA))
 
     }
 
@@ -179,10 +179,10 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity(), EvaluaInterface {
             progressBar.progress = percentil
         }
 
-        val nivel = EvaluaUtils.calcularNivel(percentil)
+        val nivel = Utils.calcularNivel(percentil)
         tvNivel.text = nivel
 
-        val desviacion = EvaluaUtils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
+        val desviacion = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
         tvDesviacionCalculada.text = desviacion.toString()
     }
 

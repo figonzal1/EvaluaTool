@@ -8,38 +8,39 @@
 
  Copyright (c) 2021
 
- Last modified 17-03-21 19:46
+ Last modified 18-04-21 22:17
  */
 package cl.figonzal.evaluatool.dialogs
 
 import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import cl.figonzal.evaluatool.R
-import com.google.android.material.button.MaterialButton
-import timber.log.Timber
+import cl.figonzal.evaluatool.databinding.PdCorregidoDialogLayoutBinding
+import cl.figonzal.evaluatool.utilidades.logInfo
 
 /**
- * Dialogo frament con custom layout
+ * Class that handle CorrectedDialogFragment for directPoints (PD) of a any student.
+ * This is only a simple dialog fragment (Informative fragment with static information)
+ *
+ * @version 18-04-2021
  */
 class CorregidoDialogFragment : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val builder = AlertDialog.Builder(activity)
-        val inflater = requireActivity().layoutInflater
 
-        val view = inflater.inflate(R.layout.pd_corregido_dialog_layout, null)
+        with(PdCorregidoDialogLayoutBinding.inflate(LayoutInflater.from(context)), {
+            btnEntendidoPd.setOnClickListener {
+                activity?.logInfo(R.string.DIALOGO_AYUDA_MSG_CERRADO)
+                dismiss()
+            }
 
-        builder.setView(view)
-
-        val materialButton: MaterialButton = view.findViewById(R.id.btn_entendido_pd)
-        materialButton.setOnClickListener {
-
-            Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_CERRADO))
-            dismiss()
-        }
+            builder.setView(root)
+        })
         return builder.create()
     }
 }

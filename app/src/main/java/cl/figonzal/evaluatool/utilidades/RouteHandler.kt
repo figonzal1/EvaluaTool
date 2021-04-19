@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 26-11-20 23:57
+ Last modified 17-04-21 22:57
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -19,50 +19,59 @@ import cl.figonzal.evaluatool.R
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 
-class RouteHandler {
+object RouteHandler {
 
     /**
-     * Funcion encargada de manejar las actividades del listado de subItems de cada Evalua
+     * Function in charge to handle the routes way in ConfigRoutes
      *
-     * @param routeMapEvalua               Route map con la configuracion
-     * @param sectionTitle                 Titulo seccion
-     * @param sectionedRecyclerViewAdapter RecyclerView seccionado
-     * @param itemAdapterPosition          PosisionAdapter
-     * @param currentActivity              Actividad que llama
+     * @param routeMapEvalua HashMap with all config routes
+     * @param sectionTitle Header tittle
+     * @param sectionedRecyclerViewAdapter RecyclerView Adapter
+     * @param itemAdapterPosition PosisionAdapter
+     * @param currentActivity The Caller Activity
      */
-    fun handleRoutes(routeMapEvalua: Map<String, List<Array<Any>>>, sectionTitle: String, sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter, itemAdapterPosition: Int, currentActivity: Activity) {
+    fun handleRoutes(
+            routeMapEvalua: HashMap<String, List<Any>>,
+            sectionTitle: String,
+            sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter,
+            itemAdapterPosition: Int,
+            currentActivity: Activity,
+    ) {
 
-        for ((moduleName, subItems) in routeMapEvalua) {
+        routeMapEvalua.forEach { item ->
 
-            if (moduleName == sectionTitle) {
+            //Item name
+            if (item.key == sectionTitle) {
 
-                for (i in subItems.indices) {
+                (0..item.value.size)
+                        .asSequence()
+                        .filter { it == sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) }
+                        .map { item.value[it] as List<*> }
+                        .forEach {
+                            with(it, {
+                                val destinationActivity = this[1]
+                                val responseLog = this[2]
+                                val titleLog = Utils.get(R.string.SUB_ITEM_CLICK)
 
-                    if (i == sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition)) {
-
-                        val activity = subItems[i][1] as Class<*>
-                        val responseLog = subItems[i][2] as String
-                        val titleLog = currentActivity.getString(R.string.SUB_ITEM_CLICK)
-
-                        abrirActividad(currentActivity, activity, titleLog, responseLog)
-                    }
-                }
-                break
+                                abrirActividad(currentActivity, destinationActivity as Class<*>, titleLog, responseLog as String)
+                            })
+                        }
             }
         }
     }
 
     /**
-     * Funcion encargada de abrir las actividades
+     * Function that open the activities
      *
-     * @param activity       Actividad Padre
-     * @param calledActivity Actividad hijo
-     * @param log_title      Titulo del log
-     * @param log_reponse    Respuesta del log
+     * @param activity Parent Activity
+     * @param destActivity ChildActivity (Destination activity)
+     * @param TAG tag for logs
+     * @param msg  Msg for logs
+     *
+     * @return Unit
      */
-    private fun abrirActividad(activity: Activity, calledActivity: Class<*>, log_title: String, log_reponse: String) {
-        Timber.i("%s%s", log_title, log_reponse)
-        val intent = Intent(activity, calledActivity)
-        activity.startActivity(intent)
+    private fun abrirActividad(activity: Activity, destActivity: Class<*>?, TAG: String, msg: String) {
+        Timber.i("%s%s", TAG, msg)
+        activity.startActivity(Intent(activity, destActivity))
     }
 }

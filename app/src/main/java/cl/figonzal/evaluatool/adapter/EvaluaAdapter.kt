@@ -8,57 +8,49 @@
 
  Copyright (c) 2021
 
- Last modified 26-02-21 18:01
+ Last modified 18-04-21 18:20
  */
 package cl.figonzal.evaluatool.adapter
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ExpandableItemGroupListBinding
+import cl.figonzal.evaluatool.databinding.ExpandableItemListBinding
 import cl.figonzal.evaluatool.modelo.Evalua
 import io.github.luizgrp.sectionedrecyclerviewadapter.Section
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters
 
-class EvaluaAdapter(private val nombre_header: String, private val subItems: List<Evalua>, private val clickListener: ClickListener) : Section(
+/**
+ * Adapter that is used
+ */
+class EvaluaAdapter(private val headerName: String, private val subItemsList: List<Evalua>, private val clickListener: ClickListener) : Section(
         SectionParameters.builder()
-                .itemResourceId(R.layout.expandable_list_item)
-                .headerResourceId(R.layout.expandable_list_group)
+                .itemResourceId(R.layout.expandable_item_list)
+                .headerResourceId(R.layout.expandable_item_group_list)
                 .build()
 ) {
     var isExpanded = false
 
-    override fun getContentItemsTotal(): Int {
-        return if (isExpanded) subItems.size else 0
-    }
+    override fun getContentItemsTotal(): Int = if (isExpanded) subItemsList.size else 0
 
-    override fun getItemViewHolder(view: View): RecyclerView.ViewHolder {
-        return ItemViewHolder(view)
-    }
+    override fun getItemViewHolder(view: View): RecyclerView.ViewHolder = ItemViewHolder(view)
+    override fun getHeaderViewHolder(view: View): RecyclerView.ViewHolder = HeaderViewHolder(view)
 
     override fun onBindItemViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
+        //Casting
         val itemViewHolder = holder as ItemViewHolder
 
-        itemViewHolder.tvItemTitle.text = subItems[position].nombre
-        itemViewHolder.itemView.setOnClickListener { clickListener.onItemRootViewClicked(nombre_header, itemViewHolder.adapterPosition) }
+        itemViewHolder.bind(subItemsList[position], this)
     }
 
     override fun onBindHeaderViewHolder(holder: RecyclerView.ViewHolder) {
 
+        //Casting
         val headerViewHolder = holder as HeaderViewHolder
 
-        headerViewHolder.tvHeaderTitle.text = nombre_header
-        headerViewHolder.ivArrow.setImageResource(
-                if (isExpanded) R.drawable.ic_keyboard_arrow_up_black_24dp else R.drawable.ic_keyboard_arrow_down_black_24dp
-        )
-
-        headerViewHolder.rootView.setOnClickListener { clickListener.onHeaderRootViewClicked(this) }
-    }
-
-    override fun getHeaderViewHolder(view: View): RecyclerView.ViewHolder {
-        return HeaderViewHolder(view)
+        headerViewHolder.bind(this)
     }
 
     interface ClickListener {
@@ -68,11 +60,35 @@ class EvaluaAdapter(private val nombre_header: String, private val subItems: Lis
 
     /**
      * Clase holder para headers de lista expandida
+     * ViewHolder for headers of Evalua's list
+     *
+     * @param rootView Parent view
      */
-    internal class HeaderViewHolder(val rootView: View) : RecyclerView.ViewHolder(rootView) {
-        val tvHeaderTitle: TextView = rootView.findViewById(R.id.tv_group)
-        val ivArrow: ImageView = rootView.findViewById(R.id.iv_arrow)
+    internal class HeaderViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
 
+        val binding = ExpandableItemGroupListBinding.bind(rootView)
+
+        /**
+         * Binding resources of Header view
+         *
+         * @param evaluaAdapter PassAdapter to provide all the required information
+         */
+        fun bind(evaluaAdapter: EvaluaAdapter) {
+
+            with(binding, {
+
+                tvGroup.text = evaluaAdapter.headerName
+                ivArrow.setImageResource(
+                        when {
+                            evaluaAdapter.isExpanded -> R.drawable.ic_keyboard_arrow_up_black_24dp
+                            else -> R.drawable.ic_keyboard_arrow_down_black_24dp
+                        }
+                )
+                root.setOnClickListener {
+                    evaluaAdapter.clickListener.onHeaderRootViewClicked(evaluaAdapter)
+                }
+            })
+        }
     }
 
     /**
@@ -80,6 +96,20 @@ class EvaluaAdapter(private val nombre_header: String, private val subItems: Lis
      */
     internal class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val tvItemTitle: TextView = itemView.findViewById(R.id.tv_child)
+        val binding = ExpandableItemListBinding.bind(itemView)
+
+        /**
+         * Binding resources for items list
+         *
+         * @param subItem SubItem binded
+         * @param evaluaAdapter PassAdapter to provide all the required information
+         */
+        fun bind(subItem: Evalua, evaluaAdapter: EvaluaAdapter) {
+
+            with(binding, {
+                tvChild.text = subItem.nombre
+                itemView.setOnClickListener { evaluaAdapter.clickListener.onItemRootViewClicked(evaluaAdapter.headerName, adapterPosition) }
+            })
+        }
     }
 }

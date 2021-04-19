@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-02-21 19:47
+ Last modified 18-04-21 22:17
  */
 package cl.figonzal.evaluatool.evalua.evalua0
 
@@ -23,75 +23,78 @@ import cl.figonzal.evaluatool.databinding.ActivityEvalua0Binding
 import cl.figonzal.evaluatool.modelo.Evalua
 import cl.figonzal.evaluatool.utilidades.ConfigRoutes
 import cl.figonzal.evaluatool.utilidades.RouteHandler
+import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.logInfo
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
-import timber.log.Timber
 import java.util.*
 
 class Evalua0Activity : AppCompatActivity(), ClickListener {
 
     private lateinit var binding: ActivityEvalua0Binding
-    private lateinit var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter
+    private var sectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEvalua0Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.include.toolbar)
 
-        val actionBar = supportActionBar!!
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_EVALUA_0)
-
+        configActionBar(R.string.TOOLBAR_EVALUA_0, binding.include.toolbar)
         configurarExpandedList()
     }
 
     private fun configurarExpandedList() {
-
-        sectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
-
         //SUBTIMES - SUBMODULO 1
-        val subItems1: MutableList<Evalua> = ArrayList()
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_1)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_2)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_3)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_4)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_5)))
-        subItems1.add(Evalua(getString(R.string.EVALUA_0_M1_SI_6)))
+        val subItems1 = listOf(
+                Evalua(getString(R.string.EVALUA_0_M1_SI_1)),
+                Evalua(getString(R.string.EVALUA_0_M1_SI_2)),
+                Evalua(getString(R.string.EVALUA_0_M1_SI_3)),
+                Evalua(getString(R.string.EVALUA_0_M1_SI_4)),
+                Evalua(getString(R.string.EVALUA_0_M1_SI_5)),
+                Evalua(getString(R.string.EVALUA_0_M1_SI_6))
+        )
 
         //SUBMODULO 2
-        val subItems2: MutableList<Evalua> = ArrayList()
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_1)))
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_2)))
-        subItems2.add(Evalua(getString(R.string.EVALUA_0_M2_SI_3)))
+        val subItems2 = listOf(
+                Evalua(getString(R.string.EVALUA_0_M2_SI_1)),
+                Evalua(getString(R.string.EVALUA_0_M2_SI_2)),
+                Evalua(getString(R.string.EVALUA_0_M2_SI_3))
+        )
 
         //SUBSMODULO 3
-        val subItems3: MutableList<Evalua> = ArrayList()
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_1)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_2)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_3)))
-        subItems3.add(Evalua(getString(R.string.EVALUA_0_M3_SI_4)))
+        val subItems3 = listOf(
+                Evalua(getString(R.string.EVALUA_0_M3_SI_1)),
+                Evalua(getString(R.string.EVALUA_0_M3_SI_2)),
+                Evalua(getString(R.string.EVALUA_0_M3_SI_3)),
+                Evalua(getString(R.string.EVALUA_0_M3_SI_4)),
+        )
 
         //HEADERS
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_1), subItems1, this))
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_2), subItems2, this))
-        sectionedRecyclerViewAdapter.addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_3), subItems3, this))
+        sectionedRecyclerViewAdapter.apply {
+            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_1), subItems1, this@Evalua0Activity))
+            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_2), subItems2, this@Evalua0Activity))
+            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_3), subItems3, this@Evalua0Activity))
+        }
 
-        val recyclerView = binding.rv0
-        recyclerView.layoutManager = LinearLayoutManager(applicationContext)
-        recyclerView.adapter = sectionedRecyclerViewAdapter
+
+        //Recycler View
+        binding.rv0.apply {
+            layoutManager = LinearLayoutManager(applicationContext)
+            adapter = sectionedRecyclerViewAdapter
+        }
     }
 
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
 
-        RouteHandler().handleRoutes(
-                ConfigRoutes.getRouteMapEvalua0(),
-                sectionTitle,
-                sectionedRecyclerViewAdapter,
-                itemAdapterPosition,
-                this
-        )
+        ConfigRoutes.routeMap[getString(R.string.routeMapEvalua0)]?.let {
+            RouteHandler.handleRoutes(
+                    it,
+                    sectionTitle,
+                    sectionedRecyclerViewAdapter,
+                    itemAdapterPosition,
+                    this
+            )
+        }
     }
 
     override fun onHeaderRootViewClicked(section: EvaluaAdapter) {
@@ -104,19 +107,15 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
         sectionAdapter.notifyHeaderChanged()
 
         when {
-            wasExpanded -> {
-                sectionAdapter.notifyItemRangeRemoved(0, previousItemsTotal)
-            }
-            else -> {
-                sectionAdapter.notifyAllItemsInserted()
-            }
+            wasExpanded -> sectionAdapter.notifyItemRangeRemoved(0, previousItemsTotal)
+            else -> sectionAdapter.notifyAllItemsInserted()
         }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            Timber.i(getString(R.string.ACTIVIDAD_CERRADA))
+            logInfo(R.string.ACTIVIDAD_CERRADA)
             finish()
             return true
         }

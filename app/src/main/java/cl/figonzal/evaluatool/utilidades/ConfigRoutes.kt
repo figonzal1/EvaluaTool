@@ -6,13 +6,12 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2020
+ Copyright (c) 2021
 
- Last modified 27-11-20 19:42
+ Last modified 18-04-21 21:35
  */
 package cl.figonzal.evaluatool.utilidades
 
-import android.content.Context
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.evalua.evalua0.modulo1.*
 import cl.figonzal.evaluatool.evalua.evalua0.modulo2.CopiaDibujosE0M2
@@ -95,28 +94,35 @@ import cl.figonzal.evaluatool.evalua.evalua7.modulo5.OrtografiaFoneticaE7M5
 import cl.figonzal.evaluatool.evalua.evalua7.modulo5.OrtografiaVisualRegladaE7M5
 import cl.figonzal.evaluatool.evalua.evalua7.modulo6.CalculoNumeracionE7M6
 import cl.figonzal.evaluatool.evalua.evalua7.modulo6.ResolucionProblemasE7M6
-import java.util.*
-import kotlin.collections.HashMap
 
+/**
+ * This object class is used to configure all routes to open Evalua's subItems
+ *
+ * @version 17-04-2021
+ */
 object ConfigRoutes {
 
-    private lateinit var context: Context
-    private lateinit var routeMapEvalua0: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua1: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua2: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua3: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua4: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua5: MutableMap<String, List<Array<Any>>>
-    private lateinit var routeMapEvalua7: MutableMap<String, List<Array<Any>>>
+    private var routeMapEvalua0 = HashMap<String, List<Any>>()
+    private var routeMapEvalua1 = HashMap<String, List<Any>>()
+    private var routeMapEvalua2 = HashMap<String, List<Any>>()
+    private var routeMapEvalua3 = HashMap<String, List<Any>>()
+    private var routeMapEvalua4 = HashMap<String, List<Any>>()
+    private var routeMapEvalua5 = HashMap<String, List<Any>>()
+    private var routeMapEvalua7 = HashMap<String, List<Any>>()
 
+    //List of activity routes
+    val routeMap = mapOf(
+            Utils.get(R.string.routeMapEvalua0) to routeMapEvalua0,
+            Utils.get(R.string.routeMapEvalua1) to routeMapEvalua1,
+            Utils.get(R.string.routeMapEvalua2) to routeMapEvalua2,
+            Utils.get(R.string.routeMapEvalua3) to routeMapEvalua3,
+            Utils.get(R.string.routeMapEvalua4) to routeMapEvalua4,
+            Utils.get(R.string.routeMapEvalua5) to routeMapEvalua5,
+            Utils.get(R.string.routeMapEvalua7) to routeMapEvalua7
+    )
 
-    fun setContext(context: Context) {
-        this.context = context
-
-        initRoutes()
-    }
-
-    private fun initRoutes() {
+    //Initialization of routes
+    init {
         setRouteMapEvalua0()
         setRouteMapEvalua1()
         setRouteMapEvalua2()
@@ -126,283 +132,337 @@ object ConfigRoutes {
         setRouteMapEvalua7()
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 0
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua0() {
 
-        routeMapEvalua0 = HashMap()
+        val subItems1 = listOf(
+                //Nombre SubItem, Clase, Logger
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_1), ClasificacionE0M1::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_2), SeriesE0M1::class.java, Utils.get(R.string.CLICK_SERIES)),
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_3), OrganizacionPerceptivaE0M1::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_4), LetrasYNumerosE0M1::class.java, Utils.get(R.string.CLICK_LETRAS_NUMEROS)),
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_5), MemoriaVerbalE0M1::class.java, Utils.get(R.string.CLICK_MEMORIA_VERBAL)),
+                listOf(Utils.get(R.string.EVALUA_0_M1_SI_6), IndiceGeneralCognitivoE0M1::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)),
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_0_M2_SI_1), CopiaDibujosE0M2::class.java, Utils.get(R.string.CLICK_COPIA_DIBUJOS)),
+                listOf(Utils.get(R.string.EVALUA_0_M2_SI_2), GrafoMotricidadE0M2::class.java, Utils.get(R.string.CLICK_GRAFO_MOTRICIDAD)),
+                listOf(Utils.get(R.string.EVALUA_0_M2_SI_3), IndiceGeneralEspacialE0M2::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_ESPACIAL))
+        )
 
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_1), ClasificacionE0M1::class.java, context.getString(R.string.CLICK_CLASIFICACION)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_2), SeriesE0M1::class.java, context.getString(R.string.CLICK_SERIES)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_3), OrganizacionPerceptivaE0M1::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_4), LetrasYNumerosE0M1::class.java, context.getString(R.string.CLICK_LETRAS_NUMEROS)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_5), MemoriaVerbalE0M1::class.java, context.getString(R.string.CLICK_MEMORIA_VERBAL)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_0_M1_SI_6), IndiceGeneralCognitivoE0M1::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)))
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_0_M2_SI_1), CopiaDibujosE0M2::class.java, context.getString(R.string.CLICK_COPIA_DIBUJOS)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_0_M2_SI_2), GrafoMotricidadE0M2::class.java, context.getString(R.string.CLICK_GRAFO_MOTRICIDAD)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_0_M2_SI_3), IndiceGeneralEspacialE0M2::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_ESPACIAL)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_0_M3_SI_1), PalabrasYFrasesE0M3::class.java, Utils.get(R.string.CLICK_PALABRAS_FRASES)),
+                listOf(Utils.get(R.string.EVALUA_0_M3_SI_2), RecepcionAuditivaArticulacionE0M3::class.java, Utils.get(R.string.CLICK_RECEPCION_AUDITIVA)),
+                listOf(Utils.get(R.string.EVALUA_0_M3_SI_3), HabilidadesFonologicasE0M3::class.java, Utils.get(R.string.CLICK_HABILIDADES_FONOLOGICAS)),
+                listOf(Utils.get(R.string.EVALUA_0_M3_SI_4), IndiceGeneralLinguisticoE0M3::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_LINGUISTICO))
+        )
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_0_M3_SI_1), PalabrasYFrasesE0M3::class.java, context.getString(R.string.CLICK_PALABRAS_FRASES)))
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_0_M3_SI_2), RecepcionAuditivaArticulacionE0M3::class.java, context.getString(R.string.CLICK_RECEPCION_AUDITIVA)))
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_0_M3_SI_3), HabilidadesFonologicasE0M3::class.java, context.getString(R.string.CLICK_HABILIDADES_FONOLOGICAS)))
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_0_M3_SI_4), IndiceGeneralLinguisticoE0M3::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_LINGUISTICO)))
 
-        routeMapEvalua0[context.getString(R.string.EVALUA_0_MODULO_1)] = subItems1
-        routeMapEvalua0[context.getString(R.string.EVALUA_0_MODULO_2)] = subItems2
-        routeMapEvalua0[context.getString(R.string.EVALUA_0_MODULO_3)] = subItems3
+        routeMapEvalua0.apply {
+            put(Utils.get(R.string.EVALUA_0_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_0_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_0_MODULO_3), subItems3)
+        }
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 1
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua1() {
 
-        routeMapEvalua1 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M1_SI_1), MemoriaAtencionE1M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_1_M1_SI_1), MemoriaAtencionE1M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M1_SI_1), SeriesE1M2::class.java, Utils.get(R.string.CLICK_SERIES)),
+                listOf(Utils.get(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
+                listOf(Utils.get(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalBasesE1M2::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M1_SI_1), SeriesE1M2::class.java, context.getString(R.string.CLICK_SERIES)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2::class.java, context.getString(R.string.CLICK_CLASIFICACION)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalBasesE1M2::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M3_SI_1), NivelesAdaptacionE1M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+        )
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_1_M3_SI_1), NivelesAdaptacionE1M3::class.java, context.getString(R.string.CLICK_NIVELES_ADAPTACION)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M4_SI_1), ComprensionLectoraE1M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_1_M4_SI_2), ExactitudLectoraE1M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalLecturaE1M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_1_M4_SI_1), ComprensionLectoraE1M4::class.java, context.getString(R.string.CLICK_COMPRENSION_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_1_M4_SI_2), ExactitudLectoraE1M4::class.java, context.getString(R.string.CLICK_EXACTITUD_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalLecturaE1M4::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M5_SI_1), OrtografiaFoneticaE1M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
+                listOf(Utils.get(R.string.EVALUA_1_M5_SI_2), OrtografiaVisualE1M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL))
+        )
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_1_M5_SI_1), OrtografiaFoneticaE1M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)))
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_1_M5_SI_2), OrtografiaVisualE1M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_VISUAL)))
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_1_M6_SI_1), CalculoNumeracionE1M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION))
+        )
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_1_M6_SI_1), CalculoNumeracionE1M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
+        routeMapEvalua1.apply {
+            put(Utils.get(R.string.EVALUA_1_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_1_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_1_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_1_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_1_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_1_MODULO_6), subItems6)
+        }
 
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_1)] = subItems1
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_2)] = subItems2
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_3)] = subItems3
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_4)] = subItems4
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_5)] = subItems5
-        routeMapEvalua1[context.getString(R.string.EVALUA_1_MODULO_6)] = subItems6
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 2
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua2() {
 
-        routeMapEvalua2 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M1_SI_1), PensamientoAnalogicoE2M1::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
+                listOf(Utils.get(R.string.EVALUA_2_M1_SI_2), OrganizacionPerceptivaE2M1::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_2_M1_SI_3), ClasificacionesE2M1::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
+                listOf(Utils.get(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE2M1::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
+                listOf(Utils.get(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO), IndiceGeneralCognitivoE2M1::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_2_M1_SI_1), PensamientoAnalogicoE2M1::class.java, context.getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_2_M1_SI_2), OrganizacionPerceptivaE2M1::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_2_M1_SI_3), ClasificacionesE2M1::class.java, context.getString(R.string.CLICK_CLASIFICACION)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE2M1::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO), IndiceGeneralCognitivoE2M1::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M2_SI_1), MemoriaAtencionE2M2::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_2_M2_SI_1), MemoriaAtencionE2M2::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_2_M3_SI_1), NivelesAdaptacionE2M3::class.java, context.getString(R.string.CLICK_NIVELES_ADAPTACION)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M3_SI_1), NivelesAdaptacionE2M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+        )
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_2_M4_SI_1), ComprensionLectoraE2M4::class.java, context.getString(R.string.CLICK_COMPRENSION_LECTORA)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M4_SI_1), ComprensionLectoraE2M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA))
+        )
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_2_M5_SI_1), OrtografiaE2M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M5_SI_1), OrtografiaE2M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA))
+        )
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_2_M6_SI_1), CalculoNumeracionE2M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_2_M6_SI_2), ResolucionProblemasE2M6::class.java, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalMatematicasE2M6::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO), IndiceGeneralMatematicoE2M6::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)))
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_2_M6_SI_1), CalculoNumeracionE2M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
+                listOf(Utils.get(R.string.EVALUA_2_M6_SI_2), ResolucionProblemasE2M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+                listOf(Utils.get(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalMatematicasE2M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
+                listOf(Utils.get(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO), IndiceGeneralMatematicoE2M6::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO))
+        )
 
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_1)] = subItems1
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_2)] = subItems2
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_3)] = subItems3
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_4)] = subItems4
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_5)] = subItems5
-        routeMapEvalua2[context.getString(R.string.EVALUA_2_MODULO_6)] = subItems6
+        routeMapEvalua2.apply {
+            put(Utils.get(R.string.EVALUA_2_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_2_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_2_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_2_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_2_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_2_MODULO_6), subItems6)
+        }
+
+
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 3
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua3() {
 
-        routeMapEvalua3 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M1_SI_1), MemoriaAtencionE3M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_3_M1_SI_1), MemoriaAtencionE3M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M2_SI_1), ReflexividadE3M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
+                listOf(Utils.get(R.string.EVALUA_3_M2_SI_2), PensamientoAnalogicoE3M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
+                listOf(Utils.get(R.string.EVALUA_3_M2_SI_3), OrganizacionPerceptivaE3M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalBasesE3M2::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_3_M2_SI_1), ReflexividadE3M2::class.java, context.getString(R.string.CLICK_REFLEXIVIDAD)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_3_M2_SI_2), PensamientoAnalogicoE3M2::class.java, context.getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_3_M2_SI_3), OrganizacionPerceptivaE3M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalBasesE3M2::class.java, context.getString(R.string.CLICK_NIVELES_ADAPTACION)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M3_SI_1), NivelesAdaptacionE3M3::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_3_M3_SI_1), NivelesAdaptacionE3M3::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M4_SI_1), ComprensionLectoraE3M4::class.java, Utils.get(R.string.CLICK_COMPR_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_3_M4_SI_2), ExactitudLectoraE3M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalLecturaE3M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_3_M4_SI_1), ComprensionLectoraE3M4::class.java, context.getString(R.string.CLICK_COMPR_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_3_M4_SI_2), ExactitudLectoraE3M4::class.java, context.getString(R.string.CLICK_EXACTITUD_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalLecturaE3M4::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_3_M5_SI_1), OrtografiaFoneticaE3M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)))
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_3_M5_SI_2), OrtografiaVisualRegladaE3M5::class.java, context.getString(R.string.CLICK_ORT_VIS_REGLADA)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M5_SI_1), OrtografiaFoneticaE3M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
+                listOf(Utils.get(R.string.EVALUA_3_M5_SI_2), OrtografiaVisualRegladaE3M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
+        )
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_3_M6_SI_1), CalculoNumeracionE3M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_3_M6_SI_2), ResolucionProblemasE3M6::class.java, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalAprenMatematE3M6::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_3_M6_SI_1), CalculoNumeracionE3M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
+                listOf(Utils.get(R.string.EVALUA_3_M6_SI_2), ResolucionProblemasE3M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalAprenMatematE3M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_1)] = subItems1
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_2)] = subItems2
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_3)] = subItems3
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_4)] = subItems4
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_5)] = subItems5
-        routeMapEvalua3[context.getString(R.string.EVALUA_3_MODULO_6)] = subItems6
+        routeMapEvalua3.apply {
+            put(Utils.get(R.string.EVALUA_3_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_3_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_3_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_3_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_3_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_3_MODULO_6), subItems6)
+        }
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 4
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua4() {
 
-        routeMapEvalua4 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M1_SI_1), MemoriaAtencionE4M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_4_M1_SI_1), MemoriaAtencionE4M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M2_SI_1), ReflexividadE4M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
+                listOf(Utils.get(R.string.EVALUA_4_M2_SI_2), PensamientoAnalogicoE4M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
+                listOf(Utils.get(R.string.EVALUA_4_M2_SI_3), OrganizacionPerceptivaE4M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE4M2::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
+                listOf(Utils.get(R.string.EVALUA_4_M2_SI_4), IndiceGeneralCognitivoE4M2::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_4_M2_SI_1), ReflexividadE4M2::class.java, context.getString(R.string.CLICK_REFLEXIVIDAD)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_4_M2_SI_2), PensamientoAnalogicoE4M2::class.java, context.getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_4_M2_SI_3), OrganizacionPerceptivaE4M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE4M2::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_4_M2_SI_4), IndiceGeneralCognitivoE4M2::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_COGNITIVO)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M3_SI_1), NivelesAdaptacionE4M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+        )
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_4_M3_SI_1), NivelesAdaptacionE4M3::class.java, context.getString(R.string.CLICK_NIVELES_ADAPTACION)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M4_SI_1), ComprensionLectoraE4M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_4_M4_SI_2), VelocidadLectoraE4M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalLectoraE4M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
+                listOf(Utils.get(R.string.EVALUA_4_M4_SI_3), IndiceGeneralLecturaE4M4::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_LECTURA))
+        )
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_4_M4_SI_1), ComprensionLectoraE4M4::class.java, context.getString(R.string.CLICK_COMPRENSION_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_4_M4_SI_2), VelocidadLectoraE4M4::class.java, context.getString(R.string.CLICK_VELOCIDAD_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalLectoraE4M4::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_4_M4_SI_3), IndiceGeneralLecturaE4M4::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_LECTURA)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M5_SI_1), OrtografiaVisualRegladaE4M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
+        )
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_4_M5_SI_1), OrtografiaVisualRegladaE4M5::class.java, context.getString(R.string.CLICK_ORT_VIS_REGLADA)))
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_4_M6_SI_1), CalculoNumeracionE4M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
+                listOf(Utils.get(R.string.EVALUA_4_M6_SI_2), ResolucionProblemasE4M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+                listOf(Utils.get(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalMatematicasE4M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
+                listOf(Utils.get(R.string.EVALUA_4_M6_SI_4), IndiceGeneralMatematicoE4M6::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO))
+        )
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_4_M6_SI_1), CalculoNumeracionE4M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_4_M6_SI_2), ResolucionProblemasE4M6::class.java, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_4_EVALUA_GLOBAL), ValoracionGlobalMatematicasE4M6::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_4_M6_SI_4), IndiceGeneralMatematicoE4M6::class.java, context.getString(R.string.CLICK_INDICE_GENERAL_MATEMATICO)))
-
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_1)] = subItems1
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_2)] = subItems2
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_3)] = subItems3
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_4)] = subItems4
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_5)] = subItems5
-        routeMapEvalua4[context.getString(R.string.EVALUA_4_MODULO_6)] = subItems6
+        routeMapEvalua4.apply {
+            put(Utils.get(R.string.EVALUA_4_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_4_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_4_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_4_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_4_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_4_MODULO_6), subItems6)
+        }
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 5
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua5() {
 
-        routeMapEvalua5 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M1_SI_1), MemoriaAtencionE5M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_5_M1_SI_1), MemoriaAtencionE5M1::class.java, context.getString(R.string.CLICK_MEMORIA_ATENCION)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M2_SI_1), ReflexividadE5M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
+                listOf(Utils.get(R.string.EVALUA_5_M2_SI_2), PensamientoAnalogicoE5M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
+                listOf(Utils.get(R.string.EVALUA_5_M2_SI_3), OrganizacionPerceptivaE5M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE5M2::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_5_M2_SI_1), ReflexividadE5M2::class.java, context.getString(R.string.CLICK_REFLEXIVIDAD)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_5_M2_SI_2), PensamientoAnalogicoE5M2::class.java, context.getString(R.string.CLICK_PENSAMIENTO_ANALOGICO)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_5_M2_SI_3), OrganizacionPerceptivaE5M2::class.java, context.getString(R.string.CLICK_ORG_PERCEPTIVA)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE5M2::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
+        val subItems3 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M3_SI_1), NivelesAdaptacionE5M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+        )
 
-        val subItems3: MutableList<Array<Any>> = ArrayList()
-        subItems3.add(arrayOf(context.getString(R.string.EVALUA_5_M3_SI_1), NivelesAdaptacionE5M3::class.java, context.getString(R.string.CLICK_NIVELES_ADAPTACION)))
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_5_M4_SI_1), ComprensionLectoraE5M4::class.java, context.getString(R.string.CLICK_COMPRENSION_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_5_M4_SI_2), VelocidadLectoraE5M4::class.java, context.getString(R.string.CLICK_VELOCIDAD_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_5_M4_SI_3), ExactitudLectoraE5M4::class.java, context.getString(R.string.CLICK_EXACTITUD_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalLecturaE5M4::class.java, context.getString(R.string.CLICK_VALORACION_GLOBAL)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M4_SI_1), ComprensionLectoraE5M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_5_M4_SI_2), VelocidadLectoraE5M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_5_M4_SI_3), ExactitudLectoraE5M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalLecturaE5M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+        )
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_5_M5_SI_1), OrtografiaFoneticaE5M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)))
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_5_M5_SI_1), OrtografiaVisualRegladaE5M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_VISUAL)))
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M5_SI_1), OrtografiaFoneticaE5M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
+                listOf(Utils.get(R.string.EVALUA_5_M5_SI_1), OrtografiaVisualRegladaE5M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL))
+        )
 
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_1)] = subItems1
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_2)] = subItems2
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_3)] = subItems3
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_4)] = subItems4
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_5)] = subItems5
-        routeMapEvalua5[context.getString(R.string.EVALUA_5_MODULO_6)] = subItems6
+
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
+                listOf(Utils.get(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS))
+        )
+
+        routeMapEvalua5.apply {
+            put(Utils.get(R.string.EVALUA_5_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_5_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_5_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_5_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_5_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_5_MODULO_6), subItems6)
+        }
     }
 
+    /**
+     * Configuration of routes that are used in Evalua 7
+     *
+     * @return Unit
+     */
     private fun setRouteMapEvalua7() {
 
-        routeMapEvalua7 = HashMap()
+        val subItems1 = listOf(
+                listOf(Utils.get(R.string.EVALUA_7_M1_SI_1), AtencionConcentracionE7M1::class.java, Utils.get(R.string.CLICK_ATEN_CONCENTRACION))
+        )
 
-        val subItems1: MutableList<Array<Any>> = ArrayList()
-        subItems1.add(arrayOf(context.getString(R.string.EVALUA_7_M1_SI_1), AtencionConcentracionE7M1::class.java, context.getString(R.string.CLICK_ATEN_CONCENTRACION)))
+        val subItems2 = listOf(
+                listOf(Utils.get(R.string.EVALUA_7_M2_SI_1), RazonamientoDeductivoE7M2::class.java, Utils.get(R.string.CLICK_RAZON_DEDUCTIVO)),
+                listOf(Utils.get(R.string.EVALUA_7_M2_SI_2), RazonamientoInductivoE7M2::class.java, Utils.get(R.string.CLICK_RAZON_INDUCTIVO)),
+                listOf(Utils.get(R.string.EVALUA_7_M2_SI_3), RazonamientoEspacialE7M2::class.java, Utils.get(R.string.CLICK_RAZON_ESPACIAL))
+        )
 
-        val subItems2: MutableList<Array<Any>> = ArrayList()
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_7_M2_SI_1), RazonamientoDeductivoE7M2::class.java, context.getString(R.string.CLICK_RAZON_DEDUCTIVO)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_7_M2_SI_2), RazonamientoInductivoE7M2::class.java, context.getString(R.string.CLICK_RAZON_INDUCTIVO)))
-        subItems2.add(arrayOf(context.getString(R.string.EVALUA_7_M2_SI_3), RazonamientoEspacialE7M2::class.java, context.getString(R.string.CLICK_RAZON_ESPACIAL)))
+        val subItems4 = listOf(
+                listOf(Utils.get(R.string.EVALUA_7_M4_SI_1), EficaciaLectoraE7M4::class.java, Utils.get(R.string.CLICK_EFICACIA_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_7_M4_SI_2), ComprensionLectoraE7M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
+                listOf(Utils.get(R.string.EVALUA_7_M4_SI_3), VelocidadLectoraE7M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA))
+        )
 
-        val subItems4: MutableList<Array<Any>> = ArrayList()
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_7_M4_SI_1), EficaciaLectoraE7M4::class.java, context.getString(R.string.CLICK_EFICACIA_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_7_M4_SI_2), ComprensionLectoraE7M4::class.java, context.getString(R.string.CLICK_COMPRENSION_LECTORA)))
-        subItems4.add(arrayOf(context.getString(R.string.EVALUA_7_M4_SI_3), VelocidadLectoraE7M4::class.java, context.getString(R.string.CLICK_VELOCIDAD_LECTORA)))
+        val subItems5 = listOf(
+                listOf(Utils.get(R.string.EVALUA_7_M5_SI_1), OrtografiaFoneticaE7M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
+                listOf(Utils.get(R.string.EVALUA_7_M5_SI_2), ExpresionEscritaE7M5::class.java, Utils.get(R.string.CLICK_EXP_ESCRITA)),
+                listOf(Utils.get(R.string.EVALUA_7_M5_SI_3), OrtografiaVisualRegladaE7M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
+        )
 
-        val subItems5: MutableList<Array<Any>> = ArrayList()
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_7_M5_SI_1), OrtografiaFoneticaE7M5::class.java, context.getString(R.string.CLICK_ORTOGRAFIA_FONETICA)))
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_7_M5_SI_2), ExpresionEscritaE7M5::class.java, context.getString(R.string.CLICK_EXP_ESCRITA)))
-        subItems5.add(arrayOf(context.getString(R.string.EVALUA_7_M5_SI_3), OrtografiaVisualRegladaE7M5::class.java, context.getString(R.string.CLICK_ORT_VIS_REGLADA)))
+        val subItems6 = listOf(
+                listOf(Utils.get(R.string.EVALUA_7_M6_SI_1), CalculoNumeracionE7M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
+                listOf(Utils.get(R.string.EVALUA_7_M6_SI_2), ResolucionProblemasE7M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS))
+        )
 
-        val subItems6: MutableList<Array<Any>> = ArrayList()
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_7_M6_SI_1), CalculoNumeracionE7M6::class.java, context.getString(R.string.CLICK_CAL_NUMERACION)))
-        subItems6.add(arrayOf(context.getString(R.string.EVALUA_7_M6_SI_2), ResolucionProblemasE7M6::class.java, context.getString(R.string.CLICK_CAL_RES_PROBLEMAS)))
-
-        routeMapEvalua7[context.getString(R.string.EVALUA_7_MODULO_1)] = subItems1
-        routeMapEvalua7[context.getString(R.string.EVALUA_7_MODULO_2)] = subItems2
-        routeMapEvalua7[context.getString(R.string.EVALUA_7_MODULO_4)] = subItems4
-        routeMapEvalua7[context.getString(R.string.EVALUA_7_MODULO_5)] = subItems5
-        routeMapEvalua7[context.getString(R.string.EVALUA_7_MODULO_6)] = subItems6
-    }
-
-    //GETTERS
-    fun getRouteMapEvalua0(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua0
-    }
-
-    fun getRouteMapEvalua1(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua1
-    }
-
-    fun getRouteMapEvalua2(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua2
-    }
-
-    fun getRouteMapEvalua3(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua3
-    }
-
-    fun getRouteMapEvalua4(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua4
-    }
-
-    fun getRouteMapEvalua5(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua5
-    }
-
-    fun getRouteMapEvalua7(): Map<String, List<Array<Any>>> {
-        return routeMapEvalua7
+        routeMapEvalua7.apply {
+            put(Utils.get(R.string.EVALUA_7_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_7_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_7_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_7_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_7_MODULO_6), subItems6)
+        }
     }
 }

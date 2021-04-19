@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-02-21 0:33
+ Last modified 17-04-21 23:39
  */
 
 package cl.figonzal.evaluatool.servicios
@@ -19,30 +19,42 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import cl.figonzal.evaluatool.R
-import timber.log.Timber
+import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.logInfo
 
-
-class NightModeService(private val activity: Activity, lifecycle: Lifecycle, private val sharedPrefService: SharedPrefService) : LifecycleObserver {
+/**
+ * Funcion in charge to handle the night mode
+ *
+ * @param activity Activity that need to change night mode
+ * @param lifecycle Used to handle onStart events
+ * @param sharedPrefService Used to save night mode in shared preferences
+ * @version 17-04-2021
+ */
+class NightModeService(
+        private val activity: Activity,
+        lifecycle: Lifecycle,
+        private val sharedPrefService: SharedPrefService,
+) : LifecycleObserver {
 
     init {
         lifecycle.addObserver(this)
     }
 
     /**
-     * Funcion que permite revisar y establecer el modo noche desde Shared Preference Settings
+     * Function that allows you to check and set the night mode from Shared Preference Settings
      */
     @OnLifecycleEvent(Lifecycle.Event.ON_START)
     fun checkNightMode() {
 
-        //Leer preference settings
-        val nightMode = sharedPrefService.getData(activity.getString(R.string.NIGHT_MODE_KEY), false) as Boolean
-
-        if (nightMode) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            Timber.i("%s: %s", activity.getString(R.string.TAG_NIGHT_MODE), activity.getString(R.string.TAG_NIGHT_MODE_STATUS_ON))
-        } else {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            Timber.i("%s: %s", activity.getString(R.string.TAG_NIGHT_MODE), activity.getString(R.string.TAG_NIGHT_MODE_STATUS_OFF))
+        when (sharedPrefService.getData(Utils.get(R.string.NIGHT_MODE_KEY), false)) {
+            true -> {
+                activity.logInfo(R.string.TAG_NIGHT_MODE, R.string.TAG_NIGHT_MODE_STATUS_ON)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            false -> {
+                activity.logInfo(R.string.TAG_NIGHT_MODE, R.string.TAG_NIGHT_MODE_STATUS_OFF)
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
         }
     }
 }
