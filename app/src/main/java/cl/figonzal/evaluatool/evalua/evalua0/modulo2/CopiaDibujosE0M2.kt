@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-04-21 22:25
+ Last modified 23-04-21 13:18
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -25,8 +25,9 @@ import cl.figonzal.evaluatool.databinding.ActivityCopiaDibujosE0M2Binding
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 import java.util.*
 import kotlin.math.floor
 
@@ -38,72 +39,73 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityCopiaDibujosE0M2Binding
-    private val perc = arrayOf(
-            arrayOf(65, 99),
-            arrayOf(64, 99),
-            arrayOf(63, 97),
-            arrayOf(62, 97),
-            arrayOf(61, 95),
-            arrayOf(60, 95),
-            arrayOf(59, 90),
-            arrayOf(58, 90),
-            arrayOf(57, 90),
-            arrayOf(56, 85),
-            arrayOf(55, 85),
-            arrayOf(54, 85),
-            arrayOf(53, 75),
-            arrayOf(52, 75),
-            arrayOf(51, 75),
-            arrayOf(50, 70),
-            arrayOf(49, 70),
-            arrayOf(48, 70),
-            arrayOf(47, 65),
-            arrayOf(46, 65),
-            arrayOf(45, 65),
-            arrayOf(44, 55),
-            arrayOf(43, 55),
-            arrayOf(42, 55),
-            arrayOf(41, 50),
-            arrayOf(40, 50),
-            arrayOf(39, 50),
-            arrayOf(38, 40),
-            arrayOf(37, 40),
-            arrayOf(36, 40),
-            arrayOf(35, 30),
-            arrayOf(34, 30),
-            arrayOf(33, 30),
-            arrayOf(32, 20),
-            arrayOf(31, 20),
-            arrayOf(30, 20),
-            arrayOf(29, 15),
-            arrayOf(28, 15),
-            arrayOf(27, 15),
-            arrayOf(26, 12),
-            arrayOf(25, 12),
-            arrayOf(24, 12),
-            arrayOf(23, 10),
-            arrayOf(22, 10),
-            arrayOf(21, 10),
-            arrayOf(20, 9),
-            arrayOf(19, 9),
-            arrayOf(18, 9),
-            arrayOf(17, 6),
-            arrayOf(16, 6),
-            arrayOf(15, 6),
-            arrayOf(14, 3),
-            arrayOf(13, 3),
-            arrayOf(12, 3),
-            arrayOf(11, 3),
-            arrayOf(10, 1),
-            arrayOf(9, 1),
-            arrayOf(8, 1),
-            arrayOf(7, 1),
-            arrayOf(6, 1),
-            arrayOf(5, 1),
-            arrayOf(4, 1),
-            arrayOf(3, 1),
-            arrayOf(2, 1),
-            arrayOf(1, 1))
+    private val perc = listOf(
+            65 to 99,
+            64 to 99,
+            63 to 97,
+            62 to 97,
+            61 to 95,
+            60 to 95,
+            59 to 90,
+            58 to 90,
+            57 to 90,
+            56 to 85,
+            55 to 85,
+            54 to 85,
+            53 to 75,
+            52 to 75,
+            51 to 75,
+            50 to 70,
+            49 to 70,
+            48 to 70,
+            47 to 65,
+            46 to 65,
+            45 to 65,
+            44 to 55,
+            43 to 55,
+            42 to 55,
+            41 to 50,
+            40 to 50,
+            39 to 50,
+            38 to 40,
+            37 to 40,
+            36 to 40,
+            35 to 30,
+            34 to 30,
+            33 to 30,
+            32 to 20,
+            31 to 20,
+            30 to 20,
+            29 to 15,
+            28 to 15,
+            27 to 15,
+            26 to 12,
+            25 to 12,
+            24 to 12,
+            23 to 10,
+            22 to 10,
+            21 to 10,
+            20 to 9,
+            19 to 9,
+            18 to 9,
+            17 to 6,
+            16 to 6,
+            15 to 6,
+            14 to 3,
+            13 to 3,
+            12 to 3,
+            11 to 3,
+            10 to 1,
+            9 to 1,
+            8 to 1,
+            7 to 1,
+            6 to 1,
+            5 to 1,
+            4 to 1,
+            3 to 1,
+            2 to 1,
+            1 to 1
+    )
 
     //TAREA 1
     private lateinit var etReprobadasT1: TextInputEditText
@@ -133,204 +135,172 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
 
         setSupportActionBar(binding.include.toolbar)
 
-        val actionBar = supportActionBar!!
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_COPIA_DIBUJOS)
+        configActionBar(R.string.TOOLBAR_COPIA_DIBUJOS, binding.include.toolbar)
 
-        instanciarRecursosInterfaz()
-        textWatcherTarea1()
-        textWatcherTarea2()
+        initResources()
     }
 
-    /**
-     * Funcion encargada de instanciar los recursos de la interfaz gráfica
-     */
-    private fun instanciarRecursosInterfaz() {
+    private fun initResources() {
 
-        //Promedio y desviacion
-        val tvMedia = binding.cardViewConstantes.tvMediaValue
-        val tvDesviacion = binding.cardViewConstantes.tvDesviacionValue
-        tvMedia.text = MEDIA.toString()
-        tvDesviacion.text = DESVIACION.toString()
+        with(binding, {
+            //Promedio y desviacion
+            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
+            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
-        //TAREA 1
-        tvSubTotalT1 = binding.tvPdSubtotalT1
-        etReprobadasT1 = binding.etReprobadasT1
+            //TAREA 1
+            tvSubTotalT1 = tvPdSubtotalT1
+            this@CopiaDibujosE0M2.etReprobadasT1 = etReprobadasT1
 
-        //TAREA 2
-        tvSubTotalT2 = binding.tvPdSubtotalT2
-        etReprobadasT2 = binding.etReprobadasT2
+            //TAREA 2
+            tvSubTotalT2 = tvPdSubtotalT2
+            this@CopiaDibujosE0M2.etReprobadasT2 = etReprobadasT2
 
-        //TOTAL
-        tvPdTotal = binding.tvPdTotalValue
-        tvPdCorregido = binding.cardViewFinal.tvPdTotalCorregidoValue
-        tvPercentil = binding.cardViewFinal.tvPercentilValue
-        tvNivel = binding.cardViewFinal.tvNivelObtenidoValue
-        tvDesviacionCalculada = binding.cardViewFinal.tvDesviacionCalculadaValue
+            //TOTAL
+            this@CopiaDibujosE0M2.tvPdTotal = tvPdTotalValue
+            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentil = cardViewFinal.tvPercentilValue
+            tvNivel = cardViewFinal.tvNivelObtenidoValue
+            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
-        progressBar = binding.cardViewFinal.progressBar
-        progressBar.max = perc[0][1]
+            progressBar = cardViewFinal.progressBar
+            progressBar.max = perc[0].second
 
-        val ivCorregido = binding.cardViewFinal.ivHelpPdCorregido
-        ivCorregido.setOnClickListener {
+            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-            Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-            val dialogFragment = CorregidoDialogFragment()
-            dialogFragment.isCancelable = false
-            dialogFragment.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
+                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+
+                CorregidoDialogFragment().apply {
+                    isCancelable = false
+                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
+                }
+            }
+            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_COPIA_DIBUJOS))
+        }).run {
+            textWatcherTarea1()
+            textWatcherTarea2()
         }
-
-
-        val tvBaremo = binding.tablaBaremo.tvBaremo
-        Utils.configurarTextoBaremo(supportFragmentManager, tvBaremo, perc, getString(R.string.TOOLBAR_COPIA_DIBUJOS))
-
     }
 
-    /**
-     * Funcion encargada de la logica de los TextWatcher de la tarea 1
-     */
     private fun textWatcherTarea1() {
 
-        etReprobadasT1.addTextChangedListener(object : TextWatcher {
+        with(etReprobadasT1) {
+            addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT1 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
-                    reprobadasT1 = 0
-                } else if (s.isNotEmpty()) {
-                    reprobadasT1 = Objects.requireNonNull(etReprobadasT1.text).toString().toInt()
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                    subtotalPdT1 = 0.0
                 }
-                subtotalPdT1 = calcularTarea(1, tvSubTotalT1, "Tarea 1: ", null, null, reprobadasT1)
-                calcularResultado()
-            }
-        })
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> reprobadasT1 = 0
+                        s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
+                    }
+                    subtotalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), null, null, reprobadasT1)
+                    calculateResult()
+                }
+            })
+        }
     }
 
-    /**
-     * Funcion encargada de la logica de los TextWatcher de la tarea 2
-     */
     private fun textWatcherTarea2() {
 
-        etReprobadasT2.addTextChangedListener(object : TextWatcher {
+        with(etReprobadasT2) {
+            addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subtotalPdT2 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
-                    reprobadasT2 = 0
-                } else if (s.isNotEmpty()) {
-                    reprobadasT2 = Objects.requireNonNull(etReprobadasT2.text).toString().toInt()
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                    subtotalPdT2 = 0.0
                 }
-                subtotalPdT2 = calcularTarea(2, tvSubTotalT2, "Tarea 2: ", null, null, reprobadasT2)
-                calcularResultado()
-            }
-        })
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> reprobadasT2 = 0
+                        s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
+                    }
+                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), null, null, reprobadasT2)
+                    calculateResult()
+                }
+            })
+        }
     }
 
-    override fun calcularTarea(n_tarea: Int?, tv_sub_total: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
 
-        var total = 0.0
-
-        if (n_tarea == 1) {
-            total = floor(17 - reprobadas!!.toDouble())
-        } else if (n_tarea == 2) {
-            total = floor(48 - reprobadas!!.toDouble())
+        val total = when (nTarea) {
+            1 -> floor(17 - reprobadas!!.toDouble())
+            2 -> floor(48 - reprobadas!!.toDouble())
+            else -> 0.0
         }
-        if (total < 0) {
-            total = 0.0
-        }
-        tv_sub_total.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
         return total
     }
 
-    override fun calcularResultado() {
+    override fun calculateResult() {
 
-        val totalPd: Double = subtotalPdT1 + subtotalPdT2
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        with(subtotalPdT1 + subtotalPdT2, {
 
-        val pdCorregido = corregirPD(perc, totalPd)
-        tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
 
-        val percentil = calcularPercentil(pdCorregido)
-        tvPercentil.text = percentil.toString()
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, this)
+            tvPdCorregido.text = String.format("%s pts", pdCorregido)
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            progressBar.setProgress(percentil, true)
-        } else {
-            progressBar.progress = percentil
-        }
+            //calculate desviation
+            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
-        val nivel = Utils.calcularNivel(percentil)
-        tvNivel.text = nivel
+            //Calculate percentile
+            with(calculatePercentile(pdCorregido), {
+                tvPercentil.text = this.toString()
 
-        val desviacion = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false)
-        tvDesviacionCalculada.text = desviacion.toString()
+                when {
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    else -> progressBar.progress = this
+                }
+
+                //Calculate student level
+                tvNivel.text = Utils.calcularNivel(this)
+            })
+        })
     }
 
-    override fun calcularPercentil(pd_total: Double): Int {
+    override fun calculatePercentile(pdTotal: Double): Int {
 
         //Limite superior
         when {
-            pd_total > perc[0][0] -> {
-                return perc[0][1]
-            }
-            pd_total < perc[perc.size - 1][0] -> {
-                return perc[perc.size - 1][1]
-            }
-            else -> {
-                for (item in perc) {
-                    if (pd_total == item[0].toDouble()) {
-                        return item[1]
-                    }
-                }
+            pdTotal > perc[0].first -> return perc[0].second
+            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            else -> perc.forEach { item ->
+                if (pdTotal == item.first.toDouble()) return item.second
             }
         }
         //Percentil no encontrado
-        Timber.i("%s%s", getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO))
+        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
         return -1
     }
 
-    override fun corregirPD(perc: Array<Array<Int>>, pd_actual: Double): Double {
+    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+        //Verificar si pd_actual esta en la lista
         when {
-            pd_actual < 0 -> {
-                return 0.0
-            }
-            pd_actual > perc[0][0] -> {
-                return perc[0][0].toDouble()
-            }
-            pd_actual < perc[perc.size - 1][0] -> {
-                return perc[perc.size - 1][0].toDouble()
-            }
-            else -> {
-                //Verificar si pd_actual esta en la lista
-                for (item in perc) {
-                    if (pd_actual == item[0].toDouble()) {
-                        return item[0].toDouble()
-                    }
-                }
+            pdActual < 0 -> return 0.0
+            pdActual > perc[0].first -> return perc[0].first.toDouble()
+            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            else -> perc.forEach { item ->
+                if (pdActual == item.first.toDouble()) return item.first.toDouble()
             }
         }
-        Timber.i("%s%s", getString(R.string.TAG_PD_CORREGIDO), getString(R.string.PD_NULO))
+        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
         return (-1).toDouble()
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-
-            Timber.i(getString(R.string.ACTIVIDAD_CERRADA))
+            logInfo(R.string.ACTIVIDAD_CERRADA)
             finish()
             return true
         }
