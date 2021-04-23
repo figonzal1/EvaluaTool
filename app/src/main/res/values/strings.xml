@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 24-03-21 16:40
+  Last modified 23-04-21 12:27
   -->
 
 <resources>
@@ -267,7 +267,7 @@
     <string name="TAG_PD_CORREGIDO">PD_CORREGIDO: </string>
     <string name="BUTTON_MAIN">BUTTON_CLICK: </string>
     <string name="BTN_EVALUA_7">btn_evalua_7</string>
-    <string name="TAG_PERCENTIL_CALCULADO">D/PERCENTIL_CALCULADO: </string>
+    <string name="TAG_PERCENTIL_CALCULADO">PERCENTIL_CALCULADO: </string>
     <string name="PERCENTIL_NULO">percentil nulo</string>
     <string name="PD_NULO">pd nulo</string>
     <string name="TAG_COMPRENSION_CALCULADA">D/COMPRENSION_CALCULADA: </string>
@@ -447,6 +447,16 @@
     <string name="routeMapEvalua4">routeMapEvalua4</string>
     <string name="routeMapEvalua5">routeMapEvalua5</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
+    <string name="TAREA_1">Tarea 1: </string>
+    <string name="TAREA_2">Tarea 2: </string>
+    <string name="NIVEL_ALTO">ALTO</string>
+    <string name="NIVEL_MEDIO_ALTO">MEDIO-ALTO</string>
+    <string name="NIVEL_MEDIO">MEDIO</string>
+    <string name="NIVEL_MEDIO_BAJO">MEDIO-BAJO</string>
+    <string name="NIVEL_BAJO">BAJO</string>
+    <string name="DIA_LIBRE">¡Dia libre de publicidad!</string>
+    <string name="TAREA_3">\"Tarea 3: \"</string>
+    <string name="TAREA_4">\"Tarea 4: \"</string>
 
 
 </resources>

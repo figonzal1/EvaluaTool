@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 1:37
+ Last modified 20-04-21 23:53
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -29,7 +29,7 @@ import cl.figonzal.evaluatool.utilidades.Utils
  * @param context Used to get Resources
  * @version 18-04-2021
  */
-class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Context) : RecyclerView.Adapter<BaremoViewHolder>() {
+class BaremoAdapter(private var perc: List<Pair<Int, Int>>, private val context: Context) : RecyclerView.Adapter<BaremoViewHolder>() {
 
     companion object {
         private const val TABLE_HEADER = 0
@@ -61,7 +61,7 @@ class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Co
 
         private val binding = BaremoItemListBinding.bind(itemView)
 
-        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Int>>) {
+        fun bind(itemViewType: Int, context: Context, perc: List<Pair<Int, Int>>) {
 
             with(binding, {
                 when (itemViewType) {
@@ -78,8 +78,8 @@ class BaremoAdapter(private var perc: Array<Array<Int>>, private val context: Co
                             (adapterPosition - 1) % 2 != 0 -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
                             else -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
                         }
-                        tvPd.text = item[0].toString()
-                        tvPcChileno.text = item[1].toString()
+                        tvPd.text = item.first.toString()
+                        tvPcChileno.text = item.second.toString()
                     }
                 }
             })

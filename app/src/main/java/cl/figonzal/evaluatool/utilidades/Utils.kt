@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:17
+ Last modified 21-04-21 14:42
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -20,8 +20,10 @@ import android.widget.TextView
 import androidx.annotation.StringRes
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.ApplicationController
+import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.BaremoDialogFragment
 import timber.log.Timber
+import java.util.*
 import kotlin.math.roundToInt
 
 object Utils {
@@ -64,12 +66,11 @@ object Utils {
 
         return when (percentile) {
 
-            //TODO: Extraer strings
-            in 80..99 -> "ALTO"
-            in 60..79 -> "MEDIO-ALTO"
-            in 40..59 -> "MEDIO"
-            in 20..39 -> "MEDIO-BAJO"
-            in 0..19 -> "BAJO"
+            in 80..99 -> get(R.string.NIVEL_ALTO)
+            in 60..79 -> get(R.string.NIVEL_MEDIO_ALTO)
+            in 40..59 -> get(R.string.NIVEL_MEDIO)
+            in 20..39 -> get(R.string.NIVEL_MEDIO_BAJO)
+            in 0..19 -> get(R.string.NIVEL_BAJO)
             //Percentil no encontrado
             else -> {
                 Timber.i("NIVEL_CALCULADO: nulo")
@@ -82,14 +83,14 @@ object Utils {
      * Function that allows to put the text in clickable mode
      *
      * @param fragmentManager
-     * @param tvBaremo Textview for baremo score
+     * @param tvBaremo TextView for baremo score
      * @param perc Baremo percentile table score
-     * @param itemName Itemname of actual baremo in perc
+     * @param itemName ItemName of actual baremo in perc
      *
      * @return Unit
      *
      */
-    fun configurarTextoBaremo(fragmentManager: FragmentManager, tvBaremo: TextView, perc: Array<Array<Int>>, itemName: String) {
+    fun configurarTextoBaremo(fragmentManager: FragmentManager, tvBaremo: TextView, perc: List<Pair<Int, Int>>, itemName: String) {
 
         tvBaremo.movementMethod = LinkMovementMethod.getInstance()
         val spans: Spannable = tvBaremo.text as Spannable
@@ -101,4 +102,11 @@ object Utils {
         }
         spans.setSpan(clickSpan, 0, spans.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     }
+
+    /**
+     * Function that generate a random number with 30% of success
+     *
+     * @return Boolean with the result
+     */
+    fun generateRandomNumber(): Boolean = Random().nextInt(10) % 3 == 0
 }

@@ -1,37 +1,53 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 07-11-20 16:10
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 21-04-21 1:53
  */
 package cl.figonzal.evaluatool.interfaces
 
 import android.widget.TextView
 
 interface EvaluaInterface {
-    fun calcularTarea(n_tarea: Int?, tv_sub_total: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double
-    fun calcularResultado()
+    /**
+     * Calculate the result of every task
+     *
+     * @param nTarea Indicate what task is calculated (1,2,3, etc)
+     * @param tvSubTotal The textView to write the results
+     * @param tarea String name of task
+     * @param aprobadas Correct answer score
+     * @param omitidas Omitted answer score
+     * @param reprobadas Incorrect answer score
+     *
+     * @return Double The result of calculations (It's depend of each subItem formula)
+     */
+    fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double
+
+    /**
+     *
+     */
+    fun calculateResult()
 
     /**
      * Tabla percentil
      *
-     * @param pd_total Puntaje directo total obtenido
+     * @param pdTotal Puntaje directo total obtenido
      * @return Percentil del alumno
      */
-    fun calcularPercentil(pd_total: Double): Int
+    fun calculatePercentile(pdTotal: Double): Int
 
     /**
      * Funcion encargada de corregir el pd total obtenido y dejarlo dentro de los valores de la tabla del item asociado
      *
      * @param perc      Tablas de percentiles
-     * @param pd_actual Puntaje directo actual antes de correccion
+     * @param pdActual Puntaje directo actual antes de correccion
      * @return Double valor PD corregido
      */
-    fun corregirPD(perc: Array<Array<Int>>, pd_actual: Double): Double
+    fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double
 }

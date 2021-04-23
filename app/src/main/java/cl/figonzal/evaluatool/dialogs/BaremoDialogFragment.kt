@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:17
+ Last modified 20-04-21 23:53
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -32,7 +32,7 @@ import timber.log.Timber
  *
  * @version 18-04-2021
  */
-class BaremoDialogFragment(private val perc: Array<Array<Int>>, private val itemName: String) : DialogFragment() {
+class BaremoDialogFragment(private val perc: List<Pair<Int, Int>>, private val itemName: String) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
