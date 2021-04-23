@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 0:26
+ Last modified 23-04-21 13:14
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -18,7 +18,10 @@ import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilidades.DateHandler
+import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.toast
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -171,8 +174,7 @@ class AdsService(
                 //Guardar fecha de termino de reward
                 sharedPrefService.saveData(Utils.get(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time)
 
-                //TODO: Extraer string
-                toast("¡Dia libre de publicidad!")
+                toast(getString(R.string.DIA_LIBRE))
             }
         })
 
@@ -194,7 +196,7 @@ class AdsService(
                 activity.logInfo(R.string.TAG_REWARD_STATUS, R.string.TAG_REWARD_STATUS_EN_PERIODO)
                 //Generar % de aparicion de dialogo
                 when {
-                    generateRandomNumber() -> {
+                    Utils.generateRandomNumber() -> {
                         //Mostrar dialog
                         RewardDialogFragment(this).show(supportFragmentManager, Utils.get(R.string.REWARD_DIALOG))
                         activity.logInfo(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG, R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON)

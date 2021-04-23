@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 0:26
+ Last modified 23-04-21 13:14
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -20,7 +20,6 @@ import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
 import com.google.android.material.button.MaterialButton
 import timber.log.Timber
-import java.util.*
 
 /**
  *  Function that set Action Bar title, home indicator & toolbar
@@ -86,10 +85,3 @@ fun MaterialButton.disable() {
     this.isEnabled = false
     this.alpha = 0.6f
 }
-
-/**
- * Function that generate a random number with 30% of success
- *
- * @return Boolean with the result
- */
-fun generateRandomNumber(): Boolean = Random().nextInt(10) % 3 == 0
