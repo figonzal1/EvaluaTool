@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-02-21 2:52
+ Last modified 26-04-21 14:03
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3
 
@@ -18,9 +18,10 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE2M3Binding
 import cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments.FragmentStateAdapterE2M3
+import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import timber.log.Timber
 
 class NivelesAdaptacionE2M3 : AppCompatActivity() {
 
@@ -31,26 +32,23 @@ class NivelesAdaptacionE2M3 : AppCompatActivity() {
         binding = ActivityNivelesAdaptacionE2M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
-        val actionBar = supportActionBar!!
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_NIVELES_ADAPTACION)
+        configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, binding.include.toolbar)
 
         //View pager
-        val viewPager2 = binding.viewPagerNivelesAdaptacion
-        viewPager2.adapter = FragmentStateAdapterE2M3(this, this)
+        binding.viewPagerNivelesAdaptacion.apply {
+            adapter = FragmentStateAdapterE2M3(this@NivelesAdaptacionE2M3)
 
-        //TabLayout
-        val tabLayout = binding.tabsNivelesAdaptacion
-        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int -> tab.text = FragmentStateAdapterE2M3.tabs[position] }.attach()
+            TabLayoutMediator(binding.tabsNivelesAdaptacion, this) { tab: TabLayout.Tab, position: Int ->
+                tab.text = FragmentStateAdapterE2M3.tabs[position]
+            }.attach()
+        }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            Timber.i(getString(R.string.ACTIVIDAD_CERRADA))
+            logInfo(R.string.ACTIVIDAD_CERRADA)
             finish()
             return true
         }
