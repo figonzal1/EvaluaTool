@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-04-21 22:09
+ Last modified 27-04-21 1:45
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -28,7 +28,6 @@ import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 import java.util.*
 import kotlin.math.floor
 
@@ -137,7 +136,8 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
             progressBar.max = perc[0].second
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
-                Timber.i(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
+
+                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
 
                 CorregidoDialogFragment().apply {
                     isCancelable = false

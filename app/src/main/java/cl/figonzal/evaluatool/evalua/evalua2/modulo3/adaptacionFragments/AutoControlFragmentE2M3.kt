@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 25-04-21 23:11
+ Last modified 27-04-21 1:45
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 import java.util.*
 
 class AutoControlFragmentE2M3 : Fragment(), EvaluaInterface {
@@ -188,7 +187,7 @@ class AutoControlFragmentE2M3 : Fragment(), EvaluaInterface {
             }
         }
         //Percentil no encontrado
-        Timber.i("%s%s", getString(R.string.TAG_PERCENTIL_CALCULADO), getString(R.string.PERCENTIL_NULO))
+        requireActivity().logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
         return -1
     }
 
