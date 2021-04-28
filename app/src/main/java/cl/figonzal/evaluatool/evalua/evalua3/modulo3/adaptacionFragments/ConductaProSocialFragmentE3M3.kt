@@ -147,16 +147,16 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
         }
     }
 
-    override fun calcularTarea(n_tarea: Int?, tv_sub_total: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
         var total = aprobadas!!
         if (total < 0) {
             total = 0
         }
-        tv_sub_total.text = String.format(Locale.US, "%s%d pts", tarea, total)
+        tvSubTotal.text = String.format(Locale.US, "%s%d pts", tarea, total)
         return total.toDouble()
     }
 
-    override fun calcularResultado() {
+    override fun calculateResult() {
 
 
         with(subtotalPdT1, {
@@ -180,20 +180,12 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
         })
     }
 
-    override fun calcularPercentil(pd_total: Double): Int {
+    override fun calculatePercentile(pdTotal: Double): Int {
         when {
-            pd_total < perc[0][0] -> {
-                return perc[0][1]
-            }
-            pd_total > perc[perc.size - 1][0] -> {
-                return perc[perc.size - 1][1]
-            }
-            else -> {
-                for (item in perc) {
-                    if (pd_total.toInt() == item[0]) {
-                        return item[1]
-                    }
-                }
+            pdTotal < perc[0].first -> return perc[0].second
+            pdTotal > perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            else -> perc.forEach { item ->
+                if (pdTotal.toInt() == item.first) return item.second
             }
         }
         //Percentil no encontrado

@@ -118,7 +118,7 @@ class ValoracionGlobalAprenMatematE3M6 : AppCompatActivity(), IndiceValorInterfa
         }
     }
 
-    override fun calcularResultado() {
+    override fun calculateResult() {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
