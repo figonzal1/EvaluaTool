@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 19:55
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -53,11 +53,11 @@ class AutoEstimaFragmentE3M3 : Fragment(), EvaluaInterface {
             7 to 50,
             8 to 45,
             9 to 40,
-            10 to 30,
-            12 to 20,
-            14 to 12,
-            16 to 7,
-            18 to 3,
+            10 to 35,
+            12 to 25,
+            14 to 15,
+            16 to 10,
+            18 to 5,
             20 to 1
     )
 

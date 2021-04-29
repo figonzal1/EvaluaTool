@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 18:12
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
@@ -174,7 +174,7 @@ class PensamientoAnalogicoE3M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = floor(aprobadas!! - reprobadas!! / 3.0)
+        var total = floor(aprobadas!! - (reprobadas!! / 3.0))
         if (total < 0) {
             total = 0.0
         }
