@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 18:20
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
@@ -233,8 +233,8 @@ class OrganizacionPerceptivaE3M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
         val total = floor(when (nTarea) {
-            1 -> aprobadas!! - reprobadas!! / 4.0
-            2 -> aprobadas!! - reprobadas!! / 3.0
+            1 -> aprobadas!! - (reprobadas!! / 4.0)
+            2 -> aprobadas!! - (reprobadas!! / 3.0)
             else -> 0.0
         })
         tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)

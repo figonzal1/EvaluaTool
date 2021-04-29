@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 19:55
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -45,19 +45,19 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
     private val perc = listOf(
             0 to 95,
             1 to 80,
-            2 to 65,
+            2 to 70,
             3 to 60,
-            4 to 50,
-            5 to 40,
-            6 to 30,
-            7 to 25,
-            8 to 20,
-            9 to 17,
-            10 to 15,
-            12 to 10,
-            14 to 8,
-            16 to 6,
-            18 to 4,
+            4 to 55,
+            5 to 50,
+            6 to 45,
+            7 to 40,
+            8 to 35,
+            9 to 30,
+            10 to 25,
+            12 to 15,
+            14 to 10,
+            16 to 7,
+            18 to 5,
             20 to 1
     )
 

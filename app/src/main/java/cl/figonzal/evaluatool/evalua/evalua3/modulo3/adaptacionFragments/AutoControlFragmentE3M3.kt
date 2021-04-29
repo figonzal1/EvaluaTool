@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 19:06
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -46,17 +46,17 @@ class AutoControlFragmentE3M3 : Fragment(), EvaluaInterface {
             0 to 99,
             1 to 85,
             2 to 75,
-            3 to 65,
-            4 to 60,
-            5 to 55,
-            6 to 50,
-            7 to 45,
+            3 to 60,
+            4 to 55,
+            5 to 50,
+            6 to 47,
+            7 to 42,
             8 to 40,
             9 to 35,
-            10 to 32,
-            12 to 25,
-            14 to 15,
-            16 to 10,
+            10 to 25,
+            12 to 15,
+            14 to 10,
+            16 to 7,
             18 to 5,
             20 to 1
     )

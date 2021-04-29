@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-04-21 18:29
+ Last modified 29-04-21 19:55
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -50,19 +50,19 @@ class MotivacionFragmentE3M3 : Fragment(), EvaluaInterface {
             4 to 85,
             5 to 75,
             6 to 65,
-            7 to 60,
+            7 to 55,
             8 to 50,
             9 to 45,
-            10 to 40,
-            12 to 30,
-            14 to 27,
-            16 to 25,
-            18 to 20,
-            20 to 15,
-            22 to 10,
-            24 to 7,
-            26 to 5,
-            28 to 3,
+            10 to 42,
+            12 to 40,
+            14 to 35,
+            16 to 30,
+            18 to 25,
+            20 to 20,
+            22 to 15,
+            24 to 10,
+            26 to 7,
+            28 to 5,
             30 to 1
     )
     private lateinit var etAprobadasT1: TextInputEditText
