@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-03-21 2:04
+ Last modified 30-04-21 19:58
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4
 
@@ -18,9 +18,10 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE4M4Binding
 import cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments.FragmentStateAdapterE4M4
+import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import timber.log.Timber
 
 class VelocidadLectoraE4M4 : AppCompatActivity() {
 
@@ -31,26 +32,23 @@ class VelocidadLectoraE4M4 : AppCompatActivity() {
         binding = ActivityVelocidadLectoraE4M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
-        val actionBar = supportActionBar!!
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.title = getString(R.string.TOOLBAR_VELOCIDAD_LECTORA)
+        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.toolbar)
 
         //View pager
-        val viewPager2 = binding.viewPagerVelocidad
-        viewPager2.adapter = FragmentStateAdapterE4M4(this, this)
+        binding.viewPagerVelocidad.apply {
+            adapter = FragmentStateAdapterE4M4(this@VelocidadLectoraE4M4)
 
-        //TabLayout
-        val tabLayout = binding.tabsVelocidad
-        TabLayoutMediator(tabLayout, viewPager2) { tab: TabLayout.Tab, position: Int -> tab.text = FragmentStateAdapterE4M4.tabs[position] }.attach()
+            TabLayoutMediator(binding.tabsVelocidad, this) { tab: TabLayout.Tab, position: Int ->
+                tab.text = FragmentStateAdapterE4M4.tabs[position]
+            }.attach()
+
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            Timber.i(getString(R.string.ACTIVIDAD_CERRADA))
+            logInfo(R.string.ACTIVIDAD_CERRADA)
             finish()
             return true
         }
