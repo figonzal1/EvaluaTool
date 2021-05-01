@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-03-21 2:04
+ Last modified 30-04-21 22:11
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -21,8 +21,9 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralMatematicoE4M6Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
+import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 import java.util.*
 import kotlin.math.roundToInt
 
@@ -46,74 +47,78 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralMatematicoE4M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_MATEMATICO, binding.include.toolbar)
 
-        val actionBar = supportActionBar!!
-        actionBar.setDisplayHomeAsUpEnabled(true)
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
-        actionBar.setTitle(R.string.TOOLBAR_INDICE_GENERAL_MATEMATICO)
-
-        instanciarRecursosInterfaz()
-        textWatcherTarea1()
+        initResources()
     }
 
-    private fun instanciarRecursosInterfaz() {
-        etTotalesT1 = binding.etTotalesT1
-        etTotalesT2 = binding.etTotalesT2
+    private fun initResources() {
 
-        //SUBTOTAL
-        tvSubTotalT1 = binding.tvPdSubtotalT1
-        tvSubTotalT2 = binding.tvPdSubtotalT2
-        //TOTAL
-        tvPdTotal = binding.tvPdTotalValue
+        with(binding, {
+            this@IndiceGeneralMatematicoE4M6.etTotalesT1 = etTotalesT1
+            this@IndiceGeneralMatematicoE4M6.etTotalesT2 = etTotalesT2
+
+            //SUBTOTAL
+            tvSubTotalT1 = tvPdSubtotalT1
+            tvSubTotalT2 = tvPdSubtotalT2
+            //TOTAL
+            this@IndiceGeneralMatematicoE4M6.tvPdTotal = tvPdTotalValue
+        }).run {
+            textWatcherTarea1()
+        }
     }
 
     private fun textWatcherTarea1() {
 
-        etTotalesT1.addTextChangedListener(object : TextWatcher {
+        with(etTotalesT1) {
+            addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subTotalT1 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                if (s.isEmpty()) {
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
                     subTotalT1 = 0.0
-                } else if (s.isNotEmpty() && s.toString() != "-" && s.toString() != ".") {
-                    subTotalT1 = etTotalesT1.text.toString().toDouble()
                 }
-                tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "CN", subTotalT1)
-                calcularResultado()
-            }
-        })
-        etTotalesT2.addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subTotalT2 = 0.0
-            }
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
 
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun afterTextChanged(s: Editable) {
 
-            override fun afterTextChanged(s: Editable) {
+                    when {
+                        s.isEmpty() -> subTotalT1 = 0.0
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                            subTotalT1 = text.toString().toDouble()
+                        }
+                    }
+                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "CN", subTotalT1)
+                    calculateResult()
+                }
+            })
+        }
+        with(etTotalesT2) {
+            addTextChangedListener(object : TextWatcher {
 
-                if (s.isEmpty()) {
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
                     subTotalT2 = 0.0
-                } else if (s.isNotEmpty() && s.toString() != "-" && s.toString() != ".") {
-                    subTotalT2 = etTotalesT2.text.toString().toDouble()
                 }
-                tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "RP", subTotalT2)
-                calcularResultado()
-            }
-        })
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> subTotalT2 = 0.0
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                            subTotalT2 = text.toString().toDouble()
+                        }
+                    }
+                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "RP", subTotalT2)
+                    calculateResult()
+                }
+            })
+        }
     }
 
-    override fun calcularResultado() {
+    override fun calculateResult() {
         //TOTALES
-        var totalPd = subTotalT1 + subTotalT2
-        totalPd /= 2.0
+        var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
         tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
     }
@@ -121,7 +126,7 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            Timber.i(getString(R.string.ACTIVIDAD_CERRADA))
+            logInfo(R.string.ACTIVIDAD_CERRADA)
             finish()
             return true
         }

@@ -460,6 +460,11 @@
     <string name="TAREA_5">Tarea 5: </string>
     <string name="TAREA_6">Tarea 6: </string>
     <string name="TAREA">Tareas: </string>
+    <string name="COMPRENSION_MUY_BAJA">Muy Baja</string>
+    <string name="COMPRENSION_BAJA">Baja</string>
+    <string name="COMPRENSION_MEDIA">Media</string>
+    <string name="COMPRENSION_ALTA">Alta</string>
+    <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
 
 
 </resources>

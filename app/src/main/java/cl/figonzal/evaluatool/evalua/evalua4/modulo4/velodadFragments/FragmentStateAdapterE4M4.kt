@@ -1,32 +1,31 @@
 /*
- *
- * This file is subject to the terms and conditions defined in
- * file 'LICENSE', which is part of this source code package
- *
- * Autor: Felipe González
- * Email: felipe.gonzalezalarcon94@gmail.com
- *
- * Copyright (c) 2020
- *
- * Last modified 18-11-20 18:48
+
+ This file is subject to the terms and conditions defined in
+ file 'LICENSE', which is part of this source code package
+
+ Autor: Felipe González
+ Email: felipe.gonzalezalarcon94@gmail.com
+
+ Copyright (c) 2021
+
+ Last modified 30-04-21 19:58
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
-import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.utilidades.Utils
 
-class FragmentStateAdapterE4M4(context: Context, fa: FragmentActivity) : FragmentStateAdapter(fa) {
+class FragmentStateAdapterE4M4(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
-        var f = Fragment()
-        when (position) {
-            0 -> f = VelocidadFragmentE4M4.newInstance()
-            1 -> f = ComprensionFragmentE4M4.newInstance()
+        return when (position) {
+            0 -> VelocidadFragmentE4M4.newInstance()
+            1 -> ComprensionFragmentE4M4.newInstance()
+            else -> ComprensionFragmentE4M4.newInstance()
         }
-        return f
     }
 
     override fun getItemCount(): Int {
@@ -34,11 +33,9 @@ class FragmentStateAdapterE4M4(context: Context, fa: FragmentActivity) : Fragmen
     }
 
     companion object {
-        val tabs = arrayOfNulls<String>(2)
-    }
-
-    init {
-        tabs[0] = context.getString(R.string.TOOLBAR_VELOCIDAD)
-        tabs[1] = context.getString(R.string.TOOLBAR_COMPRENSION)
+        val tabs = listOf(
+                Utils.get(R.string.TOOLBAR_VELOCIDAD),
+                Utils.get(R.string.TOOLBAR_COMPRENSION)
+        )
     }
 }
