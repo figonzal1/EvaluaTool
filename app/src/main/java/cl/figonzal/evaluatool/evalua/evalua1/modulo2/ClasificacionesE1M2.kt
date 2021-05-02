@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 02-05-21 16:09
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -162,7 +162,7 @@ class ClasificacionesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_2), aprobadasT1, null, reprobadasT1)
+                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, reprobadasT1)
                     calculateResult()
                 }
             })

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 02-05-21 13:34
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -346,7 +346,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
     override fun calculateResult() {
 
         with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4 + subtotalPdT5 + subtotalPdT6, {
-            tvPdTotal.text = String.format(Locale.US, getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
             tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)

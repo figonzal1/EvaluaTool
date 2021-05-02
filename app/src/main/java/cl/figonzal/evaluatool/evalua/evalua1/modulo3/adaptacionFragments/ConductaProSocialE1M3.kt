@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 02-05-21 16:15
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -97,7 +97,7 @@ class ConductaProSocialE1M3 : Fragment(), EvaluaInterface {
             this@ConductaProSocialE1M3.etAprobadasT1 = etAprobadasT1
 
             //TOTAL
-            this@ConductaProSocialE1M3.tvPdTotal = tvPdTotal
+            this@ConductaProSocialE1M3.tvPdTotal = tvPdTotalValue
             tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
             tvPercentil = cardViewFinal.tvPercentilValue
             tvNivel = cardViewFinal.tvNivelObtenidoValue
