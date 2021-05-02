@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 2:00
+ Last modified 02-05-21 12:16
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -17,7 +17,9 @@ import android.app.Activity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import com.google.android.material.button.MaterialButton
 import timber.log.Timber
 import java.util.*
@@ -89,4 +91,10 @@ fun MaterialButton.disable() {
 
 fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
     return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
+}
+
+fun Activity.showHelperDialog(supportFragmentManager: FragmentManager) {
+    val dialogo = CorregidoDialogFragment()
+    dialogo.isCancelable = false
+    dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
 }

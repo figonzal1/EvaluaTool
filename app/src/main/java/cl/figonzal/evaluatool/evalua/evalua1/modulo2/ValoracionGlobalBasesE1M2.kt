@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 21:55
+ Last modified 02-05-21 12:14
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -51,7 +51,6 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityValoracionGlobalBasesE1M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
 
@@ -94,7 +93,7 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "SE", subTotalT1)
+                    tvSubTotalT1.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "SE: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -117,7 +116,7 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "CL", subTotalT2)
+                    tvSubTotalT2.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "CL: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -140,7 +139,7 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "OP", subTotalT3)
+                    tvSubTotalT3.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
                     calculateResult()
                 }
             })
@@ -151,7 +150,7 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

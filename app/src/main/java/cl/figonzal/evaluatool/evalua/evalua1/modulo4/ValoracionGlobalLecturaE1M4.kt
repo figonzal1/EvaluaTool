@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 21:55
+ Last modified 02-05-21 12:14
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -45,7 +45,6 @@ class ValoracionGlobalLecturaE1M4 : AppCompatActivity(), IndiceValorInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityValoracionGlobalLecturaE1M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
 
@@ -121,7 +120,7 @@ class ValoracionGlobalLecturaE1M4 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(Locale.US, getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
