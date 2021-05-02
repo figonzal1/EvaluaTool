@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:18
+ Last modified 02-05-21 1:27
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -89,8 +90,6 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityMemoriaVerbalE0M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
         configActionBar(R.string.TOOLBAR_MEMORIA_VERBAL, binding.include.toolbar)
 
         initResources()
@@ -122,16 +121,15 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].first
+            progressBar.max = perc[0].second
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
 
-                CorregidoDialogFragment().apply {
-                    this.isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                val dialogo = CorregidoDialogFragment()
+                dialogo.isCancelable = false
+                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_MEMORIA_VERBAL))
         }).run {
@@ -190,12 +188,12 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
 
-        val total = when (nTarea) {
-            1 -> floor(12 - reprobadas!!.toDouble())
-            2 -> floor(23 - reprobadas!!.toDouble())
+        val total = floor(when (nTarea) {
+            1 -> 12 - reprobadas!!.toDouble()
+            2 -> 23 - reprobadas!!.toDouble()
             else -> 0.0
-        }
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        })
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 

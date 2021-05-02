@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:18
+ Last modified 02-05-21 0:54
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -96,8 +97,6 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityRecepcionAutitivaArticulacionE0M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
         configActionBar(R.string.TOOLBAR_RECEPCION_AUDITIVA, binding.include.toolbar)
 
         initResources()
@@ -136,10 +135,9 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
 
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                val dialogo = CorregidoDialogFragment()
+                dialogo.isCancelable = false
+                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_RECEPCION_AUDITIVA))
         }).run {
@@ -229,7 +227,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
             3 -> aprobadas!!.toDouble()
             else -> 0.0
         })
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 

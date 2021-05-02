@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:14
+ Last modified 02-05-21 2:00
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -20,6 +20,7 @@ import androidx.appcompat.widget.Toolbar
 import cl.figonzal.evaluatool.R
 import com.google.android.material.button.MaterialButton
 import timber.log.Timber
+import java.util.*
 
 /**
  *  Function that set Action Bar title, home indicator & toolbar
@@ -84,4 +85,8 @@ fun Activity.toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).s
 fun MaterialButton.disable() {
     this.isEnabled = false
     this.alpha = 0.6f
+}
+
+fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
+    return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
 }

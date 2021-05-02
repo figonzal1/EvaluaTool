@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-04-21 1:45
+ Last modified 02-05-21 0:38
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -95,8 +96,6 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrganizacionPerceptivaE0M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
         configActionBar(R.string.TOOLBAR_ORG_PERCEPTIVA, binding.include.toolbar)
 
         initResources()
@@ -139,10 +138,9 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
 
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                val dialogo = CorregidoDialogFragment()
+                dialogo.isCancelable = false
+                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_ORG_PERCEPTIVA))
         }).run {
@@ -250,15 +248,14 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = when (nTarea) {
+        val total = floor(when (nTarea) {
             1 -> 3 - reprobadas!!.toDouble()
             2 -> 5 - reprobadas!! * 1.5
             3 -> 6 - (reprobadas!! * 2).toDouble()
             4 -> 8 - (reprobadas!! * 2).toDouble()
             else -> 0.0
-        }
-        total = floor(total)
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        })
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
