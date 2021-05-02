@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 25-04-21 17:18
+ Last modified 02-05-21 13:34
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -70,7 +70,9 @@ class ValoracionGlobalRazonamientoE2M1 : AppCompatActivity(), IndiceValorInterfa
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@ValoracionGlobalRazonamientoE2M1.tvPdTotal = tvPdTotalValue
-        })
+        }).run {
+            textWatcherTarea1()
+        }
 
     }
 
@@ -93,7 +95,7 @@ class ValoracionGlobalRazonamientoE2M1 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "PA", subTotalT1)
+                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "PA: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -116,7 +118,7 @@ class ValoracionGlobalRazonamientoE2M1 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "CA", subTotalT2)
+                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "CA: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -139,7 +141,7 @@ class ValoracionGlobalRazonamientoE2M1 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "OP", subTotalT3)
+                    tvSubTotalT3.text = String.format(getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
                     calculateResult()
                 }
             })
@@ -160,6 +162,6 @@ class ValoracionGlobalRazonamientoE2M1 : AppCompatActivity(), IndiceValorInterfa
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 }
