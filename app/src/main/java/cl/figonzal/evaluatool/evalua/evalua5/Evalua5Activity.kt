@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:17
+ Last modified 01-05-21 22:13
  */
 package cl.figonzal.evaluatool.evalua.evalua5
 
@@ -79,7 +79,8 @@ class Evalua5Activity : AppCompatActivity(), ClickListener {
         //MODULO 6
         val subItems6 = listOf(
                 Evalua(getString(R.string.EVALUA_5_M6_SI_1)),
-                Evalua(getString(R.string.EVALUA_5_M6_SI_2))
+                Evalua(getString(R.string.EVALUA_5_M6_SI_2)),
+                Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL))
         )
 
         //HEADERS

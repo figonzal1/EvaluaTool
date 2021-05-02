@@ -8,18 +8,17 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 17:25
+ Last modified 01-05-21 19:17
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments
 
-import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.utilidades.Utils
 
-class FragmentStateAdapterE4M3(context: Context, fa: FragmentActivity) : FragmentStateAdapter(fa) {
+class FragmentStateAdapterE4M3(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {

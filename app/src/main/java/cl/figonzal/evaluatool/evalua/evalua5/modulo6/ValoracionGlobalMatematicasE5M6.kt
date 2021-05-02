@@ -8,9 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:13
+ Last modified 01-05-21 19:13
  */
-package cl.figonzal.evaluatool.evalua.evalua5.modulo4
+
+package cl.figonzal.evaluatool.evalua.evalua5.modulo6
 
 import android.os.Bundle
 import android.text.Editable
@@ -19,7 +20,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalLecturaE5M4Binding
+import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalAprenMatematE5M6Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
@@ -27,8 +28,9 @@ import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.roundToInt
 
-class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
-    private lateinit var binding: ActivityValoracionGlobalLecturaE5M4Binding
+class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterface {
+
+    private lateinit var binding: ActivityValoracionGlobalAprenMatematE5M6Binding
 
     //TAREA 1
     private lateinit var etTotalesT1: TextInputEditText
@@ -39,16 +41,11 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
     private lateinit var etTotalesT2: TextInputEditText
     private lateinit var tvSubTotalT2: TextView
     private var subTotalT2 = 0.0
-
-    //TAREA 3
-    private lateinit var etTotalesT3: TextInputEditText
-    private lateinit var tvSubTotalT3: TextView
-    private var subTotalT3 = 0.0
     private lateinit var tvPdTotal: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValoracionGlobalLecturaE5M4Binding.inflate(layoutInflater)
+        binding = ActivityValoracionGlobalAprenMatematE5M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
@@ -59,19 +56,19 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
     private fun initResources() {
 
         with(binding, {
-            this@ValoracionGlobalLecturaE5M4.etTotalesT1 = etTotalesT1
-            this@ValoracionGlobalLecturaE5M4.etTotalesT2 = etTotalesT2
-            this@ValoracionGlobalLecturaE5M4.etTotalesT3 = etTotalesT3
+            this@ValoracionGlobalMatematicasE5M6.etTotalesT1 = etTotalesT1
+            this@ValoracionGlobalMatematicasE5M6.etTotalesT2 = etTotalesT2
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             tvSubTotalT2 = tvPdSubtotalT2
-            tvSubTotalT3 = tvPdSubtotalT3
+
             //TOTAL
-            this@ValoracionGlobalLecturaE5M4.tvPdTotal = tvPdTotalValue
+            this@ValoracionGlobalMatematicasE5M6.tvPdTotal = tvPdTotalValue
         }).run {
             textWatcherTarea1()
         }
+
     }
 
     private fun textWatcherTarea1() {
@@ -93,11 +90,12 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "CL", subTotalT1)
+                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "CN", subTotalT1)
                     calculateResult()
                 }
             })
         }
+
         with(etTotalesT2) {
             addTextChangedListener(object : TextWatcher {
 
@@ -115,29 +113,7 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "EL", subTotalT2)
-                    calculateResult()
-                }
-            })
-        }
-        with(etTotalesT3) {
-            addTextChangedListener(object : TextWatcher {
-
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                    subTotalT3 = 0.0
-                }
-
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-                override fun afterTextChanged(s: Editable) {
-
-                    when {
-                        s.isEmpty() -> subTotalT3 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
-                            subTotalT3 = text.toString().toDouble()
-                        }
-                    }
-                    tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "VL", subTotalT3)
+                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "RP", subTotalT2)
                     calculateResult()
                 }
             })
@@ -146,7 +122,7 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
 
     override fun calculateResult() {
         //TOTALES
-        var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
+        var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
         tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
     }
