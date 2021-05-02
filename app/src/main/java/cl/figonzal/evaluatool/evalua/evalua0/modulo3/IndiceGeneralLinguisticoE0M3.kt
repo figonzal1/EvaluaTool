@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:34
+ Last modified 02-05-21 13:34
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -122,26 +122,28 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
             })
         }
 
-        etTotalesT3.addTextChangedListener(object : TextWatcher {
+        with(etTotalesT3) {
+            addTextChangedListener(object : TextWatcher {
 
-            override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
-                subTotalT3 = 0.0
-            }
-
-            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-            override fun afterTextChanged(s: Editable) {
-
-                when {
-                    s.isEmpty() -> subTotalT3 = 0.0
-                    s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
-                        subTotalT3 = etTotalesT3.text.toString().toDouble()
-                    }
+                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                    subTotalT3 = 0.0
                 }
-                tvSubTotalT3.text = String.format(getString(R.string.POINTS_FORMAT), "HF: ", subTotalT3)
-                calculateResult()
-            }
-        })
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> subTotalT3 = 0.0
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                            subTotalT3 = text.toString().toDouble()
+                        }
+                    }
+                    tvSubTotalT3.text = String.format(getString(R.string.POINTS_FORMAT), "HF: ", subTotalT3)
+                    calculateResult()
+                }
+            })
+        }
     }
 
     override fun calculateResult() {
