@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 01-05-21 19:17
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3
 
@@ -36,7 +36,7 @@ class NivelesAdaptacionE4M3 : AppCompatActivity() {
 
         //View pager
         binding.viewPagerNivelesAdaptacion.apply {
-            adapter = FragmentStateAdapterE4M3(this@NivelesAdaptacionE4M3, this@NivelesAdaptacionE4M3)
+            adapter = FragmentStateAdapterE4M3(this@NivelesAdaptacionE4M3)
 
             TabLayoutMediator(binding.tabsNivelesAdaptacion, this) { tab: TabLayout.Tab, position: Int -> tab.text = FragmentStateAdapterE4M3.tabs[position] }.attach()
         }

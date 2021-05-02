@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-                                                                              ~
-  This file is subject to the terms and conditions defined in                 ~
-  file 'LICENSE', which is part of this source code package                   ~
-                                                                              ~
-  Autor: Felipe González                                                      ~
-  Email: felipe.gonzalezalarcon94@gmail.com                                   ~
-                                                                              ~
-  Copyright (c) 2020                                                          ~
-                                                                              ~
-  Last modified 08-11-20 18:49                                                ~
-  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2021
+
+  Last modified 01-05-21 20:51
+  -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -336,6 +336,9 @@
             android:name=".evalua.evalua4.Evalua4Activity"
             android:parentActivityName=".MainActivity" /> <!-- EVALUA 5 -->
         <activity
+            android:name=".evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
             android:name=".evalua.evalua5.modulo6.ResolucionProblemasE5M6"
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
@@ -383,10 +386,10 @@
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="true" /> <!-- ADMOB -->
+            android:value="false" /> <!-- ADMOB -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6355378855577476~8089782740" />

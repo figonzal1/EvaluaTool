@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 21:35
+ Last modified 01-05-21 22:12
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -82,6 +82,7 @@ import cl.figonzal.evaluatool.evalua.evalua5.modulo5.OrtografiaFoneticaE5M5
 import cl.figonzal.evaluatool.evalua.evalua5.modulo5.OrtografiaVisualRegladaE5M5
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.CalculoNumeracionE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ResolucionProblemasE5M6
+import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6
 import cl.figonzal.evaluatool.evalua.evalua7.modulo1.AtencionConcentracionE7M1
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoDeductivoE7M2
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoEspacialE7M2
@@ -410,7 +411,8 @@ object ConfigRoutes {
 
         val subItems6 = listOf(
                 listOf(Utils.get(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
-                listOf(Utils.get(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS))
+                listOf(Utils.get(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalMatematicasE5M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
         )
 
         routeMapEvalua5.apply {
