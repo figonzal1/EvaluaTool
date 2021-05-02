@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:17
+ Last modified 02-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -96,7 +96,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "CA", subTotalT1)
+                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "CA: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -119,7 +119,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "SE", subTotalT2)
+                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "SE: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -142,7 +142,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "OP", subTotalT3)
+                    tvSubTotalT3.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
                     calculateResult()
                 }
             })
@@ -153,7 +153,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_FORMAT), totalPd)
 
     }
 

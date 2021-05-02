@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 02-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -93,7 +93,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "PF", subTotalT1)
+                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "PF: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -116,7 +116,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "RA", subTotalT2)
+                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "RA: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -138,7 +138,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                         subTotalT3 = etTotalesT3.text.toString().toDouble()
                     }
                 }
-                tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "HF", subTotalT3)
+                tvSubTotalT3.text = String.format(getString(R.string.POINTS_FORMAT), "HF: ", subTotalT3)
                 calculateResult()
             }
         })
@@ -148,7 +148,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
