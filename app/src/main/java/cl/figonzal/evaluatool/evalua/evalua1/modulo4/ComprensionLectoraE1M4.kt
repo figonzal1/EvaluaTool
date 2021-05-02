@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 21:55
+ Last modified 02-05-21 12:16
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -22,11 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityComprensionLectoraE1M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -104,8 +101,6 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityComprensionLectoraE1M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
         configActionBar(R.string.TOOLBAR_COMPREN_LECTORA, binding.include.toolbar)
 
         initResources()
@@ -146,11 +141,7 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                showHelperDialog(supportFragmentManager)
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_COMPREN_LECTORA))
         }).run {
@@ -276,13 +267,13 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
 
-        val total = when (nTarea) {
-            1 -> floor(aprobadas!! - (reprobadas!! + omitidas!!).toDouble())
+        val total = floor(when (nTarea) {
+            1 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
             2 -> aprobadas!!.toDouble()
             3 -> aprobadas!! * 2.toDouble()
             else -> 0.0
-        }
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        })
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
@@ -290,10 +281,10 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
 
         with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3, {
 
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate desviation
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()

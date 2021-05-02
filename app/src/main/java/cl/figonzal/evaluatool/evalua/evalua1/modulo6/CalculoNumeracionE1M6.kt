@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 21:44
+ Last modified 02-05-21 12:16
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo6
 
@@ -22,11 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityCalculoNumeracionE1M6Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.floor
 
@@ -89,7 +86,6 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityCalculoNumeracionE1M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_CALC_NUMERACION, binding.include.toolbar)
 
@@ -115,16 +111,12 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].first
+            progressBar.max = perc[0].second
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                showHelperDialog(supportFragmentManager)
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_CALC_NUMERACION))
         }).run {
@@ -162,17 +154,17 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         if (total < 0) {
             total = 0.0
         }
-        tvSubTotal.text = String.format("%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
     override fun calculateResult() {
 
         with(totalPdT1, {
-            tvPdTotal.text = String.format("%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate Desviation
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()

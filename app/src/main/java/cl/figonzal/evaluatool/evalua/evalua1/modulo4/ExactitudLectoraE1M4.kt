@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 21:55
+ Last modified 02-05-21 12:16
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -22,11 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityExactitudLectoraE1M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -128,7 +125,6 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityExactitudLectoraE1M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_EXACTITUD_LECTORA, binding.include.toolbar)
 
@@ -180,11 +176,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                showHelperDialog(supportFragmentManager)
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_EXACTITUD_LECTORA))
         }).run {
@@ -347,17 +339,17 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         if (total < 0) {
             total = 0.0
         }
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
     override fun calculateResult() {
 
         with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4 + subtotalPdT5 + subtotalPdT6, {
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(Locale.US, getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate desviation
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()

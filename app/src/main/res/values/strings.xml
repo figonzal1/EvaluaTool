@@ -447,24 +447,26 @@
     <string name="routeMapEvalua4">routeMapEvalua4</string>
     <string name="routeMapEvalua5">routeMapEvalua5</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
-    <string name="TAREA_1">Tarea 1: </string>
-    <string name="TAREA_2">Tarea 2: </string>
+    <string name="TAREA_1">Tarea 1:</string>
+    <string name="TAREA_2">Tarea 2:</string>
     <string name="NIVEL_ALTO">ALTO</string>
     <string name="NIVEL_MEDIO_ALTO">MEDIO-ALTO</string>
     <string name="NIVEL_MEDIO">MEDIO</string>
     <string name="NIVEL_MEDIO_BAJO">MEDIO-BAJO</string>
     <string name="NIVEL_BAJO">BAJO</string>
     <string name="DIA_LIBRE">¡Dia libre de publicidad!</string>
-    <string name="TAREA_3">Tarea 3: </string>
-    <string name="TAREA_4">Tarea 4: </string>
-    <string name="TAREA_5">Tarea 5: </string>
-    <string name="TAREA_6">Tarea 6: </string>
-    <string name="TAREA">Tareas: </string>
+    <string name="TAREA_3">Tarea 3:</string>
+    <string name="TAREA_4">Tarea 4:</string>
+    <string name="TAREA_5">Tarea 5:</string>
+    <string name="TAREA_6">Tarea 6:</string>
+    <string name="TAREA">Tareas:</string>
     <string name="COMPRENSION_MUY_BAJA">Muy Baja</string>
     <string name="COMPRENSION_BAJA">Baja</string>
     <string name="COMPRENSION_MEDIA">Media</string>
     <string name="COMPRENSION_ALTA">Alta</string>
     <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
+    <string name="POINTS_FORMAT">%s %s pts</string>
+    <string name="POINTS_SIMPLE_FORMAT">%s pts</string>
 
 
 </resources>
