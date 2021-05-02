@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:18
+ Last modified 02-05-21 0:54
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -93,8 +94,6 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityGrafoMotricidadE0M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.include.toolbar)
-
         configActionBar(R.string.TOOLBAR_GRAFOMOTRICIDAD, binding.include.toolbar)
 
         initResources()
@@ -125,10 +124,9 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
 
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                val dialogo = CorregidoDialogFragment()
+                dialogo.isCancelable = false
+                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_GRAFOMOTRICIDAD))
         }).run {
@@ -166,7 +164,7 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
         when {
             total < 0 -> total = 0.0
         }
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 

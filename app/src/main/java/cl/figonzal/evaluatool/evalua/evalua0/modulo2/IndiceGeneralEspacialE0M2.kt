@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:18
+ Last modified 01-05-21 22:19
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -48,8 +48,6 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityIndiceGeneralEspacialE0M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_INDICE_GENERAL_ESPACIAL, binding.include.toolbar)
 

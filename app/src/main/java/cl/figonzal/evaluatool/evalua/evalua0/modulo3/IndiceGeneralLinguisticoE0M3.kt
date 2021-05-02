@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:18
+ Last modified 01-05-21 22:19
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -51,8 +51,6 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
         super.onCreate(savedInstanceState)
         binding = ActivityIndiceGeneralLinguisticoE0M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        setSupportActionBar(binding.include.toolbar)
 
         configActionBar(R.string.TOOLBAR_INDICE_GENERAL_LINGUISTICO, binding.include.toolbar)
 
