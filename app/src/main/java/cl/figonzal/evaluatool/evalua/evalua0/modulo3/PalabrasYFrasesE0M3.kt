@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 0:54
+ Last modified 02-05-21 12:36
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -22,12 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityPalabrasYFrasesE0M3Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -110,10 +106,7 @@ class PalabrasYFrasesE0M3 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                val dialogo = CorregidoDialogFragment()
-                dialogo.isCancelable = false
-                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
+                showHelperDialog(supportFragmentManager)
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_PALABRAS_FRASES))
         }).run {
@@ -159,11 +152,11 @@ class PalabrasYFrasesE0M3 : AppCompatActivity(), EvaluaInterface {
 
         with(subtotalPdT1, {
 
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             //Correct pd
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate percentile
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 0:35
+ Last modified 02-05-21 12:36
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -22,12 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityClasificacionE0M1Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -128,10 +124,7 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                val dialogo = CorregidoDialogFragment()
-                dialogo.isCancelable = false
-                dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
+                showHelperDialog(supportFragmentManager)
             }
 
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_CLASIFICACION))
@@ -248,11 +241,11 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
         //Calculate Total PD
         with(totalPdTarea1 + totalPdTarea2, {
 
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             //Correct total pd based on Baremo Table
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate desviation
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
