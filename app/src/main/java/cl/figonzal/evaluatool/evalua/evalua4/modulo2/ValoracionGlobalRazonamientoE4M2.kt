@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 02-05-21 22:26
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -93,7 +93,7 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "RE", subTotalT1)
+                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "RE: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -115,7 +115,7 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "PA", subTotalT2)
+                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "PA: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -138,7 +138,7 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, "%s: %s pts", "OP", subTotalT3)
+                    tvSubTotalT3.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "OP: ", subTotalT3)
                     calculateResult()
                 }
             })
@@ -149,7 +149,7 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

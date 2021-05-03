@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 02-05-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4
 
@@ -86,7 +86,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, "%s: %s pts", "RE", subTotalT1)
+                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "RE: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -109,7 +109,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, "%s: %s pts", "PA", subTotalT2)
+                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "PA: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -120,7 +120,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(Locale.US, "%s pts", totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
