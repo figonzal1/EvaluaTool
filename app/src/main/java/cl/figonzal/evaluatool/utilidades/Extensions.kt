@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 03-05-21 2:08
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -89,10 +89,25 @@ fun MaterialButton.disable() {
     this.alpha = 0.6f
 }
 
+/**
+ * Function that set sub totals textViews
+ *
+ * @param tarea task to be written
+ * @param total Direct score
+ * @version 03-04-2021
+ * @return String
+ */
 fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
     return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
 }
 
+/**
+ * Funcion that show Helper Dialog for corrected scores
+ *
+ * @param supportFragmentManager Fragment manager to show FragmentDialog
+ * @return Unit
+ * @version 03-04-2021
+ */
 fun Activity.showHelperDialog(supportFragmentManager: FragmentManager) {
     val dialogo = CorregidoDialogFragment()
     dialogo.isCancelable = false
