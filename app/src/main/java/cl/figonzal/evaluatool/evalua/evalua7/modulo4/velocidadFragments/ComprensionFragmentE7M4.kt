@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-04-21 1:45
+ Last modified 03-05-21 1:46
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -24,10 +24,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentComprensionE7M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
+import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
@@ -119,11 +120,7 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
             ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
-                }
+                requireActivity().showHelperDialog(requireFragmentManager())
             }
 
             Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_COMPRENSION))
@@ -201,11 +198,11 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
 
     private fun calcularComprension(pd_actual: Double): String? {
         return when (pd_actual) {
-            in 0.0..2.0 -> "Muy Baja"
-            in 3.0..4.0 -> "Baja"
-            in 5.0..6.0 -> "Media"
-            in 7.0..10.0 -> "Alta"
-            in 11.0..15.0 -> "Muy Alta"
+            in 0.0..2.0 -> getString(R.string.COMPRENSION_MUY_BAJA)
+            in 3.0..4.0 -> getString(R.string.COMPRENSION_BAJA)
+            in 5.0..6.0 -> getString(R.string.COMPRENSION_MEDIA)
+            in 7.0..10.0 -> getString(R.string.COMPRENSION_ALTA)
+            in 11.0..15.0 -> getString(R.string.COMPRENSION_MUY_ALTA)
             else -> {
                 requireActivity().logInfo(R.string.TAG_COMPRENSION_CALCULADA, R.string.COMPRENSION_NULA)
                 null
@@ -214,21 +211,21 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = aprobadas!! - (omitidas!! + reprobadas!!)
+        var total = (aprobadas!! - (omitidas!! + reprobadas!!)).toDouble()
         if (total < 0) {
-            total = 0
+            total = 0.0
         }
-        tvSubTotal.text = String.format(Locale.US, "%s%d pts", tarea, total)
-        return total.toDouble()
+        tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
+        return total
     }
 
     override fun calculateResult() {
 
         with(totalPdT1, {
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             val comprension = calcularComprension(pdCorregido)
             tvNivelComprension.text = comprension
