@@ -467,6 +467,8 @@
     <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
     <string name="POINTS_FORMAT">%s %s pts</string>
     <string name="POINTS_SIMPLE_FORMAT">%s pts</string>
+    <string name="SEG_FORMAT">%s %s seg</string>
+    <string name="SEG_SIMPLE_FORMAT">%s seg</string>
 
 
 </resources>

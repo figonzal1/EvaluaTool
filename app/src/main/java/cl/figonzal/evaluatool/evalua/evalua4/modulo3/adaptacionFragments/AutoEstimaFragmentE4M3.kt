@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 02-05-21 23:44
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments
 
@@ -24,10 +24,11 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentAutoEstimaE4M3Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
+import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
@@ -37,7 +38,6 @@ class AutoEstimaFragmentE4M3 : Fragment(), EvaluaInterface {
         private const val DESVIACION = 2.59
         private const val MEDIA = 5.08
 
-        @JvmStatic
         fun newInstance(): AutoEstimaFragmentE4M3 {
             return AutoEstimaFragmentE4M3()
         }
@@ -114,11 +114,7 @@ class AutoEstimaFragmentE4M3 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
-                }
+                requireActivity().showHelperDialog(requireFragmentManager())
             }
             Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_AUTOESTIMA))
         }).run {
@@ -152,21 +148,21 @@ class AutoEstimaFragmentE4M3 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        var total = aprobadas!!
+        var total = aprobadas!!.toDouble()
         if (total < 0) {
-            total = 0
+            total = 0.0
         }
-        tvSubTotal.text = String.format(Locale.US, "%s%d pts", tarea, total)
-        return total.toDouble()
+        tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
+        return total
     }
 
     override fun calculateResult() {
 
         with(subtotalPdT1, {
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
 

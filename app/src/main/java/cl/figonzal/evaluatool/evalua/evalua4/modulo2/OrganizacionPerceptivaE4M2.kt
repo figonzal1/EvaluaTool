@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 02-05-21 23:44
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -22,11 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrganizacionPerceptivaE4M2Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -87,7 +84,6 @@ class OrganizacionPerceptivaE4M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrganizacionPerceptivaE4M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         configActionBar(R.string.TOOLBAR_ORG_PERCEPTIVA, binding.include.toolbar)
 
         initResources()
@@ -124,11 +120,7 @@ class OrganizacionPerceptivaE4M2 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                showHelperDialog(supportFragmentManager)
 
             }
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_ORG_PERCEPTIVA))
@@ -233,17 +225,17 @@ class OrganizacionPerceptivaE4M2 : AppCompatActivity(), EvaluaInterface {
             2 -> aprobadas!! - (reprobadas!! / 4.0)
             else -> 0.0
         })
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
     override fun calculateResult() {
 
         with(subtotalPdT1 + subtotalPdT2, {
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
@@ -262,18 +254,10 @@ class OrganizacionPerceptivaE4M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculatePercentile(pdTotal: Double): Int {
         when {
-            pdTotal > perc[0].first -> {
-                return perc[0].second
-            }
-            pdTotal < perc[perc.size - 1].first -> {
-                return perc[perc.size - 1].second
-            }
-            else -> {
-                for (item in perc) {
-                    if (pdTotal.toInt() == item.first) {
-                        return item.second
-                    }
-                }
+            pdTotal > perc[0].first -> return perc[0].second
+            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            else -> perc.forEach { item ->
+                if (pdTotal.toInt() == item.first) return item.second
             }
         }
         //Percentil no encontrado
@@ -304,6 +288,4 @@ class OrganizacionPerceptivaE4M2 : AppCompatActivity(), EvaluaInterface {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
 }

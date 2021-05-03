@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 22:11
+ Last modified 02-05-21 23:45
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -24,10 +24,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentVelocidadE4M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 
 class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
@@ -36,7 +36,6 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
         private const val DESVIACION = 36.08
         private const val MEDIA = 129.21
 
-        @JvmStatic
         fun newInstance(): VelocidadFragmentE4M4 {
             return VelocidadFragmentE4M4()
         }
@@ -83,7 +82,7 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
     private lateinit var progressBar: ProgressBar
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+                              savedInstanceState: Bundle?): View {
         // Inflate the layout for this fragment
         binding = FragmentVelocidadE4M4Binding.inflate(inflater, container, false)
 
@@ -102,23 +101,19 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
             this@VelocidadFragmentE4M4.etSegundosT1 = etSegundosT1
 
             //TOTALES
-            this@VelocidadFragmentE4M4.tvPdTotal = tvPdTotal
+            this@VelocidadFragmentE4M4.tvPdTotal = tvPdTotalValue
             tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
             tvPercentil = cardViewFinal.tvPercentilValue
             tvNivel = cardViewFinal.tvNivelObtenidoValue
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
-            this@VelocidadFragmentE4M4.progressBar = progressBar
+            this@VelocidadFragmentE4M4.progressBar = cardViewFinal.progressBar
             progressBar.max = perc[0].second
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
-                }
+                requireActivity().showHelperDialog(requireFragmentManager())
             }
             Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_VELOCIDAD))
         }).run {
@@ -151,17 +146,17 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        tvSubTotal.text = String.format("%s%s seg", tarea, aprobadas)
+        tvSubTotal.text = String.format(getString(R.string.SEG_FORMAT), tarea, aprobadas)
         return aprobadas!!.toDouble()
     }
 
     override fun calculateResult() {
 
         with(totalPdT1, {
-            tvPdTotal.text = String.format("%s seg", this)
+            tvPdTotal.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s seg", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
 
@@ -193,7 +188,7 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
 
     override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
         when {
-            pdActual < perc[0].first -> return perc[0].second.toDouble()
+            pdActual < perc[0].first -> return perc[0].first.toDouble()
             pdActual > perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
             else -> perc.forEach { item ->
                 if (pdActual <= item.first) return item.first.toDouble()
