@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-04-21 14:42
+ Last modified 03-05-21 15:48
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -71,6 +71,26 @@ object Utils {
             in 40..59 -> get(R.string.NIVEL_MEDIO)
             in 20..39 -> get(R.string.NIVEL_MEDIO_BAJO)
             in 0..19 -> get(R.string.NIVEL_BAJO)
+            //Percentil no encontrado
+            else -> {
+                Timber.i("NIVEL_CALCULADO: nulo")
+                null
+            }
+        }
+    }
+
+    /**
+     * Only for test
+     */
+    fun calcularNivelTest(percentile: Int): String? {
+
+        return when (percentile) {
+
+            in 80..99 -> "ALTO"
+            in 60..79 -> "MEDIO-ALTO"
+            in 40..59 -> "MEDIO"
+            in 20..39 -> "MEDIO-BAJO"
+            in 0..19 -> "BAJO"
             //Percentil no encontrado
             else -> {
                 Timber.i("NIVEL_CALCULADO: nulo")
