@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-04-21 1:45
+ Last modified 03-05-21 1:46
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -24,10 +24,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentVelocidadE7M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 
 class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
@@ -109,11 +109,7 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(requireFragmentManager(), getString(R.string.DIALOGO_AYUDA))
-                }
+                requireActivity().showHelperDialog(requireFragmentManager())
             }
 
             Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_VELOCIDAD))
@@ -139,7 +135,7 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> segundosT1 = 0
                         s.isNotEmpty() -> segundosT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_2), segundosT1, null, null)
+                    totalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), segundosT1, null, null)
                     calculateResult()
                 }
             })
@@ -147,17 +143,17 @@ class VelocidadFragmentE7M4 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        tvSubTotal.text = String.format("%s%s seg", tarea, aprobadas)
+        tvSubTotal.text = String.format(getString(R.string.SEG_FORMAT), tarea, aprobadas)
         return aprobadas!!.toDouble()
     }
 
     override fun calculateResult() {
 
         with(totalPdT1, {
-            tvPdTotal.text = String.format("%s seg", this)
+            tvPdTotal.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s seg", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
 

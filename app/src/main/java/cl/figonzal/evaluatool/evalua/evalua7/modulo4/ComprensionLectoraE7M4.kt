@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-04-21 1:45
+ Last modified 03-05-21 1:46
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -22,11 +22,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityComprensionLectoraE7M4Binding
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
@@ -151,11 +148,7 @@ class ComprensionLectoraE7M4 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-
-                CorregidoDialogFragment().apply {
-                    isCancelable = false
-                    show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-                }
+                showHelperDialog(supportFragmentManager)
             }
 
             Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_COMPREN_LECTORA))
@@ -364,17 +357,17 @@ class ComprensionLectoraE7M4 : AppCompatActivity(), EvaluaInterface {
             4 -> aprobadas!! - (reprobadas!! / 3.0)
             else -> 0.0
         }
-        tvSubTotal.text = String.format(Locale.US, "%s%s pts", tarea, total)
+        tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
 
     override fun calculateResult() {
 
         with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4, {
-            tvPdTotal.text = String.format(Locale.US, "%s pts", this)
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format("%s pts", pdCorregido)
+            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
