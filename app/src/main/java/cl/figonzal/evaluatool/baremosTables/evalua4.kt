@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 16:03
+ Last modified 04-05-21 16:08
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -547,7 +547,7 @@ fun calculoNumeracionE4M6Baremo(): Array<Array<Any>> {
 
 /**
  * VI. Aprendizajes Matematicos
- * A. Resolucion de Problemas
+ * B. Resolucion de Problemas
  * Page 93
  */
 fun resolucionProblemasE4M6Baremo(): Array<Array<Any>> {
