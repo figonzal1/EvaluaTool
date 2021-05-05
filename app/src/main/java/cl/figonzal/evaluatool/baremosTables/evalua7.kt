@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 16:37
+ Last modified 05-05-21 10:26
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -336,6 +336,59 @@ fun comprensionLectoraE7M4Baremo(): Array<Array<Any>> {
 }
 
 /**
+ * IV.- Lectura
+ * C. Velocidad Lectora - VelocidadFragment
+ * Page 64
+ */
+fun velocidadFragmentE7M4Baremo(): Array<Array<Any>> {
+    return arrayOf(
+            arrayOf(100, 99, 2.3),
+            arrayOf(121, 97, 2.0),
+            arrayOf(135, 95, 1.79),
+            arrayOf(150, 90, 1.57),
+            arrayOf(160, 85, 1.42),
+            arrayOf(170, 80, 1.28),
+            arrayOf(180, 75, 1.13),
+            arrayOf(190, 70, 0.98),
+            arrayOf(210, 65, 0.69),
+            arrayOf(220, 60, 0.54),
+            arrayOf(240, 55, 0.25),
+            arrayOf(250, 50, 0.1),
+            arrayOf(260, 40, -0.04),
+            arrayOf(280, 30, -0.34),
+            arrayOf(300, 20, -0.63),
+            arrayOf(340, 10, -1.22),
+            arrayOf(500, 5, -3.56),
+    )
+}
+
+/**
+ * IV.- Lectura
+ * C. Velocidad Lectora - ComprensionFragment
+ * Page 64
+ */
+fun comprensionFragmentE7M4Baremo(): Array<Array<Any>> {
+    return arrayOf(
+            arrayOf(15, 99, 2.9),
+            arrayOf(14, 97, 2.57),
+            arrayOf(13, 95, 2.24),
+            arrayOf(12, 90, 1.9),
+            arrayOf(11, 85, 1.57),
+            arrayOf(10, 80, 1.24),
+            arrayOf(9, 75, 0.91),
+            arrayOf(8, 75, 0.58),
+            arrayOf(7, 70, 0.25),
+            arrayOf(6, 65, -0.08),
+            arrayOf(5, 60, -0.41),
+            arrayOf(4, 55, -0.75),
+            arrayOf(3, 55, -1.08),
+            arrayOf(2, 50, -1.41),
+            arrayOf(1, 40, -1.74),
+            arrayOf(0, 30, -2.07),
+    )
+}
+
+/**
  * V. Escritura
  * A. Ortografia Fonectica
  * Page 70
@@ -452,5 +505,36 @@ fun calculoNumeracionE7M6Baremo(): Array<Array<Any>> {
             arrayOf(7, 5, -2.17),
             arrayOf(4, 3, -2.42),
             arrayOf(1, 1, -2.66),
+    )
+}
+
+/**
+ * VI. Aprendizaje Matematico
+ * B. Resolucion de Problemas
+ * Page 87
+ */
+fun resolucionProblemasE7M6Baremo(): Array<Array<Any>> {
+    return arrayOf(
+            arrayOf(58, 99, 5.51),
+            arrayOf(55, 98, 5.16),
+            arrayOf(52, 97, 4.81),
+            arrayOf(49, 96, 4.47),
+            arrayOf(46, 95, 4.12),
+            arrayOf(43, 94, 3.77),
+            arrayOf(40, 93, 3.42),
+            arrayOf(37, 92, 3.07),
+            arrayOf(34, 91, 2.73),
+            arrayOf(31, 90, 2.38),
+            arrayOf(28, 87, 2.03),
+            arrayOf(25, 85, 1.68),
+            arrayOf(22, 82, 1.33),
+            arrayOf(19, 80, 0.98),
+            arrayOf(16, 70, 0.64),
+            arrayOf(13, 60, 0.29),
+            arrayOf(10, 50, -0.06),
+            arrayOf(8, 40, -0.29),
+            arrayOf(6, 30, -0.52),
+            arrayOf(4, 20, -0.76),
+            arrayOf(2, 10, -0.99),
     )
 }
