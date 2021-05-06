@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 06-05-21 00:11
+  Last modified 06-05-21 16:53
   -->
 
 
@@ -17,7 +17,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua4.modulo4.IndiceGeneralLecturaE4M4">
+    tools:context=".evalua.evalua2.modulo4.IndiceGeneralLecturaE2M4">
 
     <include
         android:id="@+id/include"
