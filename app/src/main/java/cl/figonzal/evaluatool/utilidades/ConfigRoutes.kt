@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 01:37
+ Last modified 06-05-21 15:41
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -58,6 +58,7 @@ import cl.figonzal.evaluatool.evalua.evalua3.modulo4.ExactitudLectoraE3M4
 import cl.figonzal.evaluatool.evalua.evalua3.modulo4.ValoracionGlobalLecturaE3M4
 import cl.figonzal.evaluatool.evalua.evalua3.modulo5.OrtografiaFoneticaE3M5
 import cl.figonzal.evaluatool.evalua.evalua3.modulo5.OrtografiaVisualRegladaE3M5
+import cl.figonzal.evaluatool.evalua.evalua3.modulo5.ValoracionGlobalEscrituraE3M5
 import cl.figonzal.evaluatool.evalua.evalua3.modulo6.CalculoNumeracionE3M6
 import cl.figonzal.evaluatool.evalua.evalua3.modulo6.ResolucionProblemasE3M6
 import cl.figonzal.evaluatool.evalua.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6
@@ -376,7 +377,11 @@ object ConfigRoutes {
                 listOf(Utils.get(R.string.EVALUA_3_M2_SI_1), ReflexividadE3M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
                 listOf(Utils.get(R.string.EVALUA_3_M2_SI_2), PensamientoAnalogicoE3M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
                 listOf(Utils.get(R.string.EVALUA_3_M2_SI_3), OrganizacionPerceptivaE3M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
-                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalBasesE3M2::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+            listOf(
+                Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO),
+                ValoracionGlobalBasesE3M2::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
         val subItems3 = listOf(
@@ -386,19 +391,40 @@ object ConfigRoutes {
         val subItems4 = listOf(
                 listOf(Utils.get(R.string.EVALUA_3_M4_SI_1), ComprensionLectoraE3M4::class.java, Utils.get(R.string.CLICK_COMPR_LECTORA)),
                 listOf(Utils.get(R.string.EVALUA_3_M4_SI_2), ExactitudLectoraE3M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalLecturaE3M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_LECTURA),
+                ValoracionGlobalLecturaE3M4::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
 
         val subItems5 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M5_SI_1), OrtografiaFoneticaE3M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
-                listOf(Utils.get(R.string.EVALUA_3_M5_SI_2), OrtografiaVisualRegladaE3M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
+            listOf(
+                Utils.get(R.string.EVALUA_3_M5_SI_1),
+                OrtografiaFoneticaE3M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M5_SI_2),
+                OrtografiaVisualRegladaE3M5::class.java,
+                Utils.get(R.string.CLICK_ORT_VIS_REGLADA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_ESCRITURA),
+                ValoracionGlobalEscrituraE3M5::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         val subItems6 = listOf(
                 listOf(Utils.get(R.string.EVALUA_3_M6_SI_1), CalculoNumeracionE3M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
                 listOf(Utils.get(R.string.EVALUA_3_M6_SI_2), ResolucionProblemasE3M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
-                listOf(Utils.get(R.string.EVALUA_3_EVALUA_GLOBAL), ValoracionGlobalAprenMatematE3M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_MATEMATICA),
+                ValoracionGlobalAprenMatematE3M6::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         routeMapEvalua3.apply {

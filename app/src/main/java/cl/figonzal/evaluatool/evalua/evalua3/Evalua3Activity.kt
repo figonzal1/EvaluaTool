@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 06-05-21 15:41
  */
 package cl.figonzal.evaluatool.evalua.evalua3
 
@@ -53,7 +53,7 @@ class Evalua3Activity : AppCompatActivity(), ClickListener {
                 Evalua(getString(R.string.EVALUA_3_M2_SI_1)),
                 Evalua(getString(R.string.EVALUA_3_M2_SI_2)),
                 Evalua(getString(R.string.EVALUA_3_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_3_EVALUA_GLOBAL))
+                Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO))
         )
 
         val subItem3 = listOf(
@@ -63,18 +63,19 @@ class Evalua3Activity : AppCompatActivity(), ClickListener {
         val subItem4 = listOf(
                 Evalua(getString(R.string.EVALUA_3_M4_SI_1)),
                 Evalua(getString(R.string.EVALUA_3_M4_SI_2)),
-                Evalua(getString(R.string.EVALUA_3_EVALUA_GLOBAL))
+            Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_LECTURA))
         )
 
         val subItem5 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M5_SI_1)),
-                Evalua(getString(R.string.EVALUA_3_M5_SI_2))
+            Evalua(getString(R.string.EVALUA_3_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_3_M5_SI_2)),
+            Evalua(getString(R.string.EVALUA_2_VALORACION_GLOBAL_ESCRITURA))
         )
 
         val subItem6 = listOf(
                 Evalua(getString(R.string.EVALUA_3_M6_SI_1)),
                 Evalua(getString(R.string.EVALUA_3_M6_SI_2)),
-                Evalua(getString(R.string.EVALUA_3_EVALUA_GLOBAL))
+            Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_MATEMATICA))
         )
 
         //HEADERS

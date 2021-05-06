@@ -39,7 +39,7 @@
     <string name="TOOLBAR_HABILIDADES_FONOLOGICAS">Habilidades Fonológicas</string>
     <string name="TOOLBAR_GRAFOMOTRICIDAD">Grafomotricidad</string>
     <string name="TOOLBAR_INDICE_GENERAL_ESPACIAL">Índice General Espacial</string>
-    <string name="TOOLBAR_INDICE_GENERAL_LINGUISTICO">Índice General Linguistico</string>
+    <string name="TOOLBAR_INDICE_GENERAL_LINGUISTICO">Índice General Linguístico</string>
     <string name="EVALUA_0_MODULO_1">Capacidades Cognitivas</string>
     <string name="EVALUA_0_MODULO_2">Capacidades Espaciales</string>
     <string name="EVALUA_0_MODULO_3">Capacidades Linguísticas</string>
@@ -97,11 +97,17 @@
     <string name="EVALUA_2_M5_SI_1">Ortografía [OR-2]</string>
     <string name="EVALUA_2_M6_SI_1">Cálculo y Numeración [CN-2]</string>
     <string name="EVALUA_2_M6_SI_2">Resolución de Problemas [RP-2]</string>
-    <string name="EVALUA_2_EVALUA_GLOBAL">Valoración Global</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Matemáticas</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_2_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
+    <string name="EVALUA_2_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
     <string name="EVALUA_2_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="TOOLBAR_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
+    <string name="TOOLBAR_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
     <string name="TOOLBAR_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
     <string name="TOOLBAR_ORTOGRAFIA">Ortografía</string>
 
@@ -124,7 +130,10 @@
     <string name="EVALUA_3_M2_SI_2">Pensamiento Analógico [PA-3]</string>
     <string name="EVALUA_3_M2_SI_3">Organización Perceptiva [OP-3]</string>
     <string name="EVALUA_3_M3_SI_1">Niveles de Adaptación [NA-3]</string>
-    <string name="EVALUA_3_EVALUA_GLOBAL">Valoración Global</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global De Las Bases Del Razonamiento</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Los Aprendizajes Matemáticos</string>
     <string name="EVALUA_3_M4_SI_1">Comprensión Lectora [CL-3]</string>
     <string name="EVALUA_3_M4_SI_2">Exactitud Lectora [EL-3]</string>
     <string name="EVALUA_3_M5_SI_1">Ortografía Fonética [OF-3]</string>
@@ -228,6 +237,7 @@
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
     <string name="CLICK_INDICE_GENERAL_MATEMATICO">click_indice_general_matematico</string>
     <string name="CLICK_INDICE_GENERAL_LECTURA">click_indice_general_lectura</string>
+    <string name="CLICK_INDICE_GENERAL_ESCRITURA">click_indice_general_escritura</string>
     <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
     <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
     <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
@@ -387,6 +397,7 @@
     <string name="op_0_pts">OP: 0 pts</string>
     <string name="hf_0_pts">HF: 0 pts</string>
     <string name="pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
+    <string name="pruebas_escrituras">Pruebas Escritura</string>
     <string name="pruebas_capacidades_cognitivas">Pruebas Capacidades Cognitivas</string>
     <string name="pruebas_capacidades_espaciales">Pruebas Capacidades Espaciales</string>
     <string name="pruebas_capacidades_linguisticas">Pruebas Capacidades Linguísticas</string>
@@ -404,6 +415,7 @@
     <string name="cl_0_pts">CL: 0 pts</string>
     <string name="el_0_pts">EL: 0 pts</string>
     <string name="gr_0_pts">GR: 0 pts</string>
+    <string name="or_0_pts">OR: 0 pts</string>
     <string name="ov_0_pts">OV: 0 pts</string>
     <string name="pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
     <string name="c_lculo_numeraci_n">Cálculo / Numeración</string>
@@ -476,6 +488,8 @@
     <string name="ort_fonetica">Ortografía fonética</string>
     <string name="graf_a_y_exp_escrita">Grafía y exp. escrita</string>
     <string name="ortografia_visual">Ortografía Visual</string>
+    <string name="ortograf_a">Ortografía</string>
+    <string name="grafia">Grafía</string>
 
 
 </resources>
