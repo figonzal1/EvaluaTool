@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:12
+ Last modified 05-05-21 23:08
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -25,13 +25,14 @@ import cl.figonzal.evaluatool.evalua.evalua1.modulo1.MemoriaAtencionE1M1
 import cl.figonzal.evaluatool.evalua.evalua1.modulo2.ClasificacionesE1M2
 import cl.figonzal.evaluatool.evalua.evalua1.modulo2.OrganizacionPerceptivaE1M2
 import cl.figonzal.evaluatool.evalua.evalua1.modulo2.SeriesE1M2
-import cl.figonzal.evaluatool.evalua.evalua1.modulo2.ValoracionGlobalBasesE1M2
+import cl.figonzal.evaluatool.evalua.evalua1.modulo2.ValoracionGlobalBasesRazonamientoE1M2
 import cl.figonzal.evaluatool.evalua.evalua1.modulo3.NivelesAdaptacionE1M3
 import cl.figonzal.evaluatool.evalua.evalua1.modulo4.ComprensionLectoraE1M4
 import cl.figonzal.evaluatool.evalua.evalua1.modulo4.ExactitudLectoraE1M4
 import cl.figonzal.evaluatool.evalua.evalua1.modulo4.ValoracionGlobalLecturaE1M4
 import cl.figonzal.evaluatool.evalua.evalua1.modulo5.OrtografiaFoneticaE1M5
 import cl.figonzal.evaluatool.evalua.evalua1.modulo5.OrtografiaVisualE1M5
+import cl.figonzal.evaluatool.evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5
 import cl.figonzal.evaluatool.evalua.evalua1.modulo6.CalculoNumeracionE1M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo1.*
 import cl.figonzal.evaluatool.evalua.evalua2.modulo2.MemoriaAtencionE2M2
@@ -187,7 +188,11 @@ object ConfigRoutes {
                 listOf(Utils.get(R.string.EVALUA_1_M1_SI_1), SeriesE1M2::class.java, Utils.get(R.string.CLICK_SERIES)),
                 listOf(Utils.get(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
                 listOf(Utils.get(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
-                listOf(Utils.get(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalBasesE1M2::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO),
+                ValoracionGlobalBasesRazonamientoE1M2::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         val subItems3 = listOf(
@@ -197,12 +202,29 @@ object ConfigRoutes {
         val subItems4 = listOf(
                 listOf(Utils.get(R.string.EVALUA_1_M4_SI_1), ComprensionLectoraE1M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
                 listOf(Utils.get(R.string.EVALUA_1_M4_SI_2), ExactitudLectoraE1M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_1_EVALUA_GLOBAL), ValoracionGlobalLecturaE1M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_1_VALORACION_LECTURA),
+                ValoracionGlobalLecturaE1M4::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         val subItems5 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M5_SI_1), OrtografiaFoneticaE1M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
-                listOf(Utils.get(R.string.EVALUA_1_M5_SI_2), OrtografiaVisualE1M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL))
+            listOf(
+                Utils.get(R.string.EVALUA_1_M5_SI_1),
+                OrtografiaFoneticaE1M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M5_SI_2),
+                OrtografiaVisualE1M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_1_VALORACION_ESCRITURA),
+                ValoracionGlobalEscrituraE1M5::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         val subItems6 = listOf(

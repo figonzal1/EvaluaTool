@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:14
+ Last modified 05-05-21 22:49
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -19,7 +19,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalBasesE1M2Binding
+import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalBasesRazonamientoE1M2Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
@@ -27,9 +27,9 @@ import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.roundToInt
 
-class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
+class ValoracionGlobalBasesRazonamientoE1M2 : AppCompatActivity(), IndiceValorInterface {
 
-    private lateinit var binding: ActivityValoracionGlobalBasesE1M2Binding
+    private lateinit var binding: ActivityValoracionGlobalBasesRazonamientoE1M2Binding
 
     //TAREA 1
     private lateinit var etTotalesT1: TextInputEditText
@@ -49,7 +49,7 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValoracionGlobalBasesE1M2Binding.inflate(layoutInflater)
+        binding = ActivityValoracionGlobalBasesRazonamientoE1M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
@@ -59,16 +59,16 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
 
     private fun instanciarRecursosInterfaz() {
         with(binding, {
-            this@ValoracionGlobalBasesE1M2.etTotalesT1 = etTotalesT1
-            this@ValoracionGlobalBasesE1M2.etTotalesT2 = etTotalesT2
-            this@ValoracionGlobalBasesE1M2.etTotalesT3 = etTotalesT3
+            this@ValoracionGlobalBasesRazonamientoE1M2.etTotalesT1 = etTotalesT1
+            this@ValoracionGlobalBasesRazonamientoE1M2.etTotalesT2 = etTotalesT2
+            this@ValoracionGlobalBasesRazonamientoE1M2.etTotalesT3 = etTotalesT3
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             tvSubTotalT2 = tvPdSubtotalT2
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
-            this@ValoracionGlobalBasesE1M2.tvPdTotal = tvPdTotalValue
+            this@ValoracionGlobalBasesRazonamientoE1M2.tvPdTotal = tvPdTotalValue
         }).run {
             textWatcherTarea1()
         }
@@ -79,7 +79,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT1 = 0.0
                 }
 
@@ -93,7 +98,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "SE: ", subTotalT1)
+                    tvSubTotalT1.text = String.format(
+                        Locale.US,
+                        getString(R.string.POINTS_FORMAT),
+                        "SE: ",
+                        subTotalT1
+                    )
                     calculateResult()
                 }
             })
@@ -102,7 +112,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT2 = 0.0
                 }
 
@@ -116,7 +131,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "CL: ", subTotalT2)
+                    tvSubTotalT2.text = String.format(
+                        Locale.US,
+                        getString(R.string.POINTS_FORMAT),
+                        "CL: ",
+                        subTotalT2
+                    )
                     calculateResult()
                 }
             })
@@ -125,7 +145,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT3 = 0.0
                 }
 
@@ -139,7 +164,12 @@ class ValoracionGlobalBasesE1M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
+                    tvSubTotalT3.text = String.format(
+                        Locale.US,
+                        getString(R.string.POINTS_FORMAT),
+                        "OP: ",
+                        subTotalT3
+                    )
                     calculateResult()
                 }
             })

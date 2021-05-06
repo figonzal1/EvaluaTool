@@ -71,7 +71,9 @@
     <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
     <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
     <string name="EVALUA_1_M3_SI_1">Niveles de Adaptación [NA-1]</string>
-    <string name="EVALUA_1_EVALUA_GLOBAL">Valoración Global</string>
+    <string name="EVALUA_1_VALORACION_BASES_RAZONAMIENTO">Valoración Global De Las Bases Del Razonamiento</string>
+    <string name="EVALUA_1_VALORACION_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_1_VALORACION_ESCRITURA">Valoración Global De La Escritura</string>
     <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
     <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
     <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
@@ -357,6 +359,7 @@
     <string name="recepcion_y_articulacion">Recepción/Articulación</string>
     <string name="grafomotricidad">Grafomotricidad</string>
     <string name="se_0_pts">SE: 0 pts</string>
+    <string name="of_0_pts">OF: 0 pts</string>
     <string name="ra_0_pts">RA: 0 pts</string>
     <string name="tareas">Tareas</string>
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
@@ -401,6 +404,7 @@
     <string name="cl_0_pts">CL: 0 pts</string>
     <string name="el_0_pts">EL: 0 pts</string>
     <string name="gr_0_pts">GR: 0 pts</string>
+    <string name="ov_0_pts">OV: 0 pts</string>
     <string name="pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
     <string name="c_lculo_numeraci_n">Cálculo / Numeración</string>
     <string name="res_problemas">Res. Problemas</string>
@@ -469,6 +473,9 @@
     <string name="POINTS_SIMPLE_FORMAT">%s pts</string>
     <string name="SEG_FORMAT">%s %s seg</string>
     <string name="SEG_SIMPLE_FORMAT">%s seg</string>
+    <string name="ort_fonetica">Ortografía fonética</string>
+    <string name="graf_a_y_exp_escrita">Grafía y exp. escrita</string>
+    <string name="ortografia_visual">Ortografía Visual</string>
 
 
 </resources>

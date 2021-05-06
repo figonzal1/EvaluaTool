@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 2:08
+ Last modified 05-05-21 23:08
  */
 package cl.figonzal.evaluatool.evalua.evalua1
 
@@ -54,7 +54,7 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
                 Evalua(getString(R.string.EVALUA_1_M2_SI_1)),
                 Evalua(getString(R.string.EVALUA_1_M2_SI_2)),
                 Evalua(getString(R.string.EVALUA_1_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL))
+                Evalua(getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
         )
 
         //Submodulo3
@@ -66,12 +66,13 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
         val subItems4 = listOf(
                 Evalua(getString(R.string.EVALUA_1_M4_SI_1)),
                 Evalua(getString(R.string.EVALUA_1_M4_SI_2)),
-                Evalua(getString(R.string.EVALUA_1_EVALUA_GLOBAL))
+            Evalua(getString(R.string.EVALUA_1_VALORACION_LECTURA))
         )
 
         val subItems5 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M5_SI_1)),
-                Evalua(getString(R.string.EVALUA_1_M5_SI_2))
+            Evalua(getString(R.string.EVALUA_1_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_1_M5_SI_2)),
+            Evalua(getString(R.string.EVALUA_1_VALORACION_ESCRITURA))
         )
 
         //Submodulo6
