@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 06-05-21 16:10
  */
 package cl.figonzal.evaluatool.evalua.evalua4
 
@@ -50,11 +50,11 @@ class Evalua4Activity : AppCompatActivity(), ClickListener {
         )
 
         val subItems2 = listOf(
-                Evalua(getString(R.string.EVALUA_4_M2_SI_1)),
-                Evalua(getString(R.string.EVALUA_4_M2_SI_2)),
-                Evalua(getString(R.string.EVALUA_4_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)),
-                Evalua(getString(R.string.EVALUA_4_M2_SI_4))
+            Evalua(getString(R.string.EVALUA_4_M2_SI_1)),
+            Evalua(getString(R.string.EVALUA_4_M2_SI_2)),
+            Evalua(getString(R.string.EVALUA_4_M2_SI_3)),
+            Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_RAZONAMIENTO)),
+            Evalua(getString(R.string.EVALUA_4_M2_SI_4))
         )
 
         val subItems3 = listOf(
@@ -62,21 +62,22 @@ class Evalua4Activity : AppCompatActivity(), ClickListener {
         )
 
         val subItems4 = listOf(
-                Evalua(getString(R.string.EVALUA_4_M4_SI_1)),
-                Evalua(getString(R.string.EVALUA_4_M4_SI_2)),
-                Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)),
-                Evalua(getString(R.string.EVALUA_4_M4_SI_3))
+            Evalua(getString(R.string.EVALUA_4_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_4_M4_SI_2)),
+            Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_LECTURA)),
+            Evalua(getString(R.string.EVALUA_4_M4_SI_3))
         )
 
         val subItems5 = listOf(
-                Evalua(getString(R.string.EVALUA_4_M5_SI_1))
+            Evalua(getString(R.string.EVALUA_4_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_4_INDICE_GENERAL_ESCRITURA))
         )
 
         val subItems6 = listOf(
-                Evalua(getString(R.string.EVALUA_4_M6_SI_1)),
-                Evalua(getString(R.string.EVALUA_4_M6_SI_2)),
-                Evalua(getString(R.string.EVALUA_4_EVALUA_GLOBAL)),
-                Evalua(getString(R.string.EVALUA_4_M6_SI_4))
+            Evalua(getString(R.string.EVALUA_4_M6_SI_1)),
+            Evalua(getString(R.string.EVALUA_4_M6_SI_2)),
+            Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_MATEMATICAS)),
+            Evalua(getString(R.string.EVALUA_4_M6_SI_4))
         )
 
         //HEADERS
