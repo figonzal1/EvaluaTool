@@ -154,6 +154,10 @@
     <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
     <string name="EVALUA_4_M2_SI_3">Organización Perceptiva [OP-4]</string>
     <string name="EVALUA_4_M2_SI_4">Índice General Cognitivo</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Las Matemáticas</string>
+    <string name="EVALUA_4_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
     <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
     <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
     <string name="EVALUA_4_M4_SI_2">Velocidad Lectora [VL-4]</string>
@@ -162,7 +166,6 @@
     <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
     <string name="EVALUA_4_M6_SI_2">Resolución de Problemas [RP-4]</string>
     <string name="EVALUA_4_M6_SI_4">Índice General Matemático</string>
-    <string name="EVALUA_4_EVALUA_GLOBAL">Valoración Global</string>
 
     <!--EVALUA 5 -->
     <string name="TOOLBAR_EVALUA_5">Evalúa 5</string>
