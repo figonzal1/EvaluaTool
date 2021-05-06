@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 30-01-21 19:34
+  Last modified 06-05-21 16:19
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2">
+    tools:context=".evalua.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2">
 
     <include
         android:id="@+id/include"
@@ -200,7 +200,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pd_subtotales"
+                        android:text="@string/pc_subtotales"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -253,7 +253,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pd_total"
+                        android:text="@string/pc_total"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"

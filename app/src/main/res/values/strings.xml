@@ -100,7 +100,7 @@
     <string name="EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
     <string name="EVALUA_2_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
     <string name="EVALUA_2_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
-    <string name="EVALUA_2_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Matemáticas</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
     <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
     <string name="EVALUA_2_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
     <string name="EVALUA_2_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
@@ -133,7 +133,7 @@
     <string name="EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global De Las Bases Del Razonamiento</string>
     <string name="EVALUA_3_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
     <string name="EVALUA_3_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_3_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Los Aprendizajes Matemáticos</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
     <string name="EVALUA_3_M4_SI_1">Comprensión Lectora [CL-3]</string>
     <string name="EVALUA_3_M4_SI_2">Exactitud Lectora [EL-3]</string>
     <string name="EVALUA_3_M5_SI_1">Ortografía Fonética [OF-3]</string>
@@ -183,7 +183,10 @@
     <string name="EVALUA_5_M4_SI_1">Comprensión Lectora [CL-5]</string>
     <string name="EVALUA_5_M4_SI_2">Velocidad Lectora [VL-5]</string>
     <string name="EVALUA_5_M4_SI_3">Exactitud Lectora [EL-5]</string>
-    <string name="EVALUA_5_EVALUA_GLOBAL">Valoración Global</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
     <string name="EVALUA_5_M5_SI_1">Ortografía Fonética [OF-5]</string>
     <string name="EVALUA_5_M5_SI_2">Ortografía Visual Reglada [OV-5]</string>
     <string name="EVALUA_5_M6_SI_1">Cálculo y Numeración [CN-5]</string>
