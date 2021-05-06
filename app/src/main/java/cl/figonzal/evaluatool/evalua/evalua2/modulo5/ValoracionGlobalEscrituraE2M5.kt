@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 00:16
+ Last modified 06-05-21 01:37
  */
 
-package cl.figonzal.evaluatool.evalua.evalua1.modulo5
+package cl.figonzal.evaluatool.evalua.evalua2.modulo5
 
 import android.os.Bundle
 import android.text.Editable
@@ -20,16 +20,16 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalEscrituraE1M5Binding
+import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalEscrituraE2M5Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.roundToInt
 
-class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface {
+class ValoracionGlobalEscrituraE2M5 : AppCompatActivity(), IndiceValorInterface {
 
-    private lateinit var binding: ActivityValoracionGlobalEscrituraE1M5Binding
+    private lateinit var binding: ActivityValoracionGlobalEscrituraE2M5Binding
 
     //TAREA 1
     private lateinit var etTotalesT1: TextInputEditText
@@ -41,15 +41,11 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
     private lateinit var tvSubTotalT2: TextView
     private var subTotalT2 = 0.0
 
-    //TAREA 3
-    private lateinit var etTotalesT3: TextInputEditText
-    private lateinit var tvSubTotalT3: TextView
-    private var subTotalT3 = 0.0
-
     private lateinit var tvPdTotal: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValoracionGlobalEscrituraE1M5Binding.inflate(layoutInflater)
+        binding = ActivityValoracionGlobalEscrituraE2M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
@@ -60,16 +56,14 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
     private fun initResources() {
 
         with(binding, {
-            this@ValoracionGlobalEscrituraE1M5.etTotalesT1 = etTotalesT1
-            this@ValoracionGlobalEscrituraE1M5.etTotalesT2 = etTotalesT2
-            this@ValoracionGlobalEscrituraE1M5.etTotalesT3 = etTotalesT3
+            this@ValoracionGlobalEscrituraE2M5.etTotalesT1 = etTotalesT1
+            this@ValoracionGlobalEscrituraE2M5.etTotalesT2 = etTotalesT2
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             tvSubTotalT2 = tvPdSubtotalT2
-            tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
-            this@ValoracionGlobalEscrituraE1M5.tvPdTotal = tvPdTotalValue
+            this@ValoracionGlobalEscrituraE2M5.tvPdTotal = tvPdTotalValue
         }).run {
             textWatcherTarea1()
         }
@@ -100,7 +94,7 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
                         }
                     }
                     tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "OF: ", subTotalT1)
+                        String.format(getString(R.string.POINTS_FORMAT), "GR: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -129,45 +123,17 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
                         }
                     }
                     tvSubTotalT2.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "GR: ", subTotalT2)
+                        String.format(getString(R.string.POINTS_FORMAT), "OR: ", subTotalT2)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT3) {
-            addTextChangedListener(object : TextWatcher {
-
-                override fun beforeTextChanged(
-                    s: CharSequence,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                    subTotalT3 = 0.0
-                }
-
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-                override fun afterTextChanged(s: Editable) {
-
-                    when {
-                        s.isEmpty() -> subTotalT3 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
-                            subTotalT3 = text.toString().toDouble()
-                        }
-                    }
-                    tvSubTotalT3.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "OV: ", subTotalT2)
-                    calculateResult()
-                }
-            })
-        }
     }
 
     override fun calculateResult() {
         //TOTALES
-        var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
+        var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
         tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
     }
