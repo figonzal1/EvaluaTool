@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 16:10
+ Last modified 06-05-21 16:29
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -87,6 +87,7 @@ import cl.figonzal.evaluatool.evalua.evalua5.modulo4.ValoracionGlobalLecturaE5M4
 import cl.figonzal.evaluatool.evalua.evalua5.modulo4.VelocidadLectoraE5M4
 import cl.figonzal.evaluatool.evalua.evalua5.modulo5.OrtografiaFoneticaE5M5
 import cl.figonzal.evaluatool.evalua.evalua5.modulo5.OrtografiaVisualRegladaE5M5
+import cl.figonzal.evaluatool.evalua.evalua5.modulo5.ValoracionGlobalEscrituraE5M5
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.CalculoNumeracionE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ResolucionProblemasE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6
@@ -565,7 +566,11 @@ object ConfigRoutes {
                 listOf(Utils.get(R.string.EVALUA_5_M2_SI_1), ReflexividadE5M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
                 listOf(Utils.get(R.string.EVALUA_5_M2_SI_2), PensamientoAnalogicoE5M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
                 listOf(Utils.get(R.string.EVALUA_5_M2_SI_3), OrganizacionPerceptivaE5M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
-                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE5M2::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO),
+                ValoracionGlobalRazonamientoE5M2::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         val subItems3 = listOf(
@@ -577,20 +582,41 @@ object ConfigRoutes {
                 listOf(Utils.get(R.string.EVALUA_5_M4_SI_1), ComprensionLectoraE5M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
                 listOf(Utils.get(R.string.EVALUA_5_M4_SI_2), VelocidadLectoraE5M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)),
                 listOf(Utils.get(R.string.EVALUA_5_M4_SI_3), ExactitudLectoraE5M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalLecturaE5M4::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_LECTURA),
+                ValoracionGlobalLecturaE5M4::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
 
         val subItems5 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M5_SI_1), OrtografiaFoneticaE5M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
-                listOf(Utils.get(R.string.EVALUA_5_M5_SI_1), OrtografiaVisualRegladaE5M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL))
+            listOf(
+                Utils.get(R.string.EVALUA_5_M5_SI_1),
+                OrtografiaFoneticaE5M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M5_SI_1),
+                OrtografiaVisualRegladaE5M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_ESCRITURA),
+                ValoracionGlobalEscrituraE5M5::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
 
         val subItems6 = listOf(
                 listOf(Utils.get(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
                 listOf(Utils.get(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
-                listOf(Utils.get(R.string.EVALUA_5_EVALUA_GLOBAL), ValoracionGlobalMatematicasE5M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL))
+            listOf(
+                Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_MATEMATICA),
+                ValoracionGlobalMatematicasE5M6::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            )
         )
 
         routeMapEvalua5.apply {

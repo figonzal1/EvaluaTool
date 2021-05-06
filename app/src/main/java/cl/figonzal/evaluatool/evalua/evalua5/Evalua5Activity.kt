@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 06-05-21 16:29
  */
 package cl.figonzal.evaluatool.evalua.evalua5
 
@@ -53,7 +53,7 @@ class Evalua5Activity : AppCompatActivity(), ClickListener {
                 Evalua(getString(R.string.EVALUA_5_M2_SI_1)),
                 Evalua(getString(R.string.EVALUA_5_M2_SI_2)),
                 Evalua(getString(R.string.EVALUA_5_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL))
+                Evalua(getString(R.string.EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO))
         )
 
         //modulo 3
@@ -66,20 +66,21 @@ class Evalua5Activity : AppCompatActivity(), ClickListener {
                 Evalua(getString(R.string.EVALUA_5_M4_SI_1)),
                 Evalua(getString(R.string.EVALUA_5_M4_SI_2)),
                 Evalua(getString(R.string.EVALUA_5_M4_SI_3)),
-                Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL))
+            Evalua(getString(R.string.EVALUA_5_VALORACION_GLOBAL_LECTURA))
         )
 
         //MODULO 5
         val subItems5 = listOf(
-                Evalua(getString(R.string.EVALUA_5_M5_SI_1)),
-                Evalua(getString(R.string.EVALUA_5_M5_SI_2))
+            Evalua(getString(R.string.EVALUA_5_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_5_M5_SI_2)),
+            Evalua(getString(R.string.EVALUA_5_VALORACION_GLOBAL_ESCRITURA))
         )
 
         //MODULO 6
         val subItems6 = listOf(
                 Evalua(getString(R.string.EVALUA_5_M6_SI_1)),
                 Evalua(getString(R.string.EVALUA_5_M6_SI_2)),
-                Evalua(getString(R.string.EVALUA_5_EVALUA_GLOBAL))
+            Evalua(getString(R.string.EVALUA_5_VALORACION_GLOBAL_MATEMATICA))
         )
 
         //HEADERS
