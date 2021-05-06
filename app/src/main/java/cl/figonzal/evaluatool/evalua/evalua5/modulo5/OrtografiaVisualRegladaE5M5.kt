@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 1:08
+ Last modified 06-05-21 17:03
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo5
 
@@ -21,7 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualRegladaE5M4Binding
+import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualRegladaE5M5Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
@@ -35,27 +35,27 @@ class OrtografiaVisualRegladaE5M5 : AppCompatActivity(), EvaluaInterface {
         private const val MEDIA = 34.57
     }
 
-    private lateinit var binding: ActivityOrtografiaVisualRegladaE5M4Binding
+    private lateinit var binding: ActivityOrtografiaVisualRegladaE5M5Binding
     private val perc = listOf(
-            91 to 99,
-            76 to 98,
-            73 to 97,
-            70 to 96,
-            67 to 95,
-            64 to 94,
-            61 to 92,
-            58 to 90,
-            55 to 87,
-            52 to 85,
-            49 to 80,
-            46 to 75,
-            43 to 70,
-            40 to 60,
-            37 to 50,
-            34 to 45,
-            31 to 40,
-            28 to 35,
-            25 to 30,
+        91 to 99,
+        76 to 98,
+        73 to 97,
+        70 to 96,
+        67 to 95,
+        64 to 94,
+        61 to 92,
+        58 to 90,
+        55 to 87,
+        52 to 85,
+        49 to 80,
+        46 to 75,
+        43 to 70,
+        40 to 60,
+        37 to 50,
+        34 to 45,
+        31 to 40,
+        28 to 35,
+        25 to 30,
             22 to 25,
             19 to 20,
             16 to 15,
@@ -91,7 +91,7 @@ class OrtografiaVisualRegladaE5M5 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityOrtografiaVisualRegladaE5M4Binding.inflate(layoutInflater)
+        binding = ActivityOrtografiaVisualRegladaE5M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configActionBar(R.string.TOOLBAR_ORT_VIS_REGLADA, binding.include.toolbar)
