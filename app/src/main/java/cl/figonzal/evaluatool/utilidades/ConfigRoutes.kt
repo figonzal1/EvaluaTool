@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 23:08
+ Last modified 06-05-21 01:37
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -38,7 +38,11 @@ import cl.figonzal.evaluatool.evalua.evalua2.modulo1.*
 import cl.figonzal.evaluatool.evalua.evalua2.modulo2.MemoriaAtencionE2M2
 import cl.figonzal.evaluatool.evalua.evalua2.modulo3.NivelesAdaptacionE2M3
 import cl.figonzal.evaluatool.evalua.evalua2.modulo4.ComprensionLectoraE2M4
+import cl.figonzal.evaluatool.evalua.evalua2.modulo4.IndiceGeneralLecturaE2M4
+import cl.figonzal.evaluatool.evalua.evalua2.modulo4.ValoracionGlobalLecturaE2M4
+import cl.figonzal.evaluatool.evalua.evalua2.modulo5.IndiceGeneralEscrituraE2M5
 import cl.figonzal.evaluatool.evalua.evalua2.modulo5.OrtografiaE2M5
+import cl.figonzal.evaluatool.evalua.evalua2.modulo5.ValoracionGlobalEscrituraE2M5
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.CalculoNumeracionE2M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.IndiceGeneralMatematicoE2M6
 import cl.figonzal.evaluatool.evalua.evalua2.modulo6.ResolucionProblemasE2M6
@@ -250,11 +254,31 @@ object ConfigRoutes {
     private fun setRouteMapEvalua2() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M1_SI_1), PensamientoAnalogicoE2M1::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
-                listOf(Utils.get(R.string.EVALUA_2_M1_SI_2), OrganizacionPerceptivaE2M1::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
-                listOf(Utils.get(R.string.EVALUA_2_M1_SI_3), ClasificacionesE2M1::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
-                listOf(Utils.get(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalRazonamientoE2M1::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
-                listOf(Utils.get(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO), IndiceGeneralCognitivoE2M1::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M1_SI_1),
+                PensamientoAnalogicoE2M1::class.java,
+                Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_M1_SI_2),
+                OrganizacionPerceptivaE2M1::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_M1_SI_3),
+                ClasificacionesE2M1::class.java,
+                Utils.get(R.string.CLICK_CLASIFICACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO),
+                ValoracionGlobalRazonamientoE2M1::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO),
+                IndiceGeneralCognitivoE2M1::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+            )
         )
 
         val subItems2 = listOf(
@@ -267,18 +291,62 @@ object ConfigRoutes {
         )
 
         val subItems4 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M4_SI_1), ComprensionLectoraE2M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M4_SI_1),
+                ComprensionLectoraE2M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_VALORACION_GLOBAL_LECTURA),
+                ValoracionGlobalLecturaE2M4::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_INDICE_GENERAL_LECTURA),
+                IndiceGeneralLecturaE2M4::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_LECTURA)
+            )
         )
 
         val subItems5 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M5_SI_1), OrtografiaE2M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M5_SI_1),
+                OrtografiaE2M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_VALORACION_GLOBAL_ESCRITURA),
+                ValoracionGlobalEscrituraE2M5::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_INDICE_GENERAL_ESCRITURA),
+                IndiceGeneralEscrituraE2M5::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_ESCRITURA)
+            )
         )
 
         val subItems6 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M6_SI_1), CalculoNumeracionE2M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
-                listOf(Utils.get(R.string.EVALUA_2_M6_SI_2), ResolucionProblemasE2M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
-                listOf(Utils.get(R.string.EVALUA_2_EVALUA_GLOBAL), ValoracionGlobalMatematicasE2M6::class.java, Utils.get(R.string.CLICK_VALORACION_GLOBAL)),
-                listOf(Utils.get(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO), IndiceGeneralMatematicoE2M6::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M6_SI_1),
+                CalculoNumeracionE2M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_M6_SI_2),
+                ResolucionProblemasE2M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_VALORACION_GLOBAL_MATEMATICA),
+                ValoracionGlobalMatematicasE2M6::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO),
+                IndiceGeneralMatematicoE2M6::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
+            )
         )
 
         routeMapEvalua2.apply {

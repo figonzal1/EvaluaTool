@@ -8,16 +8,15 @@
 
   Copyright (c) 2021
 
-  Last modified 05-05-21 23:18
+  Last modified 06-05-21 01:25
   -->
-
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua2.modulo1.IndiceGeneralCognitivoE2M1">
+    tools:context=".evalua.evalua2.modulo5.ValoracionGlobalEscrituraE2M5">
 
     <include
         android:id="@+id/include"
@@ -67,7 +66,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pruebas_capacidades_cognitivas"
+                        android:text="@string/pruebas_escrituras"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"
@@ -80,10 +79,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_4"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/indica_los_puntajes_tipificados_de_las_pruebas"
+                        android:text="@string/indica_los_puntajes_centiles_de_las_pruebas"
                         android:textAppearance="?attr/textAppearanceSubtitle1"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="@+id/tv_tarea_1"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_1" />
 
@@ -95,7 +93,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:hint="@string/analog_as"
+                        android:hint="@string/grafia"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_descripcion">
@@ -116,35 +114,15 @@
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:hint="@string/clasificaciones"
+                        android:layout_marginBottom="@dimen/margin_8"
+                        android:hint="@string/ortograf_a"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
                         app:layout_constraintStart_toStartOf="@+id/it_totales_t1"
                         app:layout_constraintTop_toBottomOf="@+id/it_totales_t1">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/et_totales_t2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:digits=".-0123456789"
-                            android:inputType="number"
-                            android:maxLength="5"
-                            android:textSize="14sp" />
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/margin_8"
-                        android:hint="@string/org_perceptiva"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/it_totales_t1"
-                        app:layout_constraintStart_toStartOf="@+id/it_totales_t2"
-                        app:layout_constraintTop_toBottomOf="@+id/it_totales_t2">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/et_totales_t3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:digits=".-0123456789"
@@ -203,7 +181,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pt_subtotales"
+                        android:text="@string/pc_subtotales"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -216,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pa_0_pts"
+                        android:text="@string/gr_0_pts"
                         android:textAppearance="?attr/textAppearanceSubtitle1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -229,25 +207,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/ca_0_pts"
+                        android:text="@string/or_0_pts"
                         android:textAppearance="?attr/textAppearanceSubtitle1"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t1" />
 
-                    <TextView
-                        android:id="@+id/tv_pd_subtotal_t3"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_16"
-                        android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/op_0_pts"
-                        android:textAppearance="?attr/textAppearanceSubtitle1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
 
                     <TextView
                         android:id="@+id/tv_pd_total"
@@ -256,12 +222,12 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/igc_total"
+                        android:text="@string/pc_total"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t3" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
 
                     <TextView
                         android:id="@+id/tv_pd_total_value"

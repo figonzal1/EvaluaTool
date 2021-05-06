@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 02-01-21 20:10
+  Last modified 06-05-21 01:34
   -->
 
 
@@ -183,7 +183,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pd_subtotales"
+                        android:text="@string/pc_subtotales"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -223,7 +223,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/pd_total"
+                        android:text="@string/pc_total"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"

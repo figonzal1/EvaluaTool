@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 06-05-21 01:37
  */
 package cl.figonzal.evaluatool.evalua.evalua2
 
@@ -45,11 +45,11 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
     private fun configurarExpandedList() {
 
         val subItems1 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M1_SI_1)),
-                Evalua(getString(R.string.EVALUA_2_M1_SI_2)),
-                Evalua(getString(R.string.EVALUA_2_M1_SI_3)),
-                Evalua(getString(R.string.EVALUA_2_EVALUA_GLOBAL)),
-                Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO))
+            Evalua(getString(R.string.EVALUA_2_M1_SI_1)),
+            Evalua(getString(R.string.EVALUA_2_M1_SI_2)),
+            Evalua(getString(R.string.EVALUA_2_M1_SI_3)),
+            Evalua(getString(R.string.EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO)),
+            Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_COGNITIVO))
         )
 
         val subItems2 = listOf(
@@ -61,18 +61,22 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
         )
 
         val subItems4 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M4_SI_1))
+            Evalua(getString(R.string.EVALUA_2_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_2_VALORACION_GLOBAL_LECTURA)),
+            Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_LECTURA))
         )
 
         val subItems5 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M5_SI_1))
+            Evalua(getString(R.string.EVALUA_2_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_2_VALORACION_GLOBAL_ESCRITURA)),
+            Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_ESCRITURA))
         )
 
         val subItems6 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M6_SI_1)),
-                Evalua(getString(R.string.EVALUA_2_M6_SI_2)),
-                Evalua(getString(R.string.EVALUA_2_EVALUA_GLOBAL)),
-                Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO))
+            Evalua(getString(R.string.EVALUA_2_M6_SI_1)),
+            Evalua(getString(R.string.EVALUA_2_M6_SI_2)),
+            Evalua(getString(R.string.EVALUA_2_VALORACION_GLOBAL_MATEMATICA)),
+            Evalua(getString(R.string.EVALUA_2_INDICE_GENERAL_MATEMATICO))
         )
 
 
