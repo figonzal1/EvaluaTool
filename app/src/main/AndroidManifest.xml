@@ -9,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 01-05-21 20:51
+  Last modified 05-05-21 22:49
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,6 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -103,7 +104,7 @@
             android:name=".evalua.evalua1.modulo4.ComprensionLectoraE1M4"
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo2.ValoracionGlobalBasesE1M2"
+            android:name=".evalua.evalua1.modulo2.ValoracionGlobalBasesRazonamientoE1M2"
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua.evalua1.modulo2.OrganizacionPerceptivaE1M2"
