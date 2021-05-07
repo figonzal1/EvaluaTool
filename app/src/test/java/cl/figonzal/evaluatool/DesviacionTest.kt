@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:39
+ Last modified 07-05-21 17:47
  */
 package cl.figonzal.evaluatool
 
 import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
-import junit.framework.TestCase
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -27,7 +27,7 @@ class DesviacionTest(
 ) {
     @Test
     fun testCalcularDesviacion() {
-        TestCase.assertEquals(
+        assertEquals(
             desviacion_esperada,
             calcularDesviacion(media, desviacion, pd_total, false),
             0.001
@@ -41,13 +41,13 @@ class DesviacionTest(
         fun data(): Array<Array<out Any>> {
             //MEDIA,DESVIACION,PD_TOTAL,DESVIACION CALCULADA
             return arrayOf(
-                    arrayOf(84.81, 9.01, 60, -2.75),
-                    arrayOf(23.21, 2.01, 25, 0.89),
-                    arrayOf(10.45, 4.12, 20, 2.32),
-                    arrayOf(42.23, 6.1, 35.2, -1.15),
-                    arrayOf(22.12, 10.1, 60.2, 3.77),
-                    arrayOf(78.48, 1.04, 75.2, -3.15),
-                    arrayOf(63.21, 10.35, 61.1, -0.2)
+                arrayOf(84.81, 9.01, 60, -2.75),
+                arrayOf(23.21, 2.01, 25, 0.89),
+                arrayOf(10.45, 4.12, 20, 2.32),
+                arrayOf(42.23, 6.1, 35, -1.19),
+                arrayOf(22.12, 10.1, 60, 3.75),
+                arrayOf(78.48, 1.04, 75, -3.35),
+                arrayOf(63.21, 10.35, 61, -0.21)
             )
         }
     }
