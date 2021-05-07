@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 16:29
+ Last modified 07-05-21 00:34
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -95,6 +95,7 @@ import cl.figonzal.evaluatool.evalua.evalua7.modulo1.AtencionConcentracionE7M1
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoDeductivoE7M2
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoEspacialE7M2
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoInductivoE7M2
+import cl.figonzal.evaluatool.evalua.evalua7.modulo3.NivelesAdaptacionE7M3
 import cl.figonzal.evaluatool.evalua.evalua7.modulo4.ComprensionLectoraE7M4
 import cl.figonzal.evaluatool.evalua.evalua7.modulo4.EficaciaLectoraE7M4
 import cl.figonzal.evaluatool.evalua.evalua7.modulo4.VelocidadLectoraE7M4
@@ -637,24 +638,68 @@ object ConfigRoutes {
     private fun setRouteMapEvalua7() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_7_M1_SI_1), AtencionConcentracionE7M1::class.java, Utils.get(R.string.CLICK_ATEN_CONCENTRACION))
+            listOf(
+                Utils.get(R.string.EVALUA_7_M1_SI_1),
+                AtencionConcentracionE7M1::class.java,
+                Utils.get(R.string.CLICK_ATEN_CONCENTRACION)
+            )
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_7_M2_SI_1), RazonamientoDeductivoE7M2::class.java, Utils.get(R.string.CLICK_RAZON_DEDUCTIVO)),
-                listOf(Utils.get(R.string.EVALUA_7_M2_SI_2), RazonamientoInductivoE7M2::class.java, Utils.get(R.string.CLICK_RAZON_INDUCTIVO)),
-                listOf(Utils.get(R.string.EVALUA_7_M2_SI_3), RazonamientoEspacialE7M2::class.java, Utils.get(R.string.CLICK_RAZON_ESPACIAL))
+            listOf(
+                Utils.get(R.string.EVALUA_7_M2_SI_1),
+                RazonamientoDeductivoE7M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_DEDUCTIVO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M2_SI_2),
+                RazonamientoInductivoE7M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_INDUCTIVO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M2_SI_3),
+                RazonamientoEspacialE7M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_ESPACIAL)
+            )
+        )
+
+        val subItems3 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_7_M3_SI_1),
+                NivelesAdaptacionE7M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
         val subItems4 = listOf(
-                listOf(Utils.get(R.string.EVALUA_7_M4_SI_1), EficaciaLectoraE7M4::class.java, Utils.get(R.string.CLICK_EFICACIA_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_7_M4_SI_2), ComprensionLectoraE7M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_7_M4_SI_3), VelocidadLectoraE7M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA))
+            listOf(
+                Utils.get(R.string.EVALUA_7_M4_SI_1),
+                EficaciaLectoraE7M4::class.java,
+                Utils.get(R.string.CLICK_EFICACIA_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M4_SI_2),
+                ComprensionLectoraE7M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M4_SI_3),
+                VelocidadLectoraE7M4::class.java,
+                Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
+            )
         )
 
         val subItems5 = listOf(
-                listOf(Utils.get(R.string.EVALUA_7_M5_SI_1), OrtografiaFoneticaE7M5::class.java, Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)),
-                listOf(Utils.get(R.string.EVALUA_7_M5_SI_2), ExpresionEscritaE7M5::class.java, Utils.get(R.string.CLICK_EXP_ESCRITA)),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M5_SI_1),
+                OrtografiaFoneticaE7M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_FONETICA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M5_SI_2),
+                ExpresionEscritaE7M5::class.java,
+                Utils.get(R.string.CLICK_EXP_ESCRITA)
+            ),
                 listOf(Utils.get(R.string.EVALUA_7_M5_SI_3), OrtografiaVisualRegladaE7M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
         )
 
@@ -666,6 +711,7 @@ object ConfigRoutes {
         routeMapEvalua7.apply {
             put(Utils.get(R.string.EVALUA_7_MODULO_1), subItems1)
             put(Utils.get(R.string.EVALUA_7_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_7_MODULO_3), subItems3)
             put(Utils.get(R.string.EVALUA_7_MODULO_4), subItems4)
             put(Utils.get(R.string.EVALUA_7_MODULO_5), subItems5)
             put(Utils.get(R.string.EVALUA_7_MODULO_6), subItems6)

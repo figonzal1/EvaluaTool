@@ -196,6 +196,7 @@
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
     <string name="EVALUA_7_MODULO_1">Atención - Concentración</string>
     <string name="EVALUA_7_MODULO_2">Bases del Razonamiento</string>
+    <string name="EVALUA_7_MODULO_3">Niveles de Adaptación</string>
     <string name="EVALUA_7_MODULO_4">Lectura</string>
     <string name="EVALUA_7_MODULO_5">Escritura</string>
     <string name="EVALUA_7_MODULO_6">Aprendizajes Matemáticos</string>
@@ -204,6 +205,7 @@
     <string name="EVALUA_7_M2_SI_1">Razonamiento Deductivo [RD-7]</string>
     <string name="EVALUA_7_M2_SI_2">Razonamiento Inductivo [RI-7]</string>
     <string name="EVALUA_7_M2_SI_3">Razonamiento Espacial [RE-7]</string>
+    <string name="EVALUA_7_M3_SI_1">Niveles Adaptación [NA-7]</string>
     <string name="EVALUA_7_M4_SI_1">Eficacia Lectora [EL-7]</string>
     <string name="EVALUA_7_M4_SI_2">Comprensión Lectora [CL-7]</string>
     <string name="EVALUA_7_M4_SI_3">Velocidad Lectora [VL-7]</string>

@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 06-05-21 17:01
+  Last modified 07-05-21 00:25
   -->
 
 
@@ -63,7 +63,7 @@
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/tarea_4"
+                        android:text="@string/tarea_1"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.01"

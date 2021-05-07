@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:19
+ Last modified 07-05-21 00:34
  */
 package cl.figonzal.evaluatool.evalua.evalua7
 
@@ -45,24 +45,28 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
     private fun configurarExpandedList() {
 
         val subItems1 = listOf(
-                Evalua(getString(R.string.EVALUA_7_M1_SI_1))
+            Evalua(getString(R.string.EVALUA_7_M1_SI_1))
         )
 
         val subItems2 = listOf(
-                Evalua(getString(R.string.EVALUA_7_M2_SI_1)),
-                Evalua(getString(R.string.EVALUA_7_M2_SI_2)),
-                Evalua(getString(R.string.EVALUA_7_M2_SI_3))
+            Evalua(getString(R.string.EVALUA_7_M2_SI_1)),
+            Evalua(getString(R.string.EVALUA_7_M2_SI_2)),
+            Evalua(getString(R.string.EVALUA_7_M2_SI_3))
+        )
+
+        val subItems3 = listOf(
+            Evalua(getString(R.string.EVALUA_7_M3_SI_1))
         )
 
         val subItems4 = listOf(
-                Evalua(getString(R.string.EVALUA_7_M4_SI_1)),
-                Evalua(getString(R.string.EVALUA_7_M4_SI_2)),
-                Evalua(getString(R.string.EVALUA_7_M4_SI_3))
+            Evalua(getString(R.string.EVALUA_7_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_7_M4_SI_2)),
+            Evalua(getString(R.string.EVALUA_7_M4_SI_3))
         )
 
         val subItems5 = listOf(
-                Evalua(getString(R.string.EVALUA_7_M5_SI_1)),
-                Evalua(getString(R.string.EVALUA_7_M5_SI_2)),
+            Evalua(getString(R.string.EVALUA_7_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_7_M5_SI_2)),
                 Evalua(getString(R.string.EVALUA_7_M5_SI_3))
         )
 
@@ -73,8 +77,27 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
 
         sectionedRecyclerViewAdapter.apply {
             addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_1), subItems1, this@Evalua7Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_2), subItems2, this@Evalua7Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_4), subItems4, this@Evalua7Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_2),
+                    subItems2,
+                    this@Evalua7Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_3),
+                    subItems3,
+                    this@Evalua7Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_4),
+                    subItems4,
+                    this@Evalua7Activity
+                )
+            )
             addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_5), subItems5, this@Evalua7Activity))
             addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_6), subItems6, this@Evalua7Activity))
         }

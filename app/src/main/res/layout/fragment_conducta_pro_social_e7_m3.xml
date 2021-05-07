@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 07-05-21 00:25
+  Last modified 07-05-21 00:34
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -75,9 +75,10 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_4"
                         android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/indica_el_puntaje_items_16_25"
+                        android:text="@string/indica_el_puntaje_items_26_35"
                         android:textAppearance="?attr/textAppearanceSubtitle2"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.01"
                         app:layout_constraintStart_toStartOf="@+id/tv_tarea_1"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tarea_1" />
 
