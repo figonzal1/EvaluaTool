@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 18:20
+ Last modified 07-05-21 17:23
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -24,11 +24,15 @@ import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters
 /**
  * Adapter that is used
  */
-class EvaluaAdapter(private val headerName: String, private val subItemsList: List<Evalua>, private val clickListener: ClickListener) : Section(
-        SectionParameters.builder()
-                .itemResourceId(R.layout.expandable_item_list)
-                .headerResourceId(R.layout.expandable_item_group_list)
-                .build()
+class EvaluaAdapter(
+    private val headerName: String,
+    private val subItemsList: List<Evalua>,
+    private val clickListener: ClickListener
+) : Section(
+    SectionParameters.builder()
+        .itemResourceId(R.layout.expandable_item_list)
+        .headerResourceId(R.layout.expandable_item_group_list)
+        .build()
 ) {
     var isExpanded = false
 
@@ -79,10 +83,10 @@ class EvaluaAdapter(private val headerName: String, private val subItemsList: Li
 
                 tvGroup.text = evaluaAdapter.headerName
                 ivArrow.setImageResource(
-                        when {
-                            evaluaAdapter.isExpanded -> R.drawable.ic_keyboard_arrow_up_black_24dp
-                            else -> R.drawable.ic_keyboard_arrow_down_black_24dp
-                        }
+                    when {
+                        evaluaAdapter.isExpanded -> R.drawable.ic_keyboard_arrow_up_black_24dp
+                        else -> R.drawable.ic_keyboard_arrow_down_black_24dp
+                    }
                 )
                 root.setOnClickListener {
                     evaluaAdapter.clickListener.onHeaderRootViewClicked(evaluaAdapter)
@@ -108,7 +112,12 @@ class EvaluaAdapter(private val headerName: String, private val subItemsList: Li
 
             with(binding, {
                 tvChild.text = subItem.nombre
-                itemView.setOnClickListener { evaluaAdapter.clickListener.onItemRootViewClicked(evaluaAdapter.headerName, adapterPosition) }
+                itemView.setOnClickListener {
+                    evaluaAdapter.clickListener.onItemRootViewClicked(
+                        evaluaAdapter.headerName,
+                        adapterPosition
+                    )
+                }
             })
         }
     }

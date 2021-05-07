@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-04-21 22:57
+ Last modified 07-05-21 17:29
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -31,11 +31,11 @@ object RouteHandler {
      * @param currentActivity The Caller Activity
      */
     fun handleRoutes(
-            routeMapEvalua: HashMap<String, List<Any>>,
-            sectionTitle: String,
-            sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter,
-            itemAdapterPosition: Int,
-            currentActivity: Activity,
+        routeMapEvalua: HashMap<String, List<Any>>,
+        sectionTitle: String,
+        sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter,
+        itemAdapterPosition: Int,
+        currentActivity: Activity,
     ) {
 
         routeMapEvalua.forEach { item ->
@@ -44,18 +44,27 @@ object RouteHandler {
             if (item.key == sectionTitle) {
 
                 (0..item.value.size)
-                        .asSequence()
-                        .filter { it == sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition) }
-                        .map { item.value[it] as List<*> }
-                        .forEach {
-                            with(it, {
-                                val destinationActivity = this[1]
-                                val responseLog = this[2]
-                                val titleLog = Utils.get(R.string.SUB_ITEM_CLICK)
+                    .asSequence()
+                    .filter {
+                        it == sectionedRecyclerViewAdapter.getPositionInSection(
+                            itemAdapterPosition
+                        )
+                    }
+                    .map { item.value[it] as List<*> }
+                    .forEach {
+                        with(it, {
+                            val destinationActivity = this[1]
+                            val responseLog = this[2]
+                            val titleLog = Utils.get(R.string.SUB_ITEM_CLICK)
 
-                                abrirActividad(currentActivity, destinationActivity as Class<*>, titleLog, responseLog as String)
-                            })
-                        }
+                            abrirActividad(
+                                currentActivity,
+                                destinationActivity as Class<*>,
+                                titleLog,
+                                responseLog as String
+                            )
+                        })
+                    }
             }
         }
     }
@@ -70,7 +79,12 @@ object RouteHandler {
      *
      * @return Unit
      */
-    private fun abrirActividad(activity: Activity, destActivity: Class<*>?, TAG: String, msg: String) {
+    private fun abrirActividad(
+        activity: Activity,
+        destActivity: Class<*>?,
+        TAG: String,
+        msg: String
+    ) {
         Timber.i("%s%s", TAG, msg)
         activity.startActivity(Intent(activity, destActivity))
     }

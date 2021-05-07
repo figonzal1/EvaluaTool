@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 00:34
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua7
 
@@ -67,16 +67,22 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
         val subItems5 = listOf(
             Evalua(getString(R.string.EVALUA_7_M5_SI_1)),
             Evalua(getString(R.string.EVALUA_7_M5_SI_2)),
-                Evalua(getString(R.string.EVALUA_7_M5_SI_3))
+            Evalua(getString(R.string.EVALUA_7_M5_SI_3))
         )
 
         val subItems6 = listOf(
-                Evalua(getString(R.string.EVALUA_7_M6_SI_1)),
-                Evalua(getString(R.string.EVALUA_7_M6_SI_2))
+            Evalua(getString(R.string.EVALUA_7_M6_SI_1)),
+            Evalua(getString(R.string.EVALUA_7_M6_SI_2))
         )
 
         sectionedRecyclerViewAdapter.apply {
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_1), subItems1, this@Evalua7Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_1),
+                    subItems1,
+                    this@Evalua7Activity
+                )
+            )
             addSection(
                 EvaluaAdapter(
                     getString(R.string.EVALUA_7_MODULO_2),
@@ -98,8 +104,20 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
                     this@Evalua7Activity
                 )
             )
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_5), subItems5, this@Evalua7Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_7_MODULO_6), subItems6, this@Evalua7Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_5),
+                    subItems5,
+                    this@Evalua7Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_7_MODULO_6),
+                    subItems6,
+                    this@Evalua7Activity
+                )
+            )
         }
 
         //RecyclerView
@@ -112,11 +130,11 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
         ConfigRoutes.routeMap[getString(R.string.routeMapEvalua7)]?.let {
             RouteHandler.handleRoutes(
-                    it,
-                    sectionTitle,
-                    sectionedRecyclerViewAdapter,
-                    itemAdapterPosition,
-                    this
+                it,
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
             )
         }
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 09:23
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -111,7 +111,12 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
                 showHelperDialog(supportFragmentManager)
             }
 
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_CLASIFICACION))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_CLASIFICACION)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()

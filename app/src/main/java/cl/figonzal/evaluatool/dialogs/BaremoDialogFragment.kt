@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:22
+ Last modified 07-05-21 17:29
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -48,7 +48,8 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
             }
 
             //tvBaremoDescription
-            tvBaremoDescripcion.text = String.format("%s %s", Utils.get(R.string.dialogo_baremo_descripcion), itemName)
+            tvBaremoDescripcion.text =
+                String.format("%s %s", Utils.get(R.string.dialogo_baremo_descripcion), itemName)
 
             //BtnCloseDialog
             btnCerrar.setOnClickListener {

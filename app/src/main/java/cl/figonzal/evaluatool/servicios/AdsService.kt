@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 13:14
+ Last modified 07-05-21 17:29
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -40,9 +40,9 @@ import java.util.*
  * @version 17-04-2021
  */
 class AdsService(
-        private val activity: MainActivity,
-        private val supportFragmentManager: FragmentManager,
-        private val sharedPrefService: SharedPrefService,
+    private val activity: MainActivity,
+    private val supportFragmentManager: FragmentManager,
+    private val sharedPrefService: SharedPrefService,
 ) {
 
     private var interstitialAd: InterstitialAd? = null
@@ -56,23 +56,26 @@ class AdsService(
     fun loadIntersitial() {
 
         InterstitialAd.load(
-                activity.applicationContext,
-                Utils.get(R.string.ADMOB_ID_INTERSITIAL),
-                AdRequest.Builder().build(),
-                object : InterstitialAdLoadCallback() {
+            activity.applicationContext,
+            Utils.get(R.string.ADMOB_ID_INTERSITIAL),
+            AdRequest.Builder().build(),
+            object : InterstitialAdLoadCallback() {
 
-                    override fun onAdLoaded(p0: InterstitialAd) {
-                        super.onAdLoaded(p0)
-                        interstitialAd = p0
-                        activity.logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_CARGADO)
+                override fun onAdLoaded(p0: InterstitialAd) {
+                    super.onAdLoaded(p0)
+                    interstitialAd = p0
+                    activity.logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_CARGADO)
 
-                    }
-
-                    override fun onAdFailedToLoad(p0: LoadAdError) {
-                        super.onAdFailedToLoad(p0)
-                        activity.logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_NO_CARGADO)
-                    }
                 }
+
+                override fun onAdFailedToLoad(p0: LoadAdError) {
+                    super.onAdFailedToLoad(p0)
+                    activity.logInfo(
+                        R.string.TAG_INTERSITIAL_STATUS,
+                        R.string.INTERSITIAL_NO_CARGADO
+                    )
+                }
+            }
         )
     }
 
@@ -126,28 +129,34 @@ class AdsService(
 
         //LOAD VIDEO REWARD
         RewardedAd.load(
-                activity.applicationContext,
-                Utils.get(R.string.ADMOB_ID_VIDEO),
-                AdRequest.Builder().build(),
-                object : RewardedAdLoadCallback() {
+            activity.applicationContext,
+            Utils.get(R.string.ADMOB_ID_VIDEO),
+            AdRequest.Builder().build(),
+            object : RewardedAdLoadCallback() {
 
-                    override fun onAdLoaded(p0: RewardedAd) {
-                        rewardedAd = p0
-                        activity.logInfo(R.string.TAG_VIDEO_REWARD_STATUS, R.string.TAG_VIDEO_REWARD_STATUS_LOADED)
+                override fun onAdLoaded(p0: RewardedAd) {
+                    rewardedAd = p0
+                    activity.logInfo(
+                        R.string.TAG_VIDEO_REWARD_STATUS,
+                        R.string.TAG_VIDEO_REWARD_STATUS_LOADED
+                    )
 
-                        //Try to show dialog
-                        try {
-                            rewardDialog()
-                        } catch (e: IllegalStateException) {
-                            Timber.e(e, "Error al llamar dialog")
-                        }
-                    }
-
-                    override fun onAdFailedToLoad(p0: LoadAdError) {
-                        super.onAdFailedToLoad(p0)
-                        activity.logInfo(R.string.TAG_VIDEO_REWARD_STATUS, R.string.TAG_VIDEO_REWARD_STATUS_FAILED)
+                    //Try to show dialog
+                    try {
+                        rewardDialog()
+                    } catch (e: IllegalStateException) {
+                        Timber.e(e, "Error al llamar dialog")
                     }
                 }
+
+                override fun onAdFailedToLoad(p0: LoadAdError) {
+                    super.onAdFailedToLoad(p0)
+                    activity.logInfo(
+                        R.string.TAG_VIDEO_REWARD_STATUS,
+                        R.string.TAG_VIDEO_REWARD_STATUS_FAILED
+                    )
+                }
+            }
         )
     }
 
@@ -172,7 +181,10 @@ class AdsService(
                 logInfo(R.string.TAG_HORA_REWARD, DateHandler.dateToString(dateNew))
 
                 //Guardar fecha de termino de reward
-                sharedPrefService.saveData(Utils.get(R.string.SHARED_PREF_END_REWARD_TIME), dateNew.time)
+                sharedPrefService.saveData(
+                    Utils.get(R.string.SHARED_PREF_END_REWARD_TIME),
+                    dateNew.time
+                )
 
                 toast(getString(R.string.DIA_LIBRE))
             }
@@ -187,7 +199,12 @@ class AdsService(
      */
     fun rewardDialog() {
 
-        val rewardDate = Date(sharedPrefService.getData(Utils.get(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
+        val rewardDate = Date(
+            sharedPrefService.getData(
+                Utils.get(R.string.SHARED_PREF_END_REWARD_TIME),
+                0L
+            ) as Long
+        )
         val nowDate = Date()
 
         //Si la hora del celular es posterior a reward date
@@ -198,16 +215,28 @@ class AdsService(
                 when {
                     Utils.generateRandomNumber() -> {
                         //Mostrar dialog
-                        RewardDialogFragment(this).show(supportFragmentManager, Utils.get(R.string.REWARD_DIALOG))
-                        activity.logInfo(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG, R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON)
+                        RewardDialogFragment(this).show(
+                            supportFragmentManager,
+                            Utils.get(R.string.REWARD_DIALOG)
+                        )
+                        activity.logInfo(
+                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG,
+                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON
+                        )
                     }
                     else -> {
-                        activity.logInfo(R.string.TAG_RANDOM_SHOW_REWARD_DIALOG, R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF)
+                        activity.logInfo(
+                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG,
+                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF
+                        )
                     }
                 }
             }
             nowDate.before(rewardDate) -> {
-                activity.logInfo(R.string.TAG_REWARD_STATUS, R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO)
+                activity.logInfo(
+                    R.string.TAG_REWARD_STATUS,
+                    R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO
+                )
             }
         }
     }

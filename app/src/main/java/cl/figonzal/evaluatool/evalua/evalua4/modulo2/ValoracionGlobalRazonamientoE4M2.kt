@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 22:26
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -79,7 +79,12 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
         with(etTotalesT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT1 = 0.0
                 }
 
@@ -93,7 +98,8 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "RE: ", subTotalT1)
+                    tvSubTotalT1.text =
+                        String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "RE: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -101,7 +107,12 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
         with(etTotalesT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT2 = 0.0
                 }
 
@@ -115,7 +126,8 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "PA: ", subTotalT2)
+                    tvSubTotalT2.text =
+                        String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "PA: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -124,7 +136,12 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
         with(etTotalesT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT3 = 0.0
                 }
 
@@ -138,7 +155,8 @@ class ValoracionGlobalRazonamientoE4M2 : AppCompatActivity(), IndiceValorInterfa
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "OP: ", subTotalT3)
+                    tvSubTotalT3.text =
+                        String.format(getString(R.string.POINTS_SIMPLE_FORMAT), "OP: ", subTotalT3)
                     calculateResult()
                 }
             })

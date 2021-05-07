@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 0:50
+ Last modified 07-05-21 17:32
  */
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
@@ -76,7 +76,12 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
         with(etTotalesT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT1 = 0.0
                 }
 
@@ -90,7 +95,8 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "CN: ", subTotalT1)
+                    tvSubTotalT1.text =
+                        String.format(getString(R.string.POINTS_FORMAT), "CN: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -99,7 +105,12 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
         with(etTotalesT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT2 = 0.0
                 }
 
@@ -113,7 +124,8 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "RP: ", subTotalT2)
+                    tvSubTotalT2.text =
+                        String.format(getString(R.string.POINTS_FORMAT), "RP: ", subTotalT2)
                     calculateResult()
                 }
             })

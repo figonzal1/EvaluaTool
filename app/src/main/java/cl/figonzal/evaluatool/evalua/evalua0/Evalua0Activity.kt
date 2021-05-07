@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-05-21 22:17
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua0
 
@@ -45,34 +45,52 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
     private fun configurarExpandedList() {
         //SUBTIMES - SUBMODULO 1
         val subItems1 = listOf(
-                Evalua(getString(R.string.EVALUA_0_M1_SI_1)),
-                Evalua(getString(R.string.EVALUA_0_M1_SI_2)),
-                Evalua(getString(R.string.EVALUA_0_M1_SI_3)),
-                Evalua(getString(R.string.EVALUA_0_M1_SI_4)),
-                Evalua(getString(R.string.EVALUA_0_M1_SI_5)),
-                Evalua(getString(R.string.EVALUA_0_M1_SI_6))
+            Evalua(getString(R.string.EVALUA_0_M1_SI_1)),
+            Evalua(getString(R.string.EVALUA_0_M1_SI_2)),
+            Evalua(getString(R.string.EVALUA_0_M1_SI_3)),
+            Evalua(getString(R.string.EVALUA_0_M1_SI_4)),
+            Evalua(getString(R.string.EVALUA_0_M1_SI_5)),
+            Evalua(getString(R.string.EVALUA_0_M1_SI_6))
         )
 
         //SUBMODULO 2
         val subItems2 = listOf(
-                Evalua(getString(R.string.EVALUA_0_M2_SI_1)),
-                Evalua(getString(R.string.EVALUA_0_M2_SI_2)),
-                Evalua(getString(R.string.EVALUA_0_M2_SI_3))
+            Evalua(getString(R.string.EVALUA_0_M2_SI_1)),
+            Evalua(getString(R.string.EVALUA_0_M2_SI_2)),
+            Evalua(getString(R.string.EVALUA_0_M2_SI_3))
         )
 
         //SUBSMODULO 3
         val subItems3 = listOf(
-                Evalua(getString(R.string.EVALUA_0_M3_SI_1)),
-                Evalua(getString(R.string.EVALUA_0_M3_SI_2)),
-                Evalua(getString(R.string.EVALUA_0_M3_SI_3)),
-                Evalua(getString(R.string.EVALUA_0_M3_SI_4)),
+            Evalua(getString(R.string.EVALUA_0_M3_SI_1)),
+            Evalua(getString(R.string.EVALUA_0_M3_SI_2)),
+            Evalua(getString(R.string.EVALUA_0_M3_SI_3)),
+            Evalua(getString(R.string.EVALUA_0_M3_SI_4)),
         )
 
         //HEADERS
         sectionedRecyclerViewAdapter.apply {
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_1), subItems1, this@Evalua0Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_2), subItems2, this@Evalua0Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_0_MODULO_3), subItems3, this@Evalua0Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_0_MODULO_1),
+                    subItems1,
+                    this@Evalua0Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_0_MODULO_2),
+                    subItems2,
+                    this@Evalua0Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_0_MODULO_3),
+                    subItems3,
+                    this@Evalua0Activity
+                )
+            )
         }
 
 
@@ -87,11 +105,11 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
 
         ConfigRoutes.routeMap[getString(R.string.routeMapEvalua0)]?.let {
             RouteHandler.handleRoutes(
-                    it,
-                    sectionTitle,
-                    sectionedRecyclerViewAdapter,
-                    itemAdapterPosition,
-                    this
+                it,
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
             )
         }
     }

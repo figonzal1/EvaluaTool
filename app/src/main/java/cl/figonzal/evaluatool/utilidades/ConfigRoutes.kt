@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 00:34
+ Last modified 07-05-21 17:29
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -122,13 +122,13 @@ object ConfigRoutes {
 
     //List of activity routes
     val routeMap = mapOf(
-            Utils.get(R.string.routeMapEvalua0) to routeMapEvalua0,
-            Utils.get(R.string.routeMapEvalua1) to routeMapEvalua1,
-            Utils.get(R.string.routeMapEvalua2) to routeMapEvalua2,
-            Utils.get(R.string.routeMapEvalua3) to routeMapEvalua3,
-            Utils.get(R.string.routeMapEvalua4) to routeMapEvalua4,
-            Utils.get(R.string.routeMapEvalua5) to routeMapEvalua5,
-            Utils.get(R.string.routeMapEvalua7) to routeMapEvalua7
+        Utils.get(R.string.routeMapEvalua0) to routeMapEvalua0,
+        Utils.get(R.string.routeMapEvalua1) to routeMapEvalua1,
+        Utils.get(R.string.routeMapEvalua2) to routeMapEvalua2,
+        Utils.get(R.string.routeMapEvalua3) to routeMapEvalua3,
+        Utils.get(R.string.routeMapEvalua4) to routeMapEvalua4,
+        Utils.get(R.string.routeMapEvalua5) to routeMapEvalua5,
+        Utils.get(R.string.routeMapEvalua7) to routeMapEvalua7
     )
 
     //Initialization of routes
@@ -150,27 +150,79 @@ object ConfigRoutes {
     private fun setRouteMapEvalua0() {
 
         val subItems1 = listOf(
-                //Nombre SubItem, Clase, Logger
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_1), ClasificacionE0M1::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_2), SeriesE0M1::class.java, Utils.get(R.string.CLICK_SERIES)),
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_3), OrganizacionPerceptivaE0M1::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_4), LetrasYNumerosE0M1::class.java, Utils.get(R.string.CLICK_LETRAS_NUMEROS)),
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_5), MemoriaVerbalE0M1::class.java, Utils.get(R.string.CLICK_MEMORIA_VERBAL)),
-                listOf(Utils.get(R.string.EVALUA_0_M1_SI_6), IndiceGeneralCognitivoE0M1::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)),
+            //Nombre SubItem, Clase, Logger
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_1),
+                ClasificacionE0M1::class.java,
+                Utils.get(R.string.CLICK_CLASIFICACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_2),
+                SeriesE0M1::class.java,
+                Utils.get(R.string.CLICK_SERIES)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_3),
+                OrganizacionPerceptivaE0M1::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_4),
+                LetrasYNumerosE0M1::class.java,
+                Utils.get(R.string.CLICK_LETRAS_NUMEROS)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_5),
+                MemoriaVerbalE0M1::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_VERBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M1_SI_6),
+                IndiceGeneralCognitivoE0M1::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+            ),
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_0_M2_SI_1), CopiaDibujosE0M2::class.java, Utils.get(R.string.CLICK_COPIA_DIBUJOS)),
-                listOf(Utils.get(R.string.EVALUA_0_M2_SI_2), GrafoMotricidadE0M2::class.java, Utils.get(R.string.CLICK_GRAFO_MOTRICIDAD)),
-                listOf(Utils.get(R.string.EVALUA_0_M2_SI_3), IndiceGeneralEspacialE0M2::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_ESPACIAL))
+            listOf(
+                Utils.get(R.string.EVALUA_0_M2_SI_1),
+                CopiaDibujosE0M2::class.java,
+                Utils.get(R.string.CLICK_COPIA_DIBUJOS)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M2_SI_2),
+                GrafoMotricidadE0M2::class.java,
+                Utils.get(R.string.CLICK_GRAFO_MOTRICIDAD)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M2_SI_3),
+                IndiceGeneralEspacialE0M2::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_ESPACIAL)
+            )
         )
 
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_0_M3_SI_1), PalabrasYFrasesE0M3::class.java, Utils.get(R.string.CLICK_PALABRAS_FRASES)),
-                listOf(Utils.get(R.string.EVALUA_0_M3_SI_2), RecepcionAuditivaArticulacionE0M3::class.java, Utils.get(R.string.CLICK_RECEPCION_AUDITIVA)),
-                listOf(Utils.get(R.string.EVALUA_0_M3_SI_3), HabilidadesFonologicasE0M3::class.java, Utils.get(R.string.CLICK_HABILIDADES_FONOLOGICAS)),
-                listOf(Utils.get(R.string.EVALUA_0_M3_SI_4), IndiceGeneralLinguisticoE0M3::class.java, Utils.get(R.string.CLICK_INDICE_GENERAL_LINGUISTICO))
+            listOf(
+                Utils.get(R.string.EVALUA_0_M3_SI_1),
+                PalabrasYFrasesE0M3::class.java,
+                Utils.get(R.string.CLICK_PALABRAS_FRASES)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M3_SI_2),
+                RecepcionAuditivaArticulacionE0M3::class.java,
+                Utils.get(R.string.CLICK_RECEPCION_AUDITIVA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M3_SI_3),
+                HabilidadesFonologicasE0M3::class.java,
+                Utils.get(R.string.CLICK_HABILIDADES_FONOLOGICAS)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_0_M3_SI_4),
+                IndiceGeneralLinguisticoE0M3::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_LINGUISTICO)
+            )
         )
 
 
@@ -189,13 +241,29 @@ object ConfigRoutes {
     private fun setRouteMapEvalua1() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M1_SI_1), MemoriaAtencionE1M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_1_M1_SI_1),
+                MemoriaAtencionE1M1::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M1_SI_1), SeriesE1M2::class.java, Utils.get(R.string.CLICK_SERIES)),
-                listOf(Utils.get(R.string.EVALUA_1_M2_SI_2), ClasificacionesE1M2::class.java, Utils.get(R.string.CLICK_CLASIFICACION)),
-                listOf(Utils.get(R.string.EVALUA_1_M2_SI_3), OrganizacionPerceptivaE1M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M1_SI_1),
+                SeriesE1M2::class.java,
+                Utils.get(R.string.CLICK_SERIES)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M2_SI_2),
+                ClasificacionesE1M2::class.java,
+                Utils.get(R.string.CLICK_CLASIFICACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M2_SI_3),
+                OrganizacionPerceptivaE1M2::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO),
                 ValoracionGlobalBasesRazonamientoE1M2::class.java,
@@ -204,12 +272,24 @@ object ConfigRoutes {
         )
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M3_SI_1), NivelesAdaptacionE1M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+            listOf(
+                Utils.get(R.string.EVALUA_1_M3_SI_1),
+                NivelesAdaptacionE1M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
         val subItems4 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M4_SI_1), ComprensionLectoraE1M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_1_M4_SI_2), ExactitudLectoraE1M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M4_SI_1),
+                ComprensionLectoraE1M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_1_M4_SI_2),
+                ExactitudLectoraE1M4::class.java,
+                Utils.get(R.string.CLICK_EXACTITUD_LECTORA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_1_VALORACION_LECTURA),
                 ValoracionGlobalLecturaE1M4::class.java,
@@ -236,7 +316,11 @@ object ConfigRoutes {
         )
 
         val subItems6 = listOf(
-                listOf(Utils.get(R.string.EVALUA_1_M6_SI_1), CalculoNumeracionE1M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION))
+            listOf(
+                Utils.get(R.string.EVALUA_1_M6_SI_1),
+                CalculoNumeracionE1M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            )
         )
 
         routeMapEvalua1.apply {
@@ -286,12 +370,20 @@ object ConfigRoutes {
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M2_SI_1), MemoriaAtencionE2M2::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M2_SI_1),
+                MemoriaAtencionE2M2::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_2_M3_SI_1), NivelesAdaptacionE2M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+            listOf(
+                Utils.get(R.string.EVALUA_2_M3_SI_1),
+                NivelesAdaptacionE2M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
         val subItems4 = listOf(
@@ -373,13 +465,29 @@ object ConfigRoutes {
     private fun setRouteMapEvalua3() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M1_SI_1), MemoriaAtencionE3M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_3_M1_SI_1),
+                MemoriaAtencionE3M1::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M2_SI_1), ReflexividadE3M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
-                listOf(Utils.get(R.string.EVALUA_3_M2_SI_2), PensamientoAnalogicoE3M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
-                listOf(Utils.get(R.string.EVALUA_3_M2_SI_3), OrganizacionPerceptivaE3M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M2_SI_1),
+                ReflexividadE3M2::class.java,
+                Utils.get(R.string.CLICK_REFLEXIVIDAD)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M2_SI_2),
+                PensamientoAnalogicoE3M2::class.java,
+                Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M2_SI_3),
+                OrganizacionPerceptivaE3M2::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO),
                 ValoracionGlobalBasesE3M2::class.java,
@@ -388,12 +496,24 @@ object ConfigRoutes {
         )
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M3_SI_1), NivelesAdaptacionE3M3::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_3_M3_SI_1),
+                NivelesAdaptacionE3M3::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
         val subItems4 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M4_SI_1), ComprensionLectoraE3M4::class.java, Utils.get(R.string.CLICK_COMPR_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_3_M4_SI_2), ExactitudLectoraE3M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M4_SI_1),
+                ComprensionLectoraE3M4::class.java,
+                Utils.get(R.string.CLICK_COMPR_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M4_SI_2),
+                ExactitudLectoraE3M4::class.java,
+                Utils.get(R.string.CLICK_EXACTITUD_LECTORA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_LECTURA),
                 ValoracionGlobalLecturaE3M4::class.java,
@@ -421,8 +541,16 @@ object ConfigRoutes {
         )
 
         val subItems6 = listOf(
-                listOf(Utils.get(R.string.EVALUA_3_M6_SI_1), CalculoNumeracionE3M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
-                listOf(Utils.get(R.string.EVALUA_3_M6_SI_2), ResolucionProblemasE3M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M6_SI_1),
+                CalculoNumeracionE3M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_3_M6_SI_2),
+                ResolucionProblemasE3M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_3_VALORACION_GLOBAL_MATEMATICA),
                 ValoracionGlobalAprenMatematE3M6::class.java,
@@ -448,7 +576,11 @@ object ConfigRoutes {
     private fun setRouteMapEvalua4() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_4_M1_SI_1), MemoriaAtencionE4M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_4_M1_SI_1),
+                MemoriaAtencionE4M1::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
         val subItems2 = listOf(
@@ -480,7 +612,11 @@ object ConfigRoutes {
         )
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_4_M3_SI_1), NivelesAdaptacionE4M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+            listOf(
+                Utils.get(R.string.EVALUA_4_M3_SI_1),
+                NivelesAdaptacionE4M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
         val subItems4 = listOf(
@@ -560,13 +696,29 @@ object ConfigRoutes {
     private fun setRouteMapEvalua5() {
 
         val subItems1 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M1_SI_1), MemoriaAtencionE5M1::class.java, Utils.get(R.string.CLICK_MEMORIA_ATENCION))
+            listOf(
+                Utils.get(R.string.EVALUA_5_M1_SI_1),
+                MemoriaAtencionE5M1::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
         )
 
         val subItems2 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M2_SI_1), ReflexividadE5M2::class.java, Utils.get(R.string.CLICK_REFLEXIVIDAD)),
-                listOf(Utils.get(R.string.EVALUA_5_M2_SI_2), PensamientoAnalogicoE5M2::class.java, Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)),
-                listOf(Utils.get(R.string.EVALUA_5_M2_SI_3), OrganizacionPerceptivaE5M2::class.java, Utils.get(R.string.CLICK_ORG_PERCEPTIVA)),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M2_SI_1),
+                ReflexividadE5M2::class.java,
+                Utils.get(R.string.CLICK_REFLEXIVIDAD)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M2_SI_2),
+                PensamientoAnalogicoE5M2::class.java,
+                Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M2_SI_3),
+                OrganizacionPerceptivaE5M2::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO),
                 ValoracionGlobalRazonamientoE5M2::class.java,
@@ -575,14 +727,30 @@ object ConfigRoutes {
         )
 
         val subItems3 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M3_SI_1), NivelesAdaptacionE5M3::class.java, Utils.get(R.string.CLICK_NIVELES_ADAPTACION))
+            listOf(
+                Utils.get(R.string.EVALUA_5_M3_SI_1),
+                NivelesAdaptacionE5M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
         )
 
 
         val subItems4 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M4_SI_1), ComprensionLectoraE5M4::class.java, Utils.get(R.string.CLICK_COMPRENSION_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_5_M4_SI_2), VelocidadLectoraE5M4::class.java, Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)),
-                listOf(Utils.get(R.string.EVALUA_5_M4_SI_3), ExactitudLectoraE5M4::class.java, Utils.get(R.string.CLICK_EXACTITUD_LECTORA)),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M4_SI_1),
+                ComprensionLectoraE5M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M4_SI_2),
+                VelocidadLectoraE5M4::class.java,
+                Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M4_SI_3),
+                ExactitudLectoraE5M4::class.java,
+                Utils.get(R.string.CLICK_EXACTITUD_LECTORA)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_LECTURA),
                 ValoracionGlobalLecturaE5M4::class.java,
@@ -611,8 +779,16 @@ object ConfigRoutes {
 
 
         val subItems6 = listOf(
-                listOf(Utils.get(R.string.EVALUA_5_M6_SI_1), CalculoNumeracionE5M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
-                listOf(Utils.get(R.string.EVALUA_5_M6_SI_2), ResolucionProblemasE5M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M6_SI_1),
+                CalculoNumeracionE5M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_5_M6_SI_2),
+                ResolucionProblemasE5M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_5_VALORACION_GLOBAL_MATEMATICA),
                 ValoracionGlobalMatematicasE5M6::class.java,
@@ -700,12 +876,24 @@ object ConfigRoutes {
                 ExpresionEscritaE7M5::class.java,
                 Utils.get(R.string.CLICK_EXP_ESCRITA)
             ),
-                listOf(Utils.get(R.string.EVALUA_7_M5_SI_3), OrtografiaVisualRegladaE7M5::class.java, Utils.get(R.string.CLICK_ORT_VIS_REGLADA))
+            listOf(
+                Utils.get(R.string.EVALUA_7_M5_SI_3),
+                OrtografiaVisualRegladaE7M5::class.java,
+                Utils.get(R.string.CLICK_ORT_VIS_REGLADA)
+            )
         )
 
         val subItems6 = listOf(
-                listOf(Utils.get(R.string.EVALUA_7_M6_SI_1), CalculoNumeracionE7M6::class.java, Utils.get(R.string.CLICK_CAL_NUMERACION)),
-                listOf(Utils.get(R.string.EVALUA_7_M6_SI_2), ResolucionProblemasE7M6::class.java, Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS))
+            listOf(
+                Utils.get(R.string.EVALUA_7_M6_SI_1),
+                CalculoNumeracionE7M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_7_M6_SI_2),
+                ResolucionProblemasE7M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            )
         )
 
         routeMapEvalua7.apply {

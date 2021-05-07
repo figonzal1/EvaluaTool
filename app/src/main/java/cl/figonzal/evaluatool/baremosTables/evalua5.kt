@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:37
+ Last modified 07-05-21 17:08
  */
 
 package cl.figonzal.evaluatool.baremosTables
 
 /**
- * Evalua 4
+ * Evalua 5
  */
 
 /**
@@ -480,6 +480,10 @@ fun calculoNumeracionE5M6Baremo(): Array<Array<Any>> {
  */
 fun resolucionProblemasE5M6Baremo(): Array<Array<Any>> {
     return arrayOf(
+        arrayOf(51, 99, 3.08),
+        arrayOf(45, 98, 2.52),
+        arrayOf(42, 97, 2.24),
+        arrayOf(39, 96, 1.97),
         arrayOf(36, 95, 1.69),
         arrayOf(34, 94, 1.5),
         arrayOf(33, 92, 1.41),
