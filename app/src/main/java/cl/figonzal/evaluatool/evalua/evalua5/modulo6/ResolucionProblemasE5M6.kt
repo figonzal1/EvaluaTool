@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 1:08
+ Last modified 07-05-21 11:46
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.resolucionProblemasE5M6Baremo
 import cl.figonzal.evaluatool.databinding.ActivityResolucionProblemasE5M6Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -35,33 +36,7 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityResolucionProblemasE5M6Binding
-    private val perc = listOf(
-            51 to 99,
-            45 to 98,
-            42 to 97,
-            39 to 96,
-            36 to 95,
-            34 to 94,
-            33 to 92,
-            32 to 90,
-            31 to 87,
-            30 to 85,
-            29 to 82,
-            28 to 80,
-            27 to 75,
-            25 to 70,
-            23 to 60,
-            20 to 55,
-            17 to 50,
-            15 to 45,
-            12 to 40,
-            9 to 35,
-            6 to 25,
-            4 to 20,
-            3 to 15,
-            2 to 10,
-            1 to 5
-    )
+    private val perc = resolucionProblemasE5M6Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -115,14 +90,19 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -134,7 +114,12 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     totalPdT1 = 0.0
                 }
 
@@ -146,7 +131,14 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, null)
+                    totalPdT1 = calculateTask(
+                        1,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -158,7 +150,12 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     totalPdT2 = 0.0
                 }
 
@@ -170,19 +167,35 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    totalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, null, null)
+                    totalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        val total = floor(when (nTarea) {
-            1 -> aprobadas!!.toDouble()
-            2 -> aprobadas!! * 4.0
-            else -> 0.0
-        })
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
+        val total = floor(
+            when (nTarea) {
+                1 -> aprobadas!!.toDouble()
+                2 -> aprobadas!! * 4.0
+                else -> 0.0
+            }
+        )
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
@@ -193,16 +206,21 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         with(totalPdT1 + totalPdT2, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
                 tvNivel.text = Utils.calcularNivel(this)
@@ -210,12 +228,12 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -223,24 +241,24 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 3 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 4 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 5 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
+                    pdActual - 2 == item[0] -> return item[0] as Int
+                    pdActual - 3 == item[0] -> return item[0] as Int
+                    pdActual - 4 == item[0] -> return item[0] as Int
+                    pdActual - 5 == item[0] -> return item[0] as Int
                 }
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

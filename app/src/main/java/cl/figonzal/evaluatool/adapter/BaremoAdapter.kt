@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-04-21 23:53
+ Last modified 07-05-21 12:22
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -29,7 +29,8 @@ import cl.figonzal.evaluatool.utilidades.Utils
  * @param context Used to get Resources
  * @version 18-04-2021
  */
-class BaremoAdapter(private var perc: List<Pair<Int, Int>>, private val context: Context) : RecyclerView.Adapter<BaremoViewHolder>() {
+class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Context) :
+    RecyclerView.Adapter<BaremoViewHolder>() {
 
     companion object {
         private const val TABLE_HEADER = 0
@@ -37,7 +38,8 @@ class BaremoAdapter(private var perc: List<Pair<Int, Int>>, private val context:
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaremoViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.baremo_item_list, parent, false)
+        val v =
+            LayoutInflater.from(parent.context).inflate(R.layout.baremo_item_list, parent, false)
         return BaremoViewHolder(v)
     }
 
@@ -61,7 +63,7 @@ class BaremoAdapter(private var perc: List<Pair<Int, Int>>, private val context:
 
         private val binding = BaremoItemListBinding.bind(itemView)
 
-        fun bind(itemViewType: Int, context: Context, perc: List<Pair<Int, Int>>) {
+        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Any>>) {
 
             with(binding, {
                 when (itemViewType) {
@@ -70,16 +72,31 @@ class BaremoAdapter(private var perc: List<Pair<Int, Int>>, private val context:
                         tvPd.text = Utils.get(R.string.PUNTAJE_DIRECTO)
                         tvPcChileno.text = Utils.get(R.string.PERCENTIL_CHILENO)
 
-                        baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyHeader, context.theme))
+                        baremoItem.setBackgroundColor(
+                            context.resources.getColor(
+                                R.color.tableGreyHeader,
+                                context.theme
+                            )
+                        )
                     }
                     else -> {
                         val item = perc[adapterPosition - 1]
                         when {
-                            (adapterPosition - 1) % 2 != 0 -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.tableGreyRow, context.theme))
-                            else -> baremoItem.setBackgroundColor(context.resources.getColor(R.color.colorSurface, context.theme))
+                            (adapterPosition - 1) % 2 != 0 -> baremoItem.setBackgroundColor(
+                                context.resources.getColor(
+                                    R.color.tableGreyRow,
+                                    context.theme
+                                )
+                            )
+                            else -> baremoItem.setBackgroundColor(
+                                context.resources.getColor(
+                                    R.color.colorSurface,
+                                    context.theme
+                                )
+                            )
                         }
-                        tvPd.text = item.first.toString()
-                        tvPcChileno.text = item.second.toString()
+                        tvPd.text = item[0].toString()
+                        tvPcChileno.text = item[1].toString()
                     }
                 }
             })

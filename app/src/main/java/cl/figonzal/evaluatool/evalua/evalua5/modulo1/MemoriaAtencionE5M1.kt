@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 1:08
+ Last modified 07-05-21 11:26
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo1
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.memoriaAtencionE5M1Baremo
 import cl.figonzal.evaluatool.databinding.ActivityMemoriaAtencionE5M1Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -36,38 +37,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityMemoriaAtencionE5M1Binding
-    private val perc = listOf(
-            89 to 99,
-            82 to 97,
-            80 to 95,
-            78 to 92,
-            76 to 90,
-            74 to 87,
-            72 to 85,
-            70 to 82,
-            68 to 80,
-            66 to 75,
-            64 to 70,
-            62 to 67,
-            60 to 62,
-            58 to 60,
-            56 to 55,
-            54 to 50,
-            52 to 47,
-            50 to 45,
-            48 to 42,
-            46 to 40,
-            44 to 35,
-            42 to 30,
-            40 to 27,
-            38 to 25,
-            36 to 20,
-            34 to 15,
-            32 to 10,
-            30 to 5,
-            28 to 3,
-            26 to 1
-    )
+    private val perc = memoriaAtencionE5M1Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -170,14 +140,19 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_MEMORIA_ATENCION))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_MEMORIA_ATENCION)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -192,7 +167,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -204,7 +184,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, omitidasT1, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        omitidasT1,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -213,7 +200,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etOmitidasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -225,7 +217,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT1 = 0
                         s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, omitidasT1, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        omitidasT1,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -233,7 +232,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -245,7 +249,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, omitidasT1, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        omitidasT1,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -257,7 +268,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -269,7 +285,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(null, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        null,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -277,7 +300,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etOmitidasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -289,7 +317,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT2 = 0
                         s.isNotEmpty() -> omitidasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(null, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        null,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -297,7 +332,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -309,7 +349,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(null, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        null,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -321,7 +368,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT3 = 0.0
                 }
 
@@ -333,7 +385,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT3 = 0
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(null, tvSubTotalT3, context.getString(R.string.TAREA_3), aprobadasT3, omitidasT3, reprobadasT3)
+                    subtotalPdT3 = calculateTask(
+                        null,
+                        tvSubTotalT3,
+                        context.getString(R.string.TAREA_3),
+                        aprobadasT3,
+                        omitidasT3,
+                        reprobadasT3
+                    )
                     calculateResult()
                 }
             })
@@ -341,7 +400,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etOmitidasT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT3 = 0.0
                 }
 
@@ -353,7 +417,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT3 = 0
                         s.isNotEmpty() -> omitidasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(null, tvSubTotalT3, context.getString(R.string.TAREA_3), aprobadasT3, omitidasT3, reprobadasT3)
+                    subtotalPdT3 = calculateTask(
+                        null,
+                        tvSubTotalT3,
+                        context.getString(R.string.TAREA_3),
+                        aprobadasT3,
+                        omitidasT3,
+                        reprobadasT3
+                    )
                     calculateResult()
                 }
             })
@@ -361,7 +432,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT3 = 0.0
                 }
 
@@ -373,7 +449,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT3 = 0
                         s.isNotEmpty() -> reprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(null, tvSubTotalT3, context.getString(R.string.TAREA_3), aprobadasT3, omitidasT3, reprobadasT3)
+                    subtotalPdT3 = calculateTask(
+                        null,
+                        tvSubTotalT3,
+                        context.getString(R.string.TAREA_3),
+                        aprobadasT3,
+                        omitidasT3,
+                        reprobadasT3
+                    )
                     calculateResult()
                 }
             })
@@ -385,7 +468,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT4) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT4 = 0.0
                 }
 
@@ -397,7 +485,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT4 = 0
                         s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(null, tvSubTotalT4, context.getString(R.string.TAREA_4), aprobadasT4, omitidasT4, reprobadasT4)
+                    subtotalPdT4 = calculateTask(
+                        null,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        omitidasT4,
+                        reprobadasT4
+                    )
                     calculateResult()
                 }
             })
@@ -406,7 +501,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etOmitidasT4) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT4 = 0.0
                 }
 
@@ -418,7 +518,14 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT4 = 0
                         s.isNotEmpty() -> omitidasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(null, tvSubTotalT4, context.getString(R.string.TAREA_4), aprobadasT4, omitidasT4, reprobadasT4)
+                    subtotalPdT4 = calculateTask(
+                        null,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        omitidasT4,
+                        reprobadasT4
+                    )
                     calculateResult()
                 }
             })
@@ -427,7 +534,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT4) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT4 = 0.0
                 }
 
@@ -439,14 +551,28 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT4 = 0
                         s.isNotEmpty() -> reprobadasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(null, tvSubTotalT4, context.getString(R.string.TAREA_4), aprobadasT4, omitidasT4, reprobadasT4)
+                    subtotalPdT4 = calculateTask(
+                        null,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        omitidasT4,
+                        reprobadasT4
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
         var total = floor(aprobadas!! - (reprobadas!! + omitidas!!).toDouble())
         if (total < 0) {
             total = 0.0
@@ -461,16 +587,21 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
                 tvNivel.text = Utils.calcularNivel(this)
@@ -478,12 +609,12 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -491,27 +622,27 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 3 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 4 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 5 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 6 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 7 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 8 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
+                    pdActual - 2 == item[0] -> return item[0] as Int
+                    pdActual - 3 == item[0] -> return item[0] as Int
+                    pdActual - 4 == item[0] -> return item[0] as Int
+                    pdActual - 5 == item[0] -> return item[0] as Int
+                    pdActual - 6 == item[0] -> return item[0] as Int
+                    pdActual - 7 == item[0] -> return item[0] as Int
+                    pdActual - 8 == item[0] -> return item[0] as Int
                 }
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

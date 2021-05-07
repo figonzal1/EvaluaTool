@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 9:14
+ Last modified 07-05-21 12:22
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -225,17 +225,17 @@ fun memoriaAtencionE2M2Baremo(): Array<Array<Any>> {
  *
  * Page 57
  */
-fun motivacionE2M3Baremo(): Array<Array<Any>> {
+fun motivacionFragmentE2M3Baremo(): Array<Array<Any>> {
     return arrayOf(
-            arrayOf(45, 99, 2.33),
-            arrayOf(44, 99, 2.11),
-            arrayOf(43, 99, 1.88),
-            arrayOf(42, 99, 1.66),
-            arrayOf(41, 99, 1.43),
-            arrayOf(40, 99, 1.2),
-            arrayOf(39, 90, 0.98),
-            arrayOf(38, 80, 0.75),
-            arrayOf(37, 70, 0.53),
+        arrayOf(45, 99, 2.33),
+        arrayOf(44, 99, 2.11),
+        arrayOf(43, 99, 1.88),
+        arrayOf(42, 99, 1.66),
+        arrayOf(41, 99, 1.43),
+        arrayOf(40, 99, 1.2),
+        arrayOf(39, 90, 0.98),
+        arrayOf(38, 80, 0.75),
+        arrayOf(37, 70, 0.53),
             arrayOf(35, 60, 0.08),
             arrayOf(32, 50, -0.6),
             arrayOf(30, 40, -1.05),
@@ -252,17 +252,17 @@ fun motivacionE2M3Baremo(): Array<Array<Any>> {
  *
  * Page 57
  */
-fun autoControlE2M3Baremo(): Array<Array<Any>> {
+fun autoControlFragmentE2M3Baremo(): Array<Array<Any>> {
     return arrayOf(
-            arrayOf(30, 99, 1.93),
-            arrayOf(28, 90, 1.37),
-            arrayOf(26, 80, 0.8),
-            arrayOf(25, 70, 0.52),
-            arrayOf(24, 60, 0.24),
-            arrayOf(23, 50, -0.05),
-            arrayOf(22, 40, -0.33),
-            arrayOf(20, 30, -0.9),
-            arrayOf(16, 20, -2.03),
+        arrayOf(30, 99, 1.93),
+        arrayOf(28, 90, 1.37),
+        arrayOf(26, 80, 0.8),
+        arrayOf(25, 70, 0.52),
+        arrayOf(24, 60, 0.24),
+        arrayOf(23, 50, -0.05),
+        arrayOf(22, 40, -0.33),
+        arrayOf(20, 30, -0.9),
+        arrayOf(16, 20, -2.03),
             arrayOf(14, 10, -2.6),
             arrayOf(12, 5, -3.16),
     )
@@ -274,17 +274,17 @@ fun autoControlE2M3Baremo(): Array<Array<Any>> {
  *
  * Page 57
  */
-fun conductaProSocialE2M3Baremo(): Array<Array<Any>> {
+fun conductaProSocialFragmentE2M3Baremo(): Array<Array<Any>> {
     return arrayOf(
-            arrayOf(30, 99, 1.05),
-            arrayOf(29, 90, 0.78),
-            arrayOf(28, 80, 0.51),
-            arrayOf(27, 70, 0.24),
-            arrayOf(26, 60, -0.03),
-            arrayOf(25, 50, -0.3),
-            arrayOf(24, 40, -0.57),
-            arrayOf(22, 30, -1.12),
-            arrayOf(21, 20, -1.39),
+        arrayOf(30, 99, 1.05),
+        arrayOf(29, 90, 0.78),
+        arrayOf(28, 80, 0.51),
+        arrayOf(27, 70, 0.24),
+        arrayOf(26, 60, -0.03),
+        arrayOf(25, 50, -0.3),
+        arrayOf(24, 40, -0.57),
+        arrayOf(22, 30, -1.12),
+        arrayOf(21, 20, -1.39),
             arrayOf(20, 10, -1.66),
             arrayOf(15, 5, -3.01),
     )
@@ -296,17 +296,17 @@ fun conductaProSocialE2M3Baremo(): Array<Array<Any>> {
  *
  * Page 57
  */
-fun autoEstimaE2M3Baremo(): Array<Array<Any>> {
+fun autoEstimaFragmentE2M3Baremo(): Array<Array<Any>> {
     return arrayOf(
-            arrayOf(30, 99, 2.39),
-            arrayOf(29, 99, 2.04),
-            arrayOf(28, 99, 1.7),
-            arrayOf(27, 90, 1.36),
-            arrayOf(26, 80, 1.01),
-            arrayOf(25, 70, 0.67),
-            arrayOf(24, 60, 0.32),
-            arrayOf(22, 50, -0.37),
-            arrayOf(20, 40, -1.06),
+        arrayOf(30, 99, 2.39),
+        arrayOf(29, 99, 2.04),
+        arrayOf(28, 99, 1.7),
+        arrayOf(27, 90, 1.36),
+        arrayOf(26, 80, 1.01),
+        arrayOf(25, 70, 0.67),
+        arrayOf(24, 60, 0.32),
+        arrayOf(22, 50, -0.37),
+        arrayOf(20, 40, -1.06),
             arrayOf(19, 30, -1.4),
             arrayOf(17, 20, -2.09),
             arrayOf(15, 10, -2.78),

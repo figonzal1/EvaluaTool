@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:36
+ Last modified 07-05-21 09:41
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.memoriaVerbalE0M1Baremo
 import cl.figonzal.evaluatool.databinding.ActivityMemoriaVerbalE0M1Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -36,30 +37,7 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityMemoriaVerbalE0M1Binding
-    private val perc = listOf(
-            35 to 99,
-            34 to 99,
-            33 to 95,
-            32 to 95,
-            31 to 92,
-            30 to 90,
-            29 to 85,
-            27 to 80,
-            25 to 70,
-            23 to 55,
-            21 to 50,
-            19 to 40,
-            18 to 35,
-            17 to 30,
-            15 to 20,
-            14 to 15,
-            12 to 10,
-            11 to 7,
-            10 to 5,
-            9 to 3,
-            8 to 2,
-            7 to 1
-    )
+    private val perc = memoriaVerbalE0M1Baremo()
 
     //TAREA 1
     private lateinit var etReprobadasT1: TextInputEditText
@@ -117,14 +95,19 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_MEMORIA_VERBAL))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_MEMORIA_VERBAL)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -136,7 +119,12 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -148,7 +136,14 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), null, null, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        1,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        null,
+                        null,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -160,7 +155,12 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -172,20 +172,36 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), null, null, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        null,
+                        null,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
 
-        val total = floor(when (nTarea) {
-            1 -> 12 - reprobadas!!.toDouble()
-            2 -> 23 - reprobadas!!.toDouble()
-            else -> 0.0
-        })
+        val total = floor(
+            when (nTarea) {
+                1 -> 12 - reprobadas!!.toDouble()
+                2 -> 23 - reprobadas!!.toDouble()
+                else -> 0.0
+            }
+        )
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
@@ -196,18 +212,23 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate desviation
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             //Calculate percentile
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
 
@@ -218,14 +239,14 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
 
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
 
         //Limite superior
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
 
@@ -234,21 +255,21 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         //Verificar si pd_actual esta en la lista
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
                 }
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

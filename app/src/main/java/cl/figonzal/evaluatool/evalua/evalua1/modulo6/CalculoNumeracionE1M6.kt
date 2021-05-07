@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 07-05-21 10:20
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo6
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.calculoNumeracionE1M6Baremo
 import cl.figonzal.evaluatool.databinding.ActivityCalculoNumeracionE1M6Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -35,36 +36,7 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityCalculoNumeracionE1M6Binding
-    private val perc = listOf(
-            47 to 99,
-            46 to 97,
-            45 to 95,
-            44 to 90,
-            43 to 85,
-            42 to 82,
-            41 to 80,
-            40 to 77,
-            39 to 75,
-            38 to 70,
-            37 to 67,
-            36 to 62,
-            35 to 60,
-            34 to 57,
-            33 to 55,
-            32 to 50,
-            31 to 45,
-            30 to 40,
-            29 to 35,
-            28 to 32,
-            27 to 30,
-            26 to 27,
-            25 to 25,
-            21 to 20,
-            19 to 15,
-            16 to 10,
-            13 to 5,
-            10 to 1
-    )
+    private val perc = calculoNumeracionE1M6Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -111,14 +83,19 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_CALC_NUMERACION))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_CALC_NUMERACION)
+            )
         }).run {
             textWatcherTarea1()
         }
@@ -129,7 +106,12 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     totalPdT1 = 0.0
                 }
 
@@ -141,14 +123,28 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA), aprobadasT1, null, null)
+                    totalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA),
+                        aprobadasT1,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
 
         var total = floor(aprobadas!!.toDouble())
         if (total < 0) {
@@ -163,11 +159,13 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         with(totalPdT1, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             //Calculate Desviation
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             //Calculate Percentile
             with(calculatePercentile(pdCorregido), {
@@ -175,7 +173,10 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
                 tvNivel.text = Utils.calcularNivel(this)
@@ -184,13 +185,13 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
 
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -198,24 +199,24 @@ class CalculoNumeracionE1M6 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
 
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 3 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 4 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
+                    pdActual - 2 == item[0] -> return item[0] as Int
+                    pdActual - 3 == item[0] -> return item[0] as Int
+                    pdActual - 4 == item[0] -> return item[0] as Int
                 }
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
