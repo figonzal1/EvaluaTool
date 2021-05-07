@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:16
+ Last modified 07-05-21 11:20
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -23,6 +23,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.motivacionFragmentE1M3Baremo
 import cl.figonzal.evaluatool.databinding.FragmentMotivacionE1M3Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
@@ -46,19 +47,7 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
     private var binding: FragmentMotivacionE1M3Binding? = null
 
     //PD,PC CHILE
-    private val perc = listOf(
-            45 to 99,
-            40 to 90,
-            38 to 80,
-            37 to 70,
-            36 to 60,
-            34 to 50,
-            33 to 40,
-            30 to 30,
-            25 to 20,
-            20 to 10,
-            15 to 5
-    )
+    private val perc = motivacionFragmentE1M3Baremo()
     private lateinit var etAprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
     private var subtotalPdT1 = 0.0
@@ -74,8 +63,10 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
     private lateinit var progressBar: ProgressBar
     private lateinit var tvDesviacionCalculada: TextView
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentMotivacionE1M3Binding.inflate(inflater, container, false)
 
@@ -105,14 +96,19 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 requireActivity().showHelperDialog(requireFragmentManager())
             }
-            Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_MOTIVACION))
+            Utils.configurarTextoBaremo(
+                requireFragmentManager(),
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_MOTIVACION)
+            )
         }).run {
             textWatcherTarea1()
         }
@@ -124,7 +120,12 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -136,14 +137,28 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, null)
+                    subtotalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
         var total = floor(aprobadas!!.toDouble())
         if (total < 0) {
             total = 0.0
@@ -158,16 +173,21 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
 
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
                 tvNivel.text = Utils.calcularNivel(this)
@@ -175,13 +195,13 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
 
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -189,22 +209,22 @@ class MotivacionFragmentE1M3 : Fragment(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 3 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 4 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 5 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
+                    pdActual - 2 == item[0] -> return item[0] as Int
+                    pdActual - 3 == item[0] -> return item[0] as Int
+                    pdActual - 4 == item[0] -> return item[0] as Int
+                    pdActual - 5 == item[0] -> return item[0] as Int
                 }
             }
         }
         requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 }

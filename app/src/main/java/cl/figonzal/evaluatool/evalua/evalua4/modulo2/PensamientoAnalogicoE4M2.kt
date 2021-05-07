@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 23:44
+ Last modified 07-05-21 11:04
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.pensamientoAnalogicoE4M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityPensamientoAnalogicoE4M2Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -36,28 +37,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityPensamientoAnalogicoE4M2Binding
-    private val perc = listOf(
-            20 to 99,
-            19 to 97,
-            18 to 92,
-            17 to 80,
-            16 to 70,
-            15 to 60,
-            14 to 50,
-            13 to 40,
-            12 to 35,
-            11 to 30,
-            10 to 25,
-            9 to 20,
-            8 to 15,
-            7 to 10,
-            6 to 7,
-            5 to 5,
-            4 to 3,
-            3 to 2,
-            2 to 1,
-            1 to 1
-    )
+    private val perc = pensamientoAnalogicoE4M2Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -120,14 +100,19 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -139,7 +124,12 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -151,7 +141,14 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        1,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        null,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -160,7 +157,12 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -172,7 +174,14 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        1,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        null,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -184,7 +193,12 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -196,7 +210,14 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, null, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        null,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -205,7 +226,12 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -217,19 +243,35 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, null, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        null,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        val total = floor(when (nTarea) {
-            1 -> aprobadas!! - (reprobadas!! / 3.0)
-            2 -> aprobadas!! - (reprobadas!! / 2.0)
-            else -> 0.0
-        })
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
+        val total = floor(
+            when (nTarea) {
+                1 -> aprobadas!! - (reprobadas!! / 3.0)
+                2 -> aprobadas!! - (reprobadas!! / 2.0)
+                else -> 0.0
+            }
+        )
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
@@ -239,16 +281,21 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         with(subtotalPdT1 + subtotalPdT2, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
 
@@ -258,12 +305,12 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
 
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -271,17 +318,17 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
-                if (pdActual == item.first.toDouble()) return item.first.toDouble()
+                if (pdActual == item[0]) return item[0] as Int
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

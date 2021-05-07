@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 23:45
+ Last modified 07-05-21 11:20
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -23,6 +23,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.velocidadFragmentE4M4Baremo
 import cl.figonzal.evaluatool.databinding.FragmentVelocidadE4M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
@@ -42,28 +43,7 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
     }
 
     private var binding: FragmentVelocidadE4M4Binding? = null
-    private val perc = listOf(
-            60 to 99,
-            70 to 97,
-            80 to 95,
-            90 to 90,
-            100 to 85,
-            110 to 75,
-            120 to 65,
-            130 to 55,
-            140 to 45,
-            150 to 40,
-            160 to 30,
-            170 to 25,
-            180 to 20,
-            190 to 15,
-            200 to 10,
-            220 to 5,
-            230 to 3,
-            250 to 2,
-            300 to 1,
-            380 to 0
-    )
+    private val perc = velocidadFragmentE4M4Baremo()
 
     //TAREA 1
     private lateinit var etSegundosT1: TextInputEditText
@@ -81,8 +61,10 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
     private lateinit var progressBar: ProgressBar
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentVelocidadE4M4Binding.inflate(inflater, container, false)
 
@@ -108,14 +90,19 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             this@VelocidadFragmentE4M4.progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 requireActivity().showHelperDialog(requireFragmentManager())
             }
-            Utils.configurarTextoBaremo(requireFragmentManager(), tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_VELOCIDAD))
+            Utils.configurarTextoBaremo(
+                requireFragmentManager(),
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_VELOCIDAD)
+            )
         }).run {
             textWatcherTarea1()
         }
@@ -126,7 +113,12 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
         with(etSegundosT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     totalPdT1 = 0.0
                 }
 
@@ -138,14 +130,28 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> segundosT1 = 0
                         s.isNotEmpty() -> segundosT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), segundosT1, null, null)
+                    totalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        segundosT1,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
         tvSubTotal.text = String.format(getString(R.string.SEG_FORMAT), tarea, aprobadas)
         return aprobadas!!.toDouble()
     }
@@ -155,16 +161,20 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
         with(totalPdT1, {
             tvPdTotal.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
+            val pdCorregido = correctPD(perc, this.toInt())
             tvPdCorregido.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
 
@@ -173,12 +183,12 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal < perc[0].first -> return perc[0].second
-            pdTotal > perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal < perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal > perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal <= item.first) return item.second
+                if (pdTotal <= item[0] as Int) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -186,16 +196,16 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < perc[0].first -> return perc[0].first.toDouble()
-            pdActual > perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual > perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
-                if (pdActual <= item.first) return item.first.toDouble()
+                if (pdActual <= item[0] as Int) return item[0] as Int
             }
         }
         requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
 }

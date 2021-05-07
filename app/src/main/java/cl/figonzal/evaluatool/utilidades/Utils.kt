@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 15:48
+ Last modified 07-05-21 12:22
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -49,7 +49,12 @@ object Utils {
      *
      * @return Double Desviation
      */
-    fun calcularDesviacion(MEAN: Double, DESVIATION: Double, pdTotal: Double, reverse: Boolean): Double {
+    fun calcularDesviacion(
+        MEAN: Double,
+        DESVIATION: Double,
+        pdTotal: Int,
+        reverse: Boolean
+    ): Double {
         return when {
             !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
             else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
@@ -110,7 +115,12 @@ object Utils {
      * @return Unit
      *
      */
-    fun configurarTextoBaremo(fragmentManager: FragmentManager, tvBaremo: TextView, perc: List<Pair<Int, Int>>, itemName: String) {
+    fun configurarTextoBaremo(
+        fragmentManager: FragmentManager,
+        tvBaremo: TextView,
+        perc: Array<Array<Any>>,
+        itemName: String
+    ) {
 
         tvBaremo.movementMethod = LinkMovementMethod.getInstance()
         val spans: Spannable = tvBaremo.text as Spannable

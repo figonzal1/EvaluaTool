@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 13:34
+ Last modified 07-05-21 10:20
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.exactitudLectoraE1M4Baremo
 import cl.figonzal.evaluatool.databinding.ActivityExactitudLectoraE1M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -36,44 +37,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityExactitudLectoraE1M4Binding
-    private val perc = listOf(
-            146 to 99,
-            143 to 97,
-            140 to 95,
-            137 to 90,
-            134 to 85,
-            131 to 80,
-            128 to 75,
-            125 to 70,
-            122 to 65,
-            119 to 60,
-            116 to 57,
-            113 to 55,
-            110 to 52,
-            107 to 50,
-            104 to 48,
-            101 to 45,
-            98 to 42,
-            95 to 40,
-            92 to 38,
-            89 to 35,
-            86 to 34,
-            83 to 32,
-            80 to 31,
-            77 to 30,
-            74 to 29,
-            71 to 28,
-            68 to 27,
-            65 to 26,
-            62 to 25,
-            59 to 22,
-            56 to 20,
-            53 to 15,
-            50 to 12,
-            47 to 10,
-            44 to 5,
-            41 to 1
-    )
+    private val perc = exactitudLectoraE1M4Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -171,14 +135,19 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_EXACTITUD_LECTORA))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_EXACTITUD_LECTORA)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -195,7 +164,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -207,7 +181,14 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(null, tvSubTotalT1, context.getString(R.string.TAREA_1), aprobadasT1, null, null)
+                    subtotalPdT1 = calculateTask(
+                        null,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        aprobadasT1,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -219,7 +200,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -231,7 +217,14 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(null, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, null, null)
+                    subtotalPdT2 = calculateTask(
+                        null,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -243,7 +236,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT3 = 0.0
                 }
 
@@ -255,7 +253,14 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT3 = 0
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(null, tvSubTotalT3, context.getString(R.string.TAREA_3), aprobadasT3, null, null)
+                    subtotalPdT3 = calculateTask(
+                        null,
+                        tvSubTotalT3,
+                        context.getString(R.string.TAREA_3),
+                        aprobadasT3,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -267,7 +272,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT4) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT4 = 0.0
                 }
 
@@ -279,7 +289,14 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT4 = 0
                         s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(null, tvSubTotalT4, context.getString(R.string.TAREA_4), aprobadasT4, null, null)
+                    subtotalPdT4 = calculateTask(
+                        null,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -291,7 +308,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT5) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT5 = 0.0
                 }
 
@@ -303,7 +325,14 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT5 = 0
                         s.isNotEmpty() -> aprobadasT5 = text.toString().toInt()
                     }
-                    subtotalPdT5 = calculateTask(null, tvSubTotalT5, context.getString(R.string.TAREA_5), aprobadasT5, null, null)
+                    subtotalPdT5 = calculateTask(
+                        null,
+                        tvSubTotalT5,
+                        context.getString(R.string.TAREA_5),
+                        aprobadasT5,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
@@ -315,7 +344,12 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT6) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT6 = 0.0
                 }
 
@@ -327,14 +361,28 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT6 = 0
                         s.isNotEmpty() -> aprobadasT6 = text.toString().toInt()
                     }
-                    subtotalPdT6 = calculateTask(null, tvSubTotalT6, context.getString(R.string.TAREA_6), aprobadasT6, null, null)
+                    subtotalPdT6 = calculateTask(
+                        null,
+                        tvSubTotalT6,
+                        context.getString(R.string.TAREA_6),
+                        aprobadasT6,
+                        null,
+                        null
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
         var total = floor(aprobadas!!.toDouble())
         if (total < 0) {
             total = 0.0
@@ -345,34 +393,41 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateResult() {
 
-        with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4 + subtotalPdT5 + subtotalPdT6, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+        with(
+            subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4 + subtotalPdT5 + subtotalPdT6,
+            {
+                tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+                val pdCorregido = correctPD(perc, this.toInt())
+                tvPdCorregido.text =
+                    String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            //Calculate desviation
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+                //Calculate desviation
+                tvDesviacionCalculada.text =
+                    Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
-            //Calculate percentile
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
+                //Calculate percentile
+                with(calculatePercentile(pdCorregido), {
+                    tvPercentil.text = this.toString()
 
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
-                    else -> progressBar.progress = this
-                }
-                tvNivel.text = Utils.calcularNivel(this)
+                    when {
+                        Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                            this,
+                            true
+                        )
+                        else -> progressBar.progress = this
+                    }
+                    tvNivel.text = Utils.calcularNivel(this)
+                })
             })
-        })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -380,23 +435,23 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         //Verificar si pd_actual esta en la lista
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual - 3 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual - 1 == item[0] -> return item[0] as Int
+                    pdActual - 2 == item[0] -> return item[0] as Int
+                    pdActual - 3 == item[0] -> return item[0] as Int
                 }
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

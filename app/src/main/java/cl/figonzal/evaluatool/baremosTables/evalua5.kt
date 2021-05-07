@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 22:27
+ Last modified 07-05-21 11:37
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -148,7 +148,7 @@ fun organizacionPerceptivaE5M2Baremo(): Array<Array<Any>> {
  * A. Motivacion
  * Page 53
  */
-fun motivacionE5M3Baremo(): Array<Array<Any>> {
+fun motivacionFragmentE5M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 1.59),
         arrayOf(1, 95, 1.38),
@@ -179,7 +179,7 @@ fun motivacionE5M3Baremo(): Array<Array<Any>> {
  * B. AutoControl
  * Page 53
  */
-fun autoControlE5M3Baremo(): Array<Array<Any>> {
+fun autoControlFragmentE5M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 95, 1.23),
         arrayOf(1, 90, 0.95),
@@ -205,7 +205,7 @@ fun autoControlE5M3Baremo(): Array<Array<Any>> {
  * C. ConductaProSocial
  * Page 53
  */
-fun conductaProsocialE5M3Baremo(): Array<Array<Any>> {
+fun conductaProsocialFragmentE5M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 90, 1.25),
         arrayOf(1, 80, 0.9),
@@ -231,7 +231,7 @@ fun conductaProsocialE5M3Baremo(): Array<Array<Any>> {
  * D. AutoEstima
  * Page 53
  */
-fun autoEstimaE5M3Baremo(): Array<Array<Any>> {
+fun autoEstimaFragmentE5M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 98, 1.68),
         arrayOf(1, 95, 1.4),

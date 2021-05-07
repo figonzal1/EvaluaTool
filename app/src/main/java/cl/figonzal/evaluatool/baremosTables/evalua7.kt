@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 00:34
+ Last modified 07-05-21 11:59
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -278,7 +278,7 @@ fun razonamientoEspacialE7M2Baremo(): Array<Array<Any>> {
  * A. Motivacion
  * Page 42
  */
-fun motivacionE7M3Baremo(): Array<Array<Any>> {
+fun motivacionFragmentE7M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 2.12),
         arrayOf(2, 95, 1.85),
@@ -305,7 +305,7 @@ fun motivacionE7M3Baremo(): Array<Array<Any>> {
  * B. AutoControl
  * Page 42
  */
-fun autoControlE7M3Baremo(): Array<Array<Any>> {
+fun autoControlFragmentE7M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 2.1),
         arrayOf(3, 95, 1.46),
@@ -332,7 +332,7 @@ fun autoControlE7M3Baremo(): Array<Array<Any>> {
  * C. Prosocial
  * Page 42
  */
-fun conductaProSocialE7M3Baremo(): Array<Array<Any>> {
+fun conductaProSocialFragmentE7M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 1.85),
         arrayOf(2, 95, 1.43),

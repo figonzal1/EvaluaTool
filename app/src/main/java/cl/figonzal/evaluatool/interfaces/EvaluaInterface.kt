@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-04-21 1:53
+ Last modified 07-05-21 09:22
  */
 package cl.figonzal.evaluatool.interfaces
 
@@ -40,7 +40,7 @@ interface EvaluaInterface {
      * @param pdTotal Puntaje directo total obtenido
      * @return Percentil del alumno
      */
-    fun calculatePercentile(pdTotal: Double): Int
+    fun calculatePercentile(pdTotal: Int): Int
 
     /**
      * Funcion encargada de corregir el pd total obtenido y dejarlo dentro de los valores de la tabla del item asociado
@@ -49,5 +49,5 @@ interface EvaluaInterface {
      * @param pdActual Puntaje directo actual antes de correccion
      * @return Double valor PD corregido
      */
-    fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double
+    fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int
 }

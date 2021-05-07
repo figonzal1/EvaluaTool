@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 23:44
+ Last modified 07-05-21 11:20
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo5
 
@@ -21,6 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.ortografiaVisualRegladaE4M5Baremo
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualRegladaE4M5Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -36,104 +37,7 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityOrtografiaVisualRegladaE4M5Binding
-    private val perc = listOf(
-
-            80 to 99,
-            79 to 99,
-            78 to 99,
-
-            77 to 98,
-            76 to 98,
-            75 to 98,
-
-            74 to 97,
-            73 to 97,
-            72 to 97,
-
-            71 to 96,
-            70 to 96,
-            69 to 96,
-
-            68 to 94,
-            67 to 94,
-            66 to 94,
-
-            65 to 92,
-            64 to 92,
-            63 to 92,
-
-            62 to 90,
-            61 to 90,
-            60 to 90,
-
-            59 to 85,
-            58 to 85,
-            57 to 85,
-
-            56 to 80,
-            55 to 80,
-            54 to 80,
-
-            53 to 75,
-            52 to 75,
-            51 to 75,
-
-            50 to 70,
-            49 to 70,
-            48 to 70,
-
-            47 to 60,
-            46 to 60,
-            45 to 60,
-
-            44 to 55,
-            43 to 55,
-            42 to 55,
-
-            41 to 50,
-            40 to 50,
-            39 to 50,
-
-            38 to 40,
-            37 to 40,
-            36 to 40,
-
-            35 to 35,
-            34 to 35,
-            33 to 35,
-
-            32 to 30,
-            31 to 30,
-            30 to 30,
-
-            29 to 25,
-            28 to 25,
-            27 to 25,
-
-            26 to 20,
-            25 to 20,
-            24 to 20,
-
-            23 to 17,
-            22 to 17,
-            21 to 17,
-
-            20 to 15,
-            19 to 15,
-            18 to 15,
-
-            17 to 10,
-            16 to 10,
-            15 to 10,
-
-            14 to 5,
-            13 to 5,
-            12 to 5,
-
-            11 to 1,
-            10 to 1,
-            9 to 1
-    )
+    private val perc = ortografiaVisualRegladaE4M5Baremo()
 
     //TAREA 1
     private lateinit var etReprobadasT1: TextInputEditText
@@ -195,7 +99,7 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -203,7 +107,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
                 showHelperDialog(supportFragmentManager)
 
             }
-            Utils.configurarTextoBaremo(supportFragmentManager, tablaBaremo.tvBaremo, perc, getString(R.string.TOOLBAR_ORT_VIS_REGLADA))
+            Utils.configurarTextoBaremo(
+                supportFragmentManager,
+                tablaBaremo.tvBaremo,
+                perc,
+                getString(R.string.TOOLBAR_ORT_VIS_REGLADA)
+            )
         }).run {
             textWatcherTarea1()
             textWatcherTarea2()
@@ -215,7 +124,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT1 = 0.0
                 }
 
@@ -227,7 +141,14 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(1, tvSubTotalT1, context.getString(R.string.TAREA_1), null, null, reprobadasT1)
+                    subtotalPdT1 = calculateTask(
+                        1,
+                        tvSubTotalT1,
+                        context.getString(R.string.TAREA_1),
+                        null,
+                        null,
+                        reprobadasT1
+                    )
                     calculateResult()
                 }
             })
@@ -240,7 +161,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         with(etAprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -252,7 +178,14 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -261,7 +194,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         with(etOmitidasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -273,7 +211,14 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT2 = 0
                         s.isNotEmpty() -> omitidasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
@@ -282,7 +227,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         with(etReprobadasT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subtotalPdT2 = 0.0
                 }
 
@@ -294,19 +244,35 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(2, tvSubTotalT2, context.getString(R.string.TAREA_2), aprobadasT2, omitidasT2, reprobadasT2)
+                    subtotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        omitidasT2,
+                        reprobadasT2
+                    )
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double {
-        val total = floor(when (nTarea) {
-            1 -> 20 - reprobadas!!.toDouble()
-            2 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
-            else -> 0.0
-        })
+    override fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double {
+        val total = floor(
+            when (nTarea) {
+                1 -> 20 - reprobadas!!.toDouble()
+                2 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
+                else -> 0.0
+            }
+        )
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
@@ -316,16 +282,21 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         with(subtotalPdT1 + subtotalPdT2, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
-            tvPdCorregido.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            val pdCorregido = correctPD(perc, this.toInt())
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
-            tvDesviacionCalculada.text = Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(this, true)
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                        this,
+                        true
+                    )
                     else -> progressBar.progress = this
                 }
 
@@ -334,12 +305,12 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         })
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0].first -> return perc[0].second
-            pdTotal < perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -347,19 +318,17 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < 0 -> return 0.0
-            pdActual > perc[0].first -> return perc[0].first.toDouble()
-            pdActual < perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < 0 -> return 0
+            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
-                when (pdActual) {
-                    item.first.toDouble() -> return item.first.toDouble()
-                }
+                if (pdActual == item[0]) return item[0] as Int
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

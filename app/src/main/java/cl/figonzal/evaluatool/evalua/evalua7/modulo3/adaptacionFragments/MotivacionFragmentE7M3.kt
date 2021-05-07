@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 00:34
+ Last modified 07-05-21 11:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments
@@ -24,6 +24,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.baremosTables.motivacionFragmentE7M3Baremo
 import cl.figonzal.evaluatool.databinding.FragmentMotivacionE7M3Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
@@ -44,25 +45,8 @@ class MotivacionFragmentE7M3 : Fragment(), EvaluaInterface {
     }
 
     private var binding: FragmentMotivacionE7M3Binding? = null
-    private val perc = listOf(
-        0 to 99,
-        2 to 95,
-        4 to 90,
-        5 to 85,
-        6 to 80,
-        8 to 75,
-        9 to 70,
-        11 to 60,
-        14 to 50,
-        19 to 40,
-        24 to 30,
-        25 to 25,
-        26 to 20,
-        29 to 15,
-        31 to 10,
-        37 to 5,
-        45 to 1
-    )
+    private val perc = motivacionFragmentE7M3Baremo()
+
     private lateinit var etAprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
     private var subtotalPdT1 = 0.0
@@ -110,7 +94,7 @@ class MotivacionFragmentE7M3 : Fragment(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0].second
+            progressBar.max = perc[0][1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -185,7 +169,7 @@ class MotivacionFragmentE7M3 : Fragment(), EvaluaInterface {
         with(subtotalPdT1, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
-            val pdCorregido = correctPD(perc, this)
+            val pdCorregido = correctPD(perc, this.toInt())
             tvPdCorregido.text =
                 String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
@@ -209,12 +193,12 @@ class MotivacionFragmentE7M3 : Fragment(), EvaluaInterface {
 
     }
 
-    override fun calculatePercentile(pdTotal: Double): Int {
+    override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal < perc[0].first -> return perc[0].second
-            pdTotal > perc[perc.size - 1].first -> return perc[perc.size - 1].second
+            pdTotal < perc[0][0] as Int -> return perc[0][1] as Int
+            pdTotal > perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first) return item.second
+                if (pdTotal == item[0]) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -222,25 +206,25 @@ class MotivacionFragmentE7M3 : Fragment(), EvaluaInterface {
         return -1
     }
 
-    override fun correctPD(perc: List<Pair<Int, Int>>, pdActual: Double): Double {
+    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < perc[0].first -> return perc[0].first.toDouble()
-            pdActual > perc[perc.size - 1].first -> return perc[perc.size - 1].first.toDouble()
+            pdActual < perc[0][0] as Int -> return perc[0][0] as Int
+            pdActual > perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 1 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 2 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 3 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 4 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 5 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 6 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 7 == item.first.toDouble() -> return item.first.toDouble()
-                    pdActual + 8 == item.first.toDouble() -> return item.first.toDouble()
+                    pdActual == item[0] -> return item[0] as Int
+                    pdActual + 1 == item[0] -> return item[0] as Int
+                    pdActual + 2 == item[0] -> return item[0] as Int
+                    pdActual + 3 == item[0] -> return item[0] as Int
+                    pdActual + 4 == item[0] -> return item[0] as Int
+                    pdActual + 5 == item[0] -> return item[0] as Int
+                    pdActual + 6 == item[0] -> return item[0] as Int
+                    pdActual + 7 == item[0] -> return item[0] as Int
+                    pdActual + 8 == item[0] -> return item[0] as Int
                 }
             }
         }
         requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return (-1).toDouble()
+        return -1
     }
 }
