@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 12:34
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -82,7 +82,12 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT1) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT1 = 0.0
                 }
 
@@ -96,7 +101,8 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = String.format(getString(R.string.POINTS_FORMAT), "CA: ", subTotalT1)
+                    tvSubTotalT1.text =
+                        String.format(getString(R.string.POINTS_FORMAT), "CA: ", subTotalT1)
                     calculateResult()
                 }
             })
@@ -105,7 +111,12 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT2) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT2 = 0.0
                 }
 
@@ -119,7 +130,8 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(getString(R.string.POINTS_FORMAT), "SE: ", subTotalT2)
+                    tvSubTotalT2.text =
+                        String.format(getString(R.string.POINTS_FORMAT), "SE: ", subTotalT2)
                     calculateResult()
                 }
             })
@@ -128,7 +140,12 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
         with(etTotalesT3) {
             addTextChangedListener(object : TextWatcher {
 
-                override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
                     subTotalT3 = 0.0
                 }
 
@@ -142,7 +159,12 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(Locale.US, getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
+                    tvSubTotalT3.text = String.format(
+                        Locale.US,
+                        getString(R.string.POINTS_FORMAT),
+                        "OP: ",
+                        subTotalT3
+                    )
                     calculateResult()
                 }
             })

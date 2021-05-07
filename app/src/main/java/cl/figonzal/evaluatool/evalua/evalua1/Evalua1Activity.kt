@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 23:08
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua1
 
@@ -31,7 +31,8 @@ import java.util.*
 class Evalua1Activity : AppCompatActivity(), ClickListener {
 
     private lateinit var binding: ActivityEvalua1Binding
-    private var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
+    private var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter =
+        SectionedRecyclerViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,26 +47,26 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
 
         //SUBTIMES - SUBMODULO 1
         val subItems1 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M1_SI_1))
+            Evalua(getString(R.string.EVALUA_1_M1_SI_1))
         )
 
         //Submodulo2
         val subItems2 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M2_SI_1)),
-                Evalua(getString(R.string.EVALUA_1_M2_SI_2)),
-                Evalua(getString(R.string.EVALUA_1_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
+            Evalua(getString(R.string.EVALUA_1_M2_SI_1)),
+            Evalua(getString(R.string.EVALUA_1_M2_SI_2)),
+            Evalua(getString(R.string.EVALUA_1_M2_SI_3)),
+            Evalua(getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
         )
 
         //Submodulo3
         val subitems3 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M3_SI_1))
+            Evalua(getString(R.string.EVALUA_1_M3_SI_1))
         )
 
         //Submodulo4
         val subItems4 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M4_SI_1)),
-                Evalua(getString(R.string.EVALUA_1_M4_SI_2)),
+            Evalua(getString(R.string.EVALUA_1_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_1_M4_SI_2)),
             Evalua(getString(R.string.EVALUA_1_VALORACION_LECTURA))
         )
 
@@ -77,18 +78,54 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
 
         //Submodulo6
         val subItems6 = listOf(
-                Evalua(getString(R.string.EVALUA_1_M6_SI_1))
+            Evalua(getString(R.string.EVALUA_1_M6_SI_1))
         )
 
 
         //HEADERS
         sectionedRecyclerViewAdapter.apply {
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_1), subItems1, this@Evalua1Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_2), subItems2, this@Evalua1Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_3), subitems3, this@Evalua1Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_4), subItems4, this@Evalua1Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_5), subItems5, this@Evalua1Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_1_MODULO_6), subItems6, this@Evalua1Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_1),
+                    subItems1,
+                    this@Evalua1Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_2),
+                    subItems2,
+                    this@Evalua1Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_3),
+                    subitems3,
+                    this@Evalua1Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_4),
+                    subItems4,
+                    this@Evalua1Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_5),
+                    subItems5,
+                    this@Evalua1Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_1_MODULO_6),
+                    subItems6,
+                    this@Evalua1Activity
+                )
+            )
         }
 
         //Recycler View
@@ -103,11 +140,11 @@ class Evalua1Activity : AppCompatActivity(), ClickListener {
 
         ConfigRoutes.routeMap[getString(R.string.routeMapEvalua1)]?.let {
             RouteHandler.handleRoutes(
-                    it,
-                    sectionTitle,
-                    sectionedRecyclerViewAdapter,
-                    itemAdapterPosition,
-                    this
+                it,
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
             )
         }
     }

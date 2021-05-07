@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:17
+ Last modified 07-05-21 17:29
  */
 
 package cl.figonzal.evaluatool.servicios
@@ -24,7 +24,10 @@ import cl.figonzal.evaluatool.R
  */
 class SharedPrefService(context: Context) {
 
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(context.getString(R.string.MAIN_SHARED_PREF), Context.MODE_PRIVATE)
+    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+        context.getString(R.string.MAIN_SHARED_PREF),
+        Context.MODE_PRIVATE
+    )
 
     /**
      * Function date save data in shared preferences

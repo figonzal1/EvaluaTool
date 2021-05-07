@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 15:41
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua3
 
@@ -46,23 +46,23 @@ class Evalua3Activity : AppCompatActivity(), ClickListener {
 
         //SUBTIMES - SUBMODULO 1
         val subItems1 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M1_SI_1))
+            Evalua(getString(R.string.EVALUA_3_M1_SI_1))
         )
 
         val subItem2 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M2_SI_1)),
-                Evalua(getString(R.string.EVALUA_3_M2_SI_2)),
-                Evalua(getString(R.string.EVALUA_3_M2_SI_3)),
-                Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO))
+            Evalua(getString(R.string.EVALUA_3_M2_SI_1)),
+            Evalua(getString(R.string.EVALUA_3_M2_SI_2)),
+            Evalua(getString(R.string.EVALUA_3_M2_SI_3)),
+            Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO))
         )
 
         val subItem3 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M3_SI_1))
+            Evalua(getString(R.string.EVALUA_3_M3_SI_1))
         )
 
         val subItem4 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M4_SI_1)),
-                Evalua(getString(R.string.EVALUA_3_M4_SI_2)),
+            Evalua(getString(R.string.EVALUA_3_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_3_M4_SI_2)),
             Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_LECTURA))
         )
 
@@ -73,20 +73,56 @@ class Evalua3Activity : AppCompatActivity(), ClickListener {
         )
 
         val subItem6 = listOf(
-                Evalua(getString(R.string.EVALUA_3_M6_SI_1)),
-                Evalua(getString(R.string.EVALUA_3_M6_SI_2)),
+            Evalua(getString(R.string.EVALUA_3_M6_SI_1)),
+            Evalua(getString(R.string.EVALUA_3_M6_SI_2)),
             Evalua(getString(R.string.EVALUA_3_VALORACION_GLOBAL_MATEMATICA))
         )
 
         //HEADERS
         sectionedRecyclerViewAdapter.apply {
 
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_1), subItems1, this@Evalua3Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_2), subItem2, this@Evalua3Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_3), subItem3, this@Evalua3Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_4), subItem4, this@Evalua3Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_5), subItem5, this@Evalua3Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_3_MODULO_6), subItem6, this@Evalua3Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_1),
+                    subItems1,
+                    this@Evalua3Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_2),
+                    subItem2,
+                    this@Evalua3Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_3),
+                    subItem3,
+                    this@Evalua3Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_4),
+                    subItem4,
+                    this@Evalua3Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_5),
+                    subItem5,
+                    this@Evalua3Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_3_MODULO_6),
+                    subItem6,
+                    this@Evalua3Activity
+                )
+            )
         }
 
         //RecyclerView 3
@@ -100,11 +136,11 @@ class Evalua3Activity : AppCompatActivity(), ClickListener {
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
         ConfigRoutes.routeMap[getString(R.string.routeMapEvalua3)]?.let {
             RouteHandler.handleRoutes(
-                    it,
-                    sectionTitle,
-                    sectionedRecyclerViewAdapter,
-                    itemAdapterPosition,
-                    this
+                it,
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
             )
         }
     }

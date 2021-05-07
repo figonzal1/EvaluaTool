@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:18
+ Last modified 07-05-21 17:29
  */
 package cl.figonzal.evaluatool
 
@@ -94,17 +94,17 @@ class MainActivity : AppCompatActivity() {
     private fun configButtons() {
 
         buttonList = mutableListOf(
-                MaterialButton(this), //EV0
-                MaterialButton(this), //EV1
-                MaterialButton(this), //EV2
-                MaterialButton(this), //EV3
-                MaterialButton(this), //EV4
-                MaterialButton(this), //EV5
-                MaterialButton(this), //EV6
-                MaterialButton(this), //EV7
-                MaterialButton(this), //EV8
-                MaterialButton(this), //EV9
-                MaterialButton(this) //EV10
+            MaterialButton(this), //EV0
+            MaterialButton(this), //EV1
+            MaterialButton(this), //EV2
+            MaterialButton(this), //EV3
+            MaterialButton(this), //EV4
+            MaterialButton(this), //EV5
+            MaterialButton(this), //EV6
+            MaterialButton(this), //EV7
+            MaterialButton(this), //EV8
+            MaterialButton(this), //EV9
+            MaterialButton(this) //EV10
         )
 
         //binding buttons
@@ -237,7 +237,12 @@ class MainActivity : AppCompatActivity() {
     private fun checkIntersitialLaunch(activityToOpen: Class<out Activity?>) {
 
         val nowDate = Date()
-        val rewardDate = Date(sharedPrefService.getData(getString(R.string.SHARED_PREF_END_REWARD_TIME), 0L) as Long)
+        val rewardDate = Date(
+            sharedPrefService.getData(
+                getString(R.string.SHARED_PREF_END_REWARD_TIME),
+                0L
+            ) as Long
+        )
 
         logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
 
@@ -265,7 +270,8 @@ class MainActivity : AppCompatActivity() {
      */
     private fun switchDarkModeListener() {
 
-        val nightMode = sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+        val nightMode =
+            sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
 
         with(switchDarkMode, {
             this.isChecked = nightMode

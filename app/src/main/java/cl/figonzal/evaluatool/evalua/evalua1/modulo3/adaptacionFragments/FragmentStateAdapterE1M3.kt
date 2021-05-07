@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-04-21 17:31
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -36,10 +36,10 @@ class FragmentStateAdapterE1M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabs = listOf(
-                Utils.get(R.string.TOOLBAR_MOTIVACION),
-                Utils.get(R.string.TOOLBAR_AUTOCONTROL),
-                Utils.get(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES),
-                Utils.get(R.string.TOOLBAR_AUTOESTIMA)
+            Utils.get(R.string.TOOLBAR_MOTIVACION),
+            Utils.get(R.string.TOOLBAR_AUTOCONTROL),
+            Utils.get(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES),
+            Utils.get(R.string.TOOLBAR_AUTOESTIMA)
         )
     }
 }

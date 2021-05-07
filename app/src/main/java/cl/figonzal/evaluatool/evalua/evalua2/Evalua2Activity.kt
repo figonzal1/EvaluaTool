@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 01:37
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua2
 
@@ -53,11 +53,11 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
         )
 
         val subItems2 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M2_SI_1))
+            Evalua(getString(R.string.EVALUA_2_M2_SI_1))
         )
 
         val subItems3 = listOf(
-                Evalua(getString(R.string.EVALUA_2_M3_SI_1))
+            Evalua(getString(R.string.EVALUA_2_M3_SI_1))
         )
 
         val subItems4 = listOf(
@@ -82,12 +82,48 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
 
         //HEADERS
         sectionedRecyclerViewAdapter.apply {
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_1), subItems1, this@Evalua2Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_2), subItems2, this@Evalua2Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_3), subItems3, this@Evalua2Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_4), subItems4, this@Evalua2Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_5), subItems5, this@Evalua2Activity))
-            addSection(EvaluaAdapter(getString(R.string.EVALUA_2_MODULO_6), subItems6, this@Evalua2Activity))
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_1),
+                    subItems1,
+                    this@Evalua2Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_2),
+                    subItems2,
+                    this@Evalua2Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_3),
+                    subItems3,
+                    this@Evalua2Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_4),
+                    subItems4,
+                    this@Evalua2Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_5),
+                    subItems5,
+                    this@Evalua2Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_2_MODULO_6),
+                    subItems6,
+                    this@Evalua2Activity
+                )
+            )
         }
         //Recycler view
         binding.rv2.apply {
@@ -99,11 +135,11 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
         ConfigRoutes.routeMap[getString(R.string.routeMapEvalua2)]?.let {
             RouteHandler.handleRoutes(
-                    it,
-                    sectionTitle,
-                    sectionedRecyclerViewAdapter,
-                    itemAdapterPosition,
-                    this
+                it,
+                sectionTitle,
+                sectionedRecyclerViewAdapter,
+                itemAdapterPosition,
+                this
             )
         }
     }

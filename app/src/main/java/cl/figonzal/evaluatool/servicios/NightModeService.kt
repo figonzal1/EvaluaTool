@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-04-21 23:39
+ Last modified 07-05-21 17:29
  */
 
 package cl.figonzal.evaluatool.servicios
@@ -31,9 +31,9 @@ import cl.figonzal.evaluatool.utilidades.logInfo
  * @version 17-04-2021
  */
 class NightModeService(
-        private val activity: Activity,
-        lifecycle: Lifecycle,
-        private val sharedPrefService: SharedPrefService,
+    private val activity: Activity,
+    lifecycle: Lifecycle,
+    private val sharedPrefService: SharedPrefService,
 ) : LifecycleObserver {
 
     init {

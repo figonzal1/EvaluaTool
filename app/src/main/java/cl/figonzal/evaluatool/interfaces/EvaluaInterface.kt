@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 09:22
+ Last modified 07-05-21 17:29
  */
 package cl.figonzal.evaluatool.interfaces
 
@@ -27,7 +27,14 @@ interface EvaluaInterface {
      *
      * @return Double The result of calculations (It's depend of each subItem formula)
      */
-    fun calculateTask(nTarea: Int?, tvSubTotal: TextView, tarea: String, aprobadas: Int?, omitidas: Int?, reprobadas: Int?): Double
+    fun calculateTask(
+        nTarea: Int?,
+        tvSubTotal: TextView,
+        tarea: String,
+        aprobadas: Int?,
+        omitidas: Int?,
+        reprobadas: Int?
+    ): Double
 
     /**
      *

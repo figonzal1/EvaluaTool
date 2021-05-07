@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-04-21 19:58
+ Last modified 07-05-21 17:32
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -34,8 +34,8 @@ class FragmentStateAdapterE4M4(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabs = listOf(
-                Utils.get(R.string.TOOLBAR_VELOCIDAD),
-                Utils.get(R.string.TOOLBAR_COMPRENSION)
+            Utils.get(R.string.TOOLBAR_VELOCIDAD),
+            Utils.get(R.string.TOOLBAR_COMPRENSION)
         )
     }
 }
