@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-05-21 22:53
+ Last modified 06-05-21 17:39
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4
 
@@ -19,7 +19,7 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalLectoraE4M4Binding
+import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalLecturaE4M4Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
@@ -28,7 +28,7 @@ import java.util.*
 import kotlin.math.roundToInt
 
 class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
-    private lateinit var binding: ActivityValoracionGlobalLectoraE4M4Binding
+    private lateinit var binding: ActivityValoracionGlobalLecturaE4M4Binding
 
     //TAREA 1
     private lateinit var etTotalesT1: TextInputEditText
@@ -43,7 +43,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityValoracionGlobalLectoraE4M4Binding.inflate(layoutInflater)
+        binding = ActivityValoracionGlobalLecturaE4M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)

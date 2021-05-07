@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 10:26
+ Last modified 07-05-21 00:34
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -262,13 +262,122 @@ fun razonamientoEspacialE7M2Baremo(): Array<Array<Any>> {
             arrayOf(20, 45, -0.06),
             arrayOf(18, 40, -0.3),
             arrayOf(16, 35, -0.53),
-            arrayOf(14, 30, -0.77),
-            arrayOf(12, 25, -1.0),
-            arrayOf(10, 20, -1.24),
-            arrayOf(8, 15, -1.47),
-            arrayOf(6, 10, -1.71),
-            arrayOf(4, 5, -1.94),
-            arrayOf(2, 1, -2.18),
+        arrayOf(14, 30, -0.77),
+        arrayOf(12, 25, -1.0),
+        arrayOf(10, 20, -1.24),
+        arrayOf(8, 15, -1.47),
+        arrayOf(6, 10, -1.71),
+        arrayOf(4, 5, -1.94),
+        arrayOf(2, 1, -2.18),
+    )
+}
+
+
+/**
+ * III. Niveles de Adaptacion
+ * A. Motivacion
+ * Page 42
+ */
+fun motivacionE7M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99, 2.12),
+        arrayOf(2, 95, 1.85),
+        arrayOf(4, 90, 1.59),
+        arrayOf(5, 85, 1.46),
+        arrayOf(6, 80, 1.33),
+        arrayOf(8, 75, 1.06),
+        arrayOf(9, 70, 0.93),
+        arrayOf(11, 60, 0.67),
+        arrayOf(14, 50, 0.27),
+        arrayOf(19, 40, -0.39),
+        arrayOf(24, 30, -1.05),
+        arrayOf(25, 25, -1.18),
+        arrayOf(26, 20, -1.31),
+        arrayOf(29, 15, -1.71),
+        arrayOf(31, 10, -1.97),
+        arrayOf(37, 5, -2.76),
+        arrayOf(45, 1, -3.82),
+    )
+}
+
+/**
+ * III. Niveles de Adaptacion
+ * B. AutoControl
+ * Page 42
+ */
+fun autoControlE7M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99, 2.1),
+        arrayOf(3, 95, 1.46),
+        arrayOf(4, 90, 1.25),
+        arrayOf(5, 85, 1.04),
+        arrayOf(6, 80, 0.83),
+        arrayOf(7, 75, 0.62),
+        arrayOf(8, 70, 0.4),
+        arrayOf(9, 60, 0.19),
+        arrayOf(11, 50, -0.23),
+        arrayOf(13, 40, -0.65),
+        arrayOf(16, 30, -1.29),
+        arrayOf(18, 25, -1.71),
+        arrayOf(19, 20, -1.93),
+        arrayOf(21, 15, -2.35),
+        arrayOf(23, 10, -2.77),
+        arrayOf(25, 5, -3.2),
+        arrayOf(30, 1, -4.26),
+    )
+}
+
+/**
+ * III. Niveles de Adaptacion
+ * C. Prosocial
+ * Page 42
+ */
+fun conductaProSocialE7M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99, 1.85),
+        arrayOf(2, 95, 1.43),
+        arrayOf(3, 90, 1.22),
+        arrayOf(4, 85, 1.01),
+        arrayOf(5, 80, 0.8),
+        arrayOf(6, 75, 0.59),
+        arrayOf(7, 70, 0.38),
+        arrayOf(8, 60, 0.17),
+        arrayOf(9, 50, -0.04),
+        arrayOf(10, 40, -0.25),
+        arrayOf(12, 30, -0.67),
+        arrayOf(13, 25, -0.87),
+        arrayOf(15, 20, -1.29),
+        arrayOf(17, 15, -1.71),
+        arrayOf(20, 10, -2.34),
+        arrayOf(25, 5, -3.38),
+        arrayOf(30, 1, -4.43),
+    )
+}
+
+/**
+ * III. Niveles de Adaptacion
+ * D. Autoestima
+ * Page 42
+ */
+fun autoEstimaFragmentE7M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99, 2.54),
+        arrayOf(1, 95, 2.32),
+        arrayOf(2, 90, 2.1),
+        arrayOf(4, 85, 1.65),
+        arrayOf(6, 80, 1.21),
+        arrayOf(8, 75, 0.76),
+        arrayOf(9, 70, 0.54),
+        arrayOf(11, 60, 0.1),
+        arrayOf(13, 50, -0.34),
+        arrayOf(14, 40, -0.57),
+        arrayOf(16, 30, -1.01),
+        arrayOf(17, 25, -1.23),
+        arrayOf(19, 20, -1.67),
+        arrayOf(21, 15, -2.12),
+        arrayOf(23, 10, -2.56),
+        arrayOf(25, 5, -3.0),
+        arrayOf(30, 1, -4.11),
     )
 }
 
@@ -279,8 +388,8 @@ fun razonamientoEspacialE7M2Baremo(): Array<Array<Any>> {
  */
 fun eficaciaLectoraE7M4Baremo(): Array<Array<Any>> {
     return arrayOf(
-            arrayOf(23, 99, 1.43),
-            arrayOf(22, 90, 1.24),
+        arrayOf(23, 99, 1.43),
+        arrayOf(22, 90, 1.24),
             arrayOf(21, 85, 1.05),
             arrayOf(20, 80, 0.86),
             arrayOf(19, 70, 0.67),

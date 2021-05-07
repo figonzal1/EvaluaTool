@@ -9,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 06-05-21 16:19
+  Last modified 06-05-21 17:10
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,14 +26,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua.evalua5.modulo5.ValoracionGlobalEscrituraE5M5"></activity>
-        <activity android:name=".evalua.evalua4.modulo5.IndiceGeneralEscrituraE4M5" />
-        <activity android:name=".evalua.evalua3.modulo5.ValoracionGlobalEscrituraE3M5" />
-        <activity android:name=".evalua.evalua2.modulo5.IndiceGeneralEscrituraE2M5" />
-        <activity android:name=".evalua.evalua2.modulo5.ValoracionGlobalEscrituraE2M5" />
-        <activity android:name=".evalua.evalua2.modulo4.IndiceGeneralLecturaE2M4" />
-        <activity android:name=".evalua.evalua2.modulo4.ValoracionGlobalLecturaE2M4" />
-        <activity android:name=".evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5" />
+        <activity android:name=".evalua.evalua7.modulo3.NivelesAdaptacionE7M3"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -91,6 +84,9 @@
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua.evalua1.modulo1.MemoriaAtencionE1M1"
+            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+        <activity
+            android:name=".evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5"
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
         <activity
             android:name=".evalua.evalua1.modulo6.CalculoNumeracionE1M6"
@@ -151,6 +147,9 @@
             android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
             android:name=".evalua.evalua3.modulo5.OrtografiaFoneticaE3M5"
+            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+        <activity
+            android:name=".evalua.evalua3.modulo5.ValoracionGlobalEscrituraE3M5"
             android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
         <activity
             android:name=".evalua.evalua3.modulo5.OrtografiaVisualRegladaE3M5"
@@ -254,6 +253,18 @@
             android:name=".evalua.evalua2.modulo5.OrtografiaE2M5"
             android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
+            android:name=".evalua.evalua2.modulo5.IndiceGeneralEscrituraE2M5"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+        <activity
+            android:name=".evalua.evalua2.modulo5.ValoracionGlobalEscrituraE2M5"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+        <activity
+            android:name=".evalua.evalua2.modulo4.IndiceGeneralLecturaE2M4"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+        <activity
+            android:name=".evalua.evalua2.modulo4.ValoracionGlobalLecturaE2M4"
+            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+        <activity
             android:name=".evalua.evalua2.modulo4.ComprensionLectoraE2M4"
             android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
@@ -308,6 +319,9 @@
             android:name=".evalua.evalua4.modulo2.OrganizacionPerceptivaE4M2"
             android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
+            android:name=".evalua.evalua4.modulo5.IndiceGeneralEscrituraE4M5"
+            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+        <activity
             android:name=".evalua.evalua4.modulo2.PensamientoAnalogicoE4M2"
             android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
@@ -357,6 +371,9 @@
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
             android:name=".evalua.evalua5.modulo5.OrtografiaFoneticaE5M5"
+            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+        <activity
+            android:name=".evalua.evalua5.modulo5.ValoracionGlobalEscrituraE5M5"
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
             android:name=".evalua.evalua5.modulo4.ValoracionGlobalLecturaE5M4"
