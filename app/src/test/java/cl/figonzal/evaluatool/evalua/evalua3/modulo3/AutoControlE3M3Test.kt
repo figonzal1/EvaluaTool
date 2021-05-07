@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 10:42
+ Last modified 07-05-21 12:39
  */
 
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlE3M3Baremo
+import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE3M3Baremo
 import cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments.AutoControlFragmentE3M3
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
@@ -24,7 +24,11 @@ import org.junit.runners.Parameterized
 
 
 @RunWith(Parameterized::class)
-class AutoControlE3M3Test(private val pd_total: Double, private val percentil_esperado: Double, private val desviacion_esperada: Double) {
+class AutoControlE3M3Test(
+    private val pd_total: Int,
+    private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: AutoControlFragmentE3M3? = null
 
     @Before
@@ -49,7 +53,7 @@ class AutoControlE3M3Test(private val pd_total: Double, private val percentil_es
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return autoControlE3M3Baremo()
+            return autoControlFragmentE3M3Baremo()
         }
     }
 }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 12:01
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
@@ -21,7 +21,11 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class ReflexividadE3M2Test(private val pd_total: Double, private val percentil_esperado: Double, private val desviacion_esperada: Double) {
+class ReflexividadE3M2Test(
+    private val pd_total: Int,
+    private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: ReflexividadE3M2? = null
 
     @Before

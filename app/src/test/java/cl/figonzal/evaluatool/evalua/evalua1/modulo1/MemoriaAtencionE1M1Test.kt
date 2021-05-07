@@ -8,11 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 18:32
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo1
 
-import cl.figonzal.evaluatool.baremosTables.memoriayAtencionE1M1Baremo
+import cl.figonzal.evaluatool.baremosTables.memoriaAtencionE1M1Baremo
 import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -21,8 +21,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class MemoriaAtencionE1M1Test(private val pd_total: Double, private val percentil_esperado: Double,
-                              private val desviacion_esperada: Double) {
+class MemoriaAtencionE1M1Test(
+    private val pd_total: Int, private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: MemoriaAtencionE1M1? = null
 
     @Before
@@ -47,7 +49,7 @@ class MemoriaAtencionE1M1Test(private val pd_total: Double, private val percenti
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return memoriayAtencionE1M1Baremo()
+            return memoriaAtencionE1M1Baremo()
         }
     }
 }

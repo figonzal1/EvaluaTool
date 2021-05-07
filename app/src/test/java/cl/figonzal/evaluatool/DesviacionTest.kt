@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 18:01
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool
 
@@ -19,10 +19,19 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class DesviacionTest(private val media: Double, private val desviacion: Double, private val pd_total: Double, private val desviacion_esperada: Double) {
+class DesviacionTest(
+    private val media: Double,
+    private val desviacion: Double,
+    private val pd_total: Int,
+    private val desviacion_esperada: Double
+) {
     @Test
     fun testCalcularDesviacion() {
-        TestCase.assertEquals(desviacion_esperada, calcularDesviacion(media, desviacion, pd_total, false), 0.001)
+        TestCase.assertEquals(
+            desviacion_esperada,
+            calcularDesviacion(media, desviacion, pd_total, false),
+            0.001
+        )
     }
 
     companion object {
