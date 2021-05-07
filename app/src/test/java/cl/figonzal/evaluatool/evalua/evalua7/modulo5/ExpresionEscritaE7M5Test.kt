@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 16:40
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
@@ -21,8 +21,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class ExpresionEscritaE7M5Test(private val pd_total: Double, private val precentil_esperado: Double,
-                               private val desviacion_esperada: Double) {
+class ExpresionEscritaE7M5Test(
+    private val pd_total: Int, private val precentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: ExpresionEscritaE7M5? = null
 
     @Before

@@ -8,11 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 15:36
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlE4M3Baremo
+import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE4M3Baremo
 import cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments.AutoControlFragmentE4M3
 import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
 import org.junit.Assert.assertEquals
@@ -22,8 +22,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class AutoControlFragmentE4M3Test(private val pd_total: Double, private val percentil_esperado: Double,
-                                  private val desviacion_esperada: Double) {
+class AutoControlFragmentE4M3Test(
+    private val pd_total: Int, private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: AutoControlFragmentE4M3? = null
 
     @Before
@@ -49,7 +51,7 @@ class AutoControlFragmentE4M3Test(private val pd_total: Double, private val perc
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
 
-            return autoControlE4M3Baremo()
+            return autoControlFragmentE4M3Baremo()
         }
     }
 }

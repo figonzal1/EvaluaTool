@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 18:32
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -21,8 +21,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class ComprensionLectoraE1M4Test(private val pd_total: Double, private val percentil_esperado: Double,
-                                 private val desviacion_esperada: Double) {
+class ComprensionLectoraE1M4Test(
+    private val pd_total: Int, private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: ComprensionLectoraE1M4? = null
 
     @Before

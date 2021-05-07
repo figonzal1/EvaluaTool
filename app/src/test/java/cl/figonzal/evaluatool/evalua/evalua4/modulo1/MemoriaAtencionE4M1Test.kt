@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-05-21 16:04
+ Last modified 07-05-21 12:39
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo1
 
@@ -21,8 +21,10 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class MemoriaAtencionE4M1Test(private val pd_total: Double, private val percentil_esperado: Double,
-                              private val desviacion_esperada: Double) {
+class MemoriaAtencionE4M1Test(
+    private val pd_total: Int, private val percentil_esperado: Double,
+    private val desviacion_esperada: Double
+) {
     private var m1: MemoriaAtencionE4M1? = null
 
     @Before
