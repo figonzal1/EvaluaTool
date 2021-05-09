@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:29
+ Last modified 09-05-21 17:13
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -605,7 +605,7 @@ object ConfigRoutes {
                 Utils.get(R.string.CLICK_VALORACION_GLOBAL)
             ),
             listOf(
-                Utils.get(R.string.EVALUA_4_M2_SI_4),
+                Utils.get(R.string.EVALUA_4_INDICE_GENERAL_COGNITIVO),
                 IndiceGeneralCognitivoE4M2::class.java,
                 Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
             )
@@ -636,7 +636,7 @@ object ConfigRoutes {
                 Utils.get(R.string.CLICK_VALORACION_GLOBAL)
             ),
             listOf(
-                Utils.get(R.string.EVALUA_4_M4_SI_3),
+                Utils.get(R.string.EVALUA_4_INDICE_GENERAL_LECTURA),
                 IndiceGeneralLecturaE4M4::class.java,
                 Utils.get(R.string.CLICK_INDICE_GENERAL_LECTURA)
             )
@@ -672,7 +672,7 @@ object ConfigRoutes {
                 Utils.get(R.string.CLICK_VALORACION_GLOBAL)
             ),
             listOf(
-                Utils.get(R.string.EVALUA_4_M6_SI_4),
+                Utils.get(R.string.EVALUA_4_INDICE_GENERAL_MATEMATICO),
                 IndiceGeneralMatematicoE4M6::class.java,
                 Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
             )

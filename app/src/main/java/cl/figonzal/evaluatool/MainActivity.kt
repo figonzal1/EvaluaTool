@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:29
+ Last modified 09-05-21 00:02
  */
 package cl.figonzal.evaluatool
 
@@ -40,6 +40,8 @@ import com.google.android.material.switchmaterial.SwitchMaterial
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+
+    val test: Boolean = true
 
     //ViewBinding
     private lateinit var binding: ActivityMainBinding
@@ -108,7 +110,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         //binding buttons
-        for (i in 0 until buttonList.size) {
+        (0 until buttonList.size).forEach { i ->
             buttonList[i] = when (i) {
                 0 -> binding.btnEvalua0
                 1 -> binding.btnEvalua1
@@ -193,36 +195,41 @@ class MainActivity : AppCompatActivity() {
         (0 until buttonList.size).forEach { i ->
 
             buttonList[i].setOnClickListener {
+
+                var activityToOpen: Class<out Activity?>? = null
+
                 when (i) {
                     0 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_0)
-                        checkIntersitialLaunch(Evalua0Activity::class.java)
+                        activityToOpen = Evalua0Activity::class.java
                     }
                     1 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_1)
-                        checkIntersitialLaunch(Evalua1Activity::class.java)
+                        activityToOpen = Evalua1Activity::class.java
                     }
                     2 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_2)
-                        checkIntersitialLaunch(Evalua2Activity::class.java)
+                        activityToOpen = Evalua2Activity::class.java
                     }
                     3 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_3)
-                        checkIntersitialLaunch(Evalua3Activity::class.java)
+                        activityToOpen = Evalua3Activity::class.java
                     }
                     4 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_4)
-                        checkIntersitialLaunch(Evalua4Activity::class.java)
+                        activityToOpen = Evalua4Activity::class.java
                     }
                     5 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_5)
-                        checkIntersitialLaunch(Evalua5Activity::class.java)
+                        activityToOpen = Evalua5Activity::class.java
                     }
                     7 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_7)
-                        checkIntersitialLaunch(Evalua7Activity::class.java)
+                        activityToOpen = Evalua7Activity::class.java
                     }
                 }
+                checkIntersitialLaunch(activityToOpen, test)
+
             }
         }
 
@@ -234,7 +241,7 @@ class MainActivity : AppCompatActivity() {
      * @param activityToOpen The destination activity
      * @return Unit
      */
-    private fun checkIntersitialLaunch(activityToOpen: Class<out Activity?>) {
+    private fun checkIntersitialLaunch(activityToOpen: Class<out Activity?>?, test: Boolean) {
 
         val nowDate = Date()
         val rewardDate = Date(
@@ -248,6 +255,10 @@ class MainActivity : AppCompatActivity() {
 
         //si las 24 horas ya pasaron, cargar los ads nuevamente
         when {
+            test -> {
+                val intent = Intent(this, activityToOpen)
+                startActivity(intent)
+            }
             nowDate.after(rewardDate) -> {
 
                 logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
