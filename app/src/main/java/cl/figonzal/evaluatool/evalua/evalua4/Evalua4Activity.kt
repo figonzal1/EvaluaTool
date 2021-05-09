@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 09-05-21 17:13
  */
 package cl.figonzal.evaluatool.evalua.evalua4
 
@@ -54,7 +54,7 @@ class Evalua4Activity : AppCompatActivity(), ClickListener {
             Evalua(getString(R.string.EVALUA_4_M2_SI_2)),
             Evalua(getString(R.string.EVALUA_4_M2_SI_3)),
             Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_RAZONAMIENTO)),
-            Evalua(getString(R.string.EVALUA_4_M2_SI_4))
+            Evalua(getString(R.string.EVALUA_4_INDICE_GENERAL_COGNITIVO))
         )
 
         val subItems3 = listOf(
@@ -65,7 +65,7 @@ class Evalua4Activity : AppCompatActivity(), ClickListener {
             Evalua(getString(R.string.EVALUA_4_M4_SI_1)),
             Evalua(getString(R.string.EVALUA_4_M4_SI_2)),
             Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_LECTURA)),
-            Evalua(getString(R.string.EVALUA_4_M4_SI_3))
+            Evalua(getString(R.string.EVALUA_4_INDICE_GENERAL_LECTURA))
         )
 
         val subItems5 = listOf(
@@ -77,7 +77,7 @@ class Evalua4Activity : AppCompatActivity(), ClickListener {
             Evalua(getString(R.string.EVALUA_4_M6_SI_1)),
             Evalua(getString(R.string.EVALUA_4_M6_SI_2)),
             Evalua(getString(R.string.EVALUA_4_VALORACION_GLOBAL_MATEMATICAS)),
-            Evalua(getString(R.string.EVALUA_4_M6_SI_4))
+            Evalua(getString(R.string.EVALUA_4_INDICE_GENERAL_MATEMATICO))
         )
 
         //HEADERS
