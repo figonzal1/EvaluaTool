@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 05-05-21 22:49
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -69,7 +69,7 @@ class ValoracionGlobalBasesRazonamientoE1M2 : AppCompatActivity(), IndiceValorIn
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@ValoracionGlobalBasesRazonamientoE1M2.tvPdTotal = tvPdTotalValue
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:20
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4
 
@@ -113,7 +113,7 @@ class ComprensionLectoraE4M4 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_COMPREN_LECTORA)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

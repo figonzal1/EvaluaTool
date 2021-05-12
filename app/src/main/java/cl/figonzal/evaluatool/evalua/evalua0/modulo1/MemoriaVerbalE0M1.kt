@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 09:41
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -108,7 +108,7 @@ class MemoriaVerbalE0M1 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_MEMORIA_VERBAL)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

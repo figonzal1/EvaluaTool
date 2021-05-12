@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 09:41
+ Last modified 12-05-21 01:21
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -125,7 +125,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_ORG_PERCEPTIVA)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
             textWatcherTarea3()
@@ -261,7 +261,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> 3 - reprobadas!!.toDouble()
                 2 -> 5 - reprobadas!! * 1.5
@@ -270,6 +270,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:46
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -117,7 +117,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_RAZON_ESPACIAL)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

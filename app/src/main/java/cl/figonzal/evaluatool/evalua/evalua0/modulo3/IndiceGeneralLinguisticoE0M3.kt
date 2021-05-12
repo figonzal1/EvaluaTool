@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -69,7 +69,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@IndiceGeneralLinguisticoE0M3.tvPdTotal = tvPdTotalValue
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

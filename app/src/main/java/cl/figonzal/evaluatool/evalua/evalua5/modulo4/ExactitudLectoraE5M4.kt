@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:37
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4
 
@@ -122,7 +122,7 @@ class ExactitudLectoraE5M4 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_EXACTITUD_LECTORA)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

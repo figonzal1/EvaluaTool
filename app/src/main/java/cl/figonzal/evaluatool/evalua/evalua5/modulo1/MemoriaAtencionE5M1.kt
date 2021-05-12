@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:26
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo1
 
@@ -153,7 +153,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_MEMORIA_ATENCION)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
             textWatcherTarea3()

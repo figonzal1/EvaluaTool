@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -64,7 +64,7 @@ class IndiceGeneralMatematicoE2M6 : AppCompatActivity(), IndiceValorInterface {
 
             //TOTAL
             this@IndiceGeneralMatematicoE2M6.tvPdTotal = tvPdTotalValue
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

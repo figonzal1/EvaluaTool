@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 09:56
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -118,7 +118,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_RECEPCION_AUDITIVA)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
             textWatcherTarea3()

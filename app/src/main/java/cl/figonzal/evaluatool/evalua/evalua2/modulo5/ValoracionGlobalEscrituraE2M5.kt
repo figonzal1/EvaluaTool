@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-05-21 01:37
+ Last modified 12-05-21 01:13
  */
 
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5
@@ -64,7 +64,7 @@ class ValoracionGlobalEscrituraE2M5 : AppCompatActivity(), IndiceValorInterface 
             tvSubTotalT2 = tvPdSubtotalT2
             //TOTAL
             this@ValoracionGlobalEscrituraE2M5.tvPdTotal = tvPdTotalValue
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

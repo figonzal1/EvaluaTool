@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 10:20
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
 
@@ -97,7 +97,7 @@ class OrtografiaVisualE1M5 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_ORTOGRAFIA_VISUAL)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:59
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -115,7 +115,7 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_COMPRENSION)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
 
