@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:21
+ Last modified 12-05-21 15:54
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -112,7 +112,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0][1] as Int
+            progressBar.max = perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -311,10 +311,10 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
 
         //Limite superior
         when {
-            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
-            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
+            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item[0]) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -326,12 +326,12 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
         //Verificar si pd_actual esta en la lista
         when {
             pdActual < 0 -> return 0
-            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
-            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
+            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item[0] as Int -> return item[0] as Int
-                    pdActual - 1 == item[0] as Int -> return item[0] as Int
+                    pdActual == item.first() as Int -> return item.first() as Int
+                    pdActual - 1 == item.first() as Int -> return item.first() as Int
                 }
             }
         }

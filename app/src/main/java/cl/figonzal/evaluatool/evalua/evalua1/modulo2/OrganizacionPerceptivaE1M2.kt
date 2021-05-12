@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 11:49
+ Last modified 12-05-21 16:08
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -86,7 +86,7 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc[0][1] as Int
+            progressBar.max = perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -186,10 +186,10 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
     override fun calculatePercentile(pdTotal: Int): Int {
 
         when {
-            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
-            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
+            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal == item[0]) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -201,14 +201,14 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
 
         when {
             pdActual < 0 -> return 0
-            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
-            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
+            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item[0] -> return item[0] as Int
-                    pdActual - 1 == item[0] -> return item[0] as Int
-                    pdActual - 2 == item[0] -> return item[0] as Int
-                    pdActual - 3 == item[0] -> return item[0] as Int
+                    pdActual == item.first() -> return item.first() as Int
+                    pdActual - 1 == item.first() -> return item.first() as Int
+                    pdActual - 2 == item.first() -> return item.first() as Int
+                    pdActual - 3 == item.first() -> return item.first() as Int
                 }
             }
         }

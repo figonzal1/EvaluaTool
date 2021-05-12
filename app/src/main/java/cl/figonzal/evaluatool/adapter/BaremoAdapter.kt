@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:22
+ Last modified 12-05-21 16:08
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -95,7 +95,7 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
                                 )
                             )
                         }
-                        tvPd.text = item[0].toString()
+                        tvPd.text = item.first().toString()
                         tvPcChileno.text = item[1].toString()
                     }
                 }
