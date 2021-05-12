@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 12:26
+ Last modified 12-05-21 16:08
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -104,7 +104,7 @@ class ComprensionFragmentE4M4 : Fragment(), EvaluaInterface {
             this@ComprensionFragmentE4M4.tvNivelComprension = tvNivelComprensionValue
 
             this@ComprensionFragmentE4M4.progressBar = progressBar
-            progressBar.max = perc[0][1] as Int
+            progressBar.max = perc.first()[1] as Int
 
             ivHelpPdCorregido.setOnClickListener {
 
@@ -271,10 +271,10 @@ class ComprensionFragmentE4M4 : Fragment(), EvaluaInterface {
 
     override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
-            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
+            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal == item[0]) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -284,10 +284,10 @@ class ComprensionFragmentE4M4 : Fragment(), EvaluaInterface {
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual > perc[0][0] as Int -> return perc[0][0] as Int
-            pdActual < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][0] as Int
+            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
-                if (pdActual == item[0]) return item[0] as Int
+                if (pdActual == item.first()) return item.first() as Int
             }
         }
         requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)

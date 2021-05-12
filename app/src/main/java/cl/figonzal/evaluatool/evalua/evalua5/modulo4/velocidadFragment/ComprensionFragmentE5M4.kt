@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 12:48
+ Last modified 12-05-21 16:08
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -103,7 +103,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
             this@ComprensionFragmentE5M4.tvDesviacionCalculada = tvDesviacionCalculadaValue
 
             this@ComprensionFragmentE5M4.progressBar = progressBar
-            progressBar.max = perc[0][1] as Int
+            progressBar.max = perc.first()[1] as Int
 
             ivHelpPdCorregido.setOnClickListener {
 
@@ -270,10 +270,10 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
 
     override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal > perc[0][0] as Int -> return perc[0][1] as Int
-            pdTotal < perc[perc.size - 1][0] as Int -> return perc[perc.size - 1][1] as Int
+            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal == item[0]) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -283,10 +283,10 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual > this.perc[0][0] as Int -> return this.perc[0][0] as Int
+            pdActual > this.perc.first()[0] as Int -> return this.perc.first()[0] as Int
             pdActual < this.perc[this.perc.size - 1][0] as Int -> return this.perc[this.perc.size - 1][0] as Int
             else -> this.perc.forEach { item ->
-                if (pdActual == item[0]) return item[0] as Int
+                if (pdActual == item.first()) return item.first() as Int
             }
         }
         requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
