@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:02
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -384,9 +384,8 @@ class ExactitudLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
         var total = floor(aprobadas!!.toDouble())
-        if (total < 0) {
-            total = 0.0
-        }
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

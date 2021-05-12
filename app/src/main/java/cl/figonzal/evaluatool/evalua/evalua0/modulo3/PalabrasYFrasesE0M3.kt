@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -146,10 +146,8 @@ class PalabrasYFrasesE0M3 : AppCompatActivity(), EvaluaInterface {
     ): Double {
 
         var total = floor(24 - reprobadas!!.toDouble())
+        if (total < 0) total = 0.0
 
-        if (total < 0) {
-            total = 0.0
-        }
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

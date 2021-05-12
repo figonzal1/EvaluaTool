@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -193,13 +193,14 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
 
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> 17 - reprobadas!!.toDouble()
                 2 -> 48 - reprobadas!!.toDouble()
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

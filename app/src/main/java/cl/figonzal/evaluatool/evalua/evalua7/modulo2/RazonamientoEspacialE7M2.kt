@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:57
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
+import kotlin.math.floor
 
 class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
 
@@ -269,11 +270,15 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = when (nTarea) {
-            1 -> aprobadas!! - (reprobadas!! / 5.0)
-            2 -> (2 * aprobadas!!) - (reprobadas!! / 3.0)
-            else -> 0.0
-        }
+        var total = floor(
+            when (nTarea) {
+                1 -> aprobadas!! - (reprobadas!! / 5.0)
+                2 -> (2 * aprobadas!!) - (reprobadas!! / 3.0)
+                else -> 0.0
+            }
+        )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

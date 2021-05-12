@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:12
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -270,13 +270,14 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
 
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> aprobadas!! - (reprobadas!! / 4.0)
                 2 -> aprobadas!! - (reprobadas!! / 5.0)
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total

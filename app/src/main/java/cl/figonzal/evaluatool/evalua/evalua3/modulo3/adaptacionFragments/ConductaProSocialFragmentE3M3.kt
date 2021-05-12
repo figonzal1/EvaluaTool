@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:22
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -156,9 +156,8 @@ class ConductaProSocialFragmentE3M3 : Fragment(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
         var total = aprobadas!!.toDouble()
-        if (total < 0) {
-            total = 0.0
-        }
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
         return total
     }

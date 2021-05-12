@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:02
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -315,7 +315,7 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
 
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
                 2 -> aprobadas!!.toDouble()
@@ -323,6 +323,8 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

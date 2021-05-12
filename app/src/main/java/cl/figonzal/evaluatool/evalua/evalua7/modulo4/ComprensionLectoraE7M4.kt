@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
+import kotlin.math.floor
 
 class ComprensionLectoraE7M4 : AppCompatActivity(), EvaluaInterface {
 
@@ -439,12 +440,16 @@ class ComprensionLectoraE7M4 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = when (nTarea) {
-            1, 3 -> aprobadas!! - (reprobadas!! / 4.0)
-            2 -> aprobadas!! - (reprobadas!! / 2.0)
-            4 -> aprobadas!! - (reprobadas!! / 3.0)
-            else -> 0.0
-        }
+        var total = floor(
+            when (nTarea) {
+                1, 3 -> aprobadas!! - (reprobadas!! / 4.0)
+                2 -> aprobadas!! - (reprobadas!! / 2.0)
+                4 -> aprobadas!! - (reprobadas!! / 3.0)
+                else -> 0.0
+            }
+        )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

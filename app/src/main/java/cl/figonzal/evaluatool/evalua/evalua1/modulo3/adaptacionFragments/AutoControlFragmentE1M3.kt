@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:02
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -135,10 +135,9 @@ class AutoControlFragmentE1M3 : Fragment(), EvaluaInterface {
 
                 override fun afterTextChanged(s: Editable) {
 
-                    if (s.isEmpty()) {
-                        aprobadasT1 = 0
-                    } else if (s.isNotEmpty()) {
-                        aprobadasT1 = text.toString().toInt()
+                    when {
+                        s.isEmpty() -> aprobadasT1 = 0
+                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
                         null,
@@ -163,9 +162,8 @@ class AutoControlFragmentE1M3 : Fragment(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
         var total = floor(aprobadas!!.toDouble())
-        if (total < 0) {
-            total = 0.0
-        }
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
         return total
     }
