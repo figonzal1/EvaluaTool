@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:22
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -112,7 +112,7 @@ class OrganizacionPerceptivaE2M1 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_ORG_PERCEPTIVA)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:59
+ Last modified 12-05-21 01:13
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments
@@ -106,7 +106,7 @@ class AutoEstimaFragmentE7M3 : Fragment(), EvaluaInterface {
                     R.string.TOOLBAR_AUTOESTIMA
                 )
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

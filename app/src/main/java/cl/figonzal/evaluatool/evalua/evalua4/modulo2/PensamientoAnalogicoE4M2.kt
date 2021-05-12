@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 11:04
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -113,7 +113,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
             textWatcherTarea2()
         }

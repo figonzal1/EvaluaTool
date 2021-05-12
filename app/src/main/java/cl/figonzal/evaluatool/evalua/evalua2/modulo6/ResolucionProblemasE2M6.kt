@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 10:44
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -98,7 +98,7 @@ class ResolucionProblemasE2M6 : AppCompatActivity(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }

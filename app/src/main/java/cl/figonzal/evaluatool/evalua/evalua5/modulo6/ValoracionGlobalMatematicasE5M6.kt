@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 12-05-21 01:13
  */
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
@@ -65,7 +65,7 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
 
             //TOTAL
             this@ValoracionGlobalMatematicasE5M6.tvPdTotal = tvPdTotalValue
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:10
+ Last modified 12-05-21 01:13
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments
 
@@ -108,7 +108,7 @@ class ConductaProSocialFragmentE4M3 : Fragment(), EvaluaInterface {
                 perc,
                 getString(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES)
             )
-        }).run {
+        }).also {
             textWatcherTarea1()
         }
     }
