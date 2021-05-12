@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo6
 
@@ -26,6 +26,7 @@ import cl.figonzal.evaluatool.databinding.ActivityResolucionProblemasE7M6Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
+import kotlin.math.floor
 
 class ResolucionProblemasE7M6 : AppCompatActivity(), EvaluaInterface {
 
@@ -198,11 +199,15 @@ class ResolucionProblemasE7M6 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = when (nTarea) {
-            1 -> aprobadas!!.toDouble()
-            2 -> 4 * aprobadas!!.toDouble()
-            else -> 0.0
-        }
+        var total = floor(
+            when (nTarea) {
+                1 -> aprobadas!!.toDouble()
+                2 -> 4 * aprobadas!!.toDouble()
+                else -> 0.0
+            }
+        )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

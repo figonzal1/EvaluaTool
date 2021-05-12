@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -150,10 +150,8 @@ class EficaciaLectoraE7M4 : AppCompatActivity(), EvaluaInterface {
     ): Double {
         //FORMULA PARA RAZONAMIENTO DEDUCTIVO
         var total = floor(aprobadas!!.toDouble())
+        if (total < 0) total = 0.0
 
-        if (total < 0) {
-            total = 0.0
-        }
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

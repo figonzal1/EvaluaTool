@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -146,9 +146,8 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
     ): Double {
 
         var total = floor(48 - reprobadas!!.toDouble())
-        when {
-            total < 0 -> total = 0.0
-        }
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

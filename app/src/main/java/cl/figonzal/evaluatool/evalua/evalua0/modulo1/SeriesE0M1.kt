@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -353,10 +353,8 @@ class SeriesE0M1 : AppCompatActivity(), EvaluaInterface {
     ): Double {
 
         var total = floor(aprobadas!! - (reprobadas!! / 3.0))
+        if (total < 0) total = 0.0
 
-        when {
-            total < 0 -> total = 0.0
-        }
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

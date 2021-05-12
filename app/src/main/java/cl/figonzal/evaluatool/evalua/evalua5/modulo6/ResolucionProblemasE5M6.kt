@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
 
@@ -189,13 +189,14 @@ class ResolucionProblemasE5M6 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> aprobadas!!.toDouble()
                 2 -> aprobadas!! * 4.0
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

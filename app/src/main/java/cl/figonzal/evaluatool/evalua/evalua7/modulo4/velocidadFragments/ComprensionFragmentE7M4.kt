@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:54
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -32,6 +32,7 @@ import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
+import kotlin.math.floor
 
 class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
 
@@ -248,10 +249,9 @@ class ComprensionFragmentE7M4 : Fragment(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        var total = (aprobadas!! - (omitidas!! + reprobadas!!)).toDouble()
-        if (total < 0) {
-            total = 0.0
-        }
+        var total = floor((aprobadas!! - (omitidas!! + reprobadas!!)).toDouble())
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
         return total
     }

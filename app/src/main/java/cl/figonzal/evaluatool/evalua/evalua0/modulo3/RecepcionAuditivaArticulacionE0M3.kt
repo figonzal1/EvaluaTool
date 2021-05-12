@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 11:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -243,13 +243,14 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
         reprobadas: Int?
     ): Double {
 
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1, 2 -> aprobadas!! * 2.toDouble()
                 3 -> aprobadas!!.toDouble()
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:22
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5
 
@@ -194,13 +194,15 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> aprobadas!!.toDouble()
                 2 -> 12 - reprobadas!!.toDouble()
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

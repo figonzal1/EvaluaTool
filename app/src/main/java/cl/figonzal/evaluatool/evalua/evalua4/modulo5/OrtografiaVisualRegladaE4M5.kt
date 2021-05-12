@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:26
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo5
 
@@ -155,7 +155,6 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         }
     }
 
-
     private fun textWatcherTarea2() {
 
         with(etAprobadasT2) {
@@ -266,13 +265,15 @@ class OrtografiaVisualRegladaE4M5 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int?,
         reprobadas: Int?
     ): Double {
-        val total = floor(
+        var total = floor(
             when (nTarea) {
                 1 -> 20 - reprobadas!!.toDouble()
                 2 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
                 else -> 0.0
             }
         )
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }

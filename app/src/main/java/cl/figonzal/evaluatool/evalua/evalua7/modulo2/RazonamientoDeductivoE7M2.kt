@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 12-05-21 12:34
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -196,9 +196,8 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
     ): Double {
 
         var total = floor(aprobadas!! - (reprobadas!! / 2.0))
-        if (total < 0) {
-            total = 0.0
-        }
+        if (total < 0) total = 0.0
+
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
     }
