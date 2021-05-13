@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-05-21 00:02
+ Last modified 13-05-21 15:56
  */
 package cl.figonzal.evaluatool
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.evalua.evalua2.Evalua2Activity
 import cl.figonzal.evaluatool.evalua.evalua3.Evalua3Activity
 import cl.figonzal.evaluatool.evalua.evalua4.Evalua4Activity
 import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity
+import cl.figonzal.evaluatool.evalua.evalua6.Evalua6Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.NightModeService
@@ -129,7 +130,6 @@ class MainActivity : AppCompatActivity() {
 
         //Disable buttons
         buttonList.apply {
-            this[6].disable() //Evalua 6
             this[8].disable() //Evalua 8
             this[9].disable() //Evalua 9
             this[10].disable() //Evalua 10
@@ -222,6 +222,10 @@ class MainActivity : AppCompatActivity() {
                     5 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_5)
                         activityToOpen = Evalua5Activity::class.java
+                    }
+                    6 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_6)
+                        activityToOpen = Evalua6Activity::class.java
                     }
                     7 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_7)

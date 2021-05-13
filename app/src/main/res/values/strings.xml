@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 09-05-21 17:13
+  Last modified 13-05-21 17:28
   -->
 
 <resources>
@@ -193,6 +193,15 @@
     <string name="EVALUA_5_M6_SI_1">Cálculo y Numeración [CN-5]</string>
     <string name="EVALUA_5_M6_SI_2">Resolución Problemas[RP-5]</string>
 
+    <!-- EVALUA 6 -->
+    <string name="TOOLBAR_EVALUA_6">Evalúa 6</string>
+    <string name="EVALUA_6_MODULO_1">Bases del Razonamiento</string>
+    <string name="EVALUA_6_M1_SI_1">Reflexividad [RE-6]</string>
+    <string name="EVALUA_6_M1_SI_2">Pensamiento Analógico [PA-6]</string>
+    <string name="EVALUA_6_M1_SI_3">Organización Perceptiva [OP-6]</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_6_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
     <string name="EVALUA_7_MODULO_1">Atención - Concentración</string>
@@ -240,6 +249,7 @@
     <string name="BTN_EVALUA_3">btn_evalua_3</string>
     <string name="BTN_EVALUA_4">btn_evalua_4</string>
     <string name="BTN_EVALUA_5">btn_evalua_5</string>
+    <string name="BTN_EVALUA_6">btn_evalua_6</string>
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
@@ -470,6 +480,7 @@
     <string name="routeMapEvalua3">routeMapEvalua3</string>
     <string name="routeMapEvalua4">routeMapEvalua4</string>
     <string name="routeMapEvalua5">routeMapEvalua5</string>
+    <string name="routeMapEvalua6">routeMapEvalua6</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
     <string name="TAREA_1">Tarea 1:</string>
     <string name="TAREA_2">Tarea 2:</string>
