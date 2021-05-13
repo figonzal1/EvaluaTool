@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-05-21 17:13
+ Last modified 13-05-21 17:28
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -91,6 +91,7 @@ import cl.figonzal.evaluatool.evalua.evalua5.modulo5.ValoracionGlobalEscrituraE5
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.CalculoNumeracionE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ResolucionProblemasE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6
+import cl.figonzal.evaluatool.evalua.evalua6.modulo1.*
 import cl.figonzal.evaluatool.evalua.evalua7.modulo1.AtencionConcentracionE7M1
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoDeductivoE7M2
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoEspacialE7M2
@@ -118,6 +119,7 @@ object ConfigRoutes {
     private var routeMapEvalua3 = HashMap<String, List<Any>>()
     private var routeMapEvalua4 = HashMap<String, List<Any>>()
     private var routeMapEvalua5 = HashMap<String, List<Any>>()
+    private var routeMapEvalua6 = HashMap<String, List<Any>>()
     private var routeMapEvalua7 = HashMap<String, List<Any>>()
 
     //List of activity routes
@@ -128,6 +130,7 @@ object ConfigRoutes {
         Utils.get(R.string.routeMapEvalua3) to routeMapEvalua3,
         Utils.get(R.string.routeMapEvalua4) to routeMapEvalua4,
         Utils.get(R.string.routeMapEvalua5) to routeMapEvalua5,
+        Utils.get(R.string.routeMapEvalua6) to routeMapEvalua6,
         Utils.get(R.string.routeMapEvalua7) to routeMapEvalua7
     )
 
@@ -139,6 +142,7 @@ object ConfigRoutes {
         setRouteMapEvalua3()
         setRouteMapEvalua4()
         setRouteMapEvalua5()
+        setRouteMapEvalua6()
         setRouteMapEvalua7()
     }
 
@@ -803,6 +807,41 @@ object ConfigRoutes {
             put(Utils.get(R.string.EVALUA_5_MODULO_4), subItems4)
             put(Utils.get(R.string.EVALUA_5_MODULO_5), subItems5)
             put(Utils.get(R.string.EVALUA_5_MODULO_6), subItems6)
+        }
+    }
+
+    private fun setRouteMapEvalua6() {
+
+        val subItems1 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M1_SI_1),
+                ReflexividadE6M1::class.java,
+                Utils.get(R.string.CLICK_REFLEXIVIDAD)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_M1_SI_2),
+                PensamientoAnalogicoE6M1::class.java,
+                Utils.get(R.string.CLICK_PENSAMIENTO_ANALOGICO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_M1_SI_3),
+                OrganizacionPerceptivaE6M1::class.java,
+                Utils.get(R.string.CLICK_ORG_PERCEPTIVA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_VALORACION_GLOBAL_RAZONAMIENTO),
+                ValoracionGlobalRazonamientoE6M1::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_INDICE_GENERAL_COGNITIVO),
+                IndiceGeneralCognitivoE6M1::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+            )
+        )
+
+        routeMapEvalua6.apply {
+            put(Utils.get(R.string.EVALUA_6_MODULO_1), subItems1)
         }
     }
 
