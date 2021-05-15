@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-05-21 00:03
+ Last modified 14-05-21 23:19
  */
 
 package cl.figonzal.evaluatool
@@ -17,22 +17,27 @@ package cl.figonzal.evaluatool
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
+import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import androidx.test.rule.ActivityTestRule
 import org.hamcrest.Matchers.allOf
 import org.hamcrest.core.IsInstanceOf
+import org.junit.FixMethodOrder
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.junit.runners.MethodSorters
+
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class MainActivityTest {
 
     @Rule
     @JvmField
-    var mActivityTestRule = ActivityTestRule(MainActivity::class.java)
+    var mActivityTestRule: ActivityScenarioRule<MainActivity> =
+        ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun mainActivityTest() {
