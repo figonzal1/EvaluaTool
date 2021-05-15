@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2021
+
+  Last modified 14-05-21 16:14
+  -->
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".evalua.evalua6.modulo4.VelocidadLectoraE6M4">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs_velocidad"
+        style="@style/Widget.MaterialComponents.TabLayout.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include"
+        app:tabGravity="fill"
+        app:tabIndicatorAnimationDuration="@android:integer/config_longAnimTime"
+        app:tabIndicatorColor="@color/colorSecondary"
+        app:tabIndicatorFullWidth="true"
+        app:tabIndicatorGravity="bottom"
+        app:tabInlineLabel="true"
+        app:tabMode="fixed"
+        app:tabSelectedTextColor="@color/colorOnPrimary"
+        app:tabTextColor="@color/colorOnPrimary" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager_velocidad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabs_velocidad" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-05-21 17:28
+ Last modified 14-05-21 17:49
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6
@@ -52,12 +52,74 @@ class Evalua6Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {
             Evalua(getString(R.string.EVALUA_6_INDICE_GENERAL_COGNITIVO))
         )
 
+        val subItems2 = listOf(
+            Evalua(getString(R.string.EVALUA_6_M2_SI_1))
+        )
+
+        val subItems3 = listOf(
+            Evalua(getString(R.string.EVALUA_6_M3_SI_1))
+        )
+
+        val subItems4 = listOf(
+            Evalua(getString(R.string.EVALUA_6_M4_SI_1)),
+            Evalua(getString(R.string.EVALUA_6_M4_SI_2)),
+            Evalua(getString(R.string.EVALUA_6_VALORACION_GLOBAL_LECTURA)),
+            Evalua(getString(R.string.EVALUA_6_INDICE_GENERAL_LECTURA))
+        )
+
+        val subItems5 = listOf(
+            Evalua(getString(R.string.EVALUA_6_M5_SI_1)),
+            Evalua(getString(R.string.EVALUA_6_INDICE_GENERAL_ESCRITURA))
+        )
+
+        val subItems6 = listOf(
+            Evalua(getString(R.string.EVALUA_6_M6_SI_1)),
+            Evalua(getString(R.string.EVALUA_6_M6_SI_2)),
+            Evalua(getString(R.string.EVALUA_6_VALORACION_GLOBAL_MATEMATICAS)),
+            Evalua(getString(R.string.EVALUA_6_INDICE_GENERAL_MATEMATICAS))
+        )
+
         //HEADERS
         sectionedRecyclerViewAdapter.apply {
             addSection(
                 EvaluaAdapter(
                     getString(R.string.EVALUA_6_MODULO_1),
                     subItems1,
+                    this@Evalua6Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_6_MODULO_2),
+                    subItems2,
+                    this@Evalua6Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_6_MODULO_3),
+                    subItems3,
+                    this@Evalua6Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_6_MODULO_4),
+                    subItems4,
+                    this@Evalua6Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_6_MODULO_5),
+                    subItems5,
+                    this@Evalua6Activity
+                )
+            )
+            addSection(
+                EvaluaAdapter(
+                    getString(R.string.EVALUA_6_MODULO_6),
+                    subItems6,
                     this@Evalua6Activity
                 )
             )
