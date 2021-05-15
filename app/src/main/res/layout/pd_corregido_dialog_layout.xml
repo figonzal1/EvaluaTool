@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 03-02-21 22:02
+  Last modified 14-05-21 23:33
   -->
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -41,7 +41,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_8"
-            android:text="Puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140"
+            android:text="@string/descripcion_corregido_dialog"
             android:textAppearance="?attr/textAppearanceBody2"
             app:layout_constraintEnd_toEndOf="@+id/tv_subtitulo"
             app:layout_constraintStart_toStartOf="@+id/tv_titulo"

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 14-05-21 23:33
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -278,7 +278,7 @@ class CalculoNumeracionE2M6 : AppCompatActivity(), EvaluaInterface {
             pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
             pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal.toInt() == item.first()) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
