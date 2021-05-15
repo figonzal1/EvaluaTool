@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 13-05-21 17:28
+  Last modified 14-05-21 18:53
   -->
 
 <resources>
@@ -196,11 +196,28 @@
     <!-- EVALUA 6 -->
     <string name="TOOLBAR_EVALUA_6">Evalúa 6</string>
     <string name="EVALUA_6_MODULO_1">Bases del Razonamiento</string>
+    <string name="EVALUA_6_MODULO_2">Memoria y Atención</string>
+    <string name="EVALUA_6_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_6_MODULO_4">Lectura</string>
+    <string name="EVALUA_6_MODULO_5">Escritura</string>
+    <string name="EVALUA_6_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_6_M1_SI_1">Reflexividad [RE-6]</string>
     <string name="EVALUA_6_M1_SI_2">Pensamiento Analógico [PA-6]</string>
     <string name="EVALUA_6_M1_SI_3">Organización Perceptiva [OP-6]</string>
     <string name="EVALUA_6_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Matemáticas</string>
     <string name="EVALUA_6_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_6_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_MATEMATICAS">Índice General de Matemáticas</string>
+    <string name="EVALUA_6_M2_SI_1">Memoria y Atención [MA-6]</string>
+    <string name="EVALUA_6_M3_SI_1">Niveles de Adaptación [AD-6]</string>
+    <string name="EVALUA_6_M4_SI_1">Comprensión Lectora [CL-6]</string>
+    <string name="EVALUA_6_M4_SI_2">Velocidad Lectora [VL-6]</string>
+    <string name="EVALUA_6_M5_SI_1">Ortografía Visual y Reglada [OR-6]</string>
+    <string name="EVALUA_6_M6_SI_1">Cálculo y Numeración [CN-6]</string>
+    <string name="EVALUA_6_M6_SI_2">Resolución de Problemas [RP-6]</string>
 
     <!-- EVALUA 7-->
     <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
@@ -391,18 +408,18 @@
     <string name="ra_0_pts">RA: 0 pts</string>
     <string name="tareas">Tareas</string>
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
-    <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los 7 primeros problemas (ítems 1–26)</string>
-    <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los 8 siguientes (ítems 27–34)</string>
-    <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ítems 1–15</string>
-    <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ítems 1–17</string>
-    <string name="indica_el_puntaje_items_16_25">Indica el puntaje de los ítems 16–25</string>
-    <string name="indica_el_puntaje_items_16_21">Indica el puntaje de los ítems 16–21</string>
-    <string name="indica_el_puntaje_items_18_33">Indica el puntaje de los ítems 18–33</string>
-    <string name="indica_el_puntaje_items_22">Indica el puntaje del ítem 22</string>
-    <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ítems 26–35</string>
-    <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ítems 36–45</string>
-    <string name="indica_el_puntaje_items_1_49">Indica el puntaje de los ítems 1–49</string>
-    <string name="indica_el_puntaje_items_50_55">Indica el puntaje de los ítems 50–55</string>
+    <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los ejercicios 1–26</string>
+    <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los ejercicios 27–34</string>
+    <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ejercicios 1–15</string>
+    <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ejercicios 1–17</string>
+    <string name="indica_el_puntaje_items_16_25">Indica el puntaje de los ejercicios 16–25</string>
+    <string name="indica_el_puntaje_items_16_21">Indica el puntaje de los ejercicios 16–21</string>
+    <string name="indica_el_puntaje_items_18_33">Indica el puntaje de los ejercicios 18–33</string>
+    <string name="indica_el_puntaje_items_22">Indica el puntaje del ejercicio 22</string>
+    <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ejercicios 26–35</string>
+    <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ejercicios 36–45</string>
+    <string name="indica_el_puntaje_items_1_49">Indica el puntaje de los ejercicios 1–49</string>
+    <string name="indica_el_puntaje_items_50_55">Indica el puntaje de los ejercicios 50–55</string>
     <string name="tareas_0_pts">Tareas: 0 pts</string>
     <string name="analog_as">Analogías</string>
     <string name="calculo">Cálculo</string>
@@ -509,6 +526,12 @@
     <string name="ortografia_visual">Ortografía Visual</string>
     <string name="ortograf_a">Ortografía</string>
     <string name="grafia">Grafía</string>
-
-
+    <string name="tarea_1_dictado">Tarea 1 - Dictado</string>
+    <string name="tarea_2_recog_ortogr_fico">Tarea 2 - Recog. Ortográfico</string>
+    <string name="indica_el_puntaje_items_1_9">Indica el puntaje de los ejercicios 1–9</string>
+    <string name="indica_el_puntaje_items_10_12">Indica el puntaje de los ejercicios 10–12</string>
+    <string name="indica_el_puntaje_items_13_35">Indica el puntaje de los ejercicios 13–35</string>
+    <string name="indica_el_puntaje_items_1_5">Indica el puntaje de los ejercicios 1–5</string>
+    <string name="indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
+    <string name="indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
 </resources>

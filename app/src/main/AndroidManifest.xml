@@ -9,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 13-05-21 17:23
+  Last modified 14-05-21 17:47
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +26,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua.evalua6.modulo1.IndiceGeneralCognitivoE6M1"></activity>
+        <activity android:name=".evalua.evalua6.modulo6.IndiceGeneralMatematicasE6M6"></activity>
+        <activity android:name=".evalua.evalua6.modulo6.ValoracionGlobalMatematicasE6M6" />
+        <activity android:name=".evalua.evalua6.modulo4.IndiceGeneralLecturaE6M4" />
+        <activity android:name=".evalua.evalua6.modulo4.ValoracionGlobalLecturaE6M4" />
+        <activity android:name=".evalua.evalua6.modulo4.VelocidadLectoraE6M4" />
+        <activity android:name=".evalua.evalua6.modulo4.ComprensionLectoraE6M4" />
+        <activity android:name=".evalua.evalua6.modulo6.ResolucionProblemasE6M6" />
+        <activity android:name=".evalua.evalua6.modulo6.CalculoNumeracionE6M6" />
+        <activity android:name=".evalua.evalua6.modulo5.IndiceGeneralEscrituraE6M5" />
+        <activity android:name=".evalua.evalua6.modulo5.OrtografiaVisualRegladaE6M5" />
+        <activity android:name=".evalua.evalua6.modulo3.NivelesAdaptacionE6M3" />
+        <activity android:name=".evalua.evalua6.modulo2.MemoriaAtencionE6M2" />
+        <activity android:name=".evalua.evalua6.modulo1.IndiceGeneralCognitivoE6M1" />
         <activity android:name=".evalua.evalua6.modulo1.ValoracionGlobalRazonamientoE6M1" />
         <activity android:name=".evalua.evalua6.modulo1.OrganizacionPerceptivaE6M1" />
         <activity android:name=".evalua.evalua6.modulo1.PensamientoAnalogicoE6M1" />

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-05-21 17:28
+ Last modified 14-05-21 18:36
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -92,6 +92,18 @@ import cl.figonzal.evaluatool.evalua.evalua5.modulo6.CalculoNumeracionE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ResolucionProblemasE5M6
 import cl.figonzal.evaluatool.evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6
 import cl.figonzal.evaluatool.evalua.evalua6.modulo1.*
+import cl.figonzal.evaluatool.evalua.evalua6.modulo2.MemoriaAtencionE6M2
+import cl.figonzal.evaluatool.evalua.evalua6.modulo3.NivelesAdaptacionE6M3
+import cl.figonzal.evaluatool.evalua.evalua6.modulo4.ComprensionLectoraE6M4
+import cl.figonzal.evaluatool.evalua.evalua6.modulo4.IndiceGeneralLecturaE6M4
+import cl.figonzal.evaluatool.evalua.evalua6.modulo4.ValoracionGlobalLecturaE6M4
+import cl.figonzal.evaluatool.evalua.evalua6.modulo4.VelocidadLectoraE6M4
+import cl.figonzal.evaluatool.evalua.evalua6.modulo5.IndiceGeneralEscrituraE6M5
+import cl.figonzal.evaluatool.evalua.evalua6.modulo5.OrtografiaVisualRegladaE6M5
+import cl.figonzal.evaluatool.evalua.evalua6.modulo6.CalculoNumeracionE6M6
+import cl.figonzal.evaluatool.evalua.evalua6.modulo6.IndiceGeneralMatematicasE6M6
+import cl.figonzal.evaluatool.evalua.evalua6.modulo6.ResolucionProblemasE6M6
+import cl.figonzal.evaluatool.evalua.evalua6.modulo6.ValoracionGlobalMatematicasE6M6
 import cl.figonzal.evaluatool.evalua.evalua7.modulo1.AtencionConcentracionE7M1
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoDeductivoE7M2
 import cl.figonzal.evaluatool.evalua.evalua7.modulo2.RazonamientoEspacialE7M2
@@ -840,8 +852,87 @@ object ConfigRoutes {
             )
         )
 
+        val subItems2 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M2_SI_1),
+                MemoriaAtencionE6M2::class.java,
+                Utils.get(R.string.CLICK_MEMORIA_ATENCION)
+            )
+        )
+
+        val subItems3 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M3_SI_1),
+                NivelesAdaptacionE6M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
+        )
+
+        val subItems4 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M4_SI_1),
+                ComprensionLectoraE6M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_M4_SI_2),
+                VelocidadLectoraE6M4::class.java,
+                Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_VALORACION_GLOBAL_LECTURA),
+                ValoracionGlobalLecturaE6M4::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_INDICE_GENERAL_LECTURA),
+                IndiceGeneralLecturaE6M4::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_LECTURA)
+            )
+        )
+
+        val subItems5 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M5_SI_1),
+                OrtografiaVisualRegladaE6M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_INDICE_GENERAL_ESCRITURA),
+                IndiceGeneralEscrituraE6M5::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_ESCRITURA)
+            )
+        )
+        val subItems6 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_6_M6_SI_1),
+                CalculoNumeracionE6M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_M6_SI_2),
+                ResolucionProblemasE6M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_VALORACION_GLOBAL_MATEMATICAS),
+                ValoracionGlobalMatematicasE6M6::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_6_INDICE_GENERAL_MATEMATICAS),
+                IndiceGeneralMatematicasE6M6::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
+            )
+        )
+
         routeMapEvalua6.apply {
             put(Utils.get(R.string.EVALUA_6_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_6_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_6_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_6_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_6_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_6_MODULO_6), subItems6)
         }
     }
 
