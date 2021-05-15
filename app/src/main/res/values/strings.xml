@@ -8,10 +8,10 @@
 
   Copyright (c) 2021
 
-  Last modified 14-05-21 18:53
+  Last modified 14-05-21 23:33
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">EvaluaTool</string>
 
     <!--TEST AD-->
@@ -261,7 +261,7 @@
     <string name="CLICK_PENSAMIENTO_ANALOGICO">click_pensamiento_analogico</string>
     <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
     <string name="BTN_EVALUA_0">btn_evalua_0</string>
-    <string name="BTN_EVALUA_1">btn_evalua_1</string>
+    <string name="BTN_EVALUA_1" tools:ignore="Typos">btn_evalua_1</string>
     <string name="BTN_EVALUA_2">btn_evalua_2</string>
     <string name="BTN_EVALUA_3">btn_evalua_3</string>
     <string name="BTN_EVALUA_4">btn_evalua_4</string>
@@ -492,7 +492,7 @@
     <string name="que_es">¿Qué es?</string>
     <string name="entendido">Entendido</string>
     <string name="routeMapEvalua0">routeMapEvalua0</string>
-    <string name="routeMapEvalua1">routeMapEvalua1</string>
+    <string name="routeMapEvalua1" tools:ignore="Typos">routeMapEvalua1</string>
     <string name="routeMapEvalua2">routeMapEvalua2</string>
     <string name="routeMapEvalua3">routeMapEvalua3</string>
     <string name="routeMapEvalua4">routeMapEvalua4</string>
@@ -534,4 +534,8 @@
     <string name="indica_el_puntaje_items_1_5">Indica el puntaje de los ejercicios 1–5</string>
     <string name="indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
     <string name="indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
+    <string name="icono_dropdown_menu">Menu desplegable</string>
+    <string name="descripcion_corregido_dialog">Puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
+    <string name="icono_tema_modo_claro">Icono tema modo claro</string>
+    <string name="icono_tema_modo_oscuro">Icono tema modo oscuro</string>
 </resources>
