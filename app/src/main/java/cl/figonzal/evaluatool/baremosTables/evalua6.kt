@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 16:22
+ Last modified 14-05-21 21:43
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -372,6 +372,7 @@ fun comprensionLectoraE6M4Baremo(): Array<Array<Any>> {
         arrayOf(9, 30, -0.79),
         arrayOf(8, 25, -0.98),
         arrayOf(7, 20, -1.17),
+        arrayOf(6, 15, -1.36),
         arrayOf(5, 10, -1.55),
         arrayOf(4, 7, -1.75),
         arrayOf(3, 5, -1.94),
