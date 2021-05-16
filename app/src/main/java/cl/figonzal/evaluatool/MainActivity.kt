@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-05-21 15:56
+ Last modified 16-05-21 01:08
  */
 package cl.figonzal.evaluatool
 
@@ -42,7 +42,7 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    val test: Boolean = true
+    val test: Boolean = false
 
     //ViewBinding
     private lateinit var binding: ActivityMainBinding

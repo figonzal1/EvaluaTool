@@ -8,13 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:29
+ Last modified 16-05-21 01:08
  */
 
 package cl.figonzal.evaluatool.servicios
 
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.core.content.edit
 import cl.figonzal.evaluatool.R
 
 /**
@@ -37,7 +38,7 @@ class SharedPrefService(context: Context) {
      */
     fun saveData(key: String, value: Any) {
 
-        with(sharedPreferences.edit()) {
+        sharedPreferences.edit {
             when (value) {
                 is Int -> putInt(key, value)
                 is Boolean -> putBoolean(key, value)
@@ -45,8 +46,6 @@ class SharedPrefService(context: Context) {
                 is Float -> putFloat(key, value)
                 else -> putString(key, value as String)
             }
-
-            apply()
         }
     }
 
