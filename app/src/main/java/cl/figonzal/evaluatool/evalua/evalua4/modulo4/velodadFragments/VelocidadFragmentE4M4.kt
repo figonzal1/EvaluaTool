@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -131,12 +131,12 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
                         s.isNotEmpty() -> segundosT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         segundosT1,
-                        null,
-                        null
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -145,15 +145,15 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         tvSubTotal.text = String.format(getString(R.string.SEG_FORMAT), tarea, aprobadas)
-        return aprobadas!!.toDouble()
+        return aprobadas.toDouble()
     }
 
     override fun calculateResult() {

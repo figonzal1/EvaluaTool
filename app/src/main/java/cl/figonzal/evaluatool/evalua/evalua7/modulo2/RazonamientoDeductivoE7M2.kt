@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -130,11 +130,11 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -163,11 +163,11 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -187,15 +187,15 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
 
-        var total = floor(aprobadas!! - (reprobadas!! / 2.0))
+        var total = floor(aprobadas - (reprobadas / 2.0))
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

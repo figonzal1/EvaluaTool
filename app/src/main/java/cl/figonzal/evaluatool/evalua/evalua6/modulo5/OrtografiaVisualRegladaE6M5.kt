@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 17:26
+ Last modified 15-05-21 20:16
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo5
@@ -252,8 +252,8 @@ class OrtografiaVisualRegladaE6M5 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
-                        null
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -264,17 +264,17 @@ class OrtografiaVisualRegladaE6M5 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!!.toDouble()
-                2 -> aprobadas!!.toDouble() - ((reprobadas!! + omitidas!!) / 2.0)
+                1 -> aprobadas.toDouble()
+                2 -> aprobadas.toDouble() - ((reprobadas + omitidas) / 2.0)
                 else -> 0.0
             }
         )

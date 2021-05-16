@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 15:54
+ Last modified 15-05-21 18:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -138,8 +138,8 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
                         1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
-                        null,
-                        null,
+                        0,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -174,8 +174,8 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
-                        null,
-                        null,
+                        0,
+                        0,
                         reprobadasT2
                     )
                     calculateResult()
@@ -185,18 +185,18 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
 
         var total = floor(
             when (nTarea) {
-                1 -> 17 - reprobadas!!.toDouble()
-                2 -> 48 - reprobadas!!.toDouble()
+                1 -> 17 - reprobadas.toDouble()
+                2 -> 48 - reprobadas.toDouble()
                 else -> 0.0
             }
         )

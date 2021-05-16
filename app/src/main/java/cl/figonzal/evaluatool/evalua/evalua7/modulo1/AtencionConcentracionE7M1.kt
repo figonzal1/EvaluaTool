@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo1
 
@@ -105,7 +105,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     totalPdTarea1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -138,7 +138,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
                     }
                     totalPdTarea1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -171,7 +171,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     totalPdTarea1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -207,7 +207,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
                     totalPdTarea2 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
@@ -240,7 +240,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> omitidasT2 = text.toString().toInt()
                     }
                     totalPdTarea2 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
@@ -272,7 +272,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
                     totalPdTarea2 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
@@ -335,14 +335,14 @@ class AtencionConcentracionE7M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
-        var total = floor((aprobadas!! - (omitidas!! + reprobadas!!)).toDouble())
+        var total = floor((aprobadas - (omitidas + reprobadas)).toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -151,7 +151,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -184,7 +184,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -220,7 +220,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
-                        null,
+                        0,
                         reprobadasT2
                     )
                     calculateResult()
@@ -253,7 +253,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
-                        null,
+                        0,
                         reprobadasT2
                     )
                     calculateResult()
@@ -263,17 +263,17 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!! - (reprobadas!! / 5.0)
-                2 -> (2 * aprobadas!!) - (reprobadas!! / 3.0)
+                1 -> aprobadas - (reprobadas / 5.0)
+                2 -> (2 * aprobadas) - (reprobadas / 3.0)
                 else -> 0.0
             }
         )

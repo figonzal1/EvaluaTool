@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo4
 
@@ -249,8 +249,8 @@ class ExactitudLectoraE3M4 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
-                        null,
-                        null
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -259,17 +259,17 @@ class ExactitudLectoraE3M4 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!! - (reprobadas!! + omitidas!!) / 2.0
-                2 -> aprobadas!!.toDouble()
+                1 -> aprobadas - (reprobadas + omitidas) / 2.0
+                2 -> aprobadas.toDouble()
                 else -> 0.0
             }
         )

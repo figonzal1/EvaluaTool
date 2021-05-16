@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 15:54
+ Last modified 15-05-21 20:27
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -156,7 +156,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 =
-                        calculateTask(1, tvSubTotalT1, "Caballo: ", null, null, reprobadasT1)
+                        calculateTask(1, tvSubTotalT1, "Caballo: ", 0, 0, reprobadasT1)
                     calculateResult()
                 }
             })
@@ -186,7 +186,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
                     subtotalPdT2 =
-                        calculateTask(2, tvSubTotalT2, "Dinosaurio: ", null, null, reprobadasT2)
+                        calculateTask(2, tvSubTotalT2, "Dinosaurio: ", 0, 0, reprobadasT2)
                     calculateResult()
                 }
             })
@@ -216,7 +216,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT3 = text.toString().toInt()
                     }
                     subtotalPdT3 =
-                        calculateTask(3, tvSubTotalT3, "Uvas: ", null, null, reprobadasT3)
+                        calculateTask(3, tvSubTotalT3, "Uvas: ", 0, 0, reprobadasT3)
                     calculateResult()
                 }
             })
@@ -246,7 +246,7 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT4 = text.toString().toInt()
                     }
                     subtotalPdT4 =
-                        calculateTask(4, tvSubTotalT4, "Plátanos: ", null, null, reprobadasT4)
+                        calculateTask(4, tvSubTotalT4, "Plátanos: ", 0, 0, reprobadasT4)
                     calculateResult()
                 }
             })
@@ -254,19 +254,19 @@ class OrganizacionPerceptivaE0M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> 3 - reprobadas!!.toDouble()
-                2 -> 5 - reprobadas!! * 1.5
-                3 -> 6 - (reprobadas!! * 2).toDouble()
-                4 -> 8 - (reprobadas!! * 2).toDouble()
+                1 -> 3 - reprobadas.toDouble()
+                2 -> 5 - reprobadas * 1.5
+                3 -> 6 - (reprobadas * 2).toDouble()
+                4 -> 8 - (reprobadas * 2).toDouble()
                 else -> 0.0
             }
         )
