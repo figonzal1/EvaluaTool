@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:22
+ Last modified 16-05-21 01:08
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -18,6 +18,7 @@ import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
 import androidx.annotation.StringRes
+import androidx.core.text.toSpannable
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.ApplicationController
 import cl.figonzal.evaluatool.R
@@ -122,8 +123,8 @@ object Utils {
         itemName: String
     ) {
 
-        tvBaremo.movementMethod = LinkMovementMethod.getInstance()
-        val spans: Spannable = tvBaremo.text as Spannable
+        tvBaremo.movementMethod = LinkMovementMethod()
+        val spans: Spannable = tvBaremo.text.toSpannable()
 
         val clickSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
