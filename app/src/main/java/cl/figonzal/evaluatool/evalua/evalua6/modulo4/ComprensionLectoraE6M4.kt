@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 15:48
+ Last modified 15-05-21 20:16
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4
@@ -181,7 +181,7 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -213,7 +213,7 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -251,9 +251,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -285,9 +285,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -321,9 +321,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -355,9 +355,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -394,9 +394,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         3,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -428,9 +428,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         3,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -464,9 +464,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         3,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -498,9 +498,9 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
                         3,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
-                        null,
-                        null,
-                        null
+                        0,
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -533,16 +533,16 @@ class ComprensionLectoraE6M4 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!! - (reprobadas!! / 2.0)
+                1 -> aprobadas - (reprobadas / 2.0)
                 2 -> subTotalPdT21 + subTotalPdT22
                 3 -> subTotalPdT31 + subTotalPdT32
                 else -> 0.0

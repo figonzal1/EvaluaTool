@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments
 
@@ -136,12 +136,12 @@ class ConductaProSocialFragmentE4M3 : Fragment(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
-                        null
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -150,14 +150,14 @@ class ConductaProSocialFragmentE4M3 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
-        var total = aprobadas!!.toDouble()
+        var total = aprobadas.toDouble()
         if (total < 0) total = 0.0
 
         tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)

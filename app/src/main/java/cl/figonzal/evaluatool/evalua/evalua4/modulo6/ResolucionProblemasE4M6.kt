@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -127,8 +127,8 @@ class ResolucionProblemasE4M6 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA),
                         aprobadasT1,
-                        null,
-                        null
+                        0,
+                        0
                     )
                     calculateResult()
                 }
@@ -137,14 +137,14 @@ class ResolucionProblemasE4M6 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
-        var total = floor(aprobadas!!.toDouble())
+        var total = floor(aprobadas.toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

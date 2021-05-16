@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 20:16
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -159,7 +159,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -192,7 +192,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity(), EvaluaInterface {
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -331,8 +331,8 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity(), EvaluaInterface {
                         3,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
-                        null,
-                        null,
+                        0,
+                        0,
                         reprobadasT3
                     )
                     calculateResult()
@@ -342,18 +342,18 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!!.toDouble() - reprobadas!!.toDouble()
-                2 -> aprobadas!! - (reprobadas!! + omitidas!!).toDouble()
-                3 -> 24 - reprobadas!!.toDouble()
+                1 -> aprobadas.toDouble() - reprobadas.toDouble()
+                2 -> aprobadas - (reprobadas + omitidas).toDouble()
+                3 -> 24 - reprobadas.toDouble()
                 else -> 0.0
             }
         )

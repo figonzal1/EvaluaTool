@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 15-05-21 18:06
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -199,11 +199,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -232,11 +232,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        null,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -268,11 +268,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
                     subtotalPdT2 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
-                        null,
+                        0,
                         reprobadasT2
                     )
                     calculateResult()
@@ -301,11 +301,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
                     subtotalPdT2 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
                         aprobadasT2,
-                        null,
+                        0,
                         reprobadasT2
                     )
                     calculateResult()
@@ -337,11 +337,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
                     subtotalPdT3 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
                         aprobadasT3,
-                        null,
+                        0,
                         reprobadasT3
                     )
                     calculateResult()
@@ -370,11 +370,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT3 = text.toString().toInt()
                     }
                     subtotalPdT3 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT3,
                         context.getString(R.string.TAREA_3),
                         aprobadasT3,
-                        null,
+                        0,
                         reprobadasT3
                     )
                     calculateResult()
@@ -406,11 +406,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
                     }
                     subtotalPdT4 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT4,
                         context.getString(R.string.TAREA_4),
                         aprobadasT4,
-                        null,
+                        0,
                         reprobadasT4
                     )
                     calculateResult()
@@ -439,11 +439,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT4 = text.toString().toInt()
                     }
                     subtotalPdT4 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT4,
                         context.getString(R.string.TAREA_4),
                         aprobadasT4,
-                        null,
+                        0,
                         reprobadasT4
                     )
                     calculateResult()
@@ -475,11 +475,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT5 = text.toString().toInt()
                     }
                     subtotalPdT5 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT5,
                         context.getString(R.string.TAREA_5),
                         aprobadasT5,
-                        null,
+                        0,
                         reprobadasT5
                     )
                     calculateResult()
@@ -508,11 +508,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT5 = text.toString().toInt()
                     }
                     subtotalPdT5 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT5,
                         context.getString(R.string.TAREA_5),
                         aprobadasT5,
-                        null,
+                        0,
                         reprobadasT5
                     )
                     calculateResult()
@@ -544,11 +544,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT6 = text.toString().toInt()
                     }
                     subtotalPdT6 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT6,
                         context.getString(R.string.TAREA_6),
                         aprobadasT6,
-                        null,
+                        0,
                         reprobadasT6
                     )
                     calculateResult()
@@ -577,11 +577,11 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT6 = text.toString().toInt()
                     }
                     subtotalPdT6 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT6,
                         context.getString(R.string.TAREA_6),
                         aprobadasT6,
-                        null,
+                        0,
                         reprobadasT6
                     )
                     calculateResult()
@@ -591,14 +591,14 @@ class SeriesE1M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
-        var total = floor((aprobadas!! - reprobadas!!).toDouble())
+        var total = floor((aprobadas - reprobadas).toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

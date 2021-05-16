@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 18:53
+ Last modified 15-05-21 20:16
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4.velocidadFragment
@@ -144,7 +144,7 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -177,7 +177,7 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
                         s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -210,7 +210,7 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     totalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -224,14 +224,14 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
-        var total = floor((aprobadas!! - (omitidas!! + reprobadas!!)).toDouble())
+        var total = floor((aprobadas - (omitidas + reprobadas)).toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
@@ -293,7 +293,7 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
         return -1
     }
 
-    private fun calcularComprension(pd_actual: Int): String? {
+    private fun calcularComprension(pd_actual: Int): String {
         return when (pd_actual) {
             in 0..2 -> getString(R.string.COMPRENSION_MUY_BAJA)
             in 3..4 -> getString(R.string.COMPRENSION_BAJA)
@@ -306,7 +306,7 @@ class ComprensionFragmentE6M4 : Fragment(), EvaluaInterface {
                     R.string.TAG_COMPRENSION_CALCULADA,
                     R.string.COMPRENSION_NULA
                 )
-                null
+                ""
             }
         }
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:00
+ Last modified 15-05-21 18:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -123,11 +123,11 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
-                        null,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
-                        null,
-                        null,
+                        0,
+                        0,
                         reprobadasT1
                     )
                     calculateResult()
@@ -137,15 +137,15 @@ class GrafoMotricidadE0M2 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
 
-        var total = floor(48 - reprobadas!!.toDouble())
+        var total = floor(48 - reprobadas.toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

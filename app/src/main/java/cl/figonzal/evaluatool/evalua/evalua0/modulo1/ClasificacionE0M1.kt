@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 15:33
+ Last modified 15-05-21 18:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -262,18 +262,18 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
     }
 
     override fun calculateTask(
-        nTarea: Int?,
+        nTarea: Int,
         tvSubTotal: TextView,
         tarea: String,
-        aprobadas: Int?,
-        omitidas: Int?,
-        reprobadas: Int?
+        aprobadas: Int,
+        omitidas: Int,
+        reprobadas: Int
     ): Double {
 
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas!! - (reprobadas!! / 4.0)
-                2 -> aprobadas!! - (reprobadas!! / 5.0)
+                1 -> aprobadas - (reprobadas / 4.0)
+                2 -> aprobadas - (reprobadas / 5.0)
                 else -> 0.0
             }
         )
