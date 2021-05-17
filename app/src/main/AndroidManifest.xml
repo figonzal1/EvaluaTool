@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 16-05-21 01:11
+  Last modified 17-05-21 02:32
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,6 +25,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".evalua.evalua8.modulo6.IndiceGeneralMatematicasE8M6"></activity>
+        <activity android:name=".evalua.evalua8.modulo6.ValoracionGlobalMatematicasE8M6" />
+        <activity android:name=".evalua.evalua8.modulo6.ResolucionProblemasE8M6" />
+        <activity android:name=".evalua.evalua8.modulo6.CalculoNumeracionE8M6" />
+        <activity android:name=".evalua.evalua8.modulo5.IndiceGeneralEscrituraE8M5" />
+        <activity android:name=".evalua.evalua8.modulo5.ExpresionEscritaE8M5" />
+        <activity android:name=".evalua.evalua8.modulo5.OrtografiaVisualRegladaE8M5" />
+        <activity android:name=".evalua.evalua8.modulo4.IndiceGeneralLecturaE8M4" />
+        <activity android:name=".evalua.evalua8.modulo4.VelocidadLectoraE8M4" />
+        <activity android:name=".evalua.evalua8.modulo4.EficaciaLectoraE8M4" />
+        <activity android:name=".evalua.evalua8.modulo4.ComprensionLectoraE8M4" />
+        <activity android:name=".evalua.evalua8.modulo3.NivelesAdaptacionE8M3" />
+        <activity android:name=".evalua.evalua8.modulo2.IndiceGeneralCognitivoE8M2" />
+        <activity android:name=".evalua.evalua8.modulo2.ValoracionGlobalRazonamientoE8M2" />
+        <activity android:name=".evalua.evalua8.modulo2.RazonamientoDeductivoE8M2" />
+        <activity android:name=".evalua.evalua8.modulo2.RazonamientoEspacialE8M2" />
+        <activity android:name=".evalua.evalua8.modulo2.RazonamientoInductivoE8M2" />
+        <activity android:name=".evalua.evalua8.modulo1.AtencionConcentracionE8M1" />
+        <activity android:name=".evalua.evalua8.Evalua8Activity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -199,7 +218,7 @@
             android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
         <activity
             android:name=".evalua.evalua7.modulo3.NivelesAdaptacionE7M3"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" /><!-- EVALUA 2 -->
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
         <activity
             android:name=".evalua.evalua2.modulo5.OrtografiaE2M5"
             android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
@@ -358,8 +377,7 @@
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
             android:name=".evalua.evalua5.Evalua5Activity"
-            android:parentActivityName=".MainActivity" />
-        <!-- EVALUA 6 -->
+            android:parentActivityName=".MainActivity" /> <!-- EVALUA 6 -->
         <activity
             android:name=".evalua.evalua6.modulo6.IndiceGeneralMatematicasE6M6"
             android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
@@ -413,8 +431,7 @@
             android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
         <activity
             android:name=".evalua.evalua6.Evalua6Activity"
-            android:parentActivityName=".MainActivity" />
-        <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"

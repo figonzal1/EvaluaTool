@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 14-05-21 23:33
+  Last modified 17-05-21 02:31
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -252,6 +252,12 @@
     <string name="TOOLBAR_EXPRESION_ESCRITA">Expresión Escrita</string>
     <string name="TOOLBAR_CALC_NUMERACION">Cálculo y Numeración</string>
 
+    <!-- EVALUA 8-->
+    <string name="TOOLBAR_EVALUA_8">Evalúa 8</string>
+    <string name="EVALUA_8_MODULO_1">Atención - Concentración</string>
+    <string name="EVALUA_8_M1_SI_1">Atención y Concentración [MA-8]</string>
+    <string name="EVALUA_8_M2_SI_1">Razonamiento Inductivo [RI-8]</string>
+
 
     <string name="CLICK_CLASIFICACION">click_clasificacion</string>
     <string name="CLICK_MEMORIA_ATENCION">click_memoria_atencion</string>
@@ -409,6 +415,7 @@
     <string name="tareas">Tareas</string>
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
     <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los ejercicios 1–26</string>
+    <string name="indica_el_puntaje_items_1_20">Indica el puntaje de los ejercicios 1–20</string>
     <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los ejercicios 27–34</string>
     <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ejercicios 1–15</string>
     <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ejercicios 1–17</string>
@@ -440,6 +447,8 @@
     <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
     <string name="vel_lectora">Velocidad Lectora</string>
     <string name="re_0_pts">RE: 0 pts</string>
+    <string name="ri_0_pts">RI: 0 pts</string>
+    <string name="rd_0_pts">RD: 0 pts</string>
     <string name="pa_0_pts">PA: 0 pts</string>
     <string name="vl_0_pts">VL: 0 pts</string>
     <string name="org_perceptiva">Org. perceptiva</string>
@@ -538,4 +547,15 @@
     <string name="descripcion_corregido_dialog">Puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
     <string name="icono_tema_modo_claro">Icono tema modo claro</string>
     <string name="icono_tema_modo_oscuro">Icono tema modo oscuro</string>
+    <string name="raz_inductivo">Raz. Inductivo</string>
+    <string name="raz_espacial">Raz. Espacial</string>
+    <string name="raz_deductivo">Raz. Deductivo</string>
+    <string name="TOOLBAR_ADAP_PERSONAL">Adaptación Personal</string>
+    <string name="TOOLBAR_ADAP_FAMILIAR">Adaptación Familiar</string>
+    <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
+    <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="eficacia_lectora">Eficacia Lectora</string>
+
 </resources>
