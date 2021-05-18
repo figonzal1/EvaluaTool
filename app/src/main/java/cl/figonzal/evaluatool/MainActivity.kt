@@ -142,9 +142,12 @@ class MainActivity : AppCompatActivity() {
      * @return Unit
      */
     private fun loadAds() {
-        adsService = AdsService(this, supportFragmentManager, sharedPrefService).apply {
-            loadIntersitial()
-            loadRewardVideo()
+
+        if (!test) {
+            adsService = AdsService(this, supportFragmentManager, sharedPrefService).apply {
+                loadIntersitial()
+                loadRewardVideo()
+            }
         }
     }
 
