@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 18-05-21 02:42
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -89,7 +89,7 @@ fun razonamientoInductivoE8M2Baremo(): Array<Array<Any>> {
  *
  * Page 39
  */
-fun razonamientoEspacialE8M3Baremo(): Array<Array<Any>> {
+fun razonamientoEspacialE8M2Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(29, 99, 1.55),
         arrayOf(28, 97, 1.41),
@@ -120,8 +120,8 @@ fun razonamientoEspacialE8M3Baremo(): Array<Array<Any>> {
 }
 
 /**
- * III.- Razonamiento
- * B.- Razonamiento Deductivo
+ * II.- Razonamiento
+ * C.- Razonamiento Deductivo
  *
  * Page 45
  */
@@ -152,6 +152,298 @@ fun razonamientoDeductivoE8M3Baremo(): Array<Array<Any>> {
         arrayOf(1, 5, -1.45),
         arrayOf(0, 1, -1.61),
     )
+}
+
+/**
+ * III.- Niveles de Adaptacion
+ * A.- Adaptacion Personal
+ *
+ * Page 53
+ */
+fun adaptacionPersonalE8M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99),
+        arrayOf(1, 99),
+        arrayOf(2, 99),
+        arrayOf(3, 97),
+        arrayOf(4, 97),
+        arrayOf(5, 97),
+        arrayOf(6, 95),
+        arrayOf(7, 95),
+        arrayOf(8, 95),
+        arrayOf(9, 90),
+        arrayOf(10, 90),
+        arrayOf(11, 90),
+        arrayOf(12, 85),
+        arrayOf(13, 85),
+        arrayOf(14, 85),
+        arrayOf(15, 75),
+        arrayOf(16, 75),
+        arrayOf(17, 75),
+        arrayOf(18, 65),
+        arrayOf(19, 65),
+        arrayOf(20, 65),
+        arrayOf(21, 60),
+        arrayOf(22, 60),
+        arrayOf(23, 60),
+        arrayOf(24, 57),
+        arrayOf(25, 57),
+        arrayOf(26, 57),
+        arrayOf(27, 52),
+        arrayOf(28, 52),
+        arrayOf(29, 52),
+        arrayOf(30, 50),
+        arrayOf(31, 50),
+        arrayOf(32, 50),
+        arrayOf(33, 45),
+        arrayOf(34, 45),
+        arrayOf(35, 45),
+        arrayOf(36, 40),
+        arrayOf(37, 40),
+        arrayOf(38, 40),
+        arrayOf(39, 35),
+        arrayOf(40, 35),
+        arrayOf(41, 35),
+        arrayOf(42, 30),
+        arrayOf(43, 30),
+        arrayOf(44, 30),
+        arrayOf(45, 20),
+        arrayOf(46, 20),
+        arrayOf(47, 20),
+        arrayOf(48, 15),
+        arrayOf(49, 15),
+        arrayOf(50, 15),
+        arrayOf(51, 10),
+        arrayOf(52, 10),
+        arrayOf(53, 10),
+        arrayOf(54, 5),
+        arrayOf(55, 5),
+        arrayOf(56, 5),
+        arrayOf(57, 3),
+        arrayOf(58, 3),
+        arrayOf(59, 3),
+        arrayOf(60, 1),
+
+        )
+}
+
+/**
+ * III.- Niveles de Adaptacion
+ * B.- Adaptacion Familiar
+ *
+ * Page 53
+ */
+fun adaptacionFamiliarE8M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 95),
+        arrayOf(1, 95),
+        arrayOf(2, 95),
+        arrayOf(3, 90),
+        arrayOf(4, 90),
+        arrayOf(5, 90),
+        arrayOf(6, 85),
+        arrayOf(7, 85),
+        arrayOf(8, 85),
+        arrayOf(9, 80),
+        arrayOf(10, 80),
+        arrayOf(11, 80),
+        arrayOf(12, 75),
+        arrayOf(13, 75),
+        arrayOf(14, 75),
+        arrayOf(15, 70),
+        arrayOf(16, 70),
+        arrayOf(17, 70),
+        arrayOf(18, 65),
+        arrayOf(19, 65),
+        arrayOf(20, 65),
+        arrayOf(21, 60),
+        arrayOf(22, 60),
+        arrayOf(23, 60),
+        arrayOf(24, 55),
+        arrayOf(25, 55),
+        arrayOf(26, 55),
+        arrayOf(27, 50),
+        arrayOf(28, 50),
+        arrayOf(29, 50),
+        arrayOf(30, 40),
+        arrayOf(31, 40),
+        arrayOf(32, 40),
+        arrayOf(33, 35),
+        arrayOf(34, 35),
+        arrayOf(35, 35),
+        arrayOf(36, 30),
+        arrayOf(37, 30),
+        arrayOf(38, 30),
+        arrayOf(39, 25),
+        arrayOf(40, 25),
+        arrayOf(41, 25),
+        arrayOf(42, 20),
+        arrayOf(43, 20),
+        arrayOf(44, 20),
+        arrayOf(45, 15),
+        arrayOf(46, 15),
+        arrayOf(47, 15),
+        arrayOf(48, 10),
+        arrayOf(49, 10),
+        arrayOf(50, 10),
+        arrayOf(51, 7),
+        arrayOf(52, 7),
+        arrayOf(53, 7),
+        arrayOf(54, 5),
+        arrayOf(55, 5),
+        arrayOf(56, 5),
+        arrayOf(57, 3),
+        arrayOf(58, 3),
+        arrayOf(59, 3),
+        arrayOf(60, 1),
+
+        )
+}
+
+/**
+ * III.- Niveles de Adaptacion
+ * C.- Adaptacion Escolar
+ *
+ * Page 53
+ */
+fun adaptacionEscolarE8M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99),
+        arrayOf(1, 99),
+        arrayOf(2, 99),
+        arrayOf(3, 97),
+        arrayOf(4, 97),
+        arrayOf(5, 97),
+        arrayOf(6, 95),
+        arrayOf(7, 95),
+        arrayOf(8, 95),
+        arrayOf(9, 92),
+        arrayOf(10, 92),
+        arrayOf(11, 92),
+        arrayOf(12, 90),
+        arrayOf(13, 90),
+        arrayOf(14, 90),
+        arrayOf(15, 85),
+        arrayOf(16, 85),
+        arrayOf(17, 85),
+        arrayOf(18, 80),
+        arrayOf(19, 80),
+        arrayOf(20, 80),
+        arrayOf(21, 75),
+        arrayOf(22, 75),
+        arrayOf(23, 75),
+        arrayOf(24, 70),
+        arrayOf(25, 70),
+        arrayOf(26, 70),
+        arrayOf(27, 65),
+        arrayOf(28, 65),
+        arrayOf(29, 65),
+        arrayOf(30, 60),
+        arrayOf(31, 60),
+        arrayOf(32, 60),
+        arrayOf(33, 55),
+        arrayOf(34, 55),
+        arrayOf(35, 55),
+        arrayOf(36, 45),
+        arrayOf(37, 45),
+        arrayOf(38, 45),
+        arrayOf(39, 35),
+        arrayOf(40, 35),
+        arrayOf(41, 35),
+        arrayOf(42, 30),
+        arrayOf(43, 30),
+        arrayOf(44, 30),
+        arrayOf(45, 25),
+        arrayOf(46, 25),
+        arrayOf(47, 25),
+        arrayOf(48, 20),
+        arrayOf(49, 20),
+        arrayOf(50, 20),
+        arrayOf(51, 15),
+        arrayOf(52, 15),
+        arrayOf(53, 15),
+        arrayOf(54, 10),
+        arrayOf(55, 10),
+        arrayOf(56, 10),
+        arrayOf(57, 5),
+        arrayOf(58, 5),
+        arrayOf(59, 5),
+        arrayOf(60, 1),
+
+        )
+}
+
+/**
+ * III.- Niveles de Adaptacion
+ * D.- Habilidades Sociales
+ *
+ * Page 53
+ */
+fun habilidadesSocialesE8M3Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(0, 99),
+        arrayOf(1, 99),
+        arrayOf(2, 99),
+        arrayOf(3, 97),
+        arrayOf(4, 97),
+        arrayOf(5, 97),
+        arrayOf(6, 95),
+        arrayOf(7, 95),
+        arrayOf(8, 95),
+        arrayOf(9, 90),
+        arrayOf(10, 90),
+        arrayOf(11, 90),
+        arrayOf(12, 80),
+        arrayOf(13, 80),
+        arrayOf(14, 80),
+        arrayOf(15, 75),
+        arrayOf(16, 75),
+        arrayOf(17, 75),
+        arrayOf(18, 65),
+        arrayOf(19, 65),
+        arrayOf(20, 65),
+        arrayOf(21, 60),
+        arrayOf(22, 60),
+        arrayOf(23, 60),
+        arrayOf(24, 55),
+        arrayOf(25, 55),
+        arrayOf(26, 55),
+        arrayOf(27, 50),
+        arrayOf(28, 50),
+        arrayOf(29, 50),
+        arrayOf(30, 47),
+        arrayOf(31, 47),
+        arrayOf(32, 47),
+        arrayOf(33, 42),
+        arrayOf(34, 42),
+        arrayOf(35, 42),
+        arrayOf(36, 40),
+        arrayOf(37, 40),
+        arrayOf(38, 40),
+        arrayOf(39, 35),
+        arrayOf(40, 35),
+        arrayOf(41, 35),
+        arrayOf(42, 30),
+        arrayOf(43, 30),
+        arrayOf(44, 30),
+        arrayOf(45, 15),
+        arrayOf(46, 15),
+        arrayOf(47, 15),
+        arrayOf(48, 10),
+        arrayOf(49, 10),
+        arrayOf(50, 10),
+        arrayOf(51, 7),
+        arrayOf(52, 7),
+        arrayOf(53, 7),
+        arrayOf(54, 5),
+        arrayOf(55, 5),
+        arrayOf(56, 5),
+        arrayOf(57, 3),
+        arrayOf(58, 3),
+        arrayOf(59, 3),
+        arrayOf(60, 1),
+
+        )
 }
 
 /**
@@ -225,30 +517,30 @@ fun eficaciaLectoraE8M4Baremo(): Array<Array<Any>> {
  */
 fun velocidadLectoraE8M4Baremo(): Array<Array<Any>> {
     return arrayOf(
-        arrayOf(460, 2, 3.86),
-        arrayOf(440, 4, 3.59),
-        arrayOf(420, 6, 3.32),
-        arrayOf(400, 8, 3.04),
-        arrayOf(380, 10, 2.77),
-        arrayOf(310, 12, 1.81),
-        arrayOf(290, 14, 1.54),
-        arrayOf(270, 15, 1.27),
-        arrayOf(250, 20, 0.99),
-        arrayOf(240, 22, 0.86),
-        arrayOf(230, 25, 0.72),
-        arrayOf(220, 30, 0.58),
-        arrayOf(210, 40, 0.45),
-        arrayOf(200, 45, 0.31),
-        arrayOf(190, 47, 0.17),
-        arrayOf(180, 50, 0.04),
-        arrayOf(170, 60, -0.1),
-        arrayOf(160, 70, -0.24),
-        arrayOf(150, 75, -0.37),
-        arrayOf(140, 80, -0.51),
-        arrayOf(120, 90, -0.78),
-        arrayOf(100, 95, -1.06),
-        arrayOf(90, 97, -1.19),
         arrayOf(80, 99, -1.33),
+        arrayOf(90, 97, -1.19),
+        arrayOf(100, 95, -1.06),
+        arrayOf(120, 90, -0.78),
+        arrayOf(140, 80, -0.51),
+        arrayOf(150, 75, -0.37),
+        arrayOf(160, 70, -0.24),
+        arrayOf(170, 60, -0.1),
+        arrayOf(180, 50, 0.04),
+        arrayOf(190, 47, 0.17),
+        arrayOf(200, 45, 0.31),
+        arrayOf(210, 40, 0.45),
+        arrayOf(220, 30, 0.58),
+        arrayOf(230, 25, 0.72),
+        arrayOf(240, 22, 0.86),
+        arrayOf(250, 20, 0.99),
+        arrayOf(270, 15, 1.27),
+        arrayOf(290, 14, 1.54),
+        arrayOf(310, 12, 1.81),
+        arrayOf(380, 10, 2.77),
+        arrayOf(400, 8, 3.04),
+        arrayOf(420, 6, 3.32),
+        arrayOf(440, 4, 3.59),
+        arrayOf(460, 2, 3.86)
     )
 }
 

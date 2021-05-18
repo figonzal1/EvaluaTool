@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 17-05-21 15:57
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo2
@@ -176,7 +176,7 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_FORMAT), totalPd)
+        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
 
     }
 

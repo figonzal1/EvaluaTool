@@ -208,9 +208,9 @@
     <string name="EVALUA_6_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
     <string name="EVALUA_6_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Matemáticas</string>
     <string name="EVALUA_6_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_6_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
-    <string name="EVALUA_6_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
-    <string name="EVALUA_6_INDICE_GENERAL_MATEMATICAS">Índice General de Matemáticas</string>
+    <string name="EVALUA_6_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
     <string name="EVALUA_6_M2_SI_1">Memoria y Atención [MA-6]</string>
     <string name="EVALUA_6_M3_SI_1">Niveles de Adaptación [AD-6]</string>
     <string name="EVALUA_6_M4_SI_1">Comprensión Lectora [CL-6]</string>
@@ -255,8 +255,28 @@
     <!-- EVALUA 8-->
     <string name="TOOLBAR_EVALUA_8">Evalúa 8</string>
     <string name="EVALUA_8_MODULO_1">Atención - Concentración</string>
+    <string name="EVALUA_8_MODULO_2">Razonamiento</string>
+    <string name="EVALUA_8_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_8_MODULO_4">Lectura</string>
+    <string name="EVALUA_8_MODULO_5">Escritura</string>
+    <string name="EVALUA_8_MODULO_6">Aprendizajes Matemáticos</string>
     <string name="EVALUA_8_M1_SI_1">Atención y Concentración [MA-8]</string>
     <string name="EVALUA_8_M2_SI_1">Razonamiento Inductivo [RI-8]</string>
+    <string name="EVALUA_8_M2_SI_2">Razonamiento Espacial [RE-8]</string>
+    <string name="EVALUA_8_M2_SI_3">Razonamiento Deductivo [RD-8]</string>
+    <string name="EVALUA_8_M3_SI_1">Niveles Adaptación [NA-8]</string>
+    <string name="EVALUA_8_M4_SI_1">Comprension Lectora [CL-8]</string>
+    <string name="EVALUA_8_M4_SI_2">Eficacia Lectora [EL-8]</string>
+    <string name="EVALUA_8_M4_SI_3">Velocidad Lectora [VL-8]</string>
+    <string name="EVALUA_8_M5_SI_1">Ortografia Visual Reglada [OR-8]</string>
+    <string name="EVALUA_8_M6_SI_1">Cálculo y Numeración [CN-8]</string>
+    <string name="EVALUA_8_M6_SI_2">Resolución Problemas [RP-8]</string>
+    <string name="EVALUA_8_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_8_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_8_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
+    <string name="EVALUA_8_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
+    <string name="EVALUA_8_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
+    <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
 
 
     <string name="CLICK_CLASIFICACION">click_clasificacion</string>
@@ -320,6 +340,7 @@
     <string name="TAG_PD_CORREGIDO">PD_CORREGIDO: </string>
     <string name="BUTTON_MAIN">BUTTON_CLICK: </string>
     <string name="BTN_EVALUA_7">btn_evalua_7</string>
+    <string name="BTN_EVALUA_8">btn_evalua_8</string>
     <string name="TAG_PERCENTIL_CALCULADO">PERCENTIL_CALCULADO: </string>
     <string name="PERCENTIL_NULO">percentil nulo</string>
     <string name="PD_NULO">pd nulo</string>
@@ -416,6 +437,9 @@
     <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
     <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los ejercicios 1–26</string>
     <string name="indica_el_puntaje_items_1_20">Indica el puntaje de los ejercicios 1–20</string>
+    <string name="indica_el_puntaje_items_21_40">Indica el puntaje de los ejercicios 21–40</string>
+    <string name="indica_el_puntaje_items_41_60">Indica el puntaje de los ejercicios 41–60</string>
+    <string name="indica_el_puntaje_items_61_80">Indica el puntaje de los ejercicios 61–80</string>
     <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los ejercicios 27–34</string>
     <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ejercicios 1–15</string>
     <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ejercicios 1–17</string>
@@ -508,6 +532,7 @@
     <string name="routeMapEvalua5">routeMapEvalua5</string>
     <string name="routeMapEvalua6">routeMapEvalua6</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
+    <string name="routeMapEvalua8">routeMapEvalua8</string>
     <string name="TAREA_1">Tarea 1:</string>
     <string name="TAREA_2">Tarea 2:</string>
     <string name="NIVEL_ALTO">ALTO</string>

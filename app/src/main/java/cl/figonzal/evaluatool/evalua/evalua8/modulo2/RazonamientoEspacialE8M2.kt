@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 17-05-21 15:35
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo2
@@ -21,7 +21,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.razonamientoEspacialE8M3Baremo
+import cl.figonzal.evaluatool.baremosTables.razonamientoEspacialE8M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoEspacialE8M2Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -38,7 +38,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
     private lateinit var binding: ActivityRazonamientoEspacialE8M2Binding
 
     //PD,PC_CHI
-    private val perc = razonamientoEspacialE8M3Baremo()
+    private val perc = razonamientoEspacialE8M2Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -55,8 +55,8 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
     private lateinit var tvSubTotalT2: TextView
-    private var totalPdT1 = 0.0
-    private var totalPdT2 = 0.0
+    private var subTotalPdT1 = 0.0
+    private var subTotalPdT2 = 0.0
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
@@ -134,7 +134,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    subTotalPdT1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -145,7 +145,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
+                    subTotalPdT1 = calculateTask(
                         1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
@@ -167,7 +167,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    subTotalPdT1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -178,7 +178,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
+                    subTotalPdT1 = calculateTask(
                         1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
@@ -203,7 +203,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT2 = 0.0
+                    subTotalPdT2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -214,7 +214,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    totalPdT2 = calculateTask(
+                    subTotalPdT2 = calculateTask(
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
@@ -236,7 +236,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT2 = 0.0
+                    subTotalPdT2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -247,7 +247,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    totalPdT2 = calculateTask(
+                    subTotalPdT2 = calculateTask(
                         2,
                         tvSubTotalT2,
                         context.getString(R.string.TAREA_2),
@@ -284,7 +284,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateResult() {
 
-        with(totalPdT1 + totalPdT2, {
+        with(subTotalPdT1 + subTotalPdT2, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             //CALCULO PD CORREGIDO

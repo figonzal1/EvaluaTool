@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 13:15
+ Last modified 18-05-21 03:15
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo3.adaptacionFragments
@@ -24,8 +24,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.adaptacionPersonalE8M3Baremo
-import cl.figonzal.evaluatool.databinding.FragmentAdaptacionPersonalE8M3Binding
+import cl.figonzal.evaluatool.baremosTables.adaptacionEscolarE8M3Baremo
+import cl.figonzal.evaluatool.databinding.FragmentAdaptacionEscolarE8M3Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
@@ -33,19 +33,19 @@ import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.textfield.TextInputEditText
 
-class AdaptacionPersonalFragmentE8M3 : Fragment(), EvaluaInterface {
+class AdaptacionEscolarFragmentE8M3 : Fragment(), EvaluaInterface {
 
     companion object {
 
-        private const val MEDIA = 22.25
+        private const val MEDIA = 21.97
 
-        fun newInstance(): AdaptacionPersonalFragmentE8M3 {
-            return AdaptacionPersonalFragmentE8M3()
+        fun newInstance(): AdaptacionEscolarFragmentE8M3 {
+            return AdaptacionEscolarFragmentE8M3()
         }
     }
 
-    private var binding: FragmentAdaptacionPersonalE8M3Binding? = null
-    private val perc = adaptacionPersonalE8M3Baremo()
+    private var binding: FragmentAdaptacionEscolarE8M3Binding? = null
+    private val perc = adaptacionEscolarE8M3Baremo()
 
     private lateinit var etAprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
@@ -66,13 +66,13 @@ class AdaptacionPersonalFragmentE8M3 : Fragment(), EvaluaInterface {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentAdaptacionPersonalE8M3Binding.inflate(inflater, container, false)
+        binding = FragmentAdaptacionEscolarE8M3Binding.inflate(inflater, container, false)
 
         initResources(binding!!)
         return binding!!.root
     }
 
-    private fun initResources(binding: FragmentAdaptacionPersonalE8M3Binding) {
+    private fun initResources(binding: FragmentAdaptacionEscolarE8M3Binding) {
 
         with(binding, {
             //Promedio y desviacion
@@ -81,15 +81,15 @@ class AdaptacionPersonalFragmentE8M3 : Fragment(), EvaluaInterface {
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@AdaptacionPersonalFragmentE8M3.etAprobadasT1 = etAprobadasT1
+            this@AdaptacionEscolarFragmentE8M3.etAprobadasT1 = etAprobadasT1
 
             //TOTAL
-            this@AdaptacionPersonalFragmentE8M3.tvPdTotal = tvPdTotalValue
+            this@AdaptacionEscolarFragmentE8M3.tvPdTotal = tvPdTotalValue
             tvPdCorregido = tvPdTotalCorregidoValue
-            this@AdaptacionPersonalFragmentE8M3.tvPercentil = tvPercentilValue
+            this@AdaptacionEscolarFragmentE8M3.tvPercentil = tvPercentilValue
             tvNivel = tvNivelObtenidoValue
 
-            this@AdaptacionPersonalFragmentE8M3.progressBar = progressBar
+            this@AdaptacionEscolarFragmentE8M3.progressBar = progressBar
             progressBar.max = perc.first()[1] as Int
 
             ivHelpPdCorregido.setOnClickListener {

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 18-05-21 01:42
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo5
@@ -349,13 +349,7 @@ class OrtografiaVisualRegladaE8M5 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(
-            when (nTarea) {
-                1 -> aprobadas - (reprobadas + omitidas).toDouble()
-                2 -> (3 * aprobadas) - (reprobadas + omitidas).toDouble()
-                else -> 0.0
-            }
-        )
+        var total = floor((aprobadas - (reprobadas + omitidas)).toDouble())
         if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)

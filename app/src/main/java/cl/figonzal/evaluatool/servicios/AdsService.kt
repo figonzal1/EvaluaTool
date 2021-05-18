@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 16-05-21 01:08
+ Last modified 17-05-21 15:17
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -92,7 +92,7 @@ class AdsService(
 
         interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
 
-            override fun onAdFailedToShowFullScreenContent(p0: AdError?) {
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
                 super.onAdFailedToShowFullScreenContent(p0)
                 interstitialAd = null
 
