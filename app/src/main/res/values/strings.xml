@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 17-05-21 02:31
+  Last modified 18-05-21 15:23
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -551,9 +551,9 @@
     <string name="COMPRENSION_MEDIA">Media</string>
     <string name="COMPRENSION_ALTA">Alta</string>
     <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
-    <string name="POINTS_FORMAT">%s %s pts</string>
+    <string name="POINTS_FORMAT" formatted="false">%s %s pts</string>
     <string name="POINTS_SIMPLE_FORMAT">%s pts</string>
-    <string name="SEG_FORMAT">%s %s seg</string>
+    <string name="SEG_FORMAT" formatted="false">%s %s seg</string>
     <string name="SEG_SIMPLE_FORMAT">%s seg</string>
     <string name="ort_fonetica">Ortografía fonética</string>
     <string name="graf_a_y_exp_escrita">Grafía y exp. escrita</string>
@@ -579,8 +579,6 @@
     <string name="TOOLBAR_ADAP_FAMILIAR">Adaptación Familiar</string>
     <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
     <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="eficacia_lectora">Eficacia Lectora</string>
 
 </resources>
