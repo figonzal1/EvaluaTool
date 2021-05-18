@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 17-05-21 13:47
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo3.adaptacionFragments
@@ -23,19 +23,11 @@ class FragmentStateAdapterE8M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> {
-            }
-            1
-            -> {
-            }
-            2
-            -> {
-            }
-            3
-            -> {
-            }
-            else -> {
-            }
+            0 -> AdaptacionPersonalFragmentE8M3.newInstance()
+            1 -> AdaptacionFamiliarFragmentE8M3.newInstance()
+            2 -> AdaptacionEscolarFragmentE8M3.newInstance()
+            3 -> HabilidadesSocialesFragmentE8M3.newInstance()
+            else -> HabilidadesSocialesFragmentE8M3.newInstance()
         }
     }
 
