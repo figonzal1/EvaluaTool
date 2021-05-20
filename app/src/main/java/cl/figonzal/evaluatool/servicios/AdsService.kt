@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 15:17
+ Last modified 20-05-21 13:51
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -176,8 +176,8 @@ class AdsService(
                 val dateNow = Date()
                 logInfo(R.string.TAG_HORA_AHORA, DateHandler.dateToString(dateNow))
 
-                //sumar 1 horas al tiempo del celular
-                val dateNew = DateHandler.addHoursToDate(dateNow, 1)
+                //sumar 24 horas al tiempo del celular
+                val dateNew = DateHandler.addHoursToDate(dateNow, 24)
                 logInfo(R.string.TAG_HORA_REWARD, DateHandler.dateToString(dateNew))
 
                 //Guardar fecha de termino de reward

@@ -8,15 +8,15 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 18-05-21 17:28
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.MenuItem
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +30,7 @@ import kotlin.math.floor
 
 class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
 
-    //TODO: No entiendo la comprension aqui
+    //TODO: No entiendo la comprension aqui ()
     companion object {
         private const val DESVIACION = 73.19
         private const val MEDIA = 171.80
@@ -63,8 +63,8 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
     private lateinit var progressBar: ProgressBar
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivityVelocidadLectoraE8M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -204,11 +204,11 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     subtotalPdT1 = calculateTask(
-                        1,
+                        0,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        reprobadasT1,
+                        omitidasT1,
                         reprobadasT1
                     )
                     calculateResult()
@@ -229,21 +229,22 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
         val total = floor((aprobadas - (reprobadas + omitidas)).toDouble())
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return aprobadas.toDouble()
+        return total
     }
 
     override fun calculateResult() {
 
-        with(totalPdT1, {
-            tvPdTotal.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), this)
+        with(subtotalPdT1, {
+            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text = String.format(getString(R.string.SEG_SIMPLE_FORMAT), pdCorregido)
+            tvPdCorregido.text =
+                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, true).toString()
+                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
 
-            tvNivelComprension.text = calcularComprension(pdCorregido)
+            //tvNivelComprension.text = calcularComprension(pdCorregido)
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
@@ -303,4 +304,13 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
         return -1
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == android.R.id.home) {
+            logInfo(R.string.ACTIVIDAD_CERRADA)
+            finish()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
