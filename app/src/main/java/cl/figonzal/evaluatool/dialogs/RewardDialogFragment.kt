@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 22:17
+ Last modified 20-05-21 13:49
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -33,7 +33,7 @@ class RewardDialogFragment(private val adsService: AdsService) : DialogFragment(
         //TODO: Extraer strings
         with(AlertDialog.Builder(requireActivity()), {
             setTitle("¡Apoya a la aplicación!")
-            setMessage("Ve el video, apoya gratis monetariamente y recibe 1 hora libre de publicidad")
+            setMessage("Ve el video, apoya gratis monetariamente y recibe 1 día libre de publicidad")
 
             setPositiveButton("Ver video") { _, _ ->
                 if (adsService.getIntersitial() != null) {
