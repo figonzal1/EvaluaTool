@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 16:59
+ Last modified 21-05-21 14:58
  */
 package cl.figonzal.evaluatool
 
@@ -23,6 +23,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
+import cl.figonzal.evaluatool.evalua.evalua10.Evalua10Activity
 import cl.figonzal.evaluatool.evalua.evalua2.Evalua2Activity
 import cl.figonzal.evaluatool.evalua.evalua3.Evalua3Activity
 import cl.figonzal.evaluatool.evalua.evalua4.Evalua4Activity
@@ -132,7 +133,6 @@ class MainActivity : AppCompatActivity() {
         //Disable buttons
         buttonList.apply {
             this[9].disable() //Evalua 9
-            this[10].disable() //Evalua 10
         }
     }
 
@@ -237,6 +237,10 @@ class MainActivity : AppCompatActivity() {
                     8 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_8)
                         activityToOpen = Evalua8Activity::class.java
+                    }
+                    10 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_10)
+                        activityToOpen = Evalua10Activity::class.java
                     }
                 }
                 checkIntersitialLaunch(activityToOpen, test)

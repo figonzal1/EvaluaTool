@@ -279,7 +279,7 @@
     <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
 
     <!-- EVALUA 10 -->
-    <string name="TOOLBAR_EVALUA_10">Evalúa 8</string>
+    <string name="TOOLBAR_EVALUA_10">Evalúa 10</string>
     <string name="EVALUA_10_MODULO_1">Atención - Concentración</string>
     <string name="EVALUA_10_MODULO_2">Razonamiento</string>
     <string name="EVALUA_10_MODULO_3">Niveles de Adaptación</string>
@@ -365,6 +365,7 @@
     <string name="BUTTON_MAIN">BUTTON_CLICK: </string>
     <string name="BTN_EVALUA_7">btn_evalua_7</string>
     <string name="BTN_EVALUA_8">btn_evalua_8</string>
+    <string name="BTN_EVALUA_10">btn_evalua_10</string>
     <string name="TAG_PERCENTIL_CALCULADO">PERCENTIL_CALCULADO: </string>
     <string name="PERCENTIL_NULO">percentil nulo</string>
     <string name="PD_NULO">pd nulo</string>

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 23:04
+ Last modified 21-05-21 12:35
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo6
@@ -33,7 +33,7 @@ class CalculoNumeracionE10M6 : AppCompatActivity(), EvaluaInterface {
 
     companion object {
         private const val DESVIACION = 6.01
-        private const val MEDIA = 15.12
+        private const val MEDIA = 15.52
     }
 
     private lateinit var binding: ActivityCalculoNumeracionE10M6Binding
