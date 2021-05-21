@@ -9,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 21-05-21 00:03
+  Last modified 21-05-21 02:00
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,22 +26,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".evalua.evalua10.modulo6.IndiceGeneralMatematicasE10M6"></activity>
-        <activity android:name=".evalua.evalua10.modulo6.ValoracionGlobalMatematicasE10M6" />
-        <activity android:name=".evalua.evalua10.modulo6.ResolucionProblemasE10M6" />
-        <activity android:name=".evalua.evalua10.modulo6.CalculoNumeracionE10M6" />
-        <activity android:name=".evalua.evalua10.modulo5.IndiceGeneralEscrituraE10M5" />
-        <activity android:name=".evalua.evalua10.modulo5.OrtografiaVisualRegladaE10M5" />
-        <activity android:name=".evalua.evalua10.modulo4.VelocidadLectoraE10M4" />
-        <activity android:name=".evalua.evalua10.modulo4.IndiceGeneralLecturaE10M4" />
-        <activity android:name=".evalua.evalua10.modulo4.ComprensionLectoraE10M4" />
-        <activity android:name=".evalua.evalua10.modulo3.NivelesAdaptacionE10M3" />
-        <activity android:name=".evalua.evalua10.modulo2.IndiceGeneralCognitivoE10M2" />
-        <activity android:name=".evalua.evalua10.modulo2.ValoracionGlobalRazonamientoE10M2" />
-        <activity android:name=".evalua.evalua10.modulo2.RazonamientoDeductivoE10M2" />
-        <activity android:name=".evalua.evalua10.modulo2.RazonamientoEspacialE10M2" />
-        <activity android:name=".evalua.evalua10.modulo2.RazonamientoInductivoE10M2" />
-        <activity android:name=".evalua.evalua10.modulo1.AtencionConcentracionE10M1" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -483,7 +467,60 @@
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
             android:name=".evalua.evalua8.Evalua8Activity"
-            android:parentActivityName=".MainActivity" /> <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".MainActivity" />
+        <!-- EVALUA 10 -->
+        <activity
+            android:name=".evalua.evalua10.Evalua10Activity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".evalua.evalua10.modulo6.IndiceGeneralMatematicasE10M6"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo6.ValoracionGlobalMatematicasE10M6"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo6.ResolucionProblemasE10M6"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo6.CalculoNumeracionE10M6"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo5.IndiceGeneralEscrituraE10M5"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo5.OrtografiaVisualRegladaE10M5"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo4.VelocidadLectoraE10M4"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo4.IndiceGeneralLecturaE10M4"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo4.ComprensionLectoraE10M4"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo3.NivelesAdaptacionE10M3"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo2.IndiceGeneralCognitivoE10M2"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo2.ValoracionGlobalRazonamientoE10M2"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo2.RazonamientoDeductivoE10M2"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo2.RazonamientoEspacialE10M2"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo2.RazonamientoInductivoE10M2"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <activity
+            android:name=".evalua.evalua10.modulo1.AtencionConcentracionE10M1"
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+        <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
