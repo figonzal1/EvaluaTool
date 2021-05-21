@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 18-05-21 15:23
+  Last modified 21-05-21 01:58
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -292,8 +292,7 @@
     <string name="EVALUA_10_M2_SI_3">Razonamiento Deductivo [RD-8]</string>
     <string name="EVALUA_10_M3_SI_1">Niveles Adaptación [NA-8]</string>
     <string name="EVALUA_10_M4_SI_1">Comprension Lectora [CL-8]</string>
-    <string name="EVALUA_10_M4_SI_2">Eficacia Lectora [EL-8]</string>
-    <string name="EVALUA_10_M4_SI_3">Velocidad Lectora [VL-8]</string>
+    <string name="EVALUA_10_M4_SI_2">Velocidad Lectora [VL-8]</string>
     <string name="EVALUA_10_M5_SI_1">Ortografia Visual Reglada [OR-8]</string>
     <string name="EVALUA_10_M6_SI_1">Cálculo y Numeración [CN-8]</string>
     <string name="EVALUA_10_M6_SI_2">Resolución Problemas [RP-8]</string>
@@ -606,7 +605,5 @@
     <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
     <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
     <string name="eficacia_lectora">Eficacia Lectora</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
