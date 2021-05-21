@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 16:56
+ Last modified 21-05-21 01:23
  */
 
-package cl.figonzal.evaluatool.evalua.evalua8.modulo4
+package cl.figonzal.evaluatool.evalua.evalua10.modulo2
 
 import android.os.Bundle
 import android.text.Editable
@@ -21,44 +21,46 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.velocidadLectoraE8M4Baremo
-import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE8M4Binding
+import cl.figonzal.evaluatool.baremosTables.razonamientoEspacialE10M2Baremo
+import cl.figonzal.evaluatool.databinding.ActivityRazonamientoEspacialE10M2Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.floor
 
-class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
+class RazonamientoEspacialE10M2 : AppCompatActivity(), EvaluaInterface {
 
-    //TODO: No entiendo la comprension aqui ()
-    //TODO: Falta la pagina de la tabla baremo de comprension pagina faltante 72 (Evalua 8)
     companion object {
-        private const val DESVIACION = 73.19
-        private const val MEDIA = 171.80
+        private const val DESVIACION = 5.12
+        private const val MEDIA = 14.22
     }
 
+    private lateinit var binding: ActivityRazonamientoEspacialE10M2Binding
 
-    private lateinit var binding: ActivityVelocidadLectoraE8M4Binding
-
-    private val perc = velocidadLectoraE8M4Baremo()
+    //PD,PC_CHI
+    private val perc = razonamientoEspacialE10M2Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
-    private lateinit var etOmitidasT1: TextInputEditText
     private lateinit var etReprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
-    private var omitidasT1 = 0
     private var reprobadasT1 = 0
-    private var subtotalPdT1 = 0.0
+
+    //TAREA 2
+    private lateinit var etAprobadasT2: TextInputEditText
+    private lateinit var etReprobadasT2: TextInputEditText
+    private var aprobadasT2 = 0
+    private var reprobadasT2 = 0
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
-    private var totalPdT1 = 0.0
+    private lateinit var tvSubTotalT2: TextView
+    private var subTotalPdT1 = 0.0
+    private var subTotalPdT2 = 0.0
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
     private lateinit var tvPdCorregido: TextView
-    private lateinit var tvNivelComprension: TextView
     private lateinit var tvPercentil: TextView
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
@@ -66,14 +68,17 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityVelocidadLectoraE8M4Binding.inflate(layoutInflater)
+        binding = ActivityRazonamientoEspacialE10M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_RAZON_ESPACIAL, binding.include.toolbar)
 
         initResources()
     }
 
+    /**
+     * Funcion encargada de instanciar los recursos de la interfaz gráfica
+     */
     private fun initResources() {
 
         with(binding, {
@@ -81,38 +86,40 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
             cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
 
             //TAREA 1
-            this@VelocidadLectoraE8M4.etAprobadasT1 = etAprobadasT1
-            this@VelocidadLectoraE8M4.etOmitidasT1 = etOmitidasT1
-            this@VelocidadLectoraE8M4.etReprobadasT1 = etReprobadasT1
-
-            //SUBTOTALES
             tvSubTotalT1 = tvPdSubtotalT1
+            this@RazonamientoEspacialE10M2.etAprobadasT1 = etAprobadasT1
+            this@RazonamientoEspacialE10M2.etReprobadasT1 = etReprobadasT1
 
-            //TOTALES
-            this@VelocidadLectoraE8M4.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = tvPdTotalCorregidoValue
-            this@VelocidadLectoraE8M4.tvNivelComprension = tvNivelComprensionValue
-            this@VelocidadLectoraE8M4.tvPercentil = tvPercentilValue
-            tvNivel = tvNivelObtenidoValue
-            this@VelocidadLectoraE8M4.tvDesviacionCalculada = tvDesviacionCalculadaValue
+            //TAREA 2
+            tvSubTotalT2 = tvPdSubtotalT2
+            this@RazonamientoEspacialE10M2.etAprobadasT2 = etAprobadasT2
+            this@RazonamientoEspacialE10M2.etReprobadasT2 = etReprobadasT2
 
-            this@VelocidadLectoraE8M4.progressBar = progressBar
+            //TOTAL
+            this@RazonamientoEspacialE10M2.tvPdTotal = tvPdTotalValue
+            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentil = cardViewFinal.tvPercentilValue
+            tvNivel = cardViewFinal.tvNivelObtenidoValue
+            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+
+            progressBar = cardViewFinal.progressBar
             progressBar.max = perc.first()[1] as Int
 
-            ivHelpPdCorregido.setOnClickListener {
+            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 showHelperDialog(supportFragmentManager)
-            }
 
+            }
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 perc,
-                getString(R.string.TOOLBAR_VELOCIDAD)
+                getString(R.string.TOOLBAR_RAZON_ESPACIAL)
             )
         }).also {
             textWatcherTarea1()
+            textWatcherTarea2()
         }
     }
 
@@ -127,7 +134,7 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    subTotalPdT1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -138,45 +145,12 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
+                    subTotalPdT1 = calculateTask(
+                        1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
-                    calculateResult()
-                }
-            })
-        }
-
-        with(etOmitidasT1) {
-            addTextChangedListener(object : TextWatcher {
-
-                override fun beforeTextChanged(
-                    s: CharSequence,
-                    start: Int,
-                    count: Int,
-                    after: Int
-                ) {
-                    subtotalPdT1 = 0.0
-                }
-
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
-
-                override fun afterTextChanged(s: Editable) {
-
-                    when {
-                        s.isEmpty() -> omitidasT1 = 0
-                        s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
-                    }
-                    subtotalPdT1 = calculateTask(
                         0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
                         reprobadasT1
                     )
                     calculateResult()
@@ -193,7 +167,7 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    subTotalPdT1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -204,13 +178,82 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
+                    subTotalPdT1 = calculateTask(
+                        1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
-                        omitidasT1,
+                        0,
                         reprobadasT1
+                    )
+                    calculateResult()
+                }
+            })
+        }
+    }
+
+    private fun textWatcherTarea2() {
+
+        with(etAprobadasT2) {
+            addTextChangedListener(object : TextWatcher {
+
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                    subTotalPdT2 = 0.0
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> aprobadasT2 = 0
+                        s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
+                    }
+                    subTotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        0,
+                        reprobadasT2
+                    )
+                    calculateResult()
+                }
+            })
+        }
+
+        with(etReprobadasT2) {
+            addTextChangedListener(object : TextWatcher {
+
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                    subTotalPdT2 = 0.0
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> reprobadasT2 = 0
+                        s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
+                    }
+                    subTotalPdT2 = calculateTask(
+                        2,
+                        tvSubTotalT2,
+                        context.getString(R.string.TAREA_2),
+                        aprobadasT2,
+                        0,
+                        reprobadasT2
                     )
                     calculateResult()
                 }
@@ -226,8 +269,14 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-
-        val total = floor((aprobadas - (reprobadas + omitidas)).toDouble())
+        var total = floor(
+            when (nTarea) {
+                1 -> aprobadas - (reprobadas / 5.0)
+                2 -> aprobadas - (reprobadas / 10.0)
+                else -> 0.0
+            }
+        )
+        if (total < 0) total = 0.0
 
         tvSubTotal.text = setSubTotalPoints(tarea, total)
         return total
@@ -235,17 +284,16 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateResult() {
 
-        with(subtotalPdT1, {
+        with(subTotalPdT1 + subTotalPdT2, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
+            //CALCULO PD CORREGIDO
             val pdCorregido = correctPD(perc, this.toInt())
             tvPdCorregido.text =
                 String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
 
             tvDesviacionCalculada.text =
                 Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
-
-            //tvNivelComprension.text = calcularComprension(pdCorregido)
 
             with(calculatePercentile(pdCorregido), {
                 tvPercentil.text = this.toString()
@@ -257,35 +305,18 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
                     )
                     else -> progressBar.progress = this
                 }
+
                 tvNivel.text = Utils.calcularNivel(this)
             })
         })
     }
 
-    private fun calcularComprension(pd_actual: Int): String {
-        return when (pd_actual) {
-            0 -> getString(R.string.COMPRENSION_MUY_BAJA)
-            in 1..2 -> getString(R.string.COMPRENSION_BAJA)
-            in 3..4 -> getString(R.string.COMPRENSION_MEDIA)
-            in 5..6 -> getString(R.string.COMPRENSION_ALTA)
-            in 7..15 -> getString(R.string.COMPRENSION_MUY_ALTA)
-
-            else -> {
-                logInfo(
-                    R.string.TAG_COMPRENSION_CALCULADA,
-                    R.string.COMPRENSION_NULA
-                )
-                ""
-            }
-        }
-    }
-
     override fun calculatePercentile(pdTotal: Int): Int {
         when {
-            pdTotal < perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal > perc.last()[0] as Int -> return perc.last()[1] as Int
+            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
             else -> perc.forEach { item ->
-                if (pdTotal <= item.first() as Int) return item[1] as Int
+                if (pdTotal == item.first()) return item[1] as Int
             }
         }
         //Percentil no encontrado
@@ -295,10 +326,11 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-            pdActual < perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual > perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdActual < 0 -> return 0
+            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
-                if (pdActual <= item.first() as Int) return item.first() as Int
+                if (pdActual == item.first()) return item.first() as Int
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
@@ -314,4 +346,5 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
         }
         return super.onOptionsItemSelected(item)
     }
+
 }

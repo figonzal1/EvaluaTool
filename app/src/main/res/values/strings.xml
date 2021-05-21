@@ -278,6 +278,31 @@
     <string name="EVALUA_8_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
     <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
 
+    <!-- EVALUA 10 -->
+    <string name="TOOLBAR_EVALUA_10">Evalúa 8</string>
+    <string name="EVALUA_10_MODULO_1">Atención - Concentración</string>
+    <string name="EVALUA_10_MODULO_2">Razonamiento</string>
+    <string name="EVALUA_10_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_10_MODULO_4">Lectura</string>
+    <string name="EVALUA_10_MODULO_5">Escritura</string>
+    <string name="EVALUA_10_MODULO_6">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_10_M1_SI_1">Atención y Concentración [MA-8]</string>
+    <string name="EVALUA_10_M2_SI_1">Razonamiento Inductivo [RI-8]</string>
+    <string name="EVALUA_10_M2_SI_2">Razonamiento Espacial [RE-8]</string>
+    <string name="EVALUA_10_M2_SI_3">Razonamiento Deductivo [RD-8]</string>
+    <string name="EVALUA_10_M3_SI_1">Niveles Adaptación [NA-8]</string>
+    <string name="EVALUA_10_M4_SI_1">Comprension Lectora [CL-8]</string>
+    <string name="EVALUA_10_M4_SI_2">Eficacia Lectora [EL-8]</string>
+    <string name="EVALUA_10_M4_SI_3">Velocidad Lectora [VL-8]</string>
+    <string name="EVALUA_10_M5_SI_1">Ortografia Visual Reglada [OR-8]</string>
+    <string name="EVALUA_10_M6_SI_1">Cálculo y Numeración [CN-8]</string>
+    <string name="EVALUA_10_M6_SI_2">Resolución Problemas [RP-8]</string>
+    <string name="EVALUA_10_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_10_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_10_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
+    <string name="EVALUA_10_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
+    <string name="EVALUA_10_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
+    <string name="EVALUA_10_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
 
     <string name="CLICK_CLASIFICACION">click_clasificacion</string>
     <string name="CLICK_MEMORIA_ATENCION">click_memoria_atencion</string>
@@ -533,6 +558,7 @@
     <string name="routeMapEvalua6">routeMapEvalua6</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
     <string name="routeMapEvalua8">routeMapEvalua8</string>
+    <string name="routeMapEvalua10">routeMapEvalua10</string>
     <string name="TAREA_1">Tarea 1:</string>
     <string name="TAREA_2">Tarea 2:</string>
     <string name="NIVEL_ALTO">ALTO</string>
@@ -580,5 +606,7 @@
     <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
     <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
     <string name="eficacia_lectora">Eficacia Lectora</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
