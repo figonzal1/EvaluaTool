@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 02:42
+ Last modified 20-05-21 16:12
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -369,7 +369,6 @@ fun adaptacionEscolarE8M3Baremo(): Array<Array<Any>> {
         arrayOf(58, 5),
         arrayOf(59, 5),
         arrayOf(60, 1),
-
         )
 }
 
