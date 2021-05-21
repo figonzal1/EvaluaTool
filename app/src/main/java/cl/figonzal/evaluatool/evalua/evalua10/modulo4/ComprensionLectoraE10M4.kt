@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 01:23
+ Last modified 21-05-21 12:28
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4
@@ -22,7 +22,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.comprensionLecturaE10M4Baremo
+import cl.figonzal.evaluatool.baremosTables.comprensionLectoraE10M4Baremo
 import cl.figonzal.evaluatool.databinding.ActivityComprensionLectoraE10M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
@@ -37,7 +37,7 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
     }
 
     private lateinit var binding: ActivityComprensionLectoraE10M4Binding
-    private val perc = comprensionLecturaE10M4Baremo()
+    private val perc = comprensionLectoraE10M4Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
