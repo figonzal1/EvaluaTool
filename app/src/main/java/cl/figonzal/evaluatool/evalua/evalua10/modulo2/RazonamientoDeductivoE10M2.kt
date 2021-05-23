@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 01:23
+ Last modified 23-05-21 16:57
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo2
@@ -144,7 +144,7 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
                     subTotalPdT1 = calculateTask(
-                        0,
+                        1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,
@@ -177,7 +177,7 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity(), EvaluaInterface {
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
                     subTotalPdT1 = calculateTask(
-                        0,
+                        1,
                         tvSubTotalT1,
                         context.getString(R.string.TAREA_1),
                         aprobadasT1,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 12:28
+ Last modified 23-05-21 17:15
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4
@@ -63,6 +63,14 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
     private var reprobadasT3 = 0
     private var subtotalPdT3 = 0.0
 
+    //TAREA 4
+    private lateinit var etAprobadasT4: TextInputEditText
+    private lateinit var etReprobadasT4: TextInputEditText
+    private lateinit var tvSubTotalT4: TextView
+    private var aprobadasT4 = 0
+    private var reprobadasT4 = 0
+    private var subtotalPdT4 = 0.0
+
     //Tetview para total
     private lateinit var tvPdTotal: TextView
     private lateinit var tvPdCorregido: TextView
@@ -103,6 +111,11 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
             this@ComprensionLectoraE10M4.etAprobadasT3 = etAprobadasT3
             this@ComprensionLectoraE10M4.etReprobadasT3 = etReprobadasT3
 
+            //TAREA 4
+            tvSubTotalT4 = tvPdSubtotalT4
+            this@ComprensionLectoraE10M4.etAprobadasT4 = etAprobadasT4
+            this@ComprensionLectoraE10M4.etReprobadasT4 = etReprobadasT4
+
             //TOTAL
             this@ComprensionLectoraE10M4.tvPdTotal = tvPdTotalValue
             tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
@@ -129,6 +142,7 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
             textWatcherTarea1()
             textWatcherTarea2()
             textWatcherTarea3()
+            textWatcherTarea4()
         }
     }
 
@@ -339,6 +353,75 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
         }
     }
 
+    private fun textWatcherTarea4() {
+
+        with(etAprobadasT4) {
+            addTextChangedListener(object : TextWatcher {
+
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                    subtotalPdT4 = 0.0
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> aprobadasT4 = 0
+                        s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
+                    }
+                    subtotalPdT4 = calculateTask(
+                        4,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        0,
+                        reprobadasT4
+                    )
+                    calculateResult()
+                }
+            })
+        }
+
+        with(etReprobadasT4) {
+            addTextChangedListener(object : TextWatcher {
+
+                override fun beforeTextChanged(
+                    s: CharSequence,
+                    start: Int,
+                    count: Int,
+                    after: Int
+                ) {
+                    subtotalPdT4 = 0.0
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+
+                override fun afterTextChanged(s: Editable) {
+
+                    when {
+                        s.isEmpty() -> reprobadasT4 = 0
+                        s.isNotEmpty() -> reprobadasT4 = text.toString().toInt()
+                    }
+                    subtotalPdT4 = calculateTask(
+                        4,
+                        tvSubTotalT4,
+                        context.getString(R.string.TAREA_4),
+                        aprobadasT4,
+                        0,
+                        reprobadasT4
+                    )
+                    calculateResult()
+                }
+            })
+        }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
@@ -372,7 +455,7 @@ class ComprensionLectoraE10M4 : AppCompatActivity(), EvaluaInterface {
 
     override fun calculateResult() {
 
-        with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3, {
+        with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4, {
             tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
 
             val pdCorregido = correctPD(perc, this.toInt())

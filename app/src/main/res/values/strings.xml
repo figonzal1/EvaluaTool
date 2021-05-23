@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 21-05-21 01:58
+  Last modified 23-05-21 15:25
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -606,5 +606,11 @@
     <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
     <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
     <string name="eficacia_lectora">Eficacia Lectora</string>
+    <string name="DIALOG_TITLE">¡Apoya a la aplicación!</string>
+    <string name="DIALOG_MESSAGE">Ve el video, apoya gratis monetariamente y recibe 1 día libre de publicidad</string>
+    <string name="DIALOG_POSITIVE_BUTTON">Ver video</string>
+    <string name="DIALOG_NEGATIVE_BUTTON">Cancelar</string>
+    <string name="NIGHT_MODE_ON">Modo noche activado</string>
+    <string name="NIGHT_MODE_OFF">Modo noche desactivado</string>
 
 </resources>

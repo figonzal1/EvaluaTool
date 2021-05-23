@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 15:52
+ Last modified 23-05-21 15:36
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -154,7 +154,7 @@ class Evalua8Test {
         }
         checkSubItem(mContext.getString(R.string.EVALUA_8_M4_SI_1))
         checkSubItem(mContext.getString(R.string.EVALUA_8_M4_SI_2))
-        checkSubItem(mContext.getString(R.string.EVALUA_8_M4_SI_3))
+        //checkSubItem(mContext.getString(R.string.EVALUA_8_M4_SI_3))
         checkSubItem(mContext.getString(R.string.EVALUA_8_INDICE_GENERAL_LECTURA))
     }
 

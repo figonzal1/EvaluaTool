@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 14:13
+ Last modified 23-05-21 16:22
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo1
@@ -398,7 +398,15 @@ class AtencionConcentracionE10M1 : AppCompatActivity(), EvaluaInterface {
             pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
             pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
-                if (pdActual == item.first() as Int) return item.first() as Int
+                when {
+                    pdActual == item.first() as Int -> return item.first() as Int
+                    pdActual - 1 == item.first() as Int -> return item.first() as Int
+                    pdActual - 2 == item.first() as Int -> return item.first() as Int
+                    pdActual - 3 == item.first() as Int -> return item.first() as Int
+                    pdActual - 4 == item.first() as Int -> return item.first() as Int
+                    pdActual - 5 == item.first() as Int -> return item.first() as Int
+                }
+
             }
         }
         logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
