@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 14:58
+ Last modified 23-05-21 15:25
  */
 package cl.figonzal.evaluatool
 
@@ -305,14 +305,13 @@ class MainActivity : AppCompatActivity() {
 
                 when {
                     isChecked -> {
-                        //TODO: Extraer strings
-                        toast("Modo noche activado")
+                        toast(context.getString(R.string.NIGHT_MODE_ON))
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
                         sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
                     }
                     else -> {
-                        toast("Modo noche desactivado")
+                        toast(context.getString(R.string.NIGHT_MODE_OFF))
                         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
                         sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)

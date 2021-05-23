@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 00:44
+ Last modified 23-05-21 16:17
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -34,6 +34,7 @@ import cl.figonzal.evaluatool.evalua.evalua1.modulo5.OrtografiaFoneticaE1M5
 import cl.figonzal.evaluatool.evalua.evalua1.modulo5.OrtografiaVisualE1M5
 import cl.figonzal.evaluatool.evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5
 import cl.figonzal.evaluatool.evalua.evalua1.modulo6.CalculoNumeracionE1M6
+import cl.figonzal.evaluatool.evalua.evalua10.modulo1.AtencionConcentracionE10M1
 import cl.figonzal.evaluatool.evalua.evalua10.modulo2.*
 import cl.figonzal.evaluatool.evalua.evalua10.modulo3.NivelesAdaptacionE10M3
 import cl.figonzal.evaluatool.evalua.evalua10.modulo4.ComprensionLectoraE10M4
@@ -134,7 +135,6 @@ import cl.figonzal.evaluatool.evalua.evalua8.modulo3.NivelesAdaptacionE8M3
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.ComprensionLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.EficaciaLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.IndiceGeneralLecturaE8M4
-import cl.figonzal.evaluatool.evalua.evalua8.modulo4.VelocidadLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo5.IndiceGeneralEscrituraE8M5
 import cl.figonzal.evaluatool.evalua.evalua8.modulo5.OrtografiaVisualRegladaE8M5
 import cl.figonzal.evaluatool.evalua.evalua8.modulo6.CalculoNumeracionE8M6
@@ -1126,12 +1126,14 @@ object ConfigRoutes {
                 Utils.get(R.string.EVALUA_8_M4_SI_2),
                 EficaciaLectoraE8M4::class.java,
                 Utils.get(R.string.CLICK_EFICACIA_LECTORA)
-            ),
+            )
+            //TODO: Arreglar velocidad lectora
+            /*,
             listOf(
                 Utils.get(R.string.EVALUA_8_M4_SI_3),
                 VelocidadLectoraE8M4::class.java,
                 Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
-            ),
+            ),*/,
             listOf(
                 Utils.get(R.string.EVALUA_8_INDICE_GENERAL_LECTURA),
                 IndiceGeneralLecturaE8M4::class.java,
@@ -1194,7 +1196,7 @@ object ConfigRoutes {
         val subItems1 = listOf(
             listOf(
                 Utils.get(R.string.EVALUA_10_M1_SI_1),
-                AtencionConcentracionE8M1::class.java,
+                AtencionConcentracionE10M1::class.java,
                 Utils.get(R.string.CLICK_ATEN_CONCENTRACION)
             )
         )

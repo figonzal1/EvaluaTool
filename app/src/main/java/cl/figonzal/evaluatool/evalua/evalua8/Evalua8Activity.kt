@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 14:18
+ Last modified 23-05-21 15:25
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8
@@ -63,7 +63,8 @@ class Evalua8Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {
         val subItems4 = listOf(
             Evalua(getString(R.string.EVALUA_8_M4_SI_1)),
             Evalua(getString(R.string.EVALUA_8_M4_SI_2)),
-            Evalua(getString(R.string.EVALUA_8_M4_SI_3)),
+            //TODO: Agregar cuando se corrija
+            //Evalua(getString(R.string.EVALUA_8_M4_SI_3)),
             Evalua(getString(R.string.EVALUA_8_INDICE_GENERAL_LECTURA)),
         )
 

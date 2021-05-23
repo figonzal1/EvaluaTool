@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 16:56
+ Last modified 23-05-21 15:25
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
@@ -30,8 +30,7 @@ import kotlin.math.floor
 
 class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
 
-    //TODO: No entiendo la comprension aqui ()
-    //TODO: Falta la pagina de la tabla baremo de comprension pagina faltante 72 (Evalua 8)
+    //TODO: Falta la pagina de la tabla baremo de comprension pagina faltante 72 (Evalua 8), Transformar a fragment
     companion object {
         private const val DESVIACION = 73.19
         private const val MEDIA = 171.80
