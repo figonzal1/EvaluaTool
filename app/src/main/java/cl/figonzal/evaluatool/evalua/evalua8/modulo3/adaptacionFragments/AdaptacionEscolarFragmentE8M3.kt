@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 03:15
+ Last modified 23-05-21 18:31
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo3.adaptacionFragments
@@ -101,7 +101,7 @@ class AdaptacionEscolarFragmentE8M3 : Fragment(), EvaluaInterface {
                 requireFragmentManager(),
                 tablaBaremo.tvBaremo,
                 perc,
-                getString(R.string.TOOLBAR_AUTOCONTROL)
+                getString(R.string.TOOLBAR_ADAP_ESCOLAR)
             )
         }).also {
             textWatcherTarea1()

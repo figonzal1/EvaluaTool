@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 13:53
+ Last modified 23-05-21 18:31
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo3.adaptacionFragments
@@ -101,7 +101,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment(), EvaluaInterface {
                 requireFragmentManager(),
                 tablaBaremo.tvBaremo,
                 perc,
-                getString(R.string.TOOLBAR_AUTOCONTROL)
+                getString(R.string.TOOLBAR_HAB_SOCIALES)
             )
         }).also {
             textWatcherTarea1()

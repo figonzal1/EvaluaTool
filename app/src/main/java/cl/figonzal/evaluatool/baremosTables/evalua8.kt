@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 16:12
+ Last modified 23-05-21 18:39
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -624,7 +624,7 @@ fun resolucionProblemasE8M6Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(15, 99, 3.45),
         arrayOf(14, 98, 3.11),
-        arrayOf(13, 99, 2.77),
+        arrayOf(13, 97, 2.77),
         arrayOf(12, 96, 2.43),
         arrayOf(11, 95, 2.09),
         arrayOf(10, 92, 1.75),

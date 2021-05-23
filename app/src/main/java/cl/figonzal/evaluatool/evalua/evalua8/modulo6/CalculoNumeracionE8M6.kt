@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 23-05-21 18:33
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo6
@@ -216,6 +216,9 @@ class CalculoNumeracionE8M6 : AppCompatActivity(), EvaluaInterface {
                     pdActual == item.first() -> return item.first() as Int
                     pdActual - 1 == item.first() -> return item.first() as Int
                     pdActual - 2 == item.first() -> return item.first() as Int
+                    pdActual - 3 == item.first() -> return item.first() as Int
+                    pdActual - 4 == item.first() -> return item.first() as Int
+                    pdActual - 5 == item.first() -> return item.first() as Int
                 }
             }
         }
