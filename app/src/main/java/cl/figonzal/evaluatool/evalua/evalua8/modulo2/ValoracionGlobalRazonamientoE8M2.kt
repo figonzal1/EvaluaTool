@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-05-21 02:31
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo2
@@ -52,7 +52,7 @@ class ValoracionGlobalRazonamientoE8M2 : AppCompatActivity(), IndiceValorInterfa
         binding = ActivityValoracionGlobalRazonamientoE8M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.materialToolbar)
 
         initResources()
     }

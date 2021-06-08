@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 01:13
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -46,7 +46,7 @@ class ValoracionGlobalMatematicasE4M6 : AppCompatActivity(), IndiceValorInterfac
         binding = ActivityValoracionGlobalMatematicasE4M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.materialToolbar)
 
         initResources()
     }

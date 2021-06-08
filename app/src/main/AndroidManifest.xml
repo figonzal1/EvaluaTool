@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 23-05-21 18:52
+  Last modified 08-06-21 15:57
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -523,10 +523,10 @@
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
-            android:value="true" />
+            android:value="false" />
         <meta-data
             android:name="firebase_crashlytics_collection_enabled"
-            android:value="true" /> <!-- ADMOB -->
+            android:value="false" /> <!-- ADMOB -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6355378855577476~8089782740" />

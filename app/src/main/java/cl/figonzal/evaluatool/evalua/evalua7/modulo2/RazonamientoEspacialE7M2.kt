@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 20:16
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -72,7 +72,7 @@ class RazonamientoEspacialE7M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityRazonamientoEspacialE7M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RAZON_ESPACIAL, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_RAZON_ESPACIAL, binding.include.materialToolbar)
 
         initResources()
     }

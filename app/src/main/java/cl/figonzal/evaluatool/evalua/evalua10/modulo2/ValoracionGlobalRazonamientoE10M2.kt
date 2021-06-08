@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 15:55
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo2
@@ -52,7 +52,7 @@ class ValoracionGlobalRazonamientoE10M2 : AppCompatActivity(), IndiceValorInterf
         binding = ActivityValoracionGlobalRazonamientoE10M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.materialToolbar)
 
         initResources()
     }

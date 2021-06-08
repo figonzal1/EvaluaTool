@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 18:26
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo5
@@ -42,7 +42,7 @@ class IndiceGeneralEscrituraE10M5 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralEscrituraE10M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_ESCRITURA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_ESCRITURA, binding.include.materialToolbar)
 
         initResources()
     }

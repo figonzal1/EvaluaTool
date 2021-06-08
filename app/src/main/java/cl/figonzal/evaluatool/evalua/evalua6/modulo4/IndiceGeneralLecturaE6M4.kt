@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 18:53
+ Last modified 08-06-21 16:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4
@@ -47,7 +47,7 @@ class IndiceGeneralLecturaE6M4 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralLecturaE6M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_LECTURA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_LECTURA, binding.include.materialToolbar)
 
         initResources()
     }

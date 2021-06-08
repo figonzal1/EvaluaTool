@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 18:06
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -65,7 +65,7 @@ class CopiaDibujosE0M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityCopiaDibujosE0M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_COPIA_DIBUJOS, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_COPIA_DIBUJOS, binding.include.materialToolbar)
 
         initResources()
     }

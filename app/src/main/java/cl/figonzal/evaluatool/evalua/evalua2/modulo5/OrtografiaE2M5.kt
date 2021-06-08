@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 20:16
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5
 
@@ -68,7 +68,7 @@ class OrtografiaE2M5 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrtografiaE2M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ORTOGRAFIA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_ORTOGRAFIA, binding.include.materialToolbar)
 
         initResources()
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 00:00
+ Last modified 08-06-21 16:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo6
@@ -60,7 +60,7 @@ class ResolucionProblemasE10M6 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityResolucionProblemasE10M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RESOLUCION_PROBLEMAS, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_RESOLUCION_PROBLEMAS, binding.include.materialToolbar)
 
         initResources()
     }
