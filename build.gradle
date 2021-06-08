@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 23:39
+ Last modified 08-06-21 14:32
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -17,7 +17,6 @@ buildscript {
     repositories {
         google()
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:4.2.1'
@@ -26,16 +25,16 @@ buildscript {
         // in the individual module build.gradle files
 
         // Check for v3.1.2 or higher
-        classpath 'com.google.gms:google-services:4.3.5'  // Google Services plugin
+        classpath 'com.google.gms:google-services:4.3.8'  // Google Services plugin
 
         // Add the Firebase Crashlytics Gradle plugin.
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.6.1'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.0'
 
         // Add the dependency for the Performance Monitoring plugin
         classpath 'com.google.firebase:perf-plugin:1.4.0'
 
         //KOTLIN
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
     }
 }
 
