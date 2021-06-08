@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-05-21 17:28
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo1
@@ -51,7 +51,7 @@ class IndiceGeneralCognitivoE6M1 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralCognitivoE6M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_COGNITIVO, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_COGNITIVO, binding.include.materialToolbar)
 
         initResources()
     }

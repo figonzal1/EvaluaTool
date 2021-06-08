@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 16:45
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4
@@ -47,7 +47,7 @@ class ValoracionGlobalLecturaE6M4 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityValoracionGlobalLecturaE6M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.materialToolbar)
 
         initResources()
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua2
 
@@ -38,7 +38,7 @@ class Evalua2Activity : AppCompatActivity(), ClickListener {
         binding = ActivityEvalua2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EVALUA_2, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_EVALUA_2, binding.include.materialToolbar)
         configurarExpandedList()
     }
 

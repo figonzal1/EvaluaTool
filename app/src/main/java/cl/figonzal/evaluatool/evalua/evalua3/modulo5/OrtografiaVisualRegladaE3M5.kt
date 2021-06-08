@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 20:16
+ Last modified 08-06-21 16:58
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -76,7 +76,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrtografiaVisualRegladaE3M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ORT_VIS_REGLADA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_ORT_VIS_REGLADA, binding.include.materialToolbar)
 
         initResources()
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 18:33
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo6
@@ -60,7 +60,7 @@ class CalculoNumeracionE8M6 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityCalculoNumeracionE8M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_CALC_NUMERACION, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_CALC_NUMERACION, binding.include.materialToolbar)
 
         initResources()
     }

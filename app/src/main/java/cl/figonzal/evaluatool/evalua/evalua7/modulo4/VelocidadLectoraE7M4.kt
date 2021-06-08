@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-04-21 23:47
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -32,7 +32,7 @@ class VelocidadLectoraE7M4 : AppCompatActivity() {
         binding = ActivityVelocidadLectoraE7M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.materialToolbar)
 
         //View pager
         binding.viewPagerVelocidad.apply {

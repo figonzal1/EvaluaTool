@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:32
+ Last modified 08-06-21 16:59
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3
 
@@ -32,7 +32,7 @@ class NivelesAdaptacionE4M3 : AppCompatActivity() {
         binding = ActivityNivelesAdaptacionE4M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, binding.include.materialToolbar)
 
         //View pager
         binding.viewPagerNivelesAdaptacion.apply {

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 2:08
+ Last modified 08-06-21 17:13
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -16,10 +16,10 @@ package cl.figonzal.evaluatool.utilidades
 import android.app.Activity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import timber.log.Timber
 import java.util.*
@@ -28,11 +28,11 @@ import java.util.*
  *  Function that set Action Bar title, home indicator & toolbar
  *
  *  @param title Title of activity actionbar
- *  @param toolbar Toolbar that is set for action bar
- *  @version 17-04-2021
+ *  @param materialToolbar Toolbar that is set for action bar
+ *  @version 08-06-2021
  */
-fun AppCompatActivity.configActionBar(title: Int, toolbar: Toolbar) {
-    setSupportActionBar(toolbar)
+fun AppCompatActivity.configActionBar(title: Int, materialToolbar: MaterialToolbar) {
+    setSupportActionBar(materialToolbar)
 
     with(supportActionBar, {
         this?.setDisplayHomeAsUpEnabled(true)

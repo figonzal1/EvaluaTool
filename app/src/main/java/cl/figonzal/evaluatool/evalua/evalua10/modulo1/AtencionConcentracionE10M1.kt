@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 16:22
+ Last modified 08-06-21 16:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo1
@@ -77,7 +77,7 @@ class AtencionConcentracionE10M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityAtencionConcentracionE10M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ATENCION_CONCENTRACION, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_ATENCION_CONCENTRACION, binding.include.materialToolbar)
 
         initResources()
     }

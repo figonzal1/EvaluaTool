@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 20:16
+ Last modified 08-06-21 16:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo1
@@ -62,7 +62,7 @@ class PensamientoAnalogicoE6M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityPensamientoAnalogicoE6M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO, binding.include.toolbar)
+        configActionBar(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO, binding.include.materialToolbar)
 
         initResources()
     }
