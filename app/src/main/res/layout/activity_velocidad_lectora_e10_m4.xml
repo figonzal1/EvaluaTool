@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 21-05-21 01:23
+  Last modified 08-06-21 22:21
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,7 @@
     tools:context=".evalua.evalua10.modulo4.VelocidadLectoraE10M4">
 
     <include
-        android:id="@+id/include"
+        android:id="@+id/include_toolbar"
         layout="@layout/toolbar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,23 +27,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabs_velocidad"
-        style="@style/Widget.MaterialComponents.TabLayout.Colored"
-        android:layout_width="match_parent"
+    <include
+        android:id="@+id/include_tablayout"
+        layout="@layout/tablayout_velocidad_lectora"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include"
-        app:tabGravity="fill"
-        app:tabIndicatorAnimationDuration="@android:integer/config_longAnimTime"
-        app:tabIndicatorColor="@color/colorSecondary"
-        app:tabIndicatorFullWidth="true"
-        app:tabIndicatorGravity="bottom"
-        app:tabInlineLabel="true"
-        app:tabMode="fixed"
-        app:tabSelectedTextColor="@color/colorOnPrimary"
-        app:tabTextColor="@color/colorOnPrimary" />
+        app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager_velocidad"
@@ -53,7 +44,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabs_velocidad" />
+        app:layout_constraintTop_toBottomOf="@+id/include_tablayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

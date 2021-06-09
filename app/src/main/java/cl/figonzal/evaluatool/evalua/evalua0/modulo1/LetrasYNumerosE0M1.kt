@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -72,7 +72,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityLetrasYNumerosE0M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_LETRAS_NUMEROS, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_LETRAS_NUMEROS, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

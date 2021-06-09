@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 18:15
+ Last modified 08-06-21 22:55
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4.velocidadFragments
@@ -107,11 +107,11 @@ class ComprensionFragmentE10M4 : Fragment(), EvaluaInterface {
             ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(requireFragmentManager())
+                requireActivity().showHelperDialog(parentFragmentManager)
             }
 
             Utils.configurarTextoBaremo(
-                requireFragmentManager(),
+                parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 perc,
                 getString(R.string.TOOLBAR_COMPRENSION)

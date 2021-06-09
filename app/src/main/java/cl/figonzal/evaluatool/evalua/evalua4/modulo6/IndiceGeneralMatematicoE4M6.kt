@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:58
+ Last modified 08-06-21 23:32
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -47,7 +47,10 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralMatematicoE4M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_INDICE_GENERAL_MATEMATICO, binding.include.materialToolbar)
+        configActionBar(
+            R.string.TOOLBAR_INDICE_GENERAL_MATEMATICO,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

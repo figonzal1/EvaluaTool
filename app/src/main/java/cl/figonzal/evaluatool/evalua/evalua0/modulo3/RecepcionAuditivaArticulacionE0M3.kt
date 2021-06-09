@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -73,7 +73,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityRecepcionAutitivaArticulacionE0M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RECEPCION_AUDITIVA, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_RECEPCION_AUDITIVA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

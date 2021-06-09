@@ -7,9 +7,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 29-11-20 1:57
+  Last modified 08-06-21 17:35
   -->
 
 <resources>
@@ -19,6 +19,7 @@
     <dimen name="margin_4">4dp</dimen>
     <dimen name="progress_bar_height">10dp</dimen>
     <dimen name="padding_button_green">20dp</dimen>
+    <dimen name="tablayout_height">48dp</dimen>
 
 
 </resources>

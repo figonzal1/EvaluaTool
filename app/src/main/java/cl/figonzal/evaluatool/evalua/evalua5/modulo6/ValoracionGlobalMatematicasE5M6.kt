@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
@@ -48,7 +48,7 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
         binding = ActivityValoracionGlobalAprenMatematE5M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

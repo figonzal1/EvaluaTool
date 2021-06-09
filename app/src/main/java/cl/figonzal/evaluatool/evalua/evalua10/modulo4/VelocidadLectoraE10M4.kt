@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:58
+ Last modified 08-06-21 22:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4
@@ -26,23 +26,29 @@ import com.google.android.material.tabs.TabLayoutMediator
 
 class VelocidadLectoraE10M4 : AppCompatActivity() {
 
-    private lateinit var binding: ActivityVelocidadLectoraE10M4Binding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityVelocidadLectoraE10M4Binding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.materialToolbar)
+        with(ActivityVelocidadLectoraE10M4Binding.inflate(layoutInflater), {
 
-        //View pager
-        binding.viewPagerVelocidad.apply {
-            adapter = FragmentStateAdapterE10M4(this@VelocidadLectoraE10M4)
+            //Setcontent
+            setContentView(root)
 
-            TabLayoutMediator(binding.tabsVelocidad, this) { tab: TabLayout.Tab, position: Int ->
-                tab.text = FragmentStateAdapterE10M4.tabs[position]
-            }.attach()
-        }
+            //Config Action Bar
+            configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, includeToolbar.materialToolbar)
+
+            //View pager
+            viewPagerVelocidad.apply {
+                adapter = FragmentStateAdapterE10M4(this@VelocidadLectoraE10M4)
+
+                TabLayoutMediator(
+                    includeTablayout.tabsVelocidad,
+                    this
+                ) { tab: TabLayout.Tab, position: Int ->
+                    tab.text = FragmentStateAdapterE10M4.tabs[position]
+                }.attach()
+            }
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

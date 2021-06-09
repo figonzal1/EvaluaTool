@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -77,7 +77,7 @@ class ComprensionLectoraE1M4 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityComprensionLectoraE1M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_COMPREN_LECTORA, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_COMPREN_LECTORA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

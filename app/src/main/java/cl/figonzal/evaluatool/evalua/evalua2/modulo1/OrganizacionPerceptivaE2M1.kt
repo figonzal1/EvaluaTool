@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -70,7 +70,7 @@ class OrganizacionPerceptivaE2M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrganizacionPerceptivaE2M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ORG_PERCEPTIVA, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_ORG_PERCEPTIVA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 17:25
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -54,7 +54,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
 
         configActionBar(
             R.string.TOOLBAR_INDICE_GENERAL_LINGUISTICO,
-            binding.include.materialToolbar
+            binding.includeToolbar.materialToolbar
         )
 
         initResources()
