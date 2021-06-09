@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 03-02-21 12:46
+  Last modified 09-06-21 18:11
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -133,7 +133,6 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_evalua_6"
-            style="@style/ButtonTheme"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_button_green"

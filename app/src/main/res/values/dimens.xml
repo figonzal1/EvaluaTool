@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 
   This file is subject to the terms and conditions defined in
   file 'LICENSE', which is part of this source code package
@@ -9,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 17:35
+  Last modified 09-06-21 17:39
   -->
 
 <resources>
@@ -20,6 +19,8 @@
     <dimen name="progress_bar_height">10dp</dimen>
     <dimen name="padding_button_green">20dp</dimen>
     <dimen name="tablayout_height">48dp</dimen>
+    <dimen name="corner_radius_8dp">8dp</dimen>
+    <dimen name="corner_radius_4dp">4dp</dimen>
 
 
 </resources>
