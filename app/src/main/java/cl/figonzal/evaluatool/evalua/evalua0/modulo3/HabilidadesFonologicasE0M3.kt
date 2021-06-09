@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 23:32
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -79,7 +79,10 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityHabilidadesFonologicasE0M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_HABILIDADES_FONOLOGICAS, binding.include.materialToolbar)
+        configActionBar(
+            R.string.TOOLBAR_HABILIDADES_FONOLOGICAS,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

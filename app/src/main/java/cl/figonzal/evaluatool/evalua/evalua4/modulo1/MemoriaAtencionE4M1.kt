@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo1
 
@@ -94,7 +94,7 @@ class MemoriaAtencionE4M1 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityMemoriaAtencionE4M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_MEMORIA_ATENCION, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_MEMORIA_ATENCION, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

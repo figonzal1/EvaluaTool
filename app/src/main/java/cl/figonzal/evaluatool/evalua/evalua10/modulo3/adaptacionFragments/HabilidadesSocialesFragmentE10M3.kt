@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 17:05
+ Last modified 08-06-21 22:55
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo3.adaptacionFragments
@@ -99,10 +99,10 @@ class HabilidadesSocialesFragmentE10M3 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(requireFragmentManager())
+                requireActivity().showHelperDialog(parentFragmentManager)
             }
             Utils.configurarTextoBaremo(
-                requireFragmentManager(),
+                parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 perc,
                 getString(R.string.TOOLBAR_HAB_SOCIALES)

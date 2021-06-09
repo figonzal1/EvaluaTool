@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 23:32
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
@@ -59,7 +59,10 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityOrtografiaFoneticaE7M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ORTOGRAFIA_FONETICA, binding.include.materialToolbar)
+        configActionBar(
+            R.string.TOOLBAR_ORTOGRAFIA_FONETICA,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

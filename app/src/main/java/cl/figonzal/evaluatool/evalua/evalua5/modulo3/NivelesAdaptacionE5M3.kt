@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo3
 
@@ -24,26 +24,28 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class NivelesAdaptacionE5M3 : AppCompatActivity() {
-    private lateinit var binding: ActivityNivelesAdaptacionE5M3Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityNivelesAdaptacionE5M3Binding.inflate(layoutInflater)
-        setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, binding.include.materialToolbar)
+        with(ActivityNivelesAdaptacionE5M3Binding.inflate(layoutInflater), {
 
-        //View pager
-        binding.viewPagerNivelesAdaptacion.apply {
-            adapter = FragmentStateAdapterE5M3(this@NivelesAdaptacionE5M3)
+            setContentView(root)
 
-            TabLayoutMediator(
-                binding.tabsNivelesAdaptacion,
-                this
-            ) { tab: TabLayout.Tab, position: Int ->
-                tab.text = FragmentStateAdapterE5M3.tabs[position]
-            }.attach()
-        }
+            configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
+
+            //View pager
+            viewPagerNivelesAdaptacion.apply {
+                adapter = FragmentStateAdapterE5M3(this@NivelesAdaptacionE5M3)
+
+                TabLayoutMediator(
+                    includeTablayout.tabsNivelesAdaptacion,
+                    this
+                ) { tab: TabLayout.Tab, position: Int ->
+                    tab.text = FragmentStateAdapterE5M3.tabs[position]
+                }.attach()
+            }
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

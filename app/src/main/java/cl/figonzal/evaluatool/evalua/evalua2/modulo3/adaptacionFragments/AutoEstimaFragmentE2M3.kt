@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 20:16
+ Last modified 08-06-21 22:55
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -97,11 +97,11 @@ class AutoEstimaFragmentE2M3 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(requireFragmentManager())
+                requireActivity().showHelperDialog(parentFragmentManager)
 
             }
             Utils.configurarTextoBaremo(
-                requireFragmentManager(),
+                parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 perc,
                 getString(R.string.TOOLBAR_AUTOESTIMA)

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo2
@@ -101,7 +101,7 @@ class RazonamientoInductivoE8M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityRazonamientoInductivoE8M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RAZON_INDUCTIVO, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_RAZON_INDUCTIVO, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

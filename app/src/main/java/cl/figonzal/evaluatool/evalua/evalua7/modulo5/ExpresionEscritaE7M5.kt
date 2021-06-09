@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
@@ -59,7 +59,7 @@ class ExpresionEscritaE7M5 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityExpresionEscritaE7M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EXPRESION_ESCRITA, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_EXPRESION_ESCRITA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

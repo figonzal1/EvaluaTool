@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
@@ -68,7 +68,7 @@ class VelocidadLectoraE8M4 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityVelocidadLectoraE8M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

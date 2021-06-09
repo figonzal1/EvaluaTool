@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 16:59
+ Last modified 08-06-21 22:23
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -64,7 +64,7 @@ class ClasificacionesE1M2 : AppCompatActivity(), EvaluaInterface {
         binding = ActivityClasificacionesE1M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_CLASIFICACION, binding.include.materialToolbar)
+        configActionBar(R.string.TOOLBAR_CLASIFICACION, binding.includeToolbar.materialToolbar)
 
         initResources()
     }
