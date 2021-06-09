@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:40
+ Last modified 08-06-21 23:49
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo3.adaptacionFragments
@@ -212,8 +212,8 @@ class AdaptacionEscolarFragmentE10M3 : Fragment(), EvaluaInterface {
             pdActual < perc.first()[0] as Int -> return perc.first()[0] as Int
             pdActual > perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
-                when {
-                    pdActual == item.first() -> return item.first() as Int
+                when (pdActual) {
+                    item.first() -> return item.first() as Int
                 }
             }
         }
