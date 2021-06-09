@@ -6,34 +6,40 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 13-12-20 1:14
+  Last modified 09-06-21 18:07
   -->
 
 <resources>
     <!--Shape Appearance for small components like chips, buttons, text fields and FABs-->
     <style name="ShapeAppearance.Evalua.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/margin_4</item>
+        <item name="cornerSize">@dimen/corner_radius_4dp</item>
     </style>
 
     <!--Shape Appearance for medium components like cards, alert dialogs-->
     <style name="ShapeAppearance.Evalua.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/margin_4</item>
+        <item name="cornerSize">@dimen/corner_radius_8dp</item>
     </style>
 
     <!--Shape Appearance for large components like side and bottom navigation drawers-->
     <style name="ShapeAppearance.Evalua.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/margin_4</item>
+        <item name="cornerSize">@dimen/corner_radius_8dp</item>
     </style>
 
-    <!-- Card view shape-->
-    <style name="ShapeAppearanceOverlay.Evalua.MaterialCardView" parent="">
+    <!-- Custom Card View Shape Appearance (ONLY CARDVIEW)-->
+    <style name="ShapeAppearance.Evalua.CardView" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">@dimen/margin_16</item>
+        <item name="cornerSize">@dimen/corner_radius_8dp</item>
+    </style>
+
+    <!-- Custom Button Shape Appearance (ONLY BUTTONS)-->
+    <style name="ShapeAppearance.Evalua.Button" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/corner_radius_8dp</item>
     </style>
 
 </resources>

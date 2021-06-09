@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 12-12-20 21:21
+  Last modified 09-06-21 18:10
   -->
 
 <resources>
@@ -17,7 +17,7 @@
         PARTICULAR
         DESDE AQUI A ABAJO
     -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="BaseTheme">
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
@@ -33,14 +33,19 @@
         <!-- Background -->
         <item name="android:windowBackground">@color/background</item>
 
-        <item name="materialButtonStyle">@style/ButtonTheme</item>
+        <!-- Toolbar Style -->
         <item name="toolbarStyle">@style/Widget.App.Toolbar</item>
+
+        <!-- Material Button Style -->
+        <item name="materialButtonStyle">@style/Widget.App.Button</item>
     </style>
 
-    <style name="ButtonTheme" parent="Widget.MaterialComponents.Button">
+    <!-- Button dark style -->
+    <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
 
         <item name="backgroundTint">?attr/colorSecondary</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textAppearance">?attr/textAppearanceButton</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Evalua.Button</item>
     </style>
 </resources>
