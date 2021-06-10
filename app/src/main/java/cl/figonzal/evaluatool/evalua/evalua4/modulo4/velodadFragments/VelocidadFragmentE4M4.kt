@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:39
+ Last modified 10-06-21 13:02
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -26,8 +26,8 @@ import cl.figonzal.evaluatool.baremosTables.velocidadFragmentE4M4Baremo
 import cl.figonzal.evaluatool.databinding.FragmentVelocidadE4M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.alertDialogPdCorregido
 import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -95,7 +95,7 @@ class VelocidadFragmentE4M4 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(parentFragmentManager)
+                requireActivity().alertDialogPdCorregido()
             }
             Utils.configurarTextoBaremo(
                 parentFragmentManager,
