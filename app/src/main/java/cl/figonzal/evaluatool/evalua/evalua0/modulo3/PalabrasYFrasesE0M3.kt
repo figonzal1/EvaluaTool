@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:39
+ Last modified 09-06-21 23:53
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -88,7 +88,7 @@ class PalabrasYFrasesE0M3 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                showHelperDialog(supportFragmentManager)
+                alertDialogPdCorregido()
             }
             Utils.configurarTextoBaremo(
                 supportFragmentManager,

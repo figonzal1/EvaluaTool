@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 15:49
+  Last modified 09-06-21 23:24
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -595,7 +595,7 @@
     <string name="indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
     <string name="indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
     <string name="icono_dropdown_menu">Menu desplegable</string>
-    <string name="descripcion_corregido_dialog">Puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
+    <string name="descripcion_corregido_dialog">El puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
     <string name="icono_tema_modo_claro">Icono tema modo claro</string>
     <string name="icono_tema_modo_oscuro">Icono tema modo oscuro</string>
     <string name="raz_inductivo">Raz. Inductivo</string>

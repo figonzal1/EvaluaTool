@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 17:13
+ Last modified 09-06-21 23:53
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -21,6 +21,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
 import java.util.*
 
@@ -112,4 +113,20 @@ fun Activity.showHelperDialog(supportFragmentManager: FragmentManager) {
     val dialogo = CorregidoDialogFragment()
     dialogo.isCancelable = false
     dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
+}
+
+/**
+ * Class that handle CorrectedDialogFragment for directPoints (PD) of a any student.
+ * This is only a simple dialog fragment (Informative fragment with static information)
+ *
+ * @version 18-04-2021
+ */
+fun Activity.alertDialogPdCorregido() {
+    MaterialAlertDialogBuilder(this)
+        .setTitle(getString(R.string.pd_corregido))
+        .setMessage(getString(R.string.descripcion_corregido_dialog))
+        .setPositiveButton(getString(R.string.dialogo_boton_cerrar)) { dialog, _ ->
+            dialog.dismiss()
+        }
+        .show()
 }

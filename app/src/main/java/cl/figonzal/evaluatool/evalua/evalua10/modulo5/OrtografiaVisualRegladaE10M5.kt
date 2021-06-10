@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:40
+ Last modified 09-06-21 23:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo5
@@ -316,7 +316,7 @@ class OrtografiaVisualRegladaE10M5 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                showHelperDialog(supportFragmentManager)
+                alertDialogPdCorregido()
 
             }
             Utils.configurarTextoBaremo(
