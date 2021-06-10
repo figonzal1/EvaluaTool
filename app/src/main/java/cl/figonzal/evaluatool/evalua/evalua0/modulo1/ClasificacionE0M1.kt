@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 19:38
+ Last modified 10-06-21 00:11
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -108,7 +108,7 @@ class ClasificacionE0M1 : AppCompatActivity(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                showHelperDialog(supportFragmentManager)
+                alertDialogPdCorregido()
             }
 
             Utils.configurarTextoBaremo(
