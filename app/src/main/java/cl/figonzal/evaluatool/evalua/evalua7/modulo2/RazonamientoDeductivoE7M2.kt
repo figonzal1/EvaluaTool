@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:23
+ Last modified 09-06-21 20:39
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -17,7 +17,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
@@ -25,6 +24,7 @@ import cl.figonzal.evaluatool.baremosTables.razonamientoDeductivoE7M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoDeductivoE7M2Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.floor
 
@@ -52,7 +52,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvPdCorregido: TextView
     private lateinit var tvPercentil: TextView
     private lateinit var tvNivel: TextView
-    private lateinit var progressBar: ProgressBar
+    private lateinit var progressBar: LinearProgressIndicator
     private lateinit var tvDesviacionCalculada: TextView
 
     //TOTALES
@@ -218,7 +218,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
                         this,
                         true
                     )
