@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:23
+ Last modified 09-06-21 20:39
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo4
 
@@ -17,7 +17,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.MenuItem
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
@@ -25,6 +24,7 @@ import cl.figonzal.evaluatool.baremosTables.comprensionLectoraE2M4Baremo
 import cl.figonzal.evaluatool.databinding.ActivityComprensionLectoraE2M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.*
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.floor
@@ -70,7 +70,7 @@ class ComprensionLectoraE2M4 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
 
-    private lateinit var progressBar: ProgressBar
+    private lateinit var progressBar: LinearProgressIndicator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -348,7 +348,7 @@ class ComprensionLectoraE2M4 : AppCompatActivity(), EvaluaInterface {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
                         this,
                         true
                     )

@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 13-12-20 1:19
+  Last modified 09-06-21 19:49
   -->
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -76,29 +76,30 @@
             android:id="@+id/tv_nivel_obtenido"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/margin_16"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_16"
             android:text="@string/nivel_obtenido"
             android:textAppearance="?attr/textAppearanceSubtitle1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
-        <ProgressBar
+        <com.google.android.material.progressindicator.LinearProgressIndicator
             android:id="@+id/progressBar"
-            style="?android:attr/progressBarStyleHorizontal"
+            style="?attr/linearProgressIndicatorStyle"
             android:layout_width="0dp"
             android:layout_height="@dimen/progress_bar_height"
             android:layout_marginStart="@dimen/margin_16"
             android:layout_marginTop="@dimen/margin_8"
             android:layout_marginEnd="@dimen/margin_8"
             android:indeterminate="false"
-            android:progressDrawable="@drawable/percentile_bar"
             android:visibility="visible"
             app:layout_constraintEnd_toStartOf="@+id/tv_percentil_value"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_percentil" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_percentil"
+            app:trackCornerRadius="@dimen/corner_radius_4dp"
+            app:trackThickness="8dp" />
 
         <TextView
             android:id="@+id/tv_nivel_obtenido_value"

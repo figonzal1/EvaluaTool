@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:55
+ Last modified 09-06-21 20:39
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -19,7 +19,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
@@ -30,6 +29,7 @@ import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
 import cl.figonzal.evaluatool.utilidades.showHelperDialog
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 
@@ -58,7 +58,7 @@ class AutoControlFragmentE2M3 : Fragment(), EvaluaInterface {
     private lateinit var tvPdCorregido: TextView
     private lateinit var tvPercentil: TextView
     private lateinit var tvNivel: TextView
-    private lateinit var progressBar: ProgressBar
+    private lateinit var progressBar: LinearProgressIndicator
     private lateinit var tvDesviacionCalculada: TextView
 
     override fun onCreateView(
@@ -182,7 +182,7 @@ class AutoControlFragmentE2M3 : Fragment(), EvaluaInterface {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
                         this,
                         true
                     )

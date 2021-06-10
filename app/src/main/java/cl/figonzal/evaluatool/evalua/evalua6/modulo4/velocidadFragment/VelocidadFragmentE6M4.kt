@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:55
+ Last modified 09-06-21 20:39
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4.velocidadFragment
@@ -20,7 +20,6 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
@@ -30,6 +29,7 @@ import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.showHelperDialog
+import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
 class VelocidadFragmentE6M4 : Fragment(), EvaluaInterface {
@@ -60,7 +60,7 @@ class VelocidadFragmentE6M4 : Fragment(), EvaluaInterface {
     private lateinit var tvPercentil: TextView
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
-    private lateinit var progressBar: ProgressBar
+    private lateinit var progressBar: LinearProgressIndicator
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -172,7 +172,7 @@ class VelocidadFragmentE6M4 : Fragment(), EvaluaInterface {
                 tvPercentil.text = this.toString()
 
                 when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgress(
+                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
                         this,
                         true
                     )
