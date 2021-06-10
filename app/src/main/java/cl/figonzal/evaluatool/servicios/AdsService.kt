@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 20-05-21 13:51
+ Last modified 10-06-21 11:54
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -17,11 +17,7 @@ import android.content.Intent
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.dialogs.RewardDialogFragment
-import cl.figonzal.evaluatool.utilidades.DateHandler
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.toast
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -215,10 +211,7 @@ class AdsService(
                 when {
                     Utils.generateRandomNumber() -> {
                         //Mostrar dialog
-                        RewardDialogFragment(this).show(
-                            supportFragmentManager,
-                            Utils.get(R.string.REWARD_DIALOG)
-                        )
+                        activity.confirmationDialogReward(this)
                         activity.logInfo(
                             R.string.TAG_RANDOM_SHOW_REWARD_DIALOG,
                             R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON

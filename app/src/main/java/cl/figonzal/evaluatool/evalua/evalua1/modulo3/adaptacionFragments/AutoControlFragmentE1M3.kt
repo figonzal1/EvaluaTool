@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:39
+ Last modified 10-06-21 01:16
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -25,10 +25,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE1M3Baremo
 import cl.figonzal.evaluatool.databinding.FragmentAutoControlE1M3Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
-import cl.figonzal.evaluatool.utilidades.showHelperDialog
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -102,7 +99,7 @@ class AutoControlFragmentE1M3 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(parentFragmentManager)
+                requireActivity().alertDialogPdCorregido()
             }
             Utils.configurarTextoBaremo(
                 parentFragmentManager,

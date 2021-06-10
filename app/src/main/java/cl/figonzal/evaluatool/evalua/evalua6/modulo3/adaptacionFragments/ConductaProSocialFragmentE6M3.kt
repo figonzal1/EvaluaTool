@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:39
+ Last modified 10-06-21 11:29
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo3.adaptacionFragments
@@ -27,9 +27,9 @@ import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE6M3Baremo
 import cl.figonzal.evaluatool.databinding.FragmentConductaProSocialE6M3Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.alertDialogPdCorregido
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
-import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -99,7 +99,7 @@ class ConductaProSocialFragmentE6M3 : Fragment(), EvaluaInterface {
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(parentFragmentManager)
+                requireActivity().alertDialogPdCorregido()
             }
             Utils.configurarTextoBaremo(
                 parentFragmentManager,

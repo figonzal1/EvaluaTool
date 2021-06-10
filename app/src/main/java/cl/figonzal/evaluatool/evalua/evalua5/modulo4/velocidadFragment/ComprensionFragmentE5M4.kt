@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 20:39
+ Last modified 10-06-21 13:02
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -26,9 +26,9 @@ import cl.figonzal.evaluatool.baremosTables.comprensionFragmentE5M4Baremo
 import cl.figonzal.evaluatool.databinding.FragmentComprensionE5M4Binding
 import cl.figonzal.evaluatool.interfaces.EvaluaInterface
 import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.alertDialogPdCorregido
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
-import cl.figonzal.evaluatool.utilidades.showHelperDialog
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -108,7 +108,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
             ivHelpPdCorregido.setOnClickListener {
 
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
-                requireActivity().showHelperDialog(parentFragmentManager)
+                requireActivity().alertDialogPdCorregido()
             }
             Utils.configurarTextoBaremo(
                 parentFragmentManager,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 23:53
+ Last modified 10-06-21 12:19
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -16,9 +16,8 @@ package cl.figonzal.evaluatool.utilidades
 import android.app.Activity
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.dialogs.CorregidoDialogFragment
+import cl.figonzal.evaluatool.servicios.AdsService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -103,23 +102,11 @@ fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
 }
 
 /**
- * Funcion that show Helper Dialog for corrected scores
- *
- * @param supportFragmentManager Fragment manager to show FragmentDialog
- * @return Unit
- * @version 03-04-2021
- */
-fun Activity.showHelperDialog(supportFragmentManager: FragmentManager) {
-    val dialogo = CorregidoDialogFragment()
-    dialogo.isCancelable = false
-    dialogo.show(supportFragmentManager, getString(R.string.DIALOGO_AYUDA))
-}
-
-/**
+ * ALERT DIALOG
  * Class that handle CorrectedDialogFragment for directPoints (PD) of a any student.
  * This is only a simple dialog fragment (Informative fragment with static information)
  *
- * @version 18-04-2021
+ * @version 10-06-2021
  */
 fun Activity.alertDialogPdCorregido() {
     MaterialAlertDialogBuilder(this)
@@ -127,6 +114,30 @@ fun Activity.alertDialogPdCorregido() {
         .setMessage(getString(R.string.descripcion_corregido_dialog))
         .setPositiveButton(getString(R.string.dialogo_boton_cerrar)) { dialog, _ ->
             dialog.dismiss()
+        }
+        .show()
+}
+
+/**
+ * CONFIRMATION DIALOG
+ * Confirmation dialog that allows the user to remove the ads by watching a reward video
+ *
+ * @version 10-06-2021
+ */
+fun Activity.confirmationDialogReward(adsService: AdsService) {
+    MaterialAlertDialogBuilder(this)
+        .setTitle(getString(R.string.DIALOG_TITLE))
+        .setMessage(getString(R.string.DIALOG_MESSAGE))
+        .setNegativeButton(getString(R.string.DIALOG_NEGATIVE_BUTTON)) { _, _ ->
+            this.logInfo(R.string.TAG_REWARD_DIALOG_BTN_CANCEL)
+        }
+        .setPositiveButton(getString(R.string.DIALOG_POSITIVE_BUTTON)) { _, _ ->
+            when {
+                adsService.getIntersitial() != null -> {
+                    adsService.showRewardVideo()
+                    this.logInfo(R.string.TAG_REWARD_DIALOG_BTN_VER_VIDEO)
+                }
+            }
         }
         .show()
 }
