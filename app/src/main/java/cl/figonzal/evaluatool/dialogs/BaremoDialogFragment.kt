@@ -8,11 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:29
+ Last modified 11-06-21 01:58
  */
 package cl.figonzal.evaluatool.dialogs
 
-import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -22,7 +21,8 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter
 import cl.figonzal.evaluatool.databinding.BaremoDialogLayoutBinding
 import cl.figonzal.evaluatool.utilidades.Utils
-import timber.log.Timber
+import cl.figonzal.evaluatool.utilidades.logInfo
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
  * Class that handle DialogFragment for Baremo Score Table
@@ -30,16 +30,17 @@ import timber.log.Timber
  * @param perc Table of scores (Baremo table)
  * @param itemName Title of item section
  *
- * @version 18-04-2021
+ * @version 10-06-2021
  */
 class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val itemName: String) :
     DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
-        val builder = AlertDialog.Builder(requireActivity())
+        val builder = MaterialAlertDialogBuilder(requireContext())
 
         with(BaremoDialogLayoutBinding.inflate(LayoutInflater.from(context)), {
+
             //Recycler view
             rvBaremo.apply {
                 setHasFixedSize(true)
@@ -53,13 +54,13 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
 
             //BtnCloseDialog
             btnCerrar.setOnClickListener {
-                Timber.i(getString(R.string.DIALOGO_BAREMO_CERRADO))
+                requireActivity().logInfo(R.string.DIALOGO_BAREMO_CERRADO)
                 dismiss()
             }
 
             builder.setView(root)
+            return builder.create()
         })
-        return builder.create()
     }
 
 }
