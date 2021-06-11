@@ -8,17 +8,23 @@
 
   Copyright (c) 2021
 
-  Last modified 09-06-21 17:39
+  Last modified 10-06-21 13:32
   -->
 
 <resources>
-    <dimen name="margin_16">16dp</dimen>
-    <dimen name="divider_height">1dp</dimen>
-    <dimen name="margin_8">8dp</dimen>
+
     <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_28">28dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+
     <dimen name="progress_bar_height">10dp</dimen>
     <dimen name="padding_button_green">20dp</dimen>
     <dimen name="tablayout_height">48dp</dimen>
+
     <dimen name="corner_radius_8dp">8dp</dimen>
     <dimen name="corner_radius_4dp">4dp</dimen>
 

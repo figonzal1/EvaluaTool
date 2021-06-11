@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 09-06-21 14:05
+  Last modified 11-06-21 01:54
   -->
 
 
@@ -16,7 +16,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="500dp">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="@dimen/corner_radius_8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,9 +29,9 @@
             android:id="@+id/tv_titulo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginStart="@dimen/margin_24"
             android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_24"
             android:text="@string/dialogo_baremo_titulo"
             android:textAppearance="?attr/textAppearanceHeadline5"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +42,7 @@
             android:id="@+id/tv_baremo_descripcion"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginTop="@dimen/margin_16"
             android:textAppearance="?attr/textAppearanceSubtitle1"
             app:layout_constraintEnd_toEndOf="@+id/tv_titulo"
             app:layout_constraintStart_toStartOf="@+id/tv_titulo"
@@ -52,24 +54,26 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="@dimen/margin_16"
-            android:layout_marginEnd="@dimen/margin_4"
-            android:layout_marginBottom="@dimen/margin_8"
             app:layout_constraintBottom_toTopOf="@+id/btn_cerrar"
             app:layout_constraintEnd_toEndOf="@+id/tv_baremo_descripcion"
             app:layout_constraintHeight_default="wrap"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/tv_baremo_descripcion"
-            app:layout_constraintTop_toBottomOf="@+id/tv_baremo_descripcion" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_baremo_descripcion"
+            app:layout_constraintVertical_bias="0.0" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_cerrar"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_16"
             android:layout_marginEnd="@dimen/margin_8"
             android:layout_marginBottom="@dimen/margin_8"
             android:text="@string/dialogo_boton_cerrar"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rv_baremo" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
