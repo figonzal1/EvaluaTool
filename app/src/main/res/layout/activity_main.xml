@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 09-06-21 18:11
+  Last modified 12-06-21 13:57
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,11 +22,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <View
-            android:id="@+id/view"
-            android:layout_width="wrap_content"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/main_card_view"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="?attr/colorPrimary"
+            android:translationZ="-2dp"
+            app:cardBackgroundColor="?attr/colorPrimary"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toTopOf="@+id/guia_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -168,8 +170,8 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="@dimen/margin_8"
-            android:layout_marginEnd="@dimen/margin_8"
             android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_8"
             android:contentDescription="@string/ICONO_LOGO_APP"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -235,6 +237,7 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

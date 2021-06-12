@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 09-06-21 23:24
+  Last modified 12-06-21 16:36
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -391,6 +391,8 @@
     <string name="TAG_BTN_REWARD_DATE" translatable="false">BUTTON_REWARD_DATE: </string>
     <string name="TAG_ADS_PERMITIDOS" translatable="false">ADS PERMITIDOS</string>
     <string name="TAG_ADS_NO_PERMITIDOS" translatable="false">ADS NO PERMITIDOS</string>
+    <string name="TAG_ADS_CARGADOS" translatable="false">ADS CARGADOS</string>
+    <string name="TAG_ADS_NO_CARGADOS" translatable="false">ADS NO CARGADOS</string>
     <string name="TAG_INTERSITIAL_STATUS">INTERSITIAL: </string>
     <string name="INTERSITIAL_CARGADO">CARGADO</string>
     <string name="INTERSITIAL_NO_CARGADO">NO CARGADO</string>

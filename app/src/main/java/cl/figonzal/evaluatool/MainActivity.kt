@@ -8,12 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 15:49
+ Last modified 12-06-21 16:48
  */
 package cl.figonzal.evaluatool
 
 import android.app.Activity
-import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -34,20 +33,18 @@ import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.NightModeService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
-import cl.figonzal.evaluatool.utilidades.DateHandler
 import cl.figonzal.evaluatool.utilidades.disable
+import cl.figonzal.evaluatool.utilidades.isAdsAllowed
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.toast
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.card.MaterialCardView
+import com.google.android.material.shape.CornerFamily
 import com.google.android.material.switchmaterial.SwitchMaterial
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
     val test: Boolean = true
-
-    //ViewBinding
-    private lateinit var binding: ActivityMainBinding
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
@@ -55,24 +52,19 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvVersion: TextView
     private var buttonList = mutableListOf<MaterialButton>()
 
-    //Services & Handlers
-    private lateinit var adsService: AdsService
-    private lateinit var sharedPrefService: SharedPrefService
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //Checkear night mode
-        sharedPrefService = SharedPrefService(this)
-        NightModeService(this, this.lifecycle, sharedPrefService)
+        with(SharedPrefService(this), {
 
-        initResources()
-        loadAds()
-        configAnimations()
-        clickListeners()
-        switchDarkModeListener()
+            NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
+
+            //Init resources for Main Activity
+            initResources(binding, this)
+        })
     }
 
     /**
@@ -80,75 +72,95 @@ class MainActivity : AppCompatActivity() {
      *
      * @return Unit
      */
-    private fun initResources() {
+    private fun initResources(binding: ActivityMainBinding, sharedPrefService: SharedPrefService) {
 
-        switchDarkMode = binding.includeSwitch.switchMaterial
+        with(binding, {
+            switchDarkMode = includeSwitch.switchMaterial
 
-        tvNombreApp = binding.tvNombreApp
-        tvVersion = binding.tvVersion
-        tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
+            this@MainActivity.tvNombreApp = tvNombreApp
+            this@MainActivity.tvVersion = tvVersion
+            tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
-        configButtons()
+            buttonList = mutableListOf(
+                MaterialButton(this@MainActivity), //EV0
+                MaterialButton(this@MainActivity), //EV1
+                MaterialButton(this@MainActivity), //EV2
+                MaterialButton(this@MainActivity), //EV3
+                MaterialButton(this@MainActivity), //EV4
+                MaterialButton(this@MainActivity), //EV5
+                MaterialButton(this@MainActivity), //EV6
+                MaterialButton(this@MainActivity), //EV7
+                MaterialButton(this@MainActivity), //EV8
+                MaterialButton(this@MainActivity), //EV9
+                MaterialButton(this@MainActivity) //EV10
+            )
+
+            //binding buttons
+            (0 until buttonList.size).forEach { i ->
+                buttonList[i] = when (i) {
+                    0 -> btnEvalua0
+                    1 -> btnEvalua1
+                    2 -> btnEvalua2
+                    3 -> btnEvalua3
+                    4 -> btnEvalua4
+                    5 -> btnEvalua5
+                    6 -> btnEvalua6
+                    7 -> btnEvalua7
+                    8 -> btnEvalua8
+                    9 -> btnEvalua9
+                    10 -> btnEvalua10
+                    else -> btnEvalua0
+                }
+            }
+
+            //Disable buttons
+            buttonList.apply {
+                this[9].disable() //Evalua 9
+            }
+        })
+
+        setUpResources(binding, sharedPrefService)
     }
 
-    /**
-     * Binding Buttons & Disable Evalua's buttons that are not implemented yet
-     *
-     * @return Unit
-     */
-    private fun configButtons() {
+    private fun setUpResources(binding: ActivityMainBinding, sharedPrefService: SharedPrefService) {
 
-        buttonList = mutableListOf(
-            MaterialButton(this), //EV0
-            MaterialButton(this), //EV1
-            MaterialButton(this), //EV2
-            MaterialButton(this), //EV3
-            MaterialButton(this), //EV4
-            MaterialButton(this), //EV5
-            MaterialButton(this), //EV6
-            MaterialButton(this), //EV7
-            MaterialButton(this), //EV8
-            MaterialButton(this), //EV9
-            MaterialButton(this) //EV10
-        )
+        //Set Up view animations
+        setUpAnimations()
 
-        //binding buttons
-        (0 until buttonList.size).forEach { i ->
-            buttonList[i] = when (i) {
-                0 -> binding.btnEvalua0
-                1 -> binding.btnEvalua1
-                2 -> binding.btnEvalua2
-                3 -> binding.btnEvalua3
-                4 -> binding.btnEvalua4
-                5 -> binding.btnEvalua5
-                6 -> binding.btnEvalua6
-                7 -> binding.btnEvalua7
-                8 -> binding.btnEvalua8
-                9 -> binding.btnEvalua9
-                10 -> binding.btnEvalua10
-                else -> binding.btnEvalua0
-            }
-        }
+        //Set up buttons for view
+        setUpButtons(buttonList, setUpAds(sharedPrefService))
 
-        //Disable buttons
-        buttonList.apply {
-            this[9].disable() //Evalua 9
-        }
+        //Set up night mode listener
+        setUpSwitchDarkMode(sharedPrefService)
+
+        //Set up card view custom corners
+        setUpCardViewCustomCorners(binding.mainCardView)
     }
 
     /**
      * Function in charge of start Admob Service
      *
+     * If rewardDate is Active or is in TestMode the ads wont load
+     *
+     * @param sharedPrefService
      * @return Unit
      */
-    private fun loadAds() {
+    private fun setUpAds(sharedPrefService: SharedPrefService): AdsService {
 
-        if (!test) {
-            adsService = AdsService(this, supportFragmentManager, sharedPrefService).apply {
+        val adsService = AdsService(this, supportFragmentManager, sharedPrefService)
+
+        when {
+            !test && isAdsAllowed(sharedPrefService) -> adsService.apply {
+
+                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_CARGADOS)
+
+                //Load Ads
                 loadIntersitial()
                 loadRewardVideo()
             }
+            else -> logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_CARGADOS)
         }
+        return adsService
     }
 
     /**
@@ -156,7 +168,7 @@ class MainActivity : AppCompatActivity() {
      *
      * @return Unit
      */
-    private fun configAnimations() {
+    private fun setUpAnimations() {
 
         val fadeList = mutableListOf<Animation>()
         val offset = 400L
@@ -189,11 +201,63 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Function that handle the switchDarkMode in the main Activity
+     *
+     * @return Unit
+     */
+    private fun setUpSwitchDarkMode(sharedPrefService: SharedPrefService) {
+
+        val nightMode =
+            sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+
+        with(switchDarkMode, {
+            this.isChecked = nightMode
+            this.setOnCheckedChangeListener { _, isChecked ->
+
+                when {
+                    isChecked -> {
+                        toast(context.getString(R.string.NIGHT_MODE_ON))
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
+                    }
+                    else -> {
+                        toast(context.getString(R.string.NIGHT_MODE_OFF))
+                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
+                    }
+                }
+            }
+        })
+    }
+
+    /**
+     * Function that set a custom corners for a Material CardView
+     *
+     * @param materialCardView
+     * @return Unit
+     */
+    private fun setUpCardViewCustomCorners(materialCardView: MaterialCardView) {
+        //Custom card view corners
+        materialCardView.shapeAppearanceModel
+            .toBuilder()
+            .setBottomLeftCorner(CornerFamily.ROUNDED, 32f)
+            .setBottomRightCorner(CornerFamily.ROUNDED, 32f)
+            .setTopRightCornerSize(0f)
+            .setTopLeftCornerSize(0f)
+            .build().also { materialCardView.shapeAppearanceModel = it }
+    }
+
+    /**
      * Function that handle listener for buttons in Main Activity
      *
      * @return Unit
      */
-    private fun clickListeners() {
+    private fun setUpButtons(
+        buttonList: MutableList<MaterialButton>,
+        adsService: AdsService
+    ) {
 
         (0 until buttonList.size).forEach { i ->
 
@@ -243,81 +307,8 @@ class MainActivity : AppCompatActivity() {
                         activityToOpen = Evalua10Activity::class.java
                     }
                 }
-                checkIntersitialLaunch(activityToOpen, test)
-
+                adsService.checkIntersitialOnStart(activityToOpen)
             }
         }
-
-    }
-
-    /**
-     * Function that show the interstitial ad based on if reward date has past
-     *
-     * @param activityToOpen The destination activity
-     * @return Unit
-     */
-    private fun checkIntersitialLaunch(activityToOpen: Class<out Activity?>?, test: Boolean) {
-
-        val nowDate = Date()
-        val rewardDate = Date(
-            sharedPrefService.getData(
-                getString(R.string.SHARED_PREF_END_REWARD_TIME),
-                0L
-            ) as Long
-        )
-
-        logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
-
-        //si las 24 horas ya pasaron, cargar los ads nuevamente
-        when {
-            test -> {
-                val intent = Intent(this, activityToOpen)
-                startActivity(intent)
-            }
-            nowDate.after(rewardDate) -> {
-
-                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
-                adsService.showIntersitial(activityToOpen)
-            }
-            else -> {
-                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_PERMITIDOS)
-
-                val intent = Intent(this, activityToOpen)
-                startActivity(intent)
-
-            }
-        }
-    }
-
-    /**
-     * Function that handle the switchDarkMode in the main Activity
-     *
-     * @return Unit
-     */
-    private fun switchDarkModeListener() {
-
-        val nightMode =
-            sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
-
-        with(switchDarkMode, {
-            this.isChecked = nightMode
-            this.setOnCheckedChangeListener { _, isChecked ->
-
-                when {
-                    isChecked -> {
-                        toast(context.getString(R.string.NIGHT_MODE_ON))
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-
-                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), true)
-                    }
-                    else -> {
-                        toast(context.getString(R.string.NIGHT_MODE_OFF))
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-
-                        sharedPrefService.saveData(getString(R.string.NIGHT_MODE_KEY), false)
-                    }
-                }
-            }
-        })
     }
 }

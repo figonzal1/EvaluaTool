@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-06-21 12:19
+ Last modified 12-06-21 16:53
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -18,6 +18,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.servicios.AdsService
+import cl.figonzal.evaluatool.servicios.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
@@ -140,4 +141,20 @@ fun Activity.confirmationDialogReward(adsService: AdsService) {
             }
         }
         .show()
+}
+
+/**
+ * Check if the ads can be shown in the app.
+ */
+fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
+    val nowDate = Date()
+    val rewardDate = Date(
+        sharedPrefService.getData(
+            getString(R.string.SHARED_PREF_END_REWARD_TIME),
+            0L
+        ) as Long
+    )
+
+    logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
+    return nowDate.after(rewardDate)
 }
