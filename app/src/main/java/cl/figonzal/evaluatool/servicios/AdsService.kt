@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-06-21 11:54
+ Last modified 12-06-21 16:36
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -33,7 +33,7 @@ import java.util.*
  * @param supportFragmentManager Fragment manager for dialogFragment
  * @param sharedPrefService SharedPref to save data
  *
- * @version 17-04-2021
+ * @version 12-06-2021
  */
 class AdsService(
     private val activity: MainActivity,
@@ -84,7 +84,7 @@ class AdsService(
      *
      * @param destActivity Destination activity
      */
-    fun showIntersitial(destActivity: Class<out Activity?>?) {
+    private fun showIntersitial(destActivity: Class<out Activity?>?) {
 
         interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
 
@@ -157,7 +157,7 @@ class AdsService(
     }
 
     /**
-     * Function that show intersitial in screen
+     * Function that show reward video in screen
      *
      * @return Unit
      */
@@ -234,6 +234,29 @@ class AdsService(
         }
     }
 
+    /**
+     * Function that show the interstitial ad based on if reward date has past
+     *
+     * @param activityToOpen The destination activity
+     * @return Unit
+     */
+    fun checkIntersitialOnStart(
+        activityToOpen: Class<out Activity?>?
+    ) {
+        //si las 24 horas ya pasaron, cargar los ads nuevamente
+        with(activity, {
+            when {
+                isAdsAllowed(sharedPrefService) -> {
+                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
+                    showIntersitial(activityToOpen)
+                }
+                else -> {
+                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_PERMITIDOS)
+                    startActivity(Intent(this, activityToOpen))
+                }
+            }
+        })
+    }
 
     init {
         MobileAds.initialize(activity.applicationContext)
