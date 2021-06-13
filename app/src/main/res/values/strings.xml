@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 12-06-21 16:36
+  Last modified 13-06-21 10:33
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -278,6 +278,32 @@
     <string name="EVALUA_8_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
     <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
 
+    <!-- EVALUA 9-->
+    <string name="TOOLBAR_EVALUA_9">Evalúa 9</string>
+    <string name="EVALUA_9_MODULO_1">Atención - Concentración</string>
+    <string name="EVALUA_9_MODULO_2">Razonamiento</string>
+    <string name="EVALUA_9_MODULO_3">Niveles de Adaptación</string>
+    <string name="EVALUA_9_MODULO_4">Lectura</string>
+    <string name="EVALUA_9_MODULO_5">Escritura</string>
+    <string name="EVALUA_9_MODULO_6">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_9_M1_SI_1">Atención y Concentración [MA-9]</string>
+    <string name="EVALUA_9_M2_SI_1">Razonamiento Inductivo [RI-9]</string>
+    <string name="EVALUA_9_M2_SI_2">Razonamiento Espacial [RE-9]</string>
+    <string name="EVALUA_9_M2_SI_3">Razonamiento Deductivo [RD-9]</string>
+    <string name="EVALUA_9_M3_SI_1">Niveles Adaptación [NA-9]</string>
+    <string name="EVALUA_9_M4_SI_1">Comprension Lectora [CL-9]</string>
+    <string name="EVALUA_9_M4_SI_2">Eficacia Lectora [EL-9]</string>
+    <string name="EVALUA_9_M4_SI_3">Velocidad Lectora [VL-9]</string>
+    <string name="EVALUA_9_M5_SI_1">Ortografia Visual Reglada [OR-9]</string>
+    <string name="EVALUA_9_M6_SI_1">Cálculo y Numeración [CN-9]</string>
+    <string name="EVALUA_9_M6_SI_2">Resolución Problemas [RP-9]</string>
+    <string name="EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_9_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
+    <string name="EVALUA_9_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
+    <string name="EVALUA_9_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
+    <string name="EVALUA_9_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
+    <string name="EVALUA_9_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
+
     <!-- EVALUA 10 -->
     <string name="TOOLBAR_EVALUA_10">Evalúa 10</string>
     <string name="EVALUA_10_MODULO_1">Atención - Concentración</string>
@@ -317,6 +343,21 @@
     <string name="BTN_EVALUA_4">btn_evalua_4</string>
     <string name="BTN_EVALUA_5">btn_evalua_5</string>
     <string name="BTN_EVALUA_6">btn_evalua_6</string>
+    <string name="BTN_EVALUA_7">btn_evalua_7</string>
+    <string name="BTN_EVALUA_8">btn_evalua_8</string>
+    <string name="BTN_EVALUA_9">btn_evalua_9</string>
+    <string name="BTN_EVALUA_10">btn_evalua_10</string>
+    <string name="ACTIVIDAD_CERRADA">home up - activity cerrada</string>
+    <string name="DIALOGO_AYUDA">HELP_DIALOG</string>
+    <string name="DIALOGO_AYUDA_MSG_ABIERTO">Abriendo dialogo ayuda</string>
+    <string name="SUB_ITEM_CLICK">SUB_ITEM_CLICK</string>
+    <string name="TAG_PD_CORREGIDO">PD_CORREGIDO: </string>
+    <string name="BUTTON_MAIN">BUTTON_CLICK: </string>
+    <string name="TAG_PERCENTIL_CALCULADO">PERCENTIL_CALCULADO: </string>
+    <string name="PERCENTIL_NULO">percentil nulo</string>
+    <string name="PD_NULO">pd nulo</string>
+    <string name="TAG_COMPRENSION_CALCULADA">COMPRENSION_CALCULADA: </string>
+    <string name="COMPRENSION_NULA">nivelEsperado comprension nulo</string>
     <string name="CLICK_SERIES">click_series</string>
     <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
     <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
@@ -354,24 +395,6 @@
     <!-- Shared pref -->
     <string name="SHARED_PREF_END_REWARD_TIME">end_reward_time</string>
     <string name="MAIN_SHARED_PREF">evalua_tool</string>
-
-
-    <!-- TAGS GENERICOS-->
-    <string name="ACTIVIDAD_CERRADA">home up - activity cerrada</string>
-    <string name="DIALOGO_AYUDA">HELP_DIALOG</string>
-    <string name="DIALOGO_AYUDA_MSG_ABIERTO">Abriendo dialogo ayuda</string>
-    <string name="SUB_ITEM_CLICK">SUB_ITEM_CLICK</string>
-    <string name="TAG_PD_CORREGIDO">PD_CORREGIDO: </string>
-    <string name="BUTTON_MAIN">BUTTON_CLICK: </string>
-    <string name="BTN_EVALUA_7">btn_evalua_7</string>
-    <string name="BTN_EVALUA_8">btn_evalua_8</string>
-    <string name="BTN_EVALUA_10">btn_evalua_10</string>
-    <string name="TAG_PERCENTIL_CALCULADO">PERCENTIL_CALCULADO: </string>
-    <string name="PERCENTIL_NULO">percentil nulo</string>
-    <string name="PD_NULO">pd nulo</string>
-    <string name="TAG_COMPRENSION_CALCULADA">COMPRENSION_CALCULADA: </string>
-    <string name="COMPRENSION_NULA">nivelEsperado comprension nulo</string>
-
 
     <!-- REWARD DIALOG TAGS & ADS -->
     <string name="TAG_REWARD_DIALOG_BTN_VER_VIDEO" translatable="false">BOTON VER VIDEO PRESIONADO</string>
@@ -426,7 +449,9 @@
     <string name="pd_subtotales">PD subtotales</string>
     <string name="pc_subtotales">PC subtotales</string>
     <string name="tarea_1_0_pts">Tarea 1: 0 pts</string>
+    <string name="tarea_1_1_0_pts">Tarea 1.1: 0 pts</string>
     <string name="tarea_2_0_pts">Tarea 2: 0 pts</string>
+    <string name="tarea_1_2_0_pts">Tarea 1.2: 0 pts</string>
     <string name="pd_total">PD Total</string>
     <string name="pc_total">PC Total</string>
     <string name="_0_pts">0 pts</string>
@@ -560,8 +585,11 @@
     <string name="routeMapEvalua6">routeMapEvalua6</string>
     <string name="routeMapEvalua7">routeMapEvalua7</string>
     <string name="routeMapEvalua8">routeMapEvalua8</string>
+    <string name="routeMapEvalua9">routeMapEvalua9</string>
     <string name="routeMapEvalua10">routeMapEvalua10</string>
     <string name="TAREA_1">Tarea 1:</string>
+    <string name="TAREA_1_1">Tarea 1.1:</string>
+    <string name="TAREA_1_2">Tarea 1.2:</string>
     <string name="TAREA_2">Tarea 2:</string>
     <string name="NIVEL_ALTO">ALTO</string>
     <string name="NIVEL_MEDIO_ALTO">MEDIO-ALTO</string>
@@ -594,7 +622,9 @@
     <string name="indica_el_puntaje_items_10_12">Indica el puntaje de los ejercicios 10–12</string>
     <string name="indica_el_puntaje_items_13_35">Indica el puntaje de los ejercicios 13–35</string>
     <string name="indica_el_puntaje_items_1_5">Indica el puntaje de los ejercicios 1–5</string>
+    <string name="indica_el_puntaje_items_1_7">Indica el puntaje de los ejercicios 1–7</string>
     <string name="indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
+    <string name="indica_el_puntaje_items_8_9">Indica el puntaje de los ejercicios 8–9</string>
     <string name="indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
     <string name="icono_dropdown_menu">Menu desplegable</string>
     <string name="descripcion_corregido_dialog">El puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
@@ -614,5 +644,8 @@
     <string name="DIALOG_NEGATIVE_BUTTON">Cancelar</string>
     <string name="NIGHT_MODE_ON">Modo noche activado</string>
     <string name="NIGHT_MODE_OFF">Modo noche desactivado</string>
+    <string name="indica_el_total_para_las_4_tareas">Indica el total para las 4 tareas</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
