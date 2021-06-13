@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 16:17
+ Last modified 13-06-21 15:54
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -141,6 +141,19 @@ import cl.figonzal.evaluatool.evalua.evalua8.modulo6.CalculoNumeracionE8M6
 import cl.figonzal.evaluatool.evalua.evalua8.modulo6.IndiceGeneralMatematicasE8M6
 import cl.figonzal.evaluatool.evalua.evalua8.modulo6.ResolucionProblemasE8M6
 import cl.figonzal.evaluatool.evalua.evalua8.modulo6.ValoracionGlobalMatematicasE8M6
+import cl.figonzal.evaluatool.evalua.evalua9.modulo1.AtencionConcentracionE9M1
+import cl.figonzal.evaluatool.evalua.evalua9.modulo2.*
+import cl.figonzal.evaluatool.evalua.evalua9.modulo3.NivelesAdaptacionE9M3
+import cl.figonzal.evaluatool.evalua.evalua9.modulo4.ComprensionLectoraE9M4
+import cl.figonzal.evaluatool.evalua.evalua9.modulo4.EficaciaLectoraE9M4
+import cl.figonzal.evaluatool.evalua.evalua9.modulo4.IndiceGeneralLecturaE9M4
+import cl.figonzal.evaluatool.evalua.evalua9.modulo4.VelocidadLectoraE9M4
+import cl.figonzal.evaluatool.evalua.evalua9.modulo5.IndiceGeneralEscrituraE9M5
+import cl.figonzal.evaluatool.evalua.evalua9.modulo5.OrtografiaVisualRegladaE9M5
+import cl.figonzal.evaluatool.evalua.evalua9.modulo6.CalculoNumeracionE9M6
+import cl.figonzal.evaluatool.evalua.evalua9.modulo6.IndiceGeneralMatematicasE9M6
+import cl.figonzal.evaluatool.evalua.evalua9.modulo6.ResolucionProblemasE9M6
+import cl.figonzal.evaluatool.evalua.evalua9.modulo6.ValoracionGlobalMatematicasE9M6
 
 /**
  * This object class is used to configure all routes to open Evalua's subItems
@@ -158,6 +171,7 @@ object ConfigRoutes {
     private var routeMapEvalua6 = HashMap<String, List<Any>>()
     private var routeMapEvalua7 = HashMap<String, List<Any>>()
     private var routeMapEvalua8 = HashMap<String, List<Any>>()
+    private var routeMapEvalua9 = HashMap<String, List<Any>>()
     private var routeMapEvalua10 = HashMap<String, List<Any>>()
 
     //List of activity routes
@@ -171,6 +185,7 @@ object ConfigRoutes {
         Utils.get(R.string.routeMapEvalua6) to routeMapEvalua6,
         Utils.get(R.string.routeMapEvalua7) to routeMapEvalua7,
         Utils.get(R.string.routeMapEvalua8) to routeMapEvalua8,
+        Utils.get(R.string.routeMapEvalua9) to routeMapEvalua9,
         Utils.get(R.string.routeMapEvalua10) to routeMapEvalua10
     )
 
@@ -185,6 +200,7 @@ object ConfigRoutes {
         setRouteMapEvalua6()
         setRouteMapEvalua7()
         setRouteMapEvalua8()
+        setRouteMapEvalua9()
         setRouteMapEvalua10()
     }
 
@@ -1184,6 +1200,122 @@ object ConfigRoutes {
             put(Utils.get(R.string.EVALUA_8_MODULO_4), subItems4)
             put(Utils.get(R.string.EVALUA_8_MODULO_5), subItems5)
             put(Utils.get(R.string.EVALUA_8_MODULO_6), subItems6)
+        }
+    }
+
+    /**
+     * Configuration of routes that are used in Evalua 9
+     *
+     * @return Unit
+     */
+    private fun setRouteMapEvalua9() {
+        val subItems1 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M1_SI_1),
+                AtencionConcentracionE9M1::class.java,
+                Utils.get(R.string.CLICK_ATEN_CONCENTRACION)
+            )
+        )
+
+        val subItems2 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M2_SI_1),
+                RazonamientoInductivoE9M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_INDUCTIVO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_M2_SI_2),
+                RazonamientoEspacialE9M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_ESPACIAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_M2_SI_3),
+                RazonamientoDeductivoE9M2::class.java,
+                Utils.get(R.string.CLICK_RAZON_DEDUCTIVO)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO),
+                ValoracionGlobalRazonamientoE9M2::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_INDICE_GENERAL_COGNITIVO),
+                IndiceGeneralCognitivoE9M2::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_COGNITIVO)
+            )
+        )
+
+        val subItems3 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M3_SI_1),
+                NivelesAdaptacionE9M3::class.java,
+                Utils.get(R.string.CLICK_NIVELES_ADAPTACION)
+            )
+        )
+
+        val subItems4 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M4_SI_1),
+                ComprensionLectoraE9M4::class.java,
+                Utils.get(R.string.CLICK_COMPRENSION_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_M4_SI_2),
+                EficaciaLectoraE9M4::class.java,
+                Utils.get(R.string.CLICK_EFICACIA_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_M4_SI_3),
+                VelocidadLectoraE9M4::class.java,
+                Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_INDICE_GENERAL_LECTURA),
+                IndiceGeneralLecturaE9M4::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_LECTURA)
+            )
+        )
+
+        val subItems5 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M5_SI_1),
+                OrtografiaVisualRegladaE9M5::class.java,
+                Utils.get(R.string.CLICK_ORTOGRAFIA_VISUAL)
+            ),
+            listOf(
+                Utils.get(R.string.EVALUA_9_INDICE_GENERAL_ESCRITURA),
+                IndiceGeneralEscrituraE9M5::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_ESCRITURA)
+            )
+        )
+
+        val subItems6 = listOf(
+            listOf(
+                Utils.get(R.string.EVALUA_9_M6_SI_1),
+                CalculoNumeracionE9M6::class.java,
+                Utils.get(R.string.CLICK_CAL_NUMERACION)
+            ), listOf(
+                Utils.get(R.string.EVALUA_9_M6_SI_2),
+                ResolucionProblemasE9M6::class.java,
+                Utils.get(R.string.CLICK_CAL_RES_PROBLEMAS)
+            ), listOf(
+                Utils.get(R.string.EVALUA_9_VALORACION_GLOBAL_MATEMATICAS),
+                ValoracionGlobalMatematicasE9M6::class.java,
+                Utils.get(R.string.CLICK_VALORACION_GLOBAL)
+            ), listOf(
+                Utils.get(R.string.EVALUA_9_INDICE_GENERAL_MATEMATICAS),
+                IndiceGeneralMatematicasE9M6::class.java,
+                Utils.get(R.string.CLICK_INDICE_GENERAL_MATEMATICO)
+            )
+        )
+
+        routeMapEvalua8.apply {
+            put(Utils.get(R.string.EVALUA_9_MODULO_1), subItems1)
+            put(Utils.get(R.string.EVALUA_9_MODULO_2), subItems2)
+            put(Utils.get(R.string.EVALUA_9_MODULO_3), subItems3)
+            put(Utils.get(R.string.EVALUA_9_MODULO_4), subItems4)
+            put(Utils.get(R.string.EVALUA_9_MODULO_5), subItems5)
+            put(Utils.get(R.string.EVALUA_9_MODULO_6), subItems6)
         }
     }
 

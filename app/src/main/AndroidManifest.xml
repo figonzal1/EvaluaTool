@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
 
   This file is subject to the terms and conditions defined in
   file 'LICENSE', which is part of this source code package
@@ -8,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 15:57
+  Last modified 13-06-21 16:32
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -467,6 +468,61 @@
         <activity
             android:name=".evalua.evalua8.Evalua8Activity"
             android:parentActivityName=".MainActivity" />
+        <!-- EVALUA 9 -->
+        <activity
+            android:name=".evalua.evalua9.modulo3.NivelesAdaptacionE9M3"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo6.IndiceGeneralMatematicasE9M6"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo6.ValoracionGlobalMatematicasE9M6"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo6.ResolucionProblemasE9M6"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo6.CalculoNumeracionE9M6"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo5.IndiceGeneralEscrituraE9M5"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo5.OrtografiaVisualRegladaE9M5"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo4.IndiceGeneralLecturaE9M4"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo4.VelocidadLectoraE9M4"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo4.EficaciaLectoraE9M4"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo4.ComprensionLectoraE9M4"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo2.IndiceGeneralCognitivoE9M2"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo2.ValoracionGlobalRazonamientoE9M2"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo2.RazonamientoDeductivoE9M2"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo2.RazonamientoEspacialE9M2"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo2.RazonamientoInductivoE9M2"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.modulo1.AtencionConcentracionE9M1"
+            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+        <activity
+            android:name=".evalua.evalua9.Evalua9Activity"
+            android:parentActivityName=".MainActivity" />
         <!-- EVALUA 10 -->
         <activity
             android:name=".evalua.evalua10.Evalua10Activity"
@@ -518,8 +574,7 @@
             android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
         <activity
             android:name=".evalua.evalua10.modulo1.AtencionConcentracionE10M1"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
-        <!-- Desabilita performance en compilacion -->
+            android:parentActivityName=".evalua.evalua10.Evalua10Activity" /> <!-- Desabilita performance en compilacion -->
         <!-- TODO: Habilitar para produccion -->
         <meta-data
             android:name="firebase_performance_collection_enabled"

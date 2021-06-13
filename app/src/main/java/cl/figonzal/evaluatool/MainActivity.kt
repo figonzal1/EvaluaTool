@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-06-21 16:48
+ Last modified 13-06-21 16:33
  */
 package cl.figonzal.evaluatool
 
@@ -30,10 +30,10 @@ import cl.figonzal.evaluatool.evalua.evalua5.Evalua5Activity
 import cl.figonzal.evaluatool.evalua.evalua6.Evalua6Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
+import cl.figonzal.evaluatool.evalua.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.NightModeService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
-import cl.figonzal.evaluatool.utilidades.disable
 import cl.figonzal.evaluatool.utilidades.isAdsAllowed
 import cl.figonzal.evaluatool.utilidades.logInfo
 import cl.figonzal.evaluatool.utilidades.toast
@@ -111,11 +111,6 @@ class MainActivity : AppCompatActivity() {
                     10 -> btnEvalua10
                     else -> btnEvalua0
                 }
-            }
-
-            //Disable buttons
-            buttonList.apply {
-                this[9].disable() //Evalua 9
             }
         })
 
@@ -301,6 +296,10 @@ class MainActivity : AppCompatActivity() {
                     8 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_8)
                         activityToOpen = Evalua8Activity::class.java
+                    }
+                    9 -> {
+                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_9)
+                        activityToOpen = Evalua9Activity::class.java
                     }
                     10 -> {
                         logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_10)
