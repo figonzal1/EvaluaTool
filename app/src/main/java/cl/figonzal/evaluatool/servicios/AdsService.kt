@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-06-21 16:36
+ Last modified 13-06-21 20:16
  */
 package cl.figonzal.evaluatool.servicios
 
@@ -241,12 +241,13 @@ class AdsService(
      * @return Unit
      */
     fun checkIntersitialOnStart(
-        activityToOpen: Class<out Activity?>?
+        activityToOpen: Class<out Activity?>?,
+        test: Boolean
     ) {
         //si las 24 horas ya pasaron, cargar los ads nuevamente
         with(activity, {
             when {
-                isAdsAllowed(sharedPrefService) -> {
+                !test && isAdsAllowed(sharedPrefService) -> {
                     logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
                     showIntersitial(activityToOpen)
                 }
