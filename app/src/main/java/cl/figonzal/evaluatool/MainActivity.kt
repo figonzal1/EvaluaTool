@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 16:33
+ Last modified 13-06-21 20:16
  */
 package cl.figonzal.evaluatool
 
@@ -306,7 +306,7 @@ class MainActivity : AppCompatActivity() {
                         activityToOpen = Evalua10Activity::class.java
                     }
                 }
-                adsService.checkIntersitialOnStart(activityToOpen)
+                adsService.checkIntersitialOnStart(activityToOpen, test)
             }
         }
     }
