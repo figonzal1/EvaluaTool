@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 18:39
+ Last modified 15-06-21 17:41
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -369,7 +369,7 @@ fun adaptacionEscolarE8M3Baremo(): Array<Array<Any>> {
         arrayOf(58, 5),
         arrayOf(59, 5),
         arrayOf(60, 1),
-        )
+    )
 }
 
 /**
@@ -514,32 +514,59 @@ fun eficaciaLectoraE8M4Baremo(): Array<Array<Any>> {
  *
  * Page 67
  */
-fun velocidadLectoraE8M4Baremo(): Array<Array<Any>> {
+fun velocidadFragmentE8M4Baremo(): Array<Array<Any>> {
     return arrayOf(
-        arrayOf(80, 99, -1.33),
-        arrayOf(90, 97, -1.19),
-        arrayOf(100, 95, -1.06),
-        arrayOf(120, 90, -0.78),
-        arrayOf(140, 80, -0.51),
-        arrayOf(150, 75, -0.37),
-        arrayOf(160, 70, -0.24),
-        arrayOf(170, 60, -0.1),
-        arrayOf(180, 50, 0.04),
-        arrayOf(190, 47, 0.17),
-        arrayOf(200, 45, 0.31),
-        arrayOf(210, 40, 0.45),
-        arrayOf(220, 30, 0.58),
-        arrayOf(230, 25, 0.72),
-        arrayOf(240, 22, 0.86),
-        arrayOf(250, 20, 0.99),
-        arrayOf(270, 15, 1.27),
-        arrayOf(290, 14, 1.54),
-        arrayOf(310, 12, 1.81),
-        arrayOf(380, 10, 2.77),
-        arrayOf(400, 8, 3.04),
-        arrayOf(420, 6, 3.32),
-        arrayOf(440, 4, 3.59),
-        arrayOf(460, 2, 3.86)
+        arrayOf(80, 99, 1.33),
+        arrayOf(90, 97, 1.19),
+        arrayOf(100, 95, 1.06),
+        arrayOf(120, 90, 0.78),
+        arrayOf(140, 80, 0.51),
+        arrayOf(150, 75, 0.37),
+        arrayOf(160, 70, 0.24),
+        arrayOf(170, 60, 0.1),
+        arrayOf(180, 50, -0.04),
+        arrayOf(190, 47, -0.17),
+        arrayOf(200, 45, -0.31),
+        arrayOf(210, 40, -0.45),
+        arrayOf(220, 30, -0.58),
+        arrayOf(230, 25, -0.72),
+        arrayOf(240, 22, -0.86),
+        arrayOf(250, 20, -0.99),
+        arrayOf(270, 15, -1.27),
+        arrayOf(290, 14, -1.54),
+        arrayOf(310, 12, -1.81),
+        arrayOf(380, 10, -2.77),
+        arrayOf(400, 8, -3.04),
+        arrayOf(420, 6, -3.32),
+        arrayOf(440, 4, -3.59),
+        arrayOf(460, 2, -3.86)
+    )
+}
+
+/**
+ * IV.- Lectura
+ * C. Velocidad Lectora - Comprension Fragment
+ *
+ * Page 67
+ */
+fun comprensionFragmentE8M4Baremo(): Array<Array<Any>> {
+    return arrayOf(
+        arrayOf(15, 99, 4.4),
+        arrayOf(14, 98, 4.01),
+        arrayOf(13, 97, 3.62),
+        arrayOf(12, 96, 3.23),
+        arrayOf(11, 95, 2.84),
+        arrayOf(10, 94, 2.45),
+        arrayOf(9, 92, 2.06),
+        arrayOf(8, 90, 1.67),
+        arrayOf(7, 80, 1.28),
+        arrayOf(6, 70, 0.89),
+        arrayOf(5, 60, 0.51),
+        arrayOf(4, 50, 0.12),
+        arrayOf(3, 40, -0.27),
+        arrayOf(2, 30, -0.66),
+        arrayOf(1, 20, -1.05),
+        arrayOf(0, 10, -1.44),
     )
 }
 

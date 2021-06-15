@@ -9,7 +9,7 @@
 
   Copyright (c) 2021
 
-  Last modified 13-06-21 16:32
+  Last modified 15-06-21 17:59
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -436,9 +436,6 @@
             android:name=".evalua.evalua8.modulo4.IndiceGeneralLecturaE8M4"
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo4.VelocidadLectoraE8M4"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
-        <activity
             android:name=".evalua.evalua8.modulo4.EficaciaLectoraE8M4"
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
@@ -446,6 +443,9 @@
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
             android:name=".evalua.evalua8.modulo3.NivelesAdaptacionE8M3"
+            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+        <activity
+            android:name=".evalua.evalua8.modulo4.VelocidadLectoraE8M4"
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
             android:name=".evalua.evalua8.modulo2.IndiceGeneralCognitivoE8M2"
@@ -467,8 +467,7 @@
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
             android:name=".evalua.evalua8.Evalua8Activity"
-            android:parentActivityName=".MainActivity" />
-        <!-- EVALUA 9 -->
+            android:parentActivityName=".MainActivity" /> <!-- EVALUA 9 -->
         <activity
             android:name=".evalua.evalua9.modulo3.NivelesAdaptacionE9M3"
             android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
@@ -522,8 +521,7 @@
             android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
         <activity
             android:name=".evalua.evalua9.Evalua9Activity"
-            android:parentActivityName=".MainActivity" />
-        <!-- EVALUA 10 -->
+            android:parentActivityName=".MainActivity" /> <!-- EVALUA 10 -->
         <activity
             android:name=".evalua.evalua10.Evalua10Activity"
             android:parentActivityName=".MainActivity" />

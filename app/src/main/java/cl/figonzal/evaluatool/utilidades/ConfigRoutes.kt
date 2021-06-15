@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 15:54
+ Last modified 15-06-21 18:16
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -135,6 +135,7 @@ import cl.figonzal.evaluatool.evalua.evalua8.modulo3.NivelesAdaptacionE8M3
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.ComprensionLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.EficaciaLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.IndiceGeneralLecturaE8M4
+import cl.figonzal.evaluatool.evalua.evalua8.modulo4.VelocidadLectoraE8M4
 import cl.figonzal.evaluatool.evalua.evalua8.modulo5.IndiceGeneralEscrituraE8M5
 import cl.figonzal.evaluatool.evalua.evalua8.modulo5.OrtografiaVisualRegladaE8M5
 import cl.figonzal.evaluatool.evalua.evalua8.modulo6.CalculoNumeracionE8M6
@@ -1142,14 +1143,12 @@ object ConfigRoutes {
                 Utils.get(R.string.EVALUA_8_M4_SI_2),
                 EficaciaLectoraE8M4::class.java,
                 Utils.get(R.string.CLICK_EFICACIA_LECTORA)
-            )
-            //TODO: Arreglar velocidad lectora
-            /*,
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_8_M4_SI_3),
                 VelocidadLectoraE8M4::class.java,
                 Utils.get(R.string.CLICK_VELOCIDAD_LECTORA)
-            ),*/,
+            ),
             listOf(
                 Utils.get(R.string.EVALUA_8_INDICE_GENERAL_LECTURA),
                 IndiceGeneralLecturaE8M4::class.java,
@@ -1309,7 +1308,7 @@ object ConfigRoutes {
             )
         )
 
-        routeMapEvalua8.apply {
+        routeMapEvalua9.apply {
             put(Utils.get(R.string.EVALUA_9_MODULO_1), subItems1)
             put(Utils.get(R.string.EVALUA_9_MODULO_2), subItems2)
             put(Utils.get(R.string.EVALUA_9_MODULO_3), subItems3)
