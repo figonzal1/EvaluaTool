@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 15:54
+ Last modified 15-06-21 17:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9
@@ -131,7 +131,7 @@ class Evalua9Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {
     }
 
     override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
-        ConfigRoutes.routeMap[getString(R.string.routeMapEvalua8)]?.let {
+        ConfigRoutes.routeMap[getString(R.string.routeMapEvalua9)]?.let {
             RouteHandler.handleRoutes(
                 it,
                 sectionTitle,

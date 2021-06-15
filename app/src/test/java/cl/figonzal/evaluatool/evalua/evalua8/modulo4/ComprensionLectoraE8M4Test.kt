@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 16:59
+ Last modified 15-06-21 16:22
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
 
-import cl.figonzal.evaluatool.baremosTables.comprensionLectoraE8M4Baremo
+import cl.figonzal.evaluatool.baremosTables.comprensionFragmentE8M4Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -55,7 +55,7 @@ class ComprensionLectoraE8M4Test(
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return comprensionLectoraE8M4Baremo()
+            return comprensionFragmentE8M4Baremo()
         }
     }
 }
