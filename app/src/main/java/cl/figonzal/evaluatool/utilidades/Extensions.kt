@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-06-21 16:53
+ Last modified 22-06-21 16:16
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -20,7 +20,6 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
 import java.util.*
@@ -81,16 +80,6 @@ fun Activity.logInfo(idTag: Int, msg: String) = Timber.i("%s%s", getString(idTag
 fun Activity.toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
 
 /**
- * Function to disable Material Buttons
- *
- * @return Unit
- */
-fun MaterialButton.disable() {
-    this.isEnabled = false
-    this.alpha = 0.6f
-}
-
-/**
  * Function that set sub totals textViews
  *
  * @param tarea task to be written
@@ -145,6 +134,8 @@ fun Activity.confirmationDialogReward(adsService: AdsService) {
 
 /**
  * Check if the ads can be shown in the app.
+ *
+ * @param sharedPrefService PreferenceService
  */
 fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
     val nowDate = Date()
@@ -158,3 +149,13 @@ fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
     logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
     return nowDate.after(rewardDate)
 }
+
+/**
+ * Format any result given a String and Numeric result
+ * @param idString String resource
+ * @param result The result to be formatted
+ */
+fun Activity.formatResult(idString: Int, result: Double): String {
+    return String.format(getString(idString), result)
+}
+

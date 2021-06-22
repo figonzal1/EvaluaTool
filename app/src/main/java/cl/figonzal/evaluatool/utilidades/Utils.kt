@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 16-05-21 01:08
+ Last modified 22-06-21 16:16
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -29,16 +29,7 @@ import kotlin.math.roundToInt
 
 object Utils {
 
-    /**
-     * Used to simplify the call of string resources
-     * @param stringRes The id for string resource
-     * @param formatArgs Some arguments "optional"
-     *
-     * @return String resource
-     */
-    fun get(@StringRes stringRes: Int, vararg formatArgs: Any = emptyArray()): String {
-        return ApplicationController.instance.getString(stringRes, *formatArgs)
-    }
+
 
     /**
      * Function in charge of calculating the deviation of a student's PD (Method with generic implementation)
@@ -59,6 +50,39 @@ object Utils {
         return when {
             !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
             else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
+        }
+    }
+
+    fun calcularDesviacion2(
+        MEAN: Double,
+        DESVIATION: Double,
+        pdTotal: Int,
+        reverse: Boolean
+    ): String {
+        return when {
+            !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
+            else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
+        }.toString()
+    }
+
+    /**
+     * Function in charge of calculating the percentile of a student's PD
+     *
+     * @param perc Baremo percentile table score
+     * @param pdTotal Directo score
+     *
+     * @return Int percentile
+     */
+    fun calculatePercentile(perc: Array<Array<Any>>, pdTotal: Int): Int {
+
+        return when {
+            pdTotal > perc.first()[0] as Int -> perc.first()[1] as Int
+            pdTotal < perc.last()[0] as Int -> perc.last()[1] as Int
+            else -> {
+                var value = 0
+                perc.filter { pdTotal == it.first() }.forEach { item -> value = item[1] as Int }
+                value
+            }
         }
     }
 
@@ -140,4 +164,15 @@ object Utils {
      * @return Boolean with the result
      */
     fun generateRandomNumber(): Boolean = Random().nextInt(10) % 3 == 0
+
+    /**
+     * Used to simplify the call of string resources
+     * @param stringRes The id for string resource
+     * @param formatArgs Some arguments "optional"
+     *
+     * @return String resource
+     */
+    fun get(@StringRes stringRes: Int, vararg formatArgs: Any = emptyArray()): String {
+        return ApplicationController.instance.getString(stringRes, *formatArgs)
+    }
 }
