@@ -8,14 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:39
+ Last modified 22-06-21 15:05
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
 import cl.figonzal.evaluatool.baremosTables.clasificacionE0M1Baremo
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
+import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion2
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -26,21 +26,20 @@ class ClasificacionE0M1Test(
     private val desviacion_esperada: Double
 ) {
 
-    private var m1: ClasificacionE0M1? = null
-
-    @Before
-    fun setUp() {
-        m1 = ClasificacionE0M1()
-    }
+    private val perc = clasificacionE0M1Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
     }
 
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001)
+        assertEquals(
+            desviacion_esperada,
+            calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            0.001
+        )
     }
 
     companion object {
