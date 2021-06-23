@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 23:53
+ Last modified 23-06-21 13:27
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -20,24 +20,18 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.organizacionPerceptivaE1M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityOrganizacionPerceptivaE1M2Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.OrganizacionPerceptivaE1M2Resolver
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.OrganizacionPerceptivaE1M2Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.OrganizacionPerceptivaE1M2Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
-import kotlin.math.floor
 
-class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
-
-    companion object {
-        private const val DESVIACION = 11.36
-        private const val MEDIA = 38.01
-    }
+class OrganizacionPerceptivaE1M2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityOrganizacionPerceptivaE1M2Binding
-    private val perc = organizacionPerceptivaE1M2Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -45,7 +39,6 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
-    private var subtotalPdT1 = 0.0
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
@@ -55,6 +48,10 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvDesviacionCalculada: TextView
 
     private lateinit var progressBar: LinearProgressIndicator
+
+    private val resolver by lazy {
+        OrganizacionPerceptivaE1M2Resolver()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,7 +83,7 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -96,16 +93,16 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_ORG_PERCEPTIVA)
             )
-        }).also { textWatcherTarea1() }
+        }).also { textWatcherTarea1(getString(R.string.TAREA_1)) }
     }
 
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -114,7 +111,7 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -125,95 +122,50 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        0,
-                        0
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-        var total = floor(aprobadas.toDouble())
-        if (total < 0) total = 0.0
+    private fun calculateResult() {
 
-        tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return total
-    }
+        //Calculate Total PD
+        resolver.run {
 
-    override fun calculateResult() {
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
-        //TOTALES
-        with(subtotalPdT1, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
 
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
-
+            //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
 
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
 
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
             }
-        }
-        //Percentil no encontrado
-        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-
-        when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
-                when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual - 1 == item.first() -> return item.first() as Int
-                    pdActual - 2 == item.first() -> return item.first() as Int
-                    pdActual - 3 == item.first() -> return item.first() as Int
-                }
-            }
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
-        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

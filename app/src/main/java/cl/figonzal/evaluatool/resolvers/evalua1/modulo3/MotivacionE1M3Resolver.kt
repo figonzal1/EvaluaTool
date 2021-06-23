@@ -8,22 +8,20 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 11:59
+ Last modified 23-06-21 19:32
  */
 
-package cl.figonzal.evaluatool.resolvers.evalua0.modulo3
+package cl.figonzal.evaluatool.resolvers.evalua1.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.recepcionAuditivaE0M3Baremo
+import cl.figonzal.evaluatool.baremosTables.motivacionFragmentE1M3Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
+class MotivacionE1M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    var totalPdTarea2 = 0.0
-    var totalPdTarea3 = 0.0
 
-    val perc = recepcionAuditivaE0M3Baremo()
+    val perc = motivacionFragmentE1M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,
@@ -31,19 +29,13 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(
-            when (nTarea) {
-                1, 2 -> aprobadas * 2.toDouble()
-                3 -> aprobadas.toDouble()
-                else -> 0.0
-            }
-        )
+        var total = floor(aprobadas.toDouble())
         if (total < 0) total = 0.0
         return total
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2 + totalPdTarea3
+        return totalPdTarea1
     }
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
@@ -64,7 +56,7 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 9.01
-        const val MEDIA = 84.81
+        const val DESVIACION = 6.64
+        const val MEDIA = 33.46
     }
 }
