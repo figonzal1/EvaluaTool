@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 23:32
+ Last modified 22-06-21 23:36
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -22,6 +22,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralEspacialE0M2Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -75,7 +76,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -98,13 +99,13 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "CD: ", subTotalT1)
+                        formatResult(idString = R.string.POINTS_FORMAT, "CD:", subTotalT1)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT2) {
+        etTotalesT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -126,12 +127,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = String.format(
-                        Locale.US,
-                        getString(R.string.POINTS_FORMAT),
-                        "GR: ",
-                        subTotalT2
-                    )
+                    tvSubTotalT2.text = formatResult(R.string.POINTS_FORMAT, "GR:", subTotalT2)
                     calculateResult()
                 }
             })
@@ -142,7 +138,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
