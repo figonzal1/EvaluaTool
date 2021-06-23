@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 16:19
+ Last modified 22-06-21 23:12
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -274,8 +274,7 @@ fun grafoMotricidadE0M2Baremo(): Array<Array<Any>> {
         arrayOf(21, 5, -1.52),
         arrayOf(20, 3, -1.66),
         arrayOf(19, 2, -1.79),
-        arrayOf(18, 1, -1.93),
-        arrayOf(16, 1, -2.21),
+        arrayOf(18, 1, -1.93)
     )
 }
 

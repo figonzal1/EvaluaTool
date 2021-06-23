@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 22:21
+  Last modified 22-06-21 23:11
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
-                        android:layout_marginEnd="@dimen/margin_8"
+                        android:layout_marginEnd="@dimen/margin_16"
                         android:layout_marginBottom="@dimen/margin_8"
                         android:hint="@string/errores"
                         app:hintTextColor="@color/hintColorRed"
@@ -112,7 +112,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/margin_8"
-                        android:layout_marginEnd="@dimen/margin_8"
+                        android:layout_marginEnd="@dimen/margin_16"
                         android:text="@string/ingresa_el_error_total_de_los_6_ejercicios"
                         android:textAppearance="?attr/textAppearanceSubtitle1"
                         app:layout_constraintEnd_toEndOf="parent"
