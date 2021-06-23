@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:23
+ Last modified 23-06-21 11:35
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -22,6 +22,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralLinguisticoE0M3Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -79,7 +80,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -102,13 +103,13 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "PF: ", subTotalT1)
+                        formatResult(idString = R.string.POINTS_FORMAT, "PF:", subTotalT1)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT2) {
+        etTotalesT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -131,13 +132,13 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT2.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "RA: ", subTotalT2)
+                        formatResult(R.string.POINTS_FORMAT, "RA:", subTotalT2)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT3) {
+        etTotalesT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -160,7 +161,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT3.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "HF: ", subTotalT3)
+                        formatResult(R.string.POINTS_FORMAT, "HF:", subTotalT3)
                     calculateResult()
                 }
             })
@@ -171,7 +172,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
