@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 16:16
+ Last modified 22-06-21 20:05
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -86,8 +86,14 @@ fun Activity.toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).s
  * @param total Direct score
  * @version 03-04-2021
  * @return String
+ *
  */
+@Deprecated("Use formatSubTotalPoints")
 fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
+    return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
+}
+
+fun Activity.formatSubTotalPoints(tarea: String, total: Double): String {
     return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
 }
 
@@ -155,7 +161,13 @@ fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
  * @param idString String resource
  * @param result The result to be formatted
  */
-fun Activity.formatResult(idString: Int, result: Double): String {
-    return String.format(getString(idString), result)
+fun Activity.formatResult(idString: Int, vararg args: Any): String {
+
+    return when (args.size) {
+        1 -> String.format(getString(idString), args[0])
+        2 -> String.format(getString(idString), args[0], args[1])
+        3 -> String.format(getString(idString), args[0], args[1], args[2])
+        else -> ""
+    }
 }
 

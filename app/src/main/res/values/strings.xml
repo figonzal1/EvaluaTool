@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 13-06-21 10:33
+  Last modified 22-06-21 21:00
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -607,9 +607,9 @@
     <string name="COMPRENSION_MEDIA">Media</string>
     <string name="COMPRENSION_ALTA">Alta</string>
     <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
-    <string name="POINTS_FORMAT" formatted="false">%s %s pts</string>
-    <string name="POINTS_SIMPLE_FORMAT">%s pts</string>
-    <string name="SEG_FORMAT" formatted="false">%s %s seg</string>
+    <string name="POINTS_FORMAT" formatted="false">%1$s %2$s pts</string>
+    <string name="POINTS_SIMPLE_FORMAT">%1$s pts</string>
+    <string name="SEG_FORMAT" formatted="false">%1$s %2$s seg</string>
     <string name="SEG_SIMPLE_FORMAT">%s seg</string>
     <string name="ort_fonetica">Ortografía fonética</string>
     <string name="graf_a_y_exp_escrita">Grafía y exp. escrita</string>
@@ -645,7 +645,5 @@
     <string name="NIGHT_MODE_ON">Modo noche activado</string>
     <string name="NIGHT_MODE_OFF">Modo noche desactivado</string>
     <string name="indica_el_total_para_las_4_tareas">Indica el total para las 4 tareas</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

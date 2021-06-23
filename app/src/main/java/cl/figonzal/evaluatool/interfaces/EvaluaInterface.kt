@@ -8,12 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 15-05-21 17:56
+ Last modified 22-06-21 16:20
  */
 package cl.figonzal.evaluatool.interfaces
 
 import android.widget.TextView
 
+@Deprecated("Porfavor utilizar Resolver.kt")
 interface EvaluaInterface {
     /**
      * Calculate the result of every task
