@@ -8,22 +8,22 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 11:59
+ Last modified 23-06-21 12:11
  */
 
-package cl.figonzal.evaluatool.resolvers.evalua0.modulo3
+package cl.figonzal.evaluatool.resolvers.evalua1.modulo1
 
-import cl.figonzal.evaluatool.baremosTables.recepcionAuditivaE0M3Baremo
+import cl.figonzal.evaluatool.baremosTables.memoriaAtencionE1M1Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
+class MemoriaAtencionE1M1Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
     var totalPdTarea3 = 0.0
 
-    val perc = recepcionAuditivaE0M3Baremo()
+    val perc = memoriaAtencionE1M1Baremo()
 
     override fun calculateTask(
         nTarea: Int,
@@ -31,13 +31,7 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(
-            when (nTarea) {
-                1, 2 -> aprobadas * 2.toDouble()
-                3 -> aprobadas.toDouble()
-                else -> 0.0
-            }
-        )
+        var total = floor(aprobadas - (reprobadas + omitidas).toDouble())
         if (total < 0) total = 0.0
         return total
     }
@@ -64,7 +58,7 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 9.01
-        const val MEDIA = 84.81
+        const val DESVIACION = 12.90
+        const val MEDIA = 49.39
     }
 }
