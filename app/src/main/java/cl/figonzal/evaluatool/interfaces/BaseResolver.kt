@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 14:58
+ Last modified 22-06-21 17:33
  */
 
 package cl.figonzal.evaluatool.interfaces
 
-interface Resolver {
+interface BaseResolver {
 
     fun calculateTask(
         nTarea: Int = 0,

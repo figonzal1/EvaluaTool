@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 23:32
+ Last modified 22-06-21 20:55
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -22,6 +22,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralCognitivoE0M1Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -82,7 +83,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -105,13 +106,13 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "CA: ", subTotalT1)
+                        formatResult(idString = R.string.POINTS_FORMAT, "CA:", subTotalT1)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT2) {
+        etTotalesT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -134,13 +135,13 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT2.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "SE: ", subTotalT2)
+                        formatResult(idString = R.string.POINTS_FORMAT, "SE:", subTotalT2)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT3) {
+        etTotalesT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -162,12 +163,8 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = String.format(
-                        Locale.US,
-                        getString(R.string.POINTS_FORMAT),
-                        "OP: ",
-                        subTotalT3
-                    )
+                    tvSubTotalT3.text =
+                        formatResult(idString = R.string.POINTS_FORMAT, "OP:", subTotalT3)
                     calculateResult()
                 }
             })
@@ -178,7 +175,7 @@ class IndiceGeneralCognitivoE0M1 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
 
     }
 

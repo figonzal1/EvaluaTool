@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 22:21
+  Last modified 22-06-21 20:54
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -85,7 +85,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_8"
-                        android:layout_marginEnd="@dimen/margin_8"
+                        android:layout_marginEnd="@dimen/margin_16"
                         android:hint="@string/aprobadas"
                         app:hintTextColor="@color/hintColorGreen"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -181,10 +181,11 @@
 
                     <TextView
                         android:id="@+id/tv_tarea_2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/margin_16"
                         android:layout_marginTop="@dimen/margin_16"
+                        android:layout_marginEnd="@dimen/margin_16"
                         android:text="@string/tarea_2"
                         android:textAppearance="?attr/textAppearanceHeadline6"
                         app:layout_constraintEnd_toEndOf="parent"

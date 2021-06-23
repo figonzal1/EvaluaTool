@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 15:06
+ Last modified 22-06-21 19:56
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -21,9 +21,9 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityClasificacionE0M1Binding
-import cl.figonzal.evaluatool.resolvers.ClasificacionE0M1Resolver
-import cl.figonzal.evaluatool.resolvers.ClasificacionE0M1Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.ClasificacionE0M1Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver
+import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -147,7 +147,7 @@ class ClasificacionE0M1 : AppCompatActivity() {
                             reprobadas = reprobadasT1
                         ), {
                             resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = setSubTotalPoints(tarea, this)
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
                         })
                     calculateResult()
                 }
@@ -181,7 +181,7 @@ class ClasificacionE0M1 : AppCompatActivity() {
                             reprobadas = reprobadasT1
                         ), {
                             resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = setSubTotalPoints(tarea, this)
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
                         })
                     calculateResult()
                 }
@@ -219,7 +219,7 @@ class ClasificacionE0M1 : AppCompatActivity() {
                             reprobadas = reprobadasT2
                         ), {
                             resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = setSubTotalPoints(tarea, this)
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
                         })
                     calculateResult()
                 }
@@ -254,7 +254,7 @@ class ClasificacionE0M1 : AppCompatActivity() {
                             reprobadas = reprobadasT2
                         ), {
                             resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = setSubTotalPoints(tarea, this)
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
                         })
                     calculateResult()
                 }

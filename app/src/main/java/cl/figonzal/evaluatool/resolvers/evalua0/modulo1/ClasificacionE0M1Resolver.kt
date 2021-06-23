@@ -8,16 +8,16 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 14:58
+ Last modified 22-06-21 17:33
  */
 
-package cl.figonzal.evaluatool.resolvers
+package cl.figonzal.evaluatool.resolvers.evalua0.modulo1
 
 import cl.figonzal.evaluatool.baremosTables.clasificacionE0M1Baremo
-import cl.figonzal.evaluatool.interfaces.Resolver
+import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class ClasificacionE0M1Resolver : Resolver {
+class ClasificacionE0M1Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
