@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 14:32
+ Last modified 29-06-21 22:47
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -34,7 +34,7 @@ buildscript {
         classpath 'com.google.firebase:perf-plugin:1.4.0'
 
         //KOTLIN
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
     }
 }
 
