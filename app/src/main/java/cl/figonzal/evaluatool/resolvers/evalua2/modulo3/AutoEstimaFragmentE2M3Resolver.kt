@@ -8,17 +8,16 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 19:32
+ Last modified 30-06-21 18:21
  */
 
-package cl.figonzal.evaluatool.resolvers.evalua1.modulo3
+package cl.figonzal.evaluatool.resolvers.evalua2.modulo3
 
 import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE1M3Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class AutoControlE1M3Resolver : BaseResolver {
-
+class AutoEstimaFragmentE2M3Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
 
     val perc = autoControlFragmentE1M3Baremo()
@@ -56,7 +55,7 @@ class AutoControlE1M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 5.06
-        const val MEDIA = 22.24
+        const val DESVIACION = 2.90
+        const val MEDIA = 23.07
     }
 }

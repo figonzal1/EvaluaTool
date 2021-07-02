@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 18:19
+ Last modified 30-06-21 18:21
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -24,9 +24,9 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentConductaProSocialE1M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialE1M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialE1M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialE1M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -57,7 +57,7 @@ class ConductaProSocialE1M3 : Fragment() {
     private lateinit var tvDesviacionCalculada: TextView
 
     private val resolver by lazy {
-        ConductaProSocialE1M3Resolver()
+        ConductaProSocialFragmentE1M3Resolver()
     }
 
     override fun onCreateView(

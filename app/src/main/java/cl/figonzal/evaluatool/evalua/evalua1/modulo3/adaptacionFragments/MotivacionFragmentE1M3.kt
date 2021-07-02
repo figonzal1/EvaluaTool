@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 18:41
+ Last modified 30-06-21 18:21
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -23,9 +23,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentMotivacionE1M3Binding
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionE1M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionE1M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionE1M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionFragmentE1M3Resolver
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionFragmentE1M3Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.MotivacionFragmentE1M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -56,7 +56,7 @@ class MotivacionFragmentE1M3 : Fragment() {
     private lateinit var tvDesviacionCalculada: TextView
 
     private val resolver by lazy {
-        MotivacionE1M3Resolver()
+        MotivacionFragmentE1M3Resolver()
     }
 
     override fun onCreateView(

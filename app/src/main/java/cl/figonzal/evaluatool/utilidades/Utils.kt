@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 16:16
+ Last modified 30-06-21 19:46
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -28,7 +28,6 @@ import java.util.*
 import kotlin.math.roundToInt
 
 object Utils {
-
 
 
     /**
@@ -73,15 +72,34 @@ object Utils {
      *
      * @return Int percentile
      */
-    fun calculatePercentile(perc: Array<Array<Any>>, pdTotal: Int): Int {
+    fun calculatePercentile(perc: Array<Array<Any>>, pdTotal: Int, reverse: Boolean = false): Int {
 
         return when {
-            pdTotal > perc.first()[0] as Int -> perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> perc.last()[1] as Int
+
+            //When baremo table is revered
+            reverse -> {
+                when {
+                    pdTotal < perc.first()[0] as Int -> perc.first()[1] as Int
+                    pdTotal > perc.last()[0] as Int -> perc.last()[1] as Int
+                    else -> {
+                        var value = 0
+                        perc.filter { pdTotal == it.first() }
+                            .forEach { item -> value = item[1] as Int }
+                        value
+                    }
+                }
+            }
             else -> {
-                var value = 0
-                perc.filter { pdTotal == it.first() }.forEach { item -> value = item[1] as Int }
-                value
+                when {
+                    pdTotal > perc.first()[0] as Int -> perc.first()[1] as Int
+                    pdTotal < perc.last()[0] as Int -> perc.last()[1] as Int
+                    else -> {
+                        var value = 0
+                        perc.filter { pdTotal == it.first() }
+                            .forEach { item -> value = item[1] as Int }
+                        value
+                    }
+                }
             }
         }
     }
