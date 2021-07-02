@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 21:04
+ Last modified 01-07-21 22:03
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -174,6 +174,9 @@ class AutoControlFragmentE3M3 : Fragment() {
                 )
                 else -> progressBar.progress = percentile
             }
+
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
     }
 

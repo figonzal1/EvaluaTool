@@ -8,19 +8,19 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:21
+ Last modified 01-07-21 22:23
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua2.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE1M3Baremo
+import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE2M3Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
 class AutoEstimaFragmentE2M3Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
 
-    val perc = autoControlFragmentE1M3Baremo()
+    val perc = autoControlFragmentE2M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

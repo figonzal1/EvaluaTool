@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 21:04
+ Last modified 01-07-21 22:21
  */
 
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3
@@ -22,7 +22,7 @@ import org.junit.runners.Parameterized
 
 
 @RunWith(Parameterized::class)
-class MotivacionE3M3Test(
+class MotivacionFragmentE3M3Test(
     private val pd_total: Int,
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double

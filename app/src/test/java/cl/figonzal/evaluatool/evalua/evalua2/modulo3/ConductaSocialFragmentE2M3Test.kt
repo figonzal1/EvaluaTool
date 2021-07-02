@@ -8,26 +8,24 @@
 
  Copyright (c) 2021
 
- Last modified 29-06-21 23:58
+ Last modified 01-07-21 22:20
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE2M3Baremo
+import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE2M3Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion2
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class AutoControlE2M3Test(
+class ConductaSocialFragmentE2M3Test(
     private val pd_total: Int,
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-
-    private val perc = autoControlFragmentE2M3Baremo()
+    private val perc = conductaProSocialFragmentE2M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
@@ -38,19 +36,19 @@ class AutoControlE2M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
             0.001
         )
     }
 
     companion object {
-        private const val DESVIACION = 3.53
-        private const val MEDIA = 23.17
+        private const val DESVIACION = 3.69
+        private const val MEDIA = 26.12
 
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return autoControlFragmentE2M3Baremo()
+            return conductaProSocialFragmentE2M3Baremo()
         }
     }
 }

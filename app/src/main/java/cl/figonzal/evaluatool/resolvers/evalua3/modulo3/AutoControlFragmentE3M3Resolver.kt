@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:59
+ Last modified 01-07-21 21:40
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE2M3Baremo
+import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE3M3Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
@@ -21,7 +21,7 @@ class AutoControlFragmentE3M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
 
-    val perc = autoControlFragmentE2M3Baremo()
+    val perc = autoControlFragmentE3M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,
@@ -45,8 +45,7 @@ class AutoControlFragmentE3M3Resolver : BaseResolver {
             else -> perc.forEach { item ->
                 when {
                     pdActual == item.first() -> return item.first() as Int
-                    pdActual + 1 == item.first() -> return item.first() as Int
-                    pdActual + 2 == item.first() -> return item.first() as Int
+                    pdActual < item.first() as Int -> return item.first() as Int
                 }
             }
         }

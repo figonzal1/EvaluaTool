@@ -8,12 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 18:19
+ Last modified 01-07-21 22:20
  */
+package cl.figonzal.evaluatool.evalua.evalua2.modulo3
 
-package cl.figonzal.evaluatool.evalua.evalua1.modulo3
-
-import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE1M3Baremo
+import cl.figonzal.evaluatool.baremosTables.motivacionFragmentE2M3Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -21,12 +20,12 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class ConductaProSocialE1M3Test(
+class MotivacionFragmentE2M3Test(
     private val pd_total: Int,
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private val perc = conductaProSocialFragmentE1M3Baremo()
+    private val perc = motivacionFragmentE2M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
@@ -43,13 +42,13 @@ class ConductaProSocialE1M3Test(
     }
 
     companion object {
-        private const val DESVIACION = 5.24
-        private const val MEDIA = 24.79
+        private const val DESVIACION = 4.44
+        private const val MEDIA = 34.65
 
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return conductaProSocialFragmentE1M3Baremo()
+            return motivacionFragmentE2M3Baremo()
         }
     }
 }
