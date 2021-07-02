@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 18:41
+ Last modified 01-07-21 22:20
  */
 
-package cl.figonzal.evaluatool.evalua.evalua1.modulo3
+package cl.figonzal.evaluatool.evalua.evalua3.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.motivacionFragmentE1M3Baremo
+import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE3M3Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -21,36 +21,39 @@ import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
-class MotivacionE1M3Test(
+class ConductaProSocialFragmentE3M3Test(
     private val pd_total: Int,
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-
-    private val perc = motivacionFragmentE1M3Baremo()
+    private val perc = conductaProSocialFragmentE3M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
+        assertEquals(
+            percentil_esperado,
+            Utils.calculatePercentile(perc, pd_total, true).toDouble(),
+            0.1
+        )
     }
 
     @Test
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, true).toDouble(),
             0.001
         )
     }
 
     companion object {
-        private const val DESVIACION = 6.64
-        private const val MEDIA = 33.46
+        private const val DESVIACION = 2.87
+        private const val MEDIA = 3.07
 
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return motivacionFragmentE1M3Baremo()
+            return conductaProSocialFragmentE3M3Baremo()
         }
     }
 }

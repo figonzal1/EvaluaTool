@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:21
+ Last modified 01-07-21 22:06
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo3
@@ -40,18 +40,15 @@ class AutoEstimaFragmentE3M3Resolver : BaseResolver {
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
         when {
-
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdActual < perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdActual > perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
                     pdActual == item.first() -> return item.first() as Int
-                    pdActual > item.first() as Int -> return item.first() as Int
+                    pdActual < item.first() as Int -> return item.first() as Int
                 }
             }
         }
-
         return -1
     }
 
