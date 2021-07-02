@@ -8,19 +8,19 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 19:32
+ Last modified 30-06-21 18:21
  */
 
-package cl.figonzal.evaluatool.resolvers.evalua1.modulo3
+package cl.figonzal.evaluatool.resolvers.evalua2.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE1M3Baremo
+import cl.figonzal.evaluatool.baremosTables.conductaProSocialFragmentE2M3Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class ConductaProSocialE1M3Resolver : BaseResolver {
+class ConductaProSocialFragmentE2M3Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
 
-    val perc = conductaProSocialFragmentE1M3Baremo()
+    val perc = conductaProSocialFragmentE2M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,
@@ -55,7 +55,7 @@ class ConductaProSocialE1M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 5.24
-        const val MEDIA = 24.79
+        const val DESVIACION = 3.69
+        const val MEDIA = 26.12
     }
 }

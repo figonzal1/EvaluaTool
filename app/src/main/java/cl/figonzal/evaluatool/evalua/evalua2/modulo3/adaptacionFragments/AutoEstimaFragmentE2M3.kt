@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 00:20
+ Last modified 30-06-21 18:21
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -23,9 +23,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentAutoEstimaE2M3Binding
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaE2M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaE2M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaE2M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -56,7 +56,7 @@ class AutoEstimaFragmentE2M3 : Fragment() {
     private lateinit var tvDesviacionCalculada: TextView
 
     private val resolver by lazy {
-        AutoEstimaE2M3Resolver()
+        AutoEstimaFragmentE2M3Resolver()
     }
 
     override fun onCreateView(

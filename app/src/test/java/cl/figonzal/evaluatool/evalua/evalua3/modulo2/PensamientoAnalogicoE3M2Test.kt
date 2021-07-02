@@ -8,14 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:39
+ Last modified 30-06-21 17:46
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
 import cl.figonzal.evaluatool.baremosTables.pensamientoAnalogicoE3M2Baremo
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
+import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -26,21 +25,20 @@ class PensamientoAnalogicoE3M2Test(
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: PensamientoAnalogicoE3M2? = null
-
-    @Before
-    fun setUp() {
-        m1 = PensamientoAnalogicoE3M2()
-    }
+    private val perc = pensamientoAnalogicoE3M2Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
     }
 
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, calcularDesviacion(MEDIA, DESVIACION, pd_total, false), 0.001)
+        assertEquals(
+            desviacion_esperada,
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            0.001
+        )
     }
 
     companion object {

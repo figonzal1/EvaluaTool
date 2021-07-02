@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 00:28
+ Last modified 30-06-21 18:21
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -23,10 +23,10 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentConductaProSocialE2M3Binding
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.AutoControlE1M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialE2M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialE2M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialE2M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.AutoControlFragmentE1M3Resolver
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -57,7 +57,7 @@ class ConductaProSocialFragmentE2M3 : Fragment() {
     private lateinit var tvDesviacionCalculada: TextView
 
     private val resolver by lazy {
-        ConductaProSocialE2M3Resolver()
+        ConductaProSocialFragmentE2M3Resolver()
     }
 
     override fun onCreateView(
@@ -167,8 +167,8 @@ class ConductaProSocialFragmentE2M3 : Fragment() {
             //Calculate desviation
             tvDesviacionCalculada.text =
                 Utils.calcularDesviacion2(
-                    AutoControlE1M3Resolver.MEDIA,
-                    AutoControlE1M3Resolver.DESVIACION, pdCorregido, false
+                    AutoControlFragmentE1M3Resolver.MEDIA,
+                    AutoControlFragmentE1M3Resolver.DESVIACION, pdCorregido, false
                 )
 
             //Calculate Percentile

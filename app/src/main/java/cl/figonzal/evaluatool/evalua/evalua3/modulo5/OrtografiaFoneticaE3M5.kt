@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 23:53
+ Last modified 01-07-21 21:04
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -20,44 +20,33 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.ortografiaFoneticaE3M5Baremo
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaFoneticaE3M5Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
+import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver
+import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
-import kotlin.math.floor
 
-class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
-
-    companion object {
-        private const val DESVIACION = 6.84
-        private const val MEDIA = 67.51
-    }
+class OrtografiaFoneticaE3M5 : AppCompatActivity() {
 
     private lateinit var binding: ActivityOrtografiaFoneticaE3M5Binding
-
-    //PD,PC CHILE
-    private val perc = ortografiaFoneticaE3M5Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
     private var aprobadasT1 = 0
-    private var subtotalPdT1 = 0.0
 
     //TAREA 2
     private lateinit var etAprobadasT2: TextInputEditText
     private lateinit var tvSubTotalT2: TextView
     private var aprobadasT2 = 0
-    private var subtotalPdT2 = 0.0
 
     //TAREA 3
     private lateinit var etAprobadasT3: TextInputEditText
     private lateinit var tvSubTotalT3: TextView
     private var aprobadasT3 = 0
-    private var subtotalPdT3 = 0.0
 
     //Tetview para total
     private lateinit var tvPdTotal: TextView
@@ -66,6 +55,10 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
     private lateinit var progressBar: LinearProgressIndicator
+
+    private val resolver by lazy {
+        OrtografiaFonecticaE3M5Resolver()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -107,7 +100,7 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -118,19 +111,19 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_ORTOGRAFIA_FONETICA)
             )
         }).also {
-            textWatcherTarea1()
-            textWatcherTarea2()
-            textWatcherTarea3()
+            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTarea2(getString(R.string.TAREA_2))
+            textWatcherTarea3(getString(R.string.TAREA_3))
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -139,7 +132,7 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -150,14 +143,14 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        0,
-                        0
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
@@ -165,9 +158,9 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
     }
 
 
-    private fun textWatcherTarea2() {
+    private fun textWatcherTarea2(tarea: String) {
 
-        with(etAprobadasT2) {
+        etAprobadasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -176,7 +169,7 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -187,23 +180,23 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(
-                        0,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT2,
-                        0,
-                        0
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea3() {
+    private fun textWatcherTarea3(tarea: String) {
 
-        with(etAprobadasT3) {
+        etAprobadasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -212,7 +205,7 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -223,89 +216,50 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT3 = 0
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(
-                        0,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_3),
-                        aprobadasT3,
-                        0,
-                        0
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-        var total = floor(aprobadas.toDouble())
-        if (total < 0) total = 0.0
+    private fun calculateResult() {
 
-        tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return total
-    }
+        //Calculate Total PD
+        resolver.run {
 
-    override fun calculateResult() {
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
-        with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
 
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
-
+            //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
 
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
 
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-
-        //Limite superior
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
             }
-        }
 
-        //Percentil no encontrado
-        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
-
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-        when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
-                if (pdActual == item.first()) return item.first() as Int
-            }
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
-        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

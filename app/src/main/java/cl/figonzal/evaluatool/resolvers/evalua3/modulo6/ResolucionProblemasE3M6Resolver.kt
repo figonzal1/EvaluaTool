@@ -8,19 +8,21 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 00:58
+ Last modified 01-07-21 21:04
  */
 
-package cl.figonzal.evaluatool.resolvers.evalua2.modulo3
+package cl.figonzal.evaluatool.resolvers.evalua3.modulo6
 
-import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE1M3Baremo
+import cl.figonzal.evaluatool.baremosTables.resolucionProblemasE3M6Baremo
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import kotlin.math.floor
 
-class AutoEstimaE2M3Resolver : BaseResolver {
-    var totalPdTarea1 = 0.0
+class ResolucionProblemasE3M6Resolver : BaseResolver {
 
-    val perc = autoControlFragmentE1M3Baremo()
+    var totalPdTarea1 = 0.0
+    var totalPdTarea2 = 0.0
+
+    val perc = resolucionProblemasE3M6Baremo()
 
     override fun calculateTask(
         nTarea: Int,
@@ -28,13 +30,19 @@ class AutoEstimaE2M3Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas.toDouble())
+        var total = floor(
+            when (nTarea) {
+                1 -> aprobadas.toDouble()
+                2 -> aprobadas * 4.toDouble()
+                else -> 0.0
+            }
+        )
         if (total < 0) total = 0.0
         return total
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1
+        return totalPdTarea1 + totalPdTarea2
     }
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
@@ -55,7 +63,7 @@ class AutoEstimaE2M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 2.90
-        const val MEDIA = 23.07
+        const val DESVIACION = 7.79
+        const val MEDIA = 14.68
     }
 }
