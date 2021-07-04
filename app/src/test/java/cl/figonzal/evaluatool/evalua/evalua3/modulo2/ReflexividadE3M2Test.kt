@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:21
+ Last modified 03-07-21 21:58
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
@@ -36,7 +36,7 @@ class ReflexividadE3M2Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

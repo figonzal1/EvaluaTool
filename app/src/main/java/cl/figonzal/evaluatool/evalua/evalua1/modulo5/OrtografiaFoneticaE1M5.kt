@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 15:16
+ Last modified 03-07-21 21:30
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
 
@@ -21,7 +21,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaFoneticaE1M5Binding
-import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Resolver
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Resolver.Companion.MEDIA
@@ -243,10 +242,7 @@ class OrtografiaFoneticaE1M5 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(
-                    ClasificacionE0M1Resolver.MEDIA,
-                    ClasificacionE0M1Resolver.DESVIACION, pdCorregido, false
-                )
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

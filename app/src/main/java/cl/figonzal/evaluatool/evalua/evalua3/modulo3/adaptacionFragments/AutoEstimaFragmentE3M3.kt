@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 21:04
+ Last modified 03-07-21 22:00
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3.adaptacionFragments
 
@@ -161,7 +161,7 @@ class AutoEstimaFragmentE3M3 : Fragment() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido, reverse = true)

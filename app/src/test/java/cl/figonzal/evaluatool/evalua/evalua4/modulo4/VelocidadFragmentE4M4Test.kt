@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 16:00
+ Last modified 03-07-21 22:12
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4
 
@@ -30,7 +30,7 @@ class VelocidadFragmentE4M4Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, true).toDouble(),
+            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }
@@ -39,7 +39,7 @@ class VelocidadFragmentE4M4Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, true).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }

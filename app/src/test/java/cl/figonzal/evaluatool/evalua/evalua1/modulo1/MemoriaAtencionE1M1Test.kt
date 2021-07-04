@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 12:11
+ Last modified 03-07-21 21:06
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo1
 
@@ -36,7 +36,7 @@ class MemoriaAtencionE1M1Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

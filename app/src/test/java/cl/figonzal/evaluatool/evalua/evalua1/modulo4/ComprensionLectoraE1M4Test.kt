@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 13:45
+ Last modified 03-07-21 21:27
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -35,7 +35,7 @@ class ComprensionLectoraE1M4Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

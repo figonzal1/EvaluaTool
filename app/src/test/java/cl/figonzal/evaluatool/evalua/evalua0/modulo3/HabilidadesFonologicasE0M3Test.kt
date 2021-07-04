@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 01:45
+ Last modified 03-07-21 21:03
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -35,7 +35,7 @@ class HabilidadesFonologicasE0M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

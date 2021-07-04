@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 22:20
+ Last modified 03-07-21 21:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3
@@ -33,7 +33,7 @@ class AutoControlFragmentE3M3Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, true).toDouble(),
+            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }
@@ -42,7 +42,7 @@ class AutoControlFragmentE3M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, true).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }

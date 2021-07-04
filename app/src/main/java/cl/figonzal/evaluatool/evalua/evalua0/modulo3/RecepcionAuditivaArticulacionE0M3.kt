@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 11:47
+ Last modified 03-07-21 21:04
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -240,7 +240,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

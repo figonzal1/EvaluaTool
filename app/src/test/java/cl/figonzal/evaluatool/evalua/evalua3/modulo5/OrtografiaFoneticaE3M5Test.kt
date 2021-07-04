@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 16:14
+ Last modified 03-07-21 22:04
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -36,7 +36,7 @@ class OrtografiaFoneticaE3M5Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

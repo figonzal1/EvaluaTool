@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 15:24
+ Last modified 03-07-21 21:23
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo2
 
@@ -99,11 +99,7 @@ class ValoracionGlobalBasesRazonamientoE1M2 : AppCompatActivity(), IndiceValorIn
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text = formatResult(
-                        idString = R.string.POINTS_FORMAT,
-                        "SE:",
-                        subTotalT1
-                    )
+                    tvSubTotalT1.text = formatResult(R.string.POINTS_FORMAT, "SE:", subTotalT1)
                     calculateResult()
                 }
             })
@@ -131,11 +127,7 @@ class ValoracionGlobalBasesRazonamientoE1M2 : AppCompatActivity(), IndiceValorIn
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text = formatResult(
-                        R.string.POINTS_FORMAT,
-                        "CL:",
-                        subTotalT2
-                    )
+                    tvSubTotalT2.text = formatResult(R.string.POINTS_FORMAT, "CL:", subTotalT2)
                     calculateResult()
                 }
             })
@@ -163,11 +155,7 @@ class ValoracionGlobalBasesRazonamientoE1M2 : AppCompatActivity(), IndiceValorIn
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text = formatResult(
-                        R.string.POINTS_FORMAT,
-                        "OP:",
-                        subTotalT3
-                    )
+                    tvSubTotalT3.text = formatResult(R.string.POINTS_FORMAT, "OP:", subTotalT3)
                     calculateResult()
                 }
             })

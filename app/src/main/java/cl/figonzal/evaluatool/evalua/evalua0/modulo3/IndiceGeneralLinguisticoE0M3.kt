@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 11:35
+ Last modified 03-07-21 21:03
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -103,7 +103,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
                         }
                     }
                     tvSubTotalT1.text =
-                        formatResult(idString = R.string.POINTS_FORMAT, "PF:", subTotalT1)
+                        formatResult(R.string.POINTS_FORMAT, "PF:", subTotalT1)
                     calculateResult()
                 }
             })
