@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 19:46
+ Last modified 03-07-21 17:41
  */
 package cl.figonzal.evaluatool.utilidades
 
@@ -56,7 +56,7 @@ object Utils {
         MEAN: Double,
         DESVIATION: Double,
         pdTotal: Int,
-        reverse: Boolean
+        reverse: Boolean = false
     ): String {
         return when {
             !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
