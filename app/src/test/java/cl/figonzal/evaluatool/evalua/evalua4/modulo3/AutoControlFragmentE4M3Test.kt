@@ -8,15 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:39
+ Last modified 02-07-21 21:39
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo3
 
 import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE4M3Baremo
-import cl.figonzal.evaluatool.evalua.evalua4.modulo3.adaptacionFragments.AutoControlFragmentE4M3
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
+import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -26,21 +24,24 @@ class AutoControlFragmentE4M3Test(
     private val pd_total: Int, private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: AutoControlFragmentE4M3? = null
-
-    @Before
-    fun setUp() {
-        m1 = AutoControlFragmentE4M3()
-    }
+    private val perc = autoControlFragmentE4M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(
+            percentil_esperado,
+            Utils.calculatePercentile(perc, pd_total, true).toDouble(),
+            0.1
+        )
     }
 
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, calcularDesviacion(MEDIA, DESVIACION, pd_total, true), 0.001)
+        assertEquals(
+            desviacion_esperada,
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, true).toDouble(),
+            0.001
+        )
     }
 
     companion object {

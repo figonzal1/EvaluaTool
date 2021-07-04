@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 23:32
+ Last modified 02-07-21 21:01
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -22,6 +22,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralCognitivoE4M2Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -81,7 +82,7 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -102,14 +103,13 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "RE: ", subTotalT1)
+                    tvSubTotalT1.text = formatResult(R.string.POINTS_FORMAT, "RE:", subTotalT1)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT2) {
+        etTotalesT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -131,13 +131,13 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "PA: ", subTotalT2)
+                    tvSubTotalT2.text = formatResult(R.string.POINTS_FORMAT, "PA:", subTotalT2)
                     calculateResult()
                 }
             })
         }
-        with(etTotalesT3) {
+
+        etTotalesT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -159,8 +159,7 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT3.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "OP: ", subTotalT3)
+                    tvSubTotalT3.text = formatResult(R.string.POINTS_FORMAT, "OP:", subTotalT3)
                     calculateResult()
                 }
             })
