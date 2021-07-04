@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 13:56
+ Last modified 03-07-21 22:03
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo4
 
@@ -273,7 +273,7 @@ class ExactitudLectoraE3M4 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

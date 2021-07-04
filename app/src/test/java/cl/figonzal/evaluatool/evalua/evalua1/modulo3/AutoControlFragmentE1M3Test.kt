@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 22:20
+ Last modified 03-07-21 21:25
  */
 
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3
@@ -37,7 +37,7 @@ class AutoControlFragmentE1M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

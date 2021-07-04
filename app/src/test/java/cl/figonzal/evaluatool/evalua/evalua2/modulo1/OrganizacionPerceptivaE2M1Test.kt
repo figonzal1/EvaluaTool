@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-06-21 18:49
+ Last modified 03-07-21 21:33
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -36,7 +36,7 @@ class OrganizacionPerceptivaE2M1Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

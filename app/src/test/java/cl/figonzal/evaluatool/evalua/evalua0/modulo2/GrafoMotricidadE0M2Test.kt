@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 22:57
+ Last modified 03-07-21 21:02
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -35,7 +35,7 @@ class GrafoMotricidadE0M2Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-07-21 21:01
+ Last modified 03-07-21 22:08
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -170,7 +170,7 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

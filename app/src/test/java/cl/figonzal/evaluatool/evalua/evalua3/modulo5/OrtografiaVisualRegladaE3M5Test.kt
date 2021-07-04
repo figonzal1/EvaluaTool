@@ -8,13 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 16:41
+ Last modified 03-07-21 22:05
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
 import cl.figonzal.evaluatool.baremosTables.ortografiaVisualRegladaE3M5Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion2
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -37,7 +36,7 @@ class OrtografiaVisualRegladaE3M5Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

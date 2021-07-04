@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 22:20
+ Last modified 03-07-21 21:01
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -36,7 +36,7 @@ class CopiaDibujosE0M2Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            calcularDesviacion2(MEDIA, DESVIACION, pd_total, false).toDouble(),
+            calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

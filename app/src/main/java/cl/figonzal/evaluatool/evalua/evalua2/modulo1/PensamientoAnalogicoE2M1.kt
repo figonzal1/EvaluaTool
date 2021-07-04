@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-06-21 19:16
+ Last modified 03-07-21 21:35
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -284,7 +284,7 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

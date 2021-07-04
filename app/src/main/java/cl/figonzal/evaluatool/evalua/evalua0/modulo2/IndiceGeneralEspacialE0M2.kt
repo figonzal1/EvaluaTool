@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 23:36
+ Last modified 03-07-21 21:05
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -98,8 +98,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text =
-                        formatResult(idString = R.string.POINTS_FORMAT, "CD:", subTotalT1)
+                    tvSubTotalT1.text = formatResult(R.string.POINTS_FORMAT, "CD:", subTotalT1)
                     calculateResult()
                 }
             })

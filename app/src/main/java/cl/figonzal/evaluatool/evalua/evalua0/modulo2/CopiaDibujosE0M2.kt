@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 22:20
+ Last modified 03-07-21 21:01
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -193,7 +193,7 @@ class CopiaDibujosE0M2 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

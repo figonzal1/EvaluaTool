@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 16:27
+ Last modified 03-07-21 22:05
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -357,7 +357,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, false)
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)

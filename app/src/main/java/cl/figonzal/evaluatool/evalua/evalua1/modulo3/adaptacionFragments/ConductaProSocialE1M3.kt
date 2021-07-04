@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:21
+ Last modified 03-07-21 21:25
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -23,7 +23,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentConductaProSocialE1M3Binding
-import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmentE1M3Resolver.Companion.MEDIA
@@ -164,10 +163,7 @@ class ConductaProSocialE1M3 : Fragment() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(
-                    ClasificacionE0M1Resolver.MEDIA,
-                    ClasificacionE0M1Resolver.DESVIACION, pdCorregido, false
-                )
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
             val percentile = Utils.calculatePercentile(perc, pdCorregido)
