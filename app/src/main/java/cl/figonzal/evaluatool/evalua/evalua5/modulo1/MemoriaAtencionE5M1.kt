@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 23:53
+ Last modified 04-07-21 21:39
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo1
 
@@ -20,24 +20,18 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.memoriaAtencionE5M1Baremo
 import cl.figonzal.evaluatool.databinding.ActivityMemoriaAtencionE5M1Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo1.MemoriaAtencionE5M1Resolver
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo1.MemoriaAtencionE5M1Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo1.MemoriaAtencionE5M1Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
-import kotlin.math.floor
 
-class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
-
-    companion object {
-        private const val DESVIACION = 15.39
-        private const val MEDIA = 52.87
-    }
+class MemoriaAtencionE5M1 : AppCompatActivity() {
 
     private lateinit var binding: ActivityMemoriaAtencionE5M1Binding
-    private val perc = memoriaAtencionE5M1Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -76,10 +70,6 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvSubTotalT2: TextView
     private lateinit var tvSubTotalT3: TextView
     private lateinit var tvSubTotalT4: TextView
-    private var subtotalPdT1 = 0.0
-    private var subtotalPdT2 = 0.0
-    private var subtotalPdT3 = 0.0
-    private var subtotalPdT4 = 0.0
 
     //TOTAL
     private lateinit var tvPdTotal: TextView
@@ -88,6 +78,10 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
     private lateinit var progressBar: LinearProgressIndicator
+
+    private val resolver by lazy {
+        MemoriaAtencionE5M1Resolver()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -140,7 +134,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -150,21 +144,21 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_MEMORIA_ATENCION)
             )
         }).also {
-            textWatcherTarea1()
-            textWatcherTarea2()
-            textWatcherTarea3()
-            textWatcherTarea4()
+            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTarea2(getString(R.string.TAREA_2))
+            textWatcherTarea3(getString(R.string.TAREA_3))
+            textWatcherTarea4(getString(R.string.TAREA_4))
         }
     }
 
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -173,7 +167,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -184,20 +178,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etOmitidasT1) {
+        etOmitidasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -206,7 +202,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -217,19 +213,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT1 = 0
                         s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
-        with(etReprobadasT1) {
+
+        etReprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -238,7 +237,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -249,23 +248,25 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subtotalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea2() {
+    private fun textWatcherTarea2(tarea: String) {
 
-        with(etAprobadasT2) {
+        etAprobadasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -274,7 +275,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -285,19 +286,21 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(
-                        0,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT2,
-                        omitidasT2,
-                        reprobadasT2
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2,
+                            omitidas = omitidasT2,
+                            reprobadas = reprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
-        with(etOmitidasT2) {
+        etOmitidasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -306,7 +309,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -317,19 +320,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT2 = 0
                         s.isNotEmpty() -> omitidasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(
-                        0,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT2,
-                        omitidasT2,
-                        reprobadasT2
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2,
+                            omitidas = omitidasT2,
+                            reprobadas = reprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
-        with(etReprobadasT2) {
+
+        etReprobadasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -338,7 +344,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -349,23 +355,25 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subtotalPdT2 = calculateTask(
-                        0,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT2,
-                        omitidasT2,
-                        reprobadasT2
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2,
+                            omitidas = omitidasT2,
+                            reprobadas = reprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea3() {
+    private fun textWatcherTarea3(tarea: String) {
 
-        with(etAprobadasT3) {
+        etAprobadasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -374,7 +382,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -385,19 +393,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT3 = 0
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(
-                        0,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_3),
-                        aprobadasT3,
-                        omitidasT3,
-                        reprobadasT3
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3,
+                            omitidas = omitidasT3,
+                            reprobadas = reprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
-        with(etOmitidasT3) {
+
+        etOmitidasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -406,7 +417,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -417,19 +428,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT3 = 0
                         s.isNotEmpty() -> omitidasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(
-                        0,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_3),
-                        aprobadasT3,
-                        omitidasT3,
-                        reprobadasT3
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3,
+                            omitidas = omitidasT3,
+                            reprobadas = reprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
-        with(etReprobadasT3) {
+
+        etReprobadasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -438,7 +452,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -449,23 +463,25 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT3 = 0
                         s.isNotEmpty() -> reprobadasT3 = text.toString().toInt()
                     }
-                    subtotalPdT3 = calculateTask(
-                        0,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_3),
-                        aprobadasT3,
-                        omitidasT3,
-                        reprobadasT3
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3,
+                            omitidas = omitidasT3,
+                            reprobadas = reprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea4() {
+    private fun textWatcherTarea4(tarea: String) {
 
-        with(etAprobadasT4) {
+        etAprobadasT4.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -474,7 +490,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT4 = 0.0
+                    resolver.totalPdTarea4 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -485,20 +501,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT4 = 0
                         s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(
-                        0,
-                        tvSubTotalT4,
-                        context.getString(R.string.TAREA_4),
-                        aprobadasT4,
-                        omitidasT4,
-                        reprobadasT4
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 4,
+                            aprobadas = aprobadasT4,
+                            omitidas = omitidasT4,
+                            reprobadas = reprobadasT4
+                        ), {
+                            resolver.totalPdTarea4 = this
+                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etOmitidasT4) {
+        etOmitidasT4.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -507,7 +525,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT4 = 0.0
+                    resolver.totalPdTarea4 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -518,20 +536,22 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> omitidasT4 = 0
                         s.isNotEmpty() -> omitidasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(
-                        0,
-                        tvSubTotalT4,
-                        context.getString(R.string.TAREA_4),
-                        aprobadasT4,
-                        omitidasT4,
-                        reprobadasT4
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 4,
+                            aprobadas = aprobadasT4,
+                            omitidas = omitidasT4,
+                            reprobadas = reprobadasT4
+                        ), {
+                            resolver.totalPdTarea4 = this
+                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT4) {
+        etReprobadasT4.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -540,7 +560,7 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subtotalPdT4 = 0.0
+                    resolver.totalPdTarea4 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -551,97 +571,52 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT4 = 0
                         s.isNotEmpty() -> reprobadasT4 = text.toString().toInt()
                     }
-                    subtotalPdT4 = calculateTask(
-                        0,
-                        tvSubTotalT4,
-                        context.getString(R.string.TAREA_4),
-                        aprobadasT4,
-                        omitidasT4,
-                        reprobadasT4
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 4,
+                            aprobadas = aprobadasT4,
+                            omitidas = omitidasT4,
+                            reprobadas = reprobadasT4
+                        ), {
+                            resolver.totalPdTarea4 = this
+                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-        var total = floor(aprobadas - (reprobadas + omitidas).toDouble())
-        if (total < 0) total = 0.0
+    private fun calculateResult() {
 
-        tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return total
-    }
+        //Calculate Total PD
+        resolver.run {
 
-    override fun calculateResult() {
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
-        //TOTALES
-        with(subtotalPdT1 + subtotalPdT2 + subtotalPdT3 + subtotalPdT4, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
 
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
-
+            //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
 
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
             }
-        }
-        //Percentil no encontrado
-        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-        when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
-                when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual - 1 == item.first() -> return item.first() as Int
-                    pdActual - 2 == item.first() -> return item.first() as Int
-                    pdActual - 3 == item.first() -> return item.first() as Int
-                    pdActual - 4 == item.first() -> return item.first() as Int
-                    pdActual - 5 == item.first() -> return item.first() as Int
-                    pdActual - 6 == item.first() -> return item.first() as Int
-                    pdActual - 7 == item.first() -> return item.first() as Int
-                    pdActual - 8 == item.first() -> return item.first() as Int
-                }
-            }
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
-        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -653,6 +628,4 @@ class MemoriaAtencionE5M1 : AppCompatActivity(), EvaluaInterface {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
 }
