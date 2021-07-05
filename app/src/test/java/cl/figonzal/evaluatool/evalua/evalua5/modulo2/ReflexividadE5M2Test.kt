@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:37
+ Last modified 04-07-21 17:05
  */
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo2
@@ -16,7 +16,6 @@ package cl.figonzal.evaluatool.evalua.evalua5.modulo2
 import cl.figonzal.evaluatool.baremosTables.reflexividadE5M2Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -26,23 +25,18 @@ class ReflexividadE5M2Test(
     private val pd_total: Int, private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: ReflexividadE5M2? = null
-
-    @Before
-    fun setUp() {
-        m1 = ReflexividadE5M2()
-    }
+    private val perc = reflexividadE5M2Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
     }
 
     @Test
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion(MEDIA, DESVIACION, pd_total, false),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 22-06-21 21:00
+  Last modified 04-07-21 22:28
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -191,7 +191,7 @@
     <string name="EVALUA_5_M5_SI_1">Ortografía Fonética [OF-5]</string>
     <string name="EVALUA_5_M5_SI_2">Ortografía Visual Reglada [OV-5]</string>
     <string name="EVALUA_5_M6_SI_1">Cálculo y Numeración [CN-5]</string>
-    <string name="EVALUA_5_M6_SI_2">Resolución Problemas[RP-5]</string>
+    <string name="EVALUA_5_M6_SI_2">Resolución Problemas [RP-5]</string>
 
     <!-- EVALUA 6 -->
     <string name="TOOLBAR_EVALUA_6">Evalúa 6</string>

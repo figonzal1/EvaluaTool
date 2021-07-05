@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-06-21 13:02
+ Last modified 04-07-21 22:31
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4.velocidadFragment
 
@@ -22,31 +22,24 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.comprensionFragmentE5M4Baremo
 import cl.figonzal.evaluatool.databinding.FragmentComprensionE5M4Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.alertDialogPdCorregido
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.setSubTotalPoints
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo4.ComprensionFragmentE5M4Resolver
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo4.ComprensionFragmentE5M4Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua5.modulo4.ComprensionFragmentE5M4Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
-import kotlin.math.floor
 
-class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
+class ComprensionFragmentE5M4 : Fragment() {
 
     companion object {
-        private const val DESVIACION = 3.71
-        private const val MEDIA = 4.91
-
         fun newInstance(): ComprensionFragmentE5M4 {
             return ComprensionFragmentE5M4()
         }
     }
 
     private var binding: FragmentComprensionE5M4Binding? = null
-    private val perc = comprensionFragmentE5M4Baremo()
 
     private lateinit var etAprobadasT1: TextInputEditText
     private lateinit var etOmitidasT1: TextInputEditText
@@ -54,7 +47,6 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
     private var aprobadasT1 = 0
     private var omitidasT1 = 0
     private var reprobadasT1 = 0
-    private var totalPdT1 = 0.0
 
     //TextView para Subtotales
     private lateinit var tvSubTotalT1: TextView
@@ -67,6 +59,10 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
     private lateinit var tvNivel: TextView
     private lateinit var progressBar: LinearProgressIndicator
     private lateinit var tvDesviacionCalculada: TextView
+
+    private val resolver by lazy {
+        ComprensionFragmentE5M4Resolver()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -103,7 +99,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
             this@ComprensionFragmentE5M4.tvDesviacionCalculada = tvDesviacionCalculadaValue
 
             this@ComprensionFragmentE5M4.progressBar = progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             ivHelpPdCorregido.setOnClickListener {
 
@@ -113,17 +109,17 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_COMPRENSION)
             )
         }).also {
-            textWatcherTarea1()
+            textWatcherTarea1(getString(R.string.TAREA_1))
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -132,7 +128,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -143,20 +139,22 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etOmitidasT1) {
+        etOmitidasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -165,7 +163,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -176,20 +174,22 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> omitidasT1 = 0
                         s.isNotEmpty() -> omitidasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT1) {
+        etReprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -198,7 +198,7 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -209,88 +209,59 @@ class ComprensionFragmentE5M4 : Fragment(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        omitidasT1,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            omitidas = omitidasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-        var total = floor((aprobadas - (omitidas + reprobadas)).toDouble())
-        if (total < 0) total = 0.0
+    private fun calculateResult() {
 
-        tvSubTotal.text = requireActivity().setSubTotalPoints(tarea, total)
-        return total
-    }
+        //Calculate Total PD
+        resolver.run {
 
-    override fun calculateResult() {
-        with(totalPdT1, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            tvPdTotal.text =
+                requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = requireActivity().formatResult(
+                R.string.POINTS_SIMPLE_FORMAT,
+                pdCorregido.toDouble()
+            )
+
+            //Calculate desviation
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             val comprension = calcularComprension(pdCorregido)
             tvNivelComprension.text = comprension
 
-            tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
 
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
-
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
             }
-        }
-        //Percentil no encontrado
-        requireActivity().logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-        when {
-            pdActual > this.perc.first()[0] as Int -> return this.perc.first()[0] as Int
-            pdActual < this.perc[this.perc.size - 1][0] as Int -> return this.perc[this.perc.size - 1][0] as Int
-            else -> this.perc.forEach { item ->
-                if (pdActual == item.first()) return item.first() as Int
-            }
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
-        requireActivity().logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 
     private fun calcularComprension(pd_actual: Int): String {
