@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:53
+ Last modified 06-07-21 11:40
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo5
 
@@ -36,11 +36,9 @@ class OrtografiaE2M5 : AppCompatActivity() {
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
-    private val reprobadasT1 = 0
 
     //TAREA 2
     private lateinit var etReprobadasT2: TextInputEditText
-    private val aprobadasT2 = 0
     private var reprobadasT2 = 0
 
     //SUBTOTALES
@@ -135,8 +133,7 @@ class OrtografiaE2M5 : AppCompatActivity() {
                     with(
                         resolver.calculateTask(
                             nTarea = 1,
-                            aprobadas = aprobadasT1,
-                            reprobadas = reprobadasT1
+                            aprobadas = aprobadasT1
                         ), {
                             resolver.totalPdTarea1 = this
                             tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
@@ -172,7 +169,6 @@ class OrtografiaE2M5 : AppCompatActivity() {
                     with(
                         resolver.calculateTask(
                             nTarea = 2,
-                            aprobadas = aprobadasT2,
                             reprobadas = reprobadasT2
                         ), {
                             resolver.totalPdTarea2 = this

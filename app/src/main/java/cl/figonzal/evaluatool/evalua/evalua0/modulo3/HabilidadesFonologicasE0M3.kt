@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:03
+ Last modified 06-07-21 11:40
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -125,9 +125,9 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
             )
         }).apply {
             textWatcherTarea1(getString(R.string.TAREA_1))
-            textWatcherTarea2(getString(R.string.TAREA_1))
-            textWatcherTarea3(getString(R.string.TAREA_1))
-            textWatcherTarea4(getString(R.string.TAREA_1))
+            textWatcherTarea2(getString(R.string.TAREA_2))
+            textWatcherTarea3(getString(R.string.TAREA_3))
+            textWatcherTarea4(getString(R.string.TAREA_4))
         }
     }
 
