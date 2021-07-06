@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:54
+ Last modified 06-07-21 11:40
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -139,8 +139,7 @@ class CalculoNumeracionE2M6 : AppCompatActivity() {
                     with(
                         resolver.calculateTask(
                             nTarea = 1,
-                            aprobadas = aprobadasT1,
-                            reprobadas = reprobadasT1
+                            aprobadas = aprobadasT1
                         ), {
                             resolver.totalPdTarea1 = this
                             tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
