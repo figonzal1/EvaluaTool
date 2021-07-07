@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:23
+ Last modified 07-07-21 17:13
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo3
@@ -18,7 +18,6 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE6M3Binding
-import cl.figonzal.evaluatool.evalua.evalua5.modulo3.adaptacionFragments.FragmentStateAdapterE5M3
 import cl.figonzal.evaluatool.evalua.evalua6.modulo3.adaptacionFragments.FragmentStateAdapterE6M3
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.logInfo
@@ -38,7 +37,7 @@ class NivelesAdaptacionE6M3 : AppCompatActivity() {
 
             //View pager
             viewPagerNivelesAdaptacion.apply {
-                adapter = FragmentStateAdapterE5M3(this@NivelesAdaptacionE6M3)
+                adapter = FragmentStateAdapterE6M3(this@NivelesAdaptacionE6M3)
 
                 TabLayoutMediator(
                     includeTablayout.tabsNivelesAdaptacion,
