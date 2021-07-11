@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
 
   This file is subject to the terms and conditions defined in
   file 'LICENSE', which is part of this source code package
@@ -9,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 15-06-21 17:59
+  Last modified 10-07-21 19:00
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -169,6 +168,9 @@
             android:name=".evalua.evalua7.Evalua7Activity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".evalua.evalua7.modulo1.AtencionConcentracionE7M1"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+        <activity
             android:name=".evalua.evalua7.modulo2.RazonamientoDeductivoE7M2"
             android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
         <activity
@@ -179,6 +181,9 @@
             android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
         <activity
             android:name=".evalua.evalua7.modulo4.EficaciaLectoraE7M4"
+            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+        <activity
+            android:name=".evalua.evalua7.modulo4.ComprensionLectoraE7M4"
             android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
         <activity
             android:name=".evalua.evalua7.modulo4.VelocidadLectoraE7M4"

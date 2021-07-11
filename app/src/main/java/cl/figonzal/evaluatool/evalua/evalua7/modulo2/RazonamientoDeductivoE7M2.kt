@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 09-06-21 23:53
+ Last modified 10-07-21 19:19
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -20,25 +20,17 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.razonamientoDeductivoE7M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoDeductivoE7M2Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
+import cl.figonzal.evaluatool.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver
+import cl.figonzal.evaluatool.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import kotlin.math.floor
 
-class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
-
-    companion object {
-        private const val DESVIACION = 6.05
-        private const val MEDIA = 12.51
-    }
+class RazonamientoDeductivoE7M2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityRazonamientoDeductivoE7M2Binding
-
-    //PD,PC CHILE
-    private val perc = razonamientoDeductivoE7M2Baremo()
 
     //Tarea1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -46,7 +38,6 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
     private var aprobadasT1 = 0
     private var reprobadasT1 = 0
     private lateinit var tvSubTotalT1: TextView
-    private var totalPdT1 = 0.0
 
     //TOTAL
     private lateinit var tvPdCorregido: TextView
@@ -57,6 +48,10 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
+
+    private val resolver by lazy {
+        RazonamientoDeductivoE7M2Resolver()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,7 +83,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -99,17 +94,17 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_RAZON_DEDUCTIVO)
             )
         }).also {
-            textWatcherTarea1()
+            textWatcherTarea1(getString(R.string.TAREA_1))
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -118,7 +113,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -129,20 +124,21 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        0,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT1) {
+        etReprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -151,7 +147,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    totalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -162,17 +158,50 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    totalPdT1 = calculateTask(
-                        0,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1),
-                        aprobadasT1,
-                        0,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
+        }
+    }
+
+    private fun calculateResult() {
+
+        //Calculate Total PD
+        resolver.run {
+
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
+
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+
+            //Calculate desviation
+            tvDesviacionCalculada.text =
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
+
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
+            }
+
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
     }
 
@@ -184,80 +213,5 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity(), EvaluaInterface {
             return true
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-
-        var total = floor(aprobadas - (reprobadas / 2.0))
-        if (total < 0) total = 0.0
-
-        tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return total
-    }
-
-    override fun calculateResult() {
-
-        with(totalPdT1, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
-
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
-
-            tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
-
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
-
-                when {
-                    Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-        //Limite superior
-        //Si el alumno sobrepasa tabla retornar percentil maximo
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
-            }
-        }
-
-        //Percentil no encontrado
-        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
-
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-
-        when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
-                if (pdActual == item.first()) return item.first() as Int
-            }
-        }
-        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 }
