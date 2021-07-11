@@ -8,14 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 12:39
+ Last modified 10-07-21 19:19
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo5
 
 import cl.figonzal.evaluatool.baremosTables.expresionEscritaE7M5Baremo
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
+import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -25,21 +24,24 @@ class ExpresionEscritaE7M5Test(
     private val pd_total: Int, private val precentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: ExpresionEscritaE7M5? = null
-
-    @Before
-    fun setUp() {
-        m1 = ExpresionEscritaE7M5()
-    }
+    private val perc = expresionEscritaE7M5Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(precentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.01)
+        assertEquals(
+            precentil_esperado,
+            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            0.01
+        )
     }
 
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(desviacion_esperada, calcularDesviacion(MEDIA, DESVIACION, pd_total, true), 0.01)
+        assertEquals(
+            desviacion_esperada,
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
+            0.01
+        )
     }
 
     companion object {
