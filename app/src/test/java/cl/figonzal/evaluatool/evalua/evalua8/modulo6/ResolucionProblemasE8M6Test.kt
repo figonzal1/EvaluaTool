@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 11:18
+ Last modified 11-07-21 12:26
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo6
@@ -16,7 +16,6 @@ package cl.figonzal.evaluatool.evalua.evalua8.modulo6
 import cl.figonzal.evaluatool.baremosTables.resolucionProblemasE8M6Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -26,23 +25,18 @@ class ResolucionProblemasE8M6Test(
     private val pd_total: Int, private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: ResolucionProblemasE8M6? = null
-
-    @Before
-    fun setUp() {
-        m1 = ResolucionProblemasE8M6()
-    }
+    private val perc = resolucionProblemasE8M6Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
     }
 
     @Test
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion(MEDIA, DESVIACION, pd_total, false),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

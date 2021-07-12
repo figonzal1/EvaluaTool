@@ -8,34 +8,37 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 22:54
+ Last modified 11-07-21 19:42
  */
 
-package cl.figonzal.evaluatool.evalua.evalua8.modulo5
+package cl.figonzal.evaluatool.evalua.evalua8.modulo4
 
-import cl.figonzal.evaluatool.baremosTables.ortografiaVisualRegladaE8M5Baremo
+import cl.figonzal.evaluatool.baremosTables.comprensionFragmentE8M4Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
-import org.junit.Assert.assertEquals
+import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
-
 @RunWith(Parameterized::class)
-class OrtografiaVisualRegladaE8M5Test(
+class ComprensionFragmentE8M4Test(
     private val pd_total: Int, private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private val perc = ortografiaVisualRegladaE8M5Baremo()
+    private val perc = comprensionFragmentE8M4Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
+        Assert.assertEquals(
+            percentil_esperado,
+            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            0.1
+        )
     }
 
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(
+        Assert.assertEquals(
             desviacion_esperada,
             Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
@@ -43,13 +46,13 @@ class OrtografiaVisualRegladaE8M5Test(
     }
 
     companion object {
-        private const val DESVIACION = 18.19
-        private const val MEDIA = 21.43
+        private const val DESVIACION = 2.57
+        private const val MEDIA = 3.7
 
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return ortografiaVisualRegladaE8M5Baremo()
+            return comprensionFragmentE8M4Baremo()
         }
     }
 }
