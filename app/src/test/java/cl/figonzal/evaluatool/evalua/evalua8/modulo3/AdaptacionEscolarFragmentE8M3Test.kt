@@ -8,15 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 18-05-21 11:10
+ Last modified 11-07-21 13:15
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.adaptacionEscolarE8M3Baremo
-import cl.figonzal.evaluatool.evalua.evalua8.modulo3.adaptacionFragments.AdaptacionEscolarFragmentE8M3
+import cl.figonzal.evaluatool.baremosTables.adaptacionEscolarFragmentE8M3Baremo
+import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -25,16 +24,15 @@ import org.junit.runners.Parameterized
 class AdaptacionEscolarFragmentE8M3Test(
     private val pd_total: Int, private val percentil_esperado: Double
 ) {
-    private var m1: AdaptacionEscolarFragmentE8M3? = null
-
-    @Before
-    fun setUp() {
-        m1 = AdaptacionEscolarFragmentE8M3()
-    }
+    private val perc = adaptacionEscolarFragmentE8M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(
+            percentil_esperado,
+            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            0.1
+        )
     }
 
     companion object {
@@ -42,7 +40,7 @@ class AdaptacionEscolarFragmentE8M3Test(
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return adaptacionEscolarE8M3Baremo()
+            return adaptacionEscolarFragmentE8M3Baremo()
         }
     }
 }
