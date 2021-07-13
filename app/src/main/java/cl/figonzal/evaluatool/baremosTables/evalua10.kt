@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-05-21 17:05
+ Last modified 12-07-21 16:26
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -162,7 +162,7 @@ fun razonamientoDeductivoE10M2Baremo(): Array<Array<Any>> {
  *
  * Page 53
  */
-fun adaptacionPersonalE10M3Baremo(): Array<Array<Any>> {
+fun adaptacionPersonalFragmentE10M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 1.65),
         arrayOf(1, 99, 1.57),
@@ -234,7 +234,7 @@ fun adaptacionPersonalE10M3Baremo(): Array<Array<Any>> {
  *
  * Page 53
  */
-fun adaptacionFamiliarE10M3Baremo(): Array<Array<Any>> {
+fun adaptacionFamiliarFragmentE10M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 2.4),
         arrayOf(1, 99, 2.28),
@@ -306,7 +306,7 @@ fun adaptacionFamiliarE10M3Baremo(): Array<Array<Any>> {
  *
  * Page 53
  */
-fun adaptacionEscolarE10M3Baremo(): Array<Array<Any>> {
+fun adaptacionEscolarFragmentE10M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 2.02),
         arrayOf(1, 99, 1.93),
@@ -378,7 +378,7 @@ fun adaptacionEscolarE10M3Baremo(): Array<Array<Any>> {
  *
  * Page 53
  */
-fun habilidadesSocialesE10M3Baremo(): Array<Array<Any>> {
+fun habilidadesSocialesFragmentE10M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99, 2.65),
         arrayOf(1, 99, 2.54),

@@ -8,16 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 21-05-21 15:15
+ Last modified 12-07-21 16:26
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.adaptacionPersonalE10M3Baremo
-import cl.figonzal.evaluatool.evalua.evalua10.modulo3.adaptacionFragments.AdaptacionPersonalFragmentE10M3
+import cl.figonzal.evaluatool.baremosTables.adaptacionPersonalFragmentE10M3Baremo
 import cl.figonzal.evaluatool.utilidades.Utils
 import org.junit.Assert.assertEquals
-import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -27,23 +25,22 @@ class AdaptacionPersonalFragmentE10M3Test(
     private val pd_total: Int, private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private var m1: AdaptacionPersonalFragmentE10M3? = null
-
-    @Before
-    fun setUp() {
-        m1 = AdaptacionPersonalFragmentE10M3()
-    }
+    private val perc = adaptacionPersonalFragmentE10M3Baremo()
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, m1!!.calculatePercentile(pd_total).toDouble(), 0.1)
+        assertEquals(
+            percentil_esperado,
+            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            0.1
+        )
     }
 
     @Test
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion(MEDIA, DESVIACION, pd_total, true),
+            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }
@@ -55,7 +52,7 @@ class AdaptacionPersonalFragmentE10M3Test(
         @JvmStatic
         @Parameterized.Parameters
         fun data(): Array<Array<Any>> {
-            return adaptacionPersonalE10M3Baremo()
+            return adaptacionPersonalFragmentE10M3Baremo()
         }
     }
 }
