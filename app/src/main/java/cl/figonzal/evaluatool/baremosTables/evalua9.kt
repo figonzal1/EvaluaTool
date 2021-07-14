@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 15:25
+ Last modified 13-07-21 21:39
  */
 
 package cl.figonzal.evaluatool.baremosTables
@@ -236,7 +236,7 @@ fun adaptacionPersonalE9M3Baremo(): Array<Array<Any>> {
  *
  * Page 55
  */
-fun adaptacionFamiliarE9M3Baremo(): Array<Array<Any>> {
+fun adaptacionFamiliarFragmentE9M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99),
         arrayOf(1, 99),
@@ -308,7 +308,7 @@ fun adaptacionFamiliarE9M3Baremo(): Array<Array<Any>> {
  *
  * Page 55
  */
-fun adaptacionEscolarE9M3Baremo(): Array<Array<Any>> {
+fun adaptacionEscolarFragmentE9M3Baremo(): Array<Array<Any>> {
     return arrayOf(
         arrayOf(0, 99),
         arrayOf(1, 99),

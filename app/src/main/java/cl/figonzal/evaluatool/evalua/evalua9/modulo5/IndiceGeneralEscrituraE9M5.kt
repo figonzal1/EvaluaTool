@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 16:33
+ Last modified 13-07-21 12:12
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo5
@@ -23,6 +23,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralEscrituraE9M5Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.roundToInt
@@ -67,7 +68,7 @@ class IndiceGeneralEscrituraE9M5 : AppCompatActivity(), IndiceValorInterface {
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -88,8 +89,7 @@ class IndiceGeneralEscrituraE9M5 : AppCompatActivity(), IndiceValorInterface {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "OR: ", subTotalT1)
+                    tvSubTotalT1.text = formatResult(R.string.POINTS_FORMAT, "OR:", subTotalT1)
                     calculateResult()
                 }
             })
@@ -101,7 +101,7 @@ class IndiceGeneralEscrituraE9M5 : AppCompatActivity(), IndiceValorInterface {
         //TOTALES
         var totalPd = subTotalT1
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

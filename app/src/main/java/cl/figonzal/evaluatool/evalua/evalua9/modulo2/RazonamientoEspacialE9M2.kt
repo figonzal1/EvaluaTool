@@ -8,11 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 13:53
+ Last modified 13-07-21 11:30
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo2
 
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -20,25 +21,17 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.baremosTables.razonamientoEspacialE9M2Baremo
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoEspacialE9M2Binding
-import cl.figonzal.evaluatool.interfaces.EvaluaInterface
+import cl.figonzal.evaluatool.resolvers.evalua9.modulo2.RazonamientoEspacialE9M2Resolver
+import cl.figonzal.evaluatool.resolvers.evalua9.modulo2.RazonamientoEspacialE9M2Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua9.modulo2.RazonamientoEspacialE9M2Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import kotlin.math.floor
 
-class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
-
-    companion object {
-        private const val DESVIACION = 6.51
-        private const val MEDIA = 15.84
-    }
+class RazonamientoEspacialE9M2 : AppCompatActivity() {
 
     private lateinit var binding: ActivityRazonamientoEspacialE9M2Binding
-
-    //PD,PC_CHI
-    private val perc = razonamientoEspacialE9M2Baremo()
 
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
@@ -52,7 +45,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
     private var aprobadasT2 = 0
     private var reprobadasT2 = 0
 
-    //TAREA 2
+    //TAREA 3
     private lateinit var etAprobadasT3: TextInputEditText
     private lateinit var etReprobadasT3: TextInputEditText
     private var aprobadasT3 = 0
@@ -62,9 +55,6 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvSubTotalT1: TextView
     private lateinit var tvSubTotalT2: TextView
     private lateinit var tvSubTotalT3: TextView
-    private var subTotalPdT1 = 0.0
-    private var subTotalPdT2 = 0.0
-    private var subTotalPdT3 = 0.0
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
@@ -73,6 +63,10 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
     private lateinit var tvNivel: TextView
     private lateinit var tvDesviacionCalculada: TextView
     private lateinit var progressBar: LinearProgressIndicator
+
+    private val resolver by lazy {
+        RazonamientoEspacialE9M2Resolver()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,7 +110,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
             tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = perc.first()[1] as Int
+            progressBar.max = resolver.perc.first()[1] as Int
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
@@ -127,19 +121,19 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
             Utils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                perc,
+                resolver.perc,
                 getString(R.string.TOOLBAR_RAZON_ESPACIAL)
             )
         }).also {
-            textWatcherTarea1()
-            textWatcherTarea2()
-            textWatcherTarea3()
+            textWatcherTarea1(getString(R.string.TAREA_1_1))
+            textWatcherTarea2(getString(R.string.TAREA_1_2))
+            textWatcherTarea3(getString(R.string.TAREA_2))
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTarea1(tarea: String) {
 
-        with(etAprobadasT1) {
+        etAprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -148,7 +142,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -159,20 +153,21 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT1 = 0
                         s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
                     }
-                    subTotalPdT1 = calculateTask(
-                        1,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1_1),
-                        aprobadasT1,
-                        0,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT1) {
+        etReprobadasT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -181,7 +176,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT1 = 0.0
+                    resolver.totalPdTarea1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -192,23 +187,24 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT1 = 0
                         s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
                     }
-                    subTotalPdT1 = calculateTask(
-                        1,
-                        tvSubTotalT1,
-                        context.getString(R.string.TAREA_1_1),
-                        aprobadasT1,
-                        0,
-                        reprobadasT1
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 1,
+                            aprobadas = aprobadasT1,
+                            reprobadas = reprobadasT1
+                        ), {
+                            resolver.totalPdTarea1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea2() {
+    private fun textWatcherTarea2(tarea: String) {
 
-        with(etAprobadasT2) {
+        etAprobadasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -217,7 +213,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -228,20 +224,21 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT2 = 0
                         s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
                     }
-                    subTotalPdT2 = calculateTask(
-                        2,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_1_2),
-                        aprobadasT2,
-                        0,
-                        reprobadasT2
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2,
+                            reprobadas = reprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT2) {
+        etReprobadasT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -250,7 +247,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT2 = 0.0
+                    resolver.totalPdTarea2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -261,23 +258,24 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT2 = 0
                         s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
                     }
-                    subTotalPdT2 = calculateTask(
-                        2,
-                        tvSubTotalT2,
-                        context.getString(R.string.TAREA_1_2),
-                        aprobadasT2,
-                        0,
-                        reprobadasT2
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 2,
+                            aprobadas = aprobadasT2,
+                            reprobadas = reprobadasT2
+                        ), {
+                            resolver.totalPdTarea2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    private fun textWatcherTarea3() {
+    private fun textWatcherTarea3(tarea: String) {
 
-        with(etAprobadasT3) {
+        etAprobadasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -286,7 +284,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -297,20 +295,21 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> aprobadasT3 = 0
                         s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
                     }
-                    subTotalPdT3 = calculateTask(
-                        3,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT3,
-                        0,
-                        reprobadasT3
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3,
+                            reprobadas = reprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
 
-        with(etReprobadasT3) {
+        etReprobadasT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -319,7 +318,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                     count: Int,
                     after: Int
                 ) {
-                    subTotalPdT3 = 0.0
+                    resolver.totalPdTarea3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -330,95 +329,51 @@ class RazonamientoEspacialE9M2 : AppCompatActivity(), EvaluaInterface {
                         s.isEmpty() -> reprobadasT3 = 0
                         s.isNotEmpty() -> reprobadasT3 = text.toString().toInt()
                     }
-                    subTotalPdT3 = calculateTask(
-                        3,
-                        tvSubTotalT3,
-                        context.getString(R.string.TAREA_2),
-                        aprobadasT3,
-                        0,
-                        reprobadasT3
-                    )
+                    with(
+                        resolver.calculateTask(
+                            nTarea = 3,
+                            aprobadas = aprobadasT3,
+                            reprobadas = reprobadasT3
+                        ), {
+                            resolver.totalPdTarea3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                        })
                     calculateResult()
                 }
             })
         }
     }
 
-    override fun calculateTask(
-        nTarea: Int,
-        tvSubTotal: TextView,
-        tarea: String,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
-    ): Double {
-        var total = floor(
-            when (nTarea) {
-                1 -> aprobadas - (reprobadas / 5.0)
-                2 -> aprobadas - (reprobadas / 10.0)
-                3 -> aprobadas - (reprobadas / 3.0)
-                else -> 0.0
-            }
-        )
-        if (total < 0) total = 0.0
+    private fun calculateResult() {
 
-        tvSubTotal.text = setSubTotalPoints(tarea, total)
-        return total
-    }
+        //Calculate Total PD
+        resolver.run {
 
-    override fun calculateResult() {
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
-        with(subTotalPdT1 + subTotalPdT2 + subTotalPdT3, {
-            tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), this)
+            //Correct total pd based on Baremo Table
+            val pdCorregido = correctPD(perc, getTotal().toInt())
+            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
 
-            //CALCULO PD CORREGIDO
-            val pdCorregido = correctPD(perc, this.toInt())
-            tvPdCorregido.text =
-                String.format(getString(R.string.POINTS_SIMPLE_FORMAT), pdCorregido)
-
+            //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion(MEDIA, DESVIACION, pdCorregido, false).toString()
+                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
-            with(calculatePercentile(pdCorregido), {
-                tvPercentil.text = this.toString()
+            //Calculate Percentile
+            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            tvPercentil.text = percentile.toString()
 
-                when {
-                    android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N -> progressBar.setProgressCompat(
-                        this,
-                        true
-                    )
-                    else -> progressBar.progress = this
-                }
-
-                tvNivel.text = Utils.calcularNivel(this)
-            })
-        })
-    }
-
-    override fun calculatePercentile(pdTotal: Int): Int {
-        when {
-            pdTotal > perc.first()[0] as Int -> return perc.first()[1] as Int
-            pdTotal < perc.last()[0] as Int -> return perc.last()[1] as Int
-            else -> perc.forEach { item ->
-                if (pdTotal == item.first()) return item[1] as Int
+            when {
+                Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
+                    percentile,
+                    true
+                )
+                else -> progressBar.progress = percentile
             }
-        }
-        //Percentil no encontrado
-        logInfo(R.string.TAG_PERCENTIL_CALCULADO, R.string.PERCENTIL_NULO)
-        return -1
-    }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
-        when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
-                if (pdActual == item.first()) return item.first() as Int
-            }
+            //Calculate student level
+            tvNivel.text = Utils.calcularNivel(percentile)
         }
-        logInfo(R.string.TAG_PD_CORREGIDO, R.string.PD_NULO)
-        return -1
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
