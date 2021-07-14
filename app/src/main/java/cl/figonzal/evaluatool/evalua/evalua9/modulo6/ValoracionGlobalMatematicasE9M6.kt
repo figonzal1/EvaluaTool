@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 16:33
+ Last modified 14-07-21 17:33
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo6
@@ -23,6 +23,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalMatematicasE9M6Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
+import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
 import com.google.android.material.textfield.TextInputEditText
 import kotlin.math.roundToInt
@@ -73,7 +74,7 @@ class ValoracionGlobalMatematicasE9M6 : AppCompatActivity(), IndiceValorInterfac
 
     private fun textWatcherTarea1() {
 
-        with(etTotalesT1) {
+        etTotalesT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -95,14 +96,13 @@ class ValoracionGlobalMatematicasE9M6 : AppCompatActivity(), IndiceValorInterfac
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT1.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "CN: ", subTotalT1)
+                    tvSubTotalT1.text = formatResult(R.string.POINTS_FORMAT, "CN:", subTotalT1)
                     calculateResult()
                 }
             })
         }
 
-        with(etTotalesT2) {
+        etTotalesT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -124,8 +124,7 @@ class ValoracionGlobalMatematicasE9M6 : AppCompatActivity(), IndiceValorInterfac
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
-                    tvSubTotalT2.text =
-                        String.format(getString(R.string.POINTS_FORMAT), "RP: ", subTotalT2)
+                    tvSubTotalT2.text = formatResult(R.string.POINTS_FORMAT, "RP:", subTotalT2)
                     calculateResult()
                 }
             })
@@ -136,7 +135,7 @@ class ValoracionGlobalMatematicasE9M6 : AppCompatActivity(), IndiceValorInterfac
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

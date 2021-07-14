@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 11-07-21 19:06
+ Last modified 14-07-21 13:19
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4.velocidadFragments
@@ -24,9 +24,9 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentComprensionE8M4Binding
-import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.CompresionFragmentE8M4Resolver
-import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.CompresionFragmentE8M4Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.CompresionFragmentE8M4Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.ComprensionFragmentE8M4Resolver
+import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.ComprensionFragmentE8M4Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua8.modulo4.ComprensionFragmentE8M4Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilidades.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -61,7 +61,7 @@ class ComprensionFragmentE8M4 : Fragment() {
     private lateinit var tvDesviacionCalculada: TextView
 
     private val resolver by lazy {
-        CompresionFragmentE8M4Resolver()
+        ComprensionFragmentE8M4Resolver()
     }
 
     override fun onCreateView(
