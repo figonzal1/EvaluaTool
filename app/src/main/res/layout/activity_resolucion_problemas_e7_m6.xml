@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 22:21
+  Last modified 14-07-21 21:04
   -->
 
 
@@ -237,19 +237,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_pd_sub_total" />
 
-                    <TextView
-                        android:id="@+id/tv_pd_subtotal_t2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/margin_16"
-                        android:layout_marginEnd="@dimen/margin_16"
-                        android:text="@string/tarea_2_0_pts"
-                        android:textAppearance="?attr/textAppearanceSubtitle1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t1" />
-
 
                     <TextView
                         android:id="@+id/tv_pd_total"
@@ -263,7 +250,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t2" />
+                        app:layout_constraintTop_toBottomOf="@+id/tv_pd_subtotal_t1" />
 
                     <TextView
                         android:id="@+id/tv_pd_total_value"

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 11:22
+ Last modified 14-07-21 20:03
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo2
@@ -21,7 +21,6 @@ class RazonamientoEspacialE9M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
-    var totalPdTarea3 = 0.0
     val perc = razonamientoEspacialE9M2Baremo()
 
     override fun calculateTask(
@@ -32,9 +31,8 @@ class RazonamientoEspacialE9M2Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas - (reprobadas / 5.0)
-                2 -> aprobadas - (reprobadas / 10.0)
-                3 -> aprobadas - (reprobadas / 3.0)
+                1 -> aprobadas + reprobadas.toDouble() //1_1+1_2
+                2 -> aprobadas - (reprobadas / 3.0)
                 else -> 0.0
             }
         )
@@ -43,7 +41,7 @@ class RazonamientoEspacialE9M2Resolver : BaseResolver {
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2 + totalPdTarea3
+        return totalPdTarea1 + totalPdTarea2
     }
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
