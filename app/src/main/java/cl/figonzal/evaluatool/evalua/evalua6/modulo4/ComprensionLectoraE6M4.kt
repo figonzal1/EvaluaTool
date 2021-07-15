@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-07-21 16:48
+ Last modified 14-07-21 20:03
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4
@@ -232,7 +232,7 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea2 = 0.0
+                    subTotalPdT21 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}

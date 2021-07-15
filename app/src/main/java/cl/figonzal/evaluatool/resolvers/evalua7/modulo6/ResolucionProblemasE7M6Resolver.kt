@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 14-07-21 20:58
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua7.modulo6
@@ -20,9 +20,7 @@ import kotlin.math.floor
 class ResolucionProblemasE7M6Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    var totalPdTarea2 = 0.0
     val perc = resolucionProblemasE7M6Baremo()
-
 
     override fun calculateTask(
         nTarea: Int,
@@ -30,19 +28,13 @@ class ResolucionProblemasE7M6Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(
-            when (nTarea) {
-                1 -> aprobadas.toDouble()
-                2 -> 4 * aprobadas.toDouble()
-                else -> 0.0
-            }
-        )
+        var total = floor(aprobadas + reprobadas.toDouble())
         if (total < 0) total = 0.0
         return total
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2
+        return totalPdTarea1
     }
 
     override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
