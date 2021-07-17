@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 17-07-21 14:38
+ Last modified 17-07-21 15:11
  */
 
 package cl.figonzal.evaluatool.servicios
@@ -49,7 +49,7 @@ class ChangeLogService(
 
         //GET SHARED PREF VERSION SAVED
         val sharedVersionCode = sharedPrefService.getData(
-            "shared_pref_actual_version_code",
+            context.getString(R.string.shared_pref_actual_version_code),
             0
         ) as Int
 
@@ -59,7 +59,10 @@ class ChangeLogService(
         when {
             sharedVersionCode < versionCode -> {
                 showBottomSheetDialog()
-                sharedPrefService.saveData("shared_pref_actual_version_code", versionCode)
+                sharedPrefService.saveData(
+                    context.getString(R.string.shared_pref_actual_version_code),
+                    versionCode
+                )
 
                 activity.logInfo(R.string.NEW_VERSION_DETECTED)
             }

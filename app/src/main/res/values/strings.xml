@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 17-07-21 14:38
+  Last modified 17-07-21 15:11
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -650,5 +650,9 @@
     <string name="NEW_VERSION_DETECTED"><![CDATA[New version detected: sharedVersionCode < versionCode]]></string>
     <string name="NO_VERSION_DETECTED">No new version detected</string>
     <string name="version">"Versión "</string>
+    <string name="solucionamos_el_problema">Solucionamos el problema</string>
+    <string name="qu_hay_de_nuevo_en_la_app">¿Qué hay de nuevo en la app?</string>
+    <string name="icono_nuevas_caracteristicas">Icono nuevas caracteristicas</string>
+    <string name="shared_pref_actual_version_code">shared_pref_actual_version_code</string>
 
 </resources>
