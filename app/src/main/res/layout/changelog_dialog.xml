@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 16-07-21 17:50
+  Last modified 17-07-21 15:11
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,7 +22,7 @@
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Qué hay de nuevo en la app?"
+        android:text="@string/qu_hay_de_nuevo_en_la_app"
         android:textAppearance="?attr/textAppearanceHeadline6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -32,7 +32,7 @@
         android:id="@+id/tv_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="@dimen/margin_8"
         android:textAppearance="?attr/textAppearanceSubtitle2"
         app:layout_constraintEnd_toEndOf="@+id/tv_title"
         app:layout_constraintHorizontal_bias="0.0"
@@ -43,8 +43,8 @@
     <View
         android:id="@+id/separator"
         android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="@dimen/divider_height"
+        android:layout_marginTop="@dimen/margin_16"
         android:background="@color/changeLogDivider"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,13 +55,13 @@
         android:id="@+id/tv_problems"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_16"
         android:background="@drawable/round_badge"
-        android:paddingStart="8dp"
-        android:paddingTop="2dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="2dp"
-        android:text="Solucionamos el problema"
+        android:paddingStart="@dimen/margin_8"
+        android:paddingTop="@dimen/margin_2"
+        android:paddingEnd="@dimen/margin_8"
+        android:paddingBottom="@dimen/margin_2"
+        android:text="@string/solucionamos_el_problema"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/separator"
         app:layout_constraintHorizontal_bias="0.0"
@@ -74,18 +74,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginTop="8dp"
-        android:text="- Ahora modo noche automático se activa con ahorro de energía \n - Se agregan reportes sismológicos mensuales \n - Actualizaciones internas"
         app:layout_constraintEnd_toEndOf="@+id/separator"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/tv_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_problems" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_problems"
+        tools:text="- Ahora modo noche automático se activa con ahorro de energía \n- Se agregan reportes sismológicos mensuales \n- Actualizaciones internas" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_change_log"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="¡Entendido!"
+        android:text="@string/entendido"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/separator"
         app:layout_constraintStart_toStartOf="@+id/tv_problems"
@@ -97,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:contentDescription="Icono nuevas caracteristicas"
+        android:contentDescription="@string/icono_nuevas_caracteristicas"
         app:layout_constraintBottom_toBottomOf="@+id/tv_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
