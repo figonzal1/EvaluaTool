@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2020
+  Copyright (c) 2021
 
-  Last modified 13-12-20 0:12
+  Last modified 15-07-21 22:51
   -->
 
 <resources>
@@ -32,4 +32,9 @@
     <color name="hintColorGreen">#8BC34A</color>
     <color name="hintColorGrey">#A1A1A1</color>
     <color name="hintColorRed">#F44336</color>
+
+    <color name="badgeGreen">#9A8BC34A</color>
+    <color name="changeLogDivider">#80D8D8D8</color>
+
+    <color name="changeLogIconRelease">#CD03A9F4</color>
 </resources>

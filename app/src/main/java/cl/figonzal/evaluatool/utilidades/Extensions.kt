@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 20:05
+ Last modified 15-07-21 20:42
  */
 
 package cl.figonzal.evaluatool.utilidades
@@ -159,7 +159,6 @@ fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
 /**
  * Format any result given a String and Numeric result
  * @param idString String resource
- * @param result The result to be formatted
  */
 fun Activity.formatResult(idString: Int, vararg args: Any): String {
 
@@ -169,5 +168,22 @@ fun Activity.formatResult(idString: Int, vararg args: Any): String {
         3 -> String.format(getString(idString), args[0], args[1], args[2])
         else -> ""
     }
+}
+
+/**
+ * Pretty print for change log items
+ */
+fun printChangeLogList(changeList: List<String>): String {
+    var changes = ""
+
+    changeList.indices.forEach { i ->
+        val ch: String = changeList[i]
+        changes = when {
+            i > 0 -> changes.plus("\n" + ch)
+            else -> changes.plus(ch)
+        }
+    }
+
+    return changes
 }
 
