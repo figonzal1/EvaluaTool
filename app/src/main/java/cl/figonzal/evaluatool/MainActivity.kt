@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 20:16
+ Last modified 16-07-21 17:52
  */
 package cl.figonzal.evaluatool
 
@@ -32,6 +32,7 @@ import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.evalua.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.servicios.AdsService
+import cl.figonzal.evaluatool.servicios.ChangeLogService
 import cl.figonzal.evaluatool.servicios.NightModeService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
 import cl.figonzal.evaluatool.utilidades.isAdsAllowed
@@ -41,6 +42,7 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.switchmaterial.SwitchMaterial
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -61,6 +63,8 @@ class MainActivity : AppCompatActivity() {
         with(SharedPrefService(this), {
 
             NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
+
+            ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
 
             //Init resources for Main Activity
             initResources(binding, this)

@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 04-07-21 22:28
+  Last modified 17-07-21 14:38
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -645,5 +645,10 @@
     <string name="NIGHT_MODE_ON">Modo noche activado</string>
     <string name="NIGHT_MODE_OFF">Modo noche desactivado</string>
     <string name="indica_el_total_para_las_4_tareas">Indica el total para las 4 tareas</string>
+    <string name="TAG_SHARED_VERSION_CODE_APP">SHARED_VERSION_CODE:</string>
+    <string name="TAG_VERSION_CODE_APP">VERSION_CODE_INSTALLED:</string>
+    <string name="NEW_VERSION_DETECTED"><![CDATA[New version detected: sharedVersionCode < versionCode]]></string>
+    <string name="NO_VERSION_DETECTED">No new version detected</string>
+    <string name="version">"Versión "</string>
 
 </resources>
