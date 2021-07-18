@@ -8,21 +8,25 @@
 
  Copyright (c) 2021
 
- Last modified 15-07-21 20:42
+ Last modified 18-07-21 12:46
  */
 
 package cl.figonzal.evaluatool.utilidades
 
 import android.app.Activity
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import cl.figonzal.evaluatool.MathJaxWebView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.servicios.AdsService
 import cl.figonzal.evaluatool.servicios.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
+import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
 import java.util.*
+
 
 /**
  *  Function that set Action Bar title, home indicator & toolbar
@@ -185,5 +189,17 @@ fun printChangeLogList(changeList: List<String>): String {
     }
 
     return changes
+}
+
+/**
+ * Set latex string in webView & visibility
+ */
+fun Activity.setLatexText(
+    cvFormula: MaterialCardView,
+    mathJaxWebView: MathJaxWebView,
+    formula: String
+) {
+    cvFormula.visibility = View.VISIBLE
+    mathJaxWebView.setText(formula)
 }
 
