@@ -8,12 +8,15 @@
 
  Copyright (c) 2021
 
- Last modified 18-07-21 12:46
+ Last modified 18-07-21 18:26
  */
 
 package cl.figonzal.evaluatool.utilidades
 
 import android.app.Activity
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
+import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -201,5 +204,24 @@ fun Activity.setLatexText(
 ) {
     cvFormula.visibility = View.VISIBLE
     mathJaxWebView.setText(formula)
+}
+
+/**
+ * Function to animate view
+ */
+fun Activity.setIndexAnimation(totalPd: Double): TransitionDrawable {
+    val colorDrawables = arrayOf(
+        ColorDrawable(Color.TRANSPARENT),
+        ColorDrawable(resources.getColor(R.color.indexRed, theme))
+    )
+    val transitionDrawable = TransitionDrawable(colorDrawables)
+    transitionDrawable.isCrossFadeEnabled = true
+
+    when {
+        totalPd <= -2.0 -> transitionDrawable.startTransition(500)
+        else -> transitionDrawable.resetTransition()
+    }
+
+    return transitionDrawable
 }
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-07-21 17:56
+ Last modified 18-07-21 18:26
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo6
@@ -92,7 +92,7 @@ class ValoracionGlobalMatematicasE10M6 : AppCompatActivity(), IndiceValorInterfa
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -120,7 +120,7 @@ class ValoracionGlobalMatematicasE10M6 : AppCompatActivity(), IndiceValorInterfa
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
@@ -135,7 +135,7 @@ class ValoracionGlobalMatematicasE10M6 : AppCompatActivity(), IndiceValorInterfa
         //TOTALES
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
-        tvPdTotal.text = String.format(getString(R.string.POINTS_SIMPLE_FORMAT), totalPd)
+        tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

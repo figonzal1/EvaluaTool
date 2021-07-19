@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-07-21 21:13
+ Last modified 18-07-21 17:55
  */
 
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
@@ -92,7 +92,7 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -120,7 +120,7 @@ class ValoracionGlobalMatematicasE5M6 : AppCompatActivity(), IndiceValorInterfac
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }

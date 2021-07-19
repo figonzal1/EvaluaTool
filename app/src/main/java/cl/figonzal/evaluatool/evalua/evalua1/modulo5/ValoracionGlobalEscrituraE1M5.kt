@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 16:39
+ Last modified 18-07-21 17:24
  */
 
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
@@ -96,7 +96,7 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -124,7 +124,7 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
@@ -152,7 +152,7 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
 
                     when {
                         s.isEmpty() -> subTotalT3 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }

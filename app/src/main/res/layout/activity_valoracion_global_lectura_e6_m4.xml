@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 08-06-21 22:21
+  Last modified 18-07-21 17:55
   -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -101,8 +101,7 @@
                             android:id="@+id/et_totales_t1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits=".-0123456789"
-                            android:inputType="number"
+                            android:inputType="numberSigned|numberDecimal"
                             android:maxLength="5"
                             android:textSize="14sp" />
 
@@ -124,8 +123,7 @@
                             android:id="@+id/et_totales_t2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:digits=".-0123456789"
-                            android:inputType="number"
+                            android:inputType="numberSigned|numberDecimal"
                             android:maxLength="5"
                             android:textSize="14sp" />
 

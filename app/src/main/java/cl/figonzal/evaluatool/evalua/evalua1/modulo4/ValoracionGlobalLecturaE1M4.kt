@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 14:55
+ Last modified 18-07-21 18:50
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -88,7 +88,7 @@ class ValoracionGlobalLecturaE1M4 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -116,7 +116,7 @@ class ValoracionGlobalLecturaE1M4 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
