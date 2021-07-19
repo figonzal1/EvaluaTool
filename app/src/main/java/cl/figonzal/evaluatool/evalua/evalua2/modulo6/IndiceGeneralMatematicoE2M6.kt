@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 29-06-21 19:27
+ Last modified 18-07-21 17:28
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -24,6 +24,7 @@ import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.roundToInt
@@ -93,7 +94,7 @@ class IndiceGeneralMatematicoE2M6 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -121,7 +122,7 @@ class IndiceGeneralMatematicoE2M6 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
@@ -137,6 +138,8 @@ class IndiceGeneralMatematicoE2M6 : AppCompatActivity(), IndiceValorInterface {
         var totalPd = (subTotalT1 + subTotalT2) / 2.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
         tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
+
+        binding.tvPdTotalValue.background = setIndexAnimation(totalPd)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

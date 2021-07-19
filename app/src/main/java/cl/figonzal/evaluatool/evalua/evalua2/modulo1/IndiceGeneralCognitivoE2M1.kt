@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-06-21 19:12
+ Last modified 18-07-21 17:24
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo1
 
@@ -24,6 +24,7 @@ import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilidades.configActionBar
 import cl.figonzal.evaluatool.utilidades.formatResult
 import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilidades.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.roundToInt
@@ -99,7 +100,7 @@ class IndiceGeneralCognitivoE2M1 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT1 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT1 = text.toString().toDouble()
                         }
                     }
@@ -127,7 +128,7 @@ class IndiceGeneralCognitivoE2M1 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT2 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT2 = text.toString().toDouble()
                         }
                     }
@@ -155,7 +156,7 @@ class IndiceGeneralCognitivoE2M1 : AppCompatActivity(), IndiceValorInterface {
 
                     when {
                         s.isEmpty() -> subTotalT3 = 0.0
-                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." -> {
+                        s.isNotEmpty() && s.toString() != "-" && s.toString() != "." && s.toString() != "-." -> {
                             subTotalT3 = text.toString().toDouble()
                         }
                     }
@@ -180,5 +181,7 @@ class IndiceGeneralCognitivoE2M1 : AppCompatActivity(), IndiceValorInterface {
         var totalPd = (subTotalT1 + subTotalT2 + subTotalT3) / 3.0
         totalPd = (totalPd * 100.0).roundToInt() / 100.0
         tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, totalPd)
+
+        binding.tvPdTotalValue.background = setIndexAnimation(totalPd)
     }
 }
