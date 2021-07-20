@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 10-07-21 19:00
+  Last modified 19-07-21 22:02
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -25,13 +25,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- EVALUA 0 -->
+        </activity>
+        <activity android:name=".MainActivity" /> <!-- EVALUA 0 -->
         <activity
             android:name=".evalua.evalua0.Evalua0Activity"
             android:parentActivityName=".MainActivity" />

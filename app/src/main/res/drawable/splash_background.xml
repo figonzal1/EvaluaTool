@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2021
+
+  Last modified 19-07-21 21:26
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/bg_gradient" />
+    <item
+        android:width="100dp"
+        android:height="100dp"
+        android:drawable="@drawable/ic_logo"
+        android:gravity="center_vertical|center_horizontal" />
+</layer-list>
