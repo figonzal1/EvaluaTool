@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-06-21 16:38
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4.velocidadFragments
@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 
 class FragmentStateAdapterE8M4(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
@@ -35,8 +35,8 @@ class FragmentStateAdapterE8M4(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabs = listOf(
-            Utils.get(R.string.TOOLBAR_VELOCIDAD),
-            Utils.get(R.string.TOOLBAR_COMPRENSION)
+            EvaluaUtils.get(R.string.TOOLBAR_VELOCIDAD),
+            EvaluaUtils.get(R.string.TOOLBAR_COMPRENSION)
         )
     }
 }

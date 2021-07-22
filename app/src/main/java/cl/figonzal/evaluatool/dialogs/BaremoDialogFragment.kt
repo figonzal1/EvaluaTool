@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 11-06-21 01:58
+ Last modified 22-07-21 13:24
  */
 package cl.figonzal.evaluatool.dialogs
 
@@ -20,8 +20,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter
 import cl.figonzal.evaluatool.databinding.BaremoDialogLayoutBinding
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 /**
@@ -50,7 +50,11 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
 
             //tvBaremoDescription
             tvBaremoDescripcion.text =
-                String.format("%s %s", Utils.get(R.string.dialogo_baremo_descripcion), itemName)
+                String.format(
+                    "%s %s",
+                    EvaluaUtils.get(R.string.dialogo_baremo_descripcion),
+                    itemName
+                )
 
             //BtnCloseDialog
             btnCerrar.setOnClickListener {

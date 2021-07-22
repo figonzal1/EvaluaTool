@@ -8,9 +8,9 @@
 
  Copyright (c) 2021
 
- Last modified 18-04-21 0:26
+ Last modified 21-07-21 22:49
  */
-package cl.figonzal.evaluatool.modelo
+package cl.figonzal.evaluatool.model
 
 /**
  * Data class that save the title of each evalua

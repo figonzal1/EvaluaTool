@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 14-07-21 15:26
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo5
 
 import cl.figonzal.evaluatool.baremosTables.ortografiaVisualRegladaE9M5Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,7 +32,7 @@ class OrtografiaVisualRegladaE9M5Test(
     fun testCalcularPercentil() {
         Assert.assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
             0.1
         )
     }
@@ -41,7 +41,7 @@ class OrtografiaVisualRegladaE9M5Test(
     fun testCalcularDesviacion() {
         Assert.assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

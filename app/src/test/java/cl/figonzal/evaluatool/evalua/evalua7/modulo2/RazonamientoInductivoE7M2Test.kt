@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
 import cl.figonzal.evaluatool.baremosTables.razonamientoInductivoE7M2Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,7 +30,7 @@ class RazonamientoInductivoE7M2Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
             0.01
         )
     }
@@ -39,7 +39,7 @@ class RazonamientoInductivoE7M2Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:59
+ Last modified 21-07-21 22:54
  */
 
 package cl.figonzal.evaluatool.evalua.evalua3.modulo3
 
 import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE3M3Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -33,7 +33,7 @@ class AutoControlFragmentE3M3Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }
@@ -42,7 +42,7 @@ class AutoControlFragmentE3M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }

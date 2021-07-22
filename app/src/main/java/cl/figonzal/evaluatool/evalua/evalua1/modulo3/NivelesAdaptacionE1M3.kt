@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 08-06-21 22:23
+ Last modified 21-07-21 22:49
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3
 
@@ -18,8 +18,8 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE1M3Binding
 import cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments.FragmentStateAdapterE1M3
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.tabs.TabLayoutMediator
 
 class NivelesAdaptacionE1M3 : AppCompatActivity() {

@@ -8,16 +8,16 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 20:16
+ Last modified 22-07-21 13:23
  */
-package cl.figonzal.evaluatool.servicios
+package cl.figonzal.evaluatool.service
 
 import android.app.Activity
 import android.content.Intent
 import androidx.fragment.app.FragmentManager
-import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.activities.MainActivity
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
@@ -53,7 +53,7 @@ class AdsService(
 
         InterstitialAd.load(
             activity.applicationContext,
-            Utils.get(R.string.ADMOB_ID_INTERSITIAL),
+            EvaluaUtils.get(R.string.ADMOB_ID_INTERSITIAL),
             AdRequest.Builder().build(),
             object : InterstitialAdLoadCallback() {
 
@@ -126,7 +126,7 @@ class AdsService(
         //LOAD VIDEO REWARD
         RewardedAd.load(
             activity.applicationContext,
-            Utils.get(R.string.ADMOB_ID_VIDEO),
+            EvaluaUtils.get(R.string.ADMOB_ID_VIDEO),
             AdRequest.Builder().build(),
             object : RewardedAdLoadCallback() {
 
@@ -178,7 +178,7 @@ class AdsService(
 
                 //Guardar fecha de termino de reward
                 sharedPrefService.saveData(
-                    Utils.get(R.string.SHARED_PREF_END_REWARD_TIME),
+                    EvaluaUtils.get(R.string.SHARED_PREF_END_REWARD_TIME),
                     dateNew.time
                 )
 
@@ -197,7 +197,7 @@ class AdsService(
 
         val rewardDate = Date(
             sharedPrefService.getData(
-                Utils.get(R.string.SHARED_PREF_END_REWARD_TIME),
+                EvaluaUtils.get(R.string.SHARED_PREF_END_REWARD_TIME),
                 0L
             ) as Long
         )
@@ -209,7 +209,7 @@ class AdsService(
                 activity.logInfo(R.string.TAG_REWARD_STATUS, R.string.TAG_REWARD_STATUS_EN_PERIODO)
                 //Generar % de aparicion de dialogo
                 when {
-                    Utils.generateRandomNumber() -> {
+                    EvaluaUtils.generateRandomNumber() -> {
                         //Mostrar dialog
                         activity.confirmationDialogReward(this)
                         activity.logInfo(

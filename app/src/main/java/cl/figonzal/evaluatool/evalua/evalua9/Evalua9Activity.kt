@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 15-06-21 17:59
+ Last modified 21-07-21 22:49
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9
@@ -20,11 +20,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter
 import cl.figonzal.evaluatool.databinding.ActivityEvalua9Binding
-import cl.figonzal.evaluatool.modelo.Evalua
-import cl.figonzal.evaluatool.utilidades.ConfigRoutes
-import cl.figonzal.evaluatool.utilidades.RouteHandler
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.model.Evalua
+import cl.figonzal.evaluatool.utilities.ConfigRoutes
+import cl.figonzal.evaluatool.utilities.RouteHandler
+import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.logInfo
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 
 class Evalua9Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {

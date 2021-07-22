@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 16:33
+ Last modified 21-07-21 22:48
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo4
@@ -20,8 +20,8 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE9M4Binding
 import cl.figonzal.evaluatool.evalua.evalua10.modulo4.velocidadFragments.FragmentStateAdapterE10M4
 import cl.figonzal.evaluatool.evalua.evalua9.modulo4.velocidadFragments.FragmentStateAdapterE9M4
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.logInfo
+import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

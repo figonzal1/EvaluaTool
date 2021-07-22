@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 16-05-21 01:08
+ Last modified 21-07-21 22:49
  */
 
-package cl.figonzal.evaluatool.servicios
+package cl.figonzal.evaluatool.service
 
 import android.content.Context
 import android.content.SharedPreferences

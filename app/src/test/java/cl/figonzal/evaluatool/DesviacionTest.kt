@@ -8,11 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:47
+ Last modified 21-07-21 22:54
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.calcularDesviacion
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

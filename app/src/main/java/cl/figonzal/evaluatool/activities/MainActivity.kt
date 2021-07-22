@@ -8,9 +8,9 @@
 
  Copyright (c) 2021
 
- Last modified 16-07-21 17:52
+ Last modified 21-07-21 22:50
  */
-package cl.figonzal.evaluatool
+package cl.figonzal.evaluatool.activities
 
 import android.app.Activity
 import android.os.Bundle
@@ -19,6 +19,8 @@ import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import cl.figonzal.evaluatool.BuildConfig
+import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
@@ -31,13 +33,13 @@ import cl.figonzal.evaluatool.evalua.evalua6.Evalua6Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.evalua.evalua9.Evalua9Activity
-import cl.figonzal.evaluatool.servicios.AdsService
-import cl.figonzal.evaluatool.servicios.ChangeLogService
-import cl.figonzal.evaluatool.servicios.NightModeService
-import cl.figonzal.evaluatool.servicios.SharedPrefService
-import cl.figonzal.evaluatool.utilidades.isAdsAllowed
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.toast
+import cl.figonzal.evaluatool.service.AdsService
+import cl.figonzal.evaluatool.service.ChangeLogService
+import cl.figonzal.evaluatool.service.NightModeService
+import cl.figonzal.evaluatool.service.SharedPrefService
+import cl.figonzal.evaluatool.utilities.isAdsAllowed
+import cl.figonzal.evaluatool.utilities.logInfo
+import cl.figonzal.evaluatool.utilities.toast
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.shape.CornerFamily

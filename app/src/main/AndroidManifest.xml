@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 19-07-21 22:02
+  Last modified 22-07-21 11:53
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,7 +26,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activities.SplashScreenActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,10 +34,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" /> <!-- EVALUA 0 -->
+        <activity android:name=".activities.MainActivity" /> <!-- EVALUA 0 -->
         <activity
             android:name=".evalua.evalua0.Evalua0Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".evalua.evalua0.modulo3.HabilidadesFonologicasE0M3"
             android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
@@ -79,7 +79,7 @@
             android:parentActivityName=".evalua.evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
         <activity
             android:name=".evalua.evalua1.Evalua1Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".evalua.evalua1.modulo3.NivelesAdaptacionE1M3"
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
@@ -121,7 +121,7 @@
             android:parentActivityName=".evalua.evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
         <activity
             android:name=".evalua.evalua3.Evalua3Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".evalua.evalua3.modulo2.ReflexividadE3M2"
             android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
@@ -169,7 +169,7 @@
             android:parentActivityName=".evalua.evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
         <activity
             android:name=".evalua.evalua7.Evalua7Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".evalua.evalua7.modulo1.AtencionConcentracionE7M1"
             android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
@@ -262,7 +262,7 @@
             android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
         <activity
             android:name=".evalua.evalua2.Evalua2Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 4 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 4 -->
         <activity
             android:name=".evalua.evalua4.modulo1.MemoriaAtencionE4M1"
             android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
@@ -316,7 +316,7 @@
             android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
         <activity
             android:name=".evalua.evalua4.Evalua4Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 5 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 5 -->
         <activity
             android:name=".evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6"
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
@@ -367,7 +367,7 @@
             android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
         <activity
             android:name=".evalua.evalua5.Evalua5Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 6 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 6 -->
         <activity
             android:name=".evalua.evalua6.modulo6.IndiceGeneralMatematicasE6M6"
             android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
@@ -421,7 +421,7 @@
             android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
         <activity
             android:name=".evalua.evalua6.Evalua6Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 8 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 8 -->
         <activity
             android:name=".evalua.evalua8.modulo6.IndiceGeneralMatematicasE8M6"
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
@@ -475,7 +475,7 @@
             android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
         <activity
             android:name=".evalua.evalua8.Evalua8Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 9 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 9 -->
         <activity
             android:name=".evalua.evalua9.modulo3.NivelesAdaptacionE9M3"
             android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
@@ -529,10 +529,10 @@
             android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
         <activity
             android:name=".evalua.evalua9.Evalua9Activity"
-            android:parentActivityName=".MainActivity" /> <!-- EVALUA 10 -->
+            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 10 -->
         <activity
             android:name=".evalua.evalua10.Evalua10Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".activities.MainActivity" />
         <activity
             android:name=".evalua.evalua10.modulo6.IndiceGeneralMatematicasE10M6"
             android:parentActivityName=".evalua.evalua10.Evalua10Activity" />

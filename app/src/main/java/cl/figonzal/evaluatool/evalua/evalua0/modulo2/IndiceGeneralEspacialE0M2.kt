@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 18-07-21 17:24
+ Last modified 21-07-21 22:49
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -21,10 +21,10 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralEspacialE0M2Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
-import cl.figonzal.evaluatool.utilidades.configActionBar
-import cl.figonzal.evaluatool.utilidades.formatResult
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.setIndexAnimation
+import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.formatResult
+import cl.figonzal.evaluatool.utilities.logInfo
+import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
 import kotlin.math.roundToInt

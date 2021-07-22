@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 12-07-21 16:26
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo3
 
 import cl.figonzal.evaluatool.baremosTables.adaptacionEscolarFragmentE10M3Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -32,7 +32,7 @@ class AdaptacionEscolarFragmentE10M3Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }
@@ -41,7 +41,7 @@ class AdaptacionEscolarFragmentE10M3Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }

@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 18-07-21 18:26
+ Last modified 22-07-21 13:23
  */
 
-package cl.figonzal.evaluatool.utilidades
+package cl.figonzal.evaluatool.utilities
 
 import android.app.Activity
 import android.graphics.Color
@@ -20,10 +20,10 @@ import android.graphics.drawable.TransitionDrawable
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import cl.figonzal.evaluatool.MathJaxWebView
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.servicios.AdsService
-import cl.figonzal.evaluatool.servicios.SharedPrefService
+import cl.figonzal.evaluatool.activities.MathJaxWebView
+import cl.figonzal.evaluatool.service.AdsService
+import cl.figonzal.evaluatool.service.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder

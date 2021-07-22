@@ -8,18 +8,18 @@
 
  Copyright (c) 2021
 
- Last modified 17-07-21 15:11
+ Last modified 21-07-21 22:48
  */
 
-package cl.figonzal.evaluatool.servicios
+package cl.figonzal.evaluatool.service
 
 import android.app.Activity
 import android.content.Context
 import android.widget.TextView
 import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilidades.logInfo
-import cl.figonzal.evaluatool.utilidades.printChangeLogList
+import cl.figonzal.evaluatool.utilities.logInfo
+import cl.figonzal.evaluatool.utilities.printChangeLogList
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
 

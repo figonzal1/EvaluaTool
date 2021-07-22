@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 20:23
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo3.adaptacionFragment
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentHabilidadesSocialesE9M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo3.HabilidadesSocialesFragmentE9M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo3.HabilidadesSocialesFragmentE9M3Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -93,7 +93,7 @@ class HabilidadesSocialesFragmentE9M3 : Fragment() {
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 requireActivity().alertDialogPdCorregido()
             }
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -155,7 +155,7 @@ class HabilidadesSocialesFragmentE9M3 : Fragment() {
             )
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido, reverse = true)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -167,7 +167,7 @@ class HabilidadesSocialesFragmentE9M3 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

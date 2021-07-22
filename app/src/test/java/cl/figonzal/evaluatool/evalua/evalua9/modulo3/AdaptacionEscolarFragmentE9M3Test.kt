@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 21:37
+ Last modified 21-07-21 22:54
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo3
 
 import cl.figonzal.evaluatool.baremosTables.adaptacionEscolarFragmentE9M3Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -30,7 +30,7 @@ class AdaptacionEscolarFragmentE9M3Test(
     fun testCalcularPercentil() {
         Assert.assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }

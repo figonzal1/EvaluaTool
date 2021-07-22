@@ -8,9 +8,9 @@
 
  Copyright (c) 2021
 
- Last modified 20-07-21 10:01
+ Last modified 21-07-21 22:49
  */
-package cl.figonzal.evaluatool
+package cl.figonzal.evaluatool.activities
 
 import android.content.Intent
 import android.os.Bundle

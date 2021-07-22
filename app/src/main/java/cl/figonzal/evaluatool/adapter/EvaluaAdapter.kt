@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:23
+ Last modified 21-07-21 22:50
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ExpandableItemGroupListBinding
 import cl.figonzal.evaluatool.databinding.ExpandableItemListBinding
-import cl.figonzal.evaluatool.modelo.Evalua
+import cl.figonzal.evaluatool.model.Evalua
 import io.github.luizgrp.sectionedrecyclerviewadapter.Section
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters
 
