@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 07-05-21 17:29
+ Last modified 21-07-21 22:54
  */
 
-package cl.figonzal.evaluatool.utilidades
+package cl.figonzal.evaluatool.utilities
 
 import android.app.Activity
 import android.content.Intent
@@ -55,7 +55,7 @@ object RouteHandler {
                         with(it, {
                             val destinationActivity = this[1]
                             val responseLog = this[2]
-                            val titleLog = Utils.get(R.string.SUB_ITEM_CLICK)
+                            val titleLog = EvaluaUtils.get(R.string.SUB_ITEM_CLICK)
 
                             abrirActividad(
                                 currentActivity,

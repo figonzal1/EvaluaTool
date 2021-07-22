@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 21:28
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo2
 
 import cl.figonzal.evaluatool.baremosTables.razonamientoEspacialE9M2Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -31,7 +31,7 @@ class RazonamientoEspacialE9M2Test(
     fun testCalcularPercentil() {
         Assert.assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
             0.1
         )
     }
@@ -40,7 +40,7 @@ class RazonamientoEspacialE9M2Test(
     fun testCalcularDesviacion() {
         Assert.assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

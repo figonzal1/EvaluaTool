@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-06-21 10:24
+ Last modified 21-07-21 22:53
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo3.adaptacionFragment
@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 
 class FragmentStateAdapterE9M3(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
@@ -37,10 +37,10 @@ class FragmentStateAdapterE9M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabs = listOf(
-            Utils.get(R.string.TOOLBAR_ADAP_PERSONAL),
-            Utils.get(R.string.TOOLBAR_ADAP_FAMILIAR),
-            Utils.get(R.string.TOOLBAR_ADAP_ESCOLAR),
-            Utils.get(R.string.TOOLBAR_HAB_SOCIALES)
+            EvaluaUtils.get(R.string.TOOLBAR_ADAP_PERSONAL),
+            EvaluaUtils.get(R.string.TOOLBAR_ADAP_FAMILIAR),
+            EvaluaUtils.get(R.string.TOOLBAR_ADAP_ESCOLAR),
+            EvaluaUtils.get(R.string.TOOLBAR_HAB_SOCIALES)
         )
     }
 }

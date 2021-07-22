@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 12-07-21 17:06
+ Last modified 21-07-21 22:52
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4
 
 import cl.figonzal.evaluatool.baremosTables.velocidadFragmentE10M4Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -31,7 +31,7 @@ class VelocidadFragmentE10M4Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
             0.1
         )
     }
@@ -40,7 +40,7 @@ class VelocidadFragmentE10M4Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
             0.001
         )
     }

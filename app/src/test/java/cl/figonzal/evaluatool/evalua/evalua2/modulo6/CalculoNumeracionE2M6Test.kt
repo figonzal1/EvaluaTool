@@ -8,12 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:54
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
 import cl.figonzal.evaluatool.baremosTables.calculoNumeracionE2M6Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -31,7 +31,7 @@ class CalculoNumeracionE2M6Test(
     fun testCalcularPercentil() {
         assertEquals(
             percentil_esperado,
-            Utils.calculatePercentile(perc, pd_total).toDouble(),
+            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
             0.1
         )
     }
@@ -40,7 +40,7 @@ class CalculoNumeracionE2M6Test(
     fun testCalcularDesviacion() {
         assertEquals(
             desviacion_esperada,
-            Utils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
             0.001
         )
     }

@@ -8,11 +8,11 @@
 
  Copyright (c) 2021
 
- Last modified 03-05-21 18:01
+ Last modified 21-07-21 22:47
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utilidades.DateHandler.addHoursToDate
+import cl.figonzal.evaluatool.utilities.DateHandler.addHoursToDate
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith

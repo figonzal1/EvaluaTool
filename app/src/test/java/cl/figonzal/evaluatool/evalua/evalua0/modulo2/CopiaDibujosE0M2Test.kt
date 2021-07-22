@@ -8,13 +8,13 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:01
+ Last modified 22-07-21 13:24
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
 import cl.figonzal.evaluatool.baremosTables.copiaDeDibujosE0M2Baremo
-import cl.figonzal.evaluatool.utilidades.Utils
-import cl.figonzal.evaluatool.utilidades.Utils.calcularDesviacion2
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.calcularDesviacion2
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -29,7 +29,11 @@ class CopiaDibujosE0M2Test(
 
     @Test
     fun testCalcularPercentil() {
-        assertEquals(percentil_esperado, Utils.calculatePercentile(perc, pd_total).toDouble(), 0.1)
+        assertEquals(
+            percentil_esperado,
+            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
+            0.1
+        )
     }
 
     @Test

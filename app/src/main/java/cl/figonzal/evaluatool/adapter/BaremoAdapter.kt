@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-05-21 16:08
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter.BaremoViewHolder
 import cl.figonzal.evaluatool.databinding.BaremoItemListBinding
-import cl.figonzal.evaluatool.utilidades.Utils
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 
 /**
  * Adapter used to show baremo table
@@ -69,8 +69,8 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
                 when (itemViewType) {
                     TABLE_HEADER -> {
 
-                        tvPd.text = Utils.get(R.string.PUNTAJE_DIRECTO)
-                        tvPcChileno.text = Utils.get(R.string.PERCENTIL_CHILENO)
+                        tvPd.text = EvaluaUtils.get(R.string.PUNTAJE_DIRECTO)
+                        tvPcChileno.text = EvaluaUtils.get(R.string.PERCENTIL_CHILENO)
 
                         baremoItem.setBackgroundColor(
                             context.resources.getColor(

@@ -8,10 +8,10 @@
 
  Copyright (c) 2021
 
- Last modified 17-04-21 23:17
+ Last modified 21-07-21 22:53
  */
 
-package cl.figonzal.evaluatool.utilidades
+package cl.figonzal.evaluatool.utilities
 
 import cl.figonzal.evaluatool.R
 import java.text.SimpleDateFormat
@@ -26,7 +26,7 @@ object DateHandler {
      * @return String's date
      */
     fun dateToString(dFecha: Date): String {
-        return SimpleDateFormat(Utils.get(R.string.DATETIME_FORMAT), Locale.US).format(dFecha)
+        return SimpleDateFormat(EvaluaUtils.get(R.string.DATETIME_FORMAT), Locale.US).format(dFecha)
     }
 
     /**

@@ -8,9 +8,9 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 17:41
+ Last modified 21-07-21 22:52
  */
-package cl.figonzal.evaluatool.utilidades
+package cl.figonzal.evaluatool.utilities
 
 import android.text.Spannable
 import android.text.method.LinkMovementMethod
@@ -27,7 +27,7 @@ import timber.log.Timber
 import java.util.*
 import kotlin.math.roundToInt
 
-object Utils {
+object EvaluaUtils {
 
 
     /**

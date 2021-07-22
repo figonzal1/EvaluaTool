@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 21-07-21 22:52
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments
@@ -27,7 +27,7 @@ import cl.figonzal.evaluatool.databinding.FragmentMotivacionE7M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -98,7 +98,7 @@ class MotivacionFragmentE7M3 : Fragment() {
                 requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 requireActivity().alertDialogPdCorregido()
             }
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 parentFragmentManager, tablaBaremo.tvBaremo, resolver.perc, getString(
                     R.string.TOOLBAR_MOTIVACION
                 )
@@ -161,10 +161,10 @@ class MotivacionFragmentE7M3 : Fragment() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido, reverse = true)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -176,7 +176,7 @@ class MotivacionFragmentE7M3 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 }

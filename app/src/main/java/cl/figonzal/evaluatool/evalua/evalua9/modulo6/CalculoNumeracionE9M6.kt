@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 19:35
+ Last modified 21-07-21 22:52
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo6
@@ -25,7 +25,7 @@ import cl.figonzal.evaluatool.databinding.ActivityCalculoNumeracionE9M6Binding
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo6.CalculoNumeracionE9M6Resolver
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo6.CalculoNumeracionE9M6Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo6.CalculoNumeracionE9M6Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -89,7 +89,7 @@ class CalculoNumeracionE9M6 : AppCompatActivity() {
                 alertDialogPdCorregido()
 
             }
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -159,10 +159,10 @@ class CalculoNumeracionE9M6 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -174,7 +174,7 @@ class CalculoNumeracionE9M6 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 }

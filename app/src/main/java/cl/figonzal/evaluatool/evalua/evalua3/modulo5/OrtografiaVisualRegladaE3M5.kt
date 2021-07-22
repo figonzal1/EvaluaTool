@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 22:05
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo5
 
@@ -24,7 +24,7 @@ import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualRegladaE3M5Bin
 import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaVisualRegladaE3M5Resolver
 import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaVisualRegladaE3M5Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua3.modulo5.OrtografiaVisualRegladaE3M5Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -114,7 +114,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity() {
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 alertDialogPdCorregido()
             }
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -357,10 +357,10 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -372,7 +372,7 @@ class OrtografiaVisualRegladaE3M5 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

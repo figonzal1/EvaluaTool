@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.databinding.FragmentVelocidadE7M4Binding
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -95,7 +95,7 @@ class VelocidadFragmentE7M4 : Fragment() {
                 requireActivity().alertDialogPdCorregido()
             }
 
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -159,10 +159,10 @@ class VelocidadFragmentE7M4 : Fragment() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido, reverse = true)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -174,7 +174,7 @@ class VelocidadFragmentE7M4 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

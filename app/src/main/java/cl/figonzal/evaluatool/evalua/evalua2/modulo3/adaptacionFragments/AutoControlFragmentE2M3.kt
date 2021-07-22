@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 21:38
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.databinding.FragmentAutoControlE2M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import java.util.*
@@ -100,7 +100,7 @@ class AutoControlFragmentE2M3 : Fragment() {
 
             }
 
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -164,10 +164,10 @@ class AutoControlFragmentE2M3 : Fragment() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -179,7 +179,7 @@ class AutoControlFragmentE2M3 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

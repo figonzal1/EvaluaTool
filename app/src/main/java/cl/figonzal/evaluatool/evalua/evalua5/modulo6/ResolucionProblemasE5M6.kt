@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-07-21 18:48
+ Last modified 21-07-21 22:53
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo6
 
@@ -24,7 +24,7 @@ import cl.figonzal.evaluatool.databinding.ActivityResolucionProblemasE5M6Binding
 import cl.figonzal.evaluatool.resolvers.evalua5.modulo6.ResolucionProblemasE5M6Resolver
 import cl.figonzal.evaluatool.resolvers.evalua5.modulo6.ResolucionProblemasE5M6Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua5.modulo6.ResolucionProblemasE5M6Resolver.Companion.MEDIA
-import cl.figonzal.evaluatool.utilidades.*
+import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -96,7 +96,7 @@ class ResolucionProblemasE5M6 : AppCompatActivity() {
                 logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
                 alertDialogPdCorregido()
             }
-            Utils.configurarTextoBaremo(
+            EvaluaUtils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver.perc,
@@ -193,10 +193,10 @@ class ResolucionProblemasE5M6 : AppCompatActivity() {
 
             //Calculate desviation
             tvDesviacionCalculada.text =
-                Utils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
 
             //Calculate Percentile
-            val percentile = Utils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
             tvPercentil.text = percentile.toString()
 
             when {
@@ -208,7 +208,7 @@ class ResolucionProblemasE5M6 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = Utils.calcularNivel(percentile)
+            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 
