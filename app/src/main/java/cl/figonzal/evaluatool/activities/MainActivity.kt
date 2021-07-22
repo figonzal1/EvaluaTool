@@ -8,11 +8,12 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:50
+ Last modified 22-07-21 19:38
  */
 package cl.figonzal.evaluatool.activities
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
@@ -33,10 +34,7 @@ import cl.figonzal.evaluatool.evalua.evalua6.Evalua6Activity
 import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.evalua.evalua9.Evalua9Activity
-import cl.figonzal.evaluatool.service.AdsService
-import cl.figonzal.evaluatool.service.ChangeLogService
-import cl.figonzal.evaluatool.service.NightModeService
-import cl.figonzal.evaluatool.service.SharedPrefService
+import cl.figonzal.evaluatool.service.*
 import cl.figonzal.evaluatool.utilities.isAdsAllowed
 import cl.figonzal.evaluatool.utilities.logInfo
 import cl.figonzal.evaluatool.utilities.toast
@@ -44,10 +42,12 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 
 
 class MainActivity : AppCompatActivity() {
 
+    private val updateCode: Int = 350
     val test: Boolean = true
 
     //View Attributes
@@ -55,6 +55,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tvNombreApp: TextView
     private lateinit var tvVersion: TextView
     private var buttonList = mutableListOf<MaterialButton>()
+
+    private lateinit var updateService: UpdaterService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,6 +69,10 @@ class MainActivity : AppCompatActivity() {
             NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
 
             ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
+
+            updateService = UpdaterService(
+                this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
+            )
 
             //Init resources for Main Activity
             initResources(binding, this)
@@ -315,5 +321,20 @@ class MainActivity : AppCompatActivity() {
                 adsService.checkIntersitialOnStart(activityToOpen, test)
             }
         }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == updateCode) {
+            if (resultCode != RESULT_OK) {
+                logInfo(R.string.UPDATE_FAIL)
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        updateService.resumeUpdater()
     }
 }

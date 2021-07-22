@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 17-07-21 15:11
+  Last modified 22-07-21 19:43
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -654,5 +654,8 @@
     <string name="qu_hay_de_nuevo_en_la_app">¿Qué hay de nuevo en la app?</string>
     <string name="icono_nuevas_caracteristicas">Icono nuevas caracteristicas</string>
     <string name="shared_pref_actual_version_code">shared_pref_actual_version_code</string>
+    <string name="UPDATE_FAIL">Actualizacion fallida</string>
+    <string name="UPDATE_AVAILABLE">Actualizacion disponible</string>
+    <string name="UPDATE_NOT_AVAILABLE">Actualizacion no disponible</string>
 
 </resources>
