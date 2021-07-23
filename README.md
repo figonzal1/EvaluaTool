@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/figonzal1/EvaluaTool/blob/master/app/src/main/ic_launcher-web.png" width="200" height="200">
+  <img src="https://github.com/figonzal1/EvaluaTool/blob/main/app/src/main/ic_launcher-web.png" width="200" height="200">
 </p>
 <h1 align="center">EvalúaTool</h1>
 <p align="center">
