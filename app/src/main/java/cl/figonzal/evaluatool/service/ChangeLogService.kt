@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 21:16
+ Last modified 23-07-21 15:04
  */
 
 package cl.figonzal.evaluatool.service
@@ -32,9 +32,11 @@ class ChangeLogService(
 
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
-        "- Hola probando",
-        "- Nueva version corregido",
-        "- Hola esta es otras descripcion"
+        "- Implementación Evalúa 9",
+        "- Corrección de medias y desviaciones de puntajes",
+        "- Mejoras visuales de alertas, botones y tarjetas de información",
+        "- Nueva pantalla de pre-carga de aplicación"
+
     )
     private val showChangeLog = true
 
