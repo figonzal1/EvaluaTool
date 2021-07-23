@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-05-21 23:19
+ Last modified 23-07-21 12:41
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -24,8 +24,8 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.platform.app.InstrumentationRegistry
-import cl.figonzal.evaluatool.MainActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.activities.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers
