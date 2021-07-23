@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-07-21 22:31
+ Last modified 23-07-21 15:50
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua5.modulo6
@@ -33,7 +33,7 @@ class CalculoNumeracionE5M6Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas - ((reprobadas + omitidas) / 3.0)
+                1 -> aprobadas - (reprobadas + omitidas) / 3.0
                 2, 4 -> aprobadas.toDouble()
                 3 -> aprobadas * 4.0
                 else -> 0.0

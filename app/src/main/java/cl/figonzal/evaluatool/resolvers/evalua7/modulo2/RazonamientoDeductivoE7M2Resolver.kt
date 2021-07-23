@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 23-07-21 15:50
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua7.modulo2
@@ -28,7 +28,7 @@ class RazonamientoDeductivoE7M2Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas - (reprobadas / 2.0))
+        var total = floor(aprobadas - reprobadas / 2.0)
         if (total < 0) total = 0.0
         return total
     }

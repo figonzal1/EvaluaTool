@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 17:33
+ Last modified 23-07-21 15:36
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo1
@@ -32,8 +32,8 @@ class ClasificacionE0M1Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas - (reprobadas / 4.0)
-                2 -> aprobadas - (reprobadas / 5.0)
+                1 -> aprobadas - reprobadas / 4.0
+                2 -> aprobadas - reprobadas / 5.0
                 else -> 0.0
             }
         )

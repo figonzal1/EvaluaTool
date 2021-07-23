@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 11-07-21 21:12
+ Last modified 23-07-21 15:55
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo4
@@ -29,7 +29,7 @@ class EficaciaLectoraE8M4Resolver : BaseResolver {
         reprobadas: Int
     ): Double {
         //FORMULA PARA RAZONAMIENTO DEDUCTIVO
-        var total = floor(aprobadas - (reprobadas) / 4.0)
+        var total = floor(aprobadas - reprobadas / 4.0)
         if (total < 0) total = 0.0
 
         return total

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 18:21
+ Last modified 23-07-21 15:45
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo4
@@ -32,7 +32,7 @@ class ComprensionLectoraE3M4Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas - (reprobadas / 3.0))
+        var total = floor(aprobadas - reprobadas / 3.0)
         if (total < 0) total = 0.0
         return total
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 14:35
+ Last modified 23-07-21 15:32
  */
 package cl.figonzal.evaluatool.activities
 
@@ -181,11 +181,11 @@ class MainActivity : AppCompatActivity() {
         val offset = 400L
         val step = 150L
 
-        (0..12).forEach { i ->
+        for (i in 0..12) {
             fadeList.add(AnimationUtils.loadAnimation(this, R.anim.anim_fade).also {
                 when (i) {
                     0 -> it.startOffset = offset
-                    else -> it.startOffset = offset + (step * (i + 1))
+                    else -> it.startOffset = offset + step * (i + 1)
                 }
             })
         }

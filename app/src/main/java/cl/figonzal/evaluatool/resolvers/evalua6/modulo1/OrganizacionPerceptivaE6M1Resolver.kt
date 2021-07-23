@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-07-21 12:08
+ Last modified 23-07-21 15:50
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua6.modulo1
@@ -33,7 +33,7 @@ class OrganizacionPerceptivaE6M1Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1, 2 -> aprobadas - (reprobadas / 3.0)
+                1, 2 -> aprobadas - reprobadas / 3.0
                 else -> 0.0
             }
         )

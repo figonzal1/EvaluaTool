@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 11:15
+ Last modified 23-07-21 15:55
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo2
@@ -30,8 +30,8 @@ class RazonamientoDeductivoE9M2Resolver : BaseResolver {
         reprobadas: Int
     ): Double {
         var total = when (nTarea) {
-            1 -> floor(aprobadas - (reprobadas / 3.0))
-            2 -> floor(aprobadas - (reprobadas / 2.0))
+            1 -> floor(aprobadas - reprobadas / 3.0)
+            2 -> floor(aprobadas - reprobadas / 2.0)
             else -> 0.0
         }
         if (total < 0) total = 0.0

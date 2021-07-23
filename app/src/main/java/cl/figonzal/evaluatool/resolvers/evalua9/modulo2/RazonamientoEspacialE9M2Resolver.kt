@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-07-21 20:03
+ Last modified 23-07-21 15:33
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo2
@@ -32,7 +32,7 @@ class RazonamientoEspacialE9M2Resolver : BaseResolver {
         var total = floor(
             when (nTarea) {
                 1 -> aprobadas + reprobadas.toDouble() //1_1+1_2
-                2 -> aprobadas - (reprobadas / 3.0)
+                2 -> aprobadas - reprobadas / 3.0
                 else -> 0.0
             }
         )

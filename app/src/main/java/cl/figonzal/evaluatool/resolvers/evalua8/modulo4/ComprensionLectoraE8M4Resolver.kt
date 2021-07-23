@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 11-07-21 20:35
+ Last modified 23-07-21 15:36
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo4
@@ -36,9 +36,9 @@ class ComprensionLectoraE8M4Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1, 2 -> aprobadas - (reprobadas / 2.0)
-                3, 4 -> aprobadas - (reprobadas / 4.0)
-                5 -> aprobadas - (reprobadas / 3.0)
+                1, 2 -> aprobadas - reprobadas / 2.0
+                3, 4 -> aprobadas - reprobadas / 4.0
+                5 -> aprobadas - reprobadas / 3.0
                 else -> 0.0
             }
         )

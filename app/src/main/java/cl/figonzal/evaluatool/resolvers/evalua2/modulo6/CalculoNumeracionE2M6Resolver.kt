@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 29-06-21 19:31
+ Last modified 23-07-21 15:38
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua2.modulo6
@@ -33,7 +33,7 @@ class CalculoNumeracionE2M6Resolver : BaseResolver {
         var total = floor(
             when (nTarea) {
                 1 -> aprobadas.toDouble()
-                2 -> aprobadas - (reprobadas / 3.0)
+                2 -> aprobadas - reprobadas / 3.0
                 else -> 0.0
             }
         )

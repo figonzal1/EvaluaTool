@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 28-06-21 19:16
+ Last modified 23-07-21 15:41
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua2.modulo1
@@ -30,7 +30,7 @@ class PensamientoAnalogicoE2M1Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas - (reprobadas / 3.0))
+        var total = floor(aprobadas - reprobadas / 3.0)
         if (total < 0) total = 0.0
         return total
     }
