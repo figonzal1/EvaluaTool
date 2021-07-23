@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:54
+ Last modified 22-07-21 20:13
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -235,7 +235,6 @@ class ComprensionFragmentE7M4 : Fragment() {
             in 11..15 -> getString(R.string.COMPRENSION_MUY_ALTA)
             else -> {
                 requireActivity().logInfo(
-                    R.string.TAG_COMPRENSION_CALCULADA,
                     R.string.COMPRENSION_NULA
                 )
                 ""

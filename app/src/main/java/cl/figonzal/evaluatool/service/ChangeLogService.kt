@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:48
+ Last modified 22-07-21 21:16
  */
 
 package cl.figonzal.evaluatool.service
@@ -53,8 +53,20 @@ class ChangeLogService(
             0
         ) as Int
 
-        activity.logInfo(R.string.TAG_SHARED_VERSION_CODE_APP, sharedVersionCode.toString())
-        activity.logInfo(R.string.TAG_VERSION_CODE_APP, versionCode.toString())
+        activity.logInfo(
+            String.format(
+                "%s%s",
+                R.string.SHARED_VERSION_CODE_APP,
+                sharedVersionCode.toString()
+            )
+        )
+        activity.logInfo(
+            String.format(
+                "%s%s",
+                R.string.VERSION_CODE_APP,
+                versionCode.toString()
+            )
+        )
 
         when {
             sharedVersionCode < versionCode -> {
