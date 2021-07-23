@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:52
+ Last modified 23-07-21 15:32
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo2
@@ -383,10 +383,10 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
     private fun calcularSubTarea(subTarea: Int, aprobadas: Int, reprobadas: Int): Double {
         return when (subTarea) {
             //TAREA 1_1 items 1-7
-            11 -> aprobadas - (reprobadas / 5.0)
+            11 -> aprobadas - reprobadas / 5.0
 
             //TAREA 1_2 items 8-9
-            12 -> aprobadas - (reprobadas / 10.0)
+            12 -> aprobadas - reprobadas / 10.0
             else -> 0.0
         }
     }

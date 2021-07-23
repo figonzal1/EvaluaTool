@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 11:35
+ Last modified 23-07-21 15:36
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo2
@@ -35,9 +35,9 @@ class RazonamientoInductivoE9M2Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1, 2 -> aprobadas - (reprobadas / 4.0)
-                3, 4, 6 -> aprobadas - (reprobadas / 3.0)
-                5 -> aprobadas - (reprobadas / 2.0)
+                1, 2 -> aprobadas - reprobadas / 4.0
+                3, 4, 6 -> aprobadas - reprobadas / 3.0
+                5 -> aprobadas - reprobadas / 2.0
                 else -> 0.0
             }
         )

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 04-07-21 18:09
+ Last modified 23-07-21 15:50
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua5.modulo4
@@ -32,8 +32,8 @@ class ExactitudLectoraE5M4Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas - ((reprobadas + omitidas) / 2.0)
-                2 -> aprobadas - ((reprobadas + omitidas) / 4.0)
+                1 -> aprobadas - (reprobadas + omitidas) / 2.0
+                2 -> aprobadas - (reprobadas + omitidas) / 4.0
                 else -> 0.0
             }
         )

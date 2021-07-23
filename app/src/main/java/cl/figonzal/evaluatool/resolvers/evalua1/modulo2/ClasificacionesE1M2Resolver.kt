@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 13:17
+ Last modified 23-07-21 15:45
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua1.modulo2
@@ -29,7 +29,7 @@ class ClasificacionesE1M2Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas - (reprobadas / 4.0))
+        var total = floor(aprobadas - reprobadas / 4.0)
         if (total < 0) total = 0.0
         return total
     }

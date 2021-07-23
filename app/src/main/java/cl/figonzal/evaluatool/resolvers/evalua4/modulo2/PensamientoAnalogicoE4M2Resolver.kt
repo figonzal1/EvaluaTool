@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 02-07-21 21:13
+ Last modified 23-07-21 15:45
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua4.modulo2
@@ -32,8 +32,8 @@ class PensamientoAnalogicoE4M2Resolver : BaseResolver {
     ): Double {
         var total = floor(
             when (nTarea) {
-                1 -> aprobadas - (reprobadas / 3.0)
-                2 -> aprobadas - (reprobadas / 2.0)
+                1 -> aprobadas - reprobadas / 3.0
+                2 -> aprobadas - reprobadas / 2.0
                 else -> 0.0
             }
         )

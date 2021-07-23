@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:53
+ Last modified 23-07-21 15:32
  */
 
 package cl.figonzal.evaluatool.evalua.evalua6.modulo4
@@ -532,10 +532,10 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
             21 -> (aprobadas - reprobadas).toDouble()
 
             //Tarea 2_2 items 6-9
-            22 -> aprobadas - (reprobadas / 2.0)
+            22 -> aprobadas - reprobadas / 2.0
 
             //Tarea 3_1 items 1-9
-            31 -> aprobadas - (reprobadas / 3.0)
+            31 -> aprobadas - reprobadas / 3.0
 
             //Tarea 3_1 items 10-14
             32 -> (aprobadas - reprobadas).toDouble()

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 18:46
+ Last modified 23-07-21 15:41
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo1
@@ -31,7 +31,7 @@ class SeriesE0M1Resolver : BaseResolver {
         omitidas: Int,
         reprobadas: Int
     ): Double {
-        var total = floor(aprobadas - (reprobadas / 3.0))
+        var total = floor(aprobadas - reprobadas / 3.0)
         if (total < 0) total = 0.0
 
         return total

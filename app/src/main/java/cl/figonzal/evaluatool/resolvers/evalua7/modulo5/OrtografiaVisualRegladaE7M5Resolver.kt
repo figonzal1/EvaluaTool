@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 23-07-21 15:53
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua7.modulo5
@@ -33,7 +33,7 @@ class OrtografiaVisualRegladaE7M5Resolver : BaseResolver {
         var total = floor(
             when (nTarea) {
                 1 -> aprobadas - (reprobadas + omitidas).toDouble()
-                2 -> (3 * aprobadas) - (reprobadas + omitidas).toDouble()
+                2 -> 3 * aprobadas - (reprobadas + omitidas).toDouble()
                 else -> 0.0
             }
         )
