@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 22:09
+ Last modified 23-07-21 14:35
  */
 package cl.figonzal.evaluatool.activities
 
@@ -48,7 +48,7 @@ import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 class MainActivity : AppCompatActivity() {
 
     private val updateCode: Int = 350
-    val test: Boolean = true
+    val test: Boolean = false
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
