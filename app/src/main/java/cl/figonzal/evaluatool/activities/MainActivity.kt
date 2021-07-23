@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 19:38
+ Last modified 22-07-21 22:09
  */
 package cl.figonzal.evaluatool.activities
 
@@ -159,13 +159,13 @@ class MainActivity : AppCompatActivity() {
         when {
             !test && isAdsAllowed(sharedPrefService) -> adsService.apply {
 
-                logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_CARGADOS)
+                logInfo(R.string.ADS_CARGADOS)
 
                 //Load Ads
                 loadIntersitial()
                 loadRewardVideo()
             }
-            else -> logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_CARGADOS)
+            else -> logInfo(R.string.ADS_NO_CARGADOS)
         }
         return adsService
     }
@@ -274,47 +274,47 @@ class MainActivity : AppCompatActivity() {
 
                 when (i) {
                     0 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_0)
+                        logInfo(R.string.BTN_EVALUA_0)
                         activityToOpen = Evalua0Activity::class.java
                     }
                     1 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_1)
+                        logInfo(R.string.BTN_EVALUA_1)
                         activityToOpen = Evalua1Activity::class.java
                     }
                     2 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_2)
+                        logInfo(R.string.BTN_EVALUA_2)
                         activityToOpen = Evalua2Activity::class.java
                     }
                     3 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_3)
+                        logInfo(R.string.BTN_EVALUA_3)
                         activityToOpen = Evalua3Activity::class.java
                     }
                     4 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_4)
+                        logInfo(R.string.BTN_EVALUA_4)
                         activityToOpen = Evalua4Activity::class.java
                     }
                     5 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_5)
+                        logInfo(R.string.BTN_EVALUA_5)
                         activityToOpen = Evalua5Activity::class.java
                     }
                     6 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_6)
+                        logInfo(R.string.BTN_EVALUA_6)
                         activityToOpen = Evalua6Activity::class.java
                     }
                     7 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_7)
+                        logInfo(R.string.BTN_EVALUA_7)
                         activityToOpen = Evalua7Activity::class.java
                     }
                     8 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_8)
+                        logInfo(R.string.BTN_EVALUA_8)
                         activityToOpen = Evalua8Activity::class.java
                     }
                     9 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_9)
+                        logInfo(R.string.BTN_EVALUA_9)
                         activityToOpen = Evalua9Activity::class.java
                     }
                     10 -> {
-                        logInfo(R.string.BUTTON_MAIN, R.string.BTN_EVALUA_10)
+                        logInfo(R.string.BTN_EVALUA_10)
                         activityToOpen = Evalua10Activity::class.java
                     }
                 }

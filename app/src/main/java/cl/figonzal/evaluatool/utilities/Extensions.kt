@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 13:23
+ Last modified 22-07-21 21:11
  */
 
 package cl.figonzal.evaluatool.utilities
@@ -58,24 +58,13 @@ fun AppCompatActivity.configActionBar(title: Int, materialToolbar: MaterialToolb
 fun Activity.logInfo(msgId: Int) = Timber.i(getString(msgId))
 
 /**
- * Function that provide logs with a Tag ID & String ID
- *
- * @param idMsg Id used for message logs
- * @param idTag Id used for TAG
- * @return Unit
- * @version 17-04-2021
- */
-fun Activity.logInfo(idTag: Int, idMsg: Int) = Timber.i("%s%s", getString(idTag), getString(idMsg))
-
-/**
  * Function that provide logs with a Tag ID & String
  *
  * @param msg Message for logs
- * @param idTag Id used for TAG
  * @return Unit
  * @version 17-04-2021
  */
-fun Activity.logInfo(idTag: Int, msg: String) = Timber.i("%s%s", getString(idTag), msg)
+fun Activity.logInfo(msg: String) = Timber.i(msg)
 
 /**
  * Function to show toast easily
@@ -91,15 +80,10 @@ fun Activity.toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).s
  *
  * @param tarea task to be written
  * @param total Direct score
- * @version 03-04-2021
+ * @version 22-07-2021
  * @return String
  *
  */
-@Deprecated("Use formatSubTotalPoints")
-fun Activity.setSubTotalPoints(tarea: String, total: Double): String {
-    return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
-}
-
 fun Activity.formatSubTotalPoints(tarea: String, total: Double): String {
     return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
 }
@@ -132,13 +116,13 @@ fun Activity.confirmationDialogReward(adsService: AdsService) {
         .setTitle(getString(R.string.DIALOG_TITLE))
         .setMessage(getString(R.string.DIALOG_MESSAGE))
         .setNegativeButton(getString(R.string.DIALOG_NEGATIVE_BUTTON)) { _, _ ->
-            this.logInfo(R.string.TAG_REWARD_DIALOG_BTN_CANCEL)
+            this.logInfo(R.string.REWARD_DIALOG_BTN_CANCEL)
         }
         .setPositiveButton(getString(R.string.DIALOG_POSITIVE_BUTTON)) { _, _ ->
             when {
                 adsService.getIntersitial() != null -> {
                     adsService.showRewardVideo()
-                    this.logInfo(R.string.TAG_REWARD_DIALOG_BTN_VER_VIDEO)
+                    this.logInfo(R.string.REWARD_DIALOG_BTN_VER_VIDEO)
                 }
             }
         }
@@ -159,7 +143,7 @@ fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
         ) as Long
     )
 
-    logInfo(R.string.TAG_BTN_REWARD_DATE, DateHandler.dateToString(rewardDate))
+    logInfo(DateHandler.dateToString(rewardDate))
     return nowDate.after(rewardDate)
 }
 

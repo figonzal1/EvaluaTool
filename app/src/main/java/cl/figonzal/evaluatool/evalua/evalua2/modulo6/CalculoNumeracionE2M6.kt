@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:54
+ Last modified 22-07-21 20:54
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo6
 
@@ -36,7 +36,6 @@ class CalculoNumeracionE2M6 : AppCompatActivity() {
     //TAREA 1
     private lateinit var etAprobadasT1: TextInputEditText
     private var aprobadasT1 = 0
-    private val reprobadasT1 = 0
 
     //TAREA 2
     private lateinit var etAprobadasT2: TextInputEditText

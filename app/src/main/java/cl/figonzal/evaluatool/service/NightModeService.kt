@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:52
+ Last modified 22-07-21 22:09
  */
 
 package cl.figonzal.evaluatool.service
@@ -48,11 +48,11 @@ class NightModeService(
 
         when (sharedPrefService.getData(EvaluaUtils.get(R.string.NIGHT_MODE_KEY), false)) {
             true -> {
-                activity.logInfo(R.string.TAG_NIGHT_MODE, R.string.TAG_NIGHT_MODE_STATUS_ON)
+                activity.logInfo(R.string.NIGHT_MODE_STATUS_ON)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
             false -> {
-                activity.logInfo(R.string.TAG_NIGHT_MODE, R.string.TAG_NIGHT_MODE_STATUS_OFF)
+                activity.logInfo(R.string.NIGHT_MODE_STATUS_OFF)
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }

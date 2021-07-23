@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 13:23
+ Last modified 22-07-21 22:09
  */
 package cl.figonzal.evaluatool.service
 
@@ -60,14 +60,13 @@ class AdsService(
                 override fun onAdLoaded(p0: InterstitialAd) {
                     super.onAdLoaded(p0)
                     interstitialAd = p0
-                    activity.logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_CARGADO)
+                    activity.logInfo(R.string.INTERSITIAL_CARGADO)
 
                 }
 
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
                     activity.logInfo(
-                        R.string.TAG_INTERSITIAL_STATUS,
                         R.string.INTERSITIAL_NO_CARGADO
                     )
                 }
@@ -93,14 +92,14 @@ class AdsService(
                 interstitialAd = null
 
                 with(activity, {
-                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_NO_MOSTRADO)
+                    logInfo(R.string.INTERSITIAL_NO_MOSTRADO)
                     startActivity(Intent(this, destActivity))
                 })
             }
 
             override fun onAdShowedFullScreenContent() {
                 super.onAdShowedFullScreenContent()
-                activity.logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_MOSTRADO)
+                activity.logInfo(R.string.INTERSITIAL_MOSTRADO)
             }
 
             override fun onAdDismissedFullScreenContent() {
@@ -108,7 +107,7 @@ class AdsService(
                 loadIntersitial()
 
                 with(activity, {
-                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.INTERSITIAL_CERRADO)
+                    logInfo(R.string.INTERSITIAL_CERRADO)
                     startActivity(Intent(this, destActivity))
                 })
             }
@@ -133,8 +132,7 @@ class AdsService(
                 override fun onAdLoaded(p0: RewardedAd) {
                     rewardedAd = p0
                     activity.logInfo(
-                        R.string.TAG_VIDEO_REWARD_STATUS,
-                        R.string.TAG_VIDEO_REWARD_STATUS_LOADED
+                        R.string.VIDEO_REWARD_STATUS_LOADED
                     )
 
                     //Try to show dialog
@@ -148,8 +146,7 @@ class AdsService(
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
                     activity.logInfo(
-                        R.string.TAG_VIDEO_REWARD_STATUS,
-                        R.string.TAG_VIDEO_REWARD_STATUS_FAILED
+                        R.string.VIDEO_REWARD_STATUS_FAILED
                     )
                 }
             }
@@ -167,14 +164,24 @@ class AdsService(
 
             rewardedAd.show(this) {
 
-                logInfo(R.string.TAG_VIDEO_REWARD_STATUS, R.string.TAG_VIDEO_REWARD_STATUS_REWARDED)
+                logInfo(R.string.VIDEO_REWARD_STATUS_REWARDED)
 
                 val dateNow = Date()
-                logInfo(R.string.TAG_HORA_AHORA, DateHandler.dateToString(dateNow))
+                logInfo(
+                    String.format(
+                        "%s%s",
+                        R.string.HORA_AHORA,
+                        DateHandler.dateToString(dateNow)
+                    )
+                )
 
                 //sumar 24 horas al tiempo del celular
                 val dateNew = DateHandler.addHoursToDate(dateNow, 24)
-                logInfo(R.string.TAG_HORA_REWARD, DateHandler.dateToString(dateNew))
+                logInfo(
+                    String.format(
+                        "%s%s", R.string.HORA_REWARD, DateHandler.dateToString(dateNew)
+                    )
+                )
 
                 //Guardar fecha de termino de reward
                 sharedPrefService.saveData(
@@ -206,29 +213,26 @@ class AdsService(
         //Si la hora del celular es posterior a reward date
         when {
             nowDate.after(rewardDate) -> {
-                activity.logInfo(R.string.TAG_REWARD_STATUS, R.string.TAG_REWARD_STATUS_EN_PERIODO)
+                activity.logInfo(R.string.REWARD_STATUS_EN_PERIODO)
                 //Generar % de aparicion de dialogo
                 when {
                     EvaluaUtils.generateRandomNumber() -> {
                         //Mostrar dialog
                         activity.confirmationDialogReward(this)
                         activity.logInfo(
-                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG,
-                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_ON
+                            R.string.RANDOM_SHOW_REWARD_DIALOG_ON
                         )
                     }
                     else -> {
                         activity.logInfo(
-                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG,
-                            R.string.TAG_RANDOM_SHOW_REWARD_DIALOG_OFF
+                            R.string.RANDOM_SHOW_REWARD_DIALOG_OFF
                         )
                     }
                 }
             }
             nowDate.before(rewardDate) -> {
                 activity.logInfo(
-                    R.string.TAG_REWARD_STATUS,
-                    R.string.TAG_REWARD_STATUS_PERIODO_INACTIVO
+                    R.string.REWARD_STATUS_PERIODO_INACTIVO
                 )
             }
         }
@@ -248,11 +252,11 @@ class AdsService(
         with(activity, {
             when {
                 !test && isAdsAllowed(sharedPrefService) -> {
-                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_PERMITIDOS)
+                    logInfo(R.string.ADS_PERMITIDOS)
                     showIntersitial(activityToOpen)
                 }
                 else -> {
-                    logInfo(R.string.TAG_INTERSITIAL_STATUS, R.string.TAG_ADS_NO_PERMITIDOS)
+                    logInfo(R.string.ADS_NO_PERMITIDOS)
                     startActivity(Intent(this, activityToOpen))
                 }
             }
