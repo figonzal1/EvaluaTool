@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 18:57
+ Last modified 27-07-21 17:57
  */
 package cl.figonzal.evaluatool.evalua.evalua2.modulo3.adaptacionFragments
 
@@ -27,9 +27,9 @@ import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmen
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 import java.util.*
 
 class ConductaProSocialFragmentE2M3 : Fragment() {
@@ -95,15 +95,12 @@ class ConductaProSocialFragmentE2M3 : Fragment() {
             progressBar = binding.cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            requireActivity().setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                requireActivity().alertDialogPdCorregido()
-            }
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES)
             )
 

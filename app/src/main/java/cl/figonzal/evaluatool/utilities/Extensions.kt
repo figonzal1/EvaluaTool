@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 14:46
+ Last modified 27-07-21 18:02
  */
 
 package cl.figonzal.evaluatool.utilities
@@ -18,6 +18,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
@@ -191,3 +192,10 @@ fun Activity.setIndexAnimation(totalPd: Double): TransitionDrawable {
     return transitionDrawable
 }
 
+fun Activity.setAlertDialogCorregido(ivHelpPdCorregido: ImageView) {
+    ivHelpPdCorregido.setOnClickListener {
+
+        Timber.tag("AlertDialogCorregido").d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
+        alertDialogPdCorregido()
+    }
+}

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 27-07-21 17:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments
@@ -30,7 +30,6 @@ import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Re
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 
 class MotivacionFragmentE7M3 : Fragment() {
 
@@ -94,13 +93,10 @@ class MotivacionFragmentE7M3 : Fragment() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            requireActivity().setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                requireActivity().alertDialogPdCorregido()
-            }
             EvaluaUtils.configurarTextoBaremo(
-                parentFragmentManager, tablaBaremo.tvBaremo, resolver.perc, getString(
+                parentFragmentManager, tablaBaremo.tvBaremo, resolver, getString(
                     R.string.TOOLBAR_MOTIVACION
                 )
             )

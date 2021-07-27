@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:50
+ Last modified 27-07-21 17:57
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo3.adaptacionFragment
@@ -27,9 +27,9 @@ import cl.figonzal.evaluatool.databinding.FragmentAdaptacionFamiliarE9M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo3.AdaptacionFamiliarFragmentE9M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua9.modulo3.AdaptacionFamiliarFragmentE9M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 
 class AdaptacionFamiliarFragmentE9M3 : Fragment() {
 
@@ -89,15 +89,12 @@ class AdaptacionFamiliarFragmentE9M3 : Fragment() {
             this@AdaptacionFamiliarFragmentE9M3.progressBar = progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            ivHelpPdCorregido.setOnClickListener {
+            requireActivity().setAlertDialogCorregido(ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                requireActivity().alertDialogPdCorregido()
-            }
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_ADAP_FAMILIAR)
             )
         }).also {
