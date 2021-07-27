@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 18:57
+ Last modified 27-07-21 17:59
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -110,15 +110,12 @@ class ComprensionLectoraE1M4 : AppCompatActivity() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                alertDialogPdCorregido()
-            }
             EvaluaUtils.configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_COMPREN_LECTORA)
             )
         }).also {

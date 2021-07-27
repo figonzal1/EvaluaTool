@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 18:57
+ Last modified 27-07-21 17:58
  */
 package cl.figonzal.evaluatool.evalua.evalua3.modulo2
 
@@ -25,6 +25,7 @@ import cl.figonzal.evaluatool.resolvers.evalua3.modulo2.PensamientoAnalogicoE3M2
 import cl.figonzal.evaluatool.resolvers.evalua3.modulo2.PensamientoAnalogicoE3M2Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua3.modulo2.PensamientoAnalogicoE3M2Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -91,16 +92,12 @@ class PensamientoAnalogicoE3M2 : AppCompatActivity() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                alertDialogPdCorregido()
-
-            }
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO)
             )
         }).also {

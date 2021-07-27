@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:23
+ Last modified 27-07-21 17:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4.velocidadFragments
@@ -28,9 +28,9 @@ import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.VelocidadFragmentE10M4R
 import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.VelocidadFragmentE10M4Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.VelocidadFragmentE10M4Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import timber.log.Timber
 
 class VelocidadFragmentE10M4 : Fragment() {
 
@@ -91,16 +91,12 @@ class VelocidadFragmentE10M4 : Fragment() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            requireActivity().setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                requireActivity().alertDialogPdCorregido()
-            }
-
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_VELOCIDAD)
             )
         }).also {

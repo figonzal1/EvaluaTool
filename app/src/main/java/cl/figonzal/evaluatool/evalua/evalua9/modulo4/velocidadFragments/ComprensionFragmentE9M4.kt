@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 27-07-21 17:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo4.velocidadFragments
@@ -101,16 +101,12 @@ class ComprensionFragmentE9M4 : Fragment() {
             this@ComprensionFragmentE9M4.progressBar = progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            ivHelpPdCorregido.setOnClickListener {
-
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                requireActivity().alertDialogPdCorregido()
-            }
+            requireActivity().setAlertDialogCorregido(ivHelpPdCorregido)
 
             EvaluaUtils.configurarTextoBaremo(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_COMPRENSION)
             )
         }).also {

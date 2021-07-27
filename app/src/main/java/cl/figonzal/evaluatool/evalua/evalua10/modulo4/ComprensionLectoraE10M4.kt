@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:23
+ Last modified 27-07-21 17:58
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo4
@@ -26,6 +26,7 @@ import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.ComprensionLectoraE10M4
 import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.ComprensionLectoraE10M4Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua10.modulo4.ComprensionLectoraE10M4Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -121,16 +122,12 @@ class ComprensionLectoraE10M4 : AppCompatActivity() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                alertDialogPdCorregido()
-            }
-
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_COMPREN_LECTORA)
             )
         }).also {

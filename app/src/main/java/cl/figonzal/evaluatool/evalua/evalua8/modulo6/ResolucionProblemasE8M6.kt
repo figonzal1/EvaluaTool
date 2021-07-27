@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 27-07-21 17:59
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo6
@@ -26,6 +26,7 @@ import cl.figonzal.evaluatool.resolvers.evalua8.modulo6.ResolucionProblemasE8M6R
 import cl.figonzal.evaluatool.resolvers.evalua8.modulo6.ResolucionProblemasE8M6Resolver.Companion.DESVIACION
 import cl.figonzal.evaluatool.resolvers.evalua8.modulo6.ResolucionProblemasE8M6Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -86,15 +87,12 @@ class ResolucionProblemasE8M6 : AppCompatActivity() {
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
 
-            cardViewFinal.ivHelpPdCorregido.setOnClickListener {
+            setAlertDialogCorregido(cardViewFinal.ivHelpPdCorregido)
 
-                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
-                alertDialogPdCorregido()
-            }
-            EvaluaUtils.configurarTextoBaremo(
+            configurarTextoBaremo(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
-                resolver.perc,
+                resolver,
                 getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS)
             )
         }).also {

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:52
+ Last modified 27-07-21 17:59
  */
 package cl.figonzal.evaluatool.utilities
 
@@ -23,6 +23,7 @@ import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.ApplicationController
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.BaremoDialogFragment
+import cl.figonzal.evaluatool.interfaces.BaseResolver
 import timber.log.Timber
 import java.util.*
 import kotlin.math.roundToInt
@@ -161,7 +162,7 @@ object EvaluaUtils {
     fun configurarTextoBaremo(
         fragmentManager: FragmentManager,
         tvBaremo: TextView,
-        perc: Array<Array<Any>>,
+        resolver: BaseResolver,
         itemName: String
     ) {
 
@@ -170,7 +171,10 @@ object EvaluaUtils {
 
         val clickSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                BaremoDialogFragment(perc, itemName).show(fragmentManager, "Dialogo baremo")
+                BaremoDialogFragment(resolver.perc, itemName).show(
+                    fragmentManager,
+                    "Dialogo baremo"
+                )
             }
         }
         spans.setSpan(clickSpan, 0, spans.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
