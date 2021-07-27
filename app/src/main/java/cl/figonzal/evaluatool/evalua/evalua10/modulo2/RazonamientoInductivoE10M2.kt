@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:53
+ Last modified 26-07-21 20:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo2
@@ -28,6 +28,7 @@ import cl.figonzal.evaluatool.resolvers.evalua10.modulo2.RazonamientoInductivoE1
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 
 class RazonamientoInductivoE10M2 : AppCompatActivity() {
 
@@ -110,7 +111,7 @@ class RazonamientoInductivoE10M2 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 alertDialogPdCorregido()
 
             }
@@ -375,7 +376,7 @@ class RazonamientoInductivoE10M2 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

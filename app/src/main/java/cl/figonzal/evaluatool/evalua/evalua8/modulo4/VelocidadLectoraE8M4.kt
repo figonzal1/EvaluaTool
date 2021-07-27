@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:48
+ Last modified 26-07-21 20:14
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
@@ -20,9 +20,9 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE8M4Binding
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.velocidadFragments.FragmentStateAdapterE8M4
 import cl.figonzal.evaluatool.utilities.configActionBar
-import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import timber.log.Timber
 
 class VelocidadLectoraE8M4 : AppCompatActivity() {
 
@@ -54,7 +54,7 @@ class VelocidadLectoraE8M4 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

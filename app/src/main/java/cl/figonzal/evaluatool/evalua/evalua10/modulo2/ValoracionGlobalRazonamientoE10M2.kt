@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:50
+ Last modified 26-07-21 20:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo2
@@ -24,8 +24,8 @@ import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalRazonamientoE1
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilities.configActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
-import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import kotlin.math.roundToInt
 
 class ValoracionGlobalRazonamientoE10M2 : AppCompatActivity(), IndiceValorInterface {
@@ -173,7 +173,7 @@ class ValoracionGlobalRazonamientoE10M2 : AppCompatActivity(), IndiceValorInterf
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

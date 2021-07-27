@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:04
+ Last modified 26-07-21 15:33
  */
 
 package cl.figonzal.evaluatool.service
@@ -18,10 +18,10 @@ import android.content.Context
 import android.widget.TextView
 import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilities.logInfo
 import cl.figonzal.evaluatool.utilities.printChangeLogList
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.button.MaterialButton
+import timber.log.Timber
 
 
 class ChangeLogService(
@@ -51,21 +51,22 @@ class ChangeLogService(
 
         //GET SHARED PREF VERSION SAVED
         val sharedVersionCode = sharedPrefService.getData(
-            context.getString(R.string.shared_pref_actual_version_code),
+            context.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
             0
         ) as Int
 
-        activity.logInfo(
+        Timber.d(
             String.format(
                 "%s%s",
-                R.string.SHARED_VERSION_CODE_APP,
+                activity.getString(R.string.SHARED_VERSION_CODE_APP),
                 sharedVersionCode.toString()
             )
         )
-        activity.logInfo(
+
+        Timber.d(
             String.format(
                 "%s%s",
-                R.string.VERSION_CODE_APP,
+                activity.getString(R.string.VERSION_CODE_APP),
                 versionCode.toString()
             )
         )
@@ -74,13 +75,13 @@ class ChangeLogService(
             sharedVersionCode < versionCode -> {
                 showBottomSheetDialog()
                 sharedPrefService.saveData(
-                    context.getString(R.string.shared_pref_actual_version_code),
+                    context.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
                     versionCode
                 )
 
-                activity.logInfo(R.string.NEW_VERSION_DETECTED)
+                Timber.d(activity.getString(R.string.NEW_VERSION_DETECTED))
             }
-            else -> activity.logInfo(R.string.NO_VERSION_DETECTED)
+            else -> Timber.d(activity.getString(R.string.NO_VERSION_DETECTED))
         }
 
     }

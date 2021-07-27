@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 20:13
+ Last modified 26-07-21 21:37
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo4.velodadFragments
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.resolvers.evalua4.modulo4.ComprensionFragmentE4M4R
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class ComprensionFragmentE4M4 : Fragment() {
@@ -104,7 +105,7 @@ class ComprensionFragmentE4M4 : Fragment() {
 
             ivHelpPdCorregido.setOnClickListener {
 
-                requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 requireActivity().alertDialogPdCorregido()
             }
             EvaluaUtils.configurarTextoBaremo(
@@ -272,8 +273,10 @@ class ComprensionFragmentE4M4 : Fragment() {
             in 11..15 -> getString(R.string.COMPRENSION_MUY_ALTA)
 
             else -> {
-                requireActivity().logInfo(
-                    R.string.COMPRENSION_NULA
+                Timber.d(
+                    getString(
+                        R.string.COMPRENSION_NULA
+                    )
                 )
                 ""
             }

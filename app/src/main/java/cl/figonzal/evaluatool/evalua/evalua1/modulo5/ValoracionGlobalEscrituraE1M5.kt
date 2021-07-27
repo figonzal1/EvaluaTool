@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:49
+ Last modified 26-07-21 19:10
  */
 
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
@@ -24,8 +24,8 @@ import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalEscrituraE1M5B
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilities.configActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
-import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import kotlin.math.roundToInt
 
 class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface {
@@ -173,7 +173,7 @@ class ValoracionGlobalEscrituraE1M5 : AppCompatActivity(), IndiceValorInterface 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

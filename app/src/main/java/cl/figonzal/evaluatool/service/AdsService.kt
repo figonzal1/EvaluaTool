@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 22:09
+ Last modified 26-07-21 15:44
  */
 package cl.figonzal.evaluatool.service
 
@@ -60,15 +60,13 @@ class AdsService(
                 override fun onAdLoaded(p0: InterstitialAd) {
                     super.onAdLoaded(p0)
                     interstitialAd = p0
-                    activity.logInfo(R.string.INTERSITIAL_CARGADO)
+                    Timber.d(activity.getString(R.string.INTERSITIAL_CARGADO))
 
                 }
 
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
-                    activity.logInfo(
-                        R.string.INTERSITIAL_NO_CARGADO
-                    )
+                    Timber.d(activity.getString(R.string.INTERSITIAL_NO_CARGADO))
                 }
             }
         )
@@ -85,34 +83,34 @@ class AdsService(
      */
     private fun showIntersitial(destActivity: Class<out Activity?>?) {
 
-        interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
+        with(activity) {
+            interstitialAd?.fullScreenContentCallback = object : FullScreenContentCallback() {
 
-            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                super.onAdFailedToShowFullScreenContent(p0)
-                interstitialAd = null
+                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                    super.onAdFailedToShowFullScreenContent(p0)
+                    interstitialAd = null
 
-                with(activity, {
-                    logInfo(R.string.INTERSITIAL_NO_MOSTRADO)
-                    startActivity(Intent(this, destActivity))
-                })
+                    Timber.d(getString(R.string.INTERSITIAL_NO_MOSTRADO))
+                    startActivity(Intent(this@with, destActivity))
+                }
+
+
+                override fun onAdShowedFullScreenContent() {
+                    super.onAdShowedFullScreenContent()
+                    Timber.d(getString(R.string.INTERSITIAL_MOSTRADO))
+                }
+
+                override fun onAdDismissedFullScreenContent() {
+                    super.onAdDismissedFullScreenContent()
+                    loadIntersitial()
+
+                    Timber.d(getString(R.string.INTERSITIAL_CERRADO))
+                    startActivity(Intent(this@with, destActivity))
+                }
             }
 
-            override fun onAdShowedFullScreenContent() {
-                super.onAdShowedFullScreenContent()
-                activity.logInfo(R.string.INTERSITIAL_MOSTRADO)
-            }
-
-            override fun onAdDismissedFullScreenContent() {
-                super.onAdDismissedFullScreenContent()
-                loadIntersitial()
-
-                with(activity, {
-                    logInfo(R.string.INTERSITIAL_CERRADO)
-                    startActivity(Intent(this, destActivity))
-                })
-            }
+            interstitialAd?.show(this)
         }
-        interstitialAd?.show(activity)
     }
 
     /**
@@ -131,9 +129,7 @@ class AdsService(
 
                 override fun onAdLoaded(p0: RewardedAd) {
                     rewardedAd = p0
-                    activity.logInfo(
-                        R.string.VIDEO_REWARD_STATUS_LOADED
-                    )
+                    Timber.d(activity.getString(R.string.VIDEO_REWARD_STATUS_LOADED))
 
                     //Try to show dialog
                     try {
@@ -145,9 +141,7 @@ class AdsService(
 
                 override fun onAdFailedToLoad(p0: LoadAdError) {
                     super.onAdFailedToLoad(p0)
-                    activity.logInfo(
-                        R.string.VIDEO_REWARD_STATUS_FAILED
-                    )
+                    Timber.w(activity.getString(R.string.VIDEO_REWARD_STATUS_FAILED))
                 }
             }
         )
@@ -164,22 +158,24 @@ class AdsService(
 
             rewardedAd.show(this) {
 
-                logInfo(R.string.VIDEO_REWARD_STATUS_REWARDED)
+                Timber.d(getString(R.string.VIDEO_REWARD_STATUS_REWARDED))
 
                 val dateNow = Date()
-                logInfo(
+                Timber.d(
                     String.format(
                         "%s%s",
-                        R.string.HORA_AHORA,
+                        getString(R.string.HORA_AHORA),
                         DateHandler.dateToString(dateNow)
                     )
                 )
 
                 //sumar 24 horas al tiempo del celular
                 val dateNew = DateHandler.addHoursToDate(dateNow, 24)
-                logInfo(
+                Timber.d(
                     String.format(
-                        "%s%s", R.string.HORA_REWARD, DateHandler.dateToString(dateNew)
+                        "%s%s",
+                        getString(R.string.HORA_REWARD),
+                        DateHandler.dateToString(dateNew)
                     )
                 )
 
@@ -210,30 +206,26 @@ class AdsService(
         )
         val nowDate = Date()
 
-        //Si la hora del celular es posterior a reward date
-        when {
-            nowDate.after(rewardDate) -> {
-                activity.logInfo(R.string.REWARD_STATUS_EN_PERIODO)
-                //Generar % de aparicion de dialogo
-                when {
-                    EvaluaUtils.generateRandomNumber() -> {
-                        //Mostrar dialog
-                        activity.confirmationDialogReward(this)
-                        activity.logInfo(
-                            R.string.RANDOM_SHOW_REWARD_DIALOG_ON
-                        )
-                    }
-                    else -> {
-                        activity.logInfo(
-                            R.string.RANDOM_SHOW_REWARD_DIALOG_OFF
-                        )
+        with(activity) {
+            //Si la hora del celular es posterior a reward date
+            when {
+                nowDate.after(rewardDate) -> {
+                    Timber.d(getString(R.string.REWARD_STATUS_EN_PERIODO))
+                    //Generar % de aparicion de dialogo
+                    when {
+                        EvaluaUtils.generateRandomNumber() -> {
+                            //Mostrar dialog
+                            confirmationDialogReward(this@AdsService)
+                            Timber.d(getString(R.string.RANDOM_SHOW_REWARD_DIALOG_ON))
+                        }
+                        else -> {
+                            Timber.d(getString(R.string.RANDOM_SHOW_REWARD_DIALOG_OFF))
+                        }
                     }
                 }
-            }
-            nowDate.before(rewardDate) -> {
-                activity.logInfo(
-                    R.string.REWARD_STATUS_PERIODO_INACTIVO
-                )
+                nowDate.before(rewardDate) -> {
+                    Timber.d(getString(R.string.REWARD_STATUS_PERIODO_INACTIVO))
+                }
             }
         }
     }
@@ -252,11 +244,11 @@ class AdsService(
         with(activity, {
             when {
                 !test && isAdsAllowed(sharedPrefService) -> {
-                    logInfo(R.string.ADS_PERMITIDOS)
+                    Timber.d(getString(R.string.ADS_PERMITIDOS))
                     showIntersitial(activityToOpen)
                 }
                 else -> {
-                    logInfo(R.string.ADS_NO_PERMITIDOS)
+                    Timber.d(getString(R.string.ADS_NO_PERMITIDOS))
                     startActivity(Intent(this, activityToOpen))
                 }
             }
@@ -264,6 +256,8 @@ class AdsService(
     }
 
     init {
-        MobileAds.initialize(activity.applicationContext)
+        MobileAds.initialize(activity.applicationContext) {
+            Timber.d(activity.getString(R.string.MOBILE_ADS_COMPLETE))
+        }
     }
 }

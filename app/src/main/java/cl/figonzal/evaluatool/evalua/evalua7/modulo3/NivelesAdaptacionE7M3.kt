@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:50
+ Last modified 26-07-21 20:14
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3
@@ -20,9 +20,9 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE7M3Binding
 import cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments.FragmentStateAdapterE7M3
 import cl.figonzal.evaluatool.utilities.configActionBar
-import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import timber.log.Timber
 
 class NivelesAdaptacionE7M3 : AppCompatActivity() {
 
@@ -51,7 +51,7 @@ class NivelesAdaptacionE7M3 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

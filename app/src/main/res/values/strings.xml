@@ -8,384 +8,385 @@
 
   Copyright (c) 2021
 
-  Last modified 23-07-21 13:52
+  Last modified 26-07-21 21:37
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">EvaluaTool</string>
+    <string name="app_name" translatable="false">EvaluaTool</string>
 
     <!--TEST AD-->
     <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
     <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <!--PROD AD-->
-    <string name="ADMOB_ID_INTERSITIAL">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-6355378855577476/8247694252</string>
+    <string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-6355378855577476/8247694252</string>
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
 
     <!--EVALUA 0 -->
-    <string name="TOOLBAR_EVALUA_0">Evalúa 0</string>
-    <string name="TOOLBAR_CLASIFICACION">Clasificación</string>
-    <string name="TOOLBAR_SERIES">Series</string>
-    <string name="TOOLBAR_CLASIFICACIONES">Clasificaciones</string>
-    <string name="TOOLBAR_ORG_PERCEPTIVA">Organización Perceptiva</string>
-    <string name="TOOLBAR_LETRAS_NUMEROS">Letras y Números</string>
-    <string name="TOOLBAR_MEMORIA_VERBAL">Memoria Verbal</string>
-    <string name="TOOLBAR_COPIA_DIBUJOS">Copia de Dibujos</string>
-    <string name="TOOLBAR_PALABRAS_FRASES">Palabras y Frases</string>
-    <string name="TOOLBAR_RECEPCION_AUDITIVA">Recepción Auditiva y Articulación</string>
-    <string name="TOOLBAR_HABILIDADES_FONOLOGICAS">Habilidades Fonológicas</string>
-    <string name="TOOLBAR_GRAFOMOTRICIDAD">Grafomotricidad</string>
-    <string name="TOOLBAR_INDICE_GENERAL_ESPACIAL">Índice General Espacial</string>
-    <string name="TOOLBAR_INDICE_GENERAL_LINGUISTICO">Índice General Linguístico</string>
-    <string name="EVALUA_0_MODULO_1">Capacidades Cognitivas</string>
-    <string name="EVALUA_0_MODULO_2">Capacidades Espaciales</string>
-    <string name="EVALUA_0_MODULO_3">Capacidades Linguísticas</string>
-    <string name="EVALUA_0_M1_SI_1">Clasificación [CA-0]</string>
-    <string name="EVALUA_0_M1_SI_2">Series [SE-0]</string>
-    <string name="EVALUA_0_M1_SI_3">Organización Perceptiva [OP-0]</string>
-    <string name="EVALUA_0_M1_SI_4">Letras y Números [LN-0]</string>
-    <string name="EVALUA_0_M1_SI_5">Memoria Verbal [MV-0]</string>
-    <string name="EVALUA_0_M1_SI_6">Índice General Cognitivo</string>
-    <string name="EVALUA_0_M2_SI_1">Copia de Dibujos [CD-0]</string>
-    <string name="EVALUA_0_M2_SI_2">Grafomotricidad [GR-0]</string>
-    <string name="EVALUA_0_M2_SI_3">Índice General Espacial</string>
-    <string name="EVALUA_0_M3_SI_1">Palabras y Frases [PF-0]</string>
-    <string name="EVALUA_0_M3_SI_2">Recepción Auditiva y Articulación [RA-0]</string>
-    <string name="EVALUA_0_M3_SI_3">Habilidades Fonológicas [HF-0]</string>
-    <string name="EVALUA_0_M3_SI_4">Índice General Linguístico</string>
+    <string name="TOOLBAR_EVALUA_0" translatable="false">Evalúa 0</string>
+    <string name="TOOLBAR_CLASIFICACION" translatable="false">Clasificación</string>
+    <string name="TOOLBAR_SERIES" translatable="false">Series</string>
+    <string name="TOOLBAR_CLASIFICACIONES" translatable="false">Clasificaciones</string>
+    <string name="TOOLBAR_ORG_PERCEPTIVA" translatable="false">Organización Perceptiva</string>
+    <string name="TOOLBAR_LETRAS_NUMEROS" translatable="false">Letras y Números</string>
+    <string name="TOOLBAR_MEMORIA_VERBAL" translatable="false">Memoria Verbal</string>
+    <string name="TOOLBAR_COPIA_DIBUJOS" translatable="false">Copia de Dibujos</string>
+    <string name="TOOLBAR_PALABRAS_FRASES" translatable="false">Palabras y Frases</string>
+    <string name="TOOLBAR_RECEPCION_AUDITIVA" translatable="false">Recepción Auditiva y Articulación</string>
+    <string name="TOOLBAR_HABILIDADES_FONOLOGICAS" translatable="false">Habilidades Fonológicas</string>
+    <string name="TOOLBAR_GRAFOMOTRICIDAD" translatable="false">Grafomotricidad</string>
+    <string name="TOOLBAR_INDICE_GENERAL_ESPACIAL" translatable="false">Índice General Espacial</string>
+    <string name="TOOLBAR_INDICE_GENERAL_LINGUISTICO" translatable="false">Índice General Linguístico</string>
+    <string name="EVALUA_0_MODULO_1" translatable="false">Capacidades Cognitivas</string>
+    <string name="EVALUA_0_MODULO_2" translatable="false">Capacidades Espaciales</string>
+    <string name="EVALUA_0_MODULO_3" translatable="false">Capacidades Linguísticas</string>
+    <string name="EVALUA_0_M1_SI_1" translatable="false">Clasificación [CA-0]</string>
+    <string name="EVALUA_0_M1_SI_2" translatable="false">Series [SE-0]</string>
+    <string name="EVALUA_0_M1_SI_3" translatable="false">Organización Perceptiva [OP-0]</string>
+    <string name="EVALUA_0_M1_SI_4" translatable="false">Letras y Números [LN-0]</string>
+    <string name="EVALUA_0_M1_SI_5" translatable="false">Memoria Verbal [MV-0]</string>
+    <string name="EVALUA_0_M1_SI_6" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_0_M2_SI_1" translatable="false">Copia de Dibujos [CD-0]</string>
+    <string name="EVALUA_0_M2_SI_2" translatable="false">Grafomotricidad [GR-0]</string>
+    <string name="EVALUA_0_M2_SI_3" translatable="false">Índice General Espacial</string>
+    <string name="EVALUA_0_M3_SI_1" translatable="false">Palabras y Frases [PF-0]</string>
+    <string name="EVALUA_0_M3_SI_2" translatable="false">Recepción Auditiva y Articulación [RA-0]</string>
+    <string name="EVALUA_0_M3_SI_3" translatable="false">Habilidades Fonológicas [HF-0]</string>
+    <string name="EVALUA_0_M3_SI_4" translatable="false">Índice General Linguístico</string>
 
     <!-- Evalua 1-->
-    <string name="TOOLBAR_EVALUA_1">Evalúa 1</string>
-    <string name="TOOLBAR_NIVELES_ADAPTACION">Niveles de Adaptación</string>
-    <string name="EVALUA_1_MODULO_1">Memoria y Atención</string>
-    <string name="EVALUA_1_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_1_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_1_MODULO_4">Lectura</string>
-    <string name="EVALUA_1_MODULO_5">Escritura</string>
-    <string name="EVALUA_1_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_1_M1_SI_1">Memoria y Atención [MA-1]</string>
-    <string name="EVALUA_1_M2_SI_1">Series [RE-1]</string>
-    <string name="EVALUA_1_M2_SI_2">Clasificaciones [CL-1]</string>
-    <string name="EVALUA_1_M2_SI_3">Organización Perceptiva [OP-1]</string>
-    <string name="EVALUA_1_M3_SI_1">Niveles de Adaptación [NA-1]</string>
-    <string name="EVALUA_1_VALORACION_BASES_RAZONAMIENTO">Valoración Global De Las Bases Del Razonamiento</string>
-    <string name="EVALUA_1_VALORACION_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_1_VALORACION_ESCRITURA">Valoración Global De La Escritura</string>
-    <string name="EVALUA_1_M4_SI_1">Comprensión Lectora [CL-1]</string>
-    <string name="EVALUA_1_M4_SI_2">Exactitud Lectora [EL-1]</string>
-    <string name="EVALUA_1_M5_SI_1">Ortografía Fonética [OF-1]</string>
-    <string name="EVALUA_1_M5_SI_2">Ortografía Visual [OR-1]</string>
-    <string name="EVALUA_1_M6_SI_1">Cálculo y Numeración [CN-1]</string>
+    <string name="TOOLBAR_EVALUA_1" translatable="false">Evalúa 1</string>
+    <string name="TOOLBAR_NIVELES_ADAPTACION" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_1_MODULO_1" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_1_MODULO_2" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_1_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_1_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_1_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_1_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_1_M1_SI_1" translatable="false">Memoria y Atención [MA-1]</string>
+    <string name="EVALUA_1_M2_SI_1" translatable="false">Series [RE-1]</string>
+    <string name="EVALUA_1_M2_SI_2" translatable="false">Clasificaciones [CL-1]</string>
+    <string name="EVALUA_1_M2_SI_3" translatable="false">Organización Perceptiva [OP-1]</string>
+    <string name="EVALUA_1_M3_SI_1" translatable="false">Niveles de Adaptación [NA-1]</string>
+    <string name="EVALUA_1_VALORACION_BASES_RAZONAMIENTO" translatable="false">Valoración Global De Las Bases Del Razonamiento</string>
+    <string name="EVALUA_1_VALORACION_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_1_VALORACION_ESCRITURA" translatable="false">Valoración Global De La Escritura</string>
+    <string name="EVALUA_1_M4_SI_1" translatable="false">Comprensión Lectora [CL-1]</string>
+    <string name="EVALUA_1_M4_SI_2" translatable="false">Exactitud Lectora [EL-1]</string>
+    <string name="EVALUA_1_M5_SI_1" translatable="false">Ortografía Fonética [OF-1]</string>
+    <string name="EVALUA_1_M5_SI_2" translatable="false">Ortografía Visual [OR-1]</string>
+    <string name="EVALUA_1_M6_SI_1" translatable="false">Cálculo y Numeración [CN-1]</string>
 
     <!-- EVALUA 2-->
-    <string name="TOOLBAR_EVALUA_2">Evalúa 2</string>
-    <string name="EVALUA_2_MODULO_1">Bases del Razonamiento</string>
-    <string name="EVALUA_2_MODULO_2">Memoria y Atención</string>
-    <string name="EVALUA_2_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_2_MODULO_4">Lectura</string>
-    <string name="EVALUA_2_MODULO_5">Escritura</string>
-    <string name="EVALUA_2_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_2_M1_SI_1">Pensamiento Analógico [PA-2]</string>
-    <string name="EVALUA_2_M1_SI_2">Organización Perceptiva [OP-2]</string>
-    <string name="EVALUA_2_M1_SI_3">Clasificaciones [CA-2]</string>
-    <string name="EVALUA_2_M2_SI_1">Memoria y Atención [MA-2]</string>
-    <string name="EVALUA_2_M3_SI_1">Niveles de Adaptación [NA-2]</string>
-    <string name="EVALUA_2_M4_SI_1">Comprensión Lectora [CL-2]</string>
-    <string name="EVALUA_2_M5_SI_1">Ortografía [OR-2]</string>
-    <string name="EVALUA_2_M6_SI_1">Cálculo y Numeración [CN-2]</string>
-    <string name="EVALUA_2_M6_SI_2">Resolución de Problemas [RP-2]</string>
-    <string name="EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_2_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_2_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
-    <string name="EVALUA_2_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
-    <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_2_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
-    <string name="EVALUA_2_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
-    <string name="EVALUA_2_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
-    <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="TOOLBAR_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
-    <string name="TOOLBAR_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
-    <string name="TOOLBAR_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
-    <string name="TOOLBAR_ORTOGRAFIA">Ortografía</string>
+    <string name="TOOLBAR_EVALUA_2" translatable="false">Evalúa 2</string>
+    <string name="EVALUA_2_MODULO_1" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_2_MODULO_2" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_2_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_2_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_2_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_2_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_2_M1_SI_1" translatable="false">Pensamiento Analógico [PA-2]</string>
+    <string name="EVALUA_2_M1_SI_2" translatable="false">Organización Perceptiva [OP-2]</string>
+    <string name="EVALUA_2_M1_SI_3" translatable="false">Clasificaciones [CA-2]</string>
+    <string name="EVALUA_2_M2_SI_1" translatable="false">Memoria y Atención [MA-2]</string>
+    <string name="EVALUA_2_M3_SI_1" translatable="false">Niveles de Adaptación [NA-2]</string>
+    <string name="EVALUA_2_M4_SI_1" translatable="false">Comprensión Lectora [CL-2]</string>
+    <string name="EVALUA_2_M5_SI_1" translatable="false">Ortografía [OR-2]</string>
+    <string name="EVALUA_2_M6_SI_1" translatable="false">Cálculo y Numeración [CN-2]</string>
+    <string name="EVALUA_2_M6_SI_2" translatable="false">Resolución de Problemas [RP-2]</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_ESCRITURA" translatable="false">Valoración Global De La Escritura</string>
+    <string name="EVALUA_2_VALORACION_GLOBAL_MATEMATICA" translatable="false">Valoración Global De Las Matemáticas</string>
+    <string name="EVALUA_2_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_2_INDICE_GENERAL_LECTURA" translatable="false">Índice General de Lectura</string>
+    <string name="EVALUA_2_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General de Escritura</string>
+    <string name="EVALUA_2_INDICE_GENERAL_MATEMATICO" translatable="false">Índice General Matemático</string>
+    <string name="TOOLBAR_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="TOOLBAR_INDICE_GENERAL_LECTURA" translatable="false">Índice General de Lectura</string>
+    <string name="TOOLBAR_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General de Escritura</string>
+    <string name="TOOLBAR_INDICE_GENERAL_MATEMATICO" translatable="false">Índice General Matemático</string>
+    <string name="TOOLBAR_ORTOGRAFIA" translatable="false">Ortografía</string>
 
     <!-- EVALUA 3-->
-    <string name="TOOLBAR_EVALUA_3">Evalúa 3</string>
-    <string name="TOOLBAR_MEMORIA_ATENCION">Memoria y Atención</string>
-    <string name="TOOLBAR_REFLEXIVIDAD">Reflexividad</string>
-    <string name="TOOLBAR_PENSAMIENTO_ANALOGICO">Pensamiento Analógico</string>
-    <string name="TOOLBAR_VALORACION_GLOBAL">Valoración Global</string>
-    <string name="TOOLBAR_RESOLUCION_PROBLEMAS">Resolución Problemas</string>
-    <string name="TOOLBAR_EXACTITUD_LECTORA">Exactitud Lectora</string>
-    <string name="TOOLBAR_ORTOGRAFIA_VISUAL">Ortografía Visual</string>
-    <string name="EVALUA_3_MODULO_1">Memoria y Atención</string>
-    <string name="EVALUA_3_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_3_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_3_MODULO_4">Lectura</string>
-    <string name="EVALUA_3_MODULO_5">Escritura</string>
-    <string name="EVALUA_3_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_3_M1_SI_1">Memoria y Atención [MA-3]</string>
-    <string name="EVALUA_3_M2_SI_1">Reflexividad [RE-3]</string>
-    <string name="EVALUA_3_M2_SI_2">Pensamiento Analógico [PA-3]</string>
-    <string name="EVALUA_3_M2_SI_3">Organización Perceptiva [OP-3]</string>
-    <string name="EVALUA_3_M3_SI_1">Niveles de Adaptación [NA-3]</string>
-    <string name="EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global De Las Bases Del Razonamiento</string>
-    <string name="EVALUA_3_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
-    <string name="EVALUA_3_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_3_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
-    <string name="EVALUA_3_M4_SI_1">Comprensión Lectora [CL-3]</string>
-    <string name="EVALUA_3_M4_SI_2">Exactitud Lectora [EL-3]</string>
-    <string name="EVALUA_3_M5_SI_1">Ortografía Fonética [OF-3]</string>
-    <string name="EVALUA_3_M5_SI_2">Ortografía Visual Reglada [OR-3]</string>
-    <string name="EVALUA_3_M6_SI_1">Cálculo y Numeración [CN-3]</string>
-    <string name="EVALUA_3_M6_SI_2">Resolución de Problemas [RP-3]</string>
+    <string name="TOOLBAR_EVALUA_3" translatable="false">Evalúa 3</string>
+    <string name="TOOLBAR_MEMORIA_ATENCION" translatable="false">Memoria y Atención</string>
+    <string name="TOOLBAR_REFLEXIVIDAD" translatable="false">Reflexividad</string>
+    <string name="TOOLBAR_PENSAMIENTO_ANALOGICO" translatable="false">Pensamiento Analógico</string>
+    <string name="TOOLBAR_VALORACION_GLOBAL" translatable="false">Valoración Global</string>
+    <string name="TOOLBAR_RESOLUCION_PROBLEMAS" translatable="false">Resolución Problemas</string>
+    <string name="TOOLBAR_EXACTITUD_LECTORA" translatable="false">Exactitud Lectora</string>
+    <string name="TOOLBAR_ORTOGRAFIA_VISUAL" translatable="false">Ortografía Visual</string>
+    <string name="EVALUA_3_MODULO_1" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_3_MODULO_2" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_3_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_3_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_3_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_3_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_3_M1_SI_1" translatable="false">Memoria y Atención [MA-3]</string>
+    <string name="EVALUA_3_M2_SI_1" translatable="false">Reflexividad [RE-3]</string>
+    <string name="EVALUA_3_M2_SI_2" translatable="false">Pensamiento Analógico [PA-3]</string>
+    <string name="EVALUA_3_M2_SI_3" translatable="false">Organización Perceptiva [OP-3]</string>
+    <string name="EVALUA_3_M3_SI_1" translatable="false">Niveles de Adaptación [NA-3]</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global De Las Bases Del Razonamiento</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_ESCRITURA" translatable="false">Valoración Global De La Escritura</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_3_VALORACION_GLOBAL_MATEMATICA" translatable="false">Valoración Global De Las Matemáticas</string>
+    <string name="EVALUA_3_M4_SI_1" translatable="false">Comprensión Lectora [CL-3]</string>
+    <string name="EVALUA_3_M4_SI_2" translatable="false">Exactitud Lectora [EL-3]</string>
+    <string name="EVALUA_3_M5_SI_1" translatable="false">Ortografía Fonética [OF-3]</string>
+    <string name="EVALUA_3_M5_SI_2" translatable="false">Ortografía Visual Reglada [OR-3]</string>
+    <string name="EVALUA_3_M6_SI_1" translatable="false">Cálculo y Numeración [CN-3]</string>
+    <string name="EVALUA_3_M6_SI_2" translatable="false">Resolución de Problemas [RP-3]</string>
 
     <!-- EVALUA 4 -->
-    <string name="TOOLBAR_EVALUA_4">Evalúa 4</string>
-    <string name="EVALUA_4_MODULO_1">Memoria y Atención</string>
-    <string name="EVALUA_4_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_4_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_4_MODULO_4">Lectura</string>
-    <string name="EVALUA_4_MODULO_5">Escritura</string>
-    <string name="EVALUA_4_MODULO_6">Aprendizajes Matemático</string>
-    <string name="EVALUA_4_M1_SI_1">Memoria y Atención [MA-4]</string>
-    <string name="EVALUA_4_M2_SI_1">Reflexividad [RE-4]</string>
-    <string name="EVALUA_4_M2_SI_2">Pensamiento Analógico [PA-4]</string>
-    <string name="EVALUA_4_M2_SI_3">Organización Perceptiva [OP-4]</string>
-    <string name="EVALUA_4_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_4_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_4_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_4_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Las Matemáticas</string>
-    <string name="EVALUA_4_INDICE_GENERAL_ESCRITURA">Índice General de Escritura</string>
-    <string name="EVALUA_4_M3_SI_1">Niveles de Adaptación [NA-4]</string>
-    <string name="EVALUA_4_M4_SI_1">Comprensión Lectora [CL-4]</string>
-    <string name="EVALUA_4_M4_SI_2">Velocidad Lectora [VL-4]</string>
-    <string name="EVALUA_4_INDICE_GENERAL_LECTURA">Índice General de Lectura</string>
-    <string name="EVALUA_4_M5_SI_1">Ortografía Visual Reglada [OR-4]</string>
-    <string name="EVALUA_4_M6_SI_1">Cálculo y Numeración [CN-4]</string>
-    <string name="EVALUA_4_M6_SI_2">Resolución de Problemas [RP-4]</string>
-    <string name="EVALUA_4_INDICE_GENERAL_MATEMATICO">Índice General Matemático</string>
+    <string name="TOOLBAR_EVALUA_4" translatable="false">Evalúa 4</string>
+    <string name="EVALUA_4_MODULO_1" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_4_MODULO_2" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_4_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_4_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_4_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_4_MODULO_6" translatable="false">Aprendizajes Matemático</string>
+    <string name="EVALUA_4_M1_SI_1" translatable="false">Memoria y Atención [MA-4]</string>
+    <string name="EVALUA_4_M2_SI_1" translatable="false">Reflexividad [RE-4]</string>
+    <string name="EVALUA_4_M2_SI_2" translatable="false">Pensamiento Analógico [PA-4]</string>
+    <string name="EVALUA_4_M2_SI_3" translatable="false">Organización Perceptiva [OP-4]</string>
+    <string name="EVALUA_4_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_4_VALORACION_GLOBAL_MATEMATICAS" translatable="false">Valoración Global De Las Matemáticas</string>
+    <string name="EVALUA_4_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General de Escritura</string>
+    <string name="EVALUA_4_M3_SI_1" translatable="false">Niveles de Adaptación [NA-4]</string>
+    <string name="EVALUA_4_M4_SI_1" translatable="false">Comprensión Lectora [CL-4]</string>
+    <string name="EVALUA_4_M4_SI_2" translatable="false">Velocidad Lectora [VL-4]</string>
+    <string name="EVALUA_4_INDICE_GENERAL_LECTURA" translatable="false">Índice General de Lectura</string>
+    <string name="EVALUA_4_M5_SI_1" translatable="false">Ortografía Visual Reglada [OR-4]</string>
+    <string name="EVALUA_4_M6_SI_1" translatable="false">Cálculo y Numeración [CN-4]</string>
+    <string name="EVALUA_4_M6_SI_2" translatable="false">Resolución de Problemas [RP-4]</string>
+    <string name="EVALUA_4_INDICE_GENERAL_MATEMATICO" translatable="false">Índice General Matemático</string>
 
     <!--EVALUA 5 -->
-    <string name="TOOLBAR_EVALUA_5">Evalúa 5</string>
-    <string name="EVALUA_5_MODULO_1">Memoria y Atención</string>
-    <string name="EVALUA_5_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_5_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_5_MODULO_4">Lectura</string>
-    <string name="EVALUA_5_MODULO_5">Escritura</string>
-    <string name="EVALUA_5_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_5_M1_SI_1">Memoria y Atención [MA-5]</string>
-    <string name="EVALUA_5_M2_SI_1">Reflexividad [RE-5]</string>
-    <string name="EVALUA_5_M2_SI_2">Pensamiento Analógico [PA-5]</string>
-    <string name="EVALUA_5_M2_SI_3">Organización Perceptiva [OP-5]</string>
-    <string name="EVALUA_5_M3_SI_1">Niveles Adaptación [NA-5]</string>
-    <string name="EVALUA_5_M4_SI_1">Comprensión Lectora [CL-5]</string>
-    <string name="EVALUA_5_M4_SI_2">Velocidad Lectora [VL-5]</string>
-    <string name="EVALUA_5_M4_SI_3">Exactitud Lectora [EL-5]</string>
-    <string name="EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_5_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_5_VALORACION_GLOBAL_ESCRITURA">Valoración Global De La Escritura</string>
-    <string name="EVALUA_5_VALORACION_GLOBAL_MATEMATICA">Valoración Global De Las Matemáticas</string>
-    <string name="EVALUA_5_M5_SI_1">Ortografía Fonética [OF-5]</string>
-    <string name="EVALUA_5_M5_SI_2">Ortografía Visual Reglada [OV-5]</string>
-    <string name="EVALUA_5_M6_SI_1">Cálculo y Numeración [CN-5]</string>
-    <string name="EVALUA_5_M6_SI_2">Resolución Problemas [RP-5]</string>
+    <string name="TOOLBAR_EVALUA_5" translatable="false">Evalúa 5</string>
+    <string name="EVALUA_5_MODULO_1" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_5_MODULO_2" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_5_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_5_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_5_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_5_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_5_M1_SI_1" translatable="false">Memoria y Atención [MA-5]</string>
+    <string name="EVALUA_5_M2_SI_1" translatable="false">Reflexividad [RE-5]</string>
+    <string name="EVALUA_5_M2_SI_2" translatable="false">Pensamiento Analógico [PA-5]</string>
+    <string name="EVALUA_5_M2_SI_3" translatable="false">Organización Perceptiva [OP-5]</string>
+    <string name="EVALUA_5_M3_SI_1" translatable="false">Niveles Adaptación [NA-5]</string>
+    <string name="EVALUA_5_M4_SI_1" translatable="false">Comprensión Lectora [CL-5]</string>
+    <string name="EVALUA_5_M4_SI_2" translatable="false">Velocidad Lectora [VL-5]</string>
+    <string name="EVALUA_5_M4_SI_3" translatable="false">Exactitud Lectora [EL-5]</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_ESCRITURA" translatable="false">Valoración Global De La Escritura</string>
+    <string name="EVALUA_5_VALORACION_GLOBAL_MATEMATICA" translatable="false">Valoración Global De Las Matemáticas</string>
+    <string name="EVALUA_5_M5_SI_1" translatable="false">Ortografía Fonética [OF-5]</string>
+    <string name="EVALUA_5_M5_SI_2" translatable="false">Ortografía Visual Reglada [OV-5]</string>
+    <string name="EVALUA_5_M6_SI_1" translatable="false">Cálculo y Numeración [CN-5]</string>
+    <string name="EVALUA_5_M6_SI_2" translatable="false">Resolución Problemas [RP-5]</string>
 
     <!-- EVALUA 6 -->
-    <string name="TOOLBAR_EVALUA_6">Evalúa 6</string>
-    <string name="EVALUA_6_MODULO_1">Bases del Razonamiento</string>
-    <string name="EVALUA_6_MODULO_2">Memoria y Atención</string>
-    <string name="EVALUA_6_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_6_MODULO_4">Lectura</string>
-    <string name="EVALUA_6_MODULO_5">Escritura</string>
-    <string name="EVALUA_6_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_6_M1_SI_1">Reflexividad [RE-6]</string>
-    <string name="EVALUA_6_M1_SI_2">Pensamiento Analógico [PA-6]</string>
-    <string name="EVALUA_6_M1_SI_3">Organización Perceptiva [OP-6]</string>
-    <string name="EVALUA_6_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_6_VALORACION_GLOBAL_LECTURA">Valoración Global De La Lectura</string>
-    <string name="EVALUA_6_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Matemáticas</string>
-    <string name="EVALUA_6_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_6_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
-    <string name="EVALUA_6_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
-    <string name="EVALUA_6_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
-    <string name="EVALUA_6_M2_SI_1">Memoria y Atención [MA-6]</string>
-    <string name="EVALUA_6_M3_SI_1">Niveles de Adaptación [AD-6]</string>
-    <string name="EVALUA_6_M4_SI_1">Comprensión Lectora [CL-6]</string>
-    <string name="EVALUA_6_M4_SI_2">Velocidad Lectora [VL-6]</string>
-    <string name="EVALUA_6_M5_SI_1">Ortografía Visual y Reglada [OR-6]</string>
-    <string name="EVALUA_6_M6_SI_1">Cálculo y Numeración [CN-6]</string>
-    <string name="EVALUA_6_M6_SI_2">Resolución de Problemas [RP-6]</string>
+    <string name="TOOLBAR_EVALUA_6" translatable="false">Evalúa 6</string>
+    <string name="EVALUA_6_MODULO_1" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_6_MODULO_2" translatable="false">Memoria y Atención</string>
+    <string name="EVALUA_6_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_6_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_6_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_6_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_6_M1_SI_1" translatable="false">Reflexividad [RE-6]</string>
+    <string name="EVALUA_6_M1_SI_2" translatable="false">Pensamiento Analógico [PA-6]</string>
+    <string name="EVALUA_6_M1_SI_3" translatable="false">Organización Perceptiva [OP-6]</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_LECTURA" translatable="false">Valoración Global De La Lectura</string>
+    <string name="EVALUA_6_VALORACION_GLOBAL_MATEMATICAS" translatable="false">Valoración Global De Matemáticas</string>
+    <string name="EVALUA_6_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_6_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General De Escritura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_LECTURA" translatable="false">Índice General De Lectura</string>
+    <string name="EVALUA_6_INDICE_GENERAL_MATEMATICAS" translatable="false">Índice General De Matemáticas</string>
+    <string name="EVALUA_6_M2_SI_1" translatable="false">Memoria y Atención [MA-6]</string>
+    <string name="EVALUA_6_M3_SI_1" translatable="false">Niveles de Adaptación [AD-6]</string>
+    <string name="EVALUA_6_M4_SI_1" translatable="false">Comprensión Lectora [CL-6]</string>
+    <string name="EVALUA_6_M4_SI_2" translatable="false">Velocidad Lectora [VL-6]</string>
+    <string name="EVALUA_6_M5_SI_1" translatable="false">Ortografía Visual y Reglada [OR-6]</string>
+    <string name="EVALUA_6_M6_SI_1" translatable="false">Cálculo y Numeración [CN-6]</string>
+    <string name="EVALUA_6_M6_SI_2" translatable="false">Resolución de Problemas [RP-6]</string>
 
     <!-- EVALUA 7-->
-    <string name="TOOLBAR_EVALUA_7">Evalúa 7</string>
-    <string name="EVALUA_7_MODULO_1">Atención - Concentración</string>
-    <string name="EVALUA_7_MODULO_2">Bases del Razonamiento</string>
-    <string name="EVALUA_7_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_7_MODULO_4">Lectura</string>
-    <string name="EVALUA_7_MODULO_5">Escritura</string>
-    <string name="EVALUA_7_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_7_M1_SI_1">Atención y Concentración [MA-7]</string>
-    <string name="EVALUA_7_M2_SI_1">Razonamiento Deductivo [RD-7]</string>
-    <string name="EVALUA_7_M2_SI_2">Razonamiento Inductivo [RI-7]</string>
-    <string name="EVALUA_7_M2_SI_3">Razonamiento Espacial [RE-7]</string>
-    <string name="EVALUA_7_M3_SI_1">Niveles Adaptación [NA-7]</string>
-    <string name="EVALUA_7_M4_SI_1">Eficacia Lectora [EL-7]</string>
-    <string name="EVALUA_7_M4_SI_2">Comprensión Lectora [CL-7]</string>
-    <string name="EVALUA_7_M4_SI_3">Velocidad Lectora [VL-7]</string>
-    <string name="EVALUA_7_M5_SI_1">Ortografía Fonética [OF-7]</string>
-    <string name="EVALUA_7_M5_SI_2">Expresión Escrita [EE-7]</string>
-    <string name="EVALUA_7_M5_SI_3">Ortografía Visual Reglada [OV-7]</string>
-    <string name="EVALUA_7_M6_SI_1">Cálculo y Numeración [CN-7]</string>
-    <string name="EVALUA_7_M6_SI_2">Resolución de Problemas [RP-7]</string>
-    <string name="TOOLBAR_ATENCION_CONCENTRACION">Atención y Concentración</string>
-    <string name="TOOLBAR_RAZON_DEDUCTIVO">Razonamiento Deductivo</string>
-    <string name="TOOLBAR_RAZON_ESPACIAL">Razonamiento Espacial</string>
-    <string name="TOOLBAR_RAZON_INDUCTIVO">Razonamiento Inductivo</string>
-    <string name="TOOLBAR_EFICACIA_LECTORA">Eficacia Lectora</string>
-    <string name="TOOLBAR_VELOCIDAD_LECTORA">Velocidad Lectora</string>
-    <string name="TOOLBAR_COMPREN_LECTORA">Comprensión Lectora</string>
-    <string name="TOOLBAR_ORT_VIS_REGLADA">Ortografía Visual Reglada</string>
-    <string name="TOOLBAR_ORTOGRAFIA_FONETICA">Ortografía Fonética</string>
-    <string name="TOOLBAR_EXPRESION_ESCRITA">Expresión Escrita</string>
-    <string name="TOOLBAR_CALC_NUMERACION">Cálculo y Numeración</string>
+    <string name="TOOLBAR_EVALUA_7" translatable="false">Evalúa 7</string>
+    <string name="EVALUA_7_MODULO_1" translatable="false">Atención - Concentración</string>
+    <string name="EVALUA_7_MODULO_2" translatable="false">Bases del Razonamiento</string>
+    <string name="EVALUA_7_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_7_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_7_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_7_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_7_M1_SI_1" translatable="false">Atención y Concentración [MA-7]</string>
+    <string name="EVALUA_7_M2_SI_1" translatable="false">Razonamiento Deductivo [RD-7]</string>
+    <string name="EVALUA_7_M2_SI_2" translatable="false">Razonamiento Inductivo [RI-7]</string>
+    <string name="EVALUA_7_M2_SI_3" translatable="false">Razonamiento Espacial [RE-7]</string>
+    <string name="EVALUA_7_M3_SI_1" translatable="false">Niveles Adaptación [NA-7]</string>
+    <string name="EVALUA_7_M4_SI_1" translatable="false">Eficacia Lectora [EL-7]</string>
+    <string name="EVALUA_7_M4_SI_2" translatable="false">Comprensión Lectora [CL-7]</string>
+    <string name="EVALUA_7_M4_SI_3" translatable="false">Velocidad Lectora [VL-7]</string>
+    <string name="EVALUA_7_M5_SI_1" translatable="false">Ortografía Fonética [OF-7]</string>
+    <string name="EVALUA_7_M5_SI_2" translatable="false">Expresión Escrita [EE-7]</string>
+    <string name="EVALUA_7_M5_SI_3" translatable="false">Ortografía Visual Reglada [OV-7]</string>
+    <string name="EVALUA_7_M6_SI_1" translatable="false">Cálculo y Numeración [CN-7]</string>
+    <string name="EVALUA_7_M6_SI_2" translatable="false">Resolución de Problemas [RP-7]</string>
+    <string name="TOOLBAR_ATENCION_CONCENTRACION" translatable="false">Atención y Concentración</string>
+    <string name="TOOLBAR_RAZON_DEDUCTIVO" translatable="false">Razonamiento Deductivo</string>
+    <string name="TOOLBAR_RAZON_ESPACIAL" translatable="false">Razonamiento Espacial</string>
+    <string name="TOOLBAR_RAZON_INDUCTIVO" translatable="false">Razonamiento Inductivo</string>
+    <string name="TOOLBAR_EFICACIA_LECTORA" translatable="false">Eficacia Lectora</string>
+    <string name="TOOLBAR_VELOCIDAD_LECTORA" translatable="false">Velocidad Lectora</string>
+    <string name="TOOLBAR_COMPREN_LECTORA" translatable="false">Comprensión Lectora</string>
+    <string name="TOOLBAR_ORT_VIS_REGLADA" translatable="false">Ortografía Visual Reglada</string>
+    <string name="TOOLBAR_ORTOGRAFIA_FONETICA" translatable="false">Ortografía Fonética</string>
+    <string name="TOOLBAR_EXPRESION_ESCRITA" translatable="false">Expresión Escrita</string>
+    <string name="TOOLBAR_CALC_NUMERACION" translatable="false">Cálculo y Numeración</string>
 
     <!-- EVALUA 8-->
-    <string name="TOOLBAR_EVALUA_8">Evalúa 8</string>
-    <string name="EVALUA_8_MODULO_1">Atención - Concentración</string>
-    <string name="EVALUA_8_MODULO_2">Razonamiento</string>
-    <string name="EVALUA_8_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_8_MODULO_4">Lectura</string>
-    <string name="EVALUA_8_MODULO_5">Escritura</string>
-    <string name="EVALUA_8_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_8_M1_SI_1">Atención y Concentración [MA-8]</string>
-    <string name="EVALUA_8_M2_SI_1">Razonamiento Inductivo [RI-8]</string>
-    <string name="EVALUA_8_M2_SI_2">Razonamiento Espacial [RE-8]</string>
-    <string name="EVALUA_8_M2_SI_3">Razonamiento Deductivo [RD-8]</string>
-    <string name="EVALUA_8_M3_SI_1">Niveles Adaptación [NA-8]</string>
-    <string name="EVALUA_8_M4_SI_1">Comprension Lectora [CL-8]</string>
-    <string name="EVALUA_8_M4_SI_2">Eficacia Lectora [EL-8]</string>
-    <string name="EVALUA_8_M4_SI_3">Velocidad Lectora [VL-8]</string>
-    <string name="EVALUA_8_M5_SI_1">Ortografia Visual Reglada [OR-8]</string>
-    <string name="EVALUA_8_M6_SI_1">Cálculo y Numeración [CN-8]</string>
-    <string name="EVALUA_8_M6_SI_2">Resolución Problemas [RP-8]</string>
-    <string name="EVALUA_8_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_8_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_8_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
-    <string name="EVALUA_8_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
-    <string name="EVALUA_8_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
-    <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
+    <string name="TOOLBAR_EVALUA_8" translatable="false">Evalúa 8</string>
+    <string name="EVALUA_8_MODULO_1" translatable="false">Atención - Concentración</string>
+    <string name="EVALUA_8_MODULO_2" translatable="false">Razonamiento</string>
+    <string name="EVALUA_8_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_8_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_8_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_8_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_8_M1_SI_1" translatable="false">Atención y Concentración [MA-8]</string>
+    <string name="EVALUA_8_M2_SI_1" translatable="false">Razonamiento Inductivo [RI-8]</string>
+    <string name="EVALUA_8_M2_SI_2" translatable="false">Razonamiento Espacial [RE-8]</string>
+    <string name="EVALUA_8_M2_SI_3" translatable="false">Razonamiento Deductivo [RD-8]</string>
+    <string name="EVALUA_8_M3_SI_1" translatable="false">Niveles Adaptación [NA-8]</string>
+    <string name="EVALUA_8_M4_SI_1" translatable="false">Comprension Lectora [CL-8]</string>
+    <string name="EVALUA_8_M4_SI_2" translatable="false">Eficacia Lectora [EL-8]</string>
+    <string name="EVALUA_8_M4_SI_3" translatable="false">Velocidad Lectora [VL-8]</string>
+    <string name="EVALUA_8_M5_SI_1" translatable="false">Ortografia Visual Reglada [OR-8]</string>
+    <string name="EVALUA_8_M6_SI_1" translatable="false">Cálculo y Numeración [CN-8]</string>
+    <string name="EVALUA_8_M6_SI_2" translatable="false">Resolución Problemas [RP-8]</string>
+    <string name="EVALUA_8_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_8_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_8_INDICE_GENERAL_LECTURA" translatable="false">Índice General De Lectura</string>
+    <string name="EVALUA_8_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General De Escritura</string>
+    <string name="EVALUA_8_INDICE_GENERAL_MATEMATICAS" translatable="false">Índice General De Matemáticas</string>
+    <string name="EVALUA_8_VALORACION_GLOBAL_MATEMATICAS" translatable="false">Valoración Global De Los Aprendizajes Matemáticos</string>
 
     <!-- EVALUA 9-->
-    <string name="TOOLBAR_EVALUA_9">Evalúa 9</string>
-    <string name="EVALUA_9_MODULO_1">Atención - Concentración</string>
-    <string name="EVALUA_9_MODULO_2">Razonamiento</string>
-    <string name="EVALUA_9_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_9_MODULO_4">Lectura</string>
-    <string name="EVALUA_9_MODULO_5">Escritura</string>
-    <string name="EVALUA_9_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_9_M1_SI_1">Atención y Concentración [MA-9]</string>
-    <string name="EVALUA_9_M2_SI_1">Razonamiento Inductivo [RI-9]</string>
-    <string name="EVALUA_9_M2_SI_2">Razonamiento Espacial [RE-9]</string>
-    <string name="EVALUA_9_M2_SI_3">Razonamiento Deductivo [RD-9]</string>
-    <string name="EVALUA_9_M3_SI_1">Niveles Adaptación [NA-9]</string>
-    <string name="EVALUA_9_M4_SI_1">Comprension Lectora [CL-9]</string>
-    <string name="EVALUA_9_M4_SI_2">Eficacia Lectora [EL-9]</string>
-    <string name="EVALUA_9_M4_SI_3">Velocidad Lectora [VL-9]</string>
-    <string name="EVALUA_9_M5_SI_1">Ortografia Visual Reglada [OR-9]</string>
-    <string name="EVALUA_9_M6_SI_1">Cálculo y Numeración [CN-9]</string>
-    <string name="EVALUA_9_M6_SI_2">Resolución Problemas [RP-9]</string>
-    <string name="EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_9_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_9_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
-    <string name="EVALUA_9_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
-    <string name="EVALUA_9_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
-    <string name="EVALUA_9_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
+    <string name="TOOLBAR_EVALUA_9" translatable="false">Evalúa 9</string>
+    <string name="EVALUA_9_MODULO_1" translatable="false">Atención - Concentración</string>
+    <string name="EVALUA_9_MODULO_2" translatable="false">Razonamiento</string>
+    <string name="EVALUA_9_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_9_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_9_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_9_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_9_M1_SI_1" translatable="false">Atención y Concentración [MA-9]</string>
+    <string name="EVALUA_9_M2_SI_1" translatable="false">Razonamiento Inductivo [RI-9]</string>
+    <string name="EVALUA_9_M2_SI_2" translatable="false">Razonamiento Espacial [RE-9]</string>
+    <string name="EVALUA_9_M2_SI_3" translatable="false">Razonamiento Deductivo [RD-9]</string>
+    <string name="EVALUA_9_M3_SI_1" translatable="false">Niveles Adaptación [NA-9]</string>
+    <string name="EVALUA_9_M4_SI_1" translatable="false">Comprension Lectora [CL-9]</string>
+    <string name="EVALUA_9_M4_SI_2" translatable="false">Eficacia Lectora [EL-9]</string>
+    <string name="EVALUA_9_M4_SI_3" translatable="false">Velocidad Lectora [VL-9]</string>
+    <string name="EVALUA_9_M5_SI_1" translatable="false">Ortografia Visual Reglada [OR-9]</string>
+    <string name="EVALUA_9_M6_SI_1" translatable="false">Cálculo y Numeración [CN-9]</string>
+    <string name="EVALUA_9_M6_SI_2" translatable="false">Resolución Problemas [RP-9]</string>
+    <string name="EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_9_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_9_INDICE_GENERAL_LECTURA" translatable="false">Índice General De Lectura</string>
+    <string name="EVALUA_9_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General De Escritura</string>
+    <string name="EVALUA_9_INDICE_GENERAL_MATEMATICAS" translatable="false">Índice General De Matemáticas</string>
+    <string name="EVALUA_9_VALORACION_GLOBAL_MATEMATICAS" translatable="false">Valoración Global De Los Aprendizajes Matemáticos</string>
 
     <!-- EVALUA 10 -->
-    <string name="TOOLBAR_EVALUA_10">Evalúa 10</string>
-    <string name="EVALUA_10_MODULO_1">Atención - Concentración</string>
-    <string name="EVALUA_10_MODULO_2">Razonamiento</string>
-    <string name="EVALUA_10_MODULO_3">Niveles de Adaptación</string>
-    <string name="EVALUA_10_MODULO_4">Lectura</string>
-    <string name="EVALUA_10_MODULO_5">Escritura</string>
-    <string name="EVALUA_10_MODULO_6">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_10_M1_SI_1">Atención y Concentración [MA-8]</string>
-    <string name="EVALUA_10_M2_SI_1">Razonamiento Inductivo [RI-8]</string>
-    <string name="EVALUA_10_M2_SI_2">Razonamiento Espacial [RE-8]</string>
-    <string name="EVALUA_10_M2_SI_3">Razonamiento Deductivo [RD-8]</string>
-    <string name="EVALUA_10_M3_SI_1">Niveles Adaptación [NA-8]</string>
-    <string name="EVALUA_10_M4_SI_1">Comprension Lectora [CL-8]</string>
-    <string name="EVALUA_10_M4_SI_2">Velocidad Lectora [VL-8]</string>
-    <string name="EVALUA_10_M5_SI_1">Ortografia Visual Reglada [OR-8]</string>
-    <string name="EVALUA_10_M6_SI_1">Cálculo y Numeración [CN-8]</string>
-    <string name="EVALUA_10_M6_SI_2">Resolución Problemas [RP-8]</string>
-    <string name="EVALUA_10_VALORACION_GLOBAL_RAZONAMIENTO">Valoración Global Del Razonamiento</string>
-    <string name="EVALUA_10_INDICE_GENERAL_COGNITIVO">Índice General Cognitivo</string>
-    <string name="EVALUA_10_INDICE_GENERAL_LECTURA">Índice General De Lectura</string>
-    <string name="EVALUA_10_INDICE_GENERAL_ESCRITURA">Índice General De Escritura</string>
-    <string name="EVALUA_10_INDICE_GENERAL_MATEMATICAS">Índice General De Matemáticas</string>
-    <string name="EVALUA_10_VALORACION_GLOBAL_MATEMATICAS">Valoración Global De Los Aprendizajes Matemáticos</string>
+    <string name="TOOLBAR_EVALUA_10" translatable="false">Evalúa 10</string>
+    <string name="EVALUA_10_MODULO_1" translatable="false">Atención - Concentración</string>
+    <string name="EVALUA_10_MODULO_2" translatable="false">Razonamiento</string>
+    <string name="EVALUA_10_MODULO_3" translatable="false">Niveles de Adaptación</string>
+    <string name="EVALUA_10_MODULO_4" translatable="false">Lectura</string>
+    <string name="EVALUA_10_MODULO_5" translatable="false">Escritura</string>
+    <string name="EVALUA_10_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
+    <string name="EVALUA_10_M1_SI_1" translatable="false">Atención y Concentración [MA-8]</string>
+    <string name="EVALUA_10_M2_SI_1" translatable="false">Razonamiento Inductivo [RI-8]</string>
+    <string name="EVALUA_10_M2_SI_2" translatable="false">Razonamiento Espacial [RE-8]</string>
+    <string name="EVALUA_10_M2_SI_3" translatable="false">Razonamiento Deductivo [RD-8]</string>
+    <string name="EVALUA_10_M3_SI_1" translatable="false">Niveles Adaptación [NA-8]</string>
+    <string name="EVALUA_10_M4_SI_1" translatable="false">Comprension Lectora [CL-8]</string>
+    <string name="EVALUA_10_M4_SI_2" translatable="false">Velocidad Lectora [VL-8]</string>
+    <string name="EVALUA_10_M5_SI_1" translatable="false">Ortografia Visual Reglada [OR-8]</string>
+    <string name="EVALUA_10_M6_SI_1" translatable="false">Cálculo y Numeración [CN-8]</string>
+    <string name="EVALUA_10_M6_SI_2" translatable="false">Resolución Problemas [RP-8]</string>
+    <string name="EVALUA_10_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
+    <string name="EVALUA_10_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
+    <string name="EVALUA_10_INDICE_GENERAL_LECTURA" translatable="false">Índice General De Lectura</string>
+    <string name="EVALUA_10_INDICE_GENERAL_ESCRITURA" translatable="false">Índice General De Escritura</string>
+    <string name="EVALUA_10_INDICE_GENERAL_MATEMATICAS" translatable="false">Índice General De Matemáticas</string>
+    <string name="EVALUA_10_VALORACION_GLOBAL_MATEMATICAS" translatable="false">Valoración Global De Los Aprendizajes Matemáticos</string>
 
-    <string name="CLICK_CLASIFICACION">click_clasificacion</string>
-    <string name="CLICK_MEMORIA_ATENCION">click_memoria_atencion</string>
-    <string name="CLICK_REFLEXIVIDAD">click_reflexividad</string>
-    <string name="CLICK_COMPR_LECTORA">click_comprension_lectora</string>
-    <string name="CLICK_EXACTITUD_LECTORA">click_exactitud_lectora</string>
-    <string name="CLICK_PENSAMIENTO_ANALOGICO">click_pensamiento_analogico</string>
-    <string name="CLICK_PALABRAS_FRASES">click_palabras_y_frases</string>
-    <string name="BTN_EVALUA_0">btn_evalua_0</string>
-    <string name="BTN_EVALUA_1" tools:ignore="Typos">btn_evalua_1</string>
-    <string name="BTN_EVALUA_2">btn_evalua_2</string>
-    <string name="BTN_EVALUA_3">btn_evalua_3</string>
-    <string name="BTN_EVALUA_4">btn_evalua_4</string>
-    <string name="BTN_EVALUA_5">btn_evalua_5</string>
-    <string name="BTN_EVALUA_6">btn_evalua_6</string>
-    <string name="BTN_EVALUA_7">btn_evalua_7</string>
-    <string name="BTN_EVALUA_8">btn_evalua_8</string>
-    <string name="BTN_EVALUA_9">btn_evalua_9</string>
-    <string name="BTN_EVALUA_10">btn_evalua_10</string>
-    <string name="ACTIVIDAD_CERRADA">home up - activity cerrada</string>
-    <string name="DIALOGO_AYUDA_MSG_ABIERTO">Abriendo dialogo ayuda</string>
-    <string name="SUB_ITEM_CLICK">SUB_ITEM_CLICK</string>
-    <string name="COMPRENSION_NULA">nivelEsperado comprension nulo</string>
-    <string name="CLICK_SERIES">click_series</string>
-    <string name="CLICK_ORG_PERCEPTIVA">click_organizacion_perceptiva</string>
-    <string name="CLICK_VALORACION_GLOBAL">click_valoracion_global</string>
-    <string name="CLICK_INDICE_GENERAL_MATEMATICO">click_indice_general_matematico</string>
-    <string name="CLICK_INDICE_GENERAL_LECTURA">click_indice_general_lectura</string>
-    <string name="CLICK_INDICE_GENERAL_ESCRITURA">click_indice_general_escritura</string>
-    <string name="CLICK_INDICE_GENERAL_COGNITIVO">click_indice_general_cognitivo</string>
-    <string name="CLICK_LETRAS_NUMEROS">click_letras_y_numeros</string>
-    <string name="CLICK_MEMORIA_VERBAL">click_memoria_verbal</string>
-    <string name="CLICK_COPIA_DIBUJOS">click_copia_dibujos</string>
-    <string name="CLICK_GRAFO_MOTRICIDAD">click_grafo_motricidad</string>
-    <string name="CLICK_INDICE_GENERAL_ESPACIAL">click_indice_general_espacial</string>
-    <string name="CLICK_INDICE_GENERAL_LINGUISTICO">click_indice_general_linguistico</string>
-    <string name="CLICK_RECEPCION_AUDITIVA">click_recepcion_auditiva</string>
-    <string name="CLICK_HABILIDADES_FONOLOGICAS">click_habilidades_fonologicas</string>
-    <string name="CLICK_ATEN_CONCENTRACION">click_atencion_cooncentracion</string>
-    <string name="CLICK_RAZON_DEDUCTIVO">click_razonamiento_deductivo</string>
-    <string name="CLICK_RAZON_INDUCTIVO">click_razonamiento_inductivo</string>
-    <string name="CLICK_RAZON_ESPACIAL">click_razonamiento_espacial</string>
-    <string name="CLICK_EFICACIA_LECTORA">click_eficacia_lectora</string>
-    <string name="CLICK_COMPRENSION_LECTORA">click_comprension_lectora</string>
-    <string name="CLICK_NIVELES_ADAPTACION">click_niveles_adaptacion</string>
-    <string name="CLICK_VELOCIDAD_LECTORA">click_velocidad_lectora</string>
-    <string name="CLICK_ORTOGRAFIA_FONETICA">click_ortografia_fonectica</string>
-    <string name="CLICK_ORTOGRAFIA_VISUAL">click_ortografia_visual</string>
-    <string name="CLICK_ORTOGRAFIA">click_ortografia</string>
-    <string name="CLICK_EXP_ESCRITA">click_expresion_escrita</string>
-    <string name="CLICK_ORT_VIS_REGLADA">click_ortografia_visual_reglada</string>
-    <string name="CLICK_CAL_NUMERACION">click_calculo_numeracion</string>
-    <string name="CLICK_CAL_RES_PROBLEMAS">click_res_problemas</string>
-    <string name="DIALOGO_BAREMO_CERRADO">dialogo baremo cerrado</string>
+    <string name="CLICK_CLASIFICACION" translatable="false">click_clasificacion</string>
+    <string name="CLICK_MEMORIA_ATENCION" translatable="false">click_memoria_atencion</string>
+    <string name="CLICK_REFLEXIVIDAD" translatable="false">click_reflexividad</string>
+    <string name="CLICK_COMPR_LECTORA" translatable="false">click_comprension_lectora</string>
+    <string name="CLICK_EXACTITUD_LECTORA" translatable="false">click_exactitud_lectora</string>
+    <string name="CLICK_PENSAMIENTO_ANALOGICO" translatable="false">click_pensamiento_analogico</string>
+    <string name="CLICK_PALABRAS_FRASES" translatable="false">click_palabras_y_frases</string>
+    <string name="BTN_EVALUA_0" translatable="false">btn_evalua_0</string>
+    <string name="BTN_EVALUA_1" translatable="false" tools:ignore="Typos">btn_evalua_1</string>
+    <string name="BTN_EVALUA_2" translatable="false">btn_evalua_2</string>
+    <string name="BTN_EVALUA_3" translatable="false">btn_evalua_3</string>
+    <string name="BTN_EVALUA_4" translatable="false">btn_evalua_4</string>
+    <string name="BTN_EVALUA_5" translatable="false">btn_evalua_5</string>
+    <string name="BTN_EVALUA_6" translatable="false">btn_evalua_6</string>
+    <string name="BTN_EVALUA_7" translatable="false">btn_evalua_7</string>
+    <string name="BTN_EVALUA_8" translatable="false">btn_evalua_8</string>
+    <string name="BTN_EVALUA_9" translatable="false">btn_evalua_9</string>
+    <string name="BTN_EVALUA_10" translatable="false">btn_evalua_10</string>
+    <string name="ACTIVIDAD_CERRADA" translatable="false">home up - activity cerrada</string>
+    <string name="DIALOGO_AYUDA_MSG_ABIERTO" translatable="false">Abriendo dialogo ayuda</string>
+    <string name="SUB_ITEM_CLICK" translatable="false">SUB_ITEM_CLICK</string>
+    <string name="COMPRENSION_NULA" translatable="false">nivelEsperado comprension nulo</string>
+    <string name="CLICK_SERIES" translatable="false">click_series</string>
+    <string name="CLICK_ORG_PERCEPTIVA" translatable="false">click_organizacion_perceptiva</string>
+    <string name="CLICK_VALORACION_GLOBAL" translatable="false">click_valoracion_global</string>
+    <string name="CLICK_INDICE_GENERAL_MATEMATICO" translatable="false">click_indice_general_matematico</string>
+    <string name="CLICK_INDICE_GENERAL_LECTURA" translatable="false">click_indice_general_lectura</string>
+    <string name="CLICK_INDICE_GENERAL_ESCRITURA" translatable="false">click_indice_general_escritura</string>
+    <string name="CLICK_INDICE_GENERAL_COGNITIVO" translatable="false">click_indice_general_cognitivo</string>
+    <string name="CLICK_LETRAS_NUMEROS" translatable="false">click_letras_y_numeros</string>
+    <string name="CLICK_MEMORIA_VERBAL" translatable="false">click_memoria_verbal</string>
+    <string name="CLICK_COPIA_DIBUJOS" translatable="false">click_copia_dibujos</string>
+    <string name="CLICK_GRAFO_MOTRICIDAD" translatable="false">click_grafo_motricidad</string>
+    <string name="CLICK_INDICE_GENERAL_ESPACIAL" translatable="false">click_indice_general_espacial</string>
+    <string name="CLICK_INDICE_GENERAL_LINGUISTICO" translatable="false">click_indice_general_linguistico</string>
+    <string name="CLICK_RECEPCION_AUDITIVA" translatable="false">click_recepcion_auditiva</string>
+    <string name="CLICK_HABILIDADES_FONOLOGICAS" translatable="false">click_habilidades_fonologicas</string>
+    <string name="CLICK_ATEN_CONCENTRACION" translatable="false">click_atencion_cooncentracion</string>
+    <string name="CLICK_RAZON_DEDUCTIVO" translatable="false">click_razonamiento_deductivo</string>
+    <string name="CLICK_RAZON_INDUCTIVO" translatable="false">click_razonamiento_inductivo</string>
+    <string name="CLICK_RAZON_ESPACIAL" translatable="false">click_razonamiento_espacial</string>
+    <string name="CLICK_EFICACIA_LECTORA" translatable="false">click_eficacia_lectora</string>
+    <string name="CLICK_COMPRENSION_LECTORA" translatable="false">click_comprension_lectora</string>
+    <string name="CLICK_NIVELES_ADAPTACION" translatable="false">click_niveles_adaptacion</string>
+    <string name="CLICK_VELOCIDAD_LECTORA" translatable="false">click_velocidad_lectora</string>
+    <string name="CLICK_ORTOGRAFIA_FONETICA" translatable="false">click_ortografia_fonectica</string>
+    <string name="CLICK_ORTOGRAFIA_VISUAL" translatable="false">click_ortografia_visual</string>
+    <string name="CLICK_ORTOGRAFIA" translatable="false">click_ortografia</string>
+    <string name="CLICK_EXP_ESCRITA" translatable="false">click_expresion_escrita</string>
+    <string name="CLICK_ORT_VIS_REGLADA" translatable="false">click_ortografia_visual_reglada</string>
+    <string name="CLICK_CAL_NUMERACION" translatable="false">click_calculo_numeracion</string>
+    <string name="CLICK_CAL_RES_PROBLEMAS" translatable="false">click_res_problemas</string>
+    <string name="DIALOGO_BAREMO_CERRADO" translatable="false">dialogo baremo cerrado</string>
 
     <!-- Shared pref -->
-    <string name="SHARED_PREF_END_REWARD_TIME">end_reward_time</string>
-    <string name="MAIN_SHARED_PREF">evalua_tool</string>
+    <string name="SHARED_PREF_END_REWARD_TIME" translatable="false">end_reward_time</string>
+    <string name="MAIN_SHARED_PREF" translatable="false">evalua_tool</string>
+    <string name="SHARED_PREF_ACTUAL_VERSION_CODE" translatable="false">shared_pref_actual_version_code</string>
 
     <!-- REWARD DIALOG TAGS & ADS -->
     <string name="REWARD_DIALOG_BTN_VER_VIDEO" translatable="false">BOTON VER VIDEO PRESIONADO</string>
@@ -403,237 +404,237 @@
     <string name="ADS_NO_PERMITIDOS" translatable="false">ADS NO PERMITIDOS</string>
     <string name="ADS_CARGADOS" translatable="false">ADS CARGADOS</string>
     <string name="ADS_NO_CARGADOS" translatable="false">ADS NO CARGADOS</string>
-    <string name="INTERSITIAL_CARGADO">Intersitial CARGADO</string>
-    <string name="INTERSITIAL_NO_CARGADO">Intersitial NO CARGADO</string>
-    <string name="INTERSITIAL_MOSTRADO">Intersitial MOSTRADO</string>
-    <string name="INTERSITIAL_NO_MOSTRADO">IntersitialNO_MOSTRADO</string>
-    <string name="INTERSITIAL_CERRADO">Intersitial CERRADO</string>
+    <string name="INTERSITIAL_CARGADO" translatable="false">Intersitial CARGADO</string>
+    <string name="INTERSITIAL_NO_CARGADO" translatable="false">Intersitial NO CARGADO</string>
+    <string name="INTERSITIAL_MOSTRADO" translatable="false">Intersitial MOSTRADO</string>
+    <string name="INTERSITIAL_NO_MOSTRADO" translatable="false">Intersitial NO_MOSTRADO</string>
+    <string name="INTERSITIAL_CERRADO" translatable="false">Intersitial CERRADO</string>
 
 
-    <string name="EVALUA_0">Evalúa 0</string>
-    <string name="EVALUA_1">Evalúa 1</string>
-    <string name="EVALUA_2">Evalúa 2</string>
-    <string name="EVALUA_3">Evalúa 3</string>
-    <string name="EVALUA_4">Evalúa 4</string>
-    <string name="EVALUA_5">Evalúa 5</string>
-    <string name="EVALUA_6">Evalúa 6</string>
-    <string name="EVALUA_TOOL">Evalúa Tool</string>
-    <string name="ICONO_LOGO_APP">Icono logo app</string>
-    <string name="EVALUA_8">Evalúa 8</string>
-    <string name="EVALUA_9">Evalúa 9</string>
-    <string name="EVALUA_10">Evalúa 10</string>
-    <string name="EVALUA_7">Evalúa 7</string>
+    <string name="EVALUA_0" translatable="false">Evalúa 0</string>
+    <string name="EVALUA_1" translatable="false">Evalúa 1</string>
+    <string name="EVALUA_2" translatable="false">Evalúa 2</string>
+    <string name="EVALUA_3" translatable="false">Evalúa 3</string>
+    <string name="EVALUA_4" translatable="false">Evalúa 4</string>
+    <string name="EVALUA_5" translatable="false">Evalúa 5</string>
+    <string name="EVALUA_6" translatable="false">Evalúa 6</string>
+    <string name="EVALUA_TOOL" translatable="false">Evalúa Tool</string>
+    <string name="ICONO_LOGO_APP" translatable="false">Icono logo app</string>
+    <string name="EVALUA_8" translatable="false">Evalúa 8</string>
+    <string name="EVALUA_9" translatable="false">Evalúa 9</string>
+    <string name="EVALUA_10" translatable="false">Evalúa 10</string>
+    <string name="EVALUA_7" translatable="false">Evalúa 7</string>
 
     <!-- XML STRINGs -->
-    <string name="tarea_1">Tarea 1</string>
-    <string name="aprobadas">Aprobadas</string>
-    <string name="reprobadas">Reprobadas</string>
-    <string name="tarea_2">Tarea 2</string>
-    <string name="desviacion_tipica">Desviación Típica</string>
-    <string name="media">Media</string>
-    <string name="estadisticos">Estadísticos</string>
-    <string name="pd_subtotales">PD subtotales</string>
-    <string name="pc_subtotales">PC subtotales</string>
-    <string name="tarea_1_0_pts">Tarea 1: 0 pts</string>
-    <string name="tarea_2_0_pts">Tarea 2: 0 pts</string>
-    <string name="pd_total">PD Total</string>
-    <string name="pc_total">PC Total</string>
-    <string name="_0_pts">0 pts</string>
-    <string name="pd_total_corregido">PD Total corregido</string>
-    <string name="puntaje_centil">Puntaje Centil</string>
-    <string name="nivel_obtenido">Nivel obtenido</string>
-    <string name="guion_bajo">-</string>
-    <string name="puntaje_tipificado">Puntaje Tipificado</string>
-    <string name="omitidas">Omitidas</string>
-    <string name="errores">Errores</string>
-    <string name="caballo">Caballo</string>
-    <string name="dinosaurio">Dinosaurio</string>
-    <string name="uvas">Uvas</string>
-    <string name="pl_tanos">Plátanos</string>
-    <string name="caballo_0_pts">Caballo: 0 pts</string>
-    <string name="dinosaurio_0_pts">Dinosaurio: 0 pts</string>
-    <string name="uvas_0_pts">Uvas: 0 pts</string>
-    <string name="pl_tanos_0_pts">Plátanos: 0 pts</string>
-    <string name="tarea_3">Tarea 3</string>
-    <string name="tarea_3_0_pts">Tarea 3: 0 pts</string>
-    <string name="ingresa_el_error_total_de_los_6_ejercicios">Ingresa el error total de los 6 ejercicios</string>
-    <string name="tarea_4">Tarea 4</string>
-    <string name="tarea_4_0_pts">Tarea 4: 0 pts</string>
-    <string name="tarea_5">Tarea 5</string>
-    <string name="tarea_6">Tarea 6</string>
-    <string name="tarea_5_0_pts">Tarea 5: 0 pts</string>
-    <string name="tarea_6_0_pts">Tarea 6: 0 pts</string>
-    <string name="series">Series</string>
-    <string name="recepcion_y_articulacion">Recepción/Articulación</string>
-    <string name="grafomotricidad">Grafomotricidad</string>
-    <string name="se_0_pts">SE: 0 pts</string>
-    <string name="of_0_pts">OF: 0 pts</string>
-    <string name="ra_0_pts">RA: 0 pts</string>
-    <string name="tareas">Tareas</string>
-    <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
-    <string name="indica_el_puntaje_items_1_26">Indica el puntaje de los ejercicios 1–26</string>
-    <string name="indica_el_puntaje_items_1_20">Indica el puntaje de los ejercicios 1–20</string>
-    <string name="indica_el_puntaje_items_21_40">Indica el puntaje de los ejercicios 21–40</string>
-    <string name="indica_el_puntaje_items_41_60">Indica el puntaje de los ejercicios 41–60</string>
-    <string name="indica_el_puntaje_items_61_80">Indica el puntaje de los ejercicios 61–80</string>
-    <string name="indica_el_puntaje_items_27_34">Indica el puntaje de los ejercicios 27–34</string>
-    <string name="indica_el_puntaje_items_1_15">Indica el puntaje de los ejercicios 1–15</string>
-    <string name="indica_el_puntaje_items_1_17">Indica el puntaje de los ejercicios 1–17</string>
-    <string name="indica_el_puntaje_items_16_25">Indica el puntaje de los ejercicios 16–25</string>
-    <string name="indica_el_puntaje_items_16_21">Indica el puntaje de los ejercicios 16–21</string>
-    <string name="indica_el_puntaje_items_18_33">Indica el puntaje de los ejercicios 18–33</string>
-    <string name="indica_el_puntaje_items_22">Indica el puntaje del ejercicio 22</string>
-    <string name="indica_el_puntaje_items_26_35">Indica el puntaje de los ejercicios 26–35</string>
-    <string name="indica_el_puntaje_items_36_45">Indica el puntaje de los ejercicios 36–45</string>
-    <string name="indica_el_puntaje_items_1_49">Indica el puntaje de los ejercicios 1–49</string>
-    <string name="indica_el_puntaje_items_50_55">Indica el puntaje de los ejercicios 50–55</string>
-    <string name="tareas_0_pts">Tareas: 0 pts</string>
-    <string name="analog_as">Analogías</string>
-    <string name="calculo">Cálculo</string>
-    <string name="clasificaciones">Clasificaciones</string>
-    <string name="palabras_y_frases">Palabras y Frases</string>
-    <string name="copia_dibujos">Copia dibujos</string>
-    <string name="ca_0_pts">CA: 0 pts</string>
-    <string name="pf_0_pts">PF: 0 pts</string>
-    <string name="cd_0_pts">CD: 0 pts</string>
-    <string name="op_0_pts">OP: 0 pts</string>
-    <string name="hf_0_pts">HF: 0 pts</string>
-    <string name="pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
-    <string name="pruebas_escrituras">Pruebas Escritura</string>
-    <string name="pruebas_capacidades_cognitivas">Pruebas Capacidades Cognitivas</string>
-    <string name="pruebas_capacidades_espaciales">Pruebas Capacidades Espaciales</string>
-    <string name="pruebas_capacidades_linguisticas">Pruebas Capacidades Linguísticas</string>
-    <string name="reflexividad">Reflexividad</string>
-    <string name="pensamiento_anal_gico">Pensamiento Analógico</string>
-    <string name="vel_lectora">Velocidad Lectora</string>
-    <string name="re_0_pts">RE: 0 pts</string>
-    <string name="ri_0_pts">RI: 0 pts</string>
-    <string name="rd_0_pts">RD: 0 pts</string>
-    <string name="pa_0_pts">PA: 0 pts</string>
-    <string name="vl_0_pts">VL: 0 pts</string>
-    <string name="org_perceptiva">Org. perceptiva</string>
-    <string name="hab_fonologicas">Hab. Fonológicas</string>
-    <string name="pruebas_lecturas">Pruebas Lecturas</string>
-    <string name="comp_lectora">Comp. Lectora</string>
-    <string name="exactitud_lectora">Exactitud Lectora</string>
-    <string name="cl_0_pts">CL: 0 pts</string>
-    <string name="el_0_pts">EL: 0 pts</string>
-    <string name="gr_0_pts">GR: 0 pts</string>
-    <string name="or_0_pts">OR: 0 pts</string>
-    <string name="ov_0_pts">OV: 0 pts</string>
-    <string name="pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
-    <string name="c_lculo_numeraci_n">Cálculo / Numeración</string>
-    <string name="res_problemas">Res. Problemas</string>
-    <string name="cn_0_pts">CN: 0 pts</string>
-    <string name="rp_0_pts">RP: 0 pts</string>
-    <string name="segundos_empleados">Segundos empleados</string>
-    <string name="_0_seg">0 seg</string>
-    <string name="puntaje_directo">Puntaje directo</string>
-    <string name="comprension">Comprensión</string>
-    <string name="indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
-    <string name="acumulado">Acumulado</string>
-    <string name="indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
-    <string name="pt_subtotales">PT Subtotales</string>
-    <string name="igl_total">IGL Total</string>
-    <string name="igc_total">IGC Total</string>
-    <string name="igm_total">IGM Total</string>
-    <string name="ige_total">IGE Total</string>
+    <string name="tarea_1" translatable="false">Tarea 1</string>
+    <string name="aprobadas" translatable="false">Aprobadas</string>
+    <string name="reprobadas" translatable="false">Reprobadas</string>
+    <string name="tarea_2" translatable="false">Tarea 2</string>
+    <string name="desviacion_tipica" translatable="false">Desviación Típica</string>
+    <string name="media" translatable="false">Media</string>
+    <string name="estadisticos" translatable="false">Estadísticos</string>
+    <string name="pd_subtotales" translatable="false">PD subtotales</string>
+    <string name="pc_subtotales" translatable="false">PC subtotales</string>
+    <string name="tarea_1_0_pts" translatable="false">Tarea 1: 0 pts</string>
+    <string name="tarea_2_0_pts" translatable="false">Tarea 2: 0 pts</string>
+    <string name="pd_total" translatable="false">PD Total</string>
+    <string name="pc_total" translatable="false">PC Total</string>
+    <string name="_0_pts" translatable="false">0 pts</string>
+    <string name="pd_total_corregido" translatable="false">PD Total corregido</string>
+    <string name="puntaje_centil" translatable="false">Puntaje Centil</string>
+    <string name="nivel_obtenido" translatable="false">Nivel obtenido</string>
+    <string name="guion_bajo" translatable="false">-</string>
+    <string name="puntaje_tipificado" translatable="false">Puntaje Tipificado</string>
+    <string name="omitidas" translatable="false">Omitidas</string>
+    <string name="errores" translatable="false">Errores</string>
+    <string name="caballo" translatable="false">Caballo</string>
+    <string name="dinosaurio" translatable="false">Dinosaurio</string>
+    <string name="uvas" translatable="false">Uvas</string>
+    <string name="pl_tanos" translatable="false">Plátanos</string>
+    <string name="caballo_0_pts" translatable="false">Caballo: 0 pts</string>
+    <string name="dinosaurio_0_pts" translatable="false">Dinosaurio: 0 pts</string>
+    <string name="uvas_0_pts" translatable="false">Uvas: 0 pts</string>
+    <string name="pl_tanos_0_pts" translatable="false">Plátanos: 0 pts</string>
+    <string name="tarea_3" translatable="false">Tarea 3</string>
+    <string name="tarea_3_0_pts" translatable="false">Tarea 3: 0 pts</string>
+    <string name="ingresa_el_error_total_de_los_6_ejercicios" translatable="false">Ingresa el error total de los 6 ejercicios</string>
+    <string name="tarea_4" translatable="false">Tarea 4</string>
+    <string name="tarea_4_0_pts" translatable="false">Tarea 4: 0 pts</string>
+    <string name="tarea_5" translatable="false">Tarea 5</string>
+    <string name="tarea_6" translatable="false">Tarea 6</string>
+    <string name="tarea_5_0_pts" translatable="false">Tarea 5: 0 pts</string>
+    <string name="tarea_6_0_pts" translatable="false">Tarea 6: 0 pts</string>
+    <string name="series" translatable="false">Series</string>
+    <string name="recepcion_y_articulacion" translatable="false">Recepción/Articulación</string>
+    <string name="grafomotricidad" translatable="false">Grafomotricidad</string>
+    <string name="se_0_pts" translatable="false">SE: 0 pts</string>
+    <string name="of_0_pts" translatable="false">OF: 0 pts</string>
+    <string name="ra_0_pts" translatable="false">RA: 0 pts</string>
+    <string name="tareas" translatable="false">Tareas</string>
+    <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios" translatable="false">Indica el puntaje total obtenido en los 6 ejercicios</string>
+    <string name="indica_el_puntaje_items_1_26" translatable="false">Indica el puntaje de los ejercicios 1–26</string>
+    <string name="indica_el_puntaje_items_1_20" translatable="false">Indica el puntaje de los ejercicios 1–20</string>
+    <string name="indica_el_puntaje_items_21_40" translatable="false">Indica el puntaje de los ejercicios 21–40</string>
+    <string name="indica_el_puntaje_items_41_60" translatable="false">Indica el puntaje de los ejercicios 41–60</string>
+    <string name="indica_el_puntaje_items_61_80" translatable="false">Indica el puntaje de los ejercicios 61–80</string>
+    <string name="indica_el_puntaje_items_27_34" translatable="false">Indica el puntaje de los ejercicios 27–34</string>
+    <string name="indica_el_puntaje_items_1_15" translatable="false">Indica el puntaje de los ejercicios 1–15</string>
+    <string name="indica_el_puntaje_items_1_17" translatable="false">Indica el puntaje de los ejercicios 1–17</string>
+    <string name="indica_el_puntaje_items_16_25" translatable="false">Indica el puntaje de los ejercicios 16–25</string>
+    <string name="indica_el_puntaje_items_16_21" translatable="false">Indica el puntaje de los ejercicios 16–21</string>
+    <string name="indica_el_puntaje_items_18_33" translatable="false">Indica el puntaje de los ejercicios 18–33</string>
+    <string name="indica_el_puntaje_items_22" translatable="false">Indica el puntaje del ejercicio 22</string>
+    <string name="indica_el_puntaje_items_26_35" translatable="false">Indica el puntaje de los ejercicios 26–35</string>
+    <string name="indica_el_puntaje_items_36_45" translatable="false">Indica el puntaje de los ejercicios 36–45</string>
+    <string name="indica_el_puntaje_items_1_49" translatable="false">Indica el puntaje de los ejercicios 1–49</string>
+    <string name="indica_el_puntaje_items_50_55" translatable="false">Indica el puntaje de los ejercicios 50–55</string>
+    <string name="tareas_0_pts" translatable="false">Tareas: 0 pts</string>
+    <string name="analog_as" translatable="false">Analogías</string>
+    <string name="calculo" translatable="false">Cálculo</string>
+    <string name="clasificaciones" translatable="false">Clasificaciones</string>
+    <string name="palabras_y_frases" translatable="false">Palabras y Frases</string>
+    <string name="copia_dibujos" translatable="false">Copia dibujos</string>
+    <string name="ca_0_pts" translatable="false">CA: 0 pts</string>
+    <string name="pf_0_pts" translatable="false">PF: 0 pts</string>
+    <string name="cd_0_pts" translatable="false">CD: 0 pts</string>
+    <string name="op_0_pts" translatable="false">OP: 0 pts</string>
+    <string name="hf_0_pts" translatable="false">HF: 0 pts</string>
+    <string name="pruebas_bases_del_razonamiento" translatable="false">Pruebas Bases del Razonamiento</string>
+    <string name="pruebas_escrituras" translatable="false">Pruebas Escritura</string>
+    <string name="pruebas_capacidades_cognitivas" translatable="false">Pruebas Capacidades Cognitivas</string>
+    <string name="pruebas_capacidades_espaciales" translatable="false">Pruebas Capacidades Espaciales</string>
+    <string name="pruebas_capacidades_linguisticas" translatable="false">Pruebas Capacidades Linguísticas</string>
+    <string name="reflexividad" translatable="false">Reflexividad</string>
+    <string name="pensamiento_anal_gico" translatable="false">Pensamiento Analógico</string>
+    <string name="vel_lectora" translatable="false">Velocidad Lectora</string>
+    <string name="re_0_pts" translatable="false">RE: 0 pts</string>
+    <string name="ri_0_pts" translatable="false">RI: 0 pts</string>
+    <string name="rd_0_pts" translatable="false">RD: 0 pts</string>
+    <string name="pa_0_pts" translatable="false">PA: 0 pts</string>
+    <string name="vl_0_pts" translatable="false">VL: 0 pts</string>
+    <string name="org_perceptiva" translatable="false">Org. perceptiva</string>
+    <string name="hab_fonologicas" translatable="false">Hab. Fonológicas</string>
+    <string name="pruebas_lecturas" translatable="false">Pruebas Lecturas</string>
+    <string name="comp_lectora" translatable="false">Comp. Lectora</string>
+    <string name="exactitud_lectora" translatable="false">Exactitud Lectora</string>
+    <string name="cl_0_pts" translatable="false">CL: 0 pts</string>
+    <string name="el_0_pts" translatable="false">EL: 0 pts</string>
+    <string name="gr_0_pts" translatable="false">GR: 0 pts</string>
+    <string name="or_0_pts" translatable="false">OR: 0 pts</string>
+    <string name="ov_0_pts" translatable="false">OV: 0 pts</string>
+    <string name="pruebas_aprendizaje_matem_tico" translatable="false">Pruebas Aprendizaje Matemático</string>
+    <string name="c_lculo_numeraci_n" translatable="false">Cálculo / Numeración</string>
+    <string name="res_problemas" translatable="false">Res. Problemas</string>
+    <string name="cn_0_pts" translatable="false">CN: 0 pts</string>
+    <string name="rp_0_pts" translatable="false">RP: 0 pts</string>
+    <string name="segundos_empleados" translatable="false">Segundos empleados</string>
+    <string name="_0_seg" translatable="false">0 seg</string>
+    <string name="puntaje_directo" translatable="false">Puntaje directo</string>
+    <string name="comprension" translatable="false">Comprensión</string>
+    <string name="indica_los_puntajes_centiles_de_las_pruebas" translatable="false">Indica los puntajes centiles de las pruebas</string>
+    <string name="acumulado" translatable="false">Acumulado</string>
+    <string name="indica_los_puntajes_tipificados_de_las_pruebas" translatable="false">Indica los puntajes tipificados de las pruebas</string>
+    <string name="pt_subtotales" translatable="false">PT Subtotales</string>
+    <string name="igl_total" translatable="false">IGL Total</string>
+    <string name="igc_total" translatable="false">IGC Total</string>
+    <string name="igm_total" translatable="false">IGM Total</string>
+    <string name="ige_total" translatable="false">IGE Total</string>
 
-    <string name="PUNTAJE_DIRECTO">PD</string>
-    <string name="PERCENTIL_CHILENO">Pc Chileno</string>
-    <string name="icono_tabla_baremo">Icono tabla baremo</string>
-    <string name="ver_tabla_de_baremos">Ver tabla de baremos</string>
-    <string name="dialogo_boton_cerrar">Cerrar</string>
-    <string name="dialogo_baremo_titulo">Tabla Baremo</string>
-    <string name="dialogo_baremo_descripcion">Puntajes de tabla baremo de ítem</string>
-    <string name="TOOLBAR_MOTIVACION">Motivación</string>
-    <string name="TOOLBAR_AUTOCONTROL">Autocontrol</string>
-    <string name="TOOLBAR_CONDUCTAS_PROSOCIALES">Conductas Pro-sociales</string>
-    <string name="TOOLBAR_AUTOESTIMA">Autoestima</string>
-    <string name="TOOLBAR_VELOCIDAD">Velocidad</string>
-    <string name="TOOLBAR_COMPRENSION">Comprensión</string>
-    <string name="icono_ayuda">Icono ayuda</string>
-    <string name="NIGHT_MODE_KEY">night_mode</string>
-    <string name="NIGHT_MODE_STATUS_OFF">OFF</string>
-    <string name="NIGHT_MODE_STATUS_ON">ON</string>
-    <string name="pd_corregido">PD corregido</string>
-    <string name="entendido">Entendido</string>
-    <string name="routeMapEvalua0">routeMapEvalua0</string>
-    <string name="routeMapEvalua1" tools:ignore="Typos">routeMapEvalua1</string>
-    <string name="routeMapEvalua2">routeMapEvalua2</string>
-    <string name="routeMapEvalua3">routeMapEvalua3</string>
-    <string name="routeMapEvalua4">routeMapEvalua4</string>
-    <string name="routeMapEvalua5">routeMapEvalua5</string>
-    <string name="routeMapEvalua6">routeMapEvalua6</string>
-    <string name="routeMapEvalua7">routeMapEvalua7</string>
-    <string name="routeMapEvalua8">routeMapEvalua8</string>
-    <string name="routeMapEvalua9">routeMapEvalua9</string>
-    <string name="routeMapEvalua10">routeMapEvalua10</string>
-    <string name="TAREA_1">Tarea 1:</string>
-    <string name="TAREA_2">Tarea 2:</string>
-    <string name="NIVEL_ALTO">ALTO</string>
-    <string name="NIVEL_MEDIO_ALTO">MEDIO-ALTO</string>
-    <string name="NIVEL_MEDIO">MEDIO</string>
-    <string name="NIVEL_MEDIO_BAJO">MEDIO-BAJO</string>
-    <string name="NIVEL_BAJO">BAJO</string>
-    <string name="DIA_LIBRE">¡Dia libre de publicidad!</string>
-    <string name="TAREA_3">Tarea 3:</string>
-    <string name="TAREA_4">Tarea 4:</string>
-    <string name="TAREA_5">Tarea 5:</string>
-    <string name="TAREA_6">Tarea 6:</string>
-    <string name="TAREA">Tareas:</string>
-    <string name="COMPRENSION_MUY_BAJA">Muy Baja</string>
-    <string name="COMPRENSION_BAJA">Baja</string>
-    <string name="COMPRENSION_MEDIA">Media</string>
-    <string name="COMPRENSION_ALTA">Alta</string>
-    <string name="COMPRENSION_MUY_ALTA">Muy Alta</string>
-    <string name="POINTS_FORMAT" formatted="false">%1$s %2$s pts</string>
-    <string name="POINTS_SIMPLE_FORMAT">%1$s pts</string>
-    <string name="ort_fonetica">Ortografía fonética</string>
-    <string name="graf_a_y_exp_escrita">Grafía y exp. escrita</string>
-    <string name="ortografia_visual">Ortografía Visual</string>
-    <string name="ortograf_a">Ortografía</string>
-    <string name="grafia">Grafía</string>
-    <string name="tarea_1_dictado">Tarea 1 - Dictado</string>
-    <string name="tarea_2_recog_ortogr_fico">Tarea 2 - Recog. Ortográfico</string>
-    <string name="indica_el_puntaje_items_1_9">Indica el puntaje de los ejercicios 1–9</string>
-    <string name="indica_el_puntaje_items_10_12">Indica el puntaje de los ejercicios 10–12</string>
-    <string name="indica_el_puntaje_items_13_35">Indica el puntaje de los ejercicios 13–35</string>
-    <string name="indica_el_puntaje_items_1_5">Indica el puntaje de los ejercicios 1–5</string>
-    <string name="indica_el_puntaje_items_1_7">Indica el puntaje de los ejercicios 1–7</string>
-    <string name="indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
-    <string name="indica_el_puntaje_items_8_9">Indica el puntaje de los ejercicios 8–9</string>
-    <string name="indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
-    <string name="icono_dropdown_menu">Menu desplegable</string>
-    <string name="descripcion_corregido_dialog">El puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
-    <string name="icono_tema_modo_claro">Icono tema modo claro</string>
-    <string name="icono_tema_modo_oscuro">Icono tema modo oscuro</string>
-    <string name="raz_inductivo">Raz. Inductivo</string>
-    <string name="raz_espacial">Raz. Espacial</string>
-    <string name="raz_deductivo">Raz. Deductivo</string>
-    <string name="TOOLBAR_ADAP_PERSONAL">Adaptación Personal</string>
-    <string name="TOOLBAR_ADAP_FAMILIAR">Adaptación Familiar</string>
-    <string name="TOOLBAR_ADAP_ESCOLAR">Adaptación Escolar</string>
-    <string name="TOOLBAR_HAB_SOCIALES">Habilidades Sociales</string>
-    <string name="eficacia_lectora">Eficacia Lectora</string>
+    <string name="PUNTAJE_DIRECTO" translatable="false">PD</string>
+    <string name="PERCENTIL_CHILENO" translatable="false">Pc Chileno</string>
+    <string name="icono_tabla_baremo" translatable="false">Icono tabla baremo</string>
+    <string name="ver_tabla_de_baremos" translatable="false">Ver tabla de baremos</string>
+    <string name="dialogo_boton_cerrar" translatable="false">Cerrar</string>
+    <string name="dialogo_baremo_titulo" translatable="false">Tabla Baremo</string>
+    <string name="dialogo_baremo_descripcion" translatable="false">Puntajes de tabla baremo de ítem</string>
+    <string name="TOOLBAR_MOTIVACION" translatable="false">Motivación</string>
+    <string name="TOOLBAR_AUTOCONTROL" translatable="false">Autocontrol</string>
+    <string name="TOOLBAR_CONDUCTAS_PROSOCIALES" translatable="false">Conductas Pro-sociales</string>
+    <string name="TOOLBAR_AUTOESTIMA" translatable="false">Autoestima</string>
+    <string name="TOOLBAR_VELOCIDAD" translatable="false">Velocidad</string>
+    <string name="TOOLBAR_COMPRENSION" translatable="false">Comprensión</string>
+    <string name="icono_ayuda" translatable="false">Icono ayuda</string>
+    <string name="NIGHT_MODE_KEY" translatable="false">night_mode</string>
+    <string name="NIGHT_MODE_STATUS_OFF" translatable="false">NIGHT MODE OFF</string>
+    <string name="NIGHT_MODE_STATUS_ON" translatable="false">NIGHT MODE ON</string>
+    <string name="pd_corregido" translatable="false">PD corregido</string>
+    <string name="entendido" translatable="false">Entendido</string>
+    <string name="routeMapEvalua0" translatable="false">routeMapEvalua0</string>
+    <string name="routeMapEvalua1" translatable="false" tools:ignore="Typos">routeMapEvalua1</string>
+    <string name="routeMapEvalua2" translatable="false">routeMapEvalua2</string>
+    <string name="routeMapEvalua3" translatable="false">routeMapEvalua3</string>
+    <string name="routeMapEvalua4" translatable="false">routeMapEvalua4</string>
+    <string name="routeMapEvalua5" translatable="false">routeMapEvalua5</string>
+    <string name="routeMapEvalua6" translatable="false">routeMapEvalua6</string>
+    <string name="routeMapEvalua7" translatable="false">routeMapEvalua7</string>
+    <string name="routeMapEvalua8" translatable="false">routeMapEvalua8</string>
+    <string name="routeMapEvalua9" translatable="false">routeMapEvalua9</string>
+    <string name="routeMapEvalua10" translatable="false">routeMapEvalua10</string>
+    <string name="TAREA_1" translatable="false">Tarea 1:</string>
+    <string name="TAREA_2" translatable="false">Tarea 2:</string>
+    <string name="NIVEL_ALTO" translatable="false">ALTO</string>
+    <string name="NIVEL_MEDIO_ALTO" translatable="false">MEDIO-ALTO</string>
+    <string name="NIVEL_MEDIO" translatable="false">MEDIO</string>
+    <string name="NIVEL_MEDIO_BAJO" translatable="false">MEDIO-BAJO</string>
+    <string name="NIVEL_BAJO" translatable="false">BAJO</string>
+    <string name="DIA_LIBRE" translatable="false">¡Dia libre de publicidad!</string>
+    <string name="TAREA_3" translatable="false">Tarea 3:</string>
+    <string name="TAREA_4" translatable="false">Tarea 4:</string>
+    <string name="TAREA_5" translatable="false">Tarea 5:</string>
+    <string name="TAREA_6" translatable="false">Tarea 6:</string>
+    <string name="TAREA" translatable="false">Tareas:</string>
+    <string name="COMPRENSION_MUY_BAJA" translatable="false">Muy Baja</string>
+    <string name="COMPRENSION_BAJA" translatable="false">Baja</string>
+    <string name="COMPRENSION_MEDIA" translatable="false">Media</string>
+    <string name="COMPRENSION_ALTA" translatable="false">Alta</string>
+    <string name="COMPRENSION_MUY_ALTA" translatable="false">Muy Alta</string>
+    <string name="POINTS_FORMAT" formatted="false" translatable="false">%1$s %2$s pts</string>
+    <string name="POINTS_SIMPLE_FORMAT" translatable="false">%1$s pts</string>
+    <string name="ort_fonetica" translatable="false">Ortografía fonética</string>
+    <string name="graf_a_y_exp_escrita" translatable="false">Grafía y exp. escrita</string>
+    <string name="ortografia_visual" translatable="false">Ortografía Visual</string>
+    <string name="ortograf_a" translatable="false">Ortografía</string>
+    <string name="grafia" translatable="false">Grafía</string>
+    <string name="tarea_1_dictado" translatable="false">Tarea 1 - Dictado</string>
+    <string name="tarea_2_recog_ortogr_fico" translatable="false">Tarea 2 - Recog. Ortográfico</string>
+    <string name="indica_el_puntaje_items_1_9" translatable="false">Indica el puntaje de los ejercicios 1–9</string>
+    <string name="indica_el_puntaje_items_10_12" translatable="false">Indica el puntaje de los ejercicios 10–12</string>
+    <string name="indica_el_puntaje_items_13_35" translatable="false">Indica el puntaje de los ejercicios 13–35</string>
+    <string name="indica_el_puntaje_items_1_5" translatable="false">Indica el puntaje de los ejercicios 1–5</string>
+    <string name="indica_el_puntaje_items_1_7" translatable="false">Indica el puntaje de los ejercicios 1–7</string>
+    <string name="indica_el_puntaje_items_6_9" translatable="false">Indica el puntaje de los ejercicios 6–9</string>
+    <string name="indica_el_puntaje_items_8_9" translatable="false">Indica el puntaje de los ejercicios 8–9</string>
+    <string name="indica_el_puntaje_items_10_14" translatable="false">Indica el puntaje de los ejercicios 10–14</string>
+    <string name="icono_dropdown_menu" translatable="false">Menu desplegable</string>
+    <string name="descripcion_corregido_dialog" translatable="false">El puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
+    <string name="icono_tema_modo_claro" translatable="false">Icono tema modo claro</string>
+    <string name="icono_tema_modo_oscuro" translatable="false">Icono tema modo oscuro</string>
+    <string name="raz_inductivo" translatable="false">Raz. Inductivo</string>
+    <string name="raz_espacial" translatable="false">Raz. Espacial</string>
+    <string name="raz_deductivo" translatable="false">Raz. Deductivo</string>
+    <string name="TOOLBAR_ADAP_PERSONAL" translatable="false">Adaptación Personal</string>
+    <string name="TOOLBAR_ADAP_FAMILIAR" translatable="false">Adaptación Familiar</string>
+    <string name="TOOLBAR_ADAP_ESCOLAR" translatable="false">Adaptación Escolar</string>
+    <string name="TOOLBAR_HAB_SOCIALES" translatable="false">Habilidades Sociales</string>
+    <string name="eficacia_lectora" translatable="false">Eficacia Lectora</string>
     <string name="DIALOG_TITLE">¡Apoya a la aplicación!</string>
-    <string name="DIALOG_MESSAGE">Ve el video, apoya gratis monetariamente y recibe 1 día libre de publicidad</string>
-    <string name="DIALOG_POSITIVE_BUTTON">Ver video</string>
+    <string name="DIALOG_MESSAGE">Ve el anuncio, apoya la app y recibe 1 día libre de anuncios</string>
+    <string name="DIALOG_POSITIVE_BUTTON">Ver anuncio</string>
     <string name="DIALOG_NEGATIVE_BUTTON">Cancelar</string>
-    <string name="NIGHT_MODE_ON">Modo noche activado</string>
-    <string name="NIGHT_MODE_OFF">Modo noche desactivado</string>
-    <string name="indica_el_total_para_las_4_tareas">Indica el total para las 4 tareas</string>
-    <string name="SHARED_VERSION_CODE_APP">Shared version code: </string>
-    <string name="VERSION_CODE_APP">VERSION_CODE_INSTALLED:</string>
-    <string name="NEW_VERSION_DETECTED"><![CDATA[New version detected: sharedVersionCode < versionCode]]></string>
-    <string name="NO_VERSION_DETECTED">No new version detected</string>
-    <string name="version">"Versión "</string>
-    <string name="solucionamos_el_problema">Solucionamos el problema</string>
-    <string name="qu_hay_de_nuevo_en_la_app">¿Qué hay de nuevo en la app?</string>
-    <string name="icono_nuevas_caracteristicas">Icono nuevas caracteristicas</string>
-    <string name="shared_pref_actual_version_code">shared_pref_actual_version_code</string>
-    <string name="UPDATE_FAIL">Actualizacion fallida</string>
-    <string name="UPDATE_AVAILABLE">Actualizacion disponible</string>
-    <string name="UPDATE_NOT_AVAILABLE">Actualizacion no disponible</string>
+    <string name="NIGHT_MODE_ON" translatable="false">Modo noche activado</string>
+    <string name="NIGHT_MODE_OFF" translatable="false">Modo noche desactivado</string>
+    <string name="indica_el_total_para_las_4_tareas" translatable="false">Indica el total para las 4 tareas</string>
+    <string name="SHARED_VERSION_CODE_APP" translatable="false">Shared version code: </string>
+    <string name="VERSION_CODE_APP" translatable="false">VERSION_CODE_INSTALLED:</string>
+    <string name="NEW_VERSION_DETECTED" translatable="false">NUEVA VERSION DETECTADA: sharedVersionCode \u003C versionCode</string>
+    <string name="NO_VERSION_DETECTED" translatable="false">NUEVA VERSION NO DETECTADA</string>
+    <string name="version" translatable="false">"Versión "</string>
+    <string name="solucionamos_el_problema" translatable="false">Solucionamos el problema</string>
+    <string name="qu_hay_de_nuevo_en_la_app" translatable="false">¿Qué hay de nuevo en la app?</string>
+    <string name="icono_nuevas_caracteristicas" translatable="false">Icono nuevas caracteristicas</string>
+    <string name="UPDATE_FAIL" translatable="false">Actualizacion fallida</string>
+    <string name="UPDATE_AVAILABLE" translatable="false">Actualizacion disponible</string>
+    <string name="UPDATE_NOT_AVAILABLE" translatable="false">Actualizacion no disponible</string>
+    <string name="MOBILE_ADS_COMPLETE" translatable="false">Mobile Ads complete load</string>
 
 </resources>
