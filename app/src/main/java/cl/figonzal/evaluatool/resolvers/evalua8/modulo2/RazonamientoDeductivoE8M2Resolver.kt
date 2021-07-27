@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:53
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo2
@@ -20,7 +20,7 @@ import kotlin.math.floor
 class RazonamientoDeductivoE8M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = razonamientoDeductivoE8M2Baremo()
+    override val perc = razonamientoDeductivoE8M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

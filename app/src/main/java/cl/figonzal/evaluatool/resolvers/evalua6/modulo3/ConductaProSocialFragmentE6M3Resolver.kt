@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-07-21 17:08
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua6.modulo3
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class ConductaProSocialFragmentE6M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = conductaProSocialFragmentE6M3Baremo()
+    override val perc = conductaProSocialFragmentE6M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

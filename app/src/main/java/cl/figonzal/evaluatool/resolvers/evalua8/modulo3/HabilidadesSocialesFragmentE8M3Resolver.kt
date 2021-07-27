@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 12-07-21 00:45
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo3
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class HabilidadesSocialesFragmentE8M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = habilidadesSocialesFragmentE8M3Baremo()
+    override val perc = habilidadesSocialesFragmentE8M3Baremo()
 
 
     override fun calculateTask(

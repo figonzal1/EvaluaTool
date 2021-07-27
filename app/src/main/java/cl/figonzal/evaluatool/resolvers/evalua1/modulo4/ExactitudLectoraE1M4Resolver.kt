@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 13:58
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua1.modulo4
@@ -26,7 +26,7 @@ class ExactitudLectoraE1M4Resolver : BaseResolver {
     var totalPdTarea5 = 0.0
     var totalPdTarea6 = 0.0
 
-    val perc = exactitudLectoraE1M4Baremo()
+    override val perc = exactitudLectoraE1M4Baremo()
 
     override fun calculateTask(
         nTarea: Int,

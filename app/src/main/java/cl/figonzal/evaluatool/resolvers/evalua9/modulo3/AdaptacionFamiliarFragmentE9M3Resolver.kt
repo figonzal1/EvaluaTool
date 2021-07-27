@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 14-07-21 18:05
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo3
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class AdaptacionFamiliarFragmentE9M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = adaptacionFamiliarFragmentE9M3Baremo()
+    override val perc = adaptacionFamiliarFragmentE9M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:34
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo2
@@ -25,7 +25,7 @@ class RazonamientoInductivoE8M2Resolver : BaseResolver {
     var totalPdTarea4 = 0.0
     var totalPdTarea5 = 0.0
     var totalPdTarea6 = 0.0
-    val perc = razonamientoInductivoE8M2Baremo()
+    override val perc = razonamientoInductivoE8M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

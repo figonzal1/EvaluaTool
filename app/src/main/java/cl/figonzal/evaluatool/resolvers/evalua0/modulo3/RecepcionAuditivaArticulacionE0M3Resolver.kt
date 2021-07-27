@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 11:59
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo3
@@ -23,7 +23,7 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
     var totalPdTarea2 = 0.0
     var totalPdTarea3 = 0.0
 
-    val perc = recepcionAuditivaE0M3Baremo()
+    override val perc = recepcionAuditivaE0M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

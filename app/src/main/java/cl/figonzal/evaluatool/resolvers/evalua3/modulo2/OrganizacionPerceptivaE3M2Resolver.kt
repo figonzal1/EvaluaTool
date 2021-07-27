@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:38
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo2
@@ -22,7 +22,7 @@ class OrganizacionPerceptivaE3M2Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
 
-    val perc = organizacionPerceptivaE3M2Baremo()
+    override val perc = organizacionPerceptivaE3M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

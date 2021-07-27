@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 20:42
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua4.modulo3
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class AutoEstimaFragmentE4M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = autoEstimaFragmentE4M3Baremo()
+    override val perc = autoEstimaFragmentE4M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:36
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua8.modulo4
@@ -25,7 +25,7 @@ class ComprensionLectoraE8M4Resolver : BaseResolver {
     var totalPdTarea4 = 0.0
     var totalPdTarea5 = 0.0
 
-    val perc = comprensionLectoraE8M4Baremo()
+    override val perc = comprensionLectoraE8M4Baremo()
 
 
     override fun calculateTask(

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 22:57
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo2
@@ -21,7 +21,7 @@ class GrafoMotricidadE0M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
 
-    val perc = grafoMotricidadE0M2Baremo()
+    override val perc = grafoMotricidadE0M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 07-07-21 13:59
+ Last modified 27-07-21 00:23
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua6.modulo6
@@ -20,7 +20,7 @@ import kotlin.math.floor
 class ResolucionProblemasE6M6Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = resolucionProblemasE6M6Baremo()
+    override val perc = resolucionProblemasE6M6Baremo()
 
     override fun calculateTask(
         nTarea: Int,

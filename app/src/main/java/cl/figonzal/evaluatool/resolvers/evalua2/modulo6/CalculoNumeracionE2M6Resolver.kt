@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:38
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua2.modulo6
@@ -22,7 +22,7 @@ class CalculoNumeracionE2M6Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
 
-    val perc = calculoNumeracionE2M6Baremo()
+    override val perc = calculoNumeracionE2M6Baremo()
 
     override fun calculateTask(
         nTarea: Int,

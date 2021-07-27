@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 20:48
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo4
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class VelocidadFragmentE9M4Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = velocidadFragmentE9M4Baremo()
+    override val perc = velocidadFragmentE9M4Baremo()
 
     override fun calculateTask(
         nTarea: Int,

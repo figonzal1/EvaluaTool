@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:46
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo2
@@ -21,7 +21,7 @@ class PensamientoAnalogicoE3M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
 
-    val perc = pensamientoAnalogicoE3M2Baremo()
+    override val perc = pensamientoAnalogicoE3M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,
