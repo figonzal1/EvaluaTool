@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:45
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua5.modulo2
@@ -20,7 +20,7 @@ import kotlin.math.floor
 class PensamientoAnalogicoE5M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = pensamientoAnalogicoE5M2Baremo()
+    override val perc = pensamientoAnalogicoE5M2Baremo()
 
 
     override fun calculateTask(

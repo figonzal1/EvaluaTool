@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 10-07-21 19:19
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua7.modulo3
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 class MotivacionFragmentE7M3Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = motivacionFragmentE7M3Baremo()
+    override val perc = motivacionFragmentE7M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

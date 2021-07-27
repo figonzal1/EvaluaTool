@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:55
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo2
@@ -21,7 +21,7 @@ class RazonamientoDeductivoE9M2Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
-    val perc = razonamientoDeductivoE9M2Baremo()
+    override val perc = razonamientoDeductivoE9M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

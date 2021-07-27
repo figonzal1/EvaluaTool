@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:36
+ Last modified 27-07-21 00:00
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo1
@@ -22,7 +22,7 @@ class LetrasYNumerosE0M1Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
 
-    val perc = letrasyNumerosE0M1Baremo()
+    override val perc = letrasyNumerosE0M1Baremo()
 
     override fun calculateTask(
         nTarea: Int,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 03-07-21 20:42
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua4.modulo4
@@ -20,7 +20,7 @@ import kotlin.math.floor
 class ComprensionFragmentE4M4Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = comprensionFragmentE4M4Baremo()
+    override val perc = comprensionFragmentE4M4Baremo()
 
 
     override fun calculateTask(

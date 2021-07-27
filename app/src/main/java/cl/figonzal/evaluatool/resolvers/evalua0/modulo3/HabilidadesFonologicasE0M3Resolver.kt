@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-06-21 01:45
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo3
@@ -24,7 +24,7 @@ class HabilidadesFonologicasE0M3Resolver : BaseResolver {
     var totalPdTarea3 = 0.0
     var totalPdTarea4 = 0.0
 
-    val perc = habilidadesFonologicasE0M3Baremo()
+    override val perc = habilidadesFonologicasE0M3Baremo()
 
     override fun calculateTask(
         nTarea: Int,

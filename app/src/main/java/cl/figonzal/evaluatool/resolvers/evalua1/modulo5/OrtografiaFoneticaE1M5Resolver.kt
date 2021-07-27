@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 30-06-21 14:55
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua1.modulo5
@@ -23,7 +23,7 @@ class OrtografiaFoneticaE1M5Resolver : BaseResolver {
     var totalPdTarea2 = 0.0
     var totalPdTarea3 = 0.0
 
-    val perc = ortografiaFoneticaE1M5Baremo()
+    override val perc = ortografiaFoneticaE1M5Baremo()
 
     override fun calculateTask(
         nTarea: Int,

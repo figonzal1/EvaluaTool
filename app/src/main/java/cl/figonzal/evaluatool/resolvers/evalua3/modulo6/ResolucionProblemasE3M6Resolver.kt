@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 01-07-21 21:04
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua3.modulo6
@@ -22,7 +22,7 @@ class ResolucionProblemasE3M6Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
 
-    val perc = resolucionProblemasE3M6Baremo()
+    override val perc = resolucionProblemasE3M6Baremo()
 
     override fun calculateTask(
         nTarea: Int,

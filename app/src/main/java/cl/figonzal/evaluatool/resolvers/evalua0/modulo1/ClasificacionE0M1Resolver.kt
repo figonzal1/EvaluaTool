@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 15:36
+ Last modified 26-07-21 23:04
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua0.modulo1
@@ -22,7 +22,7 @@ class ClasificacionE0M1Resolver : BaseResolver {
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
 
-    val perc = clasificacionE0M1Baremo()
+    override val perc = clasificacionE0M1Baremo()
 
     override fun calculateTask(
         nTarea: Int,

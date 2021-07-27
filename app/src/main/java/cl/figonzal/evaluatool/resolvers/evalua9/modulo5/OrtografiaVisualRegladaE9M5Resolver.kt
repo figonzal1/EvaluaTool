@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 18:17
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo5
@@ -21,7 +21,7 @@ class OrtografiaVisualRegladaE9M5Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
-    val perc = ortografiaVisualRegladaE9M5Baremo()
+    override val perc = ortografiaVisualRegladaE9M5Baremo()
 
     override fun calculateTask(
         nTarea: Int,

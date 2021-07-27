@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 29-06-21 18:25
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua2.modulo2
@@ -26,7 +26,7 @@ class MemoriaAtencionE2M2Resolver : BaseResolver {
     var totalPdTarea5 = 0.0
     var totalPdTarea6 = 0.0
 
-    val perc = memoriaAtencionE2M2Baremo()
+    override val perc = memoriaAtencionE2M2Baremo()
 
     override fun calculateTask(
         nTarea: Int,

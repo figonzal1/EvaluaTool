@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-07-21 10:54
+ Last modified 27-07-21 10:17
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua9.modulo1
@@ -21,7 +21,7 @@ class AtencionConcentracionE9M1Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
     var totalPdTarea2 = 0.0
-    val perc = atencionConcentracionE9M1Baremo()
+    override val perc = atencionConcentracionE9M1Baremo()
 
     override fun calculateTask(
         nTarea: Int,

@@ -8,12 +8,14 @@
 
  Copyright (c) 2021
 
- Last modified 22-06-21 17:33
+ Last modified 26-07-21 22:43
  */
 
 package cl.figonzal.evaluatool.interfaces
 
 interface BaseResolver {
+
+    val perc: Array<Array<Any>>
 
     fun calculateTask(
         nTarea: Int = 0,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 06-07-21 12:30
+ Last modified 27-07-21 00:19
  */
 
 package cl.figonzal.evaluatool.resolvers.evalua6.modulo1
@@ -20,7 +20,7 @@ import kotlin.math.floor
 class ReflexividadE6M1Resolver : BaseResolver {
 
     var totalPdTarea1 = 0.0
-    val perc = reflexividadE6M1Baremo()
+    override val perc = reflexividadE6M1Baremo()
 
 
     override fun calculateTask(
