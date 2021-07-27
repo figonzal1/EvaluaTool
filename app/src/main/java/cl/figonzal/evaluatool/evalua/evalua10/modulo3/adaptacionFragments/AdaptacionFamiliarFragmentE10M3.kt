@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:53
+ Last modified 26-07-21 20:23
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo3.adaptacionFragments
@@ -30,6 +30,7 @@ import cl.figonzal.evaluatool.resolvers.evalua10.modulo3.AdaptacionFamiliarFragm
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 
 class AdaptacionFamiliarFragmentE10M3 : Fragment() {
 
@@ -94,7 +95,7 @@ class AdaptacionFamiliarFragmentE10M3 : Fragment() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 requireActivity().alertDialogPdCorregido()
             }
             EvaluaUtils.configurarTextoBaremo(

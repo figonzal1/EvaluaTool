@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:54
+ Last modified 26-07-21 20:50
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.ComprensionLectoraE7M4Re
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class ComprensionLectoraE7M4 : AppCompatActivity() {
@@ -122,7 +123,7 @@ class ComprensionLectoraE7M4 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 alertDialogPdCorregido()
             }
 
@@ -427,7 +428,7 @@ class ComprensionLectoraE7M4 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

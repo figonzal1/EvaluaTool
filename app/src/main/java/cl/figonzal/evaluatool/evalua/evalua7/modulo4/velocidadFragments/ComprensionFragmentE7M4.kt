@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 20:13
+ Last modified 26-07-21 20:14
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo4.velocidadFragments
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.ComprensionFragmentE7M4R
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class ComprensionFragmentE7M4 : Fragment() {
@@ -102,7 +103,7 @@ class ComprensionFragmentE7M4 : Fragment() {
 
             ivHelpPdCorregido.setOnClickListener {
 
-                requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 requireActivity().alertDialogPdCorregido()
             }
 
@@ -234,8 +235,10 @@ class ComprensionFragmentE7M4 : Fragment() {
             in 7..10 -> getString(R.string.COMPRENSION_ALTA)
             in 11..15 -> getString(R.string.COMPRENSION_MUY_ALTA)
             else -> {
-                requireActivity().logInfo(
-                    R.string.COMPRENSION_NULA
+                Timber.d(
+                    getString(
+                        R.string.COMPRENSION_NULA
+                    )
                 )
                 ""
             }

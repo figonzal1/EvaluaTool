@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:54
+ Last modified 26-07-21 18:57
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo5
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Re
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class OrtografiaFoneticaE1M5 : AppCompatActivity() {
@@ -104,7 +105,7 @@ class OrtografiaFoneticaE1M5 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 alertDialogPdCorregido()
             }
             EvaluaUtils.configurarTextoBaremo(
@@ -264,7 +265,7 @@ class OrtografiaFoneticaE1M5 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

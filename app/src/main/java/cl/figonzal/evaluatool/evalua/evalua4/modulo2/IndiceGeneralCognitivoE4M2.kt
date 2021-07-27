@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:49
+ Last modified 26-07-21 19:10
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo2
 
@@ -23,9 +23,9 @@ import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralCognitivoE4M2Bind
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
 import cl.figonzal.evaluatool.utilities.configActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
-import cl.figonzal.evaluatool.utilities.logInfo
 import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 import kotlin.math.roundToInt
 
@@ -179,7 +179,7 @@ class IndiceGeneralCognitivoE4M2 : AppCompatActivity(), IndiceValorInterface {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

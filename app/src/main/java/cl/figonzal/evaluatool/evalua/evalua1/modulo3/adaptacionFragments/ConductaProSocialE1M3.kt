@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:53
+ Last modified 26-07-21 18:57
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo3.adaptacionFragments
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.resolvers.evalua1.modulo3.ConductaProSocialFragmen
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class ConductaProSocialE1M3 : Fragment() {
@@ -95,7 +96,7 @@ class ConductaProSocialE1M3 : Fragment() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                requireActivity().logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 requireActivity().alertDialogPdCorregido()
 
             }

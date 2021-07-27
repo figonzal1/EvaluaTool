@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 22:09
+ Last modified 26-07-21 15:33
  */
 
 package cl.figonzal.evaluatool.service
@@ -20,7 +20,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.utilities.EvaluaUtils
-import cl.figonzal.evaluatool.utilities.logInfo
+import timber.log.Timber
 
 /**
  * Funcion in charge to handle the night mode
@@ -48,11 +48,11 @@ class NightModeService(
 
         when (sharedPrefService.getData(EvaluaUtils.get(R.string.NIGHT_MODE_KEY), false)) {
             true -> {
-                activity.logInfo(R.string.NIGHT_MODE_STATUS_ON)
+                Timber.d(activity.getString(R.string.NIGHT_MODE_STATUS_ON))
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
             false -> {
-                activity.logInfo(R.string.NIGHT_MODE_STATUS_OFF)
+                Timber.d(activity.getString(R.string.NIGHT_MODE_STATUS_OFF))
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }

@@ -8,17 +8,17 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 19:38
+ Last modified 26-07-21 15:33
  */
 
 package cl.figonzal.evaluatool.service
 
 import android.app.Activity
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilities.logInfo
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
+import timber.log.Timber
 
 
 class UpdaterService(
@@ -36,7 +36,7 @@ class UpdaterService(
                     it.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
                 ) {
 
-                    activity.logInfo(R.string.UPDATE_AVAILABLE)
+                    Timber.d(activity.getString(R.string.UPDATE_AVAILABLE))
 
                     appUpdateManager.startUpdateFlowForResult(
                         // Pass the intent that is returned by 'getAppUpdateInfo()'.
@@ -49,7 +49,7 @@ class UpdaterService(
                         UPDATE_CODE
                     )
                 } else {
-                    activity.logInfo(R.string.UPDATE_NOT_AVAILABLE)
+                    Timber.d(activity.getString(R.string.UPDATE_NOT_AVAILABLE))
                 }
             }
     }

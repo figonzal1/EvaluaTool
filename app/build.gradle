@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 14:52
+ Last modified 24-07-21 19:58
  */
 
 apply plugin: 'com.android.application'
@@ -39,8 +39,8 @@ android {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 17
-        versionName "0.7.6-beta"
+        versionCode 18
+        versionName "0.7.6-beta-2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -76,11 +76,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
-    implementation "com.google.android.material:material:1.3.0"
+    implementation "com.google.android.material:material:1.4.0"
 
     //Recycler view seccionado
     implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:3.2.0'
@@ -90,23 +90,23 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-perf-ktx'
-    implementation 'com.google.firebase:firebase-ads:20.1.0'
+    implementation 'com.google.firebase:firebase-ads:20.2.0'
 
     implementation 'com.jakewharton.timber:timber:4.7.1' //Timber logs
 
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21' //Kotlin
-    implementation "androidx.core:core-ktx:1.5.0" //KTX
+    implementation "androidx.core:core-ktx:1.6.0" //KTX
 
     //Google Play
     implementation("com.google.android.play:core:1.10.0")
     implementation("com.google.android.play:core-ktx:1.8.1")
 
     testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    androidTestImplementation 'androidx.test:rules:1.3.0'
-    androidTestImplementation 'androidx.test:runner:1.3.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.3.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-contrib:3.4.0'
 }
 repositories {
     mavenCentral()

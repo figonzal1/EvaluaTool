@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:52
+ Last modified 26-07-21 18:24
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.resolvers.evalua0.modulo1.LetrasYNumerosE0M1Resolv
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import timber.log.Timber
 import java.util.*
 
 class LetrasYNumerosE0M1 : AppCompatActivity() {
@@ -104,7 +105,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setOnClickListener {
 
-                logInfo(R.string.DIALOGO_AYUDA_MSG_ABIERTO)
+                Timber.d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
                 alertDialogPdCorregido()
             }
             EvaluaUtils.configurarTextoBaremo(
@@ -367,7 +368,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

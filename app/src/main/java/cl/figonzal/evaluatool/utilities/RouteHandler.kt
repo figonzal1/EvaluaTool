@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:54
+ Last modified 26-07-21 15:11
  */
 
 package cl.figonzal.evaluatool.utilities
@@ -46,9 +46,7 @@ object RouteHandler {
                 (0..item.value.size)
                     .asSequence()
                     .filter {
-                        it == sectionedRecyclerViewAdapter.getPositionInSection(
-                            itemAdapterPosition
-                        )
+                        it == sectionedRecyclerViewAdapter.getPositionInSection(itemAdapterPosition)
                     }
                     .map { item.value[it] as List<*> }
                     .forEach {

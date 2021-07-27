@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 21-07-21 22:49
+ Last modified 26-07-21 20:14
  */
 package cl.figonzal.evaluatool.evalua.evalua7
 
@@ -24,8 +24,8 @@ import cl.figonzal.evaluatool.model.Evalua
 import cl.figonzal.evaluatool.utilities.ConfigRoutes
 import cl.figonzal.evaluatool.utilities.RouteHandler
 import cl.figonzal.evaluatool.utilities.configActionBar
-import cl.figonzal.evaluatool.utilities.logInfo
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
+import timber.log.Timber
 import java.util.*
 
 class Evalua7Activity : AppCompatActivity(), ClickListener {
@@ -157,7 +157,7 @@ class Evalua7Activity : AppCompatActivity(), ClickListener {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         if (item.itemId == android.R.id.home) {
-            logInfo(R.string.ACTIVIDAD_CERRADA)
+            Timber.d(getString(R.string.ACTIVIDAD_CERRADA))
             finish()
             return true
         }

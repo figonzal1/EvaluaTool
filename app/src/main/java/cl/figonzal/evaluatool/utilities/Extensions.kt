@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 22-07-21 21:11
+ Last modified 26-07-21 14:46
  */
 
 package cl.figonzal.evaluatool.utilities
@@ -47,24 +47,6 @@ fun AppCompatActivity.configActionBar(title: Int, materialToolbar: MaterialToolb
         this?.title = getString(title)
     })
 }
-
-/**
- * Function that provide logs with a Id String
- *
- * @param msgId  The id for String
- * @return Unit
- * @version 17-04-2021
- */
-fun Activity.logInfo(msgId: Int) = Timber.i(getString(msgId))
-
-/**
- * Function that provide logs with a Tag ID & String
- *
- * @param msg Message for logs
- * @return Unit
- * @version 17-04-2021
- */
-fun Activity.logInfo(msg: String) = Timber.i(msg)
 
 /**
  * Function to show toast easily
@@ -116,13 +98,13 @@ fun Activity.confirmationDialogReward(adsService: AdsService) {
         .setTitle(getString(R.string.DIALOG_TITLE))
         .setMessage(getString(R.string.DIALOG_MESSAGE))
         .setNegativeButton(getString(R.string.DIALOG_NEGATIVE_BUTTON)) { _, _ ->
-            this.logInfo(R.string.REWARD_DIALOG_BTN_CANCEL)
+            Timber.i(getString(R.string.REWARD_DIALOG_BTN_CANCEL))
         }
         .setPositiveButton(getString(R.string.DIALOG_POSITIVE_BUTTON)) { _, _ ->
             when {
                 adsService.getIntersitial() != null -> {
                     adsService.showRewardVideo()
-                    this.logInfo(R.string.REWARD_DIALOG_BTN_VER_VIDEO)
+                    Timber.i(getString(R.string.REWARD_DIALOG_BTN_VER_VIDEO))
                 }
             }
         }
@@ -143,7 +125,7 @@ fun Activity.isAdsAllowed(sharedPrefService: SharedPrefService): Boolean {
         ) as Long
     )
 
-    logInfo(DateHandler.dateToString(rewardDate))
+    Timber.i(DateHandler.dateToString(rewardDate))
     return nowDate.after(rewardDate)
 }
 
