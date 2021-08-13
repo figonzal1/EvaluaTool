@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 15:33
+ Last modified 13-08-21 18:39
  */
 
 package cl.figonzal.evaluatool.service
@@ -27,7 +27,7 @@ import timber.log.Timber
 class ChangeLogService(
     val activity: Activity,
     val context: Context,
-    val sharedPrefService: SharedPrefService
+    private val sharedPrefService: SharedPrefService
 ) {
 
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
@@ -55,21 +55,8 @@ class ChangeLogService(
             0
         ) as Int
 
-        Timber.d(
-            String.format(
-                "%s%s",
-                activity.getString(R.string.SHARED_VERSION_CODE_APP),
-                sharedVersionCode.toString()
-            )
-        )
-
-        Timber.d(
-            String.format(
-                "%s%s",
-                activity.getString(R.string.VERSION_CODE_APP),
-                versionCode.toString()
-            )
-        )
+        Timber.d("${activity.getString(R.string.SHARED_VERSION_CODE_APP)}$sharedVersionCode")
+        Timber.d("${activity.getString(R.string.VERSION_CODE_APP)}$versionCode")
 
         when {
             sharedVersionCode < versionCode -> {
@@ -86,7 +73,7 @@ class ChangeLogService(
 
     }
 
-    fun showBottomSheetDialog() {
+    private fun showBottomSheetDialog() {
 
         with(BottomSheetDialog(context), {
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:59
+ Last modified 27-07-21 18:21
  */
 package cl.figonzal.evaluatool.utilities
 
@@ -153,7 +153,7 @@ object EvaluaUtils {
      *
      * @param fragmentManager
      * @param tvBaremo TextView for baremo score
-     * @param perc Baremo percentile table score
+     * @param resolver Item resolver
      * @param itemName ItemName of actual baremo in perc
      *
      * @return Unit
