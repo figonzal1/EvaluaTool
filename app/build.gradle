@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 24-07-21 19:58
+ Last modified 13-08-21 18:11
  */
 
 apply plugin: 'com.android.application'
@@ -39,8 +39,8 @@ android {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 18
-        versionName "0.7.6-beta-2"
+        versionCode 19
+        versionName "0.7.7-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

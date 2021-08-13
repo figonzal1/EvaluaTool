@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 18:02
+ Last modified 13-08-21 15:32
  */
 
 package cl.figonzal.evaluatool.utilities
@@ -23,7 +23,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.activities.MathJaxWebView
-import cl.figonzal.evaluatool.service.AdsService
 import cl.figonzal.evaluatool.service.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
@@ -84,30 +83,6 @@ fun Activity.alertDialogPdCorregido() {
         .setMessage(getString(R.string.descripcion_corregido_dialog))
         .setPositiveButton(getString(R.string.dialogo_boton_cerrar)) { dialog, _ ->
             dialog.dismiss()
-        }
-        .show()
-}
-
-/**
- * CONFIRMATION DIALOG
- * Confirmation dialog that allows the user to remove the ads by watching a reward video
- *
- * @version 10-06-2021
- */
-fun Activity.confirmationDialogReward(adsService: AdsService) {
-    MaterialAlertDialogBuilder(this)
-        .setTitle(getString(R.string.DIALOG_TITLE))
-        .setMessage(getString(R.string.DIALOG_MESSAGE))
-        .setNegativeButton(getString(R.string.DIALOG_NEGATIVE_BUTTON)) { _, _ ->
-            Timber.i(getString(R.string.REWARD_DIALOG_BTN_CANCEL))
-        }
-        .setPositiveButton(getString(R.string.DIALOG_POSITIVE_BUTTON)) { _, _ ->
-            when {
-                adsService.getIntersitial() != null -> {
-                    adsService.showRewardVideo()
-                    Timber.i(getString(R.string.REWARD_DIALOG_BTN_VER_VIDEO))
-                }
-            }
         }
         .show()
 }

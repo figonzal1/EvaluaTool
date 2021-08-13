@@ -625,7 +625,7 @@
     <string name="NIGHT_MODE_OFF" translatable="false">Modo noche desactivado</string>
     <string name="indica_el_total_para_las_4_tareas" translatable="false">Indica el total para las 4 tareas</string>
     <string name="SHARED_VERSION_CODE_APP" translatable="false">Shared version code: </string>
-    <string name="VERSION_CODE_APP" translatable="false">VERSION_CODE_INSTALLED:</string>
+    <string name="VERSION_CODE_APP" translatable="false">VERSION_CODE_INSTALLED: </string>
     <string name="NEW_VERSION_DETECTED" translatable="false">NUEVA VERSION DETECTADA: sharedVersionCode \u003C versionCode</string>
     <string name="NO_VERSION_DETECTED" translatable="false">NUEVA VERSION NO DETECTADA</string>
     <string name="version" translatable="false">"Versión "</string>

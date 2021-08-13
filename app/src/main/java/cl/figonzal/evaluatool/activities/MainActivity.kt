@@ -163,7 +163,6 @@ class MainActivity : AppCompatActivity() {
 
                 //Load Ads
                 loadIntersitial()
-                loadRewardVideo()
             }
             else -> Timber.d(getString(R.string.ADS_NO_CARGADOS))
         }
