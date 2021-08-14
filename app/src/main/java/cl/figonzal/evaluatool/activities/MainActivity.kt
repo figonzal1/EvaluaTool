@@ -68,7 +68,11 @@ class MainActivity : AppCompatActivity() {
 
             NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
 
-            ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
+            if (test) ChangeLogService(
+                this@MainActivity,
+                this@MainActivity,
+                this
+            ).checkChangeLogVersion()
 
             updateService = UpdaterService(
                 this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
