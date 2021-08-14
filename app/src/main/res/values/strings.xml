@@ -8,15 +8,15 @@
 
   Copyright (c) 2021
 
-  Last modified 26-07-21 21:37
+  Last modified 13-08-21 21:36
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">EvaluaTool</string>
 
     <!--TEST AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_VIDEO">ca-app-pub-3940256099942544/5224354917</string>-->
+    <!--<string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <!--PROD AD-->
     <string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
