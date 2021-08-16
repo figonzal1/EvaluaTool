@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:57
+ Last modified 16-08-21 15:06
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo5
 
@@ -66,7 +66,7 @@ class OrtografiaVisualRegladaE5M5 : AppCompatActivity() {
         binding = ActivityOrtografiaVisualRegladaE5M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_ORT_VIS_REGLADA, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_ORT_VIS_REGLADA, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

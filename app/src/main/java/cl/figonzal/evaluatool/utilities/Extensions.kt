@@ -8,21 +8,24 @@
 
  Copyright (c) 2021
 
- Last modified 13-08-21 15:32
+ Last modified 16-08-21 15:10
  */
 
 package cl.figonzal.evaluatool.utilities
 
 import android.app.Activity
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
+import android.net.Uri
 import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.activities.MathJaxWebView
+import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
 import cl.figonzal.evaluatool.service.SharedPrefService
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.card.MaterialCardView
@@ -38,7 +41,7 @@ import java.util.*
  *  @param materialToolbar Toolbar that is set for action bar
  *  @version 08-06-2021
  */
-fun AppCompatActivity.configActionBar(title: Int, materialToolbar: MaterialToolbar) {
+fun AppCompatActivity.configureActionBar(title: Int, materialToolbar: MaterialToolbar) {
     setSupportActionBar(materialToolbar)
 
     with(supportActionBar, {
@@ -172,5 +175,16 @@ fun Activity.setAlertDialogCorregido(ivHelpPdCorregido: ImageView) {
 
         Timber.tag("AlertDialogCorregido").d(getString(R.string.DIALOGO_AYUDA_MSG_ABIERTO))
         alertDialogPdCorregido()
+    }
+}
+
+fun Activity.configureFabWsp(fabWsp: FabWhatsapLayoutBinding) {
+    fabWsp.floatingActionButton.setOnClickListener {
+
+        val intent = Intent(Intent.ACTION_VIEW)
+        val url = "https://chat.whatsapp.com/HY53a5RlUvvFNwFwstXHHy"
+        intent.data = Uri.parse(url)
+        intent.`package` = "com.whatsapp"
+        startActivity(intent)
     }
 }

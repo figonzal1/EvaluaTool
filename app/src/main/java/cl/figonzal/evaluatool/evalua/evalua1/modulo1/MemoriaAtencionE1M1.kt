@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:57
+ Last modified 16-08-21 16:35
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo1
 
@@ -82,7 +82,10 @@ class MemoriaAtencionE1M1 : AppCompatActivity() {
         binding = ActivityMemoriaAtencionE1M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_MEMORIA_ATENCION, binding.includeToolbar.materialToolbar)
+        configureActionBar(
+            R.string.TOOLBAR_MEMORIA_ATENCION,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

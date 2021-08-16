@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 13-08-21 18:39
+ Last modified 16-08-21 16:23
  */
 
 package cl.figonzal.evaluatool.service
@@ -35,7 +35,8 @@ class ChangeLogService(
         "- Implementación Evalúa 9",
         "- Corrección de medias y desviaciones de puntajes",
         "- Mejoras visuales de alertas, botones y tarjetas de información",
-        "- Nueva pantalla de pre-carga de aplicación"
+        "- Nueva pantalla de pre-carga de aplicación",
+        "- Se agrega grupo de Whatsapp"
 
     )
     private val showChangeLog = true

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:57
+ Last modified 16-08-21 16:35
  */
 package cl.figonzal.evaluatool.evalua.evalua1.modulo4
 
@@ -84,7 +84,10 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         binding = ActivityExactitudLectoraE1M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EXACTITUD_LECTORA, binding.includeToolbar.materialToolbar)
+        configureActionBar(
+            R.string.TOOLBAR_EXACTITUD_LECTORA,
+            binding.includeToolbar.materialToolbar
+        )
 
         instanciarRecursosInterfaz()
     }

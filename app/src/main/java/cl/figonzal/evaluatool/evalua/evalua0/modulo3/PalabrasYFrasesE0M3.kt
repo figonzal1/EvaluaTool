@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:58
+ Last modified 16-08-21 15:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo3
 
@@ -58,7 +58,7 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
         binding = ActivityPalabrasYFrasesE0M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_PALABRAS_FRASES, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_PALABRAS_FRASES, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

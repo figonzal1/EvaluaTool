@@ -35,6 +35,7 @@ import cl.figonzal.evaluatool.evalua.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.evalua.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.evalua.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.service.*
+import cl.figonzal.evaluatool.utilities.configureFabWsp
 import cl.figonzal.evaluatool.utilities.isAdsAllowed
 import cl.figonzal.evaluatool.utilities.toast
 import com.google.android.material.button.MaterialButton
@@ -68,11 +69,7 @@ class MainActivity : AppCompatActivity() {
 
             NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
 
-            if (test) ChangeLogService(
-                this@MainActivity,
-                this@MainActivity,
-                this
-            ).checkChangeLogVersion()
+            ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
 
             updateService = UpdaterService(
                 this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
@@ -81,6 +78,8 @@ class MainActivity : AppCompatActivity() {
             //Init resources for Main Activity
             initResources(binding, this)
         })
+
+        configureFabWsp(binding.fabWsp)
     }
 
     /**

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 16-08-21 15:06
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo4
@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE8M4Binding
 import cl.figonzal.evaluatool.evalua.evalua8.modulo4.velocidadFragments.FragmentStateAdapterE8M4
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
@@ -35,7 +35,7 @@ class VelocidadLectoraE8M4 : AppCompatActivity() {
             setContentView(root)
 
             //Config Action Bar
-            configActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, includeToolbar.materialToolbar)
+            configureActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, includeToolbar.materialToolbar)
 
             //View pager
             viewPagerVelocidad.apply {

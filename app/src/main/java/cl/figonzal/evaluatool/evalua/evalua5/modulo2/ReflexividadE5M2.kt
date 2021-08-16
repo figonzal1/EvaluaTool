@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:57
+ Last modified 16-08-21 15:06
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo2
 
@@ -61,7 +61,7 @@ class ReflexividadE5M2 : AppCompatActivity() {
         binding = ActivityReflexividadE5M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_REFLEXIVIDAD, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_REFLEXIVIDAD, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

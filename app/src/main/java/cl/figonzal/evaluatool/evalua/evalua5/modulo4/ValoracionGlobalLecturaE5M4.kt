@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:50
+ Last modified 16-08-21 16:35
  */
 package cl.figonzal.evaluatool.evalua.evalua5.modulo4
 
@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalLecturaE5M4Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -52,7 +52,10 @@ class ValoracionGlobalLecturaE5M4 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityValoracionGlobalLecturaE5M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_VALORACION_GLOBAL, binding.includeToolbar.materialToolbar)
+        configureActionBar(
+            R.string.TOOLBAR_VALORACION_GLOBAL,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

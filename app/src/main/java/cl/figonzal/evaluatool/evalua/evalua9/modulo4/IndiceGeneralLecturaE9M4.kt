@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:50
+ Last modified 16-08-21 15:07
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo4
@@ -22,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralLecturaE9M4Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
 import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
@@ -54,7 +54,7 @@ class IndiceGeneralLecturaE9M4 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralLecturaE9M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(
+        configureActionBar(
             R.string.TOOLBAR_INDICE_GENERAL_LECTURA,
             binding.includeToolbar.materialToolbar
         )
