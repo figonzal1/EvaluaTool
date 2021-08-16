@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:59
+ Last modified 16-08-21 16:35
  */
 
 package cl.figonzal.evaluatool.evalua.evalua9.modulo4
@@ -59,7 +59,10 @@ class EficaciaLectoraE9M4 : AppCompatActivity() {
         binding = ActivityEficaciaLectoraE9M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EFICACIA_LECTORA, binding.includeToolbar.materialToolbar)
+        configureActionBar(
+            R.string.TOOLBAR_EFICACIA_LECTORA,
+            binding.includeToolbar.materialToolbar
+        )
 
         initResources()
     }

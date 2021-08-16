@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 16-08-21 15:06
  */
 
 package cl.figonzal.evaluatool.evalua.evalua7.modulo3
@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE7M3Binding
 import cl.figonzal.evaluatool.evalua.evalua7.modulo3.adaptacionFragments.FragmentStateAdapterE7M3
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
@@ -32,7 +32,7 @@ class NivelesAdaptacionE7M3 : AppCompatActivity() {
         with(ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater), {
             setContentView(root)
 
-            configActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
+            configureActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
 
             //View pager
             viewPagerNivelesAdaptacion.apply {

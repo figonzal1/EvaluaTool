@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 18:24
+ Last modified 16-08-21 15:17
  */
 package cl.figonzal.evaluatool.evalua.evalua0
 
@@ -20,15 +20,17 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
 import cl.figonzal.evaluatool.databinding.ActivityEvalua0Binding
+import cl.figonzal.evaluatool.interfaces.RecyclerBaseActivity
 import cl.figonzal.evaluatool.model.Evalua
 import cl.figonzal.evaluatool.utilities.ConfigRoutes
 import cl.figonzal.evaluatool.utilities.RouteHandler
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
+import cl.figonzal.evaluatool.utilities.configureFabWsp
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 import java.util.*
 
-class Evalua0Activity : AppCompatActivity(), ClickListener {
+class Evalua0Activity : AppCompatActivity(), RecyclerBaseActivity, ClickListener {
 
     private lateinit var binding: ActivityEvalua0Binding
     private var sectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
@@ -38,11 +40,12 @@ class Evalua0Activity : AppCompatActivity(), ClickListener {
         binding = ActivityEvalua0Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EVALUA_0, binding.includeToolbar.materialToolbar)
-        configurarExpandedList()
+        configureActionBar(R.string.TOOLBAR_EVALUA_0, binding.includeToolbar.materialToolbar)
+        configureFabWsp(binding.fabWsp)
+        configureExpandedList()
     }
 
-    private fun configurarExpandedList() {
+    override fun configureExpandedList() {
         //SUBTIMES - SUBMODULO 1
         val subItems1 = listOf(
             Evalua(getString(R.string.EVALUA_0_M1_SI_1)),

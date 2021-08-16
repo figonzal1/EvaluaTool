@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:59
+ Last modified 16-08-21 15:06
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8.modulo6
@@ -59,7 +59,7 @@ class ResolucionProblemasE8M6 : AppCompatActivity() {
         binding = ActivityResolucionProblemasE8M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(
+        configureActionBar(
             R.string.TOOLBAR_RESOLUCION_PROBLEMAS,
             binding.includeToolbar.materialToolbar
         )

@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:58
+ Last modified 16-08-21 15:07
  */
 
 package cl.figonzal.evaluatool.evalua.evalua10.modulo2
@@ -68,7 +68,7 @@ class RazonamientoEspacialE10M2 : AppCompatActivity() {
         binding = ActivityRazonamientoEspacialE10M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RAZON_ESPACIAL, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_RAZON_ESPACIAL, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

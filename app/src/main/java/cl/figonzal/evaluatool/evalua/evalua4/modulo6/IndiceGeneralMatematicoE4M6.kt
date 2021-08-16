@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 19:10
+ Last modified 16-08-21 15:07
  */
 package cl.figonzal.evaluatool.evalua.evalua4.modulo6
 
@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralMatematicoE4M6Binding
 import cl.figonzal.evaluatool.interfaces.IndiceValorInterface
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
 import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
@@ -49,7 +49,7 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
         binding = ActivityIndiceGeneralMatematicoE4M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(
+        configureActionBar(
             R.string.TOOLBAR_INDICE_GENERAL_MATEMATICO,
             binding.includeToolbar.materialToolbar
         )

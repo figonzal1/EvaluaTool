@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 22-07-21 21:26
+  Last modified 16-08-21 15:39
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,6 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".activities.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -216,14 +217,11 @@
             android:id="@+id/btn_evalua_10"
             android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/margin_16"
             android:padding="@dimen/padding_button_green"
             android:text="@string/EVALUA_10"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/btn_evalua_9"
             app:layout_constraintStart_toStartOf="@+id/btn_evalua_8"
-            app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8" />
 
         <include
             android:id="@+id/include_switch"
@@ -237,6 +235,17 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <include
+            android:id="@+id/fab_wsp"
+            layout="@layout/fab_whatsap_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_evalua_10" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

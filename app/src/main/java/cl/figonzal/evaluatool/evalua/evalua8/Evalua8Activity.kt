@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:14
+ Last modified 16-08-21 15:21
  */
 
 package cl.figonzal.evaluatool.evalua.evalua8
@@ -19,15 +19,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.EvaluaAdapter
+import cl.figonzal.evaluatool.adapter.EvaluaAdapter.*
 import cl.figonzal.evaluatool.databinding.ActivityEvalua8Binding
+import cl.figonzal.evaluatool.interfaces.RecyclerBaseActivity
 import cl.figonzal.evaluatool.model.Evalua
 import cl.figonzal.evaluatool.utilities.ConfigRoutes
 import cl.figonzal.evaluatool.utilities.RouteHandler
-import cl.figonzal.evaluatool.utilities.configActionBar
+import cl.figonzal.evaluatool.utilities.configureActionBar
+import cl.figonzal.evaluatool.utilities.configureFabWsp
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 
-class Evalua8Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {
+class Evalua8Activity : AppCompatActivity(), RecyclerBaseActivity, ClickListener {
 
     private lateinit var binding: ActivityEvalua8Binding
     private var sectionedRecyclerViewAdapter = SectionedRecyclerViewAdapter()
@@ -37,11 +40,12 @@ class Evalua8Activity : AppCompatActivity(), EvaluaAdapter.ClickListener {
         binding = ActivityEvalua8Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_EVALUA_8, binding.includeToolbar.materialToolbar)
-        configurarExpandedList()
+        configureActionBar(R.string.TOOLBAR_EVALUA_8, binding.includeToolbar.materialToolbar)
+        configureFabWsp(binding.fabWsp)
+        configureExpandedList()
     }
 
-    private fun configurarExpandedList() {
+    override fun configureExpandedList() {
 
         val subItems1 = listOf(
             Evalua(getString(R.string.EVALUA_8_M1_SI_1))

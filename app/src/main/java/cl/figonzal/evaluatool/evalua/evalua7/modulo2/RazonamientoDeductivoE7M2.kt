@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:58
+ Last modified 16-08-21 15:05
  */
 package cl.figonzal.evaluatool.evalua.evalua7.modulo2
 
@@ -60,7 +60,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity() {
         binding = ActivityRazonamientoDeductivoE7M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_RAZON_DEDUCTIVO, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_RAZON_DEDUCTIVO, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

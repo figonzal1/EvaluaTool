@@ -8,7 +8,7 @@
 
   Copyright (c) 2021
 
-  Last modified 13-08-21 21:36
+  Last modified 16-08-21 16:23
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -636,5 +636,7 @@
     <string name="UPDATE_AVAILABLE" translatable="false">Actualizacion disponible</string>
     <string name="UPDATE_NOT_AVAILABLE" translatable="false">Actualizacion no disponible</string>
     <string name="MOBILE_ADS_COMPLETE" translatable="false">Mobile Ads complete load</string>
+    <string name="icono_grupo_whatsapp" translatable="false">Icono grupo whatsapp</string>
+    <string name="problemas_sugerencias_y_avisos" translatable="false">Dudas, problemas y sugerencias</string>
 
 </resources>

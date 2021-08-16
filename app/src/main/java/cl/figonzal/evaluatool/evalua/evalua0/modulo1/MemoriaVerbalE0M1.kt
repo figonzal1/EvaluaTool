@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:59
+ Last modified 16-08-21 15:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo1
 
@@ -62,7 +62,7 @@ class MemoriaVerbalE0M1 : AppCompatActivity() {
         binding = ActivityMemoriaVerbalE0M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_MEMORIA_VERBAL, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_MEMORIA_VERBAL, binding.includeToolbar.materialToolbar)
 
         initResources()
     }

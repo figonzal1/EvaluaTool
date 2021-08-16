@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 27-07-21 17:57
+ Last modified 16-08-21 15:06
  */
 package cl.figonzal.evaluatool.evalua.evalua0.modulo2
 
@@ -57,7 +57,7 @@ class GrafoMotricidadE0M2 : AppCompatActivity() {
         binding = ActivityGrafoMotricidadE0M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        configActionBar(R.string.TOOLBAR_GRAFOMOTRICIDAD, binding.includeToolbar.materialToolbar)
+        configureActionBar(R.string.TOOLBAR_GRAFOMOTRICIDAD, binding.includeToolbar.materialToolbar)
 
         initResources()
     }
