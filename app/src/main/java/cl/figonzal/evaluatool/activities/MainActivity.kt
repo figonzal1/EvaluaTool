@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 26-07-21 20:50
+ Last modified 17-08-21 02:03
  */
 package cl.figonzal.evaluatool.activities
 
@@ -69,7 +69,9 @@ class MainActivity : AppCompatActivity() {
 
             NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
 
-            ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
+            if (!test) {
+                ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
+            }
 
             updateService = UpdaterService(
                 this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
