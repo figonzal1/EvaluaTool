@@ -19,22 +19,22 @@ import kotlin.math.floor
 
 class MemoriaVerbalE0M1Resolver : BaseResolver {
 
-    var totalPdTarea1 = 0.0
-    var totalPdTarea2 = 0.0
+    var totalPdTask1 = 0.0
+    var totalPdTask2 = 0.0
 
     override val perc = memoriaVerbalE0M1Baremo()
 
     override fun calculateTask(
-        nTarea: Int,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
+        nTask: Int,
+        approved: Int,
+        omitted: Int,
+        reprobate: Int
     ): Double {
 
         var total = floor(
-            when (nTarea) {
-                1 -> 12 - reprobadas.toDouble()
-                2 -> 23 - reprobadas.toDouble()
+            when (nTask) {
+                1 -> 12 - reprobate.toDouble()
+                2 -> 23 - reprobate.toDouble()
                 else -> 0.0
             }
         )
@@ -42,16 +42,16 @@ class MemoriaVerbalE0M1Resolver : BaseResolver {
         return total
     }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
+    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
         //Verificar si pd_actual esta en la lista
         when {
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdCurrent < 0 -> return 0
+            pdCurrent > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdCurrent < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual > item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first() -> return item.first() as Int
+                    pdCurrent > item.first() as Int -> return item.first() as Int
                 }
             }
         }
@@ -60,7 +60,7 @@ class MemoriaVerbalE0M1Resolver : BaseResolver {
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2
+        return totalPdTask1 + totalPdTask2
     }
 
     companion object {

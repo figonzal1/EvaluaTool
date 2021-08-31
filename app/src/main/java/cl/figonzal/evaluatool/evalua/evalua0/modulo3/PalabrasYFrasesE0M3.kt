@@ -36,16 +36,16 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
     private lateinit var binding: ActivityPalabrasYFrasesE0M3Binding
 
     //TAREA 1
-    private lateinit var etReprobadasT1: TextInputEditText
+    private lateinit var etReprobateT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
-    private var reprobadasT1 = 0
+    private var reprobateT1 = 0
 
     //Tetview para total
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
+    private lateinit var tvCalculatedDeviation: TextView
 
     private lateinit var progressBar: LinearProgressIndicator
 
@@ -72,14 +72,14 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@PalabrasYFrasesE0M3.etReprobadasT1 = etReprobadasT1
+            this@PalabrasYFrasesE0M3.etReprobateT1 = etReprobadasT1
 
             //TOTAL
             this@PalabrasYFrasesE0M3.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -93,13 +93,13 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
                 getString(R.string.TOOLBAR_PALABRAS_FRASES)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etReprobadasT1.run {
+        etReprobateT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -108,23 +108,23 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
 
                 override fun afterTextChanged(s: Editable) {
                     when {
-                        s.isEmpty() -> reprobadasT1 = 0
-                        s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> reprobateT1 = 0
+                        s.isNotEmpty() -> reprobateT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            reprobadas = reprobadasT1
+                            nTask = 1,
+                            reprobate = reprobateT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -140,16 +140,16 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
             tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -160,7 +160,7 @@ class PalabrasYFrasesE0M3 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

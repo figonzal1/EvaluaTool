@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
-    private lateinit var tvNombreApp: TextView
+    private lateinit var tvAppName: TextView
     private lateinit var tvVersion: TextView
     private var buttonList = mutableListOf<MaterialButton>()
 
@@ -94,7 +94,7 @@ class MainActivity : AppCompatActivity() {
         with(binding, {
             switchDarkMode = includeSwitch.switchMaterial
 
-            this@MainActivity.tvNombreApp = tvNombreApp
+            this@MainActivity.tvAppName = tvNombreApp
             this@MainActivity.tvVersion = tvVersion
             tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
@@ -195,7 +195,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         //Start animations
-        tvNombreApp.startAnimation(fadeList[0])
+        tvAppName.startAnimation(fadeList[0])
         tvVersion.startAnimation(fadeList[1])
         buttonList[0].startAnimation(fadeList[2])
         buttonList[1].startAnimation(fadeList[3])

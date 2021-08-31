@@ -63,8 +63,7 @@ class EvaluaAdapter(
     }
 
     /**
-     * Clase holder para headers de lista expandida
-     * ViewHolder for headers of Evalua's list
+     * Holder class for headers of expanded list
      *
      * @param rootView Parent view
      */
@@ -74,7 +73,6 @@ class EvaluaAdapter(
 
         /**
          * Binding resources of Header view
-         *
          * @param evaluaAdapter PassAdapter to provide all the required information
          */
         fun bind(evaluaAdapter: EvaluaAdapter) {
@@ -96,7 +94,7 @@ class EvaluaAdapter(
     }
 
     /**
-     * Clase holder para items de lista expandida
+     * Holder class for items of expanded list
      */
     internal class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
