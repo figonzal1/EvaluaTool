@@ -36,26 +36,26 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
     private lateinit var binding: ActivityRecepcionAutitivaArticulacionE0M3Binding
 
     //TAREA 1
-    private lateinit var etAprobadasT1: TextInputEditText
+    private lateinit var etApprovedT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
-    private var aprobadasT1 = 0
+    private var approvedT1 = 0
 
     //TAREA 2
-    private lateinit var etAprobadasT2: TextInputEditText
+    private lateinit var etApprovedT2: TextInputEditText
     private lateinit var tvSubTotalT2: TextView
-    private var aprobadasT2 = 0
+    private var approvedT2 = 0
 
     //TAREA 3
-    private lateinit var etAprobadasT3: TextInputEditText
+    private lateinit var etApprovedT3: TextInputEditText
     private lateinit var tvSubTotalT3: TextView
-    private var aprobadasT3 = 0
+    private var approvedT3 = 0
 
     //Tetview para total
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
+    private lateinit var tvCalculatedDeviation: TextView
 
     private lateinit var progressBar: LinearProgressIndicator
 
@@ -85,22 +85,22 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@RecepcionAuditivaArticulacionE0M3.etAprobadasT1 = etAprobadasT1
+            this@RecepcionAuditivaArticulacionE0M3.etApprovedT1 = etAprobadasT1
 
             //TAREA 2
             tvSubTotalT2 = tvPdSubtotalT2
-            this@RecepcionAuditivaArticulacionE0M3.etAprobadasT2 = etAprobadasT2
+            this@RecepcionAuditivaArticulacionE0M3.etApprovedT2 = etAprobadasT2
 
             //TAREA 3
             tvSubTotalT3 = tvPdSubtotalT3
-            this@RecepcionAuditivaArticulacionE0M3.etAprobadasT3 = etAprobadasT3
+            this@RecepcionAuditivaArticulacionE0M3.etApprovedT3 = etAprobadasT3
 
             //TOTAL
             this@RecepcionAuditivaArticulacionE0M3.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -114,16 +114,16 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                 getString(R.string.TOOLBAR_RECEPCION_AUDITIVA)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
-            textWatcherTarea2(getString(R.string.TAREA_2))
-            textWatcherTarea3(getString(R.string.TAREA_3))
+            textWatcherTask1(getString(R.string.TAREA_1))
+            textWatcherTask2(getString(R.string.TAREA_2))
+            textWatcherTask3(getString(R.string.TAREA_3))
         }
     }
 
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etAprobadasT1.run {
+        etApprovedT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -132,7 +132,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -140,16 +140,16 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT1 = 0
-                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> approvedT1 = 0
+                        s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1,
+                            nTask = 1,
+                            approved = approvedT1,
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -157,9 +157,9 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea2(tarea: String) {
+    private fun textWatcherTask2(task: String) {
 
-        etAprobadasT2.run {
+        etApprovedT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -168,7 +168,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea2 = 0.0
+                    resolver.totalPdTask2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -176,16 +176,16 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT2 = 0
-                        s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
+                        s.isEmpty() -> approvedT2 = 0
+                        s.isNotEmpty() -> approvedT2 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 2,
-                            aprobadas = aprobadasT2,
+                            nTask = 2,
+                            approved = approvedT2,
                         ), {
-                            resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -193,9 +193,9 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea3(tarea: String) {
+    private fun textWatcherTask3(task: String) {
 
-        etAprobadasT3.run {
+        etApprovedT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -204,7 +204,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea3 = 0.0
+                    resolver.totalPdTask3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -212,16 +212,16 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT3 = 0
-                        s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
+                        s.isEmpty() -> approvedT3 = 0
+                        s.isNotEmpty() -> approvedT3 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 3,
-                            aprobadas = aprobadasT3,
+                            nTask = 3,
+                            approved = approvedT3,
                         ), {
-                            resolver.totalPdTarea3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -237,16 +237,16 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
             tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -257,7 +257,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

@@ -18,12 +18,12 @@ interface BaseResolver {
     val perc: Array<Array<Any>>
 
     fun calculateTask(
-        nTarea: Int = 0,
-        aprobadas: Int = 0,
-        omitidas: Int = 0,
-        reprobadas: Int = 0
+        nTask: Int = 0,
+        approved: Int = 0,
+        omitted: Int = 0,
+        reprobate: Int = 0
     ): Double
 
     fun getTotal(): Double
-    fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int
+    fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int
 }
