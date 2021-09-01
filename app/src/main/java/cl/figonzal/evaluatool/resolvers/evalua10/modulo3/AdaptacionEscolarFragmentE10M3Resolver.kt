@@ -18,32 +18,32 @@ import cl.figonzal.evaluatool.interfaces.BaseResolver
 
 class AdaptacionEscolarFragmentE10M3Resolver : BaseResolver {
 
-    var totalPdTarea1 = 0.0
+    var totalPdTask1 = 0.0
     override val perc = adaptacionEscolarFragmentE10M3Baremo()
 
     override fun calculateTask(
-        nTarea: Int,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
+        nTask: Int,
+        approved: Int,
+        omitted: Int,
+        reprobate: Int
     ): Double {
-        var total = aprobadas.toDouble()
+        var total = approved.toDouble()
         if (total < 0) total = 0.0
         return total
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1
+        return totalPdTask1
     }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
+    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
         when {
-            pdActual < perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual > perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdCurrent < perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdCurrent > perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual < item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first() -> return item.first() as Int
+                    pdCurrent < item.first() as Int -> return item.first() as Int
                 }
             }
         }
