@@ -51,7 +51,7 @@ class AutoEstimaFragmentE6M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 3.01
-        const val MEDIA = 5.54
+        const val DEVIATION = 3.01
+        const val MEAN = 5.54
     }
 }

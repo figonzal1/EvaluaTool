@@ -55,7 +55,7 @@ class OrtografiaFoneticaE7M5Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 7.01
-        const val MEDIA = 28.00
+        const val DEVIATION = 7.01
+        const val MEAN = 28.00
     }
 }

@@ -55,7 +55,7 @@ class EficaciaLectoraE7M4Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 5.23
-        const val MEDIA = 15.52
+        const val DEVIATION = 5.23
+        const val MEAN = 15.52
     }
 }

@@ -61,7 +61,7 @@ class SeriesE1M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 8.00
-        const val MEDIA = 14.50
+        const val DEVIATION = 8.00
+        const val MEAN = 14.50
     }
 }

@@ -56,7 +56,7 @@ class GrafoMotricidadE0M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 7.29
-        const val MEDIA = 32.08
+        const val DEVIATION = 7.29
+        const val MEAN = 32.08
     }
 }

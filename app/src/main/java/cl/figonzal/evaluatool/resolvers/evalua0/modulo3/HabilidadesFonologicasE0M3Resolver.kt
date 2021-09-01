@@ -59,7 +59,7 @@ class HabilidadesFonologicasE0M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 10.07
-        const val MEDIA = 44.73
+        const val DEVIATION = 10.07
+        const val MEAN = 44.73
     }
 }

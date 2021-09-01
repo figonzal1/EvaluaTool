@@ -52,7 +52,7 @@ class AdaptacionFamiliarFragmentE10M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val MEDIA = 20.42
-        const val DESVIACION = 8.51
+        const val MEAN = 20.42
+        const val DEVIATION = 8.51
     }
 }

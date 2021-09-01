@@ -62,7 +62,7 @@ class RazonamientoEspacialE9M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 6.51
-        const val MEDIA = 15.84
+        const val DEVIATION = 6.51
+        const val MEAN = 15.84
     }
 }

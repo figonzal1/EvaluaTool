@@ -63,7 +63,7 @@ class LetrasYNumerosE0M1Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 2.91
-        const val MEDIA = 26.02
+        const val DEVIATION = 2.91
+        const val MEAN = 26.02
     }
 }

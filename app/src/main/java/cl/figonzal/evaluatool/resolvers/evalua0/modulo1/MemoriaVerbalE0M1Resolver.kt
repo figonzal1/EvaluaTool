@@ -64,7 +64,7 @@ class MemoriaVerbalE0M1Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 6.72
-        const val MEDIA = 22.02
+        const val DEVIATION = 6.72
+        const val MEAN = 22.02
     }
 }

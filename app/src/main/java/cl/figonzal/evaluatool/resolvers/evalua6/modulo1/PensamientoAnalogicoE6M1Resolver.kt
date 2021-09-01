@@ -55,7 +55,7 @@ class PensamientoAnalogicoE6M1Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 4.47
-        const val MEDIA = 9.98
+        const val DEVIATION = 4.47
+        const val MEAN = 9.98
     }
 }

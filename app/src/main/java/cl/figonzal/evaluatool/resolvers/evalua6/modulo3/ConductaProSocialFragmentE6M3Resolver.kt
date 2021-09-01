@@ -51,7 +51,7 @@ class ConductaProSocialFragmentE6M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 2.71
-        const val MEDIA = 3.50
+        const val DEVIATION = 2.71
+        const val MEAN = 3.50
     }
 }

@@ -52,7 +52,7 @@ class AutoControlFragmentE4M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 2.43
-        const val MEDIA = 3.37
+        const val DEVIATION = 2.43
+        const val MEAN = 3.37
     }
 }

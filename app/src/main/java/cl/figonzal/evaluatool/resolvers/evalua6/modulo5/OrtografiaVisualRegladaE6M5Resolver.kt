@@ -64,7 +64,7 @@ class OrtografiaVisualRegladaE6M5Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 15.23
-        const val MEDIA = 57.51
+        const val DEVIATION = 15.23
+        const val MEAN = 57.51
     }
 }

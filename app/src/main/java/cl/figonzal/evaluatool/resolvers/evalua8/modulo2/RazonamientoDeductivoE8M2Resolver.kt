@@ -55,7 +55,7 @@ class RazonamientoDeductivoE8M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 6.18
-        const val MEDIA = 9.94
+        const val DEVIATION = 6.18
+        const val MEAN = 9.94
     }
 }

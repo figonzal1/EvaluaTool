@@ -51,7 +51,7 @@ class AdaptacionPersonalFragmentE10M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val MEDIA = 20.27
-        const val DESVIACION = 12.29
+        const val MEAN = 20.27
+        const val DEVIATION = 12.29
     }
 }
