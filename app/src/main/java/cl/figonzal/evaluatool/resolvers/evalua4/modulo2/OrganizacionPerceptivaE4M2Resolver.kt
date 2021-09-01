@@ -63,7 +63,7 @@ class OrganizacionPerceptivaE4M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 3.21
-        const val MEDIA = 13.18
+        const val DEVIATION = 3.21
+        const val MEAN = 13.18
     }
 }

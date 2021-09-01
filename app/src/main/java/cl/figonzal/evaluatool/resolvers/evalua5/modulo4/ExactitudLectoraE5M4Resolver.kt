@@ -63,7 +63,7 @@ class ExactitudLectoraE5M4Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 9.10
-        const val MEDIA = 33.54
+        const val DEVIATION = 9.10
+        const val MEAN = 33.54
     }
 }

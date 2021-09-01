@@ -56,7 +56,7 @@ class ExpresionEscritaE7M5Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 0.843
-        const val MEDIA = 2.45
+        const val DEVIATION = 0.843
+        const val MEAN = 2.45
     }
 }

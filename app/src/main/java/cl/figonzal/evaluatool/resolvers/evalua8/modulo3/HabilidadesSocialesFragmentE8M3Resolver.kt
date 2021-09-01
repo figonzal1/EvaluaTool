@@ -52,6 +52,6 @@ class HabilidadesSocialesFragmentE8M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val MEDIA = 23.28
+        const val MEAN = 23.28
     }
 }

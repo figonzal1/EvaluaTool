@@ -56,7 +56,7 @@ class CalculoNumeracionE7M6Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 12.29
-        const val MEDIA = 33.70
+        const val DEVIATION = 12.29
+        const val MEAN = 33.70
     }
 }

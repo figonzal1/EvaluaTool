@@ -51,7 +51,7 @@ class MotivacionFragmentE6M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 4.32
-        const val MEDIA = 7.16
+        const val DEVIATION = 4.32
+        const val MEAN = 7.16
     }
 }

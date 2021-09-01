@@ -59,7 +59,7 @@ class ComprensionLectoraE5M4Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 7.14
-        const val MEDIA = 18.65
+        const val DEVIATION = 7.14
+        const val MEAN = 18.65
     }
 }

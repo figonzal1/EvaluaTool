@@ -56,7 +56,7 @@ class ReflexividadE3M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 6.22
-        const val MEDIA = 11.84
+        const val DEVIATION = 6.22
+        const val MEAN = 11.84
     }
 }

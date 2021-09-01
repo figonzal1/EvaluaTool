@@ -61,7 +61,7 @@ class MemoriaAtencionE6M2Resolver : BaseResolver {
 
 
     companion object {
-        const val DESVIACION = 24.99
-        const val MEDIA = 81.95
+        const val DEVIATION = 24.99
+        const val MEAN = 81.95
     }
 }

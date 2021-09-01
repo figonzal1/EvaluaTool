@@ -64,7 +64,7 @@ class RecepcionAuditivaArticulacionE0M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 9.01
-        const val MEDIA = 84.81
+        const val DEVIATION = 9.01
+        const val MEAN = 84.81
     }
 }

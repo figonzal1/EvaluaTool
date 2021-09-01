@@ -63,7 +63,7 @@ class CopiaDibujosE0M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 12.65
-        const val MEDIA = 42.22
+        const val DEVIATION = 12.65
+        const val MEAN = 42.22
     }
 }

@@ -51,6 +51,6 @@ class AdaptacionPersonalFragmentE8M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val MEDIA = 22.25
+        const val MEAN = 22.25
     }
 }

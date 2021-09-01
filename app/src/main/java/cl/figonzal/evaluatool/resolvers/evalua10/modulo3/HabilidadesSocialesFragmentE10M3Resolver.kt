@@ -51,7 +51,7 @@ class HabilidadesSocialesFragmentE10M3Resolver : BaseResolver {
     }
 
     companion object {
-        const val MEDIA = 24.38
-        const val DESVIACION = 9.21
+        const val MEAN = 24.38
+        const val DEVIATION = 9.21
     }
 }

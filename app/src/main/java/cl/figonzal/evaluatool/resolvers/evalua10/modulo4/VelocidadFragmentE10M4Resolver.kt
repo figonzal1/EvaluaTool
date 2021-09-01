@@ -49,7 +49,7 @@ class VelocidadFragmentE10M4Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 34.52
-        const val MEDIA = 230.25
+        const val DEVIATION = 34.52
+        const val MEAN = 230.25
     }
 }

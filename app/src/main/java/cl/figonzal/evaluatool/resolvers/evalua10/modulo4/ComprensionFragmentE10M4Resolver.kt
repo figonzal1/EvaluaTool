@@ -56,7 +56,7 @@ class ComprensionFragmentE10M4Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 7.55
-        const val MEDIA = 7.53
+        const val DEVIATION = 7.55
+        const val MEAN = 7.53
     }
 }

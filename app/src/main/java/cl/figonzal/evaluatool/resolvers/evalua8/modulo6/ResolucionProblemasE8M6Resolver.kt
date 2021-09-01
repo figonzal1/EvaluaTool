@@ -56,7 +56,7 @@ class ResolucionProblemasE8M6Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 2.94
-        const val MEDIA = 4.85
+        const val DEVIATION = 2.94
+        const val MEAN = 4.85
     }
 }

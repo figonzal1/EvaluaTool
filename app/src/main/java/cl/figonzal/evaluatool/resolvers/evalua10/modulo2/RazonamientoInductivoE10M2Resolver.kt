@@ -63,7 +63,7 @@ class RazonamientoInductivoE10M2Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 5.73
-        const val MEDIA = 12.16
+        const val DEVIATION = 5.73
+        const val MEAN = 12.16
     }
 }

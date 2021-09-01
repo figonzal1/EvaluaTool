@@ -63,7 +63,7 @@ class ClasificacionesE2M1Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 6.97
-        const val MEDIA = 19.18
+        const val DEVIATION = 6.97
+        const val MEAN = 19.18
     }
 }

@@ -56,7 +56,7 @@ class AtencionConcentracionE7M1Resolver : BaseResolver {
     }
 
     companion object {
-        const val DESVIACION = 28.04
-        const val MEDIA = 115.68
+        const val DEVIATION = 28.04
+        const val MEAN = 115.68
     }
 }
