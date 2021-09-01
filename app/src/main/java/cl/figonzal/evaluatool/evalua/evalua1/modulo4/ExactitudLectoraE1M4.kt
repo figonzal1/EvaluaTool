@@ -36,28 +36,28 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
     private lateinit var binding: ActivityExactitudLectoraE1M4Binding
 
     //TAREA 1
-    private lateinit var etAprobadasT1: TextInputEditText
-    private var aprobadasT1 = 0
+    private lateinit var etApprovedT1: TextInputEditText
+    private var approvedT1 = 0
 
     //TAREA 2
-    private lateinit var etAprobadasT2: TextInputEditText
-    private var aprobadasT2 = 0
+    private lateinit var etApprovedT2: TextInputEditText
+    private var approvedT2 = 0
 
     //TAREA 3
-    private lateinit var etAprobadasT3: TextInputEditText
-    private var aprobadasT3 = 0
+    private lateinit var etApprovedT3: TextInputEditText
+    private var approvedT3 = 0
 
     //TAREA 4
-    private lateinit var etAprobadasT4: TextInputEditText
-    private var aprobadasT4 = 0
+    private lateinit var etApprovedT4: TextInputEditText
+    private var approvedT4 = 0
 
     //TAREA 5
-    private lateinit var etAprobadasT5: TextInputEditText
-    private var aprobadasT5 = 0
+    private lateinit var etApprovedT5: TextInputEditText
+    private var approvedT5 = 0
 
     //TAREA 6
-    private lateinit var etAprobadasT6: TextInputEditText
-    private var aprobadasT6 = 0
+    private lateinit var etApprovedT6: TextInputEditText
+    private var approvedT6 = 0
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
@@ -69,10 +69,10 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
+    private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
     private val resolver by lazy {
@@ -89,10 +89,10 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
             binding.includeToolbar.materialToolbar
         )
 
-        instanciarRecursosInterfaz()
+        initResources()
     }
 
-    private fun instanciarRecursosInterfaz() {
+    private fun initResources() {
 
         with(binding, {
             //Promedio y desviacion
@@ -102,34 +102,34 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@ExactitudLectoraE1M4.etAprobadasT1 = etAprobadasT1
+            this@ExactitudLectoraE1M4.etApprovedT1 = etAprobadasT1
 
             //TAREA 2
             tvSubTotalT2 = tvPdSubtotalT2
-            this@ExactitudLectoraE1M4.etAprobadasT2 = etAprobadasT2
+            this@ExactitudLectoraE1M4.etApprovedT2 = etAprobadasT2
 
             //TAREA 3
             tvSubTotalT3 = tvPdSubtotalT3
-            this@ExactitudLectoraE1M4.etAprobadasT3 = etAprobadasT3
+            this@ExactitudLectoraE1M4.etApprovedT3 = etAprobadasT3
 
             //TAREA 4
             tvSubTotalT4 = tvPdSubtotalT4
-            this@ExactitudLectoraE1M4.etAprobadasT4 = etAprobadasT4
+            this@ExactitudLectoraE1M4.etApprovedT4 = etAprobadasT4
 
             //TAREA 5
             tvSubTotalT5 = tvPdSubtotalT5
-            this@ExactitudLectoraE1M4.etAprobadasT5 = etAprobadasT5
+            this@ExactitudLectoraE1M4.etApprovedT5 = etAprobadasT5
 
             //TAREA 6
             tvSubTotalT6 = tvPdSubtotalT6
-            this@ExactitudLectoraE1M4.etAprobadasT6 = etAprobadasT6
+            this@ExactitudLectoraE1M4.etApprovedT6 = etAprobadasT6
 
             //TOTAL
             this@ExactitudLectoraE1M4.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -143,19 +143,19 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 getString(R.string.TOOLBAR_EXACTITUD_LECTORA)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
-            textWatcherTarea2(getString(R.string.TAREA_2))
-            textWatcherTarea3(getString(R.string.TAREA_3))
-            textWatcherTarea4(getString(R.string.TAREA_4))
-            textWatcherTarea5(getString(R.string.TAREA_5))
-            textWatcherTarea6(getString(R.string.TAREA_6))
+            textWatcherTask1(getString(R.string.TAREA_1))
+            textWatcherTask2(getString(R.string.TAREA_2))
+            textWatcherTask3(getString(R.string.TAREA_3))
+            textWatcherTask4(getString(R.string.TAREA_4))
+            textWatcherTask5(getString(R.string.TAREA_5))
+            textWatcherTask6(getString(R.string.TAREA_6))
         }
     }
 
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etAprobadasT1.run {
+        etApprovedT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -164,7 +164,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -172,16 +172,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT1 = 0
-                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> approvedT1 = 0
+                        s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1
+                            nTask = 1,
+                            approved = approvedT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -189,9 +189,9 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea2(tarea: String) {
+    private fun textWatcherTask2(task: String) {
 
-        etAprobadasT2.run {
+        etApprovedT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -200,7 +200,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea2 = 0.0
+                    resolver.totalPdTask2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -208,16 +208,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT2 = 0
-                        s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
+                        s.isEmpty() -> approvedT2 = 0
+                        s.isNotEmpty() -> approvedT2 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 2,
-                            aprobadas = aprobadasT2
+                            nTask = 2,
+                            approved = approvedT2
                         ), {
-                            resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -225,9 +225,9 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea3(tarea: String) {
+    private fun textWatcherTask3(task: String) {
 
-        etAprobadasT3.run {
+        etApprovedT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -236,7 +236,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea3 = 0.0
+                    resolver.totalPdTask3 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -244,16 +244,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT3 = 0
-                        s.isNotEmpty() -> aprobadasT3 = text.toString().toInt()
+                        s.isEmpty() -> approvedT3 = 0
+                        s.isNotEmpty() -> approvedT3 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 3,
-                            aprobadas = aprobadasT3
+                            nTask = 3,
+                            approved = approvedT3
                         ), {
-                            resolver.totalPdTarea3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask3 = this
+                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -261,9 +261,9 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea4(tarea: String) {
+    private fun textWatcherTask4(task: String) {
 
-        etAprobadasT4.run {
+        etApprovedT4.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -272,7 +272,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea4 = 0.0
+                    resolver.totalPdTask4 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -280,16 +280,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT4 = 0
-                        s.isNotEmpty() -> aprobadasT4 = text.toString().toInt()
+                        s.isEmpty() -> approvedT4 = 0
+                        s.isNotEmpty() -> approvedT4 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 4,
-                            aprobadas = aprobadasT4
+                            nTask = 4,
+                            approved = approvedT4
                         ), {
-                            resolver.totalPdTarea4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask4 = this
+                            tvSubTotalT4.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -297,9 +297,9 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea5(tarea: String) {
+    private fun textWatcherTask5(task: String) {
 
-        etAprobadasT5.run {
+        etApprovedT5.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -308,7 +308,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea5 = 0.0
+                    resolver.totalPdTask5 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -316,16 +316,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT5 = 0
-                        s.isNotEmpty() -> aprobadasT5 = text.toString().toInt()
+                        s.isEmpty() -> approvedT5 = 0
+                        s.isNotEmpty() -> approvedT5 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 5,
-                            aprobadas = aprobadasT5
+                            nTask = 5,
+                            approved = approvedT5
                         ), {
-                            resolver.totalPdTarea5 = this
-                            tvSubTotalT5.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask5 = this
+                            tvSubTotalT5.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -333,9 +333,9 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea6(tarea: String) {
+    private fun textWatcherTask6(task: String) {
 
-        etAprobadasT6.run {
+        etApprovedT6.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -344,7 +344,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea6 = 0.0
+                    resolver.totalPdTask6 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -352,16 +352,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT6 = 0
-                        s.isNotEmpty() -> aprobadasT6 = text.toString().toInt()
+                        s.isEmpty() -> approvedT6 = 0
+                        s.isNotEmpty() -> approvedT6 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 6,
-                            aprobadas = aprobadasT6
+                            nTask = 6,
+                            approved = approvedT6
                         ), {
-                            resolver.totalPdTarea6 = this
-                            tvSubTotalT6.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask6 = this
+                            tvSubTotalT6.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -377,16 +377,16 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
             tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -397,7 +397,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 
