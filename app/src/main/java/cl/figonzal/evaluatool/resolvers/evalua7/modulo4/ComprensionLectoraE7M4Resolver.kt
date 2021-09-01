@@ -19,24 +19,24 @@ import kotlin.math.floor
 
 class ComprensionLectoraE7M4Resolver : BaseResolver {
 
-    var totalPdTarea1 = 0.0
-    var totalPdTarea2 = 0.0
-    var totalPdTarea3 = 0.0
-    var totalPdTarea4 = 0.0
+    var totalPdTask1 = 0.0
+    var totalPdTask2 = 0.0
+    var totalPdTask3 = 0.0
+    var totalPdTask4 = 0.0
 
     override val perc = comprensionLectoraE7M4Baremo()
 
     override fun calculateTask(
-        nTarea: Int,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
+        nTask: Int,
+        approved: Int,
+        omitted: Int,
+        reprobate: Int
     ): Double {
         var total = floor(
-            when (nTarea) {
-                1, 3 -> aprobadas - reprobadas / 4.0
-                2 -> aprobadas - reprobadas / 2.0
-                4 -> aprobadas - reprobadas / 3.0
+            when (nTask) {
+                1, 3 -> approved - reprobate / 4.0
+                2 -> approved - reprobate / 2.0
+                4 -> approved - reprobate / 3.0
                 else -> 0.0
             }
         )
@@ -45,19 +45,19 @@ class ComprensionLectoraE7M4Resolver : BaseResolver {
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2 + totalPdTarea3 + totalPdTarea4
+        return totalPdTask1 + totalPdTask2 + totalPdTask3 + totalPdTask4
     }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
+    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
         when {
 
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdCurrent < 0 -> return 0
+            pdCurrent > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdCurrent < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual > item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first() -> return item.first() as Int
+                    pdCurrent > item.first() as Int -> return item.first() as Int
                 }
             }
         }

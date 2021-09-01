@@ -19,21 +19,21 @@ import kotlin.math.floor
 
 class ResolucionProblemasE3M6Resolver : BaseResolver {
 
-    var totalPdTarea1 = 0.0
-    var totalPdTarea2 = 0.0
+    var totalPdTask1 = 0.0
+    var totalPdTask2 = 0.0
 
     override val perc = resolucionProblemasE3M6Baremo()
 
     override fun calculateTask(
-        nTarea: Int,
-        aprobadas: Int,
-        omitidas: Int,
-        reprobadas: Int
+        nTask: Int,
+        approved: Int,
+        omitted: Int,
+        reprobate: Int
     ): Double {
         var total = floor(
-            when (nTarea) {
-                1 -> aprobadas.toDouble()
-                2 -> aprobadas * 4.toDouble()
+            when (nTask) {
+                1 -> approved.toDouble()
+                2 -> approved * 4.toDouble()
                 else -> 0.0
             }
         )
@@ -42,19 +42,19 @@ class ResolucionProblemasE3M6Resolver : BaseResolver {
     }
 
     override fun getTotal(): Double {
-        return totalPdTarea1 + totalPdTarea2
+        return totalPdTask1 + totalPdTask2
     }
 
-    override fun correctPD(perc: Array<Array<Any>>, pdActual: Int): Int {
+    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
         when {
 
-            pdActual < 0 -> return 0
-            pdActual > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdActual < perc.last()[0] as Int -> return perc.last()[0] as Int
+            pdCurrent < 0 -> return 0
+            pdCurrent > perc.first()[0] as Int -> return perc.first()[0] as Int
+            pdCurrent < perc.last()[0] as Int -> return perc.last()[0] as Int
             else -> perc.forEach { item ->
                 when {
-                    pdActual == item.first() -> return item.first() as Int
-                    pdActual > item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first() -> return item.first() as Int
+                    pdCurrent > item.first() as Int -> return item.first() as Int
                 }
             }
         }
