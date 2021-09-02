@@ -24,7 +24,7 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentAutoEstimaE2M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver.Companion.DESVIACION
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver.Companion.MEDIA
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
@@ -77,7 +77,7 @@ class AutoEstimaFragmentE2M3 : Fragment() {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
@@ -157,7 +157,7 @@ class AutoEstimaFragmentE2M3 : Fragment() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
+                EvaluaUtils.calcularDesviacion2(MEDIA, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)

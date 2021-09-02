@@ -24,8 +24,8 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentAutoControlE2M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -77,8 +77,8 @@ class AutoControlFragmentE2M3 : Fragment() {
 
             //Promedio y desviacion
             //TetView desviacion y media
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
@@ -160,7 +160,7 @@ class AutoControlFragmentE2M3 : Fragment() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
