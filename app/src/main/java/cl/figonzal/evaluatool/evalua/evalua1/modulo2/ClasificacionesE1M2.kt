@@ -22,8 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityClasificacionesE1M2Binding
 import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.ClasificacionesE1M2Resolver
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.ClasificacionesE1M2Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.ClasificacionesE1M2Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.ClasificacionesE1M2Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua1.modulo2.ClasificacionesE1M2Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -72,8 +72,8 @@ class ClasificacionesE1M2 : AppCompatActivity() {
         with(binding, {
             //Promedio y desviacion
             //TetView desviacion y media
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
@@ -187,7 +187,7 @@ class ClasificacionesE1M2 : AppCompatActivity() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)

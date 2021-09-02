@@ -22,8 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityRecepcionAutitivaArticulacionE0M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -80,8 +80,8 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
 
         with(binding, {
             //Promedio y desviacion
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
@@ -242,7 +242,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorrected)
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
