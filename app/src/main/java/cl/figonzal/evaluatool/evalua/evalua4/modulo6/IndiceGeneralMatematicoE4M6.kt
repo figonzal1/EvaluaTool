@@ -34,12 +34,12 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
     private lateinit var binding: ActivityIndiceGeneralMatematicoE4M6Binding
 
     //TAREA 1
-    private lateinit var etTotalesT1: TextInputEditText
+    private lateinit var etTotalsT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
     private var subTotalT1 = 0.0
 
     //TAREA 2
-    private lateinit var etTotalesT2: TextInputEditText
+    private lateinit var etTotalsT2: TextInputEditText
     private lateinit var tvSubTotalT2: TextView
     private var subTotalT2 = 0.0
     private lateinit var tvPdTotal: TextView
@@ -60,8 +60,8 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
     private fun initResources() {
 
         with(binding, {
-            this@IndiceGeneralMatematicoE4M6.etTotalesT1 = etTotalesT1
-            this@IndiceGeneralMatematicoE4M6.etTotalesT2 = etTotalesT2
+            this@IndiceGeneralMatematicoE4M6.etTotalsT1 = etTotalesT1
+            this@IndiceGeneralMatematicoE4M6.etTotalsT2 = etTotalesT2
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
@@ -69,13 +69,13 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
             //TOTAL
             this@IndiceGeneralMatematicoE4M6.tvPdTotal = tvPdTotalValue
         }).also {
-            textWatcherTarea1()
+            textWatcherTask1()
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTask1() {
 
-        etTotalesT1.run {
+        etTotalsT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -102,7 +102,7 @@ class IndiceGeneralMatematicoE4M6 : AppCompatActivity(), IndiceValorInterface {
                 }
             })
         }
-        etTotalesT2.run {
+        etTotalsT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(

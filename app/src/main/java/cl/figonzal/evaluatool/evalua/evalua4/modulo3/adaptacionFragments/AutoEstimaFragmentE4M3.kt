@@ -24,8 +24,8 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentAutoEstimaE4M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -43,19 +43,19 @@ class AutoEstimaFragmentE4M3 : Fragment() {
 
     private var binding: FragmentAutoEstimaE4M3Binding? = null
 
-    private lateinit var etAprobadasT1: TextInputEditText
-    private var aprobadasT1 = 0
+    private lateinit var etApprovedT1: TextInputEditText
+    private var approvedT1 = 0
 
     //TextView para Subtotales
     private lateinit var tvSubTotalT1: TextView
 
     //Tetview para total
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
     private lateinit var progressBar: LinearProgressIndicator
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvCalculatedDeviation: TextView
 
     private val resolver by lazy {
         AutoEstimaFragmentE4M3Resolver()
@@ -77,19 +77,19 @@ class AutoEstimaFragmentE4M3 : Fragment() {
         with(binding, {
             //Promedio y desviacion
             //TetView desviacion y media
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@AutoEstimaFragmentE4M3.etAprobadasT1 = etAprobadasT1
+            this@AutoEstimaFragmentE4M3.etApprovedT1 = etAprobadasT1
 
             //TOTAL
             this@AutoEstimaFragmentE4M3.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -103,14 +103,14 @@ class AutoEstimaFragmentE4M3 : Fragment() {
                 getString(R.string.TOOLBAR_AUTOESTIMA)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
 
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etAprobadasT1.run {
+        etApprovedT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -119,7 +119,7 @@ class AutoEstimaFragmentE4M3 : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -127,16 +127,16 @@ class AutoEstimaFragmentE4M3 : Fragment() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT1 = 0
-                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> approvedT1 = 0
+                        s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1
+                            nTask = 1,
+                            approved = approvedT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -153,19 +153,19 @@ class AutoEstimaFragmentE4M3 : Fragment() {
                 requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = requireActivity().formatResult(
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
-                pdCorregido.toDouble()
+                pdCorrected.toDouble()
             )
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected, reverse = true)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected, reverse = true)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -176,7 +176,7 @@ class AutoEstimaFragmentE4M3 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 

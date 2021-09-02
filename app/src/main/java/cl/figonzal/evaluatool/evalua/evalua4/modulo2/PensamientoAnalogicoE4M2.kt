@@ -22,8 +22,8 @@ import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityPensamientoAnalogicoE4M2Binding
 import cl.figonzal.evaluatool.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver
-import cl.figonzal.evaluatool.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -36,16 +36,16 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
     private lateinit var binding: ActivityPensamientoAnalogicoE4M2Binding
 
     //TAREA 1
-    private lateinit var etAprobadasT1: TextInputEditText
-    private lateinit var etReprobadasT1: TextInputEditText
-    private var aprobadasT1 = 0
-    private var reprobadasT1 = 0
+    private lateinit var etApprovedT1: TextInputEditText
+    private lateinit var etReprobateT1: TextInputEditText
+    private var approvedT1 = 0
+    private var reprobateT1 = 0
 
     //TAREA 2
-    private lateinit var etAprobadasT2: TextInputEditText
-    private lateinit var etReprobadasT2: TextInputEditText
-    private var aprobadasT2 = 0
-    private var reprobadasT2 = 0
+    private lateinit var etApprovedT2: TextInputEditText
+    private lateinit var etReprobateT2: TextInputEditText
+    private var approvedT2 = 0
+    private var reprobateT2 = 0
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
@@ -53,10 +53,10 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
 
     //TOTAL
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
+    private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
     private val resolver by lazy {
@@ -81,24 +81,24 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
         with(binding, {
             //Promedio y desviacion
             //TetView desviacion y media
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@PensamientoAnalogicoE4M2.etAprobadasT1 = etAprobadasT1
-            this@PensamientoAnalogicoE4M2.etReprobadasT1 = etReprobadasT1
+            this@PensamientoAnalogicoE4M2.etApprovedT1 = etAprobadasT1
+            this@PensamientoAnalogicoE4M2.etReprobateT1 = etReprobadasT1
 
             tvSubTotalT2 = tvPdSubtotalT2
-            this@PensamientoAnalogicoE4M2.etAprobadasT2 = etAprobadasT2
-            this@PensamientoAnalogicoE4M2.etReprobadasT2 = etReprobadasT2
+            this@PensamientoAnalogicoE4M2.etApprovedT2 = etAprobadasT2
+            this@PensamientoAnalogicoE4M2.etReprobateT2 = etReprobadasT2
 
             //TOTAL
             this@PensamientoAnalogicoE4M2.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -112,14 +112,14 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                 getString(R.string.TOOLBAR_PENSAMIENTO_ANALOGICO)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
-            textWatcherTarea2(getString(R.string.TAREA_2))
+            textWatcherTask1(getString(R.string.TAREA_1))
+            textWatcherTask2(getString(R.string.TAREA_2))
         }
     }
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etAprobadasT1.run {
+        etApprovedT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -128,7 +128,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -136,24 +136,24 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT1 = 0
-                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> approvedT1 = 0
+                        s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1,
-                            reprobadas = reprobadasT1
+                            nTask = 1,
+                            approved = approvedT1,
+                            reprobate = reprobateT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
             })
         }
 
-        etReprobadasT1.run {
+        etReprobateT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -162,7 +162,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -170,17 +170,17 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> reprobadasT1 = 0
-                        s.isNotEmpty() -> reprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> reprobateT1 = 0
+                        s.isNotEmpty() -> reprobateT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1,
-                            reprobadas = reprobadasT1
+                            nTask = 1,
+                            approved = approvedT1,
+                            reprobate = reprobateT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -188,9 +188,9 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
         }
     }
 
-    private fun textWatcherTarea2(tarea: String) {
+    private fun textWatcherTask2(task: String) {
 
-        etAprobadasT2.run {
+        etApprovedT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -199,7 +199,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea2 = 0.0
+                    resolver.totalPdTask2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -207,24 +207,24 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT2 = 0
-                        s.isNotEmpty() -> aprobadasT2 = text.toString().toInt()
+                        s.isEmpty() -> approvedT2 = 0
+                        s.isNotEmpty() -> approvedT2 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 2,
-                            aprobadas = aprobadasT2,
-                            reprobadas = reprobadasT2
+                            nTask = 2,
+                            approved = approvedT2,
+                            reprobate = reprobateT2
                         ), {
-                            resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
             })
         }
 
-        etReprobadasT2.run {
+        etReprobateT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -233,7 +233,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea2 = 0.0
+                    resolver.totalPdTask2 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -241,17 +241,17 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> reprobadasT2 = 0
-                        s.isNotEmpty() -> reprobadasT2 = text.toString().toInt()
+                        s.isEmpty() -> reprobateT2 = 0
+                        s.isNotEmpty() -> reprobateT2 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 2,
-                            aprobadas = aprobadasT2,
-                            reprobadas = reprobadasT2
+                            nTask = 2,
+                            approved = approvedT2,
+                            reprobate = reprobateT2
                         ), {
-                            resolver.totalPdTarea2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask2 = this
+                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -267,16 +267,16 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
             tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -287,7 +287,7 @@ class PensamientoAnalogicoE4M2 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 
