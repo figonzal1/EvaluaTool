@@ -152,18 +152,18 @@ class AutoEstimaFragmentE1M3 : Fragment() {
                 requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
             tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
-                pdCorregido.toDouble()
+                pdCorrected.toDouble()
             )
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
             tvPercentile.text = percentile.toString()
 
             when {

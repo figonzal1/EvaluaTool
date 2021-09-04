@@ -24,8 +24,8 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentVelocidadE7M4Binding
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver
-import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.DESVIACION
-import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
@@ -42,18 +42,18 @@ class VelocidadFragmentE7M4 : Fragment() {
     private var binding: FragmentVelocidadE7M4Binding? = null
 
     //TAREA 1
-    private lateinit var etSegundosT1: TextInputEditText
-    private var segundosT1 = 0
+    private lateinit var etSecondsT1: TextInputEditText
+    private var secondsT1 = 0
 
     //SUBTOTALES
     private lateinit var tvSubTotalT1: TextView
 
     //TOTALES
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
-    private lateinit var tvDesviacionCalculada: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
+    private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
     private val resolver by lazy {
@@ -73,19 +73,19 @@ class VelocidadFragmentE7M4 : Fragment() {
     private fun initResources(binding: FragmentVelocidadE7M4Binding) {
 
         with(binding, {
-            cardViewConstantes.tvMediaValue.text = MEDIA.toString()
-            cardViewConstantes.tvDesviacionValue.text = DESVIACION.toString()
+            cardViewConstantes.tvMediaValue.text = MEAN.toString()
+            cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
             //SUBTOTALES
             tvSubTotalT1 = tvPdSubtotalT1
-            this@VelocidadFragmentE7M4.etSegundosT1 = etSegundosT1
+            this@VelocidadFragmentE7M4.etSecondsT1 = etSegundosT1
 
             //TOTALES
             this@VelocidadFragmentE7M4.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = cardViewFinal.tvPdTotalCorregidoValue
-            tvPercentil = cardViewFinal.tvPercentilValue
-            tvNivel = cardViewFinal.tvNivelObtenidoValue
-            tvDesviacionCalculada = cardViewFinal.tvDesviacionCalculadaValue
+            tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
+            tvPercentile = cardViewFinal.tvPercentilValue
+            tvLevel = cardViewFinal.tvNivelObtenidoValue
+            tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -99,13 +99,13 @@ class VelocidadFragmentE7M4 : Fragment() {
                 getString(R.string.TOOLBAR_VELOCIDAD)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etSegundosT1.run {
+        etSecondsT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -114,7 +114,7 @@ class VelocidadFragmentE7M4 : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
@@ -122,16 +122,16 @@ class VelocidadFragmentE7M4 : Fragment() {
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> segundosT1 = 0
-                        s.isNotEmpty() -> segundosT1 = text.toString().toInt()
+                        s.isEmpty() -> secondsT1 = 0
+                        s.isNotEmpty() -> secondsT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = segundosT1
+                            nTask = 1,
+                            approved = secondsT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -148,19 +148,19 @@ class VelocidadFragmentE7M4 : Fragment() {
                 requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = requireActivity().formatResult(
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
-                pdCorregido.toDouble()
+                pdCorrected.toDouble()
             )
 
             //Calculate desviation
-            tvDesviacionCalculada.text =
-                EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pdCorregido, reverse = true)
+            tvCalculatedDeviation.text =
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected, reverse = true)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected, reverse = true)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -171,7 +171,7 @@ class VelocidadFragmentE7M4 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 
