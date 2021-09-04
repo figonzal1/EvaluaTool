@@ -23,8 +23,8 @@ import timber.log.Timber
 
 class UpdaterService(
     val activity: Activity,
-    val appUpdateManager: AppUpdateManager,
-    val UPDATE_CODE: Int
+    private val appUpdateManager: AppUpdateManager,
+    private val UPDATE_CODE: Int
 ) {
 
     init {

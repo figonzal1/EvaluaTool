@@ -74,14 +74,11 @@ class ComprensionFragmentE4M4 : Fragment() {
 
         binding = FragmentComprensionE4M4Binding.inflate(inflater, container, false)
 
-        instanciarRecursosInterfaz(binding!!)
+        initResources(binding!!)
         return binding!!.root
     }
 
-    /**
-     * Funcion encargada de instanciar los recursos de la interfaz gráfica
-     */
-    private fun instanciarRecursosInterfaz(binding: FragmentComprensionE4M4Binding) {
+    private fun initResources(binding: FragmentComprensionE4M4Binding) {
 
         with(binding, {
             cardViewConstantes.tvMediaValue.text = MEAN.toString()

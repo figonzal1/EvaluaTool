@@ -67,9 +67,6 @@ class MemoriaVerbalE0M1 : AppCompatActivity() {
         initResources()
     }
 
-    /**
-     * Funcion encargada de instanciar los recursos de la interfaz gráfica
-     */
     private fun initResources() {
 
         //Promedio y desviacion

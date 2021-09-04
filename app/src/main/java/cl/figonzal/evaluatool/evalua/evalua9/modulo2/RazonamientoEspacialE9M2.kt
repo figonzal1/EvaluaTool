@@ -79,9 +79,6 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
         initResources()
     }
 
-    /**
-     * Funcion encargada de instanciar los recursos de la interfaz gráfica
-     */
     private fun initResources() {
 
         with(binding, {
