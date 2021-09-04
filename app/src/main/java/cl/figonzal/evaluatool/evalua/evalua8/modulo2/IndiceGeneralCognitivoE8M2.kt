@@ -35,17 +35,17 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
     private lateinit var binding: ActivityIndiceGeneralCognitivoE8M2Binding
 
     //TAREA 1
-    private lateinit var etTotalesT1: TextInputEditText
+    private lateinit var etTotalsT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
     private var subTotalT1 = 0.0
 
     //TAREA 2
-    private lateinit var etTotalesT2: TextInputEditText
+    private lateinit var etTotalsT2: TextInputEditText
     private lateinit var tvSubTotalT2: TextView
     private var subTotalT2 = 0.0
 
     //TAREA 3
-    private lateinit var etTotalesT3: TextInputEditText
+    private lateinit var etTotalsT3: TextInputEditText
     private lateinit var tvSubTotalT3: TextView
     private var subTotalT3 = 0.0
 
@@ -67,9 +67,9 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
     private fun initResources() {
 
         with(binding, {
-            this@IndiceGeneralCognitivoE8M2.etTotalesT1 = etTotalesT1
-            this@IndiceGeneralCognitivoE8M2.etTotalesT2 = etTotalesT2
-            this@IndiceGeneralCognitivoE8M2.etTotalesT3 = etTotalesT3
+            this@IndiceGeneralCognitivoE8M2.etTotalsT1 = etTotalesT1
+            this@IndiceGeneralCognitivoE8M2.etTotalsT2 = etTotalesT2
+            this@IndiceGeneralCognitivoE8M2.etTotalsT3 = etTotalesT3
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
@@ -79,13 +79,13 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
             //TOTAL
             this@IndiceGeneralCognitivoE8M2.tvPdTotal = tvPdTotalValue
         }).also {
-            textWatcherTarea1()
+            textWatcherTask1()
         }
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTask1() {
 
-        etTotalesT1.run {
+        etTotalsT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -113,7 +113,7 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
             })
         }
 
-        etTotalesT2.run {
+        etTotalsT2.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -141,7 +141,7 @@ class IndiceGeneralCognitivoE8M2 : AppCompatActivity(), IndiceValorInterface {
             })
         }
 
-        etTotalesT3.run {
+        etTotalsT3.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(

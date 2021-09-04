@@ -33,7 +33,7 @@ class IndiceGeneralEscrituraE8M5 : AppCompatActivity(), IndiceValorInterface {
     private lateinit var binding: ActivityIndiceGeneralEscrituraE8M5Binding
 
     //TAREA 1
-    private lateinit var etTotalesT1: TextInputEditText
+    private lateinit var etTotalsT1: TextInputEditText
     private lateinit var tvSubTotalT1: TextView
     private var subTotalT1 = 0.0
 
@@ -55,21 +55,21 @@ class IndiceGeneralEscrituraE8M5 : AppCompatActivity(), IndiceValorInterface {
     private fun initResources() {
 
         with(binding, {
-            this@IndiceGeneralEscrituraE8M5.etTotalesT1 = etTotalesT1
+            this@IndiceGeneralEscrituraE8M5.etTotalsT1 = etTotalesT1
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             //TOTAL
             this@IndiceGeneralEscrituraE8M5.tvPdTotal = tvPdTotalValue
         }).also {
-            textWatcherTarea1()
+            textWatcherTask1()
         }
 
     }
 
-    private fun textWatcherTarea1() {
+    private fun textWatcherTask1() {
 
-        etTotalesT1.run {
+        etTotalsT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
