@@ -598,15 +598,15 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
             tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorregido.toDouble())
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorregido)
+                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido)
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
             tvPercentile.text = percentile.toString()
 
             when {
