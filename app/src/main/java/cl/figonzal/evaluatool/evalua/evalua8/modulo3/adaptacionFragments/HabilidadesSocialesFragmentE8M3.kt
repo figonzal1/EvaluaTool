@@ -25,7 +25,7 @@ import androidx.fragment.app.Fragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentHabilidadesSocialesE8M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua8.modulo3.HabilidadesSocialesFragmentE8M3Resolver
-import cl.figonzal.evaluatool.resolvers.evalua8.modulo3.HabilidadesSocialesFragmentE8M3Resolver.Companion.MEDIA
+import cl.figonzal.evaluatool.resolvers.evalua8.modulo3.HabilidadesSocialesFragmentE8M3Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utilities.*
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
@@ -40,17 +40,17 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
 
     private var binding: FragmentHabilidadesSocialesE8M3Binding? = null
 
-    private lateinit var etAprobadasT1: TextInputEditText
-    private var aprobadasT1 = 0
+    private lateinit var etApprovedT1: TextInputEditText
+    private var approvedT1 = 0
 
     //TextView para Subtotales
     private lateinit var tvSubTotalT1: TextView
 
     //Tetview para total
     private lateinit var tvPdTotal: TextView
-    private lateinit var tvPdCorregido: TextView
-    private lateinit var tvPercentil: TextView
-    private lateinit var tvNivel: TextView
+    private lateinit var tvPdCorrected: TextView
+    private lateinit var tvPercentile: TextView
+    private lateinit var tvLevel: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
     private val resolver by lazy {
@@ -73,17 +73,17 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
         with(binding, {
             //Promedio y desviacion
             //TetView desviacion y media
-            tvMediaValue.text = MEDIA.toString()
+            tvMediaValue.text = MEAN.toString()
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@HabilidadesSocialesFragmentE8M3.etAprobadasT1 = etAprobadasT1
+            this@HabilidadesSocialesFragmentE8M3.etApprovedT1 = etAprobadasT1
 
             //TOTAL
             this@HabilidadesSocialesFragmentE8M3.tvPdTotal = tvPdTotalValue
-            tvPdCorregido = tvPdTotalCorregidoValue
-            this@HabilidadesSocialesFragmentE8M3.tvPercentil = tvPercentilValue
-            tvNivel = tvNivelObtenidoValue
+            tvPdCorrected = tvPdTotalCorregidoValue
+            this@HabilidadesSocialesFragmentE8M3.tvPercentile = tvPercentilValue
+            tvLevel = tvNivelObtenidoValue
 
             this@HabilidadesSocialesFragmentE8M3.progressBar = progressBar
             progressBar.max = resolver.perc.first()[1] as Int
@@ -97,13 +97,13 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
                 getString(R.string.TOOLBAR_HAB_SOCIALES)
             )
         }).also {
-            textWatcherTarea1(getString(R.string.TAREA_1))
+            textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
 
-    private fun textWatcherTarea1(tarea: String) {
+    private fun textWatcherTask1(task: String) {
 
-        etAprobadasT1.run {
+        etApprovedT1.run {
             addTextChangedListener(object : TextWatcher {
 
                 override fun beforeTextChanged(
@@ -112,23 +112,23 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
                     count: Int,
                     after: Int
                 ) {
-                    resolver.totalPdTarea1 = 0.0
+                    resolver.totalPdTask1 = 0.0
                 }
 
                 override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
                 override fun afterTextChanged(s: Editable) {
 
                     when {
-                        s.isEmpty() -> aprobadasT1 = 0
-                        s.isNotEmpty() -> aprobadasT1 = text.toString().toInt()
+                        s.isEmpty() -> approvedT1 = 0
+                        s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
                     with(
                         resolver.calculateTask(
-                            nTarea = 1,
-                            aprobadas = aprobadasT1
+                            nTask = 1,
+                            approved = approvedT1
                         ), {
-                            resolver.totalPdTarea1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(tarea, this)
+                            resolver.totalPdTask1 = this
+                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
                         })
                     calculateResult()
                 }
@@ -145,15 +145,15 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
                 requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
 
             //Correct total pd based on Baremo Table
-            val pdCorregido = correctPD(perc, getTotal().toInt())
-            tvPdCorregido.text = requireActivity().formatResult(
+            val pdCorrected = correctPD(perc, getTotal().toInt())
+            tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
-                pdCorregido.toDouble()
+                pdCorrected.toDouble()
             )
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorregido, reverse = true)
-            tvPercentil.text = percentile.toString()
+            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected, reverse = true)
+            tvPercentile.text = percentile.toString()
 
             when {
                 Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> progressBar.setProgressCompat(
@@ -164,7 +164,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
             }
 
             //Calculate student level
-            tvNivel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
     }
 
