@@ -32,11 +32,7 @@ class ChangeLogService(
 
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
-        "- Implementación Evalúa 9",
-        "- Corrección de medias y desviaciones de puntajes",
-        "- Mejoras visuales de alertas, botones y tarjetas de información",
-        "- Nueva pantalla de pre-carga de aplicación",
-        "- Se agrega grupo de Whatsapp"
+        "- Se corrigen problemas menores de estabilidad"
 
     )
     private val showChangeLog = true
