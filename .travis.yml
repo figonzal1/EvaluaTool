@@ -5,8 +5,8 @@ android:
   components:
     - tools
     - platform-tools
-    - build-tools-29.0.3
-    - android-30
+    - build-tools-30.0.3
+    - android-31
     - add-on
     - extra
     - extra-google-google_play_services
@@ -37,6 +37,7 @@ before_install:
   - tar xzvf secrets.tar.gz
   - chmod +x gradlew
   - export TZ=America/Santiago
+  - yes | sdkmanager "platforms;android-31"
 
 branches:
   except:
