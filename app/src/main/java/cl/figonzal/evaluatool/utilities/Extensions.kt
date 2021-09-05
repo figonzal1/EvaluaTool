@@ -14,6 +14,7 @@
 package cl.figonzal.evaluatool.utilities
 
 import android.app.Activity
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -181,10 +182,41 @@ fun Activity.setAlertDialogCorregido(ivHelpPdCorregido: ImageView) {
 fun Activity.configureFabWsp(fabWsp: FabWhatsapLayoutBinding) {
     fabWsp.floatingActionButton.setOnClickListener {
 
-        val intent = Intent(Intent.ACTION_VIEW)
-        val url = "https://chat.whatsapp.com/HY53a5RlUvvFNwFwstXHHy"
-        intent.data = Uri.parse(url)
-        intent.`package` = "com.whatsapp"
-        startActivity(intent)
+        val packageName = "com.whatsapp"
+
+        val intent = packageManager.getLaunchIntentForPackage(packageName)
+
+        when {
+            intent != null -> {
+
+                //Open whatsapp group
+                val url = "https://chat.whatsapp.com/HY53a5RlUvvFNwFwstXHHy"
+
+                Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse(url)
+                    setPackage(packageName)
+                    startActivity(this)
+                }
+
+            }
+            else -> {
+                //try to install package
+                Intent(Intent.ACTION_VIEW).apply {
+                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    data = Uri.parse("market://details?id=$packageName")
+
+                    try {
+                        startActivity(this)
+                    } catch (e: ActivityNotFoundException) {
+                        startActivity(
+                            Intent(
+                                Intent.ACTION_VIEW,
+                                Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
+                            )
+                        )
+                    }
+                }
+            }
+        }
     }
 }
