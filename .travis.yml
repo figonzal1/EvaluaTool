@@ -7,6 +7,8 @@ android:
     - platform-tools
     - build-tools-29.0.3
     - android-30
+    - add-on
+    - extra
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
@@ -35,7 +37,6 @@ before_install:
   - tar xzvf secrets.tar.gz
   - chmod +x gradlew
   - export TZ=America/Santiago
-  - yes | sdkmanager "platforms;android-30"
 
 branches:
   except:
