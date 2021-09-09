@@ -37,9 +37,9 @@
   </a>
 </p>
 
-Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Versión Chile 2.0
+Mobile application that facilitates the calculation of scores of evaluations belonging to the battery of psycho-pedagogical evaluations Evalúa - Chile Version 2.0
 
-## Versiones soportadas
+## Supported versions
 - [x] v2.0
   - [x] Evalúa - 0
   - [x] Evalúa - 1
@@ -53,5 +53,8 @@ Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenec
   - [x] Evalúa - 9
   - [x] Evalúa - 10
   
- ## Capturas de Pantalla
+ ## Screenshots
 <img src="https://github.com/figonzal1/EvaluaTool/blob/development/screenshots/Screenshot_20210723-155812.jpg" width="216" height="384"> <img src="https://github.com/figonzal1/EvaluaTool/blob/development/screenshots/Screenshot_20210723-155828.jpg" width="216" height="384"> <img src="https://github.com/figonzal1/EvaluaTool/blob/development/screenshots/Screenshot_20210723-155850.jpg" width="216" height="384"> <img src="https://github.com/figonzal1/EvaluaTool/blob/development/screenshots/Screenshot_20210723-155906.jpg" width="216" height="384">
+
+## Public Beta
+Google Play: [Link](https://play.google.com/store/apps/details?id=cl.figonzal.evaluatool)
