@@ -34,7 +34,7 @@ buildscript {
         classpath 'com.google.firebase:perf-plugin:1.4.0'
 
         //KOTLIN
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.30"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
     }
 }
 
