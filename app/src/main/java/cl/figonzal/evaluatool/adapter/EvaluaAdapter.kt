@@ -15,8 +15,6 @@ package cl.figonzal.evaluatool.adapter
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ExpandableItemGroupListBinding
-import cl.figonzal.evaluatool.databinding.ExpandableItemListBinding
 import cl.figonzal.evaluatool.model.Evalua
 import io.github.luizgrp.sectionedrecyclerviewadapter.Section
 import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters
@@ -24,14 +22,15 @@ import io.github.luizgrp.sectionedrecyclerviewadapter.SectionParameters
 /**
  * Adapter that is used
  */
+@Deprecated("Must be deleted")
 class EvaluaAdapter(
     private val headerName: String,
     private val subItemsList: List<Evalua>,
     private val clickListener: ClickListener
 ) : Section(
     SectionParameters.builder()
-        .itemResourceId(R.layout.expandable_item_list)
-        .headerResourceId(R.layout.expandable_item_group_list)
+        .itemResourceId(R.layout.child_item_list)
+        .headerResourceId(R.layout.header_item_list)
         .build()
 ) {
     var isExpanded = false
@@ -39,22 +38,22 @@ class EvaluaAdapter(
     override fun getContentItemsTotal(): Int = if (isExpanded) subItemsList.size else 0
 
     override fun getItemViewHolder(view: View): RecyclerView.ViewHolder = ItemViewHolder(view)
-    override fun getHeaderViewHolder(view: View): RecyclerView.ViewHolder = HeaderViewHolder(view)
+    //override fun getHeaderViewHolder(view: View): RecyclerView.ViewHolder = HeaderViewHolder(view)
 
     override fun onBindItemViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
 
         //Casting
         val itemViewHolder = holder as ItemViewHolder
 
-        itemViewHolder.bind(subItemsList[position], this)
+        //itemViewHolder.bind(subItemsList[position], this)
     }
 
     override fun onBindHeaderViewHolder(holder: RecyclerView.ViewHolder) {
 
         //Casting
-        val headerViewHolder = holder as HeaderViewHolder
+        //val headerViewHolder = holder as HeaderViewHolder
 
-        headerViewHolder.bind(this)
+        //headerViewHolder.bind(this)
     }
 
     interface ClickListener {
@@ -67,9 +66,9 @@ class EvaluaAdapter(
      *
      * @param rootView Parent view
      */
-    internal class HeaderViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
+    /*internal class HeaderViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
 
-        val binding = ExpandableItemGroupListBinding.bind(rootView)
+        /*val binding = ExpandableItemGroupListBinding.bind(rootView)
 
         /**
          * Binding resources of Header view
@@ -89,16 +88,16 @@ class EvaluaAdapter(
                 root.setOnClickListener {
                     evaluaAdapter.clickListener.onHeaderRootViewClicked(evaluaAdapter)
                 }
-            })
+            })*/
         }
-    }
+    }*/
 
     /**
      * Holder class for items of expanded list
      */
     internal class ItemViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        val binding = ExpandableItemListBinding.bind(itemView)
+        /*val binding = ExpandableItemListBinding.bind(itemView)
 
         /**
          * Binding resources for items list
@@ -116,7 +115,7 @@ class EvaluaAdapter(
                         adapterPosition
                     )
                 }
-            })
-        }
+            })*/
+        //}
     }
 }
