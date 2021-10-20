@@ -55,7 +55,7 @@
         app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_sub_item"
+        android:id="@+id/rv_child_item"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
