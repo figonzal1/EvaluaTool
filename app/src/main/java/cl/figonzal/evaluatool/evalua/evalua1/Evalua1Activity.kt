@@ -17,24 +17,18 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.adapter.EvaluaAdapter
-import cl.figonzal.evaluatool.adapter.EvaluaAdapter.ClickListener
+import cl.figonzal.evaluatool.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.databinding.ActivityEvalua1Binding
-import cl.figonzal.evaluatool.interfaces.RecyclerBaseActivity
-import cl.figonzal.evaluatool.model.Evalua
-import cl.figonzal.evaluatool.utilities.ConfigRoutes
-import cl.figonzal.evaluatool.utilities.RouteHandler
+import cl.figonzal.evaluatool.model.Child
+import cl.figonzal.evaluatool.model.Header
 import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.configureFabWsp
-import io.github.luizgrp.sectionedrecyclerviewadapter.SectionedRecyclerViewAdapter
 import timber.log.Timber
 import java.util.*
 
-class Evalua1Activity : AppCompatActivity(), RecyclerBaseActivity, ClickListener {
+class Evalua1Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityEvalua1Binding
-    private var sectionedRecyclerViewAdapter: SectionedRecyclerViewAdapter =
-        SectionedRecyclerViewAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,131 +37,54 @@ class Evalua1Activity : AppCompatActivity(), RecyclerBaseActivity, ClickListener
 
         configureActionBar(R.string.TOOLBAR_EVALUA_1, binding.includeToolbar.materialToolbar)
         configureFabWsp(binding.fabWsp)
-        configureExpandedList()
-    }
 
-    override fun configureExpandedList() {
-
-        //SUBTIMES - SUBMODULO 1
-        val subItems1 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M1_SI_1))
+        val headers = listOf(
+            Header(getString(R.string.EVALUA_1_MODULO_1)),
+            Header(getString(R.string.EVALUA_1_MODULO_2)),
+            Header(getString(R.string.EVALUA_1_MODULO_3)),
+            Header(getString(R.string.EVALUA_1_MODULO_4)),
+            Header(getString(R.string.EVALUA_1_MODULO_5)),
+            Header(getString(R.string.EVALUA_1_MODULO_6))
         )
 
-        //Submodulo2
-        val subItems2 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M2_SI_1)),
-            Evalua(getString(R.string.EVALUA_1_M2_SI_2)),
-            Evalua(getString(R.string.EVALUA_1_M2_SI_3)),
-            Evalua(getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
+        val subItemsList = listOf(
+            listOf(
+                Child(getString(R.string.EVALUA_1_M1_SI_1))
+            ),
+            listOf(
+                Child(getString(R.string.EVALUA_1_M2_SI_1)),
+                Child(getString(R.string.EVALUA_1_M2_SI_2)),
+                Child(getString(R.string.EVALUA_1_M2_SI_3)),
+                Child(getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
+            ),
+            listOf(
+                Child(getString(R.string.EVALUA_1_M3_SI_1))
+            ),
+            listOf(
+                Child(getString(R.string.EVALUA_1_M4_SI_1)),
+                Child(getString(R.string.EVALUA_1_M4_SI_2)),
+                Child(getString(R.string.EVALUA_1_VALORACION_LECTURA))
+            ),
+            listOf(
+                Child(getString(R.string.EVALUA_1_M5_SI_1)),
+                Child(getString(R.string.EVALUA_1_M5_SI_2)),
+                Child(getString(R.string.EVALUA_1_VALORACION_ESCRITURA))
+            ),
+            listOf(
+                Child(getString(R.string.EVALUA_1_M6_SI_1))
+            )
         )
 
-        //Submodulo3
-        val subitems3 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M3_SI_1))
-        )
-
-        //Submodulo4
-        val subItems4 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M4_SI_1)),
-            Evalua(getString(R.string.EVALUA_1_M4_SI_2)),
-            Evalua(getString(R.string.EVALUA_1_VALORACION_LECTURA))
-        )
-
-        val subItems5 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M5_SI_1)),
-            Evalua(getString(R.string.EVALUA_1_M5_SI_2)),
-            Evalua(getString(R.string.EVALUA_1_VALORACION_ESCRITURA))
-        )
-
-        //Submodulo6
-        val subItems6 = listOf(
-            Evalua(getString(R.string.EVALUA_1_M6_SI_1))
-        )
-
-
-        //HEADERS
-        sectionedRecyclerViewAdapter.apply {
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_1),
-                    subItems1,
-                    this@Evalua1Activity
-                )
-            )
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_2),
-                    subItems2,
-                    this@Evalua1Activity
-                )
-            )
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_3),
-                    subitems3,
-                    this@Evalua1Activity
-                )
-            )
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_4),
-                    subItems4,
-                    this@Evalua1Activity
-                )
-            )
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_5),
-                    subItems5,
-                    this@Evalua1Activity
-                )
-            )
-            addSection(
-                EvaluaAdapter(
-                    getString(R.string.EVALUA_1_MODULO_6),
-                    subItems6,
-                    this@Evalua1Activity
-                )
-            )
-        }
-
-        //Recycler View
         binding.rv1.apply {
-            layoutManager = LinearLayoutManager(applicationContext)
-            adapter = sectionedRecyclerViewAdapter
-        }
-
-    }
-
-    override fun onItemRootViewClicked(sectionTitle: String, itemAdapterPosition: Int) {
-
-        ConfigRoutes.routeMap[getString(R.string.routeMapEvalua1)]?.let {
-            RouteHandler.handleRoutes(
-                it,
-                sectionTitle,
-                sectionedRecyclerViewAdapter,
-                itemAdapterPosition,
-                this
+            adapter = HeaderAdapter(
+                getString(R.string.routeMapEvalua1),
+                headers,
+                subItemsList,
+                applicationContext,
+                this@Evalua1Activity
             )
-        }
-    }
-
-    override fun onHeaderRootViewClicked(section: EvaluaAdapter) {
-
-        val sectionAdapter = sectionedRecyclerViewAdapter.getAdapterForSection(section)
-        val wasExpanded = section.isExpanded
-        val previousItemsTotal = section.contentItemsTotal
-
-        section.isExpanded = !wasExpanded
-        sectionAdapter.notifyHeaderChanged()
-
-        when {
-            wasExpanded -> {
-                sectionAdapter.notifyItemRangeRemoved(0, previousItemsTotal)
-            }
-            else -> {
-                sectionAdapter.notifyAllItemsInserted()
-            }
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@Evalua1Activity)
         }
     }
 

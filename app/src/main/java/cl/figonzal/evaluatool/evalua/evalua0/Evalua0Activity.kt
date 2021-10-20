@@ -63,9 +63,17 @@ class Evalua0Activity : AppCompatActivity() {
             )
         )
 
-        binding.rv0.adapter = HeaderAdapter(headers, subItemsList, applicationContext, this)
-        binding.rv0.setHasFixedSize(true)
-        binding.rv0.layoutManager = LinearLayoutManager(this)
+        binding.rv0.apply {
+            adapter = HeaderAdapter(
+                getString(R.string.routeMapEvalua0),
+                headers,
+                subItemsList,
+                applicationContext,
+                this@Evalua0Activity
+            )
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(this@Evalua0Activity)
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

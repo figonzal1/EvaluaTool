@@ -14,7 +14,6 @@
 package cl.figonzal.evaluatool.adapter
 
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,10 +25,10 @@ import cl.figonzal.evaluatool.utilities.ConfigRoutes
 import cl.figonzal.evaluatool.utilities.RouteHandler
 
 class ChildAdapter(
-    val headerName: String,
-    val list: List<Child>,
-    val context: Context,
-    val activity: Activity
+    private val routeMapKey: String,
+    private val headerName: String,
+    private val list: List<Child>,
+    private val activity: Activity
 ) :
     RecyclerView.Adapter<ChildAdapter.ChildViewHolder>() {
     override fun onCreateViewHolder(
@@ -43,7 +42,7 @@ class ChildAdapter(
     }
 
     override fun onBindViewHolder(holder: ChildViewHolder, position: Int) {
-        holder.bind(headerName, list[position], activity)
+        holder.bind(routeMapKey, headerName, list[position], activity)
     }
 
     override fun getItemCount(): Int {
@@ -54,20 +53,25 @@ class ChildAdapter(
 
         val binding = ChildItemListBinding.bind(itemView)
 
-        fun bind(headerName: String, child: Child, activity: Activity) {
+        fun bind(routeMapKey: String, headerName: String, childItem: Child, activity: Activity) {
 
-            binding.tvChild.text = child.name
+            with(binding, {
 
-            binding.clChild.setOnClickListener {
+                tvChild.text = childItem.name
 
-                //Get routes por EV0
-                val routeMapEvalua0 = ConfigRoutes.routeMapEvalua0
+                clChild.setOnClickListener {
 
-                //Handler to correct route
-                RouteHandler.handleRoutes2(routeMapEvalua0, headerName, adapterPosition, activity)
-            }
-
+                    //Handler to correct route
+                    ConfigRoutes.routeMap[routeMapKey]?.let { map ->
+                        RouteHandler.handleRoutes2(
+                            map,
+                            headerName,
+                            adapterPosition,
+                            activity
+                        )
+                    }
+                }
+            })
         }
     }
-
 }

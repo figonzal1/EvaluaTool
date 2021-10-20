@@ -26,10 +26,11 @@ import cl.figonzal.evaluatool.model.Child
 import cl.figonzal.evaluatool.model.Header
 
 class HeaderAdapter(
-    val headerList: List<Header>,
+    private val routeMapKey: String,
+    private val headerList: List<Header>,
     private val childList: List<List<Child>>,
-    val context: Context,
-    val activity: Activity
+    private val context: Context,
+    private val activity: Activity
 ) :
     RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
 
@@ -42,9 +43,7 @@ class HeaderAdapter(
     }
 
     override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
-
-        holder.bind(headerList[position], this, childList, context, activity)
-
+        holder.bind(routeMapKey, headerList[position], this, childList, context, activity)
     }
 
     override fun getItemCount(): Int {
@@ -56,6 +55,7 @@ class HeaderAdapter(
         private val binding = HeaderItemListBinding.bind(itemView)
 
         fun bind(
+            routeMapKey: String,
             header: Header,
             adapter: HeaderAdapter,
             childList: List<List<Child>>,
@@ -67,11 +67,6 @@ class HeaderAdapter(
 
             with(binding, {
 
-                rvSubItem.visibility = when {
-                    expanded -> View.VISIBLE
-                    else -> View.GONE
-                }
-
                 tvGroup.text = header.name
 
                 //Change arrrow icon
@@ -82,7 +77,7 @@ class HeaderAdapter(
                     }
                 )
 
-                //Expand header
+                //Header click listener
                 clHeader.setOnClickListener {
 
                     header.expanded = !expanded
@@ -92,10 +87,25 @@ class HeaderAdapter(
                 }
 
                 //Config recyclerview for childs
-                rvSubItem.adapter =
-                    ChildAdapter(header.name, childList[adapterPosition], context, activity)
-                rvSubItem.layoutManager = LinearLayoutManager(adapter.context)
-                rvSubItem.setHasFixedSize(true)
+                rvChildItem.adapter =
+                    ChildAdapter(
+                        routeMapKey,
+                        header.name,
+                        childList[adapterPosition],
+                        activity
+                    )
+
+                rvChildItem.apply {
+                    //Recycler view visibility
+                    visibility = when {
+                        expanded -> View.VISIBLE
+                        else -> View.GONE
+                    }
+
+                    layoutManager = LinearLayoutManager(adapter.context)
+                    setHasFixedSize(true)
+                }
+
             })
         }
 
