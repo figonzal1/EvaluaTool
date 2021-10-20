@@ -57,7 +57,7 @@ object RouteHandler {
                             val responseLog = this[2]
                             val titleLog = EvaluaUtils.get(R.string.SUB_ITEM_CLICK)
 
-                            abrirActividad(
+                            openActivity(
                                 currentActivity,
                                 destinationActivity as Class<*>,
                                 titleLog,
@@ -101,7 +101,7 @@ object RouteHandler {
                             val responseLog = this[2]
                             val titleLog = EvaluaUtils.get(R.string.SUB_ITEM_CLICK)
 
-                            abrirActividad(
+                            openActivity(
                                 currentActivity,
                                 destinationActivity as Class<*>,
                                 titleLog,
@@ -123,7 +123,7 @@ object RouteHandler {
      *
      * @return Unit
      */
-    private fun abrirActividad(
+    private fun openActivity(
         activity: Activity,
         destActivity: Class<*>?,
         TAG: String,
