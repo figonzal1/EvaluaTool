@@ -312,16 +312,16 @@
     <string name="EVALUA_10_MODULO_4" translatable="false">Lectura</string>
     <string name="EVALUA_10_MODULO_5" translatable="false">Escritura</string>
     <string name="EVALUA_10_MODULO_6" translatable="false">Aprendizajes Matemáticos</string>
-    <string name="EVALUA_10_M1_SI_1" translatable="false">Atención y Concentración [MA-8]</string>
-    <string name="EVALUA_10_M2_SI_1" translatable="false">Razonamiento Inductivo [RI-8]</string>
-    <string name="EVALUA_10_M2_SI_2" translatable="false">Razonamiento Espacial [RE-8]</string>
-    <string name="EVALUA_10_M2_SI_3" translatable="false">Razonamiento Deductivo [RD-8]</string>
-    <string name="EVALUA_10_M3_SI_1" translatable="false">Niveles Adaptación [NA-8]</string>
-    <string name="EVALUA_10_M4_SI_1" translatable="false">Comprension Lectora [CL-8]</string>
-    <string name="EVALUA_10_M4_SI_2" translatable="false">Velocidad Lectora [VL-8]</string>
-    <string name="EVALUA_10_M5_SI_1" translatable="false">Ortografia Visual Reglada [OR-8]</string>
-    <string name="EVALUA_10_M6_SI_1" translatable="false">Cálculo y Numeración [CN-8]</string>
-    <string name="EVALUA_10_M6_SI_2" translatable="false">Resolución Problemas [RP-8]</string>
+    <string name="EVALUA_10_M1_SI_1" translatable="false">Atención y Concentración [MA-10]</string>
+    <string name="EVALUA_10_M2_SI_1" translatable="false">Razonamiento Inductivo [RI-10]</string>
+    <string name="EVALUA_10_M2_SI_2" translatable="false">Razonamiento Espacial [RE-10]</string>
+    <string name="EVALUA_10_M2_SI_3" translatable="false">Razonamiento Deductivo [RD-10]</string>
+    <string name="EVALUA_10_M3_SI_1" translatable="false">Niveles Adaptación [NA-10]</string>
+    <string name="EVALUA_10_M4_SI_1" translatable="false">Comprension Lectora [CL-10]</string>
+    <string name="EVALUA_10_M4_SI_2" translatable="false">Velocidad Lectora [VL-10]</string>
+    <string name="EVALUA_10_M5_SI_1" translatable="false">Ortografia Visual Reglada [OR-10]</string>
+    <string name="EVALUA_10_M6_SI_1" translatable="false">Cálculo y Numeración [CN-10]</string>
+    <string name="EVALUA_10_M6_SI_2" translatable="false">Resolución Problemas [RP-10]</string>
     <string name="EVALUA_10_VALORACION_GLOBAL_RAZONAMIENTO" translatable="false">Valoración Global Del Razonamiento</string>
     <string name="EVALUA_10_INDICE_GENERAL_COGNITIVO" translatable="false">Índice General Cognitivo</string>
     <string name="EVALUA_10_INDICE_GENERAL_LECTURA" translatable="false">Índice General De Lectura</string>
