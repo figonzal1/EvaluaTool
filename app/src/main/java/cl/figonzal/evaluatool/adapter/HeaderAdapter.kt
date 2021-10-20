@@ -43,7 +43,7 @@ class HeaderAdapter(
     }
 
     override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
-        holder.bind(routeMapKey, headerList[position], this, childList, context, activity)
+        holder.bind(routeMapKey, headerList[position], this, childList, activity)
     }
 
     override fun getItemCount(): Int {
@@ -59,7 +59,6 @@ class HeaderAdapter(
             header: Header,
             adapter: HeaderAdapter,
             childList: List<List<Child>>,
-            context: Context,
             activity: Activity
         ) {
 
@@ -102,7 +101,7 @@ class HeaderAdapter(
                         else -> View.GONE
                     }
 
-                    layoutManager = LinearLayoutManager(adapter.context)
+                    layoutManager = LinearLayoutManager(context)
                     setHasFixedSize(true)
                 }
 
