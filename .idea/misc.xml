@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_evalua0.xml" value="0.36666666666666664" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/baremo_item_list.xml" value="0.35833333333333334" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/expandable_item_group_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/expandable_item_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/header_item_list.xml" value="0.23072916666666668" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>

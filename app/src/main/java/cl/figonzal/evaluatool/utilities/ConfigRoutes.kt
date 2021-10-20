@@ -163,7 +163,7 @@ import cl.figonzal.evaluatool.evalua.evalua9.modulo6.ValoracionGlobalMatematicas
  */
 object ConfigRoutes {
 
-    private var routeMapEvalua0 = HashMap<String, List<Any>>()
+    var routeMapEvalua0 = HashMap<String, List<Any>>()
     private var routeMapEvalua1 = HashMap<String, List<Any>>()
     private var routeMapEvalua2 = HashMap<String, List<Any>>()
     private var routeMapEvalua3 = HashMap<String, List<Any>>()
@@ -177,7 +177,6 @@ object ConfigRoutes {
 
     //List of activity routes
     val routeMap = mapOf(
-        EvaluaUtils.get(R.string.routeMapEvalua0) to routeMapEvalua0,
         EvaluaUtils.get(R.string.routeMapEvalua1) to routeMapEvalua1,
         EvaluaUtils.get(R.string.routeMapEvalua2) to routeMapEvalua2,
         EvaluaUtils.get(R.string.routeMapEvalua3) to routeMapEvalua3,
