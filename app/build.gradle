@@ -39,8 +39,8 @@ android {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 24
-        versionName "0.7.10-beta"
+        versionCode 25
+        versionName "0.7.11-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
