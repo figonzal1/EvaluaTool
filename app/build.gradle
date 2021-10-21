@@ -90,9 +90,6 @@ dependencies {
 
     implementation "com.google.android.material:material:1.4.0"
 
-    //Recycler view seccionado
-    implementation 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:3.2.0'
-
     //FIREBASE
     implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'com.google.firebase:firebase-analytics-ktx'
@@ -102,7 +99,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1' //Timber logs
 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.30' //Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31' //Kotlin
     implementation "androidx.core:core-ktx:1.6.0" //KTX
 
     //Google Play

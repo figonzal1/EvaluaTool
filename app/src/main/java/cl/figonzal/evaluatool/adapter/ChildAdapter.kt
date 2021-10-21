@@ -63,7 +63,7 @@ class ChildAdapter(
 
                     //Handler to correct route
                     ConfigRoutes.routeMap[routeMapKey]?.let { map ->
-                        RouteHandler.handleRoutes2(
+                        RouteHandler.handleRoutes(
                             map,
                             headerName,
                             adapterPosition,
