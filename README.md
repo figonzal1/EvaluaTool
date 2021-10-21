@@ -8,10 +8,6 @@
         <img alt="GitHub release" src="https://img.shields.io/github/v/release/figonzal1/EvaluaTool?color=orange&include_prereleases">
   </a>
   
-  <a href="https://travis-ci.com/figonzal1/EvaluaTool" alt="Travis">
-        <img src="https://travis-ci.com/figonzal1/EvaluaTool.svg?branch=test-travis" />
-  </a>
-  
   <a href="https://snyk.io/test/github/figonzal1/EvaluaTool?targetFile=app/build.gradle" alt="Snyk">
         <img src="https://snyk.io/test/github/figonzal1/EvaluaTool/badge.svg?targetFile=app/build.gradle" />
   </a>
