@@ -8,7 +8,7 @@
 
  Copyright (c) 2021
 
- Last modified 23-07-21 12:41
+ Last modified 10/20/21, 5:57 PM
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -16,10 +16,11 @@ package cl.figonzal.evaluatool.evaluas
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.action.ViewActions
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.assertion.ViewAssertions
-import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
@@ -28,7 +29,8 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.activities.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers
+import org.hamcrest.Matchers.`is`
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Before
 import org.junit.FixMethodOrder
@@ -36,6 +38,7 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.MethodSorters
+
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
@@ -55,24 +58,14 @@ class Evalua1Test {
     }
 
     @Test
-    fun test1_click_and_check_items() {
+    fun test1_click_and_check_headers() {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(7000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
+        Thread.sleep(7000)
 
         clickEvalua1Btn()
-
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_1), 0)
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_2), 1)
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_3), 2)
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_4), 3)
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_5), 4)
-        performAction("check", mContext.getString(R.string.EVALUA_1_MODULO_6), 5)
+        checkHeaders()
 
         try {
             Thread.sleep(2000)
@@ -82,12 +75,11 @@ class Evalua1Test {
     }
 
     @Test
-    fun test2_click_and_click_items() {
-        try {
-            Thread.sleep(7000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
+    fun test2_click_and_click_headers() {
+        // Added a sleep statement to match the app's execution delay.
+        // The recommended way to handle such scenarios is to use Espresso idling resources:
+        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
+        Thread.sleep(7000)
 
         clickEvalua1Btn()
 
@@ -124,120 +116,182 @@ class Evalua1Test {
     }
 
     private fun checkSubItemsAprendizajesMatematico() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M6_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M6_SI_1))
     }
 
     private fun checkSubItemsEscritura() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M5_SI_1))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M5_SI_2))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_VALORACION_ESCRITURA))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M5_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M5_SI_2))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_VALORACION_ESCRITURA))
     }
 
     private fun checkSubItemsLectura() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M4_SI_1))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M4_SI_2))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_VALORACION_LECTURA))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M4_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M4_SI_2))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_VALORACION_LECTURA))
     }
 
     private fun checkSubItemsNivelesAdaptacion() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M3_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M3_SI_1))
     }
 
     private fun checkSubItemsBasesRazonamiento() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M2_SI_1))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M2_SI_2))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M2_SI_3))
-        checkSubItem(mContext.getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M2_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M2_SI_2))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M2_SI_3))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_VALORACION_BASES_RAZONAMIENTO))
     }
 
     private fun checkSubItemsMemoriaAtencion() {
-        try {
-            Thread.sleep(2000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-        checkSubItem(mContext.getString(R.string.EVALUA_1_M1_SI_1))
+        checkChildsItem(mContext.getString(R.string.EVALUA_1_M1_SI_1))
     }
 
-
-    private fun checkSubItem(nombreSubItem: String) {
-        Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.tv_child), ViewMatchers.withText(nombreSubItem),
-                ViewMatchers.withParent(ViewMatchers.withParent(ViewMatchers.withId(R.id.rv_1))),
-                ViewMatchers.isDisplayed()
-            )
-        ).check(ViewAssertions.matches(ViewMatchers.withText(nombreSubItem)))
-    }
-
-    private fun performAction(typeAction: String, itemName: String, positionList: Int) {
-
-        try {
-            Thread.sleep(4000)
-        } catch (e: InterruptedException) {
-            e.printStackTrace()
-        }
-
-        val textView = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.tv_group), ViewMatchers.withText(itemName),
-                childAtPosition(
-                    childAtPosition(
-                        ViewMatchers.withId(R.id.rv_1),
-                        positionList
-                    ),
-                    0
+    private fun checkHeaders() {
+        val textView = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_1)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
                 ),
-                ViewMatchers.isDisplayed()
+                isDisplayed()
             )
         )
+        textView.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_1))))
 
-        when (typeAction) {
-            "check" -> textView.check(ViewAssertions.matches(ViewMatchers.withText(itemName)))
-            "click" -> textView.perform(ViewActions.click())
-        }
+        val textView2 = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_2)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView2.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_2))))
+
+        val textView3 = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_3)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView3.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_3))))
+
+        val textView4 = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_4)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView4.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_4))))
+
+        val textView5 = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_5)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView5.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_5))))
+
+        val textView6 = onView(
+            allOf(
+                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_1_MODULO_6)),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_header),
+                        withParent(withId(R.id.rv_1))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView6.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_1_MODULO_6))))
+    }
+
+    private fun checkChildsItem(nombre: String) {
+        val textView3 = onView(
+            allOf(
+                withId(R.id.tv_child), withText(nombre),
+                withParent(
+                    allOf(
+                        withId(R.id.cl_child),
+                        withParent(withId(R.id.rv_child_item))
+                    )
+                ),
+                isDisplayed()
+            )
+        )
+        textView3.check(ViewAssertions.matches(withText(nombre)))
     }
 
     private fun clickEvalua1Btn() {
-        val materialButton = Espresso.onView(
-            Matchers.allOf(
-                ViewMatchers.withId(R.id.btn_evalua_1),
-                ViewMatchers.withText(mContext.getString(R.string.TOOLBAR_EVALUA_1)),
+        val materialButton = onView(
+            allOf(
+                withId(R.id.btn_evalua_1), withText(mContext.getString(R.string.TOOLBAR_EVALUA_1)),
                 childAtPosition(
                     childAtPosition(
-                        ViewMatchers.withClassName(Matchers.`is`("android.widget.ScrollView")),
+                        withClassName(`is`("android.widget.ScrollView")),
                         0
                     ),
                     5
                 )
             )
         )
-        materialButton.perform(ViewActions.scrollTo(), ViewActions.click())
+        materialButton.perform(scrollTo(), click())
+    }
+
+    private fun performAction(typeAction: String, itemName: String, positionList: Int) {
+
+        try {
+            Thread.sleep(2000)
+        } catch (e: InterruptedException) {
+            e.printStackTrace()
+        }
+
+        val textView = onView(
+            allOf(
+                withId(R.id.tv_group), withText(itemName),
+                childAtPosition(
+                    childAtPosition(
+                        withId(R.id.rv_1),
+                        positionList
+                    ),
+                    0
+                ),
+                isDisplayed()
+            )
+        )
+
+        when (typeAction) {
+            "check" -> textView.check(ViewAssertions.matches(withText(itemName)))
+            "click" -> textView.perform(click())
+        }
+
+
     }
 
     private fun childAtPosition(
