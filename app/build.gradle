@@ -33,14 +33,14 @@ android {
         }
     }
 
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
     defaultConfig {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 25
-        versionName "0.7.11-beta"
+        targetSdkVersion 31
+        versionCode 26
+        versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
