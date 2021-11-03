@@ -67,10 +67,10 @@ Los Usuarios pueden encontrar información específica los Datos personales util
 ### Información detallada del Tratamiento de los Datos Personales
 Los Datos Personales se recogen para las siguientes finalidades y utilizando los siguientes servicios:
 
-* Estadísticas
-Los servicios contenidos en esta sección permiten al Titular monitorizar y analizar el tráfico web y pueden ser utilizados para rastrear el comportamiento del Usuario.
-__Google Analytics for Firebase (Google LLC)__
-Google Analytics for Firebase o Firebase Analytics es un servicio de estadísticas prestado por Google LLC.
+* Estadísticas: 
+   
+   Los servicios contenidos en esta sección permiten al Titular monitorizar y analizar el tráfico web y pueden ser utilizados para rastrear el comportamiento del Usuario.
+   * __Google Analytics for Firebase (Google LLC)__: Google Analytics for Firebase o Firebase Analytics es un servicio de estadísticas prestado por Google LLC.
 __Para saber más sobre cómo usa Google los Datos puede consultar__ la Política de Partners de Google. 
 Firebase Analytics podrá compartir Datos con otras herramientas proporcionadas por Firebase, tales como Crash Reporting, Authentication, Remote Config o Notifications. Los Usuarios pueden revisar la presente política de privacidad para obtener una explicación detallada sobre las demás herramientas que emplea el Titular. 
 Esta Aplicación utiliza identificadores para dispositivos móviles y tecnologías similares a las cookies para hacer funcionar el servicio Firebase Analytics. Los Usuarios podrán optar por no participar en determinadas funcionalidades para targeting de Firebase haciendo los correspondientes cambios en la configuración del dispositivo, como la configuración sobre publicidad del dispositivo para teléfonos móviles o siguiendo las instrucciones que aparecen en otras secciones de la presente Política de Privacidad relativas a Firebase, si las hubiera.
@@ -78,23 +78,25 @@ Datos Personales tratados: *actualizaciones de la Aplicación; aperturas de la a
 Lugar de tratamiento: EE.UU. – Política de privacidad.
 
 * Gestión de contactos y envío de mensajes
-Este tipo de servicios permiten gestionar una base de datos de direcciones de correo electrónico, números de teléfono u otra información de contacto para comunicarse con el Usuario.
+
+   Este tipo de servicios permiten gestionar una base de datos de direcciones de correo electrónico, números de teléfono u otra información de contacto para comunicarse con el Usuario.
 También es posible que estos servicios recojan datos relativos a la fecha y la hora en las que el Usuario visualizó el mensaje, así como sobre las interacciones del Usuario con dicho mensaje, tales como clicar en enlaces insertados en el mensaje.
-__Firebase Cloud Messaging (Google LLC)__
-Firebase Cloud Messaging es un servicio de envío de mensajes prestado por Google LLC. Firebase Cloud Messaging permite al Titular enviar mensajes y notificaciones a los Usuarios a través de diversas plataformas, tales como Android, iOS e Internet. Los mensajes se pueden enviar a dispositivos individuales, a grupos de dispositivos o a segmentos específicos según temáticas o Usuarios.
+   * __Firebase Cloud Messaging (Google LLC)__: Firebase Cloud Messaging es un servicio de envío de mensajes prestado por Google LLC. Firebase Cloud Messaging permite al Titular enviar mensajes y notificaciones a los Usuarios a través de diversas plataformas, tales como Android, iOS e Internet. Los mensajes se pueden enviar a dispositivos individuales, a grupos de dispositivos o a segmentos específicos según temáticas o Usuarios.
 Datos Personales tratados: *distintas clases de Datos, según se especifica en la Política de Privacidad del servicio.*
 Lugar de tratamiento: EE.UU. – Política de privacidad.
 
 * Monitorización de la infrastructura
-Este tipo de servicios permiten a esta Aplicación monitorizar el uso y el comportamiento de los componentes de ésta, para permitir la mejora de su rendimiento y funcionalidad, su mantenimiento o la resolución de problemas.
+
+   Este tipo de servicios permiten a esta Aplicación monitorizar el uso y el comportamiento de los componentes de ésta, para permitir la mejora de su rendimiento y funcionalidad, su mantenimiento o la resolución de problemas.
 Los Datos Personales tratados dependerán de las características y las modalidades de implementación de estos servicios, que por su propia naturaleza filtran la actividad de esta Aplicación.
-    * __Firebase Performance Monitoring (Google LLC)__
-Firebase Performance Monitoring es un servicio de monitorización de aplicaciones prestado por Google LLC.
+
+    * __Firebase Performance Monitoring (Google LLC)__:
+      Firebase Performance Monitoring es un servicio de monitorización de aplicaciones prestado por Google LLC.
 Datos Personales tratados: *distintas clases de Datos, según se especifica en la Política de Privacidad del servicio.*
 Lugar de tratamiento: EE.UU. – Política de privacidad.
 
-    * __Crashlytics (Google LLC)__
-Crashlytics es un servicio de monitorización de aplicaciones prestado por Google LLC.
+    * __Crashlytics (Google LLC)__:
+      Crashlytics es un servicio de monitorización de aplicaciones prestado por Google LLC.
 Datos Personales tratados: datos de errores; Identificador único universal (UUID); información del dispositivo.
 Lugar de tratamiento: EE.UU. – Política de privacidad.
 
