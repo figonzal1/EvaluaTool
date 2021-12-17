@@ -19,8 +19,8 @@
     <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <!--PROD AD-->
-    <string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-6355378855577476/8247694252</string>
+    <!--<string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-6355378855577476/8247694252</string>-->
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
@@ -545,6 +545,7 @@
     <string name="icono_tabla_baremo" translatable="false">Icono tabla baremo</string>
     <string name="ver_tabla_de_baremos" translatable="false">Ver tabla de baremos</string>
     <string name="dialogo_boton_cerrar" translatable="false">Cerrar</string>
+    <string name="dialogo_boton_aceptar" translatable="false">Aceptar</string>
     <string name="dialogo_baremo_titulo" translatable="false">Tabla Baremo</string>
     <string name="dialogo_baremo_descripcion" translatable="false">Puntajes de tabla baremo de ítem</string>
     <string name="TOOLBAR_MOTIVACION" translatable="false">Motivación</string>
@@ -638,5 +639,10 @@
     <string name="MOBILE_ADS_COMPLETE" translatable="false">Mobile Ads complete load</string>
     <string name="icono_grupo_whatsapp" translatable="false">Icono grupo whatsapp</string>
     <string name="problemas_sugerencias_y_avisos" translatable="false">Dudas, problemas y sugerencias</string>
+    <string name="TOOLBAR_CONFIGURACION">Configuración</string>
+    <string name="SHARED_PREF_CRASHLYTICS_KEY">firebase_crashlytics</string>
+    <string name="SHARED_PREF_PERFORMANCE_KEY">firebase_performace</string>
+    <string name="firebase_dialog_msg">Esta aplicación recopila información anónima (ID de instalador, rastros de fallos e información sobre el hardware del dispositivo) con el fin de brindar un mejor servicio y solucionar problemas una vez que ocurran. \n¡Gracias por tu ayuda!</string>
+    <string name="firebase_dialog_title">Reportes de fallos</string>
 
 </resources>
