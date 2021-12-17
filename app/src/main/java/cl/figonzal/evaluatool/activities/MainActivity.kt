@@ -17,6 +17,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
+    private lateinit var settingsButton: ImageButton
     private lateinit var tvAppName: TextView
     private lateinit var tvVersion: TextView
     private var buttonList = mutableListOf<MaterialButton>()
@@ -147,6 +149,17 @@ class MainActivity : AppCompatActivity() {
 
         //Set up card view custom corners
         setUpCardViewCustomCorners(binding.mainCardView)
+
+        //Setup Settings Activity button
+        setUpSettingsActivityButton(binding.ivSettings)
+    }
+
+    private fun setUpSettingsActivityButton(ivSettings: ImageButton) {
+
+        ivSettings.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     /**
