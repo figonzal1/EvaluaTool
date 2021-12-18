@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
+import cl.figonzal.evaluatool.dialogs.FirebaseDialogFragment
 import cl.figonzal.evaluatool.evalua.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.evalua.evalua1.Evalua1Activity
 import cl.figonzal.evaluatool.evalua.evalua10.Evalua10Activity
@@ -50,11 +51,10 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private val updateCode: Int = 350
-    val test: Boolean = false
+    val test: Boolean = true
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
-    private lateinit var settingsButton: ImageButton
     private lateinit var tvAppName: TextView
     private lateinit var tvVersion: TextView
     private var buttonList = mutableListOf<MaterialButton>()
@@ -152,6 +152,29 @@ class MainActivity : AppCompatActivity() {
 
         //Setup Settings Activity button
         setUpSettingsActivityButton(binding.ivSettings)
+
+        handlePrivacyPolicy(sharedPrefService, test)
+    }
+
+    private fun handlePrivacyPolicy(sharedPrefService: SharedPrefService, test: Boolean) {
+
+        if (!test) {
+            val privacyDialogShowed: Boolean = sharedPrefService.getData(
+                getString(R.string.SHARED_PREF_PRIVACY_POLICY),
+                false
+            ) as Boolean
+
+            if (!privacyDialogShowed) {
+                FirebaseDialogFragment(
+                    sharedPrefService,
+                    this@MainActivity
+                ).show(supportFragmentManager, "Dialog Fragment")
+
+                Timber.d("Mostrando privacy policy dialog")
+            } else {
+                Timber.d("Privacy policy dialog ya mostrado")
+            }
+        }
     }
 
     private fun setUpSettingsActivityButton(ivSettings: ImageButton) {

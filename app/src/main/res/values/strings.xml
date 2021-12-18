@@ -546,6 +546,7 @@
     <string name="ver_tabla_de_baremos" translatable="false">Ver tabla de baremos</string>
     <string name="dialogo_boton_cerrar" translatable="false">Cerrar</string>
     <string name="dialogo_boton_aceptar" translatable="false">Aceptar</string>
+    <string name="dialogo_boton_cancelar" translatable="false">Cancelar</string>
     <string name="dialogo_baremo_titulo" translatable="false">Tabla Baremo</string>
     <string name="dialogo_baremo_descripcion" translatable="false">Puntajes de tabla baremo de ítem</string>
     <string name="TOOLBAR_MOTIVACION" translatable="false">Motivación</string>
@@ -644,5 +645,6 @@
     <string name="SHARED_PREF_PERFORMANCE_KEY">firebase_performace</string>
     <string name="firebase_dialog_msg">Esta aplicación recopila información anónima (ID de instalador, rastros de fallos e información sobre el hardware del dispositivo) con el fin de brindar un mejor servicio y solucionar problemas una vez que ocurran. \n¡Gracias por tu ayuda!</string>
     <string name="firebase_dialog_title">Reportes de fallos</string>
+    <string name="SHARED_PREF_PRIVACY_POLICY">dialog_privacy_policy</string>
 
 </resources>
