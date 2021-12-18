@@ -51,7 +51,7 @@ import timber.log.Timber
 class MainActivity : AppCompatActivity() {
 
     private val updateCode: Int = 350
-    val test: Boolean = true
+    val test: Boolean = false
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
