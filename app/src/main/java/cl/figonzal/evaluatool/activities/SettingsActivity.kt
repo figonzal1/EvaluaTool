@@ -20,11 +20,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.SwitchPreferenceCompat
 import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.SettingsActivityBinding
-import cl.figonzal.evaluatool.dialogs.FirebaseDialogFragment
 import cl.figonzal.evaluatool.service.FirebaseService
 import cl.figonzal.evaluatool.utilities.configureActionBar
 import timber.log.Timber
@@ -57,13 +55,6 @@ class SettingsActivity : AppCompatActivity() {
             //Put app version un summary preferences
             val versionPreference: Preference? = findPreference("acerca")
             versionPreference?.summary = "EvalúaTool Versión: ${BuildConfig.VERSION_NAME}"
-
-            val firebaseCrashlytics: SwitchPreferenceCompat? =
-                findPreference(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY))
-            firebaseCrashlytics?.setOnPreferenceClickListener {
-                FirebaseDialogFragment().show(parentFragmentManager, "Dialogo Firebase")
-                true
-            }
         }
 
         override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, p1: String?) {

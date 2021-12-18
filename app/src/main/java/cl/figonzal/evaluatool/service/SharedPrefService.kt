@@ -38,7 +38,7 @@ class SharedPrefService(context: Context) {
      */
     fun saveData(key: String, value: Any) {
 
-        sharedPreferences.edit {
+        sharedPreferences.edit(true) {
             when (value) {
                 is Int -> putInt(key, value)
                 is Boolean -> putBoolean(key, value)

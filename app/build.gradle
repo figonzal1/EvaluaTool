@@ -33,14 +33,14 @@ android {
         }
     }
 
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion "30.0.3"
     defaultConfig {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
-        targetSdkVersion 30
-        versionCode 25
-        versionName "0.7.11-beta"
+        targetSdkVersion 31
+        versionCode 26
+        versionName "0.7.12-beta"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -104,7 +104,7 @@ dependencies {
 
     implementation 'com.jakewharton.timber:timber:4.7.1' //Timber logs
 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.31' //Kotlin
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10' //Kotlin
     implementation "androidx.core:core-ktx:1.7.0" //KTX
 
     //Google Play
