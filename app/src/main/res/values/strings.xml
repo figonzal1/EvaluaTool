@@ -19,8 +19,8 @@
     <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-3940256099942544/5224354917</string>-->
 
     <!--PROD AD-->
-    <!--<string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
-    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-6355378855577476/8247694252</string>-->
+    <string name="ADMOB_ID_INTERSITIAL" translatable="false">ca-app-pub-6355378855577476/2901860622</string>
+    <string name="ADMOB_ID_VIDEO" translatable="false">ca-app-pub-6355378855577476/8247694252</string>
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
