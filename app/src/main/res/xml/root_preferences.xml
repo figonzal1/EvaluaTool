@@ -1,0 +1,42 @@
+<!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2021
+
+  Last modified 12/17/21, 1:58 AM
+  -->
+
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:title="Soporte">
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="@string/SHARED_PREF_CRASHLYTICS_KEY"
+            app:summary="Ayuda a mejorar la aplicación enviando datos de fallos"
+            app:defaultValue="true"
+            app:title="Reportes de fallos" />
+
+        <SwitchPreferenceCompat
+            app:iconSpaceReserved="false"
+            app:key="@string/SHARED_PREF_PERFORMANCE_KEY"
+            app:summary="Ayuda a mejorar la aplicación enviando datos de rendimiento"
+            app:defaultValue="true"
+            app:title="Reportes de rendimiento" />
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="acerca"
+            app:title="Acerca de"
+            tools:summary="EvalúaTool Versión: X.X" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

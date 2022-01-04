@@ -32,8 +32,8 @@ class ChangeLogService(
 
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
-        "- Actualizaciones internas",
-        "- Corrección de textos erróneos"
+        "- Se agrega menu de configuración",
+        "- Actualizaciones internas necesarias"
 
     )
     private val showChangeLog = true
