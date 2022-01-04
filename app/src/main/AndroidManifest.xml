@@ -576,7 +576,10 @@
             android:name=".evalua.evalua10.modulo1.AtencionConcentracionE10M1"
             android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
 
-        <!-- Desabilita performance en compilacion -->
+        <!-- Activar desde config -->
+        <!-- REF
+        https://firebase.google.com/docs/perf-mon/disable-sdk?hl=es-419&platform=android
+        -->
         <meta-data
             android:name="firebase_performance_collection_enabled"
             android:value="false" />
