@@ -68,7 +68,7 @@ class EficaciaLectoraE7M4 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
@@ -95,7 +95,7 @@ class EficaciaLectoraE7M4 : AppCompatActivity() {
                 getString(R.string.TOOLBAR_EFICACIA_LECTORA)
             )
 
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -126,10 +126,11 @@ class EficaciaLectoraE7M4 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

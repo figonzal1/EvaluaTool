@@ -28,7 +28,7 @@ class VelocidadLectoraE4M4 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(ActivityVelocidadLectoraE4M4Binding.inflate(layoutInflater), {
+        with(ActivityVelocidadLectoraE4M4Binding.inflate(layoutInflater)) {
 
             setContentView(root)
 
@@ -45,7 +45,7 @@ class VelocidadLectoraE4M4 : AppCompatActivity() {
                     tab.text = FragmentStateAdapterE4M4.tabs[position]
                 }.attach()
             }
-        })
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

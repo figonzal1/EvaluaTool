@@ -27,8 +27,11 @@ import cl.figonzal.evaluatool.databinding.FragmentComprensionE6M4Binding
 import cl.figonzal.evaluatool.resolvers.evalua6.modulo4.ComprensionFragmentE6M4Resolver
 import cl.figonzal.evaluatool.resolvers.evalua6.modulo4.ComprensionFragmentE6M4Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.resolvers.evalua6.modulo4.ComprensionFragmentE6M4Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utilities.formatResult
+import cl.figonzal.evaluatool.utilities.formatSubTotalPoints
+import cl.figonzal.evaluatool.utilities.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -80,7 +83,7 @@ class ComprensionFragmentE6M4 : Fragment() {
 
     private fun initResources(binding: FragmentComprensionE6M4Binding) {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -111,7 +114,7 @@ class ComprensionFragmentE6M4 : Fragment() {
                 resolver,
                 getString(R.string.TOOLBAR_COMPRENSION)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -144,10 +147,11 @@ class ComprensionFragmentE6M4 : Fragment() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -179,10 +183,11 @@ class ComprensionFragmentE6M4 : Fragment() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -214,10 +219,11 @@ class ComprensionFragmentE6M4 : Fragment() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

@@ -86,7 +86,7 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
 
 
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -122,7 +122,7 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_ATENCION_CONCENTRACION)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
         }
@@ -157,10 +157,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -192,10 +193,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -227,10 +229,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -265,10 +268,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -300,10 +304,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -335,10 +340,11 @@ class AtencionConcentracionE10M1 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

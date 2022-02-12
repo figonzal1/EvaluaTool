@@ -25,7 +25,6 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.dialogs.BaremoDialogFragment
 import cl.figonzal.evaluatool.interfaces.BaseResolver
 import timber.log.Timber
-import java.util.*
 import kotlin.math.roundToInt
 
 object EvaluaUtils {
@@ -179,13 +178,6 @@ object EvaluaUtils {
         }
         spans.setSpan(clickSpan, 0, spans.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
     }
-
-    /**
-     * Function that generate a random number with 30% of success
-     *
-     * @return Boolean with the result
-     */
-    fun generateRandomNumber(): Boolean = Random().nextInt(10) % 3 == 0
 
     /**
      * Used to simplify the call of string resources

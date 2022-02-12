@@ -55,7 +55,7 @@ class ChildAdapter(
 
         fun bind(routeMapKey: String, headerName: String, childItem: Child, activity: Activity) {
 
-            with(binding, {
+            with(binding) {
 
                 tvChild.text = childItem.name
 
@@ -71,7 +71,7 @@ class ChildAdapter(
                         )
                     }
                 }
-            })
+            }
         }
     }
 }

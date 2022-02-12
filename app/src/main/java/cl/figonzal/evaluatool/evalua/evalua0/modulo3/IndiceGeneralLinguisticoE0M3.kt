@@ -26,7 +26,6 @@ import cl.figonzal.evaluatool.utilities.formatResult
 import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 import kotlin.math.roundToInt
 
 class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
@@ -63,7 +62,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
     }
 
     private fun initResources() {
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralLinguisticoE0M3.etTotalsT1 = etTotalesT1
             this@IndiceGeneralLinguisticoE0M3.etTotalsT2 = etTotalesT2
             this@IndiceGeneralLinguisticoE0M3.etTotalsT3 = etTotalesT3
@@ -74,7 +73,7 @@ class IndiceGeneralLinguisticoE0M3 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@IndiceGeneralLinguisticoE0M3.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

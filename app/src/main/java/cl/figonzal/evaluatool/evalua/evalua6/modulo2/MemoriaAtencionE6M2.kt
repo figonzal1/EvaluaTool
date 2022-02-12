@@ -101,7 +101,7 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -149,7 +149,7 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_MEMORIA_ATENCION)
             )
-        }).also {
+        }.also {
             textWatcherTarea1(getString(R.string.TAREA_1))
             textWatcherTarea2(getString(R.string.TAREA_2))
             textWatcherTarea3(getString(R.string.TAREA_3))
@@ -186,10 +186,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -221,10 +222,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -255,10 +257,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -293,10 +296,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -328,10 +332,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -363,10 +368,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -401,10 +407,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -436,10 +443,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -471,10 +479,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -509,10 +518,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT4,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -544,10 +554,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT4,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })
@@ -579,10 +590,11 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
                             approved = approvedT4,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(tarea, this)
+                    }
                     calculateResult()
                 }
             })

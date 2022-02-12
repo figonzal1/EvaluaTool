@@ -55,14 +55,14 @@ class IndiceGeneralLecturaE2M4 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralLecturaE2M4.etTotalsT1 = etTotalesT1
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             //TOTAL
             this@IndiceGeneralLecturaE2M4.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTarea1()
         }
     }

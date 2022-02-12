@@ -54,14 +54,14 @@ class IndiceGeneralEscrituraE10M5 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralEscrituraE10M5.etTotalsT1 = etTotalesT1
 
             //SUBTOTAL
             tvSubTotalT1 = tvPdSubtotalT1
             //TOTAL
             this@IndiceGeneralEscrituraE10M5.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
 

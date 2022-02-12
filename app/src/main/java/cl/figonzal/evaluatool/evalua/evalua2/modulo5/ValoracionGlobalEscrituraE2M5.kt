@@ -59,7 +59,7 @@ class ValoracionGlobalEscrituraE2M5 : AppCompatActivity(), IndiceValorInterface 
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@ValoracionGlobalEscrituraE2M5.etTotalsT1 = etTotalesT1
             this@ValoracionGlobalEscrituraE2M5.etTotalsT2 = etTotalesT2
 
@@ -68,7 +68,7 @@ class ValoracionGlobalEscrituraE2M5 : AppCompatActivity(), IndiceValorInterface 
             tvSubTotalT2 = tvPdSubtotalT2
             //TOTAL
             this@ValoracionGlobalEscrituraE2M5.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

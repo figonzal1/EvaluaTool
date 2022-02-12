@@ -17,12 +17,12 @@ import android.content.Intent
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.activities.MainActivity
-import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utilities.isAdsAllowed
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import timber.log.Timber
-import java.util.*
 
 /**
  * Class that provide AdMob service
@@ -67,10 +67,6 @@ class AdsService(
                 }
             }
         )
-    }
-
-    fun getIntersitial(): InterstitialAd? {
-        return interstitialAd
     }
 
     /**
@@ -121,7 +117,7 @@ class AdsService(
         test: Boolean
     ) {
         //si las 24 horas ya pasaron, cargar los ads nuevamente
-        with(activity, {
+        with(activity) {
             when {
                 !test && isAdsAllowed(sharedPrefService) -> {
                     Timber.d(getString(R.string.ADS_PERMITIDOS))
@@ -132,7 +128,7 @@ class AdsService(
                     startActivity(Intent(this, activityToOpen))
                 }
             }
-        })
+        }
     }
 
     init {

@@ -75,7 +75,7 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
 
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
@@ -107,7 +107,7 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_RAZON_DEDUCTIVO)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
         }
@@ -140,10 +140,11 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -174,10 +175,11 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -211,10 +213,11 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
                             nTask = 2,
                             approved = approvedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -245,10 +248,11 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
                             nTask = 2,
                             approved = approvedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

@@ -63,7 +63,7 @@ class IndiceGeneralCognitivoE6M1 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralCognitivoE6M1.etTotalsT1 = etTotalesT1
             this@IndiceGeneralCognitivoE6M1.etTotalsT2 = etTotalesT2
             this@IndiceGeneralCognitivoE6M1.etTotalsT3 = etTotalesT3
@@ -74,7 +74,7 @@ class IndiceGeneralCognitivoE6M1 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@IndiceGeneralCognitivoE6M1.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
 

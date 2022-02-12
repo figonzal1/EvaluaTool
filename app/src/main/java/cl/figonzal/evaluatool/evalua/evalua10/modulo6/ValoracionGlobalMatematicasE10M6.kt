@@ -59,7 +59,7 @@ class ValoracionGlobalMatematicasE10M6 : AppCompatActivity(), IndiceValorInterfa
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@ValoracionGlobalMatematicasE10M6.etTotalsT1 = etTotalesT1
             this@ValoracionGlobalMatematicasE10M6.etTotalsT2 = etTotalesT2
 
@@ -69,7 +69,7 @@ class ValoracionGlobalMatematicasE10M6 : AppCompatActivity(), IndiceValorInterfa
 
             //TOTAL
             this@ValoracionGlobalMatematicasE10M6.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
 

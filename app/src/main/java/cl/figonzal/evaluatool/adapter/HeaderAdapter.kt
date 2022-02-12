@@ -14,7 +14,6 @@
 package cl.figonzal.evaluatool.adapter
 
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,7 +28,6 @@ class HeaderAdapter(
     private val routeMapKey: String,
     private val headerList: List<Header>,
     private val childList: List<List<Child>>,
-    private val context: Context,
     private val activity: Activity
 ) :
     RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder>() {
@@ -64,7 +62,7 @@ class HeaderAdapter(
 
             val expanded: Boolean = header.expanded
 
-            with(binding, {
+            with(binding) {
 
                 tvGroup.text = header.name
 
@@ -105,7 +103,7 @@ class HeaderAdapter(
                     setHasFixedSize(true)
                 }
 
-            })
+            }
         }
 
     }

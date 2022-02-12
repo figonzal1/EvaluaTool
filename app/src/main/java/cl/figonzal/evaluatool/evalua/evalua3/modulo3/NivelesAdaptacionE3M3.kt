@@ -28,7 +28,7 @@ class NivelesAdaptacionE3M3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(ActivityNivelesAdaptacionE3M3Binding.inflate(layoutInflater), {
+        with(ActivityNivelesAdaptacionE3M3Binding.inflate(layoutInflater)) {
 
             setContentView(root)
 
@@ -45,7 +45,7 @@ class NivelesAdaptacionE3M3 : AppCompatActivity() {
                     tab.text = FragmentStateAdapterE3M3.tabs[position]
                 }.attach()
             }
-        })
+        }
 
     }
 

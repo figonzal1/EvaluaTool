@@ -66,7 +66,7 @@ class ComprensionLectoraE9M4 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
@@ -94,7 +94,7 @@ class ComprensionLectoraE9M4 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_COMPREN_LECTORA)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -126,10 +126,11 @@ class ComprensionLectoraE9M4 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -160,10 +161,11 @@ class ComprensionLectoraE9M4 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

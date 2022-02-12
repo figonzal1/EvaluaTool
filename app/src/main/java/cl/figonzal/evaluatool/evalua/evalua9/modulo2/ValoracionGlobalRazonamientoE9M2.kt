@@ -63,7 +63,7 @@ class ValoracionGlobalRazonamientoE9M2 : AppCompatActivity(), IndiceValorInterfa
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@ValoracionGlobalRazonamientoE9M2.etTotalsT1 = etTotalesT1
             this@ValoracionGlobalRazonamientoE9M2.etTotalsT2 = etTotalesT2
             this@ValoracionGlobalRazonamientoE9M2.etTotalsT3 = etTotalesT3
@@ -74,7 +74,7 @@ class ValoracionGlobalRazonamientoE9M2 : AppCompatActivity(), IndiceValorInterfa
             tvSubTotalT3 = tvPdSubtotalT3
             //TOTAL
             this@ValoracionGlobalRazonamientoE9M2.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

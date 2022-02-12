@@ -37,10 +37,10 @@ object DateHandler {
      * @return Date with added hours
      */
     fun addHoursToDate(date: Date, hours: Int): Date {
-        with(Calendar.getInstance(), {
+        with(Calendar.getInstance()) {
             this.time = date
             this.add(Calendar.HOUR_OF_DAY, hours)
             return time
-        })
+        }
     }
 }
