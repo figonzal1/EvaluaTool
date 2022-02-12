@@ -77,7 +77,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
@@ -112,7 +112,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_LETRAS_NUMEROS)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
         }
@@ -140,15 +140,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isEmpty() -> approvedT1 = 0
                         s.isNotEmpty() -> approvedT1 = text.toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        1,
-                        approvedT1,
-                        omittedT1,
-                        reprobateT1
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            1,
+                            approvedT1,
+                            omittedT1,
+                            reprobateT1
+                        )
+                    ) {
                         resolver.totalPdTask1 = this
                         tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })
@@ -175,15 +177,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isNotEmpty() -> omittedT1 =
                             Objects.requireNonNull(text).toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        1,
-                        approvedT1,
-                        omittedT1,
-                        reprobateT1
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            1,
+                            approvedT1,
+                            omittedT1,
+                            reprobateT1
+                        )
+                    ) {
                         resolver.totalPdTask1 = this
                         tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })
@@ -209,15 +213,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isEmpty() -> reprobateT1 = 0
                         s.isNotEmpty() -> reprobateT1 = text.toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        1,
-                        approvedT1,
-                        omittedT1,
-                        reprobateT1
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            1,
+                            approvedT1,
+                            omittedT1,
+                            reprobateT1
+                        )
+                    ) {
                         resolver.totalPdTask1 = this
                         tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })
@@ -247,15 +253,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isNotEmpty() -> approvedT2 =
                             Objects.requireNonNull(text).toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        2,
-                        approvedT2,
-                        omittedT2,
-                        reprobateT2
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            2,
+                            approvedT2,
+                            omittedT2,
+                            reprobateT2
+                        )
+                    ) {
                         resolver.totalPdTask2 = this
                         tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })
@@ -282,15 +290,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isNotEmpty() -> omittedT2 =
                             Objects.requireNonNull(text).toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        2,
-                        approvedT2,
-                        omittedT2,
-                        reprobateT2
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            2,
+                            approvedT2,
+                            omittedT2,
+                            reprobateT2
+                        )
+                    ) {
                         resolver.totalPdTask2 = this
                         tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })
@@ -317,15 +327,17 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
                         s.isNotEmpty() -> reprobateT2 =
                             Objects.requireNonNull(text).toString().toInt()
                     }
-                    with(resolver.calculateTask(
-                        2,
-                        approvedT2,
-                        omittedT2,
-                        reprobateT2
-                    ), {
+                    with(
+                        resolver.calculateTask(
+                            2,
+                            approvedT2,
+                            omittedT2,
+                            reprobateT2
+                        )
+                    ) {
                         resolver.totalPdTask2 = this
                         tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                    })
+                    }
                     calculateResult()
                 }
             })

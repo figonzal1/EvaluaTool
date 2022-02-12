@@ -38,7 +38,7 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
 
         val builder = MaterialAlertDialogBuilder(requireContext())
 
-        with(BaremoDialogLayoutBinding.inflate(LayoutInflater.from(context)), {
+        with(BaremoDialogLayoutBinding.inflate(LayoutInflater.from(context))) {
 
             //Recycler view
             rvBaremo.apply {
@@ -63,7 +63,7 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
 
             builder.setView(root)
             return builder.create()
-        })
+        }
     }
 
 }

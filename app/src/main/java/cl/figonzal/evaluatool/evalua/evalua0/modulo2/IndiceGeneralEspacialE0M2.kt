@@ -26,7 +26,6 @@ import cl.figonzal.evaluatool.utilities.formatResult
 import cl.figonzal.evaluatool.utilities.setIndexAnimation
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 import kotlin.math.roundToInt
 
 class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
@@ -61,7 +60,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralEspacialE0M2.etTotalsT1 = etTotalesT1
             this@IndiceGeneralEspacialE0M2.etTotalsT2 = etTotalesT2
 
@@ -70,7 +69,7 @@ class IndiceGeneralEspacialE0M2 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT2 = tvPdSubtotalT2
             //TOTAL
             this@IndiceGeneralEspacialE0M2.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

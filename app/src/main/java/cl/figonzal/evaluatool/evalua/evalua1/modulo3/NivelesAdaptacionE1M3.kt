@@ -27,7 +27,7 @@ class NivelesAdaptacionE1M3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(ActivityNivelesAdaptacionE1M3Binding.inflate(layoutInflater), {
+        with(ActivityNivelesAdaptacionE1M3Binding.inflate(layoutInflater)) {
 
             setContentView(root)
 
@@ -42,7 +42,7 @@ class NivelesAdaptacionE1M3 : AppCompatActivity() {
                     tab.text = FragmentStateAdapterE1M3.tabs[position]
                 }.attach()
             }
-        })
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

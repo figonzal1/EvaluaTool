@@ -243,7 +243,7 @@
             android:layout_marginEnd="@dimen/margin_8"
             android:background="?attr/actionBarItemBackground"
             android:clickable="true"
-            android:contentDescription="Descripcion Settings"
+            android:contentDescription="@string/configuracion"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="@+id/include_switch"
             app:layout_constraintEnd_toEndOf="parent"

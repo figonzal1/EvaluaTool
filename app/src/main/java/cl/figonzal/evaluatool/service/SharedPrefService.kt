@@ -57,10 +57,9 @@ class SharedPrefService(context: Context) {
      * @return Any
      */
     fun getData(key: String, defaultvalue: Any): Any {
-        val result: Any
 
-        with(sharedPreferences, {
-            result = when (defaultvalue) {
+        with(sharedPreferences) {
+            return when (defaultvalue) {
                 is Int -> getInt(key, defaultvalue)
                 is Boolean -> getBoolean(key, defaultvalue)
                 is Float -> getFloat(key, defaultvalue)
@@ -68,7 +67,6 @@ class SharedPrefService(context: Context) {
                 else -> getString(key, defaultvalue as String)!!
 
             }
-            return result
-        })
+        }
     }
 }

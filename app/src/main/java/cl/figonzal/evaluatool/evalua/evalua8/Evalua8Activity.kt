@@ -84,7 +84,6 @@ class Evalua8Activity : AppCompatActivity() {
                 getString(R.string.routeMapEvalua8),
                 headers,
                 subItemsList,
-                applicationContext,
                 this@Evalua8Activity
             )
             setHasFixedSize(true)

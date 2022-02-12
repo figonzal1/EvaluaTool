@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class HabilidadesFonologicasE0M3 : AppCompatActivity() {
 
@@ -83,7 +82,7 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
@@ -122,7 +121,7 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_HABILIDADES_FONOLOGICAS)
             )
-        }).apply {
+        }.apply {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
             textWatcherTask3(getString(R.string.TAREA_3))
@@ -156,10 +155,11 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1,
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -192,10 +192,11 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 2,
                             approved = approvedT2,
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -228,10 +229,11 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 3,
                             approved = approvedT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -264,10 +266,11 @@ class HabilidadesFonologicasE0M3 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 4,
                             approved = approvedT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

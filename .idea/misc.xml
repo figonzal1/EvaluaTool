@@ -5,16 +5,21 @@
       <map>
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_arrow_back_white_24dp.xml" value="0.2203125" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2203125" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_atencion_concentracion_e10_m1.xml" value="0.18854166666666666" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_comprension_lectora_e3_m4.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_evalua0.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/activity_niveles_adaptacion_e3_m3.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/baremo_dialog_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/baremo_item_list.xml" value="0.35833333333333334" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/changelog_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/expandable_item_group_list.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/expandable_item_list.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/firebase_dialog_layout.xml" value="0.25" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/header_item_list.xml" value="0.23072916666666668" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/preferences.xml" value="0.20416666666666666" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/settings_activity.xml" value="0.20416666666666666" />
+        <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/layout/toolbar_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/xml/root_preferences.xml" value="0.20416666666666666" />
       </map>
     </option>

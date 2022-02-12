@@ -47,7 +47,7 @@ object RouteHandler {
                     }
                     .map { item.value[it] as List<*> }
                     .forEach {
-                        with(it, {
+                        with(it) {
                             val destinationActivity = this[1]
                             val responseLog = this[2]
                             val titleLog = EvaluaUtils.get(R.string.SUB_ITEM_CLICK)
@@ -58,7 +58,7 @@ object RouteHandler {
                                 titleLog,
                                 responseLog as String
                             )
-                        })
+                        }
                     }
             }
         }

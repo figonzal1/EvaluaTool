@@ -26,7 +26,10 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FragmentHabilidadesSocialesE8M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua8.modulo3.HabilidadesSocialesFragmentE8M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua8.modulo3.HabilidadesSocialesFragmentE8M3Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utilities.formatResult
+import cl.figonzal.evaluatool.utilities.formatSubTotalPoints
+import cl.figonzal.evaluatool.utilities.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -70,7 +73,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
 
     private fun initResources(binding: FragmentHabilidadesSocialesE8M3Binding) {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             tvMediaValue.text = MEAN.toString()
@@ -96,7 +99,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
                 resolver,
                 getString(R.string.TOOLBAR_HAB_SOCIALES)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -126,10 +129,11 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

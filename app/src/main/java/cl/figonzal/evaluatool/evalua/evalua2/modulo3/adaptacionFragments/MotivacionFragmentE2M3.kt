@@ -26,11 +26,13 @@ import cl.figonzal.evaluatool.databinding.FragmentMotivacionE2M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.MotivacionFragmentE2M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.MotivacionFragmentE2M3Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.resolvers.evalua2.modulo3.MotivacionFragmentE2M3Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
 import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utilities.formatResult
+import cl.figonzal.evaluatool.utilities.formatSubTotalPoints
+import cl.figonzal.evaluatool.utilities.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
-import java.util.*
 
 class MotivacionFragmentE2M3 : Fragment() {
 
@@ -75,7 +77,7 @@ class MotivacionFragmentE2M3 : Fragment() {
     private fun initResources(binding: FragmentMotivacionE2M3Binding) {
 
 
-        with(binding, {
+        with(binding) {
 
             //Promedio y desviacion
             //TetView desviacion y media
@@ -104,7 +106,7 @@ class MotivacionFragmentE2M3 : Fragment() {
                 resolver,
                 getString(R.string.TOOLBAR_MOTIVACION)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -135,10 +137,11 @@ class MotivacionFragmentE2M3 : Fragment() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approveT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class OrganizacionPerceptivaE1M2 : AppCompatActivity() {
 
@@ -67,7 +66,7 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -95,7 +94,7 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_ORG_PERCEPTIVA)
             )
-        }).also { textWatcherTask1(getString(R.string.TAREA_1)) }
+        }.also { textWatcherTask1(getString(R.string.TAREA_1)) }
     }
 
 
@@ -125,10 +124,11 @@ class OrganizacionPerceptivaE1M2 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

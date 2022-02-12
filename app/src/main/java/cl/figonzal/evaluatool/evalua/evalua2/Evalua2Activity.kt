@@ -24,7 +24,6 @@ import cl.figonzal.evaluatool.model.Header
 import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.configureFabWsp
 import timber.log.Timber
-import java.util.*
 
 class Evalua2Activity : AppCompatActivity() {
 
@@ -85,7 +84,6 @@ class Evalua2Activity : AppCompatActivity() {
                 getString(R.string.routeMapEvalua2),
                 headers,
                 subItemsList,
-                applicationContext,
                 this@Evalua2Activity
             )
             setHasFixedSize(true)

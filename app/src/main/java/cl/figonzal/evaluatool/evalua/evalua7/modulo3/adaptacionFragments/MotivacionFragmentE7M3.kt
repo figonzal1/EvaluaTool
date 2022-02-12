@@ -27,7 +27,10 @@ import cl.figonzal.evaluatool.databinding.FragmentMotivacionE7M3Binding
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.resolvers.evalua7.modulo3.MotivacionFragmentE7M3Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utilities.*
+import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utilities.formatResult
+import cl.figonzal.evaluatool.utilities.formatSubTotalPoints
+import cl.figonzal.evaluatool.utilities.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
@@ -73,7 +76,7 @@ class MotivacionFragmentE7M3 : Fragment() {
 
     private fun initResources(binding: FragmentMotivacionE7M3Binding) {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -100,7 +103,7 @@ class MotivacionFragmentE7M3 : Fragment() {
                     R.string.TOOLBAR_MOTIVACION
                 )
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -131,10 +134,11 @@ class MotivacionFragmentE7M3 : Fragment() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = requireActivity().formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

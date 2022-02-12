@@ -45,11 +45,11 @@ import java.util.*
 fun AppCompatActivity.configureActionBar(title: Int, materialToolbar: MaterialToolbar) {
     setSupportActionBar(materialToolbar)
 
-    with(supportActionBar, {
+    with(supportActionBar) {
         this?.setDisplayHomeAsUpEnabled(true)
         this?.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp)
         this?.title = getString(title)
-    })
+    }
 }
 
 /**

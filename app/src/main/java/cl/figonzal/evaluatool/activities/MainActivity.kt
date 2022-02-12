@@ -67,9 +67,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Checkear night mode
-        with(SharedPrefService(this), {
+        with(SharedPrefService(this)) {
 
-            NightModeService(this@MainActivity, this@MainActivity.lifecycle, this)
+            lifecycle.addObserver(NightModeService(this@MainActivity))
 
             if (!test) {
                 ChangeLogService(this@MainActivity, this@MainActivity, this).checkChangeLogVersion()
@@ -81,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
             //Init resources for Main Activity
             initResources(binding, this)
-        })
+        }
 
         configureFabWsp(binding.fabWsp)
     }
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun initResources(binding: ActivityMainBinding, sharedPrefService: SharedPrefService) {
 
-        with(binding, {
+        with(binding) {
             switchDarkMode = includeSwitch.switchMaterial
 
             this@MainActivity.tvAppName = tvNombreApp
@@ -131,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                     else -> btnEvalua0
                 }
             }
-        })
+        }
 
         setUpResources(binding, sharedPrefService)
     }
@@ -257,7 +257,7 @@ class MainActivity : AppCompatActivity() {
         val nightMode =
             sharedPrefService.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
 
-        with(switchDarkMode, {
+        with(switchDarkMode) {
             this.isChecked = nightMode
             this.setOnCheckedChangeListener { _, isChecked ->
 
@@ -276,7 +276,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-        })
+        }
     }
 
     /**

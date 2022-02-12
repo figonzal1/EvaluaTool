@@ -81,7 +81,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
@@ -115,7 +115,7 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_RAZON_ESPACIAL)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
         }
@@ -151,10 +151,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -188,10 +189,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -225,10 +227,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -262,10 +265,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -299,10 +303,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 2,
                             approved = approvedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -333,10 +338,11 @@ class RazonamientoEspacialE9M2 : AppCompatActivity() {
                             nTask = 2,
                             approved = approvedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

@@ -58,7 +58,7 @@ class IndiceGeneralMatematicasE6M6 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@IndiceGeneralMatematicasE6M6.etTotalsT1 = etTotalesT1
             this@IndiceGeneralMatematicasE6M6.etTotalsT2 = etTotalesT2
 
@@ -67,7 +67,7 @@ class IndiceGeneralMatematicasE6M6 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT2 = tvPdSubtotalT2
             //TOTAL
             this@IndiceGeneralMatematicasE6M6.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

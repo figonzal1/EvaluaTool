@@ -646,5 +646,7 @@
     <string name="firebase_dialog_msg">Esta aplicación recopila información anónima (ID de instalador, rastros de fallos e información sobre el hardware del dispositivo) con el fin de brindar un mejor servicio y solucionar problemas una vez que ocurran. \n¡Gracias por tu ayuda!</string>
     <string name="firebase_dialog_title">Reportes de fallos</string>
     <string name="SHARED_PREF_PRIVACY_POLICY">dialog_privacy_policy</string>
+    <string name="configuracion">Configuración</string>
+    <string name="TAG_NIGHT_MODE" translatable="false">NIGHT MODE</string>
 
 </resources>

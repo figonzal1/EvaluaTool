@@ -29,7 +29,7 @@ class NivelesAdaptacionE7M3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        with(ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater), {
+        with(ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater)) {
             setContentView(root)
 
             configureActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
@@ -45,7 +45,7 @@ class NivelesAdaptacionE7M3 : AppCompatActivity() {
                     tab.text = FragmentStateAdapterE7M3.tabs[position]
                 }.attach()
             }
-        })
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

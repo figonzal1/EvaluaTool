@@ -97,7 +97,7 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             //TetView desviacion y media
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -140,7 +140,7 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_COMPREN_LECTORA)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
             textWatcherTask3(getString(R.string.TAREA_3))
@@ -175,10 +175,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -209,10 +210,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 1,
                             approved = approvedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -249,10 +251,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 2,
                             approved = subTotalPdT21.toInt(),
                             reprobate = subTotalPdT22.toInt()
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -285,10 +288,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 2,
                             approved = subTotalPdT21.toInt(),
                             reprobate = subTotalPdT22.toInt()
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -322,10 +326,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 2,
                             approved = subTotalPdT21.toInt(),
                             reprobate = subTotalPdT22.toInt()
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -358,10 +363,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 2,
                             approved = subTotalPdT21.toInt(),
                             reprobate = subTotalPdT22.toInt()
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -398,10 +404,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 3,
                             approved = subTotalPdT31.toInt(),
                             reprobate = subTotalPdT32.toInt()
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -434,10 +441,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 3,
                             approved = subTotalPdT31.toInt(),
                             reprobate = subTotalPdT32.toInt()
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -471,10 +479,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 3,
                             approved = subTotalPdT31.toInt(),
                             reprobate = subTotalPdT32.toInt()
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -507,10 +516,11 @@ class ComprensionLectoraE6M4 : AppCompatActivity() {
                             nTask = 3,
                             approved = subTotalPdT31.toInt(),
                             reprobate = subTotalPdT32.toInt()
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

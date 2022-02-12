@@ -25,7 +25,6 @@ import cl.figonzal.evaluatool.utilities.configureActionBar
 import cl.figonzal.evaluatool.utilities.formatResult
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 import kotlin.math.roundToInt
 
 class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
@@ -57,7 +56,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             this@ValoracionGlobalLectoraE4M4.etTotalsT1 = etTotalesT1
             this@ValoracionGlobalLectoraE4M4.etTotalsT2 = etTotalesT2
 
@@ -66,7 +65,7 @@ class ValoracionGlobalLectoraE4M4 : AppCompatActivity(), IndiceValorInterface {
             tvSubTotalT2 = tvPdSubtotalT2
             //TOTAL
             this@ValoracionGlobalLectoraE4M4.tvPdTotal = tvPdTotalValue
-        }).also {
+        }.also {
             textWatcherTask1()
         }
     }

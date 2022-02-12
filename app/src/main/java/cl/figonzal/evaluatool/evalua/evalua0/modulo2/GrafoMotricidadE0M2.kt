@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class GrafoMotricidadE0M2 : AppCompatActivity() {
 
@@ -64,7 +63,7 @@ class GrafoMotricidadE0M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
 
             //Promedio y desviacion
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
@@ -92,7 +91,7 @@ class GrafoMotricidadE0M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_GRAFOMOTRICIDAD)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -123,10 +122,11 @@ class GrafoMotricidadE0M2 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

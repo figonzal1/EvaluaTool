@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class MemoriaAtencionE2M2 : AppCompatActivity() {
 
@@ -118,7 +117,7 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
 
             //Promedio y desviacion
             //TetView desviacion y media
@@ -179,7 +178,7 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_MEMORIA_ATENCION)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
             textWatcherTask3(getString(R.string.TAREA_3))
@@ -218,10 +217,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -253,10 +253,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -288,10 +289,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT1,
                             omitted = omittedT1,
                             reprobate = reprobateT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -326,10 +328,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -361,10 +364,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -396,10 +400,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT2,
                             omitted = omittedT2,
                             reprobate = reprobateT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -434,10 +439,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -471,10 +477,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -506,10 +513,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT3,
                             omitted = omittedT3,
                             reprobate = reprobateT3
-                        ), {
-                            resolver.totalPdTask3 = this
-                            tvSubTotalT3.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask3 = this
+                        tvSubTotalT3.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -544,10 +552,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approved,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -579,10 +588,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approved,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -614,10 +624,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approved,
                             omitted = omittedT4,
                             reprobate = reprobateT4
-                        ), {
-                            resolver.totalPdTask4 = this
-                            tvSubTotalT4.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask4 = this
+                        tvSubTotalT4.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -651,10 +662,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT5,
                             omitted = omittedT5,
                             reprobate = reprobateT5
-                        ), {
-                            resolver.totalPdTask5 = this
-                            tvSubTotalT5.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask5 = this
+                        tvSubTotalT5.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -686,10 +698,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT5,
                             omitted = omittedT5,
                             reprobate = reprobateT5
-                        ), {
-                            resolver.totalPdTask5 = this
-                            tvSubTotalT5.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask5 = this
+                        tvSubTotalT5.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -721,10 +734,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT5,
                             omitted = omittedT5,
                             reprobate = reprobateT5
-                        ), {
-                            resolver.totalPdTask5 = this
-                            tvSubTotalT5.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask5 = this
+                        tvSubTotalT5.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -759,10 +773,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT6,
                             omitted = omittedT6,
                             reprobate = reprobateT6
-                        ), {
-                            resolver.totalPdTask6 = this
-                            tvSubTotalT6.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask6 = this
+                        tvSubTotalT6.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -794,10 +809,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT6,
                             omitted = omittedT6,
                             reprobate = reprobateT6
-                        ), {
-                            resolver.totalPdTask6 = this
-                            tvSubTotalT6.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask6 = this
+                        tvSubTotalT6.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -829,10 +845,11 @@ class MemoriaAtencionE2M2 : AppCompatActivity() {
                             approved = approvedT6,
                             omitted = omittedT6,
                             reprobate = reprobateT6
-                        ), {
-                            resolver.totalPdTask6 = this
-                            tvSubTotalT6.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask6 = this
+                        tvSubTotalT6.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

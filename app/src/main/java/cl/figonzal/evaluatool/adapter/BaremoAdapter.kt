@@ -65,7 +65,7 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
 
         fun bind(itemViewType: Int, context: Context, perc: Array<Array<Any>>) {
 
-            with(binding, {
+            with(binding) {
                 when (itemViewType) {
                     TABLE_HEADER -> {
 
@@ -99,7 +99,7 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
                         tvPcChileno.text = item[1].toString()
                     }
                 }
-            })
+            }
 
         }
 

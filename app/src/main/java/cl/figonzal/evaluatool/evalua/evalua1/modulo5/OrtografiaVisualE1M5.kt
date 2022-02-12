@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class OrtografiaVisualE1M5 : AppCompatActivity() {
 
@@ -67,7 +66,7 @@ class OrtografiaVisualE1M5 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             //Promedio y desviacion
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
@@ -94,7 +93,7 @@ class OrtografiaVisualE1M5 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_ORTOGRAFIA_VISUAL)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -125,10 +124,11 @@ class OrtografiaVisualE1M5 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approvedT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

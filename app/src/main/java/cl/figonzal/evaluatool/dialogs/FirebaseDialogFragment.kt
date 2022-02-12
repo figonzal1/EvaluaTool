@@ -45,7 +45,7 @@ class FirebaseDialogFragment(
 
         this.isCancelable = false
 
-        with(binding, {
+        with(binding) {
 
 
             btnAceptar.setOnClickListener {
@@ -83,7 +83,7 @@ class FirebaseDialogFragment(
             }
 
             builder.setView(root)
-        })
+        }
 
         return builder.create()
     }

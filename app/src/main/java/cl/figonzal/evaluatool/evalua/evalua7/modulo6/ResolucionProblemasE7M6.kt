@@ -72,7 +72,7 @@ class ResolucionProblemasE7M6 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
@@ -99,7 +99,7 @@ class ResolucionProblemasE7M6 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_RESOLUCION_PROBLEMAS)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
         }
     }
@@ -132,10 +132,11 @@ class ResolucionProblemasE7M6 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -167,10 +168,11 @@ class ResolucionProblemasE7M6 : AppCompatActivity() {
                             nTask = 1,
                             approved = subTotalPdT11.toInt(),
                             reprobate = subTotalPdT12.toInt()
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

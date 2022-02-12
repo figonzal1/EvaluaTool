@@ -29,7 +29,6 @@ import cl.figonzal.evaluatool.utilities.EvaluaUtils.configurarTextoBaremo
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
-import java.util.*
 
 class CalculoNumeracionE3M6 : AppCompatActivity() {
 
@@ -69,7 +68,7 @@ class CalculoNumeracionE3M6 : AppCompatActivity() {
 
     private fun initResources() {
 
-        with(binding, {
+        with(binding) {
             cardViewConstantes.tvMediaValue.text = MEAN.toString()
             cardViewConstantes.tvDesviacionValue.text = DEVIATION.toString()
 
@@ -99,7 +98,7 @@ class CalculoNumeracionE3M6 : AppCompatActivity() {
                 resolver,
                 getString(R.string.TOOLBAR_CALC_NUMERACION)
             )
-        }).also {
+        }.also {
             textWatcherTask1(getString(R.string.TAREA_1))
             textWatcherTask2(getString(R.string.TAREA_2))
         }
@@ -131,10 +130,11 @@ class CalculoNumeracionE3M6 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 1,
                             approved = approveT1
-                        ), {
-                            resolver.totalPdTask1 = this
-                            tvSubTotalT1.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask1 = this
+                        tvSubTotalT1.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })
@@ -167,10 +167,11 @@ class CalculoNumeracionE3M6 : AppCompatActivity() {
                         resolver.calculateTask(
                             nTask = 2,
                             approved = approveT2
-                        ), {
-                            resolver.totalPdTask2 = this
-                            tvSubTotalT2.text = formatSubTotalPoints(task, this)
-                        })
+                        )
+                    ) {
+                        resolver.totalPdTask2 = this
+                        tvSubTotalT2.text = formatSubTotalPoints(task, this)
+                    }
                     calculateResult()
                 }
             })

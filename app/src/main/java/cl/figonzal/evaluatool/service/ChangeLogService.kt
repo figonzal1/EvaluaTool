@@ -73,7 +73,7 @@ class ChangeLogService(
 
     private fun showBottomSheetDialog() {
 
-        with(BottomSheetDialog(context), {
+        with(BottomSheetDialog(context)) {
 
             setContentView(R.layout.changelog_dialog)
             setCancelable(false)
@@ -86,6 +86,6 @@ class ChangeLogService(
                 ?.setOnClickListener { this.dismiss() }
 
             show()
-        })
+        }
     }
 }
