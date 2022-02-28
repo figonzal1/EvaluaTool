@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 27/2/22 19:45
+  Last modified 27/2/22 23:20
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -653,5 +653,9 @@
     <string name="firebase_crashlytics_off">Registro de fallos desactivado</string>
     <string name="firebase_performance_on">Registro de rendimiento activado</string>
     <string name="firebase_performance_off">Registro de rendimiento desactivado</string>
-
+    <string name="GP_REQUEST" translatable="false">Request update</string>
+    <string name="GP_NOT_SUPPORTED" translatable="false">Not supported</string>
+    <string name="GP_UPDATED" translatable="false">Updated</string>
+    <string name="privacy_policy_show">Mostrando privacy policy dialog</string>
+    <string name="privacy_policy_not_show">Privacy policy dialog ya mostrado</string>
 </resources>

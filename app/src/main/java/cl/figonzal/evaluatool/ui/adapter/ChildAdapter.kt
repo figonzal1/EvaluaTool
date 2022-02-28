@@ -8,10 +8,10 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:04
+ Last modified 27/2/22 22:46
  */
 
-package cl.figonzal.evaluatool.adapter
+package cl.figonzal.evaluatool.ui.adapter
 
 import android.app.Activity
 import android.view.LayoutInflater

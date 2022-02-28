@@ -8,15 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:27
+ Last modified 27/2/22 23:50
  */
 package cl.figonzal.evaluatool.ui
 
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -24,12 +22,10 @@ import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.service.ChangeLogService
+import cl.figonzal.evaluatool.service.GooglePlayService
 import cl.figonzal.evaluatool.service.NightModeService
 import cl.figonzal.evaluatool.service.UpdaterService
-import cl.figonzal.evaluatool.utils.SharedPrefUtil
-import cl.figonzal.evaluatool.utils.configureFABWsp
-import cl.figonzal.evaluatool.utils.setUpCardViewCustomCorners
-import cl.figonzal.evaluatool.utils.toast
+import cl.figonzal.evaluatool.utils.*
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
 import timber.log.Timber
@@ -62,12 +58,15 @@ class MainActivity : AppCompatActivity() {
         when {
             Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> {
                 Timber.d("ANDROID_VERSION < Q: ${Build.VERSION.SDK_INT}")
-                lifecycle.addObserver(NightModeService(this))
+                lifecycle.addObserver(NightModeService(this, sharedPrefUtil))
 
-                setUpSwitchDarkMode()
+                setUpSwitchDarkMode(binding)
             }
             else -> Timber.d("ANDROID_VERSION > Q: ${Build.VERSION.SDK_INT}")
         }
+
+        //GP services
+        lifecycle.addObserver(GooglePlayService(this))
 
         //Change Log Service
         lifecycle.addObserver(ChangeLogService(this, SharedPrefUtil(this)))
@@ -92,50 +91,32 @@ class MainActivity : AppCompatActivity() {
     private fun bindingResources() {
 
         with(binding) {
-            switchDarkMode = includeSwitch.switchMaterial
 
-            this@MainActivity.tvAppName = tvNombreApp
+            tvAppName = tvNombreApp
             this@MainActivity.tvVersion = tvVersion
             tvVersion.text = String.format("v%s", BuildConfig.VERSION_NAME)
 
-            buttonList = mutableListOf(
-                MaterialButton(this@MainActivity), //EV0
-                MaterialButton(this@MainActivity), //EV1
-                MaterialButton(this@MainActivity), //EV2
-                MaterialButton(this@MainActivity), //EV3
-                MaterialButton(this@MainActivity), //EV4
-                MaterialButton(this@MainActivity), //EV5
-                MaterialButton(this@MainActivity), //EV6
-                MaterialButton(this@MainActivity), //EV7
-                MaterialButton(this@MainActivity), //EV8
-                MaterialButton(this@MainActivity), //EV9
-                MaterialButton(this@MainActivity) //EV10
-            )
-
-            //binding buttons
-            (0 until buttonList.size).forEach { i ->
-                buttonList[i] = when (i) {
-                    0 -> btnEvalua0
-                    1 -> btnEvalua1
-                    2 -> btnEvalua2
-                    3 -> btnEvalua3
-                    4 -> btnEvalua4
-                    5 -> btnEvalua5
-                    6 -> btnEvalua6
-                    7 -> btnEvalua7
-                    8 -> btnEvalua8
-                    9 -> btnEvalua9
-                    10 -> btnEvalua10
-                    else -> btnEvalua0
-                }
+            (0 until 11).forEach {
+                buttonList.add(
+                    when (it) {
+                        0 -> btnEvalua0
+                        1 -> btnEvalua1
+                        2 -> btnEvalua2
+                        3 -> btnEvalua3
+                        4 -> btnEvalua4
+                        5 -> btnEvalua5
+                        6 -> btnEvalua6
+                        7 -> btnEvalua7
+                        8 -> btnEvalua8
+                        9 -> btnEvalua9
+                        10 -> btnEvalua10
+                        else -> btnEvalua0
+                    }
+                )
             }
 
-
-            //Set Up view animations
-            setUpAnimations()
-
             //Set up buttons for view
-            //setUpButtons(buttonList, setUpAds(SharedPrefUtil))
+            setUpMainButtons(buttonList, this)
 
             //Set up card view custom corners
             mainCardView.setUpCardViewCustomCorners()
@@ -145,69 +126,10 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
             }
 
-            //handlePrivacyPolicy(SharedPrefUtil, test)
+            handlePrivacyPolicy(sharedPrefUtil)
 
             configureFABWsp(fabWsp)
         }
-    }
-
-    /*
-    private fun handlePrivacyPolicy(SharedPrefUtil: SharedPrefUtil, test: Boolean) {
-
-        if (!test) {
-            val privacyDialogShowed: Boolean = SharedPrefUtil.getData(
-                getString(R.string.SHARED_PREF_PRIVACY_POLICY),
-                false
-            ) as Boolean
-
-            if (!privacyDialogShowed) {
-                FirebaseDialogFragment(
-                    SharedPrefUtil,
-                    this@MainActivity
-                ).show(supportFragmentManager, "Dialog Fragment")
-
-                Timber.d("Mostrando privacy policy dialog")
-            } else {
-                Timber.d("Privacy policy dialog ya mostrado")
-            }
-        }
-    }*/
-
-    /**
-     * Function that config animations for Main Actvity
-     *
-     * @return Unit
-     */
-    private fun setUpAnimations() {
-
-        val fadeList = mutableListOf<Animation>()
-        val offset = 400L
-        val step = 150L
-
-        for (i in 0..12) {
-            fadeList.add(AnimationUtils.loadAnimation(this, R.anim.anim_fade).also {
-                when (i) {
-                    0 -> it.startOffset = offset
-                    else -> it.startOffset = offset + step * (i + 1)
-                }
-            })
-        }
-
-        //Start animations
-        tvAppName.startAnimation(fadeList[0])
-        tvVersion.startAnimation(fadeList[1])
-        buttonList[0].startAnimation(fadeList[2])
-        buttonList[1].startAnimation(fadeList[3])
-        buttonList[2].startAnimation(fadeList[4])
-        buttonList[3].startAnimation(fadeList[5])
-        buttonList[4].startAnimation(fadeList[6])
-        buttonList[5].startAnimation(fadeList[7])
-        buttonList[6].startAnimation(fadeList[8])
-        buttonList[7].startAnimation(fadeList[9])
-        buttonList[8].startAnimation(fadeList[10])
-        buttonList[9].startAnimation(fadeList[11])
-        buttonList[10].startAnimation(fadeList[12])
-
     }
 
     /**
@@ -215,7 +137,9 @@ class MainActivity : AppCompatActivity() {
      *
      * @return Unit
      */
-    private fun setUpSwitchDarkMode() {
+    private fun setUpSwitchDarkMode(binding: ActivityMainBinding) {
+
+        switchDarkMode = binding.includeSwitch.switchMaterial
 
         val nightMode =
             sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean

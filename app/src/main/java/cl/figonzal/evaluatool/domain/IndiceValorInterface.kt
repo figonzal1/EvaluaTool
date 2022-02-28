@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:13
+ Last modified 27/2/22 22:35
  */
 package cl.figonzal.evaluatool.domain
 
