@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+
+  This file is subject to the terms and conditions defined in
+  file 'LICENSE', which is part of this source code package
+
+  Autor: Felipe González
+  Email: felipe.gonzalezalarcon94@gmail.com
+
+  Copyright (c) 2022
+
+  Last modified 26/2/22 23:14
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="cl.figonzal.evaluatool">
@@ -15,11 +28,11 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".activities.SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".activities.MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".activities.SplashScreenActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -28,553 +41,553 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.MainActivity" /> <!-- EVALUA 0 -->
+        <activity android:name=".ui.MainActivity" /> <!-- EVALUA 0 -->
         <activity
-            android:name=".evalua.evalua0.Evalua0Activity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".evalua.evalua0.modulo3.HabilidadesFonologicasE0M3"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3.HabilidadesFonologicasE0M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3.RecepcionAuditivaArticulacionE0M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo3.PalabrasYFrasesE0M3"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3.PalabrasYFrasesE0M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo2.GrafoMotricidadE0M2"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.GrafoMotricidadE0M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo2.CopiaDibujosE0M2"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.CopiaDibujosE0M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo1.MemoriaVerbalE0M1"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.MemoriaVerbalE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo1.LetrasYNumerosE0M1"
-            android:parentActivityName=".evalua.evalua0.modulo1.LetrasYNumerosE0M1" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.LetrasYNumerosE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.LetrasYNumerosE0M1" />
         <activity
-            android:name=".evalua.evalua0.modulo1.ClasificacionE0M1"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.ClasificacionE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo1.OrganizacionPerceptivaE0M1"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.OrganizacionPerceptivaE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo1.SeriesE0M1"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.SeriesE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo2.IndiceGeneralEspacialE0M2"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.IndiceGeneralEspacialE0M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo1.IndiceGeneralCognitivoE0M1"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.IndiceGeneralCognitivoE0M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" />
         <activity
-            android:name=".evalua.evalua0.modulo3.IndiceGeneralLinguisticoE0M3"
-            android:parentActivityName=".evalua.evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3.IndiceGeneralLinguisticoE0M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity" /> <!-- EVALUA 1 -->
         <activity
-            android:name=".evalua.evalua1.Evalua1Activity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".evalua.evalua1.modulo3.NivelesAdaptacionE1M3"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3.NivelesAdaptacionE1M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo1.MemoriaAtencionE1M1"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo1.MemoriaAtencionE1M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo5.ValoracionGlobalEscrituraE1M5"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5.ValoracionGlobalEscrituraE1M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo6.CalculoNumeracionE1M6"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo6.CalculoNumeracionE1M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo5.OrtografiaVisualE1M5"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5.OrtografiaVisualE1M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo5.OrtografiaFoneticaE1M5"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5.OrtografiaFoneticaE1M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo4.ValoracionGlobalLecturaE1M4"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo4.ValoracionGlobalLecturaE1M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo4.ExactitudLectoraE1M4"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo4.ExactitudLectoraE1M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo4.ComprensionLectoraE1M4"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo4.ComprensionLectoraE1M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo2.ValoracionGlobalBasesRazonamientoE1M2"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo2.ValoracionGlobalBasesRazonamientoE1M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo2.OrganizacionPerceptivaE1M2"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo2.OrganizacionPerceptivaE1M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo2.ClasificacionesE1M2"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo2.ClasificacionesE1M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" />
         <activity
-            android:name=".evalua.evalua1.modulo2.SeriesE1M2"
-            android:parentActivityName=".evalua.evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo2.SeriesE1M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity" /> <!-- EVALUA 3 -->
         <activity
-            android:name=".evalua.evalua3.Evalua3Activity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".evalua.evalua3.modulo2.ReflexividadE3M2"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo2.ReflexividadE3M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo2.OrganizacionPerceptivaE3M2"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo2.OrganizacionPerceptivaE3M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo2.PensamientoAnalogicoE3M2"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo2.PensamientoAnalogicoE3M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo2.ValoracionGlobalBasesE3M2"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo2.ValoracionGlobalBasesE3M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo1.MemoriaAtencionE3M1"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo1.MemoriaAtencionE3M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo4.ComprensionLectoraE3M4"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo4.ComprensionLectoraE3M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo4.ExactitudLectoraE3M4"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo4.ExactitudLectoraE3M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo4.ValoracionGlobalLecturaE3M4"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo4.ValoracionGlobalLecturaE3M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo5.OrtografiaFoneticaE3M5"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo5.OrtografiaFoneticaE3M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo5.ValoracionGlobalEscrituraE3M5"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo5.ValoracionGlobalEscrituraE3M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo5.OrtografiaVisualRegladaE3M5"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo5.OrtografiaVisualRegladaE3M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo6.ResolucionProblemasE3M6"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.ResolucionProblemasE3M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo6.CalculoNumeracionE3M6"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.CalculoNumeracionE3M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" />
         <activity
-            android:name=".evalua.evalua3.modulo3.NivelesAdaptacionE3M3"
-            android:parentActivityName=".evalua.evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo3.NivelesAdaptacionE3M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity" /> <!-- EVALUA 7 -->
         <activity
-            android:name=".evalua.evalua7.Evalua7Activity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".evalua.evalua7.modulo1.AtencionConcentracionE7M1"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo1.AtencionConcentracionE7M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo2.RazonamientoDeductivoE7M2"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo2.RazonamientoDeductivoE7M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo2.RazonamientoInductivoE7M2"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo2.RazonamientoInductivoE7M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo2.RazonamientoEspacialE7M2"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo2.RazonamientoEspacialE7M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo4.EficaciaLectoraE7M4"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.EficaciaLectoraE7M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo4.ComprensionLectoraE7M4"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.ComprensionLectoraE7M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo4.VelocidadLectoraE7M4"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.VelocidadLectoraE7M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo5.OrtografiaFoneticaE7M5"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5.OrtografiaFoneticaE7M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo5.ExpresionEscritaE7M5"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5.ExpresionEscritaE7M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo5.OrtografiaVisualRegladaE7M5"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5.OrtografiaVisualRegladaE7M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo6.CalculoNumeracionE7M6"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.CalculoNumeracionE7M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo6.ResolucionProblemasE7M6"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.ResolucionProblemasE7M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" />
         <activity
-            android:name=".evalua.evalua7.modulo3.NivelesAdaptacionE7M3"
-            android:parentActivityName=".evalua.evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3.NivelesAdaptacionE7M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity" /> <!-- EVALUA 2 -->
         <activity
-            android:name=".evalua.evalua2.modulo5.OrtografiaE2M5"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo5.OrtografiaE2M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo5.IndiceGeneralEscrituraE2M5"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo5.IndiceGeneralEscrituraE2M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo5.ValoracionGlobalEscrituraE2M5"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo5.ValoracionGlobalEscrituraE2M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo4.IndiceGeneralLecturaE2M4"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo4.IndiceGeneralLecturaE2M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo4.ValoracionGlobalLecturaE2M4"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo4.ValoracionGlobalLecturaE2M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo4.ComprensionLectoraE2M4"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo4.ComprensionLectoraE2M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo3.NivelesAdaptacionE2M3"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo3.NivelesAdaptacionE2M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo2.MemoriaAtencionE2M2"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo2.MemoriaAtencionE2M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo1.IndiceGeneralCognitivoE2M1"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.IndiceGeneralCognitivoE2M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo1.ClasificacionesE2M1"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.ClasificacionesE2M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo1.OrganizacionPerceptivaE2M1"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.OrganizacionPerceptivaE2M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo6.CalculoNumeracionE2M6"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6.CalculoNumeracionE2M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo1.PensamientoAnalogicoE2M1"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.PensamientoAnalogicoE2M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo6.IndiceGeneralMatematicoE2M6"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6.IndiceGeneralMatematicoE2M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo6.ValoracionGlobalMatematicasE2M6"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6.ValoracionGlobalMatematicasE2M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.modulo6.ResolucionProblemasE2M6"
-            android:parentActivityName=".evalua.evalua2.Evalua2Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6.ResolucionProblemasE2M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity" />
         <activity
-            android:name=".evalua.evalua2.Evalua2Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 4 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 4 -->
         <activity
-            android:name=".evalua.evalua4.modulo1.MemoriaAtencionE4M1"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo1.MemoriaAtencionE4M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo2.ReflexividadE4M2"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.ReflexividadE4M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo2.IndiceGeneralCognitivoE4M2"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.IndiceGeneralCognitivoE4M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo2.OrganizacionPerceptivaE4M2"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.OrganizacionPerceptivaE4M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo5.IndiceGeneralEscrituraE4M5"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo5.IndiceGeneralEscrituraE4M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo2.PensamientoAnalogicoE4M2"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.PensamientoAnalogicoE4M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo3.NivelesAdaptacionE4M3"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo3.NivelesAdaptacionE4M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo4.ComprensionLectoraE4M4"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.ComprensionLectoraE4M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo6.CalculoNumeracionE4M6"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo6.CalculoNumeracionE4M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo6.IndiceGeneralMatematicoE4M6"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo6.IndiceGeneralMatematicoE4M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo6.ValoracionGlobalMatematicasE4M6"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo6.ValoracionGlobalMatematicasE4M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo4.VelocidadLectoraE4M4"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.VelocidadLectoraE4M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo6.ResolucionProblemasE4M6"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo6.ResolucionProblemasE4M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo5.OrtografiaVisualRegladaE4M5"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo5.OrtografiaVisualRegladaE4M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo4.IndiceGeneralLecturaE4M4"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.IndiceGeneralLecturaE4M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.modulo4.ValoracionGlobalLectoraE4M4"
-            android:parentActivityName=".evalua.evalua4.Evalua4Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.ValoracionGlobalLectoraE4M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity" />
         <activity
-            android:name=".evalua.evalua4.Evalua4Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 5 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 5 -->
         <activity
-            android:name=".evalua.evalua5.modulo6.ValoracionGlobalMatematicasE5M6"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.ValoracionGlobalMatematicasE5M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo6.ResolucionProblemasE5M6"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.ResolucionProblemasE5M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo6.CalculoNumeracionE5M6"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.CalculoNumeracionE5M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo5.OrtografiaVisualRegladaE5M5"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo5.OrtografiaVisualRegladaE5M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo5.OrtografiaFoneticaE5M5"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo5.OrtografiaFoneticaE5M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo5.ValoracionGlobalEscrituraE5M5"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo5.ValoracionGlobalEscrituraE5M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo4.ValoracionGlobalLecturaE5M4"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.ValoracionGlobalLecturaE5M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo4.ExactitudLectoraE5M4"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.ExactitudLectoraE5M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo4.VelocidadLectoraE5M4"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.VelocidadLectoraE5M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo4.ComprensionLectoraE5M4"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.ComprensionLectoraE5M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo3.NivelesAdaptacionE5M3"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo3.NivelesAdaptacionE5M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo2.ValoracionGlobalRazonamientoE5M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo2.OrganizacionPerceptivaE5M2"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo2.OrganizacionPerceptivaE5M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo2.PensamientoAnalogicoE5M2"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo2.PensamientoAnalogicoE5M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo2.ReflexividadE5M2"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo2.ReflexividadE5M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.modulo1.MemoriaAtencionE5M1"
-            android:parentActivityName=".evalua.evalua5.Evalua5Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo1.MemoriaAtencionE5M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity" />
         <activity
-            android:name=".evalua.evalua5.Evalua5Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 6 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 6 -->
         <activity
-            android:name=".evalua.evalua6.modulo6.IndiceGeneralMatematicasE6M6"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo6.IndiceGeneralMatematicasE6M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo6.ValoracionGlobalMatematicasE6M6"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo6.ValoracionGlobalMatematicasE6M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo4.IndiceGeneralLecturaE6M4"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.IndiceGeneralLecturaE6M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo4.ValoracionGlobalLecturaE6M4"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.ValoracionGlobalLecturaE6M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo4.VelocidadLectoraE6M4"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.VelocidadLectoraE6M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo4.ComprensionLectoraE6M4"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.ComprensionLectoraE6M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo6.ResolucionProblemasE6M6"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo6.ResolucionProblemasE6M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo6.CalculoNumeracionE6M6"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo6.CalculoNumeracionE6M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo5.IndiceGeneralEscrituraE6M5"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo5.IndiceGeneralEscrituraE6M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo5.OrtografiaVisualRegladaE6M5"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo5.OrtografiaVisualRegladaE6M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo3.NivelesAdaptacionE6M3"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo3.NivelesAdaptacionE6M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo2.MemoriaAtencionE6M2"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo2.MemoriaAtencionE6M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo1.IndiceGeneralCognitivoE6M1"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.IndiceGeneralCognitivoE6M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo1.ValoracionGlobalRazonamientoE6M1"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.ValoracionGlobalRazonamientoE6M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo1.OrganizacionPerceptivaE6M1"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.OrganizacionPerceptivaE6M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo1.PensamientoAnalogicoE6M1"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.PensamientoAnalogicoE6M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.modulo1.ReflexividadE6M1"
-            android:parentActivityName=".evalua.evalua6.Evalua6Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.ReflexividadE6M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity" />
         <activity
-            android:name=".evalua.evalua6.Evalua6Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 8 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 8 -->
         <activity
-            android:name=".evalua.evalua8.modulo6.IndiceGeneralMatematicasE8M6"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.IndiceGeneralMatematicasE8M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo6.ValoracionGlobalMatematicasE8M6"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.ValoracionGlobalMatematicasE8M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo6.ResolucionProblemasE8M6"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.ResolucionProblemasE8M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo6.CalculoNumeracionE8M6"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.CalculoNumeracionE8M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo5.IndiceGeneralEscrituraE8M5"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo5.IndiceGeneralEscrituraE8M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo5.OrtografiaVisualRegladaE8M5"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo5.OrtografiaVisualRegladaE8M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo4.IndiceGeneralLecturaE8M4"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.IndiceGeneralLecturaE8M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo4.EficaciaLectoraE8M4"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.EficaciaLectoraE8M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo4.ComprensionLectoraE8M4"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.ComprensionLectoraE8M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo3.NivelesAdaptacionE8M3"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3.NivelesAdaptacionE8M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo4.VelocidadLectoraE8M4"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.VelocidadLectoraE8M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo2.IndiceGeneralCognitivoE8M2"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.IndiceGeneralCognitivoE8M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo2.ValoracionGlobalRazonamientoE8M2"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.ValoracionGlobalRazonamientoE8M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo2.RazonamientoDeductivoE8M2"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoDeductivoE8M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo2.RazonamientoEspacialE8M2"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoEspacialE8M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo2.RazonamientoInductivoE8M2"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoInductivoE8M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.modulo1.AtencionConcentracionE8M1"
-            android:parentActivityName=".evalua.evalua8.Evalua8Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo1.AtencionConcentracionE8M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity" />
         <activity
-            android:name=".evalua.evalua8.Evalua8Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 9 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 9 -->
         <activity
-            android:name=".evalua.evalua9.modulo3.NivelesAdaptacionE9M3"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3.NivelesAdaptacionE9M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo6.IndiceGeneralMatematicasE9M6"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6.IndiceGeneralMatematicasE9M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo6.ValoracionGlobalMatematicasE9M6"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6.ValoracionGlobalMatematicasE9M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo6.ResolucionProblemasE9M6"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6.ResolucionProblemasE9M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo6.CalculoNumeracionE9M6"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6.CalculoNumeracionE9M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo5.IndiceGeneralEscrituraE9M5"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo5.IndiceGeneralEscrituraE9M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo5.OrtografiaVisualRegladaE9M5"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo5.OrtografiaVisualRegladaE9M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo4.IndiceGeneralLecturaE9M4"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.IndiceGeneralLecturaE9M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo4.VelocidadLectoraE9M4"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.VelocidadLectoraE9M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo4.EficaciaLectoraE9M4"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.EficaciaLectoraE9M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo4.ComprensionLectoraE9M4"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.ComprensionLectoraE9M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo2.IndiceGeneralCognitivoE9M2"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.IndiceGeneralCognitivoE9M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo2.ValoracionGlobalRazonamientoE9M2"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.ValoracionGlobalRazonamientoE9M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo2.RazonamientoDeductivoE9M2"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoDeductivoE9M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo2.RazonamientoEspacialE9M2"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoEspacialE9M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo2.RazonamientoInductivoE9M2"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoInductivoE9M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.modulo1.AtencionConcentracionE9M1"
-            android:parentActivityName=".evalua.evalua9.Evalua9Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo1.AtencionConcentracionE9M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity" />
         <activity
-            android:name=".evalua.evalua9.Evalua9Activity"
-            android:parentActivityName=".activities.MainActivity" /> <!-- EVALUA 10 -->
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity"
+            android:parentActivityName=".ui.MainActivity" /> <!-- EVALUA 10 -->
         <activity
-            android:name=".evalua.evalua10.Evalua10Activity"
-            android:parentActivityName=".activities.MainActivity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity"
+            android:parentActivityName=".ui.MainActivity" />
         <activity
-            android:name=".evalua.evalua10.modulo6.IndiceGeneralMatematicasE10M6"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.IndiceGeneralMatematicasE10M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo6.ValoracionGlobalMatematicasE10M6"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.ValoracionGlobalMatematicasE10M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo6.ResolucionProblemasE10M6"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.ResolucionProblemasE10M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo6.CalculoNumeracionE10M6"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.CalculoNumeracionE10M6"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo5.IndiceGeneralEscrituraE10M5"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo5.IndiceGeneralEscrituraE10M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo5.OrtografiaVisualRegladaE10M5"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo5.OrtografiaVisualRegladaE10M5"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo4.VelocidadLectoraE10M4"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.VelocidadLectoraE10M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo4.IndiceGeneralLecturaE10M4"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.IndiceGeneralLecturaE10M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo4.ComprensionLectoraE10M4"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.ComprensionLectoraE10M4"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo3.NivelesAdaptacionE10M3"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo3.NivelesAdaptacionE10M3"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo2.IndiceGeneralCognitivoE10M2"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.IndiceGeneralCognitivoE10M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo2.ValoracionGlobalRazonamientoE10M2"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.ValoracionGlobalRazonamientoE10M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo2.RazonamientoDeductivoE10M2"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoDeductivoE10M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo2.RazonamientoEspacialE10M2"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoEspacialE10M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo2.RazonamientoInductivoE10M2"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoInductivoE10M2"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
         <activity
-            android:name=".evalua.evalua10.modulo1.AtencionConcentracionE10M1"
-            android:parentActivityName=".evalua.evalua10.Evalua10Activity" />
+            android:name="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo1.AtencionConcentracionE10M1"
+            android:parentActivityName="cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity" />
 
         <!-- Activar desde config -->
         <!-- REF

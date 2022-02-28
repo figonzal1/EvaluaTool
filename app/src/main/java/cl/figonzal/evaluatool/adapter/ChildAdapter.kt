@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 10/12/21, 12:46 AM
+ Last modified 27/2/22 22:04
  */
 
 package cl.figonzal.evaluatool.adapter
@@ -20,9 +20,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ChildItemListBinding
-import cl.figonzal.evaluatool.model.Child
-import cl.figonzal.evaluatool.utilities.ConfigRoutes
-import cl.figonzal.evaluatool.utilities.RouteHandler
+import cl.figonzal.evaluatool.domain.model.Child
+import cl.figonzal.evaluatool.utils.ConfigRoutes
+import cl.figonzal.evaluatool.utils.RouteHandler
 
 class ChildAdapter(
     private val routeMapKey: String,
