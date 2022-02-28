@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:24
+ Last modified 27/2/22 23:54
  */
 package cl.figonzal.evaluatool.ui.dialogs
 
@@ -18,8 +18,8 @@ import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.adapter.BaremoAdapter
 import cl.figonzal.evaluatool.databinding.BaremoDialogLayoutBinding
+import cl.figonzal.evaluatool.ui.adapter.BaremoAdapter
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import timber.log.Timber
 

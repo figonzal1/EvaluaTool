@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:04
+ Last modified 27/2/22 23:29
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
@@ -20,7 +20,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralCognitivoE0M1Binding
-import cl.figonzal.evaluatool.domain.evalua.IndiceValorInterface
+import cl.figonzal.evaluatool.domain.IndiceValorInterface
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.formatResult
 import cl.figonzal.evaluatool.utils.setIndexAnimation

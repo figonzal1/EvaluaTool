@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:27
+ Last modified 27/2/22 23:54
  */
 
 package cl.figonzal.evaluatool.utils
@@ -20,11 +20,15 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
+import cl.figonzal.evaluatool.ui.dialogs.FirebaseDialogFragment
 import cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity
@@ -178,65 +182,106 @@ fun ImageView.setAlertDialogCorregido() =
 /**
  * Function that handle listener for buttons in Main Activity
  */
-fun Activity.setUpButtons(
-    buttonList: MutableList<MaterialButton>
+fun Activity.setUpMainButtons(
+    buttonList: MutableList<MaterialButton>,
+    binding: ActivityMainBinding,
 ) {
 
-    (0 until buttonList.size).forEach { i ->
+    with(buttonList) {
 
-        buttonList[i].setOnClickListener {
+        setUpAnimations(this, binding)
 
-            var activityToOpen: Class<out Activity?>? = null
+        forEachIndexed { i, button ->
 
-            when (i) {
-                0 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_0))
-                    activityToOpen = Evalua0Activity::class.java
+            button.setOnClickListener {
+
+                var activityToOpen: Class<out Activity?>? = null
+
+                when (i) {
+                    0 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_0))
+                        activityToOpen = Evalua0Activity::class.java
+                    }
+                    1 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_1))
+                        activityToOpen = Evalua1Activity::class.java
+                    }
+                    2 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_2))
+                        activityToOpen = Evalua2Activity::class.java
+                    }
+                    3 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_3))
+                        activityToOpen = Evalua3Activity::class.java
+                    }
+                    4 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_4))
+                        activityToOpen = Evalua4Activity::class.java
+                    }
+                    5 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_5))
+                        activityToOpen = Evalua5Activity::class.java
+                    }
+                    6 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_6))
+                        activityToOpen = Evalua6Activity::class.java
+                    }
+                    7 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_7))
+                        activityToOpen = Evalua7Activity::class.java
+                    }
+                    8 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_8))
+                        activityToOpen = Evalua8Activity::class.java
+                    }
+                    9 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_9))
+                        activityToOpen = Evalua9Activity::class.java
+                    }
+                    10 -> {
+                        Timber.d(getString(R.string.BTN_EVALUA_10))
+                        activityToOpen = Evalua10Activity::class.java
+                    }
                 }
-                1 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_1))
-                    activityToOpen = Evalua1Activity::class.java
-                }
-                2 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_2))
-                    activityToOpen = Evalua2Activity::class.java
-                }
-                3 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_3))
-                    activityToOpen = Evalua3Activity::class.java
-                }
-                4 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_4))
-                    activityToOpen = Evalua4Activity::class.java
-                }
-                5 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_5))
-                    activityToOpen = Evalua5Activity::class.java
-                }
-                6 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_6))
-                    activityToOpen = Evalua6Activity::class.java
-                }
-                7 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_7))
-                    activityToOpen = Evalua7Activity::class.java
-                }
-                8 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_8))
-                    activityToOpen = Evalua8Activity::class.java
-                }
-                9 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_9))
-                    activityToOpen = Evalua9Activity::class.java
-                }
-                10 -> {
-                    Timber.d(getString(R.string.BTN_EVALUA_10))
-                    activityToOpen = Evalua10Activity::class.java
-                }
+                val intent = Intent(this@setUpMainButtons, activityToOpen)
+                startActivity(intent)
+                //adsService.checkIntersitialOnStart(activityToOpen, test)
             }
-            //adsService.checkIntersitialOnStart(activityToOpen, test)
         }
     }
+}
+
+private fun Activity.setUpAnimations(
+    buttonList: MutableList<MaterialButton>,
+    binding: ActivityMainBinding,
+) {
+
+    val fadeList = mutableListOf<Animation>()
+    val offset = 400L
+    val step = 150L
+
+    for (i in 0..12) {
+        fadeList.add(AnimationUtils.loadAnimation(this, R.anim.anim_fade).also {
+            when (i) {
+                0 -> it.startOffset = offset
+                else -> it.startOffset = offset + step * (i + 1)
+            }
+        })
+    }
+
+    //Start animations
+    fadeList.forEachIndexed { index, animation ->
+        when (index) {
+            0 -> binding.tvNombreApp.startAnimation(animation)
+            1 -> binding.tvVersion.startAnimation(animation)
+        }
+    }
+
+    buttonList.forEachIndexed { index, materialButton ->
+        println(index)
+        materialButton.startAnimation(fadeList[index + 2])
+    }
+
 }
 
 /**
@@ -261,3 +306,24 @@ fun MaterialCardView.setUpCardViewCustomCorners() {
     cvFormula.visibility = View.VISIBLE
     mathJaxWebView.setText(formula)
 }*/
+
+fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
+
+    val privacyDialogShowed: Boolean = sharedPrefUtil.getData(
+        getString(R.string.SHARED_PREF_PRIVACY_POLICY),
+        false
+    ) as Boolean
+
+    when {
+        !privacyDialogShowed -> {
+            FirebaseDialogFragment(sharedPrefUtil, this).show(
+                supportFragmentManager,
+                "Dialog Fragment"
+            )
+
+            Timber.d(getString(R.string.privacy_policy_show))
+        }
+        else -> Timber.d(getString(R.string.privacy_policy_not_show))
+    }
+
+}

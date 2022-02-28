@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 26-07-21 15:33
+ Last modified 27/2/22 23:54
  */
 
 package cl.figonzal.evaluatool.service
@@ -17,12 +17,13 @@ import android.app.Activity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
-import androidx.preference.PreferenceManager
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import timber.log.Timber
 
 class NightModeService(
-    private val activity: Activity
+    private val activity: Activity,
+    private val sharedPrefUtil: SharedPrefUtil
 ) : DefaultLifecycleObserver {
 
 
@@ -34,11 +35,8 @@ class NightModeService(
 
     private fun checkNightMode() {
 
-        //Leer preference settings
-        val sharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity)
-
         val manualNightMode =
-            sharedPreferences.getBoolean(activity.getString(R.string.NIGHT_MODE_KEY), false)
+            sharedPrefUtil.getData(activity.getString(R.string.NIGHT_MODE_KEY), false) as Boolean
 
         //MANUAL MODE
         //manual mode activated
@@ -47,7 +45,7 @@ class NightModeService(
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Timber.i(
+                Timber.d(
                     activity.getString(R.string.TAG_NIGHT_MODE) + ": ON"
                 )
             }
@@ -55,7 +53,7 @@ class NightModeService(
             else -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Timber.i(
+                Timber.d(
                     activity.getString(R.string.TAG_NIGHT_MODE) + ": OFF"
                 )
             }

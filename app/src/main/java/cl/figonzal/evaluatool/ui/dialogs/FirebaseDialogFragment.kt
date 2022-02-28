@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:27
+ Last modified 27/2/22 23:20
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
 
+import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
 import android.net.Uri
@@ -25,7 +26,6 @@ import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FirebaseDialogLayoutBinding
-import cl.figonzal.evaluatool.ui.MainActivity
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.crashlytics.ktx.crashlytics
@@ -34,7 +34,7 @@ import com.google.firebase.ktx.Firebase
 
 class FirebaseDialogFragment(
     private val sharedPreferences: SharedPrefUtil,
-    val mainActivity: MainActivity
+    val activity: Activity
 ) : DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -63,7 +63,7 @@ class FirebaseDialogFragment(
                     getString(R.string.SHARED_PREF_PRIVACY_POLICY),
                     false
                 )
-                mainActivity.finish()
+                activity.finish()
             }
             val spanText = SpannableString("Política de privacidad")
 
