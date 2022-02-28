@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 16-08-21 16:23
+  Last modified 27/2/22 19:45
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -385,7 +385,7 @@
 
     <!-- Shared pref -->
     <string name="SHARED_PREF_END_REWARD_TIME" translatable="false">end_reward_time</string>
-    <string name="MAIN_SHARED_PREF" translatable="false">evalua_tool</string>
+    <string name="shared_pref_master_key" translatable="false">evalua_tool</string>
     <string name="SHARED_PREF_ACTUAL_VERSION_CODE" translatable="false">shared_pref_actual_version_code</string>
 
     <!-- REWARD DIALOG TAGS & ADS -->
@@ -648,5 +648,10 @@
     <string name="SHARED_PREF_PRIVACY_POLICY">dialog_privacy_policy</string>
     <string name="configuracion">Configuración</string>
     <string name="TAG_NIGHT_MODE" translatable="false">NIGHT MODE</string>
+    <string name="shared_pref_version_app">acerca</string>
+    <string name="firebase_crashlytics_on">Registro de fallos activado</string>
+    <string name="firebase_crashlytics_off">Registro de fallos desactivado</string>
+    <string name="firebase_performance_on">Registro de rendimiento activado</string>
+    <string name="firebase_performance_off">Registro de rendimiento desactivado</string>
 
 </resources>

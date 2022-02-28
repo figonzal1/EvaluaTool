@@ -6,13 +6,13 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 21-07-21 22:54
+ Last modified 26/2/22 23:19
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utilities.EvaluaUtils.calcularNivelTest
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularNivelTest
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith

@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 10/11/21, 5:23 PM
+ Last modified 27/2/22 22:04
  */
 
 package cl.figonzal.evaluatool.adapter
@@ -21,8 +21,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.HeaderItemListBinding
-import cl.figonzal.evaluatool.model.Child
-import cl.figonzal.evaluatool.model.Header
+import cl.figonzal.evaluatool.domain.model.Child
+import cl.figonzal.evaluatool.domain.model.Header
 
 class HeaderAdapter(
     private val routeMapKey: String,

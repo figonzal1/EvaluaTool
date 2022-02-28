@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 21-07-21 22:47
+ Last modified 26/2/22 23:01
  */
 
 package cl.figonzal.evaluatool
@@ -23,7 +23,7 @@ import androidx.test.espresso.matcher.ViewMatchers.withClassName
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.filters.LargeTest
-import cl.figonzal.evaluatool.activities.MainActivity
+import cl.figonzal.evaluatool.ui.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.`is`

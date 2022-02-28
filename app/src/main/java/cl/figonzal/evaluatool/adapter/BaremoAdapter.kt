@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 21-07-21 22:53
+ Last modified 26/2/22 23:19
  */
 package cl.figonzal.evaluatool.adapter
 
@@ -20,7 +20,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.adapter.BaremoAdapter.BaremoViewHolder
 import cl.figonzal.evaluatool.databinding.BaremoItemListBinding
-import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utils.EvaluaUtils
 
 /**
  * Adapter used to show baremo table
