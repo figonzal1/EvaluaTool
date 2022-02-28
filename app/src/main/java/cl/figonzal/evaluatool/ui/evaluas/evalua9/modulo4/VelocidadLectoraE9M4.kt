@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 28/2/22 1:27
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4
@@ -16,6 +16,7 @@ package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE9M4Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.velocidadFragments.FragmentStateAdapterE10M4
@@ -29,6 +30,7 @@ class VelocidadLectoraE9M4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
 
         with(ActivityVelocidadLectoraE9M4Binding.inflate(layoutInflater)) {
 

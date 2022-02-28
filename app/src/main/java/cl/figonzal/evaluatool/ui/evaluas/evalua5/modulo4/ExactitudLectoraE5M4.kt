@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:19
+ Last modified 28/2/22 1:20
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4
 
@@ -19,6 +19,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityExactitudLectoraE5M4Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo4.ExactitudLectoraE5M4Resolver
@@ -68,6 +69,7 @@ class ExactitudLectoraE5M4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityExactitudLectoraE5M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:16
+ Last modified 28/2/22 1:06
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
@@ -19,6 +19,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityLetrasYNumerosE0M1Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.LetrasYNumerosE0M1Resolver
@@ -67,6 +68,7 @@ class LetrasYNumerosE0M1 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityLetrasYNumerosE0M1Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

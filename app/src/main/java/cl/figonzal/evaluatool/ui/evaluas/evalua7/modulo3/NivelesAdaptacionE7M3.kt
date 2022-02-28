@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 18:52
+ Last modified 28/2/22 1:24
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3
@@ -16,6 +16,7 @@ package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE7M3Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3.adaptacionFragments.FragmentStateAdapterE7M3
@@ -28,6 +29,7 @@ class NivelesAdaptacionE7M3 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
 
         with(ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater)) {
             setContentView(root)

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:50
+ Last modified 28/2/22 1:00
  */
 package cl.figonzal.evaluatool.ui
 
@@ -18,6 +18,7 @@ import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.BuildConfig
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
@@ -49,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

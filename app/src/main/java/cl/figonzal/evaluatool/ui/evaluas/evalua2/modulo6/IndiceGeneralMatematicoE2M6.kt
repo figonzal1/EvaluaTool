@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:29
+ Last modified 28/2/22 1:24
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6
 
@@ -18,6 +18,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityIndiceGeneralMatematicaE2M6Binding
 import cl.figonzal.evaluatool.domain.IndiceValorInterface
@@ -45,6 +46,7 @@ class IndiceGeneralMatematicoE2M6 : AppCompatActivity(), IndiceValorInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityIndiceGeneralMatematicaE2M6Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

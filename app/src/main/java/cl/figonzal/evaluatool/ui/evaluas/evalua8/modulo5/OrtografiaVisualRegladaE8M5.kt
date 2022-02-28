@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:19
+ Last modified 28/2/22 1:27
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo5
@@ -20,6 +20,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualRegladaE8M5Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo5.OrtografiaVisualRegladaE8M5Resolver
@@ -70,6 +71,7 @@ class OrtografiaVisualRegladaE8M5 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityOrtografiaVisualRegladaE8M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
