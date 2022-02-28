@@ -8,13 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 28/2/22 1:24
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE7M4Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.velocidadFragments.FragmentStateAdapterE7M4
@@ -27,6 +28,7 @@ class VelocidadLectoraE7M4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
 
         with(ActivityVelocidadLectoraE7M4Binding.inflate(layoutInflater)) {
 

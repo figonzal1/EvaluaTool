@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:29
+ Last modified 28/2/22 1:40
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo2
 
@@ -18,6 +18,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityValoracionGlobalRazonamientoE5M2Binding
 import cl.figonzal.evaluatool.domain.IndiceValorInterface
@@ -49,6 +50,7 @@ class ValoracionGlobalRazonamientoE5M2 : AppCompatActivity(), IndiceValorInterfa
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityValoracionGlobalRazonamientoE5M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

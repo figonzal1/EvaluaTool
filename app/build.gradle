@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 9:45
+ Last modified 28/2/22 0:27
  */
 
 apply plugin: 'com.android.application'
@@ -94,6 +94,7 @@ dependencies {
 
     implementation "com.google.android.material:material:1.5.0" //Material Design
     implementation 'androidx.preference:preference-ktx:1.2.0' //Preferencias de usuario
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta01' //splash screen
 
     //FIREBASE
     implementation platform('com.google.firebase:firebase-bom:29.0.4')
@@ -105,7 +106,7 @@ dependencies {
 
     //Google Play
     implementation("com.google.android.play:core-ktx:1.8.1")
-    implementation 'com.google.android.gms:play-services-ads:20.5.0'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

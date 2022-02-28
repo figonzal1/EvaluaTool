@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:16
+ Last modified 28/2/22 1:24
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5
 
@@ -19,6 +19,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaFoneticaE1M5Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Resolver
@@ -63,6 +64,7 @@ class OrtografiaFoneticaE1M5 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityOrtografiaFoneticaE1M5Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

@@ -8,13 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:54
+ Last modified 28/2/22 1:40
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2
 
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityEvalua2Binding
@@ -31,6 +32,7 @@ class Evalua2Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityEvalua2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

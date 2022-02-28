@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:19
+ Last modified 28/2/22 1:37
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2
@@ -20,6 +20,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityRazonamientoEspacialE8M2Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo2.RazonamientoEspacialE8M2Resolver
@@ -65,6 +66,7 @@ class RazonamientoEspacialE8M2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityRazonamientoEspacialE8M2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 

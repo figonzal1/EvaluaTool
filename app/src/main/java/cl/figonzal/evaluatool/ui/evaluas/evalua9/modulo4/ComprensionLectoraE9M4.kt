@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:21
+ Last modified 28/2/22 1:27
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4
@@ -20,6 +20,7 @@ import android.text.TextWatcher
 import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityComprensionLectoraE9M4Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4.ComprensionLectoraE9M4Resolver
@@ -56,6 +57,7 @@ class ComprensionLectoraE9M4 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        installSplashScreen()
         binding = ActivityComprensionLectoraE9M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
