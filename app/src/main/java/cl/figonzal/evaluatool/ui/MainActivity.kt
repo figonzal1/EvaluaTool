@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:00
+ Last modified 05-03-22 12:02
  */
 package cl.figonzal.evaluatool.ui
 
@@ -27,6 +27,7 @@ import cl.figonzal.evaluatool.service.GooglePlayService
 import cl.figonzal.evaluatool.service.NightModeService
 import cl.figonzal.evaluatool.service.UpdaterService
 import cl.figonzal.evaluatool.utils.*
+import com.google.android.gms.ads.AdView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
 import timber.log.Timber
@@ -34,11 +35,12 @@ import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var adView: AdView
+
     private lateinit var sharedPrefUtil: SharedPrefUtil
 
     private lateinit var binding: ActivityMainBinding
     private val updateCode: Int = 350
-    val test: Boolean = false
 
     //View Attributes
     private lateinit var switchDarkMode: SwitchMaterial
@@ -60,11 +62,15 @@ class MainActivity : AppCompatActivity() {
         when {
             Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> {
                 Timber.d("ANDROID_VERSION < Q: ${Build.VERSION.SDK_INT}")
+                //NightMode service for old versions
                 lifecycle.addObserver(NightModeService(this, sharedPrefUtil))
 
                 setUpSwitchDarkMode(binding)
             }
-            else -> Timber.d("ANDROID_VERSION > Q: ${Build.VERSION.SDK_INT}")
+            else -> {
+                Timber.d("ANDROID_VERSION > Q: ${Build.VERSION.SDK_INT}")
+                binding.hideSwitchNightMode()
+            }
         }
 
         //GP services
@@ -131,6 +137,8 @@ class MainActivity : AppCompatActivity() {
             handlePrivacyPolicy(sharedPrefUtil)
 
             configureFABWsp(fabWsp)
+
+            adView = startAds(binding.adViewContainer)
         }
     }
 
