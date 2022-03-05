@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 04-03-22 19:57
+ Last modified 05-03-22 19:09
  */
 
 package cl.figonzal.evaluatool.utils
@@ -26,7 +26,7 @@ import timber.log.Timber
 /*
  * BANNER SECTION
  */
-fun Activity.startAds(frameLayout: FrameLayout): AdView {
+fun Activity.startAds(frameLayout: FrameLayout, idBanner: String): AdView {
 
     var initialLayoutComplete = false
 
@@ -38,24 +38,24 @@ fun Activity.startAds(frameLayout: FrameLayout): AdView {
 
             if (!initialLayoutComplete) {
                 initialLayoutComplete = true
-                adView.loadAnchored(this@startAds)
+                adView.loadAnchored(this@startAds, idBanner)
             }
         }
     }
     return adView
 }
 
-fun AdView.loadAnchored(activity: Activity) {
+fun AdView.loadAnchored(activity: Activity, idBanner: String) {
 
     //getAdSize
     adSize = anchoredAddSize(this, activity)
 
-    adUnitId = activity.getString(R.string.ADMOB_ID_BANNER)
+    adUnitId = idBanner
 
     adListener = object : AdListener() {
 
         override fun onAdFailedToLoad(loadAdError: LoadAdError) {
-            Timber.w(activity.getString(R.string.ADMOB_AD_FAILED))
+            Timber.w(activity.getString(R.string.ADMOB_AD_FAILED) + loadAdError)
             visibility = View.GONE
         }
 

@@ -8,13 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 12:02
+ Last modified 05-03-22 19:14
  */
 
 package cl.figonzal.evaluatool.utils
 
 import android.app.Activity
 import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -30,17 +31,6 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
 import cl.figonzal.evaluatool.ui.dialogs.FirebaseDialogFragment
-import cl.figonzal.evaluatool.ui.evaluas.evalua0.Evalua0Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua10.Evalua10Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua2.Evalua2Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua3.Evalua3Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua4.Evalua4Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua5.Evalua5Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity
-import cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
@@ -180,81 +170,21 @@ fun ImageView.setAlertDialogCorregido() =
             .show()
     }
 
-/**
- * Function that handle listener for buttons in Main Activity
- */
-fun Activity.setUpMainButtons(
-    buttonList: MutableList<MaterialButton>,
-    binding: ActivityMainBinding,
-) {
-
-    with(buttonList) {
-
-        setUpAnimations(this, binding)
-
-        forEachIndexed { i, button ->
-
-            button.setOnClickListener {
-
-                var activityToOpen: Class<out Activity?>? = null
-
-                when (i) {
-                    0 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_0))
-                        activityToOpen = Evalua0Activity::class.java
-                    }
-                    1 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_1))
-                        activityToOpen = Evalua1Activity::class.java
-                    }
-                    2 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_2))
-                        activityToOpen = Evalua2Activity::class.java
-                    }
-                    3 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_3))
-                        activityToOpen = Evalua3Activity::class.java
-                    }
-                    4 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_4))
-                        activityToOpen = Evalua4Activity::class.java
-                    }
-                    5 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_5))
-                        activityToOpen = Evalua5Activity::class.java
-                    }
-                    6 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_6))
-                        activityToOpen = Evalua6Activity::class.java
-                    }
-                    7 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_7))
-                        activityToOpen = Evalua7Activity::class.java
-                    }
-                    8 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_8))
-                        activityToOpen = Evalua8Activity::class.java
-                    }
-                    9 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_9))
-                        activityToOpen = Evalua9Activity::class.java
-                    }
-                    10 -> {
-                        Timber.d(getString(R.string.BTN_EVALUA_10))
-                        activityToOpen = Evalua10Activity::class.java
-                    }
-                }
-                val intent = Intent(this@setUpMainButtons, activityToOpen)
-                startActivity(intent)
-                //adsService.checkIntersitialOnStart(activityToOpen, test)
-            }
-        }
-    }
+inline fun <reified T : Activity> Activity.startActivity() {
+    val intent = Intent(this, T::class.java)
+    this.startActivity(intent)
 }
 
-private fun Activity.setUpAnimations(
-    buttonList: MutableList<MaterialButton>,
+/**
+ * Function that make animations for button situated in MainActivity
+ *
+ * @param buttonList List of material buttons
+ * @param binding ViewBinding
+ * @receiver MainAcitivy
+ */
+fun List<MaterialButton>.setUpAnimations(
     binding: ActivityMainBinding,
+    context: Context
 ) {
 
     val fadeList = mutableListOf<Animation>()
@@ -262,7 +192,7 @@ private fun Activity.setUpAnimations(
     val step = 150L
 
     for (i in 0..12) {
-        fadeList.add(AnimationUtils.loadAnimation(this, R.anim.anim_fade).also {
+        fadeList.add(AnimationUtils.loadAnimation(context, R.anim.anim_fade).also {
             when (i) {
                 0 -> it.startOffset = offset
                 else -> it.startOffset = offset + step * (i + 1)
@@ -278,7 +208,7 @@ private fun Activity.setUpAnimations(
         }
     }
 
-    buttonList.forEachIndexed { index, materialButton ->
+    forEachIndexed { index, materialButton ->
         materialButton.startAnimation(fadeList[index + 2])
     }
 
