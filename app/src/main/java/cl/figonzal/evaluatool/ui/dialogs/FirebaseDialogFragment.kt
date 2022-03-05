@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:20
+ Last modified 05-03-22 13:24
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -31,7 +31,12 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.firebase.crashlytics.ktx.crashlytics
 import com.google.firebase.ktx.Firebase
 
-
+/**
+ * Class that handle privacy_policy dialog fragment
+ *
+ * @property sharedPreferences Preferences uses to load keys/values for dialog
+ * @property activity Used to finish activity
+ */
 class FirebaseDialogFragment(
     private val sharedPreferences: SharedPrefUtil,
     val activity: Activity
