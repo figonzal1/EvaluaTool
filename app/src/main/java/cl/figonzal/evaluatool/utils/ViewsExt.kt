@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:54
+ Last modified 05-03-22 12:02
  */
 
 package cl.figonzal.evaluatool.utils
@@ -20,6 +20,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -278,7 +279,6 @@ private fun Activity.setUpAnimations(
     }
 
     buttonList.forEachIndexed { index, materialButton ->
-        println(index)
         materialButton.startAnimation(fadeList[index + 2])
     }
 
@@ -326,4 +326,12 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
         else -> Timber.d(getString(R.string.privacy_policy_not_show))
     }
 
+}
+
+fun ActivityMainBinding.hideSwitchNightMode() {
+    View.INVISIBLE.apply {
+        includeSwitch.switchMaterial.visibility = this
+        includeSwitch.ivLightMode.visibility = this
+        includeSwitch.ivNightMode.visibility = this
+    }
 }

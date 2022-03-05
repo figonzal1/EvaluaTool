@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 24/2/22 10:11
+ Last modified 04-03-22 19:55
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -42,7 +42,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://jitpack.io' }
     }
 }
 
