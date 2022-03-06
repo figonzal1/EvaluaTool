@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 05-03-22 22:05
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo3.adaptacionFragments
@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.ui.AdMobFragment
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 
 class FragmentStateAdapterE6M3(fa: FragmentActivity) :
@@ -24,20 +25,22 @@ class FragmentStateAdapterE6M3(fa: FragmentActivity) :
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> MotivacionFragmentE6M3.newInstance()
-            1 -> AutoControlFragmentE6M3.newInstance()
-            2 -> ConductaProSocialFragmentE6M3.newInstance()
-            3 -> AutoEstimaFragmentE6M3.newInstance()
-            else -> AutoEstimaFragmentE6M3.newInstance()
+            0 -> AdMobFragment.newInstance()
+            1 -> MotivacionFragmentE6M3.newInstance()
+            2 -> AutoControlFragmentE6M3.newInstance()
+            3 -> ConductaProSocialFragmentE6M3.newInstance()
+            4 -> AutoEstimaFragmentE6M3.newInstance()
+            else -> AdMobFragment.newInstance()
         }
     }
 
     override fun getItemCount(): Int {
-        return tabs.size
+        return tabsArray.size
     }
 
     companion object {
-        val tabs = listOf(
+        val tabsArray = listOf(
+            "",
             EvaluaUtils.get(R.string.TOOLBAR_MOTIVACION),
             EvaluaUtils.get(R.string.TOOLBAR_AUTOCONTROL),
             EvaluaUtils.get(R.string.TOOLBAR_CONDUCTAS_PROSOCIALES),

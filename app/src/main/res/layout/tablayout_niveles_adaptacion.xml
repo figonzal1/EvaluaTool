@@ -6,17 +6,17 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 08-06-21 22:21
+  Last modified 05-03-22 20:01
   -->
 
 <com.google.android.material.tabs.TabLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/tabs_niveles_adaptacion"
+    android:id="@+id/tabsLayout_niveles_adaptacion"
     style="@style/Widget.MaterialComponents.TabLayout.Colored"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/tablayout_height"
+    android:layout_height="?attr/actionBarSize"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/include_toolbar"
@@ -25,6 +25,7 @@
     app:tabIndicatorColor="@color/colorSecondary"
     app:tabIndicatorFullWidth="true"
     app:tabIndicatorGravity="bottom"
+    app:tabInlineLabel="true"
     app:tabMode="scrollable"
     app:tabSelectedTextColor="@color/colorOnPrimary"
     app:tabTextColor="@color/colorOnPrimary" />

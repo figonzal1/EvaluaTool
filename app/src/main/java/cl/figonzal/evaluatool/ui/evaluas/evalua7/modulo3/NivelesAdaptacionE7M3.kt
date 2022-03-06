@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:24
+ Last modified 05-03-22 22:09
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3
@@ -21,32 +21,48 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE7M3Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3.adaptacionFragments.FragmentStateAdapterE7M3
 import cl.figonzal.evaluatool.utils.configureActionBar
-import com.google.android.material.tabs.TabLayout
+import cl.figonzal.evaluatool.utils.setTabWidthAsWrapContent
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
 
 class NivelesAdaptacionE7M3 : AppCompatActivity() {
 
+    private lateinit var binding: ActivityNivelesAdaptacionE7M3Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
 
-        with(ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater)) {
-            setContentView(root)
+        binding = ActivityNivelesAdaptacionE7M3Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        with(binding) {
 
             configureActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
 
             //View pager
-            viewPagerNivelesAdaptacion.apply {
-                adapter = FragmentStateAdapterE7M3(this@NivelesAdaptacionE7M3)
+            viewPagerNivelesAdaptacion.adapter =
+                FragmentStateAdapterE7M3(this@NivelesAdaptacionE7M3)
+            setTabs()
+        }
+    }
 
-                TabLayoutMediator(
-                    includeTablayout.tabsNivelesAdaptacion,
-                    this
-                ) { tab: TabLayout.Tab, position: Int ->
-                    tab.text = FragmentStateAdapterE7M3.tabs[position]
-                }.attach()
-            }
+    private fun setTabs() {
+
+        with(binding) {
+            //TabLayout
+            TabLayoutMediator(
+                includeTablayout.tabsLayoutNivelesAdaptacion,
+                viewPagerNivelesAdaptacion
+            ) { tab, position ->
+                tab.text = FragmentStateAdapterE7M3.tabsArray[position]
+
+                when (position) {
+                    0 -> tab.setIcon(R.drawable.ic_baseline_campaign_24)
+                }
+            }.attach()
+
+            includeTablayout.tabsLayoutNivelesAdaptacion.setTabWidthAsWrapContent(0)
         }
     }
 
