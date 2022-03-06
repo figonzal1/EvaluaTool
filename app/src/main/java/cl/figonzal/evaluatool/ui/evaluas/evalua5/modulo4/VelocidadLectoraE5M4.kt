@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:20
+ Last modified 05-03-22 23:28
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4
 
@@ -20,33 +20,47 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE5M4Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.velocidadFragment.FragmentStateAdapterE5M4
 import cl.figonzal.evaluatool.utils.configureActionBar
-import com.google.android.material.tabs.TabLayout
+import cl.figonzal.evaluatool.utils.setTabWidthAsWrapContent
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
 
 class VelocidadLectoraE5M4 : AppCompatActivity() {
 
+    private lateinit var binding: ActivityVelocidadLectoraE5M4Binding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
 
-        with(ActivityVelocidadLectoraE5M4Binding.inflate(layoutInflater)) {
+        binding = ActivityVelocidadLectoraE5M4Binding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-            setContentView(root)
+        with(binding) {
 
             configureActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, includeToolbar.materialToolbar)
 
             //View pager
-            viewPagerVelocidad.apply {
-                adapter = FragmentStateAdapterE5M4(this@VelocidadLectoraE5M4)
+            viewPagerVelocidad.adapter = FragmentStateAdapterE5M4(this@VelocidadLectoraE5M4)
+            setTabs()
+        }
+    }
 
-                TabLayoutMediator(
-                    includeTablayout.tabsVelocidad,
-                    this
-                ) { tab: TabLayout.Tab, position: Int ->
-                    tab.text = FragmentStateAdapterE5M4.tabs[position]
-                }.attach()
-            }
+    private fun setTabs() {
+        with(binding) {
+
+            //TabLayout
+            TabLayoutMediator(
+                includeTablayout.tabsVelocidad,
+                viewPagerVelocidad
+            ) { tab, position ->
+                tab.text = FragmentStateAdapterE5M4.tabsArray[position]
+
+                when (position) {
+                    0 -> tab.setIcon(R.drawable.ic_baseline_campaign_24)
+                }
+            }.attach()
+
+            includeTablayout.tabsVelocidad.setTabWidthAsWrapContent(0)
         }
     }
 
