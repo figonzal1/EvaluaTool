@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 06-03-22 00:06
+ Last modified 06-03-22 02:05
  */
 package cl.figonzal.evaluatool.ui
 
@@ -45,7 +45,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
 import timber.log.Timber
-import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -76,8 +75,8 @@ class MainActivity : AppCompatActivity() {
 
         sharedPrefUtil = SharedPrefUtil(this)
 
-        RequestConfiguration.Builder()
-            .setTestDeviceIds(Arrays.asList("AADCDB8868D6F854F75225420A8F220E"))
+        //RequestConfiguration.Builder()
+        //    .setTestDeviceIds(Arrays.asList("AADCDB8868D6F854F75225420A8F220E"))
 
         //Night mode
         when {
@@ -151,6 +150,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Function that load night mode in devices < Q from SharedPreferences
+     *
+     * @param binding Main Activity Binding
+     */
     private fun setUpSwitchDarkMode(binding: ActivityMainBinding) {
 
         switchDarkMode = binding.includeSwitch.switchMaterial
@@ -214,7 +218,7 @@ class MainActivity : AppCompatActivity() {
                 interstitial = p0
                 adIsLoading = false
 
-                Timber.d("Interstitial loaded")
+                Timber.d(getString(R.string.interstitial_loaded))
             }
         }
 
@@ -281,7 +285,7 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onAdDismissedFullScreenContent() {
 
-                    Timber.d("Fullscreen interstitial dismiss")
+                    Timber.d(getString(R.string.fullscreen_interstitial_dismiss))
                     interstitial = null
 
                     //Load ad again
@@ -292,19 +296,19 @@ class MainActivity : AppCompatActivity() {
 
                 override fun onAdFailedToShowFullScreenContent(p0: AdError) {
 
-                    Timber.w("Fullscreen interstitial failed to load: " + p0)
+                    Timber.w(getString(R.string.fullscreen_interstitial_failed_load) + p0)
                     interstitial = null
                 }
 
                 override fun onAdShowedFullScreenContent() {
-                    Timber.d("Fullscreen interstitial fullscreen content")
+                    Timber.d(getString(R.string.fullscreen_interstitial_showed))
                 }
 
             }
-
             interstitial?.show(this)
+
         } else {
-            Timber.w("Interstitial null")
+            Timber.w(getString(R.string.interstitial_null))
 
             //Open activity without ads
             startActivity(intent)
