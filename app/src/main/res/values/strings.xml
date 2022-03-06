@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 05-03-22 18:46
+  Last modified 05-03-22 20:20
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -20,12 +20,13 @@
     <string name="ADMOB_ID_BANNER_MAIN" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
     <string name="ADMOB_ID_APPOPEN" translatable="false">ca-app-pub-3940256099942544/3419835294</string>
     <string name="ADMOB_ID_INTERSTITIAL" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="ADMOB_ID_NATIVE">ca-app-pub-3940256099942544/2247696110</string>
 
     <!--PROD AD-->
     <!--<string name="ADMOB_ID_BANNER_MAIN" translatable="false">ca-app-pub-6355378855577476/3579176413</string>
     <string name="ADMOB_ID_APPOPEN" translatable="false">ca-app-pub-6355378855577476/3483598214</string>
-    <string name="ADMOB_ID_INTERSTITIAL" translatable="false">ca-app-pub-6355378855577476/7878386216</string>-->
-
+    <string name="ADMOB_ID_INTERSTITIAL" translatable="false">ca-app-pub-6355378855577476/7878386216</string>
+    <string name="ADMOB_ID_NATIVE">ca-app-pub-6355378855577476/1859239943</string>-->
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
@@ -672,4 +673,10 @@
     <string name="ADMOB_AD_LOADED" translatable="false">Ad loaded</string>
     <string name="ADMOB_AD_OPEN" translatable="false">Ad open</string>
     <string name="ADMOB_INTERSTITIAL_FAILED">Interstitial failed to load:</string>
+
+    <!-- VIEWS -->
+    <string name="ad" translatable="false">Ad</string>
+    <string name="icon_ad_app">Icono publicidad</string>
+    <string name="ver_m_s">Ver más</string>
+
 </resources>
