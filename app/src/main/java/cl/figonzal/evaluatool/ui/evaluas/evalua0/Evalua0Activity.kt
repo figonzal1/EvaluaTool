@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:00
+ Last modified 06-03-22 01:08
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0
 
@@ -18,26 +18,34 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityEvalua0Binding
+import cl.figonzal.evaluatool.databinding.ActivityEvaluaBinding
 import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.configureFABWsp
+import cl.figonzal.evaluatool.utils.startAds
+import com.google.android.gms.ads.AdView
 import timber.log.Timber
 
 class Evalua0Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEvalua0Binding
+    private var adView: AdView? = null
+
+    private lateinit var binding: ActivityEvaluaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        binding = ActivityEvalua0Binding.inflate(layoutInflater)
+        binding = ActivityEvaluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configureActionBar(R.string.TOOLBAR_EVALUA_0, binding.includeToolbar.materialToolbar)
         configureFABWsp(binding.fabWsp)
+
+        //Banner
+        adView = startAds(binding.adViewContainer, getString(R.string.ADMOB_ID_BANNER_EVALUAS))
+
 
         val headers = listOf(
             Header(getString(R.string.EVALUA_0_MODULO_1)),
@@ -65,7 +73,7 @@ class Evalua0Activity : AppCompatActivity() {
             )
         )
 
-        binding.rv0.apply {
+        binding.rv.apply {
             adapter = HeaderAdapter(
                 getString(R.string.routeMapEvalua0),
                 headers,
@@ -85,5 +93,10 @@ class Evalua0Activity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        adView?.destroy()
     }
 }

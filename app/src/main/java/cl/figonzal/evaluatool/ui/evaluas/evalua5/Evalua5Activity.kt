@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:37
+ Last modified 06-03-22 00:53
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5
 
@@ -18,26 +18,33 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityEvalua5Binding
+import cl.figonzal.evaluatool.databinding.ActivityEvaluaBinding
 import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.configureFABWsp
+import cl.figonzal.evaluatool.utils.startAds
+import com.google.android.gms.ads.AdView
 import timber.log.Timber
 
 class Evalua5Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEvalua5Binding
+    private var adView: AdView? = null
+
+    private lateinit var binding: ActivityEvaluaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        binding = ActivityEvalua5Binding.inflate(layoutInflater)
+        binding = ActivityEvaluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configureActionBar(R.string.TOOLBAR_EVALUA_5, binding.includeToolbar.materialToolbar)
         configureFABWsp(binding.fabWsp)
+
+        //Banner
+        adView = startAds(binding.adViewContainer, getString(R.string.ADMOB_ID_BANNER_EVALUAS))
 
         val headers = listOf(
             Header(getString(R.string.EVALUA_5_MODULO_1)),
@@ -79,7 +86,7 @@ class Evalua5Activity : AppCompatActivity() {
             )
         )
 
-        binding.rv5.apply {
+        binding.rv.apply {
             adapter = HeaderAdapter(
                 getString(R.string.routeMapEvalua5),
                 headers,

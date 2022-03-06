@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:40
+ Last modified 06-03-22 00:39
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1
 
@@ -18,26 +18,34 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.databinding.ActivityEvalua1Binding
+import cl.figonzal.evaluatool.databinding.ActivityEvaluaBinding
 import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.configureFABWsp
+import cl.figonzal.evaluatool.utils.startAds
+import com.google.android.gms.ads.AdView
 import timber.log.Timber
 
 class Evalua1Activity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEvalua1Binding
+    private var adView: AdView? = null
+
+    private lateinit var binding: ActivityEvaluaBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
-        binding = ActivityEvalua1Binding.inflate(layoutInflater)
+        binding = ActivityEvaluaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         configureActionBar(R.string.TOOLBAR_EVALUA_1, binding.includeToolbar.materialToolbar)
         configureFABWsp(binding.fabWsp)
+
+        //Banner
+        adView = startAds(binding.adViewContainer, getString(R.string.ADMOB_ID_BANNER_EVALUAS))
+
 
         val headers = listOf(
             Header(getString(R.string.EVALUA_1_MODULO_1)),
@@ -76,7 +84,7 @@ class Evalua1Activity : AppCompatActivity() {
             )
         )
 
-        binding.rv1.apply {
+        binding.rv.apply {
             adapter = HeaderAdapter(
                 getString(R.string.routeMapEvalua1),
                 headers,
@@ -86,6 +94,7 @@ class Evalua1Activity : AppCompatActivity() {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(this@Evalua1Activity)
         }
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -96,5 +105,10 @@ class Evalua1Activity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        adView?.destroy()
     }
 }
