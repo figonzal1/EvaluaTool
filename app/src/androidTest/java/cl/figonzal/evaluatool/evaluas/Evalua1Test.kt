@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:01
+ Last modified 06-03-22 00:36
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -153,7 +153,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -167,7 +167,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -181,7 +181,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -195,7 +195,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -209,7 +209,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -223,7 +223,7 @@ class Evalua1Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_1))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -277,7 +277,7 @@ class Evalua1Test {
                 withId(R.id.tv_group), withText(itemName),
                 childAtPosition(
                     childAtPosition(
-                        withId(R.id.rv_1),
+                        withId(R.id.rv),
                         positionList
                     ),
                     0

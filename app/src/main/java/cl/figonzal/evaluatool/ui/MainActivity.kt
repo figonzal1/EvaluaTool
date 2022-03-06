@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 19:09
+ Last modified 06-03-22 00:06
  */
 package cl.figonzal.evaluatool.ui
 
@@ -51,7 +51,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
     //ADS
-    private lateinit var adView: AdView
+    private var adView: AdView? = null
     private var interstitial: InterstitialAd? = null
     private var adIsLoading: Boolean = false
 
@@ -309,5 +309,10 @@ class MainActivity : AppCompatActivity() {
             //Open activity without ads
             startActivity(intent)
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        adView?.destroy()
     }
 }
