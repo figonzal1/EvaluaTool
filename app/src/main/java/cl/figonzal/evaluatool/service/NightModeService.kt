@@ -6,54 +6,56 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 26-07-21 15:33
+ Last modified 27/2/22 23:54
  */
 
 package cl.figonzal.evaluatool.service
 
 import android.app.Activity
 import androidx.appcompat.app.AppCompatDelegate
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.utilities.EvaluaUtils
+import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import timber.log.Timber
 
-/**
- * Funcion in charge to handle the night mode
- *
- * @param activity Activity that need to change night mode
- * @param lifecycle Used to handle onStart events
- * @param sharedPrefService Used to save night mode in shared preferences
- * @version 17-04-2021
- */
 class NightModeService(
     private val activity: Activity,
-    lifecycle: Lifecycle,
-    private val sharedPrefService: SharedPrefService,
-) : LifecycleObserver {
+    private val sharedPrefUtil: SharedPrefUtil
+) : DefaultLifecycleObserver {
 
-    init {
-        lifecycle.addObserver(this)
+
+    override fun onStart(owner: LifecycleOwner) {
+        super.onStart(owner)
+
+        checkNightMode()
     }
 
-    /**
-     * Function that allows you to check and set the night mode from Shared Preference Settings
-     */
-    @OnLifecycleEvent(Lifecycle.Event.ON_START)
-    fun checkNightMode() {
+    private fun checkNightMode() {
 
-        when (sharedPrefService.getData(EvaluaUtils.get(R.string.NIGHT_MODE_KEY), false)) {
-            true -> {
-                Timber.d(activity.getString(R.string.NIGHT_MODE_STATUS_ON))
+        val manualNightMode =
+            sharedPrefUtil.getData(activity.getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+
+        //MANUAL MODE
+        //manual mode activated
+        when {
+            manualNightMode -> {
+
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+                Timber.d(
+                    activity.getString(R.string.TAG_NIGHT_MODE) + ": ON"
+                )
             }
-            false -> {
-                Timber.d(activity.getString(R.string.NIGHT_MODE_STATUS_OFF))
+
+            else -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+                Timber.d(
+                    activity.getString(R.string.TAG_NIGHT_MODE) + ": OFF"
+                )
             }
         }
     }

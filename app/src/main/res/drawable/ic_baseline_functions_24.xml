@@ -6,18 +6,20 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 18-07-21 12:46
+  Last modified 07-03-22 17:14
   -->
 
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:width="24dp"
     android:height="24dp"
     android:tint="?attr/colorControlNormal"
     android:viewportWidth="24"
-    android:viewportHeight="24">
-  <path
-      android:fillColor="@android:color/white"
-      android:pathData="M18,4H6v2l6.5,6L6,18v2h12v-3h-7l5,-5 -5,-5h7z" />
+    android:viewportHeight="24"
+    tools:keep="@drawable/ic_baseline_functions_24">
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M18,4H6v2l6.5,6L6,18v2h12v-3h-7l5,-5 -5,-5h7z" />
 </vector>

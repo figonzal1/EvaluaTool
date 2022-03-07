@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 18-07-21 18:26
+  Last modified 07-03-22 16:42
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,7 +16,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua10.modulo2.IndiceGeneralCognitivoE10M2">
+    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.IndiceGeneralCognitivoE10M2"
+    tools:keep="@layout/activity_indice_general_cognitivo_e10_m2">
 
     <include
         android:id="@+id/include_toolbar"

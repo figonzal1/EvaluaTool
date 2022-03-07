@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 10/20/21, 5:57 PM
+ Last modified 06-03-22 13:27
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -26,7 +26,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import androidx.test.platform.app.InstrumentationRegistry
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.activities.MainActivity
+import cl.figonzal.evaluatool.ui.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.`is`
@@ -133,7 +133,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -147,7 +147,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -161,7 +161,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -215,7 +215,7 @@ class Evalua0Test {
                 withId(R.id.tv_group), withText(itemName),
                 childAtPosition(
                     childAtPosition(
-                        withId(R.id.rv_0),
+                        withId(R.id.rv),
                         positionList
                     ),
                     0

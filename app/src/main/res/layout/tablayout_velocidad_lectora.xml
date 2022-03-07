@@ -6,13 +6,14 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 08-06-21 22:21
+  Last modified 07-03-22 16:42
   -->
 
 <com.google.android.material.tabs.TabLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tabs_velocidad"
     style="@style/Widget.MaterialComponents.TabLayout.Colored"
     android:layout_width="match_parent"
@@ -27,4 +28,5 @@
     app:tabIndicatorGravity="bottom"
     app:tabMode="fixed"
     app:tabSelectedTextColor="@color/colorOnPrimary"
-    app:tabTextColor="@color/colorOnPrimary" />
+    app:tabTextColor="@color/colorOnPrimary"
+    tools:keep="@layout/tablayout_velocidad_lectora" />

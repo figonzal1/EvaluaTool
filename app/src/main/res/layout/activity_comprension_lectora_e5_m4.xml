@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 08-06-21 22:21
+  Last modified 07-03-22 16:46
   -->
 
 
@@ -17,7 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua5.modulo4.ComprensionLectoraE5M4">
+    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.ComprensionLectoraE5M4"
+    tools:keep="@layout/activity_comprension_lectora_e5_m4">
 
     <include
         android:id="@+id/include_toolbar"
