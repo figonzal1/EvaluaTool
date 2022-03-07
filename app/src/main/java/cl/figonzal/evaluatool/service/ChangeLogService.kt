@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 18:01
+ Last modified 07-03-22 18:39
  */
 
 package cl.figonzal.evaluatool.service
@@ -33,8 +33,9 @@ class ChangeLogService(
     private var versionCode: Int = BuildConfig.VERSION_CODE
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
-        "- Se agrega menu de configuración",
-        "- Actualizaciones internas necesarias"
+        "- Modo noche corregido en versiones mayores a Android 10",
+        "- Mejoras de interfaz",
+        "- Optimizaciones internas"
     )
 
     override fun onCreate(owner: LifecycleOwner) {
