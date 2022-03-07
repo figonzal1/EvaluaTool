@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:01
+ Last modified 07-03-22 09:52
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -153,7 +153,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -167,7 +167,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -181,7 +181,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -195,7 +195,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -209,7 +209,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -223,7 +223,7 @@ class Evalua7Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_7))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -257,7 +257,7 @@ class Evalua7Test {
                         withClassName(`is`("android.widget.ScrollView")),
                         0
                     ),
-                    1
+                    11
                 )
             )
         )
@@ -277,7 +277,7 @@ class Evalua7Test {
                 withId(R.id.tv_group), withText(itemName),
                 childAtPosition(
                     childAtPosition(
-                        withId(R.id.rv_7),
+                        withId(R.id.rv),
                         positionList
                     ),
                     0
