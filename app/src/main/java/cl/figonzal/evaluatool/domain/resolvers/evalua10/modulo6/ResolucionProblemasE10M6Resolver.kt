@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:21
+ Last modified 07-03-22 16:46
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo6
 
-import cl.figonzal.evaluatool.baremosTables.resolucionProblemasE10M6Baremo
+import cl.figonzal.evaluatool.domain.baremos.resolucionProblemasE10M6Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

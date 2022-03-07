@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 04-03-22 19:57
+ Last modified 07-03-22 16:07
  */
 
 apply plugin: 'com.android.application'
@@ -40,7 +40,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 31
         versionCode 29
-        versionName "1.0.2-beta"
+        versionName "1.0.2-interna"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

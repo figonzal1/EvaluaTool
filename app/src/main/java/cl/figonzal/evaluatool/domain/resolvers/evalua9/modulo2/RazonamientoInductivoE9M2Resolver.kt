@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:51
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo2
 
-import cl.figonzal.evaluatool.baremosTables.razonamientoInductivoE9M2Baremo
+import cl.figonzal.evaluatool.domain.baremos.razonamientoInductivoE9M2Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

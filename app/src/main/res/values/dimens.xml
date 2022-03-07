@@ -6,24 +6,24 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 22-07-21 21:03
+  Last modified 07-03-22 16:42
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <dimen name="margin_2">2dp</dimen>
-    <dimen name="margin_4">4dp</dimen>
+    <dimen name="margin_4" tools:keep="@dimen/margin_4">4dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_16">16dp</dimen>
-    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_24" tools:keep="@dimen/margin_24">24dp</dimen>
 
     <dimen name="divider_height">1dp</dimen>
 
-    <dimen name="progress_bar_height">10dp</dimen>
-    <dimen name="padding_button_green">20dp</dimen>
-    <dimen name="tablayout_height">48dp</dimen>
+    <dimen name="progress_bar_height" tools:keep="@dimen/progress_bar_height">10dp</dimen>
+    <dimen name="padding_button_green" tools:keep="@dimen/padding_button_green">20dp</dimen>
+    <dimen name="tablayout_height" tools:keep="@dimen/tablayout_height">48dp</dimen>
 
     <dimen name="corner_radius_8dp">8dp</dimen>
     <dimen name="corner_radius_4dp">4dp</dimen>

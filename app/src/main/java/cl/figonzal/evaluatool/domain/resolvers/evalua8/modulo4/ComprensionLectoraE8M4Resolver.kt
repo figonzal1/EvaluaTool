@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:48
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo4
 
-import cl.figonzal.evaluatool.baremosTables.comprensionLectoraE8M4Baremo
+import cl.figonzal.evaluatool.domain.baremos.comprensionLectoraE8M4Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

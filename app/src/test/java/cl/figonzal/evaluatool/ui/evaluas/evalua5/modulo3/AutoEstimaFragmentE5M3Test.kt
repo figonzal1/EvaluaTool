@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 07-03-22 16:48
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoEstimaFragmentE5M3Baremo
+import cl.figonzal.evaluatool.domain.baremos.autoEstimaFragmentE5M3Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test

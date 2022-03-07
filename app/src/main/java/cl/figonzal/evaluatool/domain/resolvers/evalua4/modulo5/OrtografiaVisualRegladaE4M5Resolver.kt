@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:47
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo5
 
-import cl.figonzal.evaluatool.baremosTables.ortografiaVisualRegladaE4M5Baremo
+import cl.figonzal.evaluatool.domain.baremos.ortografiaVisualRegladaE4M5Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

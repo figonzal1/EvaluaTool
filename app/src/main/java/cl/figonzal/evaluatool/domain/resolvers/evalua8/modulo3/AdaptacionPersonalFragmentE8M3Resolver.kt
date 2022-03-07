@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:49
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.adaptacionPersonalE8M3Baremo
+import cl.figonzal.evaluatool.domain.baremos.adaptacionPersonalE8M3Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class AdaptacionPersonalFragmentE8M3Resolver : BaseResolver {

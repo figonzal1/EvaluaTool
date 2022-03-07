@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 23:37
+ Last modified 07-03-22 17:14
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4
@@ -36,14 +36,14 @@ class VelocidadLectoraE8M4 : AppCompatActivity() {
         binding = ActivityVelocidadLectoraE8M4Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        with(binding) {
+        configureActionBar(
+            R.string.TOOLBAR_VELOCIDAD_LECTORA,
+            binding.includeToolbar.materialToolbar
+        )
 
-            configureActionBar(R.string.TOOLBAR_VELOCIDAD_LECTORA, includeToolbar.materialToolbar)
-
-            //View pager
-            viewPagerVelocidad.adapter = FragmentStateAdapterE8M4(this@VelocidadLectoraE8M4)
-            setTabs()
-        }
+        //View pager
+        binding.viewPagerVelocidad.adapter = FragmentStateAdapterE8M4(this@VelocidadLectoraE8M4)
+        setTabs()
     }
 
     private fun setTabs() {

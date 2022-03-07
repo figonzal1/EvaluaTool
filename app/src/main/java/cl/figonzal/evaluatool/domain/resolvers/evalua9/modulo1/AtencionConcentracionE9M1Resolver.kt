@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:21
+ Last modified 07-03-22 16:51
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo1
 
-import cl.figonzal.evaluatool.baremosTables.atencionConcentracionE9M1Baremo
+import cl.figonzal.evaluatool.domain.baremos.atencionConcentracionE9M1Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

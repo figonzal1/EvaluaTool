@@ -8,10 +8,10 @@
 
  Copyright (c) 2022
 
- Last modified 24/8/21 23:56
+ Last modified 07-03-22 16:46
  */
 
-package cl.figonzal.evaluatool.baremosTables
+package cl.figonzal.evaluatool.domain.baremos
 
 /**
  * Evalua 2
