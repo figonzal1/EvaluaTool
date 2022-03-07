@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 05-03-22 11:47
+  Last modified 07-03-22 16:46
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,6 @@
 
     <application
         android:name=".ApplicationController"
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"

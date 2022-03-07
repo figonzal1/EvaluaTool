@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 07-03-22 16:48
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6
 
-import cl.figonzal.evaluatool.baremosTables.calculoNumeracionE7M6Baremo
+import cl.figonzal.evaluatool.domain.baremos.calculoNumeracionE7M6Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularDesviacion2
 import org.junit.Assert.assertEquals

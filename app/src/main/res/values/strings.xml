@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 06-03-22 02:01
+  Last modified 07-03-22 16:42
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -31,7 +31,7 @@
     <string name="ADMOB_ID_NATIVE">ca-app-pub-6355378855577476/1859239943</string>
 
     <!-- FORMAT -->
-    <string name="DATETIME_FORMAT" translatable="false">yyyy-MM-dd HH:mm:ss</string>
+    <string name="DATETIME_FORMAT" translatable="false" tools:keep="@string/DATETIME_FORMAT">yyyy-MM-dd HH:mm:ss</string>
 
     <!--EVALUA 0 -->
     <string name="TOOLBAR_EVALUA_0" translatable="false">Evalúa 0</string>
@@ -344,17 +344,17 @@
     <string name="CLICK_EXACTITUD_LECTORA" translatable="false">click_exactitud_lectora</string>
     <string name="CLICK_PENSAMIENTO_ANALOGICO" translatable="false">click_pensamiento_analogico</string>
     <string name="CLICK_PALABRAS_FRASES" translatable="false">click_palabras_y_frases</string>
-    <string name="BTN_EVALUA_0" translatable="false">btn_evalua_0</string>
-    <string name="BTN_EVALUA_1" translatable="false" tools:ignore="Typos">btn_evalua_1</string>
-    <string name="BTN_EVALUA_2" translatable="false">btn_evalua_2</string>
-    <string name="BTN_EVALUA_3" translatable="false">btn_evalua_3</string>
-    <string name="BTN_EVALUA_4" translatable="false">btn_evalua_4</string>
-    <string name="BTN_EVALUA_5" translatable="false">btn_evalua_5</string>
-    <string name="BTN_EVALUA_6" translatable="false">btn_evalua_6</string>
-    <string name="BTN_EVALUA_7" translatable="false">btn_evalua_7</string>
-    <string name="BTN_EVALUA_8" translatable="false">btn_evalua_8</string>
-    <string name="BTN_EVALUA_9" translatable="false">btn_evalua_9</string>
-    <string name="BTN_EVALUA_10" translatable="false">btn_evalua_10</string>
+    <string name="BTN_EVALUA_0" translatable="false" tools:keep="@string/BTN_EVALUA_0">btn_evalua_0</string>
+    <string name="BTN_EVALUA_1" translatable="false" tools:ignore="Typos" tools:keep="@string/BTN_EVALUA_1">btn_evalua_1</string>
+    <string name="BTN_EVALUA_2" translatable="false" tools:keep="@string/BTN_EVALUA_2">btn_evalua_2</string>
+    <string name="BTN_EVALUA_3" translatable="false" tools:keep="@string/BTN_EVALUA_3">btn_evalua_3</string>
+    <string name="BTN_EVALUA_4" translatable="false" tools:keep="@string/BTN_EVALUA_4">btn_evalua_4</string>
+    <string name="BTN_EVALUA_5" translatable="false" tools:keep="@string/BTN_EVALUA_5">btn_evalua_5</string>
+    <string name="BTN_EVALUA_6" translatable="false" tools:keep="@string/BTN_EVALUA_6">btn_evalua_6</string>
+    <string name="BTN_EVALUA_7" translatable="false" tools:keep="@string/BTN_EVALUA_7">btn_evalua_7</string>
+    <string name="BTN_EVALUA_8" translatable="false" tools:keep="@string/BTN_EVALUA_8">btn_evalua_8</string>
+    <string name="BTN_EVALUA_9" translatable="false" tools:keep="@string/BTN_EVALUA_9">btn_evalua_9</string>
+    <string name="BTN_EVALUA_10" translatable="false" tools:keep="@string/BTN_EVALUA_10">btn_evalua_10</string>
     <string name="ACTIVIDAD_CERRADA" translatable="false">home up - activity cerrada</string>
     <string name="DIALOGO_AYUDA_MSG_ABIERTO" translatable="false">Abriendo dialogo ayuda</string>
     <string name="SUB_ITEM_CLICK" translatable="false">SUB_ITEM_CLICK</string>
@@ -392,170 +392,170 @@
     <string name="DIALOGO_BAREMO_CERRADO" translatable="false">dialogo baremo cerrado</string>
 
     <!-- Shared pref -->
-    <string name="SHARED_PREF_END_REWARD_TIME" translatable="false">end_reward_time</string>
+    <string name="SHARED_PREF_END_REWARD_TIME" translatable="false" tools:keep="@string/SHARED_PREF_END_REWARD_TIME">end_reward_time</string>
     <string name="shared_pref_master_key" translatable="false">evalua_tool</string>
     <string name="SHARED_PREF_ACTUAL_VERSION_CODE" translatable="false">shared_pref_actual_version_code</string>
 
     <!-- REWARD DIALOG TAGS & ADS -->
-    <string name="REWARD_DIALOG_BTN_VER_VIDEO" translatable="false">BOTON VER VIDEO PRESIONADO</string>
-    <string name="REWARD_DIALOG_BTN_CANCEL" translatable="false">BOTON CANCEL PRESIONADO</string>
-    <string name="VIDEO_REWARD_STATUS_LOADED" translatable="false">Video reward LOADED</string>
-    <string name="VIDEO_REWARD_STATUS_REWARDED" translatable="false">Video reward REWARDED</string>
-    <string name="VIDEO_REWARD_STATUS_FAILED" translatable="false">Video reward FAILED TO LOAD</string>
-    <string name="HORA_AHORA" translatable="false">HORA_AHORA: </string>
-    <string name="HORA_REWARD" translatable="false">HORA_REWARD: </string>
-    <string name="REWARD_STATUS_EN_PERIODO" translatable="false">EN PERIODO REWARD</string>
-    <string name="REWARD_STATUS_PERIODO_INACTIVO" translatable="false">PERIODO REWARD INACTIVO</string>
-    <string name="RANDOM_SHOW_REWARD_DIALOG_ON" translatable="false">MOSTRAR DIALOG REWARD</string>
-    <string name="RANDOM_SHOW_REWARD_DIALOG_OFF" translatable="false">NO MOSTRAR DIALOG REWARD</string>
-    <string name="ADS_PERMITIDOS" translatable="false">ADS PERMITIDOS</string>
-    <string name="ADS_NO_PERMITIDOS" translatable="false">ADS NO PERMITIDOS</string>
-    <string name="ADS_CARGADOS" translatable="false">ADS CARGADOS</string>
-    <string name="ADS_NO_CARGADOS" translatable="false">ADS NO CARGADOS</string>
-    <string name="INTERSITIAL_CARGADO" translatable="false">Intersitial CARGADO</string>
-    <string name="INTERSITIAL_NO_CARGADO" translatable="false">Intersitial NO CARGADO</string>
-    <string name="INTERSITIAL_MOSTRADO" translatable="false">Intersitial MOSTRADO</string>
-    <string name="INTERSITIAL_NO_MOSTRADO" translatable="false">Intersitial NO_MOSTRADO</string>
-    <string name="INTERSITIAL_CERRADO" translatable="false">Intersitial CERRADO</string>
+    <string name="REWARD_DIALOG_BTN_VER_VIDEO" translatable="false" tools:keep="@string/REWARD_DIALOG_BTN_VER_VIDEO">BOTON VER VIDEO PRESIONADO</string>
+    <string name="REWARD_DIALOG_BTN_CANCEL" translatable="false" tools:keep="@string/REWARD_DIALOG_BTN_CANCEL">BOTON CANCEL PRESIONADO</string>
+    <string name="VIDEO_REWARD_STATUS_LOADED" translatable="false" tools:keep="@string/VIDEO_REWARD_STATUS_LOADED">Video reward LOADED</string>
+    <string name="VIDEO_REWARD_STATUS_REWARDED" translatable="false" tools:keep="@string/VIDEO_REWARD_STATUS_REWARDED">Video reward REWARDED</string>
+    <string name="VIDEO_REWARD_STATUS_FAILED" translatable="false" tools:keep="@string/VIDEO_REWARD_STATUS_FAILED">Video reward FAILED TO LOAD</string>
+    <string name="HORA_AHORA" translatable="false" tools:keep="@string/HORA_AHORA">HORA_AHORA: </string>
+    <string name="HORA_REWARD" translatable="false" tools:keep="@string/HORA_REWARD">HORA_REWARD: </string>
+    <string name="REWARD_STATUS_EN_PERIODO" translatable="false" tools:keep="@string/REWARD_STATUS_EN_PERIODO">EN PERIODO REWARD</string>
+    <string name="REWARD_STATUS_PERIODO_INACTIVO" translatable="false" tools:keep="@string/REWARD_STATUS_PERIODO_INACTIVO">PERIODO REWARD INACTIVO</string>
+    <string name="RANDOM_SHOW_REWARD_DIALOG_ON" translatable="false" tools:keep="@string/RANDOM_SHOW_REWARD_DIALOG_ON">MOSTRAR DIALOG REWARD</string>
+    <string name="RANDOM_SHOW_REWARD_DIALOG_OFF" translatable="false" tools:keep="@string/RANDOM_SHOW_REWARD_DIALOG_OFF">NO MOSTRAR DIALOG REWARD</string>
+    <string name="ADS_PERMITIDOS" translatable="false" tools:keep="@string/ADS_PERMITIDOS">ADS PERMITIDOS</string>
+    <string name="ADS_NO_PERMITIDOS" translatable="false" tools:keep="@string/ADS_NO_PERMITIDOS">ADS NO PERMITIDOS</string>
+    <string name="ADS_CARGADOS" translatable="false" tools:keep="@string/ADS_CARGADOS">ADS CARGADOS</string>
+    <string name="ADS_NO_CARGADOS" translatable="false" tools:keep="@string/ADS_NO_CARGADOS">ADS NO CARGADOS</string>
+    <string name="INTERSITIAL_CARGADO" translatable="false" tools:keep="@string/INTERSITIAL_CARGADO">Intersitial CARGADO</string>
+    <string name="INTERSITIAL_NO_CARGADO" translatable="false" tools:keep="@string/INTERSITIAL_NO_CARGADO">Intersitial NO CARGADO</string>
+    <string name="INTERSITIAL_MOSTRADO" translatable="false" tools:keep="@string/INTERSITIAL_MOSTRADO">Intersitial MOSTRADO</string>
+    <string name="INTERSITIAL_NO_MOSTRADO" translatable="false" tools:keep="@string/INTERSITIAL_NO_MOSTRADO">Intersitial NO_MOSTRADO</string>
+    <string name="INTERSITIAL_CERRADO" translatable="false" tools:keep="@string/INTERSITIAL_CERRADO">Intersitial CERRADO</string>
 
 
-    <string name="EVALUA_0" translatable="false">Evalúa 0</string>
-    <string name="EVALUA_1" translatable="false">Evalúa 1</string>
-    <string name="EVALUA_2" translatable="false">Evalúa 2</string>
-    <string name="EVALUA_3" translatable="false">Evalúa 3</string>
-    <string name="EVALUA_4" translatable="false">Evalúa 4</string>
-    <string name="EVALUA_5" translatable="false">Evalúa 5</string>
-    <string name="EVALUA_6" translatable="false">Evalúa 6</string>
-    <string name="EVALUA_TOOL" translatable="false">Evalúa Tool</string>
-    <string name="ICONO_LOGO_APP" translatable="false">Icono logo app</string>
-    <string name="EVALUA_8" translatable="false">Evalúa 8</string>
-    <string name="EVALUA_9" translatable="false">Evalúa 9</string>
-    <string name="EVALUA_10" translatable="false">Evalúa 10</string>
-    <string name="EVALUA_7" translatable="false">Evalúa 7</string>
+    <string name="EVALUA_0" translatable="false" tools:keep="@string/EVALUA_0">Evalúa 0</string>
+    <string name="EVALUA_1" translatable="false" tools:keep="@string/EVALUA_1">Evalúa 1</string>
+    <string name="EVALUA_2" translatable="false" tools:keep="@string/EVALUA_2">Evalúa 2</string>
+    <string name="EVALUA_3" translatable="false" tools:keep="@string/EVALUA_3">Evalúa 3</string>
+    <string name="EVALUA_4" translatable="false" tools:keep="@string/EVALUA_4">Evalúa 4</string>
+    <string name="EVALUA_5" translatable="false" tools:keep="@string/EVALUA_5">Evalúa 5</string>
+    <string name="EVALUA_6" translatable="false" tools:keep="@string/EVALUA_6">Evalúa 6</string>
+    <string name="EVALUA_TOOL" translatable="false" tools:keep="@string/EVALUA_TOOL">Evalúa Tool</string>
+    <string name="ICONO_LOGO_APP" translatable="false" tools:keep="@string/ICONO_LOGO_APP">Icono logo app</string>
+    <string name="EVALUA_8" translatable="false" tools:keep="@string/EVALUA_8">Evalúa 8</string>
+    <string name="EVALUA_9" translatable="false" tools:keep="@string/EVALUA_9">Evalúa 9</string>
+    <string name="EVALUA_10" translatable="false" tools:keep="@string/EVALUA_10">Evalúa 10</string>
+    <string name="EVALUA_7" translatable="false" tools:keep="@string/EVALUA_7">Evalúa 7</string>
 
     <!-- XML STRINGs -->
-    <string name="tarea_1" translatable="false">Tarea 1</string>
-    <string name="aprobadas" translatable="false">Aprobadas</string>
-    <string name="reprobadas" translatable="false">Reprobadas</string>
-    <string name="tarea_2" translatable="false">Tarea 2</string>
-    <string name="desviacion_tipica" translatable="false">Desviación Típica</string>
-    <string name="media" translatable="false">Media</string>
-    <string name="estadisticos" translatable="false">Estadísticos</string>
-    <string name="pd_subtotales" translatable="false">PD subtotales</string>
-    <string name="pc_subtotales" translatable="false">PC subtotales</string>
-    <string name="tarea_1_0_pts" translatable="false">Tarea 1: 0 pts</string>
-    <string name="tarea_2_0_pts" translatable="false">Tarea 2: 0 pts</string>
-    <string name="pd_total" translatable="false">PD Total</string>
-    <string name="pc_total" translatable="false">PC Total</string>
-    <string name="_0_pts" translatable="false">0 pts</string>
-    <string name="pd_total_corregido" translatable="false">PD Total corregido</string>
-    <string name="puntaje_centil" translatable="false">Puntaje Centil</string>
-    <string name="nivel_obtenido" translatable="false">Nivel obtenido</string>
-    <string name="guion_bajo" translatable="false">-</string>
-    <string name="puntaje_tipificado" translatable="false">Puntaje Tipificado</string>
-    <string name="omitidas" translatable="false">Omitidas</string>
-    <string name="errores" translatable="false">Errores</string>
-    <string name="caballo" translatable="false">Caballo</string>
-    <string name="dinosaurio" translatable="false">Dinosaurio</string>
-    <string name="uvas" translatable="false">Uvas</string>
-    <string name="pl_tanos" translatable="false">Plátanos</string>
-    <string name="caballo_0_pts" translatable="false">Caballo: 0 pts</string>
-    <string name="dinosaurio_0_pts" translatable="false">Dinosaurio: 0 pts</string>
-    <string name="uvas_0_pts" translatable="false">Uvas: 0 pts</string>
-    <string name="pl_tanos_0_pts" translatable="false">Plátanos: 0 pts</string>
-    <string name="tarea_3" translatable="false">Tarea 3</string>
-    <string name="tarea_3_0_pts" translatable="false">Tarea 3: 0 pts</string>
-    <string name="ingresa_el_error_total_de_los_6_ejercicios" translatable="false">Ingresa el error total de los 6 ejercicios</string>
-    <string name="tarea_4" translatable="false">Tarea 4</string>
-    <string name="tarea_4_0_pts" translatable="false">Tarea 4: 0 pts</string>
-    <string name="tarea_5" translatable="false">Tarea 5</string>
-    <string name="tarea_6" translatable="false">Tarea 6</string>
-    <string name="tarea_5_0_pts" translatable="false">Tarea 5: 0 pts</string>
-    <string name="tarea_6_0_pts" translatable="false">Tarea 6: 0 pts</string>
-    <string name="series" translatable="false">Series</string>
-    <string name="recepcion_y_articulacion" translatable="false">Recepción/Articulación</string>
-    <string name="grafomotricidad" translatable="false">Grafomotricidad</string>
-    <string name="se_0_pts" translatable="false">SE: 0 pts</string>
-    <string name="of_0_pts" translatable="false">OF: 0 pts</string>
-    <string name="ra_0_pts" translatable="false">RA: 0 pts</string>
-    <string name="tareas" translatable="false">Tareas</string>
-    <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios" translatable="false">Indica el puntaje total obtenido en los 6 ejercicios</string>
-    <string name="indica_el_puntaje_items_1_26" translatable="false">Indica el puntaje de los ejercicios 1–26</string>
-    <string name="indica_el_puntaje_items_1_20" translatable="false">Indica el puntaje de los ejercicios 1–20</string>
-    <string name="indica_el_puntaje_items_21_40" translatable="false">Indica el puntaje de los ejercicios 21–40</string>
-    <string name="indica_el_puntaje_items_41_60" translatable="false">Indica el puntaje de los ejercicios 41–60</string>
-    <string name="indica_el_puntaje_items_61_80" translatable="false">Indica el puntaje de los ejercicios 61–80</string>
-    <string name="indica_el_puntaje_items_27_34" translatable="false">Indica el puntaje de los ejercicios 27–34</string>
-    <string name="indica_el_puntaje_items_1_15" translatable="false">Indica el puntaje de los ejercicios 1–15</string>
-    <string name="indica_el_puntaje_items_1_17" translatable="false">Indica el puntaje de los ejercicios 1–17</string>
-    <string name="indica_el_puntaje_items_16_25" translatable="false">Indica el puntaje de los ejercicios 16–25</string>
-    <string name="indica_el_puntaje_items_16_21" translatable="false">Indica el puntaje de los ejercicios 16–21</string>
-    <string name="indica_el_puntaje_items_18_33" translatable="false">Indica el puntaje de los ejercicios 18–33</string>
-    <string name="indica_el_puntaje_items_22" translatable="false">Indica el puntaje del ejercicio 22</string>
-    <string name="indica_el_puntaje_items_26_35" translatable="false">Indica el puntaje de los ejercicios 26–35</string>
-    <string name="indica_el_puntaje_items_36_45" translatable="false">Indica el puntaje de los ejercicios 36–45</string>
-    <string name="indica_el_puntaje_items_1_49" translatable="false">Indica el puntaje de los ejercicios 1–49</string>
-    <string name="indica_el_puntaje_items_50_55" translatable="false">Indica el puntaje de los ejercicios 50–55</string>
-    <string name="tareas_0_pts" translatable="false">Tareas: 0 pts</string>
-    <string name="analog_as" translatable="false">Analogías</string>
-    <string name="calculo" translatable="false">Cálculo</string>
-    <string name="clasificaciones" translatable="false">Clasificaciones</string>
-    <string name="palabras_y_frases" translatable="false">Palabras y Frases</string>
-    <string name="copia_dibujos" translatable="false">Copia dibujos</string>
-    <string name="ca_0_pts" translatable="false">CA: 0 pts</string>
-    <string name="pf_0_pts" translatable="false">PF: 0 pts</string>
-    <string name="cd_0_pts" translatable="false">CD: 0 pts</string>
-    <string name="op_0_pts" translatable="false">OP: 0 pts</string>
-    <string name="hf_0_pts" translatable="false">HF: 0 pts</string>
-    <string name="pruebas_bases_del_razonamiento" translatable="false">Pruebas Bases del Razonamiento</string>
-    <string name="pruebas_escrituras" translatable="false">Pruebas Escritura</string>
-    <string name="pruebas_capacidades_cognitivas" translatable="false">Pruebas Capacidades Cognitivas</string>
-    <string name="pruebas_capacidades_espaciales" translatable="false">Pruebas Capacidades Espaciales</string>
-    <string name="pruebas_capacidades_linguisticas" translatable="false">Pruebas Capacidades Linguísticas</string>
-    <string name="reflexividad" translatable="false">Reflexividad</string>
-    <string name="pensamiento_anal_gico" translatable="false">Pensamiento Analógico</string>
-    <string name="vel_lectora" translatable="false">Velocidad Lectora</string>
-    <string name="re_0_pts" translatable="false">RE: 0 pts</string>
-    <string name="ri_0_pts" translatable="false">RI: 0 pts</string>
-    <string name="rd_0_pts" translatable="false">RD: 0 pts</string>
-    <string name="pa_0_pts" translatable="false">PA: 0 pts</string>
-    <string name="vl_0_pts" translatable="false">VL: 0 pts</string>
-    <string name="org_perceptiva" translatable="false">Org. perceptiva</string>
-    <string name="hab_fonologicas" translatable="false">Hab. Fonológicas</string>
-    <string name="pruebas_lecturas" translatable="false">Pruebas Lecturas</string>
-    <string name="comp_lectora" translatable="false">Comp. Lectora</string>
-    <string name="exactitud_lectora" translatable="false">Exactitud Lectora</string>
-    <string name="cl_0_pts" translatable="false">CL: 0 pts</string>
-    <string name="el_0_pts" translatable="false">EL: 0 pts</string>
-    <string name="gr_0_pts" translatable="false">GR: 0 pts</string>
-    <string name="or_0_pts" translatable="false">OR: 0 pts</string>
-    <string name="ov_0_pts" translatable="false">OV: 0 pts</string>
-    <string name="pruebas_aprendizaje_matem_tico" translatable="false">Pruebas Aprendizaje Matemático</string>
-    <string name="c_lculo_numeraci_n" translatable="false">Cálculo / Numeración</string>
-    <string name="res_problemas" translatable="false">Res. Problemas</string>
-    <string name="cn_0_pts" translatable="false">CN: 0 pts</string>
-    <string name="rp_0_pts" translatable="false">RP: 0 pts</string>
-    <string name="segundos_empleados" translatable="false">Segundos empleados</string>
-    <string name="_0_seg" translatable="false">0 seg</string>
-    <string name="puntaje_directo" translatable="false">Puntaje directo</string>
-    <string name="comprension" translatable="false">Comprensión</string>
-    <string name="indica_los_puntajes_centiles_de_las_pruebas" translatable="false">Indica los puntajes centiles de las pruebas</string>
-    <string name="acumulado" translatable="false">Acumulado</string>
-    <string name="indica_los_puntajes_tipificados_de_las_pruebas" translatable="false">Indica los puntajes tipificados de las pruebas</string>
-    <string name="pt_subtotales" translatable="false">PT Subtotales</string>
-    <string name="igl_total" translatable="false">IGL Total</string>
-    <string name="igc_total" translatable="false">IGC Total</string>
-    <string name="igm_total" translatable="false">IGM Total</string>
-    <string name="ige_total" translatable="false">IGE Total</string>
+    <string name="tarea_1" translatable="false" tools:keep="@string/tarea_1">Tarea 1</string>
+    <string name="aprobadas" translatable="false" tools:keep="@string/aprobadas">Aprobadas</string>
+    <string name="reprobadas" translatable="false" tools:keep="@string/reprobadas">Reprobadas</string>
+    <string name="tarea_2" translatable="false" tools:keep="@string/tarea_2">Tarea 2</string>
+    <string name="desviacion_tipica" translatable="false" tools:keep="@string/desviacion_tipica">Desviación Típica</string>
+    <string name="media" translatable="false" tools:keep="@string/media">Media</string>
+    <string name="estadisticos" translatable="false" tools:keep="@string/estadisticos">Estadísticos</string>
+    <string name="pd_subtotales" translatable="false" tools:keep="@string/pd_subtotales">PD subtotales</string>
+    <string name="pc_subtotales" translatable="false" tools:keep="@string/pc_subtotales">PC subtotales</string>
+    <string name="tarea_1_0_pts" translatable="false" tools:keep="@string/tarea_1_0_pts">Tarea 1: 0 pts</string>
+    <string name="tarea_2_0_pts" translatable="false" tools:keep="@string/tarea_2_0_pts">Tarea 2: 0 pts</string>
+    <string name="pd_total" translatable="false" tools:keep="@string/pd_total">PD Total</string>
+    <string name="pc_total" translatable="false" tools:keep="@string/pc_total">PC Total</string>
+    <string name="_0_pts" translatable="false" tools:keep="@string/_0_pts">0 pts</string>
+    <string name="pd_total_corregido" translatable="false" tools:keep="@string/pd_total_corregido">PD Total corregido</string>
+    <string name="puntaje_centil" translatable="false" tools:keep="@string/puntaje_centil">Puntaje Centil</string>
+    <string name="nivel_obtenido" translatable="false" tools:keep="@string/nivel_obtenido">Nivel obtenido</string>
+    <string name="guion_bajo" translatable="false" tools:keep="@string/guion_bajo">-</string>
+    <string name="puntaje_tipificado" translatable="false" tools:keep="@string/puntaje_tipificado">Puntaje Tipificado</string>
+    <string name="omitidas" translatable="false" tools:keep="@string/omitidas">Omitidas</string>
+    <string name="errores" translatable="false" tools:keep="@string/errores">Errores</string>
+    <string name="caballo" translatable="false" tools:keep="@string/caballo">Caballo</string>
+    <string name="dinosaurio" translatable="false" tools:keep="@string/dinosaurio">Dinosaurio</string>
+    <string name="uvas" translatable="false" tools:keep="@string/uvas">Uvas</string>
+    <string name="pl_tanos" translatable="false" tools:keep="@string/pl_tanos">Plátanos</string>
+    <string name="caballo_0_pts" translatable="false" tools:keep="@string/caballo_0_pts">Caballo: 0 pts</string>
+    <string name="dinosaurio_0_pts" translatable="false" tools:keep="@string/dinosaurio_0_pts">Dinosaurio: 0 pts</string>
+    <string name="uvas_0_pts" translatable="false" tools:keep="@string/uvas_0_pts">Uvas: 0 pts</string>
+    <string name="pl_tanos_0_pts" translatable="false" tools:keep="@string/pl_tanos_0_pts">Plátanos: 0 pts</string>
+    <string name="tarea_3" translatable="false" tools:keep="@string/tarea_3">Tarea 3</string>
+    <string name="tarea_3_0_pts" translatable="false" tools:keep="@string/tarea_3_0_pts">Tarea 3: 0 pts</string>
+    <string name="ingresa_el_error_total_de_los_6_ejercicios" translatable="false" tools:keep="@string/ingresa_el_error_total_de_los_6_ejercicios">Ingresa el error total de los 6 ejercicios</string>
+    <string name="tarea_4" translatable="false" tools:keep="@string/tarea_4">Tarea 4</string>
+    <string name="tarea_4_0_pts" translatable="false" tools:keep="@string/tarea_4_0_pts">Tarea 4: 0 pts</string>
+    <string name="tarea_5" translatable="false" tools:keep="@string/tarea_5">Tarea 5</string>
+    <string name="tarea_6" translatable="false" tools:keep="@string/tarea_6">Tarea 6</string>
+    <string name="tarea_5_0_pts" translatable="false" tools:keep="@string/tarea_5_0_pts">Tarea 5: 0 pts</string>
+    <string name="tarea_6_0_pts" translatable="false" tools:keep="@string/tarea_6_0_pts">Tarea 6: 0 pts</string>
+    <string name="series" translatable="false" tools:keep="@string/series">Series</string>
+    <string name="recepcion_y_articulacion" translatable="false" tools:keep="@string/recepcion_y_articulacion">Recepción/Articulación</string>
+    <string name="grafomotricidad" translatable="false" tools:keep="@string/grafomotricidad">Grafomotricidad</string>
+    <string name="se_0_pts" translatable="false" tools:keep="@string/se_0_pts">SE: 0 pts</string>
+    <string name="of_0_pts" translatable="false" tools:keep="@string/of_0_pts">OF: 0 pts</string>
+    <string name="ra_0_pts" translatable="false" tools:keep="@string/ra_0_pts">RA: 0 pts</string>
+    <string name="tareas" translatable="false" tools:keep="@string/tareas">Tareas</string>
+    <string name="indica_el_puntaje_total_obtenido_en_los_6_ejercicios" translatable="false" tools:keep="@string/indica_el_puntaje_total_obtenido_en_los_6_ejercicios">Indica el puntaje total obtenido en los 6 ejercicios</string>
+    <string name="indica_el_puntaje_items_1_26" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_26">Indica el puntaje de los ejercicios 1–26</string>
+    <string name="indica_el_puntaje_items_1_20" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_20">Indica el puntaje de los ejercicios 1–20</string>
+    <string name="indica_el_puntaje_items_21_40" translatable="false" tools:keep="@string/indica_el_puntaje_items_21_40">Indica el puntaje de los ejercicios 21–40</string>
+    <string name="indica_el_puntaje_items_41_60" translatable="false" tools:keep="@string/indica_el_puntaje_items_41_60">Indica el puntaje de los ejercicios 41–60</string>
+    <string name="indica_el_puntaje_items_61_80" translatable="false" tools:keep="@string/indica_el_puntaje_items_61_80">Indica el puntaje de los ejercicios 61–80</string>
+    <string name="indica_el_puntaje_items_27_34" translatable="false" tools:keep="@string/indica_el_puntaje_items_27_34">Indica el puntaje de los ejercicios 27–34</string>
+    <string name="indica_el_puntaje_items_1_15" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_15">Indica el puntaje de los ejercicios 1–15</string>
+    <string name="indica_el_puntaje_items_1_17" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_17">Indica el puntaje de los ejercicios 1–17</string>
+    <string name="indica_el_puntaje_items_16_25" translatable="false" tools:keep="@string/indica_el_puntaje_items_16_25">Indica el puntaje de los ejercicios 16–25</string>
+    <string name="indica_el_puntaje_items_16_21" translatable="false" tools:keep="@string/indica_el_puntaje_items_16_21">Indica el puntaje de los ejercicios 16–21</string>
+    <string name="indica_el_puntaje_items_18_33" translatable="false" tools:keep="@string/indica_el_puntaje_items_18_33">Indica el puntaje de los ejercicios 18–33</string>
+    <string name="indica_el_puntaje_items_22" translatable="false" tools:keep="@string/indica_el_puntaje_items_22">Indica el puntaje del ejercicio 22</string>
+    <string name="indica_el_puntaje_items_26_35" translatable="false" tools:keep="@string/indica_el_puntaje_items_26_35">Indica el puntaje de los ejercicios 26–35</string>
+    <string name="indica_el_puntaje_items_36_45" translatable="false" tools:keep="@string/indica_el_puntaje_items_36_45">Indica el puntaje de los ejercicios 36–45</string>
+    <string name="indica_el_puntaje_items_1_49" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_49">Indica el puntaje de los ejercicios 1–49</string>
+    <string name="indica_el_puntaje_items_50_55" translatable="false" tools:keep="@string/indica_el_puntaje_items_50_55">Indica el puntaje de los ejercicios 50–55</string>
+    <string name="tareas_0_pts" translatable="false" tools:keep="@string/tareas_0_pts">Tareas: 0 pts</string>
+    <string name="analog_as" translatable="false" tools:keep="@string/analog_as">Analogías</string>
+    <string name="calculo" translatable="false" tools:keep="@string/calculo">Cálculo</string>
+    <string name="clasificaciones" translatable="false" tools:keep="@string/clasificaciones">Clasificaciones</string>
+    <string name="palabras_y_frases" translatable="false" tools:keep="@string/palabras_y_frases">Palabras y Frases</string>
+    <string name="copia_dibujos" translatable="false" tools:keep="@string/copia_dibujos">Copia dibujos</string>
+    <string name="ca_0_pts" translatable="false" tools:keep="@string/ca_0_pts">CA: 0 pts</string>
+    <string name="pf_0_pts" translatable="false" tools:keep="@string/pf_0_pts">PF: 0 pts</string>
+    <string name="cd_0_pts" translatable="false" tools:keep="@string/cd_0_pts">CD: 0 pts</string>
+    <string name="op_0_pts" translatable="false" tools:keep="@string/op_0_pts">OP: 0 pts</string>
+    <string name="hf_0_pts" translatable="false" tools:keep="@string/hf_0_pts">HF: 0 pts</string>
+    <string name="pruebas_bases_del_razonamiento" translatable="false" tools:keep="@string/pruebas_bases_del_razonamiento">Pruebas Bases del Razonamiento</string>
+    <string name="pruebas_escrituras" translatable="false" tools:keep="@string/pruebas_escrituras">Pruebas Escritura</string>
+    <string name="pruebas_capacidades_cognitivas" translatable="false" tools:keep="@string/pruebas_capacidades_cognitivas">Pruebas Capacidades Cognitivas</string>
+    <string name="pruebas_capacidades_espaciales" translatable="false" tools:keep="@string/pruebas_capacidades_espaciales">Pruebas Capacidades Espaciales</string>
+    <string name="pruebas_capacidades_linguisticas" translatable="false" tools:keep="@string/pruebas_capacidades_linguisticas">Pruebas Capacidades Linguísticas</string>
+    <string name="reflexividad" translatable="false" tools:keep="@string/reflexividad">Reflexividad</string>
+    <string name="pensamiento_anal_gico" translatable="false" tools:keep="@string/pensamiento_anal_gico">Pensamiento Analógico</string>
+    <string name="vel_lectora" translatable="false" tools:keep="@string/vel_lectora">Velocidad Lectora</string>
+    <string name="re_0_pts" translatable="false" tools:keep="@string/re_0_pts">RE: 0 pts</string>
+    <string name="ri_0_pts" translatable="false" tools:keep="@string/ri_0_pts">RI: 0 pts</string>
+    <string name="rd_0_pts" translatable="false" tools:keep="@string/rd_0_pts">RD: 0 pts</string>
+    <string name="pa_0_pts" translatable="false" tools:keep="@string/pa_0_pts">PA: 0 pts</string>
+    <string name="vl_0_pts" translatable="false" tools:keep="@string/vl_0_pts">VL: 0 pts</string>
+    <string name="org_perceptiva" translatable="false" tools:keep="@string/org_perceptiva">Org. perceptiva</string>
+    <string name="hab_fonologicas" translatable="false" tools:keep="@string/hab_fonologicas">Hab. Fonológicas</string>
+    <string name="pruebas_lecturas" translatable="false" tools:keep="@string/pruebas_lecturas">Pruebas Lecturas</string>
+    <string name="comp_lectora" translatable="false" tools:keep="@string/comp_lectora">Comp. Lectora</string>
+    <string name="exactitud_lectora" translatable="false" tools:keep="@string/exactitud_lectora">Exactitud Lectora</string>
+    <string name="cl_0_pts" translatable="false" tools:keep="@string/cl_0_pts">CL: 0 pts</string>
+    <string name="el_0_pts" translatable="false" tools:keep="@string/el_0_pts">EL: 0 pts</string>
+    <string name="gr_0_pts" translatable="false" tools:keep="@string/gr_0_pts">GR: 0 pts</string>
+    <string name="or_0_pts" translatable="false" tools:keep="@string/or_0_pts">OR: 0 pts</string>
+    <string name="ov_0_pts" translatable="false" tools:keep="@string/ov_0_pts">OV: 0 pts</string>
+    <string name="pruebas_aprendizaje_matem_tico" translatable="false" tools:keep="@string/pruebas_aprendizaje_matem_tico">Pruebas Aprendizaje Matemático</string>
+    <string name="c_lculo_numeraci_n" translatable="false" tools:keep="@string/c_lculo_numeraci_n">Cálculo / Numeración</string>
+    <string name="res_problemas" translatable="false" tools:keep="@string/res_problemas">Res. Problemas</string>
+    <string name="cn_0_pts" translatable="false" tools:keep="@string/cn_0_pts">CN: 0 pts</string>
+    <string name="rp_0_pts" translatable="false" tools:keep="@string/rp_0_pts">RP: 0 pts</string>
+    <string name="segundos_empleados" translatable="false" tools:keep="@string/segundos_empleados">Segundos empleados</string>
+    <string name="_0_seg" translatable="false" tools:keep="@string/_0_seg">0 seg</string>
+    <string name="puntaje_directo" translatable="false" tools:keep="@string/puntaje_directo">Puntaje directo</string>
+    <string name="comprension" translatable="false" tools:keep="@string/comprension">Comprensión</string>
+    <string name="indica_los_puntajes_centiles_de_las_pruebas" translatable="false" tools:keep="@string/indica_los_puntajes_centiles_de_las_pruebas">Indica los puntajes centiles de las pruebas</string>
+    <string name="acumulado" translatable="false" tools:keep="@string/acumulado">Acumulado</string>
+    <string name="indica_los_puntajes_tipificados_de_las_pruebas" translatable="false" tools:keep="@string/indica_los_puntajes_tipificados_de_las_pruebas">Indica los puntajes tipificados de las pruebas</string>
+    <string name="pt_subtotales" translatable="false" tools:keep="@string/pt_subtotales">PT Subtotales</string>
+    <string name="igl_total" translatable="false" tools:keep="@string/igl_total">IGL Total</string>
+    <string name="igc_total" translatable="false" tools:keep="@string/igc_total">IGC Total</string>
+    <string name="igm_total" translatable="false" tools:keep="@string/igm_total">IGM Total</string>
+    <string name="ige_total" translatable="false" tools:keep="@string/ige_total">IGE Total</string>
 
     <string name="PUNTAJE_DIRECTO" translatable="false">PD</string>
     <string name="PERCENTIL_CHILENO" translatable="false">Pc Chileno</string>
-    <string name="icono_tabla_baremo" translatable="false">Icono tabla baremo</string>
-    <string name="ver_tabla_de_baremos" translatable="false">Ver tabla de baremos</string>
+    <string name="icono_tabla_baremo" translatable="false" tools:keep="@string/icono_tabla_baremo">Icono tabla baremo</string>
+    <string name="ver_tabla_de_baremos" translatable="false" tools:keep="@string/ver_tabla_de_baremos">Ver tabla de baremos</string>
     <string name="dialogo_boton_cerrar" translatable="false">Cerrar</string>
-    <string name="dialogo_boton_aceptar" translatable="false">Aceptar</string>
-    <string name="dialogo_boton_cancelar" translatable="false">Cancelar</string>
-    <string name="dialogo_baremo_titulo" translatable="false">Tabla Baremo</string>
+    <string name="dialogo_boton_aceptar" translatable="false" tools:keep="@string/dialogo_boton_aceptar">Aceptar</string>
+    <string name="dialogo_boton_cancelar" translatable="false" tools:keep="@string/dialogo_boton_cancelar">Cancelar</string>
+    <string name="dialogo_baremo_titulo" translatable="false" tools:keep="@string/dialogo_baremo_titulo">Tabla Baremo</string>
     <string name="dialogo_baremo_descripcion" translatable="false">Puntajes de tabla baremo de ítem</string>
     <string name="TOOLBAR_MOTIVACION" translatable="false">Motivación</string>
     <string name="TOOLBAR_AUTOCONTROL" translatable="false">Autocontrol</string>
@@ -563,10 +563,10 @@
     <string name="TOOLBAR_AUTOESTIMA" translatable="false">Autoestima</string>
     <string name="TOOLBAR_VELOCIDAD" translatable="false">Velocidad</string>
     <string name="TOOLBAR_COMPRENSION" translatable="false">Comprensión</string>
-    <string name="icono_ayuda" translatable="false">Icono ayuda</string>
+    <string name="icono_ayuda" translatable="false" tools:keep="@string/icono_ayuda">Icono ayuda</string>
     <string name="NIGHT_MODE_KEY" translatable="false">night_mode</string>
-    <string name="NIGHT_MODE_STATUS_OFF" translatable="false">NIGHT MODE OFF</string>
-    <string name="NIGHT_MODE_STATUS_ON" translatable="false">NIGHT MODE ON</string>
+    <string name="NIGHT_MODE_STATUS_OFF" translatable="false" tools:keep="@string/NIGHT_MODE_STATUS_OFF">NIGHT MODE OFF</string>
+    <string name="NIGHT_MODE_STATUS_ON" translatable="false" tools:keep="@string/NIGHT_MODE_STATUS_ON">NIGHT MODE ON</string>
     <string name="pd_corregido" translatable="false">PD corregido</string>
     <string name="entendido" translatable="false">Entendido</string>
     <string name="routeMapEvalua0" translatable="false">routeMapEvalua0</string>
@@ -587,7 +587,7 @@
     <string name="NIVEL_MEDIO" translatable="false">MEDIO</string>
     <string name="NIVEL_MEDIO_BAJO" translatable="false">MEDIO-BAJO</string>
     <string name="NIVEL_BAJO" translatable="false">BAJO</string>
-    <string name="DIA_LIBRE" translatable="false">¡Dia libre de publicidad!</string>
+    <string name="DIA_LIBRE" translatable="false" tools:keep="@string/DIA_LIBRE">¡Dia libre de publicidad!</string>
     <string name="TAREA_3" translatable="false">Tarea 3:</string>
     <string name="TAREA_4" translatable="false">Tarea 4:</string>
     <string name="TAREA_5" translatable="false">Tarea 5:</string>
@@ -600,40 +600,40 @@
     <string name="COMPRENSION_MUY_ALTA" translatable="false">Muy Alta</string>
     <string name="POINTS_FORMAT" formatted="false" translatable="false">%1$s %2$s pts</string>
     <string name="POINTS_SIMPLE_FORMAT" translatable="false">%1$s pts</string>
-    <string name="ort_fonetica" translatable="false">Ortografía fonética</string>
-    <string name="graf_a_y_exp_escrita" translatable="false">Grafía y exp. escrita</string>
-    <string name="ortografia_visual" translatable="false">Ortografía Visual</string>
-    <string name="ortograf_a" translatable="false">Ortografía</string>
-    <string name="grafia" translatable="false">Grafía</string>
-    <string name="tarea_1_dictado" translatable="false">Tarea 1 - Dictado</string>
-    <string name="tarea_2_recog_ortogr_fico" translatable="false">Tarea 2 - Recog. Ortográfico</string>
-    <string name="indica_el_puntaje_items_1_9" translatable="false">Indica el puntaje de los ejercicios 1–9</string>
-    <string name="indica_el_puntaje_items_10_12" translatable="false">Indica el puntaje de los ejercicios 10–12</string>
-    <string name="indica_el_puntaje_items_13_35" translatable="false">Indica el puntaje de los ejercicios 13–35</string>
-    <string name="indica_el_puntaje_items_1_5" translatable="false">Indica el puntaje de los ejercicios 1–5</string>
-    <string name="indica_el_puntaje_items_1_7" translatable="false">Indica el puntaje de los ejercicios 1–7</string>
-    <string name="indica_el_puntaje_items_6_9" translatable="false">Indica el puntaje de los ejercicios 6–9</string>
-    <string name="indica_el_puntaje_items_8_9" translatable="false">Indica el puntaje de los ejercicios 8–9</string>
-    <string name="indica_el_puntaje_items_10_14" translatable="false">Indica el puntaje de los ejercicios 10–14</string>
+    <string name="ort_fonetica" translatable="false" tools:keep="@string/ort_fonetica">Ortografía fonética</string>
+    <string name="graf_a_y_exp_escrita" translatable="false" tools:keep="@string/graf_a_y_exp_escrita">Grafía y exp. escrita</string>
+    <string name="ortografia_visual" translatable="false" tools:keep="@string/ortografia_visual">Ortografía Visual</string>
+    <string name="ortograf_a" translatable="false" tools:keep="@string/ortograf_a">Ortografía</string>
+    <string name="grafia" translatable="false" tools:keep="@string/grafia">Grafía</string>
+    <string name="tarea_1_dictado" translatable="false" tools:keep="@string/tarea_1_dictado">Tarea 1 - Dictado</string>
+    <string name="tarea_2_recog_ortogr_fico" translatable="false" tools:keep="@string/tarea_2_recog_ortogr_fico">Tarea 2 - Recog. Ortográfico</string>
+    <string name="indica_el_puntaje_items_1_9" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_9">Indica el puntaje de los ejercicios 1–9</string>
+    <string name="indica_el_puntaje_items_10_12" translatable="false" tools:keep="@string/indica_el_puntaje_items_10_12">Indica el puntaje de los ejercicios 10–12</string>
+    <string name="indica_el_puntaje_items_13_35" translatable="false" tools:keep="@string/indica_el_puntaje_items_13_35">Indica el puntaje de los ejercicios 13–35</string>
+    <string name="indica_el_puntaje_items_1_5" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_5">Indica el puntaje de los ejercicios 1–5</string>
+    <string name="indica_el_puntaje_items_1_7" translatable="false" tools:keep="@string/indica_el_puntaje_items_1_7">Indica el puntaje de los ejercicios 1–7</string>
+    <string name="indica_el_puntaje_items_6_9" translatable="false" tools:keep="@string/indica_el_puntaje_items_6_9">Indica el puntaje de los ejercicios 6–9</string>
+    <string name="indica_el_puntaje_items_8_9" translatable="false" tools:keep="@string/indica_el_puntaje_items_8_9">Indica el puntaje de los ejercicios 8–9</string>
+    <string name="indica_el_puntaje_items_10_14" translatable="false" tools:keep="@string/indica_el_puntaje_items_10_14">Indica el puntaje de los ejercicios 10–14</string>
     <string name="icono_dropdown_menu" translatable="false">Menu desplegable</string>
     <string name="descripcion_corregido_dialog" translatable="false">El puntaje total corregido corresponde al puntaje total recalculado en base al valor inferior más cercano a PD según la tabla del ítem en cuestión.\n\n Por ejemplo: \n- Pd total: 240\n- Valor inferior cercano: 140\n- Pd total corregido: 140</string>
-    <string name="icono_tema_modo_claro" translatable="false">Icono tema modo claro</string>
-    <string name="icono_tema_modo_oscuro" translatable="false">Icono tema modo oscuro</string>
-    <string name="raz_inductivo" translatable="false">Raz. Inductivo</string>
-    <string name="raz_espacial" translatable="false">Raz. Espacial</string>
-    <string name="raz_deductivo" translatable="false">Raz. Deductivo</string>
+    <string name="icono_tema_modo_claro" translatable="false" tools:keep="@string/icono_tema_modo_claro">Icono tema modo claro</string>
+    <string name="icono_tema_modo_oscuro" translatable="false" tools:keep="@string/icono_tema_modo_oscuro">Icono tema modo oscuro</string>
+    <string name="raz_inductivo" translatable="false" tools:keep="@string/raz_inductivo">Raz. Inductivo</string>
+    <string name="raz_espacial" translatable="false" tools:keep="@string/raz_espacial">Raz. Espacial</string>
+    <string name="raz_deductivo" translatable="false" tools:keep="@string/raz_deductivo">Raz. Deductivo</string>
     <string name="TOOLBAR_ADAP_PERSONAL" translatable="false">Adaptación Personal</string>
     <string name="TOOLBAR_ADAP_FAMILIAR" translatable="false">Adaptación Familiar</string>
     <string name="TOOLBAR_ADAP_ESCOLAR" translatable="false">Adaptación Escolar</string>
     <string name="TOOLBAR_HAB_SOCIALES" translatable="false">Habilidades Sociales</string>
-    <string name="eficacia_lectora" translatable="false">Eficacia Lectora</string>
-    <string name="DIALOG_TITLE">¡Apoya a la aplicación!</string>
-    <string name="DIALOG_MESSAGE">Ve el anuncio, apoya la app y recibe 1 día libre de anuncios</string>
-    <string name="DIALOG_POSITIVE_BUTTON">Ver anuncio</string>
-    <string name="DIALOG_NEGATIVE_BUTTON">Cancelar</string>
+    <string name="eficacia_lectora" translatable="false" tools:keep="@string/eficacia_lectora">Eficacia Lectora</string>
+    <string name="DIALOG_TITLE" tools:keep="@string/DIALOG_TITLE">¡Apoya a la aplicación!</string>
+    <string name="DIALOG_MESSAGE" tools:keep="@string/DIALOG_MESSAGE">Ve el anuncio, apoya la app y recibe 1 día libre de anuncios</string>
+    <string name="DIALOG_POSITIVE_BUTTON" tools:keep="@string/DIALOG_POSITIVE_BUTTON">Ver anuncio</string>
+    <string name="DIALOG_NEGATIVE_BUTTON" tools:keep="@string/DIALOG_NEGATIVE_BUTTON">Cancelar</string>
     <string name="NIGHT_MODE_ON" translatable="false">Modo noche activado</string>
     <string name="NIGHT_MODE_OFF" translatable="false">Modo noche desactivado</string>
-    <string name="indica_el_total_para_las_4_tareas" translatable="false">Indica el total para las 4 tareas</string>
+    <string name="indica_el_total_para_las_4_tareas" translatable="false" tools:keep="@string/indica_el_total_para_las_4_tareas">Indica el total para las 4 tareas</string>
     <string name="SHARED_VERSION_CODE_APP" translatable="false">Shared version code: </string>
     <string name="VERSION_CODE_APP" translatable="false">VERSION_CODE_INSTALLED: </string>
     <string name="NEW_VERSION_DETECTED" translatable="false">NUEVA VERSION DETECTADA: sharedVersionCode \u003C versionCode</string>
@@ -645,16 +645,16 @@
     <string name="UPDATE_FAIL" translatable="false">Actualizacion fallida</string>
     <string name="UPDATE_AVAILABLE" translatable="false">Actualizacion disponible</string>
     <string name="UPDATE_NOT_AVAILABLE" translatable="false">Actualizacion no disponible</string>
-    <string name="MOBILE_ADS_COMPLETE" translatable="false">Mobile Ads complete load</string>
-    <string name="icono_grupo_whatsapp" translatable="false">Icono grupo whatsapp</string>
-    <string name="problemas_sugerencias_y_avisos" translatable="false">Dudas, problemas y sugerencias</string>
+    <string name="MOBILE_ADS_COMPLETE" translatable="false" tools:keep="@string/MOBILE_ADS_COMPLETE">Mobile Ads complete load</string>
+    <string name="icono_grupo_whatsapp" translatable="false" tools:keep="@string/icono_grupo_whatsapp">Icono grupo whatsapp</string>
+    <string name="problemas_sugerencias_y_avisos" translatable="false" tools:keep="@string/problemas_sugerencias_y_avisos">Dudas, problemas y sugerencias</string>
     <string name="TOOLBAR_CONFIGURACION">Configuración</string>
     <string name="SHARED_PREF_CRASHLYTICS_KEY">firebase_crashlytics</string>
     <string name="SHARED_PREF_PERFORMANCE_KEY">firebase_performace</string>
-    <string name="firebase_dialog_msg">Esta aplicación recopila información anónima (ID de instalador, rastros de fallos e información sobre el hardware del dispositivo) con el fin de brindar un mejor servicio y solucionar problemas una vez que ocurran. \n¡Gracias por tu ayuda!</string>
-    <string name="firebase_dialog_title">Reportes de fallos</string>
+    <string name="firebase_dialog_msg" tools:keep="@string/firebase_dialog_msg">Esta aplicación recopila información anónima (ID de instalador, rastros de fallos e información sobre el hardware del dispositivo) con el fin de brindar un mejor servicio y solucionar problemas una vez que ocurran. \n¡Gracias por tu ayuda!</string>
+    <string name="firebase_dialog_title" tools:keep="@string/firebase_dialog_title">Reportes de fallos</string>
     <string name="SHARED_PREF_PRIVACY_POLICY">dialog_privacy_policy</string>
-    <string name="configuracion">Configuración</string>
+    <string name="configuracion" tools:keep="@string/configuracion">Configuración</string>
     <string name="TAG_NIGHT_MODE" translatable="false">NIGHT MODE</string>
     <string name="shared_pref_version_app">acerca</string>
     <string name="firebase_crashlytics_on">Registro de fallos activado</string>

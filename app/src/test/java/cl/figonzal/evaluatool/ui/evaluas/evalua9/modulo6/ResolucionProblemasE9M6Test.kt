@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 07-03-22 16:51
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6
 
-import cl.figonzal.evaluatool.baremosTables.resolucionProblemasE9M6Baremo
+import cl.figonzal.evaluatool.domain.baremos.resolucionProblemasE9M6Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert
 import org.junit.Test

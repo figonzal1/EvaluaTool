@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:48
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo3
 
-import cl.figonzal.evaluatool.baremosTables.autoControlFragmentE5M3Baremo
+import cl.figonzal.evaluatool.domain.baremos.autoControlFragmentE5M3Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class AutoControlFragmentE5M3Resolver : BaseResolver {

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 22:17
+ Last modified 07-03-22 17:14
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3
@@ -36,15 +36,17 @@ class NivelesAdaptacionE8M3 : AppCompatActivity() {
         binding = ActivityNivelesAdaptacionE8M3Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        with(binding) {
 
-            configureActionBar(R.string.TOOLBAR_NIVELES_ADAPTACION, includeToolbar.materialToolbar)
+        configureActionBar(
+            R.string.TOOLBAR_NIVELES_ADAPTACION,
+            binding.includeToolbar.materialToolbar
+        )
 
-            //View pager
-            viewPagerNivelesAdaptacion.adapter =
-                FragmentStateAdapterE8M3(this@NivelesAdaptacionE8M3)
-            setTabs()
-        }
+        //View pager
+        binding.viewPagerNivelesAdaptacion.adapter =
+            FragmentStateAdapterE8M3(this@NivelesAdaptacionE8M3)
+        setTabs()
+
     }
 
     private fun setTabs() {

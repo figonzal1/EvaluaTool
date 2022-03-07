@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 11:59
+ Last modified 07-03-22 16:08
  */
 package cl.figonzal.evaluatool.ui
 
@@ -44,6 +44,7 @@ import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import timber.log.Timber
 
 
@@ -105,13 +106,10 @@ class MainActivity : AppCompatActivity() {
             loadAd()
         }
 
-        //UPDATEr
-        /*
-        with(SharedPrefUtil(this)) {
-            updateService = UpdaterService(
-                this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
-            )
-        }*/
+        //UPDATER
+        updateService = UpdaterService(
+            this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
+        )
 
         bindingResources()
     }
@@ -197,7 +195,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
-        //updateService.resumeUpdater()
+        updateService.resumeUpdater()
     }
 
     //INTERSTITIAL

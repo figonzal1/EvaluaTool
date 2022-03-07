@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 07-03-22 16:48
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo4
 
-import cl.figonzal.evaluatool.baremosTables.velocidadFragmentE7M4Baremo
+import cl.figonzal.evaluatool.domain.baremos.velocidadFragmentE7M4Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class VelocidadFragmentE7M4Resolver : BaseResolver {

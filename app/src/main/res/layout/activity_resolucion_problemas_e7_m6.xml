@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 26/2/22 23:14
+  Last modified 07-03-22 16:42
   -->
 
 
@@ -17,7 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.ResolucionProblemasE7M6">
+    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.ResolucionProblemasE7M6"
+    tools:keep="@layout/activity_resolucion_problemas_e7_m6">
 
     <include
         android:id="@+id/include_toolbar"

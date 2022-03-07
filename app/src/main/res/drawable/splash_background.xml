@@ -6,12 +6,14 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 19-07-21 21:26
+  Last modified 07-03-22 17:13
   -->
 
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/splash_background">
     <item android:drawable="@drawable/bg_gradient" />
     <item
         android:width="100dp"

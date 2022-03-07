@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 11-06-21 01:54
+  Last modified 07-03-22 16:46
   -->
 
 
@@ -18,7 +18,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:cardCornerRadius="@dimen/corner_radius_8dp">
+    app:cardCornerRadius="@dimen/corner_radius_8dp"
+    tools:keep="@layout/baremo_dialog_layout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

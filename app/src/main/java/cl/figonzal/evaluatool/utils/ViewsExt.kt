@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 22:51
+ Last modified 07-03-22 16:54
  */
 
 package cl.figonzal.evaluatool.utils
@@ -172,18 +172,6 @@ fun ImageView.setAlertDialogCorregido() =
             .show()
     }
 
-inline fun <reified T : Activity> Activity.startActivity() {
-    val intent = Intent(this, T::class.java)
-    this.startActivity(intent)
-}
-
-/**
- * Function that make animations for button situated in MainActivity
- *
- * @param buttonList List of material buttons
- * @param binding ViewBinding
- * @receiver MainAcitivy
- */
 fun List<MaterialButton>.setUpAnimations(
     binding: ActivityMainBinding,
     context: Context

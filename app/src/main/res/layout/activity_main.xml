@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 05-03-22 12:05
+  Last modified 07-03-22 16:42
   -->
 
 
@@ -18,7 +18,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity"
+    tools:keep="@layout/activity_main">
 
     <FrameLayout
         android:id="@+id/ad_view_container"
