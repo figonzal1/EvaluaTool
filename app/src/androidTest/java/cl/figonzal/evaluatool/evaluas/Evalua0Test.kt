@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:01
+ Last modified 06-03-22 13:27
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -133,7 +133,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -147,7 +147,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -161,7 +161,7 @@ class Evalua0Test {
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
-                        withParent(withId(R.id.rv_0))
+                        withParent(withId(R.id.rv))
                     )
                 ),
                 isDisplayed()
@@ -215,7 +215,7 @@ class Evalua0Test {
                 withId(R.id.tv_group), withText(itemName),
                 childAtPosition(
                     childAtPosition(
-                        withId(R.id.rv_0),
+                        withId(R.id.rv),
                         positionList
                     ),
                     0

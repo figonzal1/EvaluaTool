@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 06-03-22 02:05
+ Last modified 07-03-22 11:59
  */
 package cl.figonzal.evaluatool.ui
 
@@ -76,7 +76,7 @@ class MainActivity : AppCompatActivity() {
         sharedPrefUtil = SharedPrefUtil(this)
 
         //RequestConfiguration.Builder()
-        //    .setTestDeviceIds(Arrays.asList("AADCDB8868D6F854F75225420A8F220E"))
+        //    .setTestDeviceIds(Arrays.asList(""))
 
         //Night mode
         when {
