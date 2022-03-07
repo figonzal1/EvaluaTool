@@ -6,12 +6,12 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 18-07-21 14:13
+  Last modified 07-03-22 16:42
   -->
 
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <color name="colorPrimary">#6a1b9a</color>
     <color name="colorPrimaryVariant">#501175</color>
@@ -29,9 +29,9 @@
     <color name="tableGreyHeader">#A1A1A1</color>
     <color name="tableGreyRow">#80F4F4F4</color>
 
-    <color name="hintColorGreen">#8BC34A</color>
-    <color name="hintColorGrey">#A1A1A1</color>
-    <color name="hintColorRed">#F44336</color>
+    <color name="hintColorGreen" tools:keep="@color/hintColorGreen">#8BC34A</color>
+    <color name="hintColorGrey" tools:keep="@color/hintColorGrey">#A1A1A1</color>
+    <color name="hintColorRed" tools:keep="@color/hintColorRed">#F44336</color>
 
     <color name="badgeGreen">#9A8BC34A</color>
     <color name="changeLogDivider">#80D8D8D8</color>

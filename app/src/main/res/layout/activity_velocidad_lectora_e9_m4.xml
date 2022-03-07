@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 13-06-21 16:33
+  Last modified 07-03-22 16:42
   -->
 
 
@@ -17,7 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua9.modulo4.VelocidadLectoraE9M4">
+    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.VelocidadLectoraE9M4"
+    tools:keep="@layout/activity_velocidad_lectora_e9_m4">
 
     <include
         android:id="@+id/include_toolbar"

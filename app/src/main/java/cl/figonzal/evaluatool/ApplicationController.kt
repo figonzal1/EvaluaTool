@@ -6,16 +6,16 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 17-04-21 21:42
+ Last modified 05-03-22 10:40
  */
-
-@file:Suppress("unused")
 
 package cl.figonzal.evaluatool
 
 import android.app.Application
+import cl.figonzal.evaluatool.service.AppOpenService
+import com.google.android.gms.ads.MobileAds
 import timber.log.Timber
 
 class ApplicationController : Application() {
@@ -34,5 +34,8 @@ class ApplicationController : Application() {
             BuildConfig.DEBUG -> Timber.plant(Timber.DebugTree())
             else -> Timber.plant(CrashlyticsTree())
         }
+
+        MobileAds.initialize(this) {}
+        AppOpenService(this)
     }
 }

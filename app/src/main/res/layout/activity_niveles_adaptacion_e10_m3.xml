@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 08-06-21 22:21
+  Last modified 07-03-22 16:42
   -->
 
 
@@ -17,7 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".evalua.evalua10.modulo3.NivelesAdaptacionE10M3">
+    tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo3.NivelesAdaptacionE10M3"
+    tools:keep="@layout/activity_niveles_adaptacion_e10_m3">
 
     <include
         android:id="@+id/include_toolbar"
