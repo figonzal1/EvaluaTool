@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 01:08
+ Last modified 26-05-22 16:57
  */
 
 package cl.figonzal.evaluatool.service
 
-import android.content.Context
+import android.app.Activity
 import android.widget.TextView
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
@@ -26,12 +26,12 @@ import com.google.android.material.button.MaterialButton
 import timber.log.Timber
 
 class ChangeLogService(
-    private val context: Context,
+    private val activity: Activity,
     private val sharedPrefUtil: SharedPrefUtil
 ) : DefaultLifecycleObserver {
 
     private var versionCode: Int = BuildConfig.VERSION_CODE
-    private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
+    private val version = activity.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
         "- Actualizaciones internas necesarias",
         "- Mejoras de iconos",
@@ -51,26 +51,26 @@ class ChangeLogService(
 
         //GET STORED VERSION CODE
         val sharedVersionCode = sharedPrefUtil.getData(
-            context.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
+            activity.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
             0
         ) as Int
 
-        Timber.d("${context.getString(R.string.SHARED_VERSION_CODE_APP)}$sharedVersionCode")
-        Timber.d("${context.getString(R.string.VERSION_CODE_APP)}$versionCode")
+        Timber.d("${activity.getString(R.string.SHARED_VERSION_CODE_APP)}$sharedVersionCode")
+        Timber.d("${activity.getString(R.string.VERSION_CODE_APP)}$versionCode")
 
         when {
             sharedVersionCode < versionCode && sharedVersionCode != 0 -> {
 
                 showBottomDialog()
-                Timber.d(context.getString(R.string.NEW_VERSION_DETECTED))
+                Timber.d(activity.getString(R.string.NEW_VERSION_DETECTED))
             }
-            else -> Timber.d(context.getString(R.string.NO_VERSION_DETECTED))
+            else -> Timber.d(activity.getString(R.string.NO_VERSION_DETECTED))
         }
     }
 
     private fun showBottomDialog() {
 
-        with(BottomSheetDialog(context)) {
+        with(BottomSheetDialog(activity)) {
 
             setContentView(R.layout.changelog_dialog)
             setCancelable(false)

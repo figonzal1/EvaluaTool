@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 25-05-22 23:11
+ Last modified 26-05-22 18:07
  */
 
 package cl.figonzal.evaluatool.ui
@@ -19,6 +19,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -74,7 +75,6 @@ class SettingsActivity : AppCompatActivity() {
 
         override fun onSharedPreferenceChanged(preferences: SharedPreferences?, key: String?) {
 
-            val edit = preferences?.edit()
 
             //Firebase Crashlytics Preference
             if (key.equals(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY))) {
@@ -95,8 +95,9 @@ class SettingsActivity : AppCompatActivity() {
                         false
                     }
                 }
-                edit?.putBoolean(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY), result)
-                edit?.apply()
+                preferences?.edit {
+                    putBoolean(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY), result)
+                }
             }
 
 
@@ -118,8 +119,9 @@ class SettingsActivity : AppCompatActivity() {
                     }
                 }
 
-                edit?.putBoolean(getString(R.string.SHARED_PREF_PERFORMANCE_KEY), result)
-                edit?.apply()
+                preferences?.edit {
+                    putBoolean(getString(R.string.SHARED_PREF_PERFORMANCE_KEY), result)
+                }
             }
         }
 

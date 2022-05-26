@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 16:47
+ Last modified 26-05-22 16:57
  */
 package cl.figonzal.evaluatool.ui
 
@@ -71,14 +71,14 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(GooglePlayService(this))
 
         //Change Log Service
-        lifecycle.addObserver(ChangeLogService(this, SharedPrefUtil(this)))
+        lifecycle.addObserver(ChangeLogService(this, sharedPrefUtil))
 
         //Ads InterstitialAd
         interstitialAdManager = handleAdManager()
 
         //UPDATER
         updateService = UpdaterService(
-            this@MainActivity, AppUpdateManagerFactory.create(this@MainActivity), updateCode
+            this, AppUpdateManagerFactory.create(this), updateCode
         )
 
         bindingResources()

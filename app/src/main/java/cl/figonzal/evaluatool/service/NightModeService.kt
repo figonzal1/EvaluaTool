@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:54
+ Last modified 26-05-22 16:57
  */
 
 package cl.figonzal.evaluatool.service
@@ -45,17 +45,13 @@ class NightModeService(
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Timber.d(
-                    activity.getString(R.string.TAG_NIGHT_MODE) + ": ON"
-                )
+                Timber.d(activity.getString(R.string.TAG_NIGHT_MODE) + ": ON")
             }
 
             else -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Timber.d(
-                    activity.getString(R.string.TAG_NIGHT_MODE) + ": OFF"
-                )
+                Timber.d(activity.getString(R.string.TAG_NIGHT_MODE) + ": OFF")
             }
         }
     }
