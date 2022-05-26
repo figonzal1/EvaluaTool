@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 04-03-22 19:55
+ Last modified 25-05-22 23:26
  */
 
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
@@ -19,7 +19,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:7.2.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -34,7 +34,7 @@ buildscript {
         classpath 'com.google.firebase:perf-plugin:1.4.1'
 
         //KOTLIN
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
     }
 }
 

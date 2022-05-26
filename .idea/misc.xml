@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Felipe/Escritorio/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_round_bug_report_24.xml" value="0.306" />
+        <entry key="..\:/Felipe/Escritorio/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_round_contact_support_24.xml" value="0.286" />
+        <entry key="..\:/Felipe/Escritorio/GithubProjects/EvaluaTool/app/src/main/res/xml/root_preferences.xml" value="0.3625" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/drawable/ad_attribution.xml" value="0.336" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_arrow_back_white_24dp.xml" value="0.2203125" />
         <entry key="..\:/figon/GithubProjects/EvaluaTool/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2825" />
@@ -49,5 +52,6 @@
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK" />
 </project>
