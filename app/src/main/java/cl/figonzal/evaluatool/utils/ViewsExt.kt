@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:54
+ Last modified 25-05-22 23:57
  */
 
 package cl.figonzal.evaluatool.utils
@@ -47,7 +47,7 @@ fun AppCompatActivity.configureActionBar(idString: Int, materialToolbar: Materia
 
     supportActionBar?.apply {
         setDisplayHomeAsUpEnabled(true)
-        setHomeAsUpIndicator(R.drawable.ic_baseline_arrow_back_24)
+        setHomeAsUpIndicator(R.drawable.ic_round_arrow_back_24)
         title = getString(idString)
     }
 }

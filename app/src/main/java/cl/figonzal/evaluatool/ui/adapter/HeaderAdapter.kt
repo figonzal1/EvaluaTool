@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:46
+ Last modified 26-05-22 00:14
  */
 
 package cl.figonzal.evaluatool.ui.adapter
@@ -69,8 +69,8 @@ class HeaderAdapter(
                 //Change arrrow icon
                 ivArrow.setImageResource(
                     when {
-                        header.expanded -> R.drawable.ic_keyboard_arrow_up_black_24dp
-                        else -> R.drawable.ic_keyboard_arrow_down_black_24dp
+                        header.expanded -> R.drawable.ic_round_keyboard_arrow_up_24
+                        else -> R.drawable.ic_round_keyboard_arrow_down_24
                     }
                 )
 

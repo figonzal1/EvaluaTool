@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 14-05-21 23:33
+  Last modified 26-05-22 00:11
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -52,7 +52,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/tv_group"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tv_group"
-        app:srcCompat="@drawable/ic_keyboard_arrow_down_black_24dp" />
+        app:srcCompat="@drawable/ic_round_keyboard_arrow_down_24" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_child_item"

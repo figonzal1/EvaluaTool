@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 07-03-22 16:42
+  Last modified 25-05-22 23:53
   -->
 
 
@@ -267,7 +267,7 @@
                 android:focusable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_settings_24" />
+                app:srcCompat="@drawable/ic_round_settings_24" />
 
             <include
                 android:id="@+id/fab_wsp"

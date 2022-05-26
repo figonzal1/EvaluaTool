@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 19:09
+ Last modified 26-05-22 00:25
  */
 
 package cl.figonzal.evaluatool.utils
@@ -73,12 +73,13 @@ fun AdView.loadAnchored(activity: Activity, idBanner: String) {
 
 private fun anchoredAddSize(adView: AdView, activity: Activity): AdSize {
 
-    val display = when {
+    @Suppress("DEPRECATION") val display = when {
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> activity.display
         else -> activity.windowManager.defaultDisplay
     }
 
     val outMetrics = DisplayMetrics()
+    @Suppress("DEPRECATION")
     display?.getMetrics(outMetrics)
 
     val density = outMetrics.density
