@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 21:44
+ Last modified 26-05-22 00:00
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo3
 
@@ -56,7 +56,7 @@ class NivelesAdaptacionE3M3 : AppCompatActivity() {
                 tab.text = FragmentStateAdapterE3M3.tabsArray[position]
 
                 when (position) {
-                    0 -> tab.setIcon(R.drawable.ic_baseline_campaign_24)
+                    0 -> tab.setIcon(R.drawable.ic_round_campaign_24)
                 }
             }.attach()
 

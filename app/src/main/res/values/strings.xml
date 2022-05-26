@@ -8,13 +8,15 @@
 
   Copyright (c) 2022
 
-  Last modified 07-03-22 16:42
+  Last modified 26-05-22 16:47
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">EvaluaTool</string>
 
     <string name="ADMOB_MASTER_KEY" translatable="false">ca-app-pub-6355378855577476~8089782740</string>
+
+    <string name="PRIVACY_POLICY_URL" translatable="false">https://github.com/figonzal1/EvaluaTool/blob/main/privacy_policy.md</string>
 
     <!--TEST AD-->
     <!--<string name="ADMOB_ID_BANNER_MAIN" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
@@ -675,6 +677,8 @@
     <string name="ADMOB_AD_LOADED" translatable="false">Ad loaded</string>
     <string name="ADMOB_AD_OPEN" translatable="false">Ad open</string>
     <string name="ADMOB_INTERSTITIAL_FAILED">Interstitial failed to load:</string>
+    <string name="ADMOB_INTERSTITIAL_LOADED">Interstitial loaded</string>
+
 
     <!-- VIEWS -->
     <string name="ad" translatable="false">Ad</string>
@@ -684,6 +688,10 @@
     <string name="fullscreen_interstitial_failed_load">Fullscreen interstitial failed to load: "</string>
     <string name="fullscreen_interstitial_showed">Fullscreen interstitial fullscreen content</string>
     <string name="interstitial_null">Interstitial null</string>
-    <string name="interstitial_loaded">Interstitial loaded</string>
+    <string name="acerca">Acerca</string>
+    <string name="acerca_description">Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0</string>
+    <string name="SHARED_PREF_VERSION">version</string>
+    <string name="privacy_policy">Política de privacidad</string>
+    <string name="politica_privacidad">Política de privacidad</string>
 
 </resources>

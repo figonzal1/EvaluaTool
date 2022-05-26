@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 07-03-22 16:42
+  Last modified 26-05-22 00:22
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -33,7 +33,7 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_stars_24" />
+        app:srcCompat="@drawable/ic_round_stars_24" />
 
     <TextView
         android:id="@+id/tv_baremo"
@@ -56,7 +56,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/margin_8"
         android:layout_marginEnd="@dimen/margin_8"
-        android:drawableStart="@drawable/ic_baseline_functions_24"
+        android:drawableStart="@drawable/ic_round_functions_24"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,15 +8,18 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:00
+ Last modified 26-05-22 18:07
  */
 
 package cl.figonzal.evaluatool.ui
 
+import android.content.Intent
 import android.content.SharedPreferences
+import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.edit
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -27,6 +30,7 @@ import cl.figonzal.evaluatool.service.FirebaseService
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.toast
 import timber.log.Timber
+
 
 class SettingsActivity : AppCompatActivity() {
 
@@ -55,15 +59,22 @@ class SettingsActivity : AppCompatActivity() {
             setPreferencesFromResource(R.xml.root_preferences, rootKey)
 
             //Put app version un summary preferences
-            findPreference<Preference>(resources.getString(R.string.shared_pref_version_app))?.apply {
-                summary =
-                    "${resources.getString(R.string.app_name)} Versión: ${BuildConfig.VERSION_NAME}"
+            findPreference<Preference>(resources.getString(R.string.SHARED_PREF_VERSION))?.apply {
+                summary = BuildConfig.VERSION_NAME
+            }
+
+            findPreference<Preference>(getString(R.string.SHARED_PREF_PRIVACY_POLICY))?.setOnPreferenceClickListener {
+
+                Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
+                    startActivity(this)
+                }
+                true
             }
         }
 
         override fun onSharedPreferenceChanged(preferences: SharedPreferences?, key: String?) {
 
-            val edit = preferences?.edit()
 
             //Firebase Crashlytics Preference
             if (key.equals(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY))) {
@@ -84,8 +95,9 @@ class SettingsActivity : AppCompatActivity() {
                         false
                     }
                 }
-                edit?.putBoolean(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY), result)
-                edit?.apply()
+                preferences?.edit {
+                    putBoolean(getString(R.string.SHARED_PREF_CRASHLYTICS_KEY), result)
+                }
             }
 
 
@@ -107,8 +119,9 @@ class SettingsActivity : AppCompatActivity() {
                     }
                 }
 
-                edit?.putBoolean(getString(R.string.SHARED_PREF_PERFORMANCE_KEY), result)
-                edit?.apply()
+                preferences?.edit {
+                    putBoolean(getString(R.string.SHARED_PREF_PERFORMANCE_KEY), result)
+                }
             }
         }
 

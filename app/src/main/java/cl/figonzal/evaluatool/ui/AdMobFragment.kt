@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 20:08
+ Last modified 25-05-22 22:26
  */
 
 package cl.figonzal.evaluatool.ui
@@ -82,7 +82,7 @@ class AdMobFragment : Fragment() {
                     binding.progressBar.visibility = View.GONE
                 }
 
-                override fun onAdFailedToLoad(p0: LoadAdError?) {
+                override fun onAdFailedToLoad(p0: LoadAdError) {
                     Timber.e("Failed to load native ad with error $p0")
                 }
 

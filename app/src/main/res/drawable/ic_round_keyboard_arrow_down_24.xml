@@ -6,17 +6,17 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 21-02-21 20:00
+  Last modified 26-05-22 00:07
   -->
 
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24.0"
-    android:viewportHeight="24.0">
+    android:viewportWidth="24"
+    android:viewportHeight="24">
     <path
         android:fillColor="@color/colorOnSurface"
-        android:pathData="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" />
+        android:pathData="M8.12,9.29L12,13.17l3.88,-3.88c0.39,-0.39 1.02,-0.39 1.41,0 0.39,0.39 0.39,1.02 0,1.41l-4.59,4.59c-0.39,0.39 -1.02,0.39 -1.41,0L6.7,10.7c-0.39,-0.39 -0.39,-1.02 0,-1.41 0.39,-0.38 1.03,-0.39 1.42,0z" />
 </vector>

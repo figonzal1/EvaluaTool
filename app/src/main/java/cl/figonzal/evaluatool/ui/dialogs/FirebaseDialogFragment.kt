@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 13:24
+ Last modified 25-05-22 23:11
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -70,7 +70,7 @@ class FirebaseDialogFragment(
                 )
                 activity.finish()
             }
-            val spanText = SpannableString("Política de privacidad")
+            val spanText = SpannableString(getString(R.string.politica_privacidad))
 
             val clickable = object : ClickableSpan() {
                 override fun onClick(view: View) {
@@ -81,10 +81,11 @@ class FirebaseDialogFragment(
             tvPrivacyPolicy.setText(spanText, TextView.BufferType.SPANNABLE)
 
             tvPrivacyPolicy.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW)
-                intent.data =
-                    Uri.parse("https://github.com/figonzal1/EvaluaTool/blob/main/privacy_policy.md")
-                startActivity(intent)
+                Intent(Intent.ACTION_VIEW).apply {
+                    data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
+                    startActivity(this)
+                }
+
             }
 
             builder.setView(root)

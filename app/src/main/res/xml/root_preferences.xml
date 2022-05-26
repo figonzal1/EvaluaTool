@@ -6,37 +6,55 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2021
+  Copyright (c) 2022
 
-  Last modified 12/17/21, 1:58 AM
+  Last modified 25-05-22 22:59
   -->
 
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <PreferenceCategory
-        app:iconSpaceReserved="false"
+        app:icon="@drawable/ic_round_bug_report_24"
+        app:iconSpaceReserved="true"
         app:title="Soporte">
 
         <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
+            app:defaultValue="true"
+            app:iconSpaceReserved="true"
             app:key="@string/SHARED_PREF_CRASHLYTICS_KEY"
             app:summary="Ayuda a mejorar la aplicación enviando datos de fallos"
-            app:defaultValue="true"
             app:title="Reportes de fallos" />
 
         <SwitchPreferenceCompat
-            app:iconSpaceReserved="false"
+            app:defaultValue="true"
+            app:iconSpaceReserved="true"
             app:key="@string/SHARED_PREF_PERFORMANCE_KEY"
             app:summary="Ayuda a mejorar la aplicación enviando datos de rendimiento"
-            app:defaultValue="true"
             app:title="Reportes de rendimiento" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:icon="@drawable/ic_round_contact_support_24"
+        app:iconSpaceReserved="true"
+        app:title="@string/acerca">
 
         <Preference
-            app:iconSpaceReserved="false"
-            app:key="acerca"
-            app:title="Acerca de"
-            tools:summary="EvalúaTool Versión: X.X" />
+            app:iconSpaceReserved="true"
+            app:summary="@string/acerca_description" />
+
+        <Preference
+            app:allowDividerAbove="true"
+            app:iconSpaceReserved="true"
+            app:key="@string/SHARED_PREF_VERSION"
+            app:title="@string/version"
+            tools:summary="3.5" />
+
+        <Preference
+            app:allowDividerAbove="true"
+            app:iconSpaceReserved="true"
+            app:key="@string/SHARED_PREF_PRIVACY_POLICY"
+            app:title="@string/privacy_policy" />
     </PreferenceCategory>
 
 </PreferenceScreen>

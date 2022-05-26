@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 19:09
+ Last modified 26-05-22 16:40
  */
 
 package cl.figonzal.evaluatool.utils
@@ -19,6 +19,7 @@ import android.util.DisplayMetrics
 import android.view.View
 import android.widget.FrameLayout
 import cl.figonzal.evaluatool.R
+import cl.figonzal.evaluatool.service.InterstitialAdManager
 import com.google.android.gms.ads.*
 import timber.log.Timber
 
@@ -73,12 +74,13 @@ fun AdView.loadAnchored(activity: Activity, idBanner: String) {
 
 private fun anchoredAddSize(adView: AdView, activity: Activity): AdSize {
 
-    val display = when {
+    @Suppress("DEPRECATION") val display = when {
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> activity.display
         else -> activity.windowManager.defaultDisplay
     }
 
     val outMetrics = DisplayMetrics()
+    @Suppress("DEPRECATION")
     display?.getMetrics(outMetrics)
 
     val density = outMetrics.density
@@ -90,5 +92,17 @@ private fun anchoredAddSize(adView: AdView, activity: Activity): AdSize {
 
     val adWidth = (adWidthPixels / density).toInt()
     return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(activity, adWidth)
+}
+
+/**
+ * Function that create adManager object
+ */
+fun Activity.handleAdManager(): InterstitialAdManager {
+    val manager = InterstitialAdManager(this, null, false)
+    with(manager) {
+        adIsLoading = true
+        loadInterstitial()
+    }
+    return manager
 }
 

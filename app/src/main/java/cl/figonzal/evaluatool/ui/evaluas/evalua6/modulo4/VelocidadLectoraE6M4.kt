@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:55
+ Last modified 25-05-22 23:57
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4
@@ -57,7 +57,7 @@ class VelocidadLectoraE6M4 : AppCompatActivity() {
                 tab.text = FragmentStateAdapterE6M4.tabsArray[position]
 
                 when (position) {
-                    0 -> tab.setIcon(R.drawable.ic_baseline_campaign_24)
+                    0 -> tab.setIcon(R.drawable.ic_round_campaign_24)
                 }
             }.attach()
 
