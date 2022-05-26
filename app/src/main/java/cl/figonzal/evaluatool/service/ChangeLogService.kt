@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 18:39
+ Last modified 26-05-22 01:08
  */
 
 package cl.figonzal.evaluatool.service
@@ -33,9 +33,9 @@ class ChangeLogService(
     private var versionCode: Int = BuildConfig.VERSION_CODE
     private val version = context.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
-        "- Modo noche corregido en versiones mayores a Android 10",
-        "- Mejoras de interfaz",
-        "- Optimizaciones internas"
+        "- Actualizaciones internas necesarias",
+        "- Mejoras de iconos",
+        "- Mejoras de preferencias de usuario"
     )
 
     override fun onCreate(owner: LifecycleOwner) {
@@ -59,7 +59,7 @@ class ChangeLogService(
         Timber.d("${context.getString(R.string.VERSION_CODE_APP)}$versionCode")
 
         when {
-            sharedVersionCode < versionCode -> {
+            sharedVersionCode < versionCode && sharedVersionCode != 0 -> {
 
                 showBottomDialog()
                 Timber.d(context.getString(R.string.NEW_VERSION_DETECTED))

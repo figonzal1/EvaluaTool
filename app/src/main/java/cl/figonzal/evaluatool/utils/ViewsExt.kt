@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 25-05-22 23:57
+ Last modified 26-05-22 16:47
  */
 
 package cl.figonzal.evaluatool.utils
@@ -21,27 +21,44 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
+import android.os.Build
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
 import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
+import cl.figonzal.evaluatool.service.NightModeService
+import cl.figonzal.evaluatool.ui.MainActivity
 import cl.figonzal.evaluatool.ui.dialogs.FirebaseDialogFragment
 import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.shape.CornerFamily
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.tabs.TabLayout
 import timber.log.Timber
 import java.util.*
 
+/**
+ * Navigate from main activity to other activity
+ */
+fun MainActivity.mainActivityTo(activity: Activity) {
+    Intent(this, activity::class.java).apply {
+        startActivity(this)
+    }
+}
 
+/**
+ * Configure toolbar with home up icon and title
+ */
 fun AppCompatActivity.configureActionBar(idString: Int, materialToolbar: MaterialToolbar) {
     setSupportActionBar(materialToolbar)
 
@@ -147,7 +164,6 @@ fun Activity.setIndexAnimation(totalPd: Double): TransitionDrawable {
 
 /**
  * Function that set sub totals textViews
- *
  */
 fun Activity.formatSubTotalPoints(tarea: String, total: Double): String {
     return String.format(Locale.US, getString(R.string.POINTS_FORMAT), tarea, total)
@@ -156,7 +172,11 @@ fun Activity.formatSubTotalPoints(tarea: String, total: Double): String {
 /**
  * Function to show toast easily
  */
-fun Activity.toast(msg: String) = Toast.makeText(this, msg, Toast.LENGTH_LONG).show()
+fun Activity.toast(msg: String, duration: Int = Toast.LENGTH_LONG) =
+    Toast.makeText(this, msg, duration).show()
+
+fun Context.toast(msg: String, duration: Int = Toast.LENGTH_LONG) =
+    Toast.makeText(this, msg, duration).show()
 
 fun ImageView.setAlertDialogCorregido() =
     setOnClickListener {
@@ -172,6 +192,9 @@ fun ImageView.setAlertDialogCorregido() =
             .show()
     }
 
+/**
+ * Button animations
+ */
 fun List<MaterialButton>.setUpAnimations(
     binding: ActivityMainBinding,
     context: Context
@@ -215,7 +238,7 @@ fun MaterialCardView.setUpCardViewCustomCorners() {
         .setBottomRightCorner(CornerFamily.ROUNDED, 32f)
         .setTopRightCornerSize(0f)
         .setTopLeftCornerSize(0f)
-        .build().also { shapeAppearanceModel = it }
+        .build()
 }
 
 /*fun Activity.setLatexText(
@@ -248,18 +271,75 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
 
 }
 
-fun ActivityMainBinding.hideSwitchNightMode() {
-    View.INVISIBLE.apply {
-        includeSwitch.switchMaterial.visibility = this
-        includeSwitch.ivLightMode.visibility = this
-        includeSwitch.ivNightMode.visibility = this
-    }
-}
-
 fun TabLayout.setTabWidthAsWrapContent(tabPosition: Int) {
     val layout = (this.getChildAt(0) as LinearLayout).getChildAt(tabPosition) as LinearLayout
     val layoutParams = layout.layoutParams as LinearLayout.LayoutParams
     layoutParams.weight = 0f
     layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT
     layout.layoutParams = layoutParams
+}
+
+fun ComponentActivity.handleNightMode(
+    binding: ActivityMainBinding,
+    sharedPrefUtil: SharedPrefUtil
+) {
+    //Night mode
+    when {
+        Build.VERSION.SDK_INT < Build.VERSION_CODES.Q -> {
+
+            Timber.d("ANDROID_VERSION < Q: ${Build.VERSION.SDK_INT}")
+
+            //NightMode service for old versions
+            lifecycle.addObserver(NightModeService(this, sharedPrefUtil))
+
+            setUpSwitchDarkMode(binding.includeSwitch.switchMaterial, sharedPrefUtil)
+        }
+        else -> {
+            Timber.d("ANDROID_VERSION > Q: ${Build.VERSION.SDK_INT}")
+
+            //Hide views
+            View.INVISIBLE.apply {
+                binding.includeSwitch.switchMaterial.visibility = this
+                binding.includeSwitch.ivLightMode.visibility = this
+                binding.includeSwitch.ivNightMode.visibility = this
+            }
+        }
+    }
+}
+
+/**
+ * Function that load night mode in devices < Q from SharedPreferences
+ *
+ * @param switchMaterial
+ * @param sharedPrefUtil
+ */
+private fun Context.setUpSwitchDarkMode(
+    switchMaterial: SwitchMaterial,
+    sharedPrefUtil: SharedPrefUtil
+) {
+
+    val nightMode =
+        sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+
+    switchMaterial.apply {
+
+        isChecked = nightMode
+        setOnCheckedChangeListener { _, isChecked ->
+
+            when {
+                isChecked -> {
+                    toast(getString(R.string.NIGHT_MODE_ON))
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+                    sharedPrefUtil.saveData(getString(R.string.NIGHT_MODE_KEY), true)
+                }
+                else -> {
+                    toast(getString(R.string.NIGHT_MODE_OFF))
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
+                    sharedPrefUtil.saveData(getString(R.string.NIGHT_MODE_KEY), false)
+                }
+            }
+        }
+    }
 }

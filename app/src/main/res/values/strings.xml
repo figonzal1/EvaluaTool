@@ -677,6 +677,8 @@
     <string name="ADMOB_AD_LOADED" translatable="false">Ad loaded</string>
     <string name="ADMOB_AD_OPEN" translatable="false">Ad open</string>
     <string name="ADMOB_INTERSTITIAL_FAILED">Interstitial failed to load:</string>
+    <string name="ADMOB_INTERSTITIAL_LOADED">Interstitial loaded</string>
+
 
     <!-- VIEWS -->
     <string name="ad" translatable="false">Ad</string>
@@ -686,7 +688,6 @@
     <string name="fullscreen_interstitial_failed_load">Fullscreen interstitial failed to load: "</string>
     <string name="fullscreen_interstitial_showed">Fullscreen interstitial fullscreen content</string>
     <string name="interstitial_null">Interstitial null</string>
-    <string name="interstitial_loaded">Interstitial loaded</string>
     <string name="acerca">Acerca</string>
     <string name="acerca_description">Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0</string>
     <string name="SHARED_PREF_VERSION">version</string>
