@@ -38,7 +38,8 @@
 </p>
 
 Mobile application that facilitates the calculation of scores of evaluations belonging to the battery of psycho-pedagogical evaluations Evalúa - Chile Version 2.0
-#### Download [here](https://play.google.com/store/apps/details?id=cl.figonzal.evaluatool)
+
+<a href="https://play.google.com/store/apps/details?id=cl.figonzal.evaluatool"><img src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" height="75"></a>
 
 ## Supported versions
 - [x] v2.0
