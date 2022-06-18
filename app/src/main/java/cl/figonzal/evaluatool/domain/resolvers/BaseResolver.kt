@@ -8,14 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:20
+ Last modified 18-06-22 11:36
  */
 
 package cl.figonzal.evaluatool.domain.resolvers
 
 interface BaseResolver {
 
-    val perc: Array<Array<Any>>
+    val percentile: Array<Array<Double>>
 
     fun calculateTask(
         nTask: Int = 0,
@@ -24,6 +24,7 @@ interface BaseResolver {
         reprobate: Int = 0
     ): Double
 
-    fun getTotal(): Double
-    fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int
+    fun getTotalPD(): Double
+
+    fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int
 }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:27
+ Last modified 18-06-22 12:19
  */
 package cl.figonzal.evaluatool.utils
 
@@ -73,31 +73,35 @@ object EvaluaUtils {
      *
      * @return Int percentile
      */
-    fun calculatePercentile(perc: Array<Array<Any>>, pdTotal: Int, reverse: Boolean = false): Int {
+    fun calculatePercentile(
+        perc: Array<Array<Double>>,
+        pdTotal: Int,
+        reverse: Boolean = false
+    ): Int {
 
         return when {
 
             //When baremo table is revered
             reverse -> {
                 when {
-                    pdTotal < perc.first()[0] as Int -> perc.first()[1] as Int
-                    pdTotal > perc.last()[0] as Int -> perc.last()[1] as Int
+                    pdTotal < perc.first()[0].toInt() -> perc.first()[1].toInt()
+                    pdTotal > perc.last()[0].toInt() -> perc.last()[1].toInt()
                     else -> {
                         var value = 0
-                        perc.filter { pdTotal == it.first() }
-                            .forEach { item -> value = item[1] as Int }
+                        perc.filter { pdTotal == it.first().toInt() }
+                            .forEach { item -> value = item[1].toInt() }
                         value
                     }
                 }
             }
             else -> {
                 when {
-                    pdTotal > perc.first()[0] as Int -> perc.first()[1] as Int
-                    pdTotal < perc.last()[0] as Int -> perc.last()[1] as Int
+                    pdTotal > perc.first()[0].toInt() -> perc.first()[1].toInt()
+                    pdTotal < perc.last()[0].toInt() -> perc.last()[1].toInt()
                     else -> {
                         var value = 0
-                        perc.filter { pdTotal == it.first() }
-                            .forEach { item -> value = item[1] as Int }
+                        perc.filter { pdTotal == it.first().toInt() }
+                            .forEach { item -> value = item[1].toInt() }
                         value
                     }
                 }
@@ -180,7 +184,7 @@ object EvaluaUtils {
 
         val clickSpan: ClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                BaremoDialogFragment(resolver.perc, itemName).show(
+                BaremoDialogFragment(resolver.percentile, itemName).show(
                     fragmentManager,
                     "Dialogo baremo"
                 )

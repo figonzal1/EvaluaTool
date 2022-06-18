@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 12:19
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2
@@ -22,7 +22,7 @@ class CopiaDibujosE0M2Resolver : BaseResolver {
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val perc = copiaDeDibujosE0M2Baremo()
+    override val percentile = copiaDeDibujosE0M2Baremo()
 
     override fun calculateTask(
         nTask: Int,
@@ -41,20 +41,18 @@ class CopiaDibujosE0M2Resolver : BaseResolver {
         return total
     }
 
-    override fun getTotal(): Double {
-        return totalPdTask1 + totalPdTask2
-    }
+    override fun getTotalPD() = totalPdTask1 + totalPdTask2
 
-    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
+    override fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int {
         when {
 
             pdCurrent < 0 -> return 0
-            pdCurrent > perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdCurrent < perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
+            pdCurrent > percentile.first()[0].toInt() -> return percentile.first()[0].toInt()
+            pdCurrent < percentile.last()[0].toInt() -> return percentile.last()[0].toInt()
+            else -> percentile.forEach { item ->
                 when {
-                    pdCurrent == item.first() -> return item.first() as Int
-                    pdCurrent > item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first().toInt() -> return item.first().toInt()
+                    pdCurrent > item.first().toInt() -> return item.first().toInt()
                 }
             }
         }

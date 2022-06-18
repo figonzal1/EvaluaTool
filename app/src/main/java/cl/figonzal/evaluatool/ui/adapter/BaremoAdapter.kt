@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:54
+ Last modified 18-06-22 12:19
  */
 package cl.figonzal.evaluatool.ui.adapter
 
@@ -25,11 +25,11 @@ import cl.figonzal.evaluatool.utils.EvaluaUtils
 /**
  * Adapter used to show baremo table
  *
- * @param perc Baremo table with scores
+ * @param percentile Baremo table with scores
  * @param context Used to get Resources
  * @version 18-04-2021
  */
-class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Context) :
+class BaremoAdapter(private var percentile: Array<Array<Double>>, private val context: Context) :
     RecyclerView.Adapter<BaremoViewHolder>() {
 
     companion object {
@@ -44,7 +44,7 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
     }
 
     override fun onBindViewHolder(holder: BaremoViewHolder, position: Int) {
-        holder.bind(holder.itemViewType, context, perc)
+        holder.bind(holder.itemViewType, context, percentile)
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -55,15 +55,13 @@ class BaremoAdapter(private var perc: Array<Array<Any>>, private val context: Co
     }
 
 
-    override fun getItemCount(): Int {
-        return perc.size + 1
-    }
+    override fun getItemCount() = percentile.size + 1
 
     class BaremoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val binding = BaremoItemListBinding.bind(itemView)
 
-        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Any>>) {
+        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Double>>) {
 
             with(binding) {
                 when (itemViewType) {

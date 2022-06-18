@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 23:54
+ Last modified 18-06-22 12:20
  */
 package cl.figonzal.evaluatool.ui.dialogs
 
@@ -26,12 +26,15 @@ import timber.log.Timber
 /**
  * Class that handle DialogFragment for Baremo Score Table
  *
- * @param perc Table of scores (Baremo table)
+ * @param percentile Table of scores (Baremo table)
  * @param itemName Title of item section
  *
  * @version 10-06-2021
  */
-class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val itemName: String) :
+class BaremoDialogFragment(
+    private val percentile: Array<Array<Double>>,
+    private val itemName: String
+) :
     DialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
@@ -44,7 +47,7 @@ class BaremoDialogFragment(private val perc: Array<Array<Any>>, private val item
             rvBaremo.apply {
                 setHasFixedSize(true)
                 layoutManager = LinearLayoutManager(context)
-                adapter = BaremoAdapter(perc, requireContext())
+                adapter = BaremoAdapter(percentile, requireContext())
             }
 
             //tvBaremoDescription
