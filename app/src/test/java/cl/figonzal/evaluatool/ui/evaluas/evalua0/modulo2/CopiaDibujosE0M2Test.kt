@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 12:22
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2
 
@@ -51,7 +51,7 @@ class CopiaDibujosE0M2Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return copiaDeDibujosE0M2Baremo()
         }
     }

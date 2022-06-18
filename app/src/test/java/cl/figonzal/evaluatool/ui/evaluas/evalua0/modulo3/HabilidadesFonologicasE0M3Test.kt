@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 12:22
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3
 
@@ -50,7 +50,7 @@ class HabilidadesFonologicasE0M3Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return habilidadesFonologicasE0M3Baremo()
         }
     }
