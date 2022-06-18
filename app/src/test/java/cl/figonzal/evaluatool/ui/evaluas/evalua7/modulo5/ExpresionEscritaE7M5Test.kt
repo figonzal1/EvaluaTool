@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:49
+ Last modified 18-06-22 10:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5
 
-import cl.figonzal.evaluatool.domain.baremos.expresionEscritaE7M5Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.expresionEscritaE7M5Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test

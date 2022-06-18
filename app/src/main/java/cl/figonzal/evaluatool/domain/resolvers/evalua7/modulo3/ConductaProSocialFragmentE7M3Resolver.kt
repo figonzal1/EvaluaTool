@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:48
+ Last modified 18-06-22 10:23
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo3
 
-import cl.figonzal.evaluatool.domain.baremos.conductaProSocialFragmentE7M3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.conductaProSocialFragmentE7M3Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class ConductaProSocialFragmentE7M3Resolver : BaseResolver {

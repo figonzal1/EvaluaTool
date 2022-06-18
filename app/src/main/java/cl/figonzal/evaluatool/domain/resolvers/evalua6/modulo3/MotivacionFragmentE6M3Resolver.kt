@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:48
+ Last modified 18-06-22 10:23
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3
 
-import cl.figonzal.evaluatool.domain.baremos.motivacionFragmentE6M3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.motivacionFragmentE6M3Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class MotivacionFragmentE6M3Resolver : BaseResolver {

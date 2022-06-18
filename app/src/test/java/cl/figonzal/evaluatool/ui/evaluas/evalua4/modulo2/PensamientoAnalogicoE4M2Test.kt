@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:47
+ Last modified 18-06-22 10:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2
 
-import cl.figonzal.evaluatool.domain.baremos.pensamientoAnalogicoE4M2Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.pensamientoAnalogicoE4M2Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test

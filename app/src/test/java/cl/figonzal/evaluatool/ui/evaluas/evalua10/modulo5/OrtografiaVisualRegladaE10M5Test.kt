@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 16:46
+ Last modified 18-06-22 10:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo5
 
-import cl.figonzal.evaluatool.domain.baremos.ortografiaVisualRegladaE10M5Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.ortografiaVisualRegladaE10M5Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
