@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 13:01
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo1
 
@@ -51,7 +51,7 @@ class MemoriaAtencionE1M1Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return memoriaAtencionE1M1Baremo()
         }
     }

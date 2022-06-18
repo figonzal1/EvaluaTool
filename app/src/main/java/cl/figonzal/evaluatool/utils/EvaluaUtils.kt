@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 12:19
+ Last modified 18-06-22 13:01
  */
 package cl.figonzal.evaluatool.utils
 
@@ -37,73 +37,56 @@ object EvaluaUtils {
      * @param MEAN
      * @param DESVIATION
      * @param reverse Used to change the order calculation
-     * @param pdTotal Directo score
+     * @param pdTotal Direct score
      *
-     * @return Double Desviation
+     * @return String desviacion
      */
-    fun calcularDesviacion(
-        MEAN: Double,
-        DESVIATION: Double,
-        pdTotal: Int,
-        reverse: Boolean
-    ): Double {
-        return when {
-            !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
-            else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
-        }
-    }
-
     fun calcularDesviacion2(
         MEAN: Double,
         DESVIATION: Double,
         pdTotal: Int,
         reverse: Boolean = false
-    ): String {
-        return when {
-            !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
-            else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
-        }.toString()
-    }
+    ) = when {
+        !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
+        else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
+    }.toString()
 
     /**
      * Function in charge of calculating the percentile of a student's PD
      *
-     * @param perc Baremo percentile table score
+     * @param percentile Baremo percentile table score
      * @param pdTotal Directo score
      *
      * @return Int percentile
      */
     fun calculatePercentile(
-        perc: Array<Array<Double>>,
+        percentile: Array<Array<Double>>,
         pdTotal: Int,
         reverse: Boolean = false
-    ): Int {
+    ) = when {
 
-        return when {
-
-            //When baremo table is revered
-            reverse -> {
-                when {
-                    pdTotal < perc.first()[0].toInt() -> perc.first()[1].toInt()
-                    pdTotal > perc.last()[0].toInt() -> perc.last()[1].toInt()
-                    else -> {
-                        var value = 0
-                        perc.filter { pdTotal == it.first().toInt() }
-                            .forEach { item -> value = item[1].toInt() }
-                        value
-                    }
+        //When baremo table is revered
+        reverse -> {
+            when {
+                pdTotal < percentile.first()[0].toInt() -> percentile.first()[1].toInt()
+                pdTotal > percentile.last()[0].toInt() -> percentile.last()[1].toInt()
+                else -> {
+                    var value = 0
+                    percentile.filter { pdTotal == it.first().toInt() }
+                        .forEach { item -> value = item[1].toInt() }
+                    value
                 }
             }
-            else -> {
-                when {
-                    pdTotal > perc.first()[0].toInt() -> perc.first()[1].toInt()
-                    pdTotal < perc.last()[0].toInt() -> perc.last()[1].toInt()
-                    else -> {
-                        var value = 0
-                        perc.filter { pdTotal == it.first().toInt() }
-                            .forEach { item -> value = item[1].toInt() }
-                        value
-                    }
+        }
+        else -> {
+            when {
+                pdTotal > percentile.first()[0].toInt() -> percentile.first()[1].toInt()
+                pdTotal < percentile.last()[0].toInt() -> percentile.last()[1].toInt()
+                else -> {
+                    var value = 0
+                    percentile.filter { pdTotal == it.first().toInt() }
+                        .forEach { item -> value = item[1].toInt() }
+                    value
                 }
             }
         }
@@ -115,20 +98,17 @@ object EvaluaUtils {
      * @param percentile Percentile of student position in baremo
      * @return String Level asigned to student
      */
-    fun calcularNivel(percentile: Int): String? {
+    fun calcularNivel(percentile: Int) = when (percentile) {
 
-        return when (percentile) {
-
-            in 80..99 -> ALTO.name
-            in 60..79 -> MEDIO_ALTO.name
-            in 40..59 -> MEDIO.name
-            in 20..39 -> MEDIO_BAJO.name
-            in 0..19 -> BAJO.name
-            //Percentil no encontrado
-            else -> {
-                Timber.i("NIVEL_CALCULADO: nulo")
-                null
-            }
+        in 80..99 -> ALTO.name
+        in 60..79 -> MEDIO_ALTO.name
+        in 40..59 -> MEDIO.name
+        in 20..39 -> MEDIO_BAJO.name
+        in 0..19 -> BAJO.name
+        //Percentil no encontrado
+        else -> {
+            Timber.i("NIVEL_CALCULADO: nulo")
+            null
         }
     }
 
@@ -144,20 +124,17 @@ object EvaluaUtils {
     /**
      * Only for test
      */
-    fun calcularNivelTest(percentile: Int): String? {
+    fun calcularNivelTest(percentile: Int) = when (percentile) {
 
-        return when (percentile) {
-
-            in 80..99 -> "ALTO"
-            in 60..79 -> "MEDIO-ALTO"
-            in 40..59 -> "MEDIO"
-            in 20..39 -> "MEDIO-BAJO"
-            in 0..19 -> "BAJO"
-            //Percentil no encontrado
-            else -> {
-                Timber.i("NIVEL_CALCULADO: nulo")
-                null
-            }
+        in 80..99 -> "ALTO"
+        in 60..79 -> "MEDIO-ALTO"
+        in 40..59 -> "MEDIO"
+        in 20..39 -> "MEDIO-BAJO"
+        in 0..19 -> "BAJO"
+        //Percentil no encontrado
+        else -> {
+            Timber.i("NIVEL_CALCULADO: nulo")
+            null
         }
     }
 
