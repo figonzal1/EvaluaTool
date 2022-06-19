@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 22:03
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo3
@@ -53,7 +53,7 @@ class MotivacionFragmentE3M3Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return motivacionFragmentE3M3Baremo()
         }
     }
