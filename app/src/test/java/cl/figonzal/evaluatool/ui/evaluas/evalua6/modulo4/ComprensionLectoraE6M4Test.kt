@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 22:32
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4
@@ -51,7 +51,7 @@ class ComprensionLectoraE6M4Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return comprensionLectoraE6M4Baremo()
         }
     }
