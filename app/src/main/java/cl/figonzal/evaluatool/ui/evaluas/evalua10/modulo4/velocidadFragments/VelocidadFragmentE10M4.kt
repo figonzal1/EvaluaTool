@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:21
+ Last modified 19-06-22 00:00
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.velocidadFragments
@@ -92,7 +92,7 @@ class VelocidadFragmentE10M4 : Fragment() {
             tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = resolver.perc.first()[1] as Int
+            progressBar.max = resolver.percentile.first()[1].toInt()
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
@@ -150,10 +150,10 @@ class VelocidadFragmentE10M4 : Fragment() {
         resolver.run {
 
             tvPdTotal.text =
-                requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
+                requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotalPD())
 
             //Correct total pd based on Baremo Table
-            val pdCorrected = correctPD(perc, getTotal().toInt())
+            val pdCorrected = correctPD(percentile, getTotalPD().toInt())
             tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
                 pdCorrected.toDouble()
@@ -164,7 +164,8 @@ class VelocidadFragmentE10M4 : Fragment() {
                 EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected, reverse = true)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected, reverse = true)
+            val percentile =
+                EvaluaUtils.calculatePercentile(percentile, pdCorrected, reverse = true)
             tvPercentile.text = percentile.toString()
 
             when {
