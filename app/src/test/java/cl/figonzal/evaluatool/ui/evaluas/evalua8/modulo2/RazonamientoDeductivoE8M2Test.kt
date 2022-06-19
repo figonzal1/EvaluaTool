@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 22:32
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2
@@ -51,7 +51,7 @@ class RazonamientoDeductivoE8M2Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return razonamientoDeductivoE8M2Baremo()
         }
     }

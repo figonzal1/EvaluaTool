@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 23:22
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo4
@@ -19,7 +19,7 @@ import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 class VelocidadFragmentE8M4Resolver : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val perc = velocidadFragmentE8M4Baremo()
+    override val percentile = velocidadFragmentE8M4Baremo()
 
     override fun calculateTask(
         nTask: Int,
@@ -30,18 +30,16 @@ class VelocidadFragmentE8M4Resolver : BaseResolver {
         return approved.toDouble()
     }
 
-    override fun getTotal(): Double {
-        return totalPdTask1
-    }
+    override fun getTotalPD() = totalPdTask1
 
-    override fun correctPD(perc: Array<Array<Any>>, pdCurrent: Int): Int {
+    override fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int {
         when {
-            pdCurrent < perc.first()[0] as Int -> return perc.first()[0] as Int
-            pdCurrent > perc.last()[0] as Int -> return perc.last()[0] as Int
-            else -> perc.forEach { item ->
+            pdCurrent < percentile.first()[0].toInt() -> return percentile.first()[0].toInt()
+            pdCurrent > percentile.last()[0].toInt() -> return percentile.last()[0].toInt()
+            else -> percentile.forEach { item ->
                 when {
-                    pdCurrent == item.first() -> return item.first() as Int
-                    pdCurrent < item.first() as Int -> return item.first() as Int
+                    pdCurrent == item.first().toInt() -> return item.first().toInt()
+                    pdCurrent < item.first().toInt() -> return item.first().toInt()
                 }
             }
         }
