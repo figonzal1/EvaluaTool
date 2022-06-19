@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:42
+ Last modified 18-06-22 22:00
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo1
 
@@ -125,7 +125,7 @@ class MemoriaAtencionE1M1 : AppCompatActivity() {
             tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = cardViewFinal.progressBar
-            progressBar.max = resolver.percentile.first()[1] as Int
+            progressBar.max = resolver.percentile.first()[1].toInt()
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 

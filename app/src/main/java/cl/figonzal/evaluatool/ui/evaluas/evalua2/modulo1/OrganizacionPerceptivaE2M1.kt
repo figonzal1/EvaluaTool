@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 28/2/22 1:24
+ Last modified 18-06-22 22:00
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1
 
@@ -98,7 +98,7 @@ class OrganizacionPerceptivaE2M1 : AppCompatActivity() {
             tvCalculatedDeviation = cardViewFinal.tvDesviacionCalculadaValue
 
             progressBar = binding.cardViewFinal.progressBar
-            progressBar.max = resolver.perc.first()[1] as Int
+            progressBar.max = resolver.percentile.first()[1].toInt()
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
@@ -275,10 +275,10 @@ class OrganizacionPerceptivaE2M1 : AppCompatActivity() {
         //Calculate Total PD
         resolver.run {
 
-            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
+            tvPdTotal.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotalPD())
 
             //Correct total pd based on Baremo Table
-            val pdCorrected = correctPD(perc, getTotal().toInt())
+            val pdCorrected = correctPD(percentile, getTotalPD().toInt())
             tvPdCorrected.text = formatResult(R.string.POINTS_SIMPLE_FORMAT, pdCorrected.toDouble())
 
             //Calculate desviation
@@ -286,7 +286,7 @@ class OrganizacionPerceptivaE2M1 : AppCompatActivity() {
                 EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            val percentile = EvaluaUtils.calculatePercentile(percentile, pdCorrected)
             tvPercentile.text = percentile.toString()
 
             when {

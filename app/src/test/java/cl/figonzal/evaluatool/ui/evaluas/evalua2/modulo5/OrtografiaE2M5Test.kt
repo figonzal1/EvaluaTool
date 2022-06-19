@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 22:03
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo5
 
-import cl.figonzal.evaluatool.domain.baremo_tables.ortografiaE2M5BAremo
+import cl.figonzal.evaluatool.domain.baremo_tables.ortografiaE2M5Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import org.junit.Assert.assertEquals
 import org.junit.Test
@@ -25,7 +25,7 @@ class OrtografiaE2M5Test(
     private val percentil_esperado: Double,
     private val desviacion_esperada: Double
 ) {
-    private val perc = ortografiaE2M5BAremo()
+    private val perc = ortografiaE2M5Baremo()
 
     @Test
     fun testCalcularPercentil() {
@@ -51,8 +51,8 @@ class OrtografiaE2M5Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
-            return ortografiaE2M5BAremo()
+        fun data(): Array<Array<Double>> {
+            return ortografiaE2M5Baremo()
         }
     }
 }

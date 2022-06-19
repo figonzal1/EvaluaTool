@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 10:23
+ Last modified 18-06-22 22:03
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6
 
@@ -51,7 +51,7 @@ class ResolucionProblemasE2M6Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Any>> {
+        fun data(): Array<Array<Double>> {
             return resolucionProblemasE2M6Baremo()
         }
     }
