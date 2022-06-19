@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 21:36
+ Last modified 19-06-22 00:57
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo3.adaptacionFragments
 
@@ -33,9 +33,7 @@ class FragmentStateAdapterE2M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
         }
     }
 
-    override fun getItemCount(): Int {
-        return tabsArray.size
-    }
+    override fun getItemCount() = tabsArray.size
 
     companion object {
         val tabsArray = listOf(

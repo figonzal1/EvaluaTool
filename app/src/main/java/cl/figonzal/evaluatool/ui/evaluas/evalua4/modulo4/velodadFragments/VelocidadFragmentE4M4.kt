@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:41
+ Last modified 19-06-22 02:56
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.velodadFragments
 
@@ -42,7 +42,8 @@ class VelocidadFragmentE4M4 : Fragment() {
         }
     }
 
-    private var binding: FragmentVelocidadE4M4Binding? = null
+    private var _binding: FragmentVelocidadE4M4Binding? = null
+    private val binding get() = _binding!!
 
     //TAREA 1
     private lateinit var etSecondsT1: TextInputEditText
@@ -68,10 +69,10 @@ class VelocidadFragmentE4M4 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentVelocidadE4M4Binding.inflate(inflater, container, false)
+        _binding = FragmentVelocidadE4M4Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
     private fun initResources(binding: FragmentVelocidadE4M4Binding) {

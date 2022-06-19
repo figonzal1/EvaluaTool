@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:41
+ Last modified 19-06-22 02:56
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo3.adaptacionFragments
 
@@ -44,7 +44,8 @@ class ConductaProSocialFragmentE4M3 : Fragment() {
         }
     }
 
-    private var binding: FragmentConductaProSocialE4M3Binding? = null
+    private var _binding: FragmentConductaProSocialE4M3Binding? = null
+    private val binding get() = _binding!!
 
     private lateinit var etApprovedT1: TextInputEditText
     private var approvedT1 = 0
@@ -69,10 +70,10 @@ class ConductaProSocialFragmentE4M3 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentConductaProSocialE4M3Binding.inflate(inflater, container, false)
+        _binding = FragmentConductaProSocialE4M3Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
 
@@ -185,8 +186,8 @@ class ConductaProSocialFragmentE4M3 : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 13:01
+ Last modified 19-06-22 02:19
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3.adaptacionFragments
 
@@ -34,15 +34,16 @@ import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 
-class ConductaProSocialE1M3 : Fragment() {
+class ConductaProSocialFragmentE1M3 : Fragment() {
 
     companion object {
-        fun newInstance(): ConductaProSocialE1M3 {
-            return ConductaProSocialE1M3()
+        fun newInstance(): ConductaProSocialFragmentE1M3 {
+            return ConductaProSocialFragmentE1M3()
         }
     }
 
-    private var binding: FragmentConductaProSocialE1M3Binding? = null
+    private var _binding: FragmentConductaProSocialE1M3Binding? = null
+    private val binding get() = _binding!!
 
     private lateinit var etApprovedT1: TextInputEditText
     private var approvedT1 = 0
@@ -67,11 +68,11 @@ class ConductaProSocialE1M3 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentConductaProSocialE1M3Binding.inflate(inflater, container, false)
+        _binding = FragmentConductaProSocialE1M3Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
+        initResources(binding)
 
-        return binding!!.root
+        return binding.root
     }
 
     private fun initResources(binding: FragmentConductaProSocialE1M3Binding) {
@@ -84,10 +85,10 @@ class ConductaProSocialE1M3 : Fragment() {
 
             //TAREA 1
             tvSubTotalT1 = tvPdSubtotalT1
-            this@ConductaProSocialE1M3.etApprovedT1 = etAprobadasT1
+            this@ConductaProSocialFragmentE1M3.etApprovedT1 = etAprobadasT1
 
             //TOTAL
-            this@ConductaProSocialE1M3.tvPdTotal = tvPdTotalValue
+            this@ConductaProSocialFragmentE1M3.tvPdTotal = tvPdTotalValue
             tvPdCorrected = cardViewFinal.tvPdTotalCorregidoValue
             tvPercentile = cardViewFinal.tvPercentilValue
             tvLevel = cardViewFinal.tvNivelObtenidoValue
@@ -182,8 +183,8 @@ class ConductaProSocialE1M3 : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

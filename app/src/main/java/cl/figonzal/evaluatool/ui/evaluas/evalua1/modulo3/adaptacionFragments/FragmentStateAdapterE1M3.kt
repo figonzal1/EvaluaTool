@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 21:36
+ Last modified 19-06-22 02:19
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3.adaptacionFragments
 
@@ -27,15 +27,13 @@ class FragmentStateAdapterE1M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
             0 -> AdMobFragment.newInstance()
             1 -> MotivacionFragmentE1M3.newInstance()
             2 -> AutoControlFragmentE1M3.newInstance()
-            3 -> ConductaProSocialE1M3.newInstance()
+            3 -> ConductaProSocialFragmentE1M3.newInstance()
             4 -> AutoEstimaFragmentE1M3.newInstance()
             else -> AdMobFragment.newInstance()
         }
     }
 
-    override fun getItemCount(): Int {
-        return tabsArray.size
-    }
+    override fun getItemCount() = tabsArray.size
 
     companion object {
         val tabsArray = listOf(

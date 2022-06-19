@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:00
+ Last modified 19-06-22 02:27
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo3.adaptacionFragments
 
@@ -43,7 +43,8 @@ class MotivacionFragmentE2M3 : Fragment() {
         }
     }
 
-    private var binding: FragmentMotivacionE2M3Binding? = null
+    private var _binding: FragmentMotivacionE2M3Binding? = null
+    private val binding get() = _binding!!
 
     private lateinit var etApproveT1: TextInputEditText
     private var approveT1 = 0
@@ -68,10 +69,10 @@ class MotivacionFragmentE2M3 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentMotivacionE2M3Binding.inflate(inflater, container, false)
+        _binding = FragmentMotivacionE2M3Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
     private fun initResources(binding: FragmentMotivacionE2M3Binding) {
@@ -184,8 +185,8 @@ class MotivacionFragmentE2M3 : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

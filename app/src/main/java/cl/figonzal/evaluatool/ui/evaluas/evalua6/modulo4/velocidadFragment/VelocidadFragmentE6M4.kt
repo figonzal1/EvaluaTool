@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:06
+ Last modified 19-06-22 02:56
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.velocidadFragment
@@ -43,7 +43,8 @@ class VelocidadFragmentE6M4 : Fragment() {
         }
     }
 
-    private var binding: FragmentVelocidadE6M4Binding? = null
+    private var _binding: FragmentVelocidadE6M4Binding? = null
+    private val binding get() = _binding!!
 
     //TAREA 1
     private lateinit var etSecondsT1: TextInputEditText
@@ -69,10 +70,10 @@ class VelocidadFragmentE6M4 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentVelocidadE6M4Binding.inflate(inflater, container, false)
+        _binding = FragmentVelocidadE6M4Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
     private fun initResources(binding: FragmentVelocidadE6M4Binding) {
@@ -180,6 +181,11 @@ class VelocidadFragmentE6M4 : Fragment() {
             //Calculate student level
             tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

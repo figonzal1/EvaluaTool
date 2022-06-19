@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:00
+ Last modified 19-06-22 02:27
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo3.adaptacionFragments
 
@@ -42,7 +42,8 @@ class AutoEstimaFragmentE2M3 : Fragment() {
         }
     }
 
-    private var binding: FragmentAutoEstimaE2M3Binding? = null
+    private var _binding: FragmentAutoEstimaE2M3Binding? = null
+    private val binding get() = _binding!!
 
     private lateinit var etApprovedT1: TextInputEditText
     private var approvedT1 = 0
@@ -67,10 +68,10 @@ class AutoEstimaFragmentE2M3 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentAutoEstimaE2M3Binding.inflate(inflater, container, false)
+        _binding = FragmentAutoEstimaE2M3Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
     private fun initResources(binding: FragmentAutoEstimaE2M3Binding) {
@@ -179,8 +180,8 @@ class AutoEstimaFragmentE2M3 : Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

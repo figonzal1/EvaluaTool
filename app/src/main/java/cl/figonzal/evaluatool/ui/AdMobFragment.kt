@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 25-05-22 22:26
+ Last modified 19-06-22 02:03
  */
 
 package cl.figonzal.evaluatool.ui
@@ -34,7 +34,9 @@ import timber.log.Timber
 class AdMobFragment : Fragment() {
 
     private var currentNativeAd: NativeAd? = null
-    private lateinit var binding: FragmentAdMobBinding
+
+    private var _binding: FragmentAdMobBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -42,7 +44,7 @@ class AdMobFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        binding = FragmentAdMobBinding.inflate(inflater, container, false)
+        _binding = FragmentAdMobBinding.inflate(inflater, container, false)
 
         refreshAd(container)
 
@@ -182,7 +184,11 @@ class AdMobFragment : Fragment() {
     override fun onDestroy() {
         currentNativeAd?.destroy()
         super.onDestroy()
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
 

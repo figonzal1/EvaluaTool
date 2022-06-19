@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:17
+ Last modified 19-06-22 02:56
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3.adaptacionFragments
@@ -43,7 +43,8 @@ class MotivacionFragmentE7M3 : Fragment() {
         }
     }
 
-    private var binding: FragmentMotivacionE7M3Binding? = null
+    private var _binding: FragmentMotivacionE7M3Binding? = null
+    private val binding get() = _binding!!
 
     private lateinit var etApprovedT1: TextInputEditText
     private var approvedT1 = 0
@@ -68,10 +69,10 @@ class MotivacionFragmentE7M3 : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentMotivacionE7M3Binding.inflate(inflater, container, false)
+        _binding = FragmentMotivacionE7M3Binding.inflate(inflater, container, false)
 
-        initResources(binding!!)
-        return binding!!.root
+        initResources(binding)
+        return binding.root
     }
 
 
@@ -181,5 +182,10 @@ class MotivacionFragmentE7M3 : Fragment() {
             //Calculate student level
             tvLevel.text = EvaluaUtils.calcularNivel(percentile)
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
