@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:16
+ Last modified 18-06-22 22:32
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.velodadFragments
 
@@ -101,7 +101,7 @@ class ComprensionFragmentE4M4 : Fragment() {
             this@ComprensionFragmentE4M4.tvComprehensionLevel = tvNivelComprensionValue
 
             this@ComprensionFragmentE4M4.progressBar = progressBar
-            progressBar.max = resolver.perc.first()[1] as Int
+            progressBar.max = resolver.percentile.first()[1].toInt()
 
             ivHelpPdCorregido.setAlertDialogCorregido()
 
@@ -232,10 +232,10 @@ class ComprensionFragmentE4M4 : Fragment() {
         resolver.run {
 
             tvPdTotal.text =
-                requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotal())
+                requireActivity().formatResult(R.string.POINTS_SIMPLE_FORMAT, getTotalPD())
 
             //Correct total pd based on Baremo Table
-            val pdCorrected = correctPD(perc, getTotal().toInt())
+            val pdCorrected = correctPD(percentile, getTotalPD().toInt())
             tvPdCorrected.text = requireActivity().formatResult(
                 R.string.POINTS_SIMPLE_FORMAT,
                 pdCorrected.toDouble()
@@ -248,7 +248,7 @@ class ComprensionFragmentE4M4 : Fragment() {
             tvComprehensionLevel.text = calculateComprehension(pdCorrected)
 
             //Calculate Percentile
-            val percentile = EvaluaUtils.calculatePercentile(perc, pdCorrected)
+            val percentile = EvaluaUtils.calculatePercentile(percentile, pdCorrected)
             tvPercentile.text = percentile.toString()
 
             when {
