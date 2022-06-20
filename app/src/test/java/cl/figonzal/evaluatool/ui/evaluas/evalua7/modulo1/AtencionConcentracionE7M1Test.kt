@@ -8,40 +8,44 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:20
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.atencionConcentracionE7M1Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import org.junit.Assert.assertEquals
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
 class AtencionConcentracionE7M1Test(
-    private val pd_total: Int, private val percentil_esperado: Double,
-    private val desviacion_esperada: Double
+    private val totalPD: Double,
+    private val expPercentile: Double,
+    private val expDeviation: Double
 ) {
+
     private val perc = atencionConcentracionE7M1Baremo()
 
     @Test
-    fun testCalcularPercentil() {
-        assertEquals(
-            percentil_esperado,
-            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
-            0.1
-        )
+    fun testCalculatePercentile() {
+
+        val calcPercentile = EvaluaUtils.calculatePercentile(perc, totalPD.toInt()).toDouble()
+
+        assertThat(expPercentile).isEqualTo(calcPercentile)
     }
 
     @Test
-    fun testCalcularDesviacion() {
-        assertEquals(
-            desviacion_esperada,
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
-            0.001
-        )
+    fun testCalculateDeviation() {
+
+        val calcDeviation = EvaluaUtils.calcularDesviacion2(
+            MEDIA,
+            DESVIACION,
+            totalPD.toInt()
+        ).toDouble()
+
+        assertThat(expDeviation).isEqualTo(calcDeviation)
     }
 
     companion object {
@@ -50,8 +54,6 @@ class AtencionConcentracionE7M1Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Double>> {
-            return atencionConcentracionE7M1Baremo()
-        }
+        fun data() = atencionConcentracionE7M1Baremo()
     }
 }

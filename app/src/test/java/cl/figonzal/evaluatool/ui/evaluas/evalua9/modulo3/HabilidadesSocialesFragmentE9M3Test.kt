@@ -8,38 +8,37 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:20
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3
 
 import cl.figonzal.evaluatool.domain.baremo_tables.habilidadesSocialesE9M3Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import org.junit.Assert
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
 class HabilidadesSocialesFragmentE9M3Test(
-    private val pd_total: Int, private val percentil_esperado: Double
+    private val totalPD: Double,
+    private val expPercentile: Double
 ) {
     private val perc = habilidadesSocialesE9M3Baremo()
 
     @Test
-    fun testCalcularPercentil() {
-        Assert.assertEquals(
-            percentil_esperado,
-            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
-            0.1
-        )
+    fun testCalculatePercentile() {
+
+        val calcPercentile =
+            EvaluaUtils.calculatePercentile(perc, totalPD.toInt(), reverse = true).toDouble()
+
+        assertThat(expPercentile).isEqualTo(calcPercentile)
     }
 
     companion object {
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Double>> {
-            return habilidadesSocialesE9M3Baremo()
-        }
+        fun data() = habilidadesSocialesE9M3Baremo()
     }
 }

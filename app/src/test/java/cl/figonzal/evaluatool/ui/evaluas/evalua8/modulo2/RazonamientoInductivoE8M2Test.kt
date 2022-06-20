@@ -8,14 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:20
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2
 
 import cl.figonzal.evaluatool.domain.baremo_tables.razonamientoInductivoE8M2Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import org.junit.Assert.assertEquals
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -23,27 +23,28 @@ import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
 class RazonamientoInductivoE8M2Test(
-    private val pd_total: Int, private val percentil_esperado: Double,
-    private val desviacion_esperada: Double
+    private val totalPD: Double,
+    private val expPercentile: Double,
+    private val expDeviation: Double
 ) {
+
     private val perc = razonamientoInductivoE8M2Baremo()
 
     @Test
-    fun testCalcularPercentil() {
-        assertEquals(
-            percentil_esperado,
-            EvaluaUtils.calculatePercentile(perc, pd_total).toDouble(),
-            0.1
-        )
+    fun testCalculatePercentile() {
+
+        val calcPercentile = EvaluaUtils.calculatePercentile(perc, totalPD.toInt()).toDouble()
+
+        assertThat(expPercentile).isEqualTo(calcPercentile)
     }
 
     @Test
-    fun testCalcularDesviacion() {
-        assertEquals(
-            desviacion_esperada,
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total).toDouble(),
-            0.001
-        )
+    fun testCalculateDeviation() {
+
+        val calcDeviation =
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+
+        assertThat(expDeviation).isEqualTo(calcDeviation)
     }
 
     companion object {
@@ -52,8 +53,6 @@ class RazonamientoInductivoE8M2Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Double>> {
-            return razonamientoInductivoE8M2Baremo()
-        }
+        fun data() = razonamientoInductivoE8M2Baremo()
     }
 }

@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 19-06-22 10:52
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularDesviacion
-import org.junit.Assert.assertEquals
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularDesviacion2
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -23,15 +23,14 @@ class DesviacionTest(
     private val media: Double,
     private val desviacion: Double,
     private val pd_total: Int,
-    private val desviacion_esperada: Double
+    private val desviacionEsperada: Double
 ) {
     @Test
     fun testCalcularDesviacion() {
-        assertEquals(
-            desviacion_esperada,
-            calcularDesviacion(media, desviacion, pd_total, false),
-            0.001
-        )
+
+        val desviacionCalculada = calcularDesviacion2(media, desviacion, pd_total, false).toDouble()
+
+        assertThat(desviacionEsperada).isEqualTo(desviacionCalculada)
     }
 
     companion object {

@@ -8,41 +8,43 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:21
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4
 
 import cl.figonzal.evaluatool.domain.baremo_tables.velocidadFragmentE8M4Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import org.junit.Assert
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
 
 @RunWith(Parameterized::class)
 class VelocidadFragmentE8M4Test(
-    private val pd_total: Int, private val percentil_esperado: Double,
-    private val desviacion_esperada: Double
+    private val totalPD: Double,
+    private val expPercentile: Double,
+    private val expDeviation: Double
 ) {
     private val perc = velocidadFragmentE8M4Baremo()
 
     @Test
-    fun testCalcularPercentil() {
-        Assert.assertEquals(
-            percentil_esperado,
-            EvaluaUtils.calculatePercentile(perc, pd_total, reverse = true).toDouble(),
-            0.1
-        )
+    fun testCalculatePercentile() {
+
+        val calcPercentile =
+            EvaluaUtils.calculatePercentile(perc, totalPD.toInt(), reverse = true).toDouble()
+
+        assertThat(expPercentile).isEqualTo(calcPercentile)
     }
 
     @Test
-    fun testCalcularDesviacion() {
-        Assert.assertEquals(
-            desviacion_esperada,
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, pd_total, reverse = true).toDouble(),
-            0.001
-        )
+    fun testCalculateDeviation() {
+
+        val calcDeviation =
+            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt(), reverse = true)
+                .toDouble()
+
+        assertThat(expDeviation).isEqualTo(calcDeviation)
     }
 
     companion object {
@@ -51,8 +53,6 @@ class VelocidadFragmentE8M4Test(
 
         @JvmStatic
         @Parameterized.Parameters
-        fun data(): Array<Array<Double>> {
-            return velocidadFragmentE8M4Baremo()
-        }
+        fun data() = velocidadFragmentE8M4Baremo()
     }
 }

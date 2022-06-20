@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:19
+ Last modified 19-06-22 10:49
  */
 package cl.figonzal.evaluatool
 
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularNivelTest
-import org.junit.Assert
+import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.junit.runners.Parameterized
@@ -23,7 +23,7 @@ class CalcularNivelTest(private val percentil: Int, private val nivelEsperado: S
 
     @Test
     fun testCalcularNivel() {
-        Assert.assertEquals(nivelEsperado, calcularNivelTest(percentil))
+        assertThat(nivelEsperado).isEqualTo(calcularNivelTest(percentil))
     }
 
     companion object {
@@ -34,15 +34,15 @@ class CalcularNivelTest(private val percentil: Int, private val nivelEsperado: S
 
             //Puntaje directo, Nivel Calculado
             return arrayOf(
-                    arrayOf(85, "ALTO"),
-                    arrayOf(79, "MEDIO-ALTO"),
-                    arrayOf(99, "ALTO"),
-                    arrayOf(60, "MEDIO-ALTO"),
-                    arrayOf(55, "MEDIO"),
-                    arrayOf(40, "MEDIO"),
-                    arrayOf(10, "BAJO"),
-                    arrayOf(25, "MEDIO-BAJO"),
-                    arrayOf(0, "BAJO")
+                arrayOf(85, "ALTO"),
+                arrayOf(79, "MEDIO-ALTO"),
+                arrayOf(99, "ALTO"),
+                arrayOf(60, "MEDIO-ALTO"),
+                arrayOf(55, "MEDIO"),
+                arrayOf(40, "MEDIO"),
+                arrayOf(10, "BAJO"),
+                arrayOf(25, "MEDIO-BAJO"),
+                arrayOf(0, "BAJO")
             )
         }
     }
