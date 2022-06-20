@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:21
+ Last modified 19-06-22 23:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo5
 
@@ -39,7 +39,7 @@ class OrtografiaE2M5Test(
     fun testCalculateDeviation() {
 
         val calcDeviation =
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
 
         Truth.assertThat(expDeviation).isEqualTo(calcDeviation)
     }

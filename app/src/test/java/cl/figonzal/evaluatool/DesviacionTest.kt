@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 10:52
+ Last modified 19-06-22 23:23
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularDesviacion2
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -28,7 +28,7 @@ class DesviacionTest(
     @Test
     fun testCalcularDesviacion() {
 
-        val desviacionCalculada = calcularDesviacion2(media, desviacion, pd_total, false).toDouble()
+        val desviacionCalculada = calculateDeviation(media, desviacion, pd_total, false).toDouble()
 
         assertThat(desviacionEsperada).isEqualTo(desviacionCalculada)
     }

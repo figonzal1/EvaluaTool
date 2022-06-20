@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 02:56
+ Last modified 19-06-22 23:32
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3.adaptacionFragments
@@ -94,7 +94,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
 
             ivHelpPdCorregido.setAlertDialogCorregido()
 
-            EvaluaUtils.configurarTextoBaremo(
+            EvaluaUtils.configBaremoText(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -170,7 +170,7 @@ class HabilidadesSocialesFragmentE8M3 : Fragment() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 

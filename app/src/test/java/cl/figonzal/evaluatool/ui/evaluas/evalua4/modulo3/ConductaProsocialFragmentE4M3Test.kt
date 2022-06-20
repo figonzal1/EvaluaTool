@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:21
+ Last modified 19-06-22 23:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo3
 
@@ -41,7 +41,7 @@ class ConductaProsocialFragmentE4M3Test(
     fun testCalculateDeviation() {
 
         val calcDeviation =
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt(), reverse = true)
+            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt(), reverse = true)
                 .toDouble()
 
         Truth.assertThat(expDeviation).isEqualTo(calcDeviation)

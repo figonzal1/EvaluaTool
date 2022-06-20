@@ -8,13 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 11:14
+ Last modified 19-06-22 23:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.clasificacionE0M1Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularDesviacion2
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -40,7 +40,7 @@ class ClasificacionE0M1Test(
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation = calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+        val calcDeviation = calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
 
         assertThat(expDeviation).isEqualTo(calcDeviation)
     }

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:20
+ Last modified 19-06-22 23:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo3
@@ -40,7 +40,7 @@ class AutoEstimaFragmentE6M3Test(
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation = EvaluaUtils.calcularDesviacion2(
+        val calcDeviation = EvaluaUtils.calculateDeviation(
             MEDIA,
             DESVIACION,
             totalPD.toInt(), reverse = true

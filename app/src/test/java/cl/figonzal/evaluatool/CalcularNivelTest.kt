@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 10:49
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool
 
-import cl.figonzal.evaluatool.utils.EvaluaUtils.calcularNivelTest
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateStudentLevelTest
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,7 +23,7 @@ class CalcularNivelTest(private val percentil: Int, private val nivelEsperado: S
 
     @Test
     fun testCalcularNivel() {
-        assertThat(nivelEsperado).isEqualTo(calcularNivelTest(percentil))
+        assertThat(nivelEsperado).isEqualTo(calculateStudentLevelTest(percentil))
     }
 
     companion object {

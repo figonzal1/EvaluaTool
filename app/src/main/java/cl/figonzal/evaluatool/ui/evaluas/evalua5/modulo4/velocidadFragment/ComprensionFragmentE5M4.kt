@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 02:56
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.velocidadFragment
 
@@ -107,7 +107,7 @@ class ComprensionFragmentE5M4 : Fragment() {
 
             ivHelpPdCorregido.setAlertDialogCorregido()
 
-            EvaluaUtils.configurarTextoBaremo(
+            EvaluaUtils.configBaremoText(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -246,7 +246,7 @@ class ComprensionFragmentE5M4 : Fragment() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
+                EvaluaUtils.calculateDeviation(MEAN, DEVIATION, pdCorrected)
 
             val comprension = calculateComprehension(pdCorrected)
             tvComprehensionLevel.text = comprension
@@ -264,7 +264,7 @@ class ComprensionFragmentE5M4 : Fragment() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 

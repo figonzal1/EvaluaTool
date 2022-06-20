@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:20
+ Last modified 19-06-22 23:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2
@@ -39,7 +39,7 @@ class RazonamientoDeductivoE9M2Test(
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation = EvaluaUtils.calcularDesviacion2(
+        val calcDeviation = EvaluaUtils.calculateDeviation(
             MEDIA,
             DESVIACION,
             totalPD.toInt()

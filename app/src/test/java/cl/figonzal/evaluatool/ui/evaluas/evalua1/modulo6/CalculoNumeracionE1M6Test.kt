@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 12:31
+ Last modified 19-06-22 23:23
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo6
 
@@ -40,7 +40,7 @@ class CalculoNumeracionE1M6Test(
     fun testCalculateDeviation() {
 
         val calcDeviation =
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
 
         assertThat(expDeviation).isEqualTo(calcDeviation)
     }

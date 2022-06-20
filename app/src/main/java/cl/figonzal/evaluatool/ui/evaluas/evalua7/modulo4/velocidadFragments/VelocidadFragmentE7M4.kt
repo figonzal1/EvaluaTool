@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 02:56
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.velocidadFragments
 
@@ -27,7 +27,7 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo4.VelocidadFragment
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo4.VelocidadFragmentE7M4Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import cl.figonzal.evaluatool.utils.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import cl.figonzal.evaluatool.utils.formatResult
 import cl.figonzal.evaluatool.utils.formatSubTotalPoints
 import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
@@ -96,7 +96,7 @@ class VelocidadFragmentE7M4 : Fragment() {
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
-            configurarTextoBaremo(
+            configBaremoText(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -161,7 +161,7 @@ class VelocidadFragmentE7M4 : Fragment() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected, reverse = true)
+                EvaluaUtils.calculateDeviation(MEAN, DEVIATION, pdCorrected, reverse = true)
 
             //Calculate Percentile
             val percentile =
@@ -177,7 +177,7 @@ class VelocidadFragmentE7M4 : Fragment() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 13:01
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool.utils
 
@@ -35,20 +35,20 @@ object EvaluaUtils {
      * Function in charge of calculating the deviation of a student's PD (Method with generic implementation)
      *
      * @param MEAN
-     * @param DESVIATION
+     * @param DEVIATION
      * @param reverse Used to change the order calculation
      * @param pdTotal Direct score
      *
      * @return String desviacion
      */
-    fun calcularDesviacion2(
+    fun calculateDeviation(
         MEAN: Double,
-        DESVIATION: Double,
+        DEVIATION: Double,
         pdTotal: Int,
         reverse: Boolean = false
     ) = when {
-        !reverse -> ((pdTotal - MEAN) / DESVIATION * 100.0).roundToInt() / 100.0
-        else -> ((MEAN - pdTotal) / DESVIATION * 100.0).roundToInt() / 100.0
+        !reverse -> ((pdTotal - MEAN) / DEVIATION * 100.0).roundToInt() / 100.0
+        else -> ((MEAN - pdTotal) / DEVIATION * 100.0).roundToInt() / 100.0
     }.toString()
 
     /**
@@ -98,7 +98,7 @@ object EvaluaUtils {
      * @param percentile Percentile of student position in baremo
      * @return String Level asigned to student
      */
-    fun calcularNivel(percentile: Int) = when (percentile) {
+    fun calculateStudentLevel(percentile: Int) = when (percentile) {
 
         in 80..99 -> ALTO.name
         in 60..79 -> MEDIO_ALTO.name
@@ -124,7 +124,7 @@ object EvaluaUtils {
     /**
      * Only for test
      */
-    fun calcularNivelTest(percentile: Int) = when (percentile) {
+    fun calculateStudentLevelTest(percentile: Int) = when (percentile) {
 
         in 80..99 -> "ALTO"
         in 60..79 -> "MEDIO-ALTO"
@@ -149,7 +149,7 @@ object EvaluaUtils {
      * @return Unit
      *
      */
-    fun configurarTextoBaremo(
+    fun configBaremoText(
         fragmentManager: FragmentManager,
         tvBaremo: TextView,
         resolver: BaseResolver,

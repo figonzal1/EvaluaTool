@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:21
+ Last modified 19-06-22 23:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4
@@ -41,7 +41,7 @@ class VelocidadFragmentE10M4Test(
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation = EvaluaUtils.calcularDesviacion2(
+        val calcDeviation = EvaluaUtils.calculateDeviation(
             MEDIA,
             DESVIACION,
             totalPD.toInt(),

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:20
+ Last modified 19-06-22 23:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1
@@ -42,7 +42,7 @@ class OrganizacionPerceptivaE6M1Test(
     fun testCalculateDeviation() {
 
         val calcDeviation =
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
 
         Truth.assertThat(expDeviation).isEqualTo(calcDeviation)
     }

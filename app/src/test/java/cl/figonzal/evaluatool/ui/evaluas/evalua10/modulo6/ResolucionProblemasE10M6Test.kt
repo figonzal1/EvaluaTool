@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:20
+ Last modified 19-06-22 23:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6
@@ -41,7 +41,7 @@ class ResolucionProblemasE10M6Test(
     fun testCalculateDeviation() {
 
         val calcDeviation =
-            EvaluaUtils.calcularDesviacion2(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
 
         Truth.assertThat(expDeviation).isEqualTo(calcDeviation)
     }

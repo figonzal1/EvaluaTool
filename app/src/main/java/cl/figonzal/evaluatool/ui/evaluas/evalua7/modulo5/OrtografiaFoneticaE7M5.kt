@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo5.OrtografiaFonetic
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo5.OrtografiaFoneticaE7M5Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo5.OrtografiaFoneticaE7M5Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utils.*
-import cl.figonzal.evaluatool.utils.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -90,7 +90,7 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
-            configurarTextoBaremo(
+            configBaremoText(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -161,7 +161,7 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
+                EvaluaUtils.calculateDeviation(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(percentile, pdCorrected)
@@ -176,7 +176,7 @@ class OrtografiaFoneticaE7M5 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 }

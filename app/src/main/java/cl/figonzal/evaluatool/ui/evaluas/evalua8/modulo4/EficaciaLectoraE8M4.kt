@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:32
+ Last modified 19-06-22 23:32
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4
@@ -93,7 +93,7 @@ class EficaciaLectoraE8M4 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
-            EvaluaUtils.configurarTextoBaremo(
+            EvaluaUtils.configBaremoText(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -191,7 +191,7 @@ class EficaciaLectoraE8M4 : AppCompatActivity() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
+                EvaluaUtils.calculateDeviation(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(percentile, pdCorrected)
@@ -206,7 +206,7 @@ class EficaciaLectoraE8M4 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 

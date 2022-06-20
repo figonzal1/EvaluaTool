@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 02:56
+ Last modified 19-06-22 23:32
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3.adaptacionFragment
@@ -27,7 +27,7 @@ import cl.figonzal.evaluatool.databinding.FragmentAdaptacionFamiliarE9M3Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.AdaptacionFamiliarFragmentE9M3Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.AdaptacionFamiliarFragmentE9M3Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utils.EvaluaUtils
-import cl.figonzal.evaluatool.utils.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import cl.figonzal.evaluatool.utils.formatResult
 import cl.figonzal.evaluatool.utils.formatSubTotalPoints
 import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
@@ -95,7 +95,7 @@ class AdaptacionFamiliarFragmentE9M3 : Fragment() {
 
             ivHelpPdCorregido.setAlertDialogCorregido()
 
-            configurarTextoBaremo(
+            configBaremoText(
                 parentFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -171,7 +171,7 @@ class AdaptacionFamiliarFragmentE9M3 : Fragment() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 

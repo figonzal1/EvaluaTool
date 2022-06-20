@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:00
+ Last modified 19-06-22 23:32
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo2
 
@@ -26,7 +26,7 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo2.PensamientoAnalog
 import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo2.PensamientoAnalogicoE3M2Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo2.PensamientoAnalogicoE3M2Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utils.*
-import cl.figonzal.evaluatool.utils.EvaluaUtils.configurarTextoBaremo
+import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import timber.log.Timber
@@ -95,7 +95,7 @@ class PensamientoAnalogicoE3M2 : AppCompatActivity() {
 
             cardViewFinal.ivHelpPdCorregido.setAlertDialogCorregido()
 
-            configurarTextoBaremo(
+            configBaremoText(
                 supportFragmentManager,
                 tablaBaremo.tvBaremo,
                 resolver,
@@ -192,7 +192,7 @@ class PensamientoAnalogicoE3M2 : AppCompatActivity() {
 
             //Calculate desviation
             tvCalculatedDeviation.text =
-                EvaluaUtils.calcularDesviacion2(MEAN, DEVIATION, pdCorrected)
+                EvaluaUtils.calculateDeviation(MEAN, DEVIATION, pdCorrected)
 
             //Calculate Percentile
             val percentile = EvaluaUtils.calculatePercentile(percentile, pdCorrected)
@@ -207,7 +207,7 @@ class PensamientoAnalogicoE3M2 : AppCompatActivity() {
             }
 
             //Calculate student level
-            tvLevel.text = EvaluaUtils.calcularNivel(percentile)
+            tvLevel.text = EvaluaUtils.calculateStudentLevel(percentile)
         }
     }
 
