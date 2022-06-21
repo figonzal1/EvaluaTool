@@ -8,19 +8,21 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:52
+ Last modified 21-06-22 18:14
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo2
 
-import cl.figonzal.evaluatool.domain.baremo_tables.pensamientoAnalogicoE5M2Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class PensamientoAnalogicoE5M2Resolver : BaseResolver {
+class PensamientoAnalogicoE5M2Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = pensamientoAnalogicoE5M2Baremo()
+    override val percentile = baremoTable.getBaremo("pensa")
 
 
     override fun calculateTask(

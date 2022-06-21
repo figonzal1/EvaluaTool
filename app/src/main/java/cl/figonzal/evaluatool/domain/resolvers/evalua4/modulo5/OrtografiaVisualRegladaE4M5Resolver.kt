@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 17:26
+ Last modified 21-06-22 17:45
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo5
@@ -24,7 +24,7 @@ class OrtografiaVisualRegladaE4M5Resolver(
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val percentile = baremoTable.getBaremo("orto")
+    override val percentile = baremoTable.getBaremo("ortov")
 
     override fun calculateTask(
         nTask: Int,

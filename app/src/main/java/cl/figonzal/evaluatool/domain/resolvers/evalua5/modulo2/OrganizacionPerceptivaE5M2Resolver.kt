@@ -8,20 +8,22 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:52
+ Last modified 21-06-22 18:14
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo2
 
-import cl.figonzal.evaluatool.domain.baremo_tables.organizacionPerceptivaE5M2Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class OrganizacionPerceptivaE5M2Resolver : BaseResolver {
+class OrganizacionPerceptivaE5M2Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
 
-    override val percentile = organizacionPerceptivaE5M2Baremo()
+    override val percentile = baremoTable.getBaremo("orga")
 
     override fun calculateTask(
         nTask: Int,

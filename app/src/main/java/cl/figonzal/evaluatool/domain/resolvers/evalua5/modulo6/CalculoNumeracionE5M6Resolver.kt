@@ -8,22 +8,24 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:52
+ Last modified 21-06-22 18:14
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo6
 
-import cl.figonzal.evaluatool.domain.baremo_tables.calculoNumeracionE5M6Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class CalculoNumeracionE5M6Resolver : BaseResolver {
+class CalculoNumeracionE5M6Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
     var totalPdTask3 = 0.0
     var totalPdTask4 = 0.0
-    override val percentile = calculoNumeracionE5M6Baremo()
+    override val percentile = baremoTable.getBaremo("calc")
 
     override fun calculateTask(
         nTask: Int,

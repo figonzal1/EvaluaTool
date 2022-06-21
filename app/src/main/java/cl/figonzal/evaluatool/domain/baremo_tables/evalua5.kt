@@ -8,14 +8,44 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:52
+ Last modified 21-06-22 18:10
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+
 /**
  * Evalua 5
  */
+class Evalua5Baremo : BaremoTable {
+    override fun getBaremo(baremo: String) = when (baremo) {
+        "memo" -> memoriaAtencionE5M1Baremo()
+
+        "reflex" -> reflexividadE5M2Baremo()
+        "pensa" -> pensamientoAnalogicoE5M2Baremo()
+        "orga" -> organizacionPerceptivaE5M2Baremo()
+
+        "moti" -> motivacionFragmentE5M3Baremo()
+        "auto" -> autoControlFragmentE5M3Baremo()
+        "conduct" -> conductaProsocialFragmentE5M3Baremo()
+        "esti" -> autoEstimaFragmentE5M3Baremo()
+
+        "compl" -> comprensionLectoraE5M4Baremo()
+        "compf" -> comprensionFragmentE5M4Baremo()
+        "velo" -> velocidadFragmentE5M4Baremo()
+        "exact" -> exactitudLectoraE5M4Baremo()
+
+        "ortof" -> ortografiaFoneticaE5M5Baremo()
+        "ortov" -> ortografiaVisualRegladaE5M5Baremo()
+
+        "calc" -> calculoNumeracionE5M6Baremo()
+        "resol" -> resolucionProblemasE5M6Baremo()
+
+        else -> emptyArray()
+    }
+
+}
 
 /**
  * I.- Memoria y Atencion

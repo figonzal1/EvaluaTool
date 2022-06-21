@@ -8,20 +8,22 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:52
+ Last modified 21-06-22 18:14
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo2
 
-import cl.figonzal.evaluatool.domain.baremo_tables.reflexividadE5M2Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class ReflexividadE5M2Resolver : BaseResolver {
+class ReflexividadE5M2Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = reflexividadE5M2Baremo()
 
+    override val percentile = baremoTable.getBaremo("reflex")
 
     override fun calculateTask(
         nTask: Int,

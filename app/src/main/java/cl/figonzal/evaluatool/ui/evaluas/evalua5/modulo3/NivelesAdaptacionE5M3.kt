@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 00:00
+ Last modified 21-06-22 18:14
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo3
 
@@ -18,7 +18,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityNivelesAdaptacionE5M3Binding
-import cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3.adaptacionFragments.FragmentStateAdapterE1M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo3.adaptacionFragments.FragmentStateAdapterE5M3
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.setTabWidthAsWrapContent
@@ -43,7 +42,7 @@ class NivelesAdaptacionE5M3 : AppCompatActivity() {
 
         //View pager
         binding.viewPagerNivelesAdaptacion.adapter =
-            FragmentStateAdapterE1M3(this@NivelesAdaptacionE5M3)
+            FragmentStateAdapterE5M3(this@NivelesAdaptacionE5M3)
         setTabs()
     }
 
