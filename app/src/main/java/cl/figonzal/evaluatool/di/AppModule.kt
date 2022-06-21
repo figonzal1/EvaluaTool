@@ -8,13 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 11:03
+ Last modified 21-06-22 12:27
  */
 
 package cl.figonzal.evaluatool.di
 
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua1Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.Evalua2Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.*
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2.CopiaDibujosE0M2Resolver
@@ -35,6 +36,18 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo4.ExactitudLectoraE
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaFoneticaE1M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaVisualE1M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo6.CalculoNumeracionE1M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.ClasificacionesE2M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.OrganizacionPerceptivaE2M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.PensamientoAnalogicoE2M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo2.MemoriaAtencionE2M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo3.AutoControlFragmentE2M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo3.AutoEstimaFragmentE2M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo3.ConductaProSocialFragmentE2M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo3.MotivacionFragmentE2M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo4.ComprensionLectoraE2M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo5.OrtografiaE2M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo6.CalculoNumeracionE2M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo6.ResolucionProblemasE2M6Resolver
 import org.koin.dsl.module
 
 
@@ -93,7 +106,41 @@ val evalua1Module = module {
     //MODULO 6
     factory { CalculoNumeracionE1M6Resolver(get()) }
 }
+
+val evalua2Module = module {
+    single<BaremoTable> { Evalua2Baremo() }
+
+    //RESOLVERS
+    //MODULO 1
+    factory { PensamientoAnalogicoE2M1Resolver(get()) }
+    factory { OrganizacionPerceptivaE2M1Resolver(get()) }
+    factory { ClasificacionesE2M1Resolver(get()) }
+
+    //MODULO 2
+    factory { MemoriaAtencionE2M2Resolver(get()) }
+
+    //MODULO 3
+    factory { MotivacionFragmentE2M3Resolver(get()) }
+    factory { AutoControlFragmentE2M3Resolver(get()) }
+    factory { ConductaProSocialFragmentE2M3Resolver(get()) }
+    factory { AutoEstimaFragmentE2M3Resolver(get()) }
+
+    //MODULO 4
+    factory { ComprensionLectoraE2M4Resolver(get()) }
+
+    //MODULO 5
+    factory { OrtografiaE2M5Resolver(get()) }
+
+    //MODULO 6
+    factory { CalculoNumeracionE2M6Resolver(get()) }
+    factory { ResolucionProblemasE2M6Resolver(get()) }
+}
+
 val appModule = module {
 
-    includes(evalua0Module, evalua1Module)
+    includes(
+        evalua0Module,
+        evalua1Module,
+        evalua2Module
+    )
 }
