@@ -8,15 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 15:13
+ Last modified 21-06-22 17:26
  */
 
 package cl.figonzal.evaluatool.di
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua1Baremo
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua2Baremo
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.*
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2.CopiaDibujosE0M2Resolver
@@ -63,6 +60,20 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFonetic
 import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaVisualRegladaE3M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo6.CalculoNumeracionE3M6Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo6.ResolucionProblemasE3M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo1.MemoriaAtencionE4M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo2.OrganizacionPerceptivaE4M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo2.PensamientoAnalogicoE4M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo2.ReflexividadE4M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3.AutoControlFragmentE4M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3.AutoEstimaFragmentE4M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3.ConductaProSocialFragmentE4M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3.MotivacionFragmentE4M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo4.ComprensionFragmentE4M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo4.ComprensionLectoraE4M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo4.VelocidadFragmentE4M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo5.OrtografiaVisualRegladaE4M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo6.CalculoNumeracionE4M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo6.ResolucionProblemasE4M6Resolver
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -195,11 +206,47 @@ val evalua3Module = module {
     factory { ResolucionProblemasE3M6Resolver(get(named(e3))) }
 }
 
+val evalua4Module = module {
+
+    val e4 = "e4"
+    //Evalua 3 baremo
+    single<BaremoTable>(named(e4)) { Evalua4Baremo() }
+
+    //RESOLVER
+
+    //MODULO 1
+    factory { MemoriaAtencionE4M1Resolver(get(named(e4))) }
+
+    //Modulo 2
+    factory { ReflexividadE4M2Resolver(get(named(e4))) }
+    factory { PensamientoAnalogicoE4M2Resolver(get(named(e4))) }
+    factory { OrganizacionPerceptivaE4M2Resolver(get(named(e4))) }
+
+    //Modulo 3
+    factory { MotivacionFragmentE4M3Resolver(get(named(e4))) }
+    factory { AutoControlFragmentE4M3Resolver(get(named(e4))) }
+    factory { ConductaProSocialFragmentE4M3Resolver(get(named(e4))) }
+    factory { AutoEstimaFragmentE4M3Resolver(get(named(e4))) }
+
+    //MODULO 4
+    factory { ComprensionLectoraE4M4Resolver(get(named(e4))) }
+    factory { VelocidadFragmentE4M4Resolver(get(named(e4))) }
+    factory { ComprensionFragmentE4M4Resolver(get(named(e4))) }
+
+    //MOdulo 5
+    factory { OrtografiaVisualRegladaE4M5Resolver(get(named(e4))) }
+
+    //Modulo 6
+    factory { CalculoNumeracionE4M6Resolver(get(named(e4))) }
+    factory { ResolucionProblemasE4M6Resolver(get(named(e4))) }
+}
+
 val appModule = module {
     includes(
         evalua0Module,
         evalua1Module,
         evalua2Module,
-        evalua3Module
+        evalua3Module,
+        evalua4Module
     )
 }

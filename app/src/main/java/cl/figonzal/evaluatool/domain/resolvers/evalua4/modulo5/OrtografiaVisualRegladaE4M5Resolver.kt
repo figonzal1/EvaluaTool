@@ -8,21 +8,23 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:40
+ Last modified 21-06-22 17:26
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo5
 
-import cl.figonzal.evaluatool.domain.baremo_tables.ortografiaVisualRegladaE4M5Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class OrtografiaVisualRegladaE4M5Resolver : BaseResolver {
+class OrtografiaVisualRegladaE4M5Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val percentile = ortografiaVisualRegladaE4M5Baremo()
+    override val percentile = baremoTable.getBaremo("orto")
 
     override fun calculateTask(
         nTask: Int,
