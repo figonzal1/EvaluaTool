@@ -8,19 +8,21 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 13:01
+ Last modified 21-06-22 11:03
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.conductaProSocialFragmentE1M3Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class ConductaProSocialFragmentE1M3Resolver : BaseResolver {
+class ConductaProSocialFragmentE1M3Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
     var totalPdTask1 = 0.0
 
-    override val percentile = conductaProSocialFragmentE1M3Baremo()
+    override val percentile = baremoTable.getBaremo("conduct")
 
     override fun calculateTask(
         nTask: Int,

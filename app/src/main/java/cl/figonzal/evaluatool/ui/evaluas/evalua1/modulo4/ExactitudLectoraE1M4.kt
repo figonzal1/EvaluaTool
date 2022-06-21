@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 21-06-22 01:36
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo4
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class ExactitudLectoraE1M4 : AppCompatActivity() {
@@ -75,9 +76,7 @@ class ExactitudLectoraE1M4 : AppCompatActivity() {
     private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        ExactitudLectoraE1M4Resolver()
-    }
+    private val resolver: ExactitudLectoraE1M4Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 00:34
+ Last modified 21-06-22 01:06
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
@@ -44,6 +44,7 @@ class Evalua0Baremo : BaremoTable {
  * A. Clasificacion
  * Page 33
  */
+//TODO: HACER METODOS PRIVADOS
 fun clasificacionE0M1Baremo() = arrayOf(
     //PD, PC Chilean, Desviacion
     arrayOf(18.0, 99.0, 1.69),

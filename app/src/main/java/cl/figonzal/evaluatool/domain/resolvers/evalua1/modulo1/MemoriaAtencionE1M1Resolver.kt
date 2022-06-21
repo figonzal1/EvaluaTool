@@ -8,22 +8,24 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 13:01
+ Last modified 21-06-22 11:03
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo1
 
-import cl.figonzal.evaluatool.domain.baremo_tables.memoriaAtencionE1M1Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class MemoriaAtencionE1M1Resolver : BaseResolver {
+class MemoriaAtencionE1M1Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
     var totalPdTask3 = 0.0
 
-    override val percentile = memoriaAtencionE1M1Baremo()
+    override val percentile = baremoTable.getBaremo("memo")
 
     override fun calculateTask(
         nTask: Int,
