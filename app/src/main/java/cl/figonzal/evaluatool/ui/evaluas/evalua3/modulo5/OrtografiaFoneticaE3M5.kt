@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 21-06-22 12:52
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo5
 
@@ -22,13 +22,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityOrtografiaFoneticaE3M5Binding
-import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver
-import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver.Companion.DEVIATION
-import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFonecticaE3M5Resolver.Companion.MEAN
+import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFoneticaE3M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFoneticaE3M5Resolver.Companion.DEVIATION
+import cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo5.OrtografiaFoneticaE3M5Resolver.Companion.MEAN
 import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class OrtografiaFoneticaE3M5 : AppCompatActivity() {
@@ -58,9 +59,7 @@ class OrtografiaFoneticaE3M5 : AppCompatActivity() {
     private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        OrtografiaFonecticaE3M5Resolver()
-    }
+    private val resolver: OrtografiaFoneticaE3M5Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

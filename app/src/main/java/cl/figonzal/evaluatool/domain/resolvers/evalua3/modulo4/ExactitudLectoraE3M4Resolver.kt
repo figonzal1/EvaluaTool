@@ -8,21 +8,23 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 22:27
+ Last modified 21-06-22 15:50
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.exactitudLectoraE3M4Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class ExactitudLectoraE3M4Resolver : BaseResolver {
+class ExactitudLectoraE3M4Resolver(
+    baremoTable: BaremoTable,
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val percentile = exactitudLectoraE3M4Baremo()
+    override val percentile = baremoTable.getBaremo("exact")
 
 
     override fun calculateTask(
