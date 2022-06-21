@@ -8,12 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 12:19
+ Last modified 21-06-22 00:54
  */
 package cl.figonzal.evaluatool.ui.adapter
 
 import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +20,7 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.BaremoItemListBinding
 import cl.figonzal.evaluatool.ui.adapter.BaremoAdapter.BaremoViewHolder
 import cl.figonzal.evaluatool.utils.EvaluaUtils
+import cl.figonzal.evaluatool.utils.layoutInflater
 
 /**
  * Adapter used to show baremo table
@@ -37,21 +37,16 @@ class BaremoAdapter(private var percentile: Array<Array<Double>>, private val co
         private const val TABLE_ROW = 1
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaremoViewHolder {
-        val v =
-            LayoutInflater.from(parent.context).inflate(R.layout.baremo_item_list, parent, false)
-        return BaremoViewHolder(v)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        BaremoViewHolder(parent.layoutInflater(R.layout.baremo_item_list))
 
     override fun onBindViewHolder(holder: BaremoViewHolder, position: Int) {
         holder.bind(holder.itemViewType, context, percentile)
     }
 
-    override fun getItemViewType(position: Int): Int {
-        return when (position) {
-            0 -> TABLE_HEADER
-            else -> TABLE_ROW
-        }
+    override fun getItemViewType(position: Int) = when (position) {
+        0 -> TABLE_HEADER
+        else -> TABLE_ROW
     }
 
 
@@ -93,8 +88,8 @@ class BaremoAdapter(private var percentile: Array<Array<Double>>, private val co
                                 )
                             )
                         }
-                        tvPd.text = item.first().toString()
-                        tvPcChileno.text = item[1].toString()
+                        tvPd.text = item.first().toInt().toString()
+                        tvPcChileno.text = item[1].toInt().toString()
                     }
                 }
             }

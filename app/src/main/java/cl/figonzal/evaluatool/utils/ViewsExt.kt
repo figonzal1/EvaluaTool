@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 16:47
+ Last modified 20-06-22 20:01
  */
 
 package cl.figonzal.evaluatool.utils
@@ -22,7 +22,9 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
 import android.net.Uri
 import android.os.Build
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
@@ -55,6 +57,12 @@ fun MainActivity.mainActivityTo(activity: Activity) {
         startActivity(this)
     }
 }
+
+/**
+ * Inflater any view
+ */
+fun ViewGroup.layoutInflater(layout: Int): View =
+    LayoutInflater.from(context).inflate(layout, this, false)
 
 /**
  * Configure toolbar with home up icon and title

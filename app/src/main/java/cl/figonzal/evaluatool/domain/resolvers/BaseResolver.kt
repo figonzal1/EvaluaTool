@@ -8,13 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 11:36
+ Last modified 20-06-22 20:13
  */
 
 package cl.figonzal.evaluatool.domain.resolvers
 
 interface BaseResolver {
 
+    //Change name to baremo
     val percentile: Array<Array<Double>>
 
     fun calculateTask(

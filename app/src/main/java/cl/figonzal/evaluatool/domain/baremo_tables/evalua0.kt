@@ -8,14 +8,36 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 12:12
+ Last modified 21-06-22 00:34
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+
 /**
  * Evalua 0
  */
+
+class Evalua0Baremo : BaremoTable {
+
+    override fun getBaremo(baremo: String) = when (baremo) {
+        "clasif" -> clasificacionE0M1Baremo()
+        "series" -> seriesE0M1Baremo()
+        "orga" -> organizacionPerceptivaE0M1Baremo()
+        "letras" -> letrasyNumerosE0M1Baremo()
+        "memo" -> memoriaVerbalE0M1Baremo()
+
+        "copia" -> copiaDeDibujosE0M2Baremo()
+        "grafo" -> grafoMotricidadE0M2Baremo()
+
+        "palab" -> palabrasyFrasesE0M3Baremo()
+        "recep" -> recepcionAuditivaE0M3Baremo()
+        "habi" -> habilidadesFonologicasE0M3Baremo()
+
+        else -> emptyArray()
+    }
+}
 
 /**
  * I.- Capacidades Cognitivas

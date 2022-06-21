@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 01:18
+ Last modified 20-06-22 17:51
  */
 
 apply plugin: 'com.android.application'
@@ -82,11 +82,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation "androidx.core:core-ktx:1.7.0"
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21'
+    implementation "androidx.core:core-ktx:1.8.0"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-    implementation "com.google.android.material:material:1.6.0" //Material Design
+    implementation "com.google.android.material:material:1.6.1" //Material Design
     implementation 'androidx.preference:preference-ktx:1.2.0' //Preferencias de usuario
     implementation 'androidx.core:core-splashscreen:1.0.0-rc01' //splash screen
 
@@ -100,7 +100,11 @@ dependencies {
 
     //Google Play
     implementation("com.google.android.play:core-ktx:1.8.1")
-    implementation 'com.google.android.gms:play-services-ads:20.6.0'
+    implementation 'com.google.android.gms:play-services-ads:21.0.0'
+
+    //KOIN
+    implementation "io.insert-koin:koin-core:3.2.0"
+    implementation "io.insert-koin:koin-android:3.2.0"
 
     //Lifecycle
     implementation 'androidx.lifecycle:lifecycle-process:2.4.1'

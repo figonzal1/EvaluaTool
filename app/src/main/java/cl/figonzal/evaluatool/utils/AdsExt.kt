@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 16:40
+ Last modified 20-06-22 19:28
  */
 
 package cl.figonzal.evaluatool.utils
@@ -49,7 +49,7 @@ fun Activity.startAds(frameLayout: FrameLayout, idBanner: String): AdView {
 fun AdView.loadAnchored(activity: Activity, idBanner: String) {
 
     //getAdSize
-    adSize = anchoredAddSize(this, activity)
+    setAdSize(anchoredAddSize(this, activity))
 
     adUnitId = idBanner
 
@@ -95,7 +95,7 @@ private fun anchoredAddSize(adView: AdView, activity: Activity): AdSize {
 }
 
 /**
- * Function that create adManager object
+ * Function that create adManager object for interstitial
  */
 fun Activity.handleAdManager(): InterstitialAdManager {
     val manager = InterstitialAdManager(this, null, false)

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 21-06-22 00:34
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
@@ -59,9 +60,7 @@ class RecepcionAuditivaArticulacionE0M3 : AppCompatActivity() {
 
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        RecepcionAuditivaArticulacionE0M3Resolver()
-    }
+    private val resolver: RecepcionAuditivaArticulacionE0M3Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

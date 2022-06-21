@@ -8,14 +8,19 @@
 
  Copyright (c) 2022
 
- Last modified 05-03-22 10:40
+ Last modified 21-06-22 00:54
  */
 
 package cl.figonzal.evaluatool
 
 import android.app.Application
+import cl.figonzal.evaluatool.di.appModule
 import cl.figonzal.evaluatool.service.AppOpenService
 import com.google.android.gms.ads.MobileAds
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 import timber.log.Timber
 
 class ApplicationController : Application() {
@@ -29,6 +34,20 @@ class ApplicationController : Application() {
 
         instance = this
 
+        startKoin {
+
+            androidLogger(
+                when {
+                    BuildConfig.DEBUG -> Level.ERROR
+                    else -> Level.NONE
+                }
+            )
+
+            androidContext(this@ApplicationController)
+
+            modules(appModule)
+        }
+
         //Use Crashlytics for production & Timber for debug
         when {
             BuildConfig.DEBUG -> Timber.plant(Timber.DebugTree())
@@ -36,6 +55,7 @@ class ApplicationController : Application() {
         }
 
         MobileAds.initialize(this) {}
+
         AppOpenService(this)
     }
 }
