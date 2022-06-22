@@ -8,20 +8,22 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:22
+ Last modified 22-06-22 18:30
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo1
 
-import cl.figonzal.evaluatool.domain.baremo_tables.atencionConcentracionE8M1Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class AtencionConcentracionE8M1Resolver : BaseResolver {
+class AtencionConcentracionE8M1Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
-    override val percentile = atencionConcentracionE8M1Baremo()
+    override val percentile = baremoTable.getBaremo("aten")
 
     override fun calculateTask(
         nTask: Int,

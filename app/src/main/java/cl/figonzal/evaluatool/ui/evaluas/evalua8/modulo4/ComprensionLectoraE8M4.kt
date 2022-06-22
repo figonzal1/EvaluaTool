@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 10:12
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4
@@ -30,6 +30,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class ComprensionLectoraE8M4 : AppCompatActivity() {
@@ -79,9 +80,7 @@ class ComprensionLectoraE8M4 : AppCompatActivity() {
     private lateinit var progressBar: LinearProgressIndicator
     private lateinit var tvCalculatedDeviation: TextView
 
-    private val resolver by lazy {
-        ComprensionLectoraE8M4Resolver()
-    }
+    private val resolver: ComprensionLectoraE8M4Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
