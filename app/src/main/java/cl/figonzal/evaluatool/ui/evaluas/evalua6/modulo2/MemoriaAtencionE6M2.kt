@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 00:22
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo2
@@ -30,6 +30,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class MemoriaAtencionE6M2 : AppCompatActivity() {
@@ -82,9 +83,7 @@ class MemoriaAtencionE6M2 : AppCompatActivity() {
     private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        MemoriaAtencionE6M2Resolver()
-    }
+    private val resolver: MemoriaAtencionE6M2Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

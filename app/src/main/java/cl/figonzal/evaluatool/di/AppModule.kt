@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 18:14
+ Last modified 22-06-22 00:34
  */
 
 package cl.figonzal.evaluatool.di
@@ -87,8 +87,23 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo4.ComprensionLector
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo4.ExactitudLectoraE5M4Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo4.VelocidadFragmentE5M4Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo5.OrtografiaFoneticaE5M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo5.OrtografiaVisualRegladaE5M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo6.CalculoNumeracionE5M6Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo6.ResolucionProblemasE5M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo1.OrganizacionPerceptivaE6M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo1.PensamientoAnalogicoE6M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo1.ReflexividadE6M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo2.MemoriaAtencionE6M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3.AutoControlFragmentE6M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3.AutoEstimaFragmentE6M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3.ConductaProSocialFragmentE6M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3.MotivacionFragmentE6M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo4.ComprensionFragmentE6M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo4.ComprensionLectoraE6M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo4.VelocidadFragmentE6M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo5.OrtografiaVisualRegladaE6M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo6.CalculoNumeracionE6M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo6.ResolucionProblemasE6M6Resolver
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -286,11 +301,46 @@ val evalua5Module = module {
 
     //Modulo 5
     factory { OrtografiaFoneticaE5M5Resolver(get(named(e5))) }
-    factory { OrtografiaVisualRegladaE4M5Resolver(get(named(e5))) }
+    factory { OrtografiaVisualRegladaE5M5Resolver(get(named(e5))) }
 
     //Modulo6
     factory { CalculoNumeracionE5M6Resolver(get(named(e5))) }
     factory { ResolucionProblemasE5M6Resolver(get(named(e5))) }
+}
+
+val evalua6Module = module {
+
+    val e6 = "e6"
+
+    single<BaremoTable>(named(e6)) { Evalua6Baremo() }
+
+    //RESOLVERS
+
+    //MODULO 1
+    factory { ReflexividadE6M1Resolver(get(named(e6))) }
+    factory { PensamientoAnalogicoE6M1Resolver(get(named(e6))) }
+    factory { OrganizacionPerceptivaE6M1Resolver(get(named(e6))) }
+
+    //MODULO 2
+    factory { MemoriaAtencionE6M2Resolver(get(named(e6))) }
+
+    //MODULO3
+    factory { MotivacionFragmentE6M3Resolver(get(named(e6))) }
+    factory { AutoControlFragmentE6M3Resolver(get(named(e6))) }
+    factory { ConductaProSocialFragmentE6M3Resolver(get(named(e6))) }
+    factory { AutoEstimaFragmentE6M3Resolver(get(named(e6))) }
+
+    //MODULO4
+    factory { ComprensionLectoraE6M4Resolver(get(named(e6))) }
+    factory { ComprensionFragmentE6M4Resolver(get(named(e6))) }
+    factory { VelocidadFragmentE6M4Resolver(get(named(e6))) }
+
+    //Modulo 5
+    factory { OrtografiaVisualRegladaE6M5Resolver(get(named(e6))) }
+
+    //Modulo6
+    factory { CalculoNumeracionE6M6Resolver(get(named(e6))) }
+    factory { ResolucionProblemasE6M6Resolver(get(named(e6))) }
 }
 
 val appModule = module {
@@ -300,6 +350,7 @@ val appModule = module {
         evalua2Module,
         evalua3Module,
         evalua4Module,
-        evalua5Module
+        evalua5Module,
+        evalua6Module
     )
 }

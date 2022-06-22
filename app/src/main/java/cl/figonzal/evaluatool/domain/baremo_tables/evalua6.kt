@@ -8,14 +8,43 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:04
+ Last modified 22-06-22 00:33
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+
 /**
  * Evalua 6
  */
+class Evalua6Baremo : BaremoTable {
+    override fun getBaremo(baremo: String) = when (baremo) {
+
+        "reflex" -> reflexividadE6M1Baremo()
+        "pensa" -> pensamientoAnalogicoE6M1Baremo()
+        "orga" -> organizacionPerceptivaE6M1Baremo()
+
+        "memo" -> memoriaAtencionE6M2Baremo()
+
+        "moti" -> motivacionFragmentE6M3Baremo()
+        "auto" -> autoControlFragmentE6M3Baremo()
+        "conduct" -> conductaProSocialFragmentE6M3Baremo()
+        "esti" -> autoEstimaFragmentE6M3Baremo()
+
+        "compl" -> comprensionLectoraE6M4Baremo()
+        "compf" -> comprensionFragmentE6M4Baremo()
+        "velo" -> velocidadFragmentE6M4Baremo()
+
+        "ortov" -> ortografiaVisualRegladaE6M5Baremo()
+
+        "calc" -> calculoNumeracionE6M6Baremo()
+        "reso" -> resolucionProblemasE6M6Baremo()
+
+        else -> emptyArray()
+    }
+
+}
 
 /**
  * I.- Bases del razonamiento
