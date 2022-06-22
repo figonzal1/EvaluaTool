@@ -8,19 +8,21 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:16
+ Last modified 22-06-22 09:37
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.comprensionFragmentE7M4Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class ComprensionFragmentE7M4Resolver : BaseResolver {
+class ComprensionFragmentE7M4Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = comprensionFragmentE7M4Baremo()
+    override val percentile = baremoTable.getBaremo("compf")
 
     override fun calculateTask(
         nTask: Int,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 02:51
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo4.velocidadFragments
 
@@ -33,6 +33,7 @@ import cl.figonzal.evaluatool.utils.formatSubTotalPoints
 import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 
 class VelocidadFragmentE7M4 : Fragment() {
 
@@ -60,9 +61,7 @@ class VelocidadFragmentE7M4 : Fragment() {
     private lateinit var tvCalculatedDeviation: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        VelocidadFragmentE7M4Resolver()
-    }
+    private val resolver: VelocidadFragmentE7M4Resolver by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

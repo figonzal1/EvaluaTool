@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 09:37
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo1
 
@@ -29,6 +29,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class AtencionConcentracionE7M1 : AppCompatActivity() {
@@ -67,9 +68,7 @@ class AtencionConcentracionE7M1 : AppCompatActivity() {
     private lateinit var progressBar: LinearProgressIndicator
     private lateinit var tvCalculatedDeviation: TextView
 
-    private val resolver by lazy {
-        AtencionConcentracionE7M1Resolver()
-    }
+    private val resolver: AtencionConcentracionE7M1Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
