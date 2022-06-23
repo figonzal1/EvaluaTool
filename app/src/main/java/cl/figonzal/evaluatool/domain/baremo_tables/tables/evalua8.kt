@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 11:08
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -21,35 +23,32 @@ import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
  */
 class Evalua8Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua8Constants) {
+        ATENCION_CONCENTRACION_E8M1 -> atencionConcentracionE8M1Baremo()
+
+        RAZONAMIENTO_INDUCTIVO_E8M2 -> razonamientoInductivoE8M2Baremo()
+        RAZONAMIENTO_ESPACIAL_E8M2 -> razonamientoEspacialE8M2Baremo()
+        RAZONAMIENTO_DEDUCTIVO_E8M2 -> razonamientoDeductivoE8M2Baremo()
+
+        ADAPTACION_PERSONAL_E8M3 -> adaptacionPersonalE8M3Baremo()
+        ADAPTACION_FAMILIAR_E8M3 -> adaptacionFamiliarFragmentE8M3Baremo()
+        ADAPTACION_ESCOLAR_E8M3 -> adaptacionEscolarFragmentE8M3Baremo()
+        HABILIDADES_SOCIALES_E8M3 -> habilidadesSocialesFragmentE8M3Baremo()
+
+        COMPRENSION_LECTORA_E8M4 -> comprensionLectoraE8M4Baremo()
+        EFICACIA_LECTORA_E8M4 -> eficaciaLectoraE8M4Baremo()
+        VELOCIDAD_FRAGMENT_E8M4 -> velocidadFragmentE8M4Baremo()
+        COMPRENSION_FRAGMENT_E8M4 -> comprensionFragmentE8M4Baremo()
+
+        ORTOGRAFIA_VISUAL_REGLADA_E8M5 -> ortografiaVisualRegladaE8M5Baremo()
+
+        CALCULO_NUMERACION_E8M6 -> calculoNumeracionE8M6Baremo()
+        RESOLUCION_PROBLEMAS_E8M6 -> resolucionProblemasE8M6Baremo()
+    }
+
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
         return emptyArray()
     }
-
-    override fun getBaremo(baremo: String) = when (baremo) {
-        "aten" -> atencionConcentracionE8M1Baremo()
-
-        "razoi" -> razonamientoInductivoE8M2Baremo()
-        "razoe" -> razonamientoEspacialE8M2Baremo()
-        "razod" -> razonamientoDeductivoE8M2Baremo()
-
-        "adapp" -> adaptacionPersonalE8M3Baremo()
-        "adapf" -> adaptacionFamiliarFragmentE8M3Baremo()
-        "adape" -> adaptacionEscolarFragmentE8M3Baremo()
-        "habi" -> habilidadesSocialesFragmentE8M3Baremo()
-
-        "compl" -> comprensionLectoraE8M4Baremo()
-        "efic" -> eficaciaLectoraE8M4Baremo()
-        "velof" -> velocidadFragmentE8M4Baremo()
-        "compf" -> comprensionFragmentE8M4Baremo()
-
-        "ortov" -> ortografiaVisualRegladaE8M5Baremo()
-
-        "calc" -> calculoNumeracionE8M6Baremo()
-        "reso" -> resolucionProblemasE8M6Baremo()
-
-        else -> emptyArray()
-    }
-
 }
 
 /**

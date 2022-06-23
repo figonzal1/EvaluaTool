@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:23
+ Last modified 23-06-22 11:08
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.comprensionFragmentE8M4Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.comprensionFragmentE8M4Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import com.google.common.truth.Truth
 import org.junit.Test
