@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 01:59
+ Last modified 23-06-22 11:48
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -60,7 +60,7 @@ class Evalua5Baremo : BaremoTable {
  *
  * Page 27
  */
-fun memoriaAtencionE5M1Baremo() = arrayOf(
+private fun memoriaAtencionE5M1Baremo() = arrayOf(
     arrayOf(89.0, 99.0, 2.35),
     arrayOf(82.0, 97.0, 1.89),
     arrayOf(80.0, 95.0, 1.76),
@@ -98,7 +98,7 @@ fun memoriaAtencionE5M1Baremo() = arrayOf(
  * A. Reflexividad
  * Page 33
  */
-fun reflexividadE5M2Baremo() = arrayOf(
+private fun reflexividadE5M2Baremo() = arrayOf(
     arrayOf(20.0, 99.0, 2.63),
     arrayOf(19.0, 99.0, 2.41),
     arrayOf(18.0, 99.0, 2.2),
@@ -126,7 +126,7 @@ fun reflexividadE5M2Baremo() = arrayOf(
  * B. Pensamiento Analogico
  * Page 38
  */
-fun pensamientoAnalogicoE5M2Baremo() = arrayOf(
+private fun pensamientoAnalogicoE5M2Baremo() = arrayOf(
     arrayOf(20.0, 99.0, 2.32),
     arrayOf(19.0, 97.0, 2.1),
     arrayOf(18.0, 95.0, 1.88),
@@ -154,7 +154,7 @@ fun pensamientoAnalogicoE5M2Baremo() = arrayOf(
  * C. Organizacion Perceptiva
  * Page 45
  */
-fun organizacionPerceptivaE5M2Baremo() = arrayOf(
+private fun organizacionPerceptivaE5M2Baremo() = arrayOf(
     arrayOf(16.0, 99.0, 1.98),
     arrayOf(15.0, 95.0, 1.73),
     arrayOf(14.0, 90.0, 1.48),
@@ -178,7 +178,7 @@ fun organizacionPerceptivaE5M2Baremo() = arrayOf(
  * A. Motivacion
  * Page 53
  */
-fun motivacionFragmentE5M3Baremo() = arrayOf(
+private fun motivacionFragmentE5M3Baremo() = arrayOf(
     arrayOf(0.0, 99.0, 1.59),
     arrayOf(1.0, 95.0, 1.38),
     arrayOf(2.0, 90.0, 1.16),
@@ -207,7 +207,7 @@ fun motivacionFragmentE5M3Baremo() = arrayOf(
  * B. AutoControl
  * Page 53
  */
-fun autoControlFragmentE5M3Baremo() = arrayOf(
+private fun autoControlFragmentE5M3Baremo() = arrayOf(
     arrayOf(0.0, 95.0, 1.23),
     arrayOf(1.0, 90.0, 0.95),
     arrayOf(2.0, 80.0, 0.66),
@@ -231,7 +231,7 @@ fun autoControlFragmentE5M3Baremo() = arrayOf(
  * C. ConductaProSocial
  * Page 53
  */
-fun conductaProsocialFragmentE5M3Baremo() = arrayOf(
+private fun conductaProsocialFragmentE5M3Baremo() = arrayOf(
     arrayOf(0.0, 90.0, 1.25),
     arrayOf(1.0, 80.0, 0.9),
     arrayOf(2.0, 70.0, 0.55),
@@ -255,7 +255,7 @@ fun conductaProsocialFragmentE5M3Baremo() = arrayOf(
  * D. AutoEstima
  * Page 53
  */
-fun autoEstimaFragmentE5M3Baremo() = arrayOf(
+private fun autoEstimaFragmentE5M3Baremo() = arrayOf(
     arrayOf(0.0, 98.0, 1.68),
     arrayOf(1.0, 95.0, 1.4),
     arrayOf(2.0, 90.0, 1.11),
@@ -279,7 +279,7 @@ fun autoEstimaFragmentE5M3Baremo() = arrayOf(
  * A. Comprension Lectora
  * Page 61
  */
-fun comprensionLectoraE5M4Baremo() = arrayOf(
+private fun comprensionLectoraE5M4Baremo() = arrayOf(
     arrayOf(42.0, 99.0, 3.27),
     arrayOf(40.0, 97.0, 2.99),
     arrayOf(38.0, 95.0, 2.71),
@@ -309,7 +309,7 @@ fun comprensionLectoraE5M4Baremo() = arrayOf(
  * B. Velocidad Lectora - ComprensionFragment
  * Page 61
  */
-fun comprensionFragmentE5M4Baremo() = arrayOf(
+private fun comprensionFragmentE5M4Baremo() = arrayOf(
     arrayOf(15.0, 99.0, 2.72),
     arrayOf(14.0, 97.0, 2.45),
     arrayOf(13.0, 95.0, 2.18),
@@ -333,7 +333,7 @@ fun comprensionFragmentE5M4Baremo() = arrayOf(
  * B. Velocidad Lectora - VelocidadFragment
  * Page 61
  */
-fun velocidadFragmentE5M4Baremo() = arrayOf(
+private fun velocidadFragmentE5M4Baremo() = arrayOf(
     arrayOf(45.0, 99.0, 1.7),
     arrayOf(50.0, 95.0, 1.52),
     arrayOf(55.0, 90.0, 1.35),
@@ -363,7 +363,7 @@ fun velocidadFragmentE5M4Baremo() = arrayOf(
  * C. Exactitud Lectora
  * Page 73
  */
-fun exactitudLectoraE5M4Baremo() = arrayOf(
+private fun exactitudLectoraE5M4Baremo() = arrayOf(
     arrayOf(44.0, 99.0, 1.15),
     arrayOf(43.0, 95.0, 1.04),
     arrayOf(42.0, 90.0, 0.93),
@@ -391,7 +391,7 @@ fun exactitudLectoraE5M4Baremo() = arrayOf(
  * A. Ortografia Fonetica
  * Page 81
  */
-fun ortografiaFoneticaE5M5Baremo() = arrayOf(
+private fun ortografiaFoneticaE5M5Baremo() = arrayOf(
     arrayOf(48.0, 99.0, 0.91),
     arrayOf(47.0, 90.0, 0.78),
     arrayOf(46.0, 80.0, 0.65),
@@ -418,7 +418,7 @@ fun ortografiaFoneticaE5M5Baremo() = arrayOf(
  * C. Ortografia Visual y Reglada
  * Page 91
  */
-fun ortografiaVisualRegladaE5M5Baremo() = arrayOf(
+private fun ortografiaVisualRegladaE5M5Baremo() = arrayOf(
     arrayOf(91.0, 99.0, 4.2),
     arrayOf(76.0, 98.0, 3.08),
     arrayOf(73.0, 97.0, 2.86),
@@ -452,7 +452,7 @@ fun ortografiaVisualRegladaE5M5Baremo() = arrayOf(
  * A. Calculo y Numeracion
  * Page 99
  */
-fun calculoNumeracionE5M6Baremo() = arrayOf(
+private fun calculoNumeracionE5M6Baremo() = arrayOf(
     arrayOf(56.0, 99.0, 2.38),
     arrayOf(53.0, 97.0, 2.11),
     arrayOf(51.0, 96.0, 1.92),
@@ -486,7 +486,7 @@ fun calculoNumeracionE5M6Baremo() = arrayOf(
  * B. Resolucion de Problemas
  * Page 107
  */
-fun resolucionProblemasE5M6Baremo() = arrayOf(
+private fun resolucionProblemasE5M6Baremo() = arrayOf(
     arrayOf(51.0, 99.0, 3.08),
     arrayOf(45.0, 98.0, 2.52),
     arrayOf(42.0, 97.0, 2.24),
