@@ -8,14 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:33
+ Last modified 23-06-22 00:59
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants.*
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.EvaluaConstants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -27,7 +27,7 @@ class Evalua0Baremo : BaremoTable {
         return emptyArray()
     }
 
-    override fun getBaremo(baremo: EvaluaConstants) = when (baremo as Evalua0Constants) {
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua0Constants) {
         CLASIFICACION_E0M1 -> clasificacionE0M1Baremo()
         SERIES_E0M1 -> seriesE0M1Baremo()
         ORGANIZACION_PERCEPTIVA_E0M1 -> organizacionPerceptivaE0M1Baremo()

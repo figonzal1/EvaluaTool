@@ -8,15 +8,17 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:33
+ Last modified 23-06-22 00:54
  */
 
 package cl.figonzal.evaluatool.domain.resolvers
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.EvaluaConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 
 interface BaremoTable {
+
+    @Deprecated("Usa la otra firma")
     fun getBaremo(baremo: String): Array<Array<Double>>
 
-    fun getBaremo(baremo: EvaluaConstants): Array<Array<Double>>
+    fun getBaremo(baremo: BaseConstants): Array<Array<Double>>
 }

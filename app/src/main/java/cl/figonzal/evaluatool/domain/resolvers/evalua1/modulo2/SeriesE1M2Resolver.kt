@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 11:03
+ Last modified 23-06-22 00:59
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo2
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua1Constants.SERIES_E1M2
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -28,7 +29,7 @@ class SeriesE1M2Resolver(
     var totalPdTask5 = 0.0
     var totalPdTask6 = 0.0
 
-    override val percentile = baremoTable.getBaremo("series")
+    override val percentile = baremoTable.getBaremo(SERIES_E1M2)
 
     override fun calculateTask(
         nTask: Int,

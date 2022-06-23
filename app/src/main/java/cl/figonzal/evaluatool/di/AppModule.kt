@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 21:31
+ Last modified 23-06-22 00:59
  */
 
 package cl.figonzal.evaluatool.di
 
 import cl.figonzal.evaluatool.domain.baremo_tables.*
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua1Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.*
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2.CopiaDibujosE0M2Resolver

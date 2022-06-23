@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 11:03
+ Last modified 23-06-22 00:54
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo4
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua1Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -28,7 +29,7 @@ class ExactitudLectoraE1M4Resolver(
     var totalPdTask5 = 0.0
     var totalPdTask6 = 0.0
 
-    override val percentile = baremoTable.getBaremo("exact")
+    override val percentile = baremoTable.getBaremo(Evalua1Constants.EXACTITUD_LECTORA_E1M4)
 
     override fun calculateTask(
         nTask: Int,

@@ -8,19 +8,19 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:35
+ Last modified 23-06-22 00:39
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.EvaluaConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 6
  */
 class Evalua6Baremo : BaremoTable {
-    override fun getBaremo(baremo: EvaluaConstants): Array<Array<Double>> {
+    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
         return emptyArray()
     }
 

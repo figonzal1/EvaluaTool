@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:37
+ Last modified 23-06-22 00:39
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.constants
 
-enum class Evalua0Constants : EvaluaConstants {
+enum class Evalua0Constants : BaseConstants {
     CLASIFICACION_E0M1,
     SERIES_E0M1,
     ORGANIZACION_PERCEPTIVA_E0M1,

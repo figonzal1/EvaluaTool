@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:37
+ Last modified 23-06-22 01:03
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants.CLASIFICACION_E0M1
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua0Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -34,7 +34,7 @@ class ClasificacionE0M1Test : KoinTest {
 
     @Before
     fun setUp() {
-        val startKoin = startKoin {
+        startKoin {
 
             modules(
                 module {

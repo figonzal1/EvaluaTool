@@ -8,12 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:13
+ Last modified 23-06-22 00:54
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua1Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua1Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua1Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import com.google.common.truth.Truth.assertThat
@@ -42,7 +43,7 @@ class ConductaProSocialFragmentE1M3Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("conduct")
+        perc = baremoTable.getBaremo(Evalua1Constants.CONDUCTA_PRO_SOCIAL_E1M3)
     }
 
     @After
