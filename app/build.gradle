@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 20-06-22 17:51
+ Last modified 22-06-22 21:46
  */
 
 apply plugin: 'com.android.application'
@@ -112,6 +112,8 @@ dependencies {
     //junit
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test:core-ktx:1.4.0")
+    testImplementation("io.insert-koin:koin-test:3.2.0")
+    testImplementation("io.insert-koin:koin-test-junit4:3.2.0")
     testImplementation("androidx.arch.core:core-testing:2.1.0")
     testImplementation("androidx.test.ext:truth:1.4.0")
 

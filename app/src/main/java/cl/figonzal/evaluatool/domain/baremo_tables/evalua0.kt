@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 01:06
+ Last modified 22-06-22 23:05
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
@@ -44,8 +44,7 @@ class Evalua0Baremo : BaremoTable {
  * A. Clasificacion
  * Page 33
  */
-//TODO: HACER METODOS PRIVADOS
-fun clasificacionE0M1Baremo() = arrayOf(
+private fun clasificacionE0M1Baremo() = arrayOf(
     //PD, PC Chilean, Desviacion
     arrayOf(18.0, 99.0, 1.69),
     arrayOf(17.0, 95.0, 1.36),
@@ -70,7 +69,7 @@ fun clasificacionE0M1Baremo() = arrayOf(
  * B. Series
  * Page 39
  */
-fun seriesE0M1Baremo() = arrayOf(
+private fun seriesE0M1Baremo() = arrayOf(
     //PD, PC Chilean, Desviacion
     arrayOf(48.0, 95.0, 1.06),
     arrayOf(47.0, 90.0, 0.96),
@@ -99,7 +98,7 @@ fun seriesE0M1Baremo() = arrayOf(
  * C. Organizacion Perceptiva
  * Page 45
  */
-fun organizacionPerceptivaE0M1Baremo() = arrayOf(
+private fun organizacionPerceptivaE0M1Baremo() = arrayOf(
     //PD, PC Chilean, Desviacion
     arrayOf(22.0, 99.0, 0.66),
     arrayOf(21.0, 75.0, 0.4),
@@ -124,7 +123,7 @@ fun organizacionPerceptivaE0M1Baremo() = arrayOf(
  * D. Letras y Numeros
  * Page 49
  */
-fun letrasyNumerosE0M1Baremo() = arrayOf(
+private fun letrasyNumerosE0M1Baremo() = arrayOf(
     //PD, PC Chilean, Desviacion
     arrayOf(30.0, 99.0, 1.37),
     arrayOf(29.0, 90.0, 1.02),
@@ -149,7 +148,7 @@ fun letrasyNumerosE0M1Baremo() = arrayOf(
  * E. Memoria Verbal
  * Page 55
  */
-fun memoriaVerbalE0M1Baremo() = arrayOf(
+private fun memoriaVerbalE0M1Baremo() = arrayOf(
     arrayOf(35.0, 99.0, 1.93),
     arrayOf(34.0, 99.0, 1.78),
     arrayOf(33.0, 95.0, 1.63),
@@ -179,7 +178,7 @@ fun memoriaVerbalE0M1Baremo() = arrayOf(
  * A. Copia de dibujos
  * Page 61
  */
-fun copiaDeDibujosE0M2Baremo() = arrayOf(
+private fun copiaDeDibujosE0M2Baremo() = arrayOf(
     arrayOf(65.0, 99.0, 1.8),
     arrayOf(64.0, 99.0, 1.72),
     arrayOf(63.0, 97.0, 1.64),
@@ -252,7 +251,7 @@ fun copiaDeDibujosE0M2Baremo() = arrayOf(
  * B. GrafoMotricidad
  * Page 67
  */
-fun grafoMotricidadE0M2Baremo() = arrayOf(
+private fun grafoMotricidadE0M2Baremo() = arrayOf(
     arrayOf(48.0, 99.0, 2.18),
     arrayOf(47.0, 99.0, 2.05),
     arrayOf(46.0, 99.0, 1.91),
@@ -291,7 +290,7 @@ fun grafoMotricidadE0M2Baremo() = arrayOf(
  * A. Palabras y Frases
  * Page 73
  */
-fun palabrasyFrasesE0M3Baremo() = arrayOf(
+private fun palabrasyFrasesE0M3Baremo() = arrayOf(
     arrayOf(24.0, 99.0, 2.06),
     arrayOf(23.0, 97.0, 1.76),
     arrayOf(22.0, 95.0, 1.46),
@@ -317,7 +316,7 @@ fun palabrasyFrasesE0M3Baremo() = arrayOf(
  * B. Recepcion Auditiva y Articulacion
  * Page 79
  */
-fun recepcionAuditivaE0M3Baremo() = arrayOf(
+private fun recepcionAuditivaE0M3Baremo() = arrayOf(
     arrayOf(102.0, 99.0, 1.91),
     arrayOf(101.0, 98.0, 1.80),
     arrayOf(100.0, 97.0, 1.69),
@@ -345,7 +344,7 @@ fun recepcionAuditivaE0M3Baremo() = arrayOf(
  * C. Habilidades Fonologicas
  * Page 83
  */
-fun habilidadesFonologicasE0M3Baremo() = arrayOf(
+private fun habilidadesFonologicasE0M3Baremo() = arrayOf(
     arrayOf(62.0, 99.0, 1.71),
     arrayOf(61.0, 99.0, 1.62),
     arrayOf(60.0, 99.0, 1.52),
