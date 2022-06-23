@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 11:24
+ Last modified 22-06-22 23:24
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
@@ -46,7 +46,7 @@ class Evalua2Baremo : BaremoTable {
  * A. Pensamiento Analogico
  * Page 27
  */
-fun pensamientoAnalogicoE2M1Baremo() = arrayOf(
+private fun pensamientoAnalogicoE2M1Baremo() = arrayOf(
     arrayOf(20.0, 99.0, 1.41),
     arrayOf(19.0, 90.0, 1.21),
     arrayOf(18.0, 80.0, 1.02),
@@ -75,7 +75,7 @@ fun pensamientoAnalogicoE2M1Baremo() = arrayOf(
  * B. Organizacion Perceptiva
  * Page 37
  */
-fun organizacionPerceptivaE2M1Baremo() = arrayOf(
+private fun organizacionPerceptivaE2M1Baremo() = arrayOf(
     arrayOf(34.0, 95.0, 0.9),
     arrayOf(33.0, 95.0, 0.78),
     arrayOf(32.0, 85.0, 0.66),
@@ -118,7 +118,7 @@ fun organizacionPerceptivaE2M1Baremo() = arrayOf(
  * C. Clasificaciones
  * Page 43
  */
-fun clasificacionesE2M1Baremo() = arrayOf(
+private fun clasificacionesE2M1Baremo() = arrayOf(
     arrayOf(29.0, 99.0, 1.41),
     arrayOf(28.0, 98.0, 1.27),
     arrayOf(27.0, 95.0, 1.12),
@@ -150,7 +150,7 @@ fun clasificacionesE2M1Baremo() = arrayOf(
  *
  * Page 51
  */
-fun memoriaAtencionE2M2Baremo() = arrayOf(
+private fun memoriaAtencionE2M2Baremo() = arrayOf(
     arrayOf(88.0, 99.0, 2.2),
     arrayOf(87.0, 99.0, 2.12),
     arrayOf(86.0, 99.0, 2.04),
@@ -241,7 +241,7 @@ fun memoriaAtencionE2M2Baremo() = arrayOf(
  *
  * Page 57
  */
-fun motivacionFragmentE2M3Baremo() = arrayOf(
+private fun motivacionFragmentE2M3Baremo() = arrayOf(
     arrayOf(45.0, 99.0, 2.33),
     arrayOf(44.0, 99.0, 2.11),
     arrayOf(43.0, 99.0, 1.88),
@@ -266,7 +266,7 @@ fun motivacionFragmentE2M3Baremo() = arrayOf(
  *
  * Page 57
  */
-fun autoControlFragmentE2M3Baremo() = arrayOf(
+private fun autoControlFragmentE2M3Baremo() = arrayOf(
     arrayOf(30.0, 99.0, 1.93),
     arrayOf(28.0, 90.0, 1.37),
     arrayOf(26.0, 80.0, 0.8),
@@ -286,7 +286,7 @@ fun autoControlFragmentE2M3Baremo() = arrayOf(
  *
  * Page 57
  */
-fun conductaProSocialFragmentE2M3Baremo() = arrayOf(
+private fun conductaProSocialFragmentE2M3Baremo() = arrayOf(
     arrayOf(30.0, 99.0, 1.05),
     arrayOf(29.0, 90.0, 0.78),
     arrayOf(28.0, 80.0, 0.51),
@@ -306,7 +306,7 @@ fun conductaProSocialFragmentE2M3Baremo() = arrayOf(
  *
  * Page 57
  */
-fun autoEstimaFragmentE2M3Baremo() = arrayOf(
+private fun autoEstimaFragmentE2M3Baremo() = arrayOf(
     arrayOf(30.0, 99.0, 2.39),
     arrayOf(29.0, 99.0, 2.04),
     arrayOf(28.0, 99.0, 1.7),
@@ -328,7 +328,7 @@ fun autoEstimaFragmentE2M3Baremo() = arrayOf(
  *
  * Page 61
  */
-fun comprensionLectoraE2M4Baremo() = arrayOf(
+private fun comprensionLectoraE2M4Baremo() = arrayOf(
     arrayOf(25.0, 99.0, 2.24),
     arrayOf(24.0, 98.0, 2.07),
     arrayOf(23.0, 97.0, 1.89),
@@ -362,7 +362,7 @@ fun comprensionLectoraE2M4Baremo() = arrayOf(
  *
  * Page 77
  */
-fun ortografiaE2M5Baremo() = arrayOf(
+private fun ortografiaE2M5Baremo() = arrayOf(
     arrayOf(43.0, 99.0, 1.22),
     arrayOf(42.0, 95.0, 1.12),
     arrayOf(41.0, 90.0, 1.01),
@@ -392,7 +392,7 @@ fun ortografiaE2M5Baremo() = arrayOf(
  *
  * Page 83
  */
-fun calculoNumeracionE2M6Baremo() = arrayOf(
+private fun calculoNumeracionE2M6Baremo() = arrayOf(
     arrayOf(55.0, 99.0, 1.67),
     arrayOf(53.0, 98.0, 1.5),
     arrayOf(52.0, 97.0, 1.42),
@@ -423,7 +423,7 @@ fun calculoNumeracionE2M6Baremo() = arrayOf(
  *
  * Page 89
  */
-fun resolucionProblemasE2M6Baremo() = arrayOf(
+private fun resolucionProblemasE2M6Baremo() = arrayOf(
     arrayOf(14.0, 99.0, 1.66),
     arrayOf(13.0, 95.0, 1.36),
     arrayOf(12.0, 85.0, 1.07),
