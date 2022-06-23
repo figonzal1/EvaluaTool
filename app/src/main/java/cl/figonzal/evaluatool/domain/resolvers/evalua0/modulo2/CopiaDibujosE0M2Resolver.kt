@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 00:54
+ Last modified 23-06-22 00:37
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants.COPIA_DIBUJOS_E0M2
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -24,7 +25,7 @@ class CopiaDibujosE0M2Resolver(
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val percentile = baremoTable.getBaremo("copia")
+    override val percentile = baremoTable.getBaremo(COPIA_DIBUJOS_E0M2)
 
     override fun calculateTask(
         nTask: Int,

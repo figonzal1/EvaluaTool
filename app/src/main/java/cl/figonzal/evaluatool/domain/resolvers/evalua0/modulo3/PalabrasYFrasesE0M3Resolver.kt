@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 00:54
+ Last modified 23-06-22 00:33
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +24,7 @@ class PalabrasYFrasesE0M3Resolver(
 
     var totalPdTask1 = 0.0
 
-    override val percentile = baremoTable.getBaremo("palab")
+    override val percentile = baremoTable.getBaremo(Evalua0Constants.PALABRAS_FRASES_E0M3)
 
     override fun calculateTask(
         nTask: Int,

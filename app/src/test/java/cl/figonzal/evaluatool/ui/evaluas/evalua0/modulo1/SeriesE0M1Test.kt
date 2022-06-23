@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:16
+ Last modified 23-06-22 00:37
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants.SERIES_E0M1
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -33,7 +34,7 @@ class SeriesE0M1Test : KoinTest {
 
     @Before
     fun setUp() {
-        startKoin {
+        val startKoin = startKoin {
 
             modules(
                 module {
@@ -42,7 +43,7 @@ class SeriesE0M1Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("series")
+        perc = baremoTable.getBaremo(SERIES_E0M1)
     }
 
     @After

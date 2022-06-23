@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 22:58
+ Last modified 23-06-22 00:33
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
@@ -42,7 +43,7 @@ class OrganizacionPerceptivaE0M1Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("orga")
+        perc = baremoTable.getBaremo(Evalua0Constants.ORGANIZACION_PERCEPTIVA_E0M1)
     }
 
     @After

@@ -8,34 +8,38 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:05
+ Last modified 23-06-22 00:33
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants.*
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.EvaluaConstants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 0
  */
-
 class Evalua0Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: String) = when (baremo) {
-        "clasif" -> clasificacionE0M1Baremo()
-        "series" -> seriesE0M1Baremo()
-        "orga" -> organizacionPerceptivaE0M1Baremo()
-        "letras" -> letrasyNumerosE0M1Baremo()
-        "memo" -> memoriaVerbalE0M1Baremo()
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
+        return emptyArray()
+    }
 
-        "copia" -> copiaDeDibujosE0M2Baremo()
-        "grafo" -> grafoMotricidadE0M2Baremo()
+    override fun getBaremo(baremo: EvaluaConstants) = when (baremo as Evalua0Constants) {
+        CLASIFICACION_E0M1 -> clasificacionE0M1Baremo()
+        SERIES_E0M1 -> seriesE0M1Baremo()
+        ORGANIZACION_PERCEPTIVA_E0M1 -> organizacionPerceptivaE0M1Baremo()
+        LETRAS_NUMEROS_E0M1 -> letrasyNumerosE0M1Baremo()
+        MEMORIA_VERBAL_E0M1 -> memoriaVerbalE0M1Baremo()
 
-        "palab" -> palabrasyFrasesE0M3Baremo()
-        "recep" -> recepcionAuditivaE0M3Baremo()
-        "habi" -> habilidadesFonologicasE0M3Baremo()
+        COPIA_DIBUJOS_E0M2 -> copiaDeDibujosE0M2Baremo()
+        GRAFO_MOTRICIDAD_E0M2 -> grafoMotricidadE0M2Baremo()
 
-        else -> emptyArray()
+        PALABRAS_FRASES_E0M3 -> palabrasyFrasesE0M3Baremo()
+        RECEPCION_AUDITIVA_E0M3 -> recepcionAuditivaE0M3Baremo()
+        HABILIDADES_FONOLOGICAS_E0M3 -> habilidadesFonologicasE0M3Baremo()
     }
 }
 

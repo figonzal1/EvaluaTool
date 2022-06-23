@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:16
+ Last modified 23-06-22 00:33
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo3
 
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -42,7 +43,7 @@ class PalabrasYFrasesE0M3Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("palab")
+        perc = baremoTable.getBaremo(Evalua0Constants.PALABRAS_FRASES_E0M3)
     }
 
     @After

@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 22:59
+ Last modified 23-06-22 00:33
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua0Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -42,7 +43,7 @@ class MemoriaVerbalE0M1Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("memo")
+        perc = baremoTable.getBaremo(Evalua0Constants.MEMORIA_VERBAL_E0M1)
     }
 
     @After
