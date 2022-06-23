@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 01:46
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -21,32 +23,30 @@ import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
  */
 class Evalua4Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
-        return emptyArray()
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua4Constants) {
+        MEMORIA_ATENCION_E4M1 -> memoriaAtencionE4M1Baremo()
+
+        REFLEXIVIDAD_E4M2 -> reflexividadE4M2Baremo()
+        PENSAMIENTO_ANALOGICO_E4M2 -> pensamientoAnalogicoE4M2Baremo()
+        ORGANIZACION_PERCEPTIVA_E4M2 -> organizacionPerceptivaE4M2Baremo()
+
+        MOTIVACION_FRAGMENT_E4M3 -> motivacionFragmentE4M3Baremo()
+        AUTO_CONTROL_FRAGMENT_E4M3 -> autoControlFragmentE4M3Baremo()
+        CONDUCTA_PRO_SOCIAL_E4M3 -> conductaProSocialFragmentE4M3Baremo()
+        AUTO_ESTIMA_FRAGMENT_E4M3 -> autoEstimaFragmentE4M3Baremo()
+
+        COMPRENSION_LECTORA_E4M4 -> comprensionLectoraE4M4Baremo()
+        VELOCIDAD_FRAGMENT_E4M4 -> velocidadFragmentE4M4Baremo()
+        COMPRESION_FRAGMENT_E4M4 -> comprensionFragmentE4M4Baremo()
+
+        ORTOGRAFIA_VISUAL_REGLADA_E4M5 -> ortografiaVisualRegladaE4M5Baremo()
+
+        CALCULO_NUMERACION_E4M6 -> calculoNumeracionE4M6Baremo()
+        RESOLUCION_PROBLEMAS_E4M6 -> resolucionProblemasE4M6Baremo()
     }
 
-    override fun getBaremo(baremo: String) = when (baremo) {
-        "memo" -> memoriaAtencionE4M1Baremo()
-
-        "reflex" -> reflexividadE4M2Baremo()
-        "pensa" -> pensamientoAnalogicoE4M2Baremo()
-        "orga" -> organizacionPerceptivaE4M2Baremo()
-
-        "moti" -> motivacionFragmentE4M3Baremo()
-        "auto" -> autoControlFragmentE4M3Baremo()
-        "conduct" -> conductaProSocialFragmentE4M3Baremo()
-        "esti" -> autoEstimaFragmentE4M3Baremo()
-
-        "compl" -> comprensionLectoraE4M4Baremo()
-        "veloc" -> velocidadFragmentE4M4Baremo()
-        "compf" -> comprensionFragmentE4M4Baremo()
-
-        "orto" -> ortografiaVisualRegladaE4M5Baremo()
-
-        "calc" -> calculoNumeracionE4M6Baremo()
-        "resol" -> resolucionProblemasE4M6Baremo()
-
-        else -> emptyArray()
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
+        return emptyArray()
     }
 }
 

@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:08
+ Last modified 23-06-22 01:46
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua4Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua4Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -42,7 +43,7 @@ class MotivacionFragmentE4M3Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("moti")
+        perc = baremoTable.getBaremo(Evalua4Constants.MOTIVACION_FRAGMENT_E4M3)
     }
 
     @After

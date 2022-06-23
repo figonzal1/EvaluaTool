@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 17:26
+ Last modified 23-06-22 01:46
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -21,7 +22,7 @@ class MotivacionFragmentE4M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("moti")
+    override val percentile = baremoTable.getBaremo(Evalua4Constants.MOTIVACION_FRAGMENT_E4M3)
 
 
     override fun calculateTask(
