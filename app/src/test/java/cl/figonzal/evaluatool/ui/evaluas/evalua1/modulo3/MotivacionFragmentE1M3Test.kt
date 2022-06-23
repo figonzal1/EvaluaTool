@@ -8,50 +8,81 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:23
+ Last modified 22-06-22 23:13
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.motivacionFragmentE1M3Baremo
-import cl.figonzal.evaluatool.utils.EvaluaUtils
+import cl.figonzal.evaluatool.domain.baremo_tables.Evalua1Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
 import com.google.common.truth.Truth.assertThat
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
+import org.koin.test.KoinTest
+import org.koin.test.inject
 
-@RunWith(Parameterized::class)
-class MotivacionFragmentE1M3Test(
-    private val totalPD: Double,
-    private val expPercentile: Double,
-    private val expDeviation: Double
-) {
+class MotivacionFragmentE1M3Test : KoinTest {
 
-    private val perc = motivacionFragmentE1M3Baremo()
+    private val baremoTable: BaremoTable by inject()
+    private lateinit var perc: Array<Array<Double>>
+
+    @Before
+    fun setUp() {
+        startKoin {
+
+            modules(
+                module {
+                    single<BaremoTable> { Evalua1Baremo() }
+                }
+            )
+        }
+
+        perc = baremoTable.getBaremo("moti")
+    }
+
+    @After
+    fun cleanup() {
+        stopKoin()
+    }
+
 
     @Test
     fun testCalculatePercentile() {
 
-        val calcPercentile = EvaluaUtils.calculatePercentile(perc, totalPD.toInt()).toDouble()
+        perc.forEach {
 
-        assertThat(expPercentile).isEqualTo(calcPercentile)
+            val expPercentile = it[1].toInt()
+            val calcPercentile = calculatePercentile(
+                percentile = perc,
+                pdTotal = it[0].toInt()
+            )
+            assertThat(expPercentile).isEqualTo(calcPercentile)
+        }
     }
 
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation =
-            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+        perc.forEach {
 
-        assertThat(expDeviation).isEqualTo(calcDeviation)
+            val expDeviation = it[2]
+            val calcDeviation = calculateDeviation(
+                MEAN = MEDIA,
+                DEVIATION = DESVIACION,
+                pdTotal = it[0].toInt()
+            ).toDouble()
+            assertThat(expDeviation).isEqualTo(calcDeviation)
+        }
     }
 
     companion object {
         private const val DESVIACION = 6.64
         private const val MEDIA = 33.46
-
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data() = motivacionFragmentE1M3Baremo()
     }
 }
