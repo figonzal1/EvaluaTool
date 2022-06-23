@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 01:16
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua2Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua2Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -21,29 +23,29 @@ import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
  */
 class Evalua2Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
-        return emptyArray()
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua2Constants) {
+
+        PENSAMIENTO_ANALOGICO_E2M1 -> pensamientoAnalogicoE2M1Baremo()
+        ORGANIZACION_PERCEPTIVA_E2M1 -> organizacionPerceptivaE2M1Baremo()
+        CLASIFICACIONES_E2M1 -> clasificacionesE2M1Baremo()
+
+        MEMORIA_ATENCION_E2M2 -> memoriaAtencionE2M2Baremo()
+
+        MOTIVACION_FRAGMENT_E2M3 -> motivacionFragmentE2M3Baremo()
+        AUTO_CONTROL_FRAGMENT_E2M3 -> autoControlFragmentE2M3Baremo()
+        CONDUCTA_PRO_SOCIAL_E2M3 -> conductaProSocialFragmentE2M3Baremo()
+        AUTO_ESTIMA_FRAGMENT_E2M3 -> autoEstimaFragmentE2M3Baremo()
+
+        COMPRENSION_LECTORA_E2M4 -> comprensionLectoraE2M4Baremo()
+
+        ORTOGRAFIA_E2M5 -> ortografiaE2M5Baremo()
+
+        CALCULO_NUMERACION_E2M6 -> calculoNumeracionE2M6Baremo()
+        RESOLUCION_PROBLEMAS_E2M6 -> resolucionProblemasE2M6Baremo()
     }
 
-    override fun getBaremo(baremo: String) = when (baremo) {
-        "pens" -> pensamientoAnalogicoE2M1Baremo()
-        "orga" -> organizacionPerceptivaE2M1Baremo()
-        "clasif" -> clasificacionesE2M1Baremo()
-
-        "memo" -> memoriaAtencionE2M2Baremo()
-
-        "moti" -> motivacionFragmentE2M3Baremo()
-        "auto" -> autoControlFragmentE2M3Baremo()
-        "condu" -> conductaProSocialFragmentE2M3Baremo()
-        "esti" -> autoEstimaFragmentE2M3Baremo()
-
-        "comp" -> comprensionLectoraE2M4Baremo()
-
-        "orto" -> ortografiaE2M5Baremo()
-
-        "calc" -> calculoNumeracionE2M6Baremo()
-        "resol" -> resolucionProblemasE2M6Baremo()
-        else -> emptyArray()
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
+        return emptyArray()
     }
 }
 

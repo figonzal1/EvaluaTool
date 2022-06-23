@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:24
+ Last modified 23-06-22 01:16
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo6
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua2Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua2Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua2Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -42,7 +43,7 @@ class CalculoNumeracionE2M6Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("calc")
+        perc = baremoTable.getBaremo(Evalua2Constants.CALCULO_NUMERACION_E2M6)
     }
 
     @After
