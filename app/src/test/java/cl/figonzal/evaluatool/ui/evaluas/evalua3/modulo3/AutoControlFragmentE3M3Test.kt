@@ -8,12 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 23:55
+ Last modified 23-06-22 01:29
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.Evalua3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua3Baremo
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
@@ -44,7 +45,7 @@ class AutoControlFragmentE3M3Test : KoinTest {
             )
         }
 
-        perc = baremoTable.getBaremo("auto")
+        perc = baremoTable.getBaremo(Evalua3Constants.AUTO_CONTROL_FRAGMENT_E3M3)
     }
 
     @After

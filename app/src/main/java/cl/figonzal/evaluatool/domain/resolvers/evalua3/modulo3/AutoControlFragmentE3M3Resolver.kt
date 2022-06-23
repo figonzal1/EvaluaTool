@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 15:50
+ Last modified 23-06-22 01:29
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +24,7 @@ class AutoControlFragmentE3M3Resolver(
 
     var totalPdTask1 = 0.0
 
-    override val percentile = baremoTable.getBaremo("auto")
+    override val percentile = baremoTable.getBaremo(Evalua3Constants.AUTO_CONTROL_FRAGMENT_E3M3)
 
     override fun calculateTask(
         nTask: Int,
