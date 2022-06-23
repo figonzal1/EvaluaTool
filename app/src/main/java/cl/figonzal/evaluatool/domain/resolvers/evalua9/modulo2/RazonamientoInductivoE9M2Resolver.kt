@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 20:56
+ Last modified 23-06-22 11:26
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo2
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -27,7 +28,7 @@ class RazonamientoInductivoE9M2Resolver(
     var totalPdTask4 = 0.0
     var totalPdTask5 = 0.0
     var totalPdTask6 = 0.0
-    override val percentile = baremoTable.getBaremo("razoi")
+    override val percentile = baremoTable.getBaremo(Evalua9Constants.RAZONAMIENTO_INDUCTIVO_E9M2)
 
     override fun calculateTask(
         nTask: Int,

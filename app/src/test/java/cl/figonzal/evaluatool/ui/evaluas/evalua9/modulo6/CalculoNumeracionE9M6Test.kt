@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:23
+ Last modified 23-06-22 11:26
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo6
 
-import cl.figonzal.evaluatool.domain.baremo_tables.calculoNumeracionE9M6Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.calculoNumeracionE9M6Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import com.google.common.truth.Truth
 import org.junit.Test

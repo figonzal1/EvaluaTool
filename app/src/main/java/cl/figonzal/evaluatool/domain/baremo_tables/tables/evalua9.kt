@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 11:26
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -21,38 +23,33 @@ import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
  */
 class Evalua9Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
-        return emptyArray()
-    }
+    override fun getBaremo(baremo: BaseConstants) =
+        when (baremo as Evalua9Constants) {
+            ATENCION_CONCENTRACION_E9M1 -> atencionConcentracionE9M1Baremo()
+
+            RAZONAMIENTO_INDUCTIVO_E9M2 -> razonamientoInductivoE9M2Baremo()
+            RAZONAMIENTO_ESPACIAL_E9M2 -> razonamientoEspacialE9M2Baremo()
+            RAZONAMIENTO_DEDUCTIVO_E9M2 -> razonamientoDeductivoE9M2Baremo()
+
+            ADAPTACION_PERSONAL_E9M3 -> adaptacionPersonalE9M3Baremo()
+            ADAPTACION_FAMILIAR_E9M3 -> adaptacionFamiliarFragmentE9M3Baremo()
+            ADAPTACION_ESCOLAR_E9M3 -> adaptacionEscolarFragmentE9M3Baremo()
+            HABILIDADES_SOCIALES_E9M3 -> habilidadesSocialesE9M3Baremo()
+
+            COMPRENSION_LECTORA_E9M4 -> comprensionLectoraE9M4Baremo()
+            EFICACIA_LECTORA_E9M4 -> eficaciaLectoraE9M4Baremo()
+            VELOCIDAD_FRAGMENT_E9M4 -> velocidadFragmentE9M4Baremo()
+            COMPRENSION_FRAGMENT_E9M4 -> comprensionFragmentE9M4Baremo()
+
+            ORTOGRAFIA_VISUAL_REGLADA_E9M5 -> ortografiaVisualRegladaE9M5Baremo()
+
+            CALCULO_NUMERACION_E9M6 -> calculoNumeracionE9M6Baremo()
+            RESOLUCION_PROBLEMAS_E9M6 -> resolucionProblemasE9M6Baremo()
+        }
 
     override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return when (baremo) {
-
-            "aten" -> atencionConcentracionE9M1Baremo()
-
-            "razoi" -> razonamientoInductivoE9M2Baremo()
-            "razoe" -> razonamientoEspacialE9M2Baremo()
-            "razod" -> razonamientoDeductivoE9M2Baremo()
-
-            "adapp" -> adaptacionPersonalE9M3Baremo()
-            "adapf" -> adaptacionFamiliarFragmentE9M3Baremo()
-            "adape" -> adaptacionEscolarFragmentE9M3Baremo()
-            "habi" -> habilidadesSocialesE9M3Baremo()
-
-            "compl" -> comprensionLectoraE9M4Baremo()
-            "efic" -> eficaciaLectoraE9M4Baremo()
-            "velo" -> velocidadFragmentE9M4Baremo()
-            "compf" -> comprensionFragmentE9M4Baremo()
-
-            "ortov" -> ortografiaVisualRegladaE9M5Baremo()
-
-            "calc" -> calculoNumeracionE9M6Baremo()
-            "reso" -> resolucionProblemasE9M6Baremo()
-
-            else -> emptyArray()
-        }
+        return emptyArray()
     }
-
 }
 
 /**

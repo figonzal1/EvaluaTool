@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 20:56
+ Last modified 23-06-22 11:26
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -21,7 +22,7 @@ class AdaptacionFamiliarFragmentE9M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("adapf")
+    override val percentile = baremoTable.getBaremo(Evalua9Constants.ADAPTACION_FAMILIAR_E9M3)
 
     override fun calculateTask(
         nTask: Int,

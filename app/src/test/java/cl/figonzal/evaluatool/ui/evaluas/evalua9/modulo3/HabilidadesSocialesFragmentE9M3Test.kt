@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:20
+ Last modified 23-06-22 11:26
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.habilidadesSocialesE9M3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.habilidadesSocialesE9M3Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import com.google.common.truth.Truth.assertThat
 import org.junit.Test
