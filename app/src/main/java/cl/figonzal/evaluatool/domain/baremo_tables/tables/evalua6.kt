@@ -8,45 +8,46 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 09:44
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 6
  */
 class Evalua6Baremo : BaremoTable {
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
+    override fun getBaremo(baremo: BaseConstants) =
+        when (baremo as Evalua6Constants) {
+
+            REFLEXIVIDAD_E6M1 -> reflexividadE6M1Baremo()
+            PENSAMIENTO_ANALOGICO_E6M1 -> pensamientoAnalogicoE6M1Baremo()
+            ORGANIZACION_PERCEPTIVA_E6M1 -> organizacionPerceptivaE6M1Baremo()
+
+            MEMORIA_ATENCION_E6M2 -> memoriaAtencionE6M2Baremo()
+
+            MOTIVACION_FRAGMENT_E6M3 -> motivacionFragmentE6M3Baremo()
+            AUTO_CONTROL_FRAGMENT_E6M3 -> autoControlFragmentE6M3Baremo()
+            CONDUCTA_PRO_SOCIAL_E6M3 -> conductaProSocialFragmentE6M3Baremo()
+            AUTO_ESTIMA_FRAGMENT_E6M3 -> autoEstimaFragmentE6M3Baremo()
+
+            COMPRENSION_LECTORA_E6M4 -> comprensionLectoraE6M4Baremo()
+            COMPRESION_FRAGMENT_E6M4 -> comprensionFragmentE6M4Baremo()
+            VELOCIDAD_FRAGMENT_E6M4 -> velocidadFragmentE6M4Baremo()
+
+            ORTOGRAFIA_VISUAL_REGLADA_E6M5 -> ortografiaVisualRegladaE6M5Baremo()
+
+            CALCULO_NUMERACION_E6M6 -> calculoNumeracionE6M6Baremo()
+            RESOLUCION_PROBLEMAS_E6M6 -> resolucionProblemasE6M6Baremo()
+        }
+
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
         return emptyArray()
-    }
-
-    override fun getBaremo(baremo: String) = when (baremo) {
-
-        "reflex" -> reflexividadE6M1Baremo()
-        "pensa" -> pensamientoAnalogicoE6M1Baremo()
-        "orga" -> organizacionPerceptivaE6M1Baremo()
-
-        "memo" -> memoriaAtencionE6M2Baremo()
-
-        "moti" -> motivacionFragmentE6M3Baremo()
-        "auto" -> autoControlFragmentE6M3Baremo()
-        "conduct" -> conductaProSocialFragmentE6M3Baremo()
-        "esti" -> autoEstimaFragmentE6M3Baremo()
-
-        "compl" -> comprensionLectoraE6M4Baremo()
-        "compf" -> comprensionFragmentE6M4Baremo()
-        "velo" -> velocidadFragmentE6M4Baremo()
-
-        "ortov" -> ortografiaVisualRegladaE6M5Baremo()
-
-        "calc" -> calculoNumeracionE6M6Baremo()
-        "reso" -> resolucionProblemasE6M6Baremo()
-
-        else -> emptyArray()
     }
 
 }

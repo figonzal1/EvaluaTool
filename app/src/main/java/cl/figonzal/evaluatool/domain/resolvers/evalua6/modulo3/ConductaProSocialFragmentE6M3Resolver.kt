@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 00:34
+ Last modified 23-06-22 09:56
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -21,7 +22,7 @@ class ConductaProSocialFragmentE6M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("conduct")
+    override val percentile = baremoTable.getBaremo(Evalua6Constants.CONDUCTA_PRO_SOCIAL_E6M3)
 
     override fun calculateTask(
         nTask: Int,

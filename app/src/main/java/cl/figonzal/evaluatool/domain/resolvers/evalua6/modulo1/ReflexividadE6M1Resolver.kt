@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 00:34
+ Last modified 23-06-22 10:38
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo1
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants.REFLEXIVIDAD_E6M1
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -22,7 +23,7 @@ class ReflexividadE6M1Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("reflex")
+    override val percentile = baremoTable.getBaremo(REFLEXIVIDAD_E6M1)
 
 
     override fun calculateTask(
