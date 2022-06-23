@@ -8,11 +8,11 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:23
+ Last modified 23-06-22 10:50
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6
 
-import cl.figonzal.evaluatool.domain.baremo_tables.calculoNumeracionE7M6Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.calculoNumeracionE7M6Baremo
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
 import com.google.common.truth.Truth.assertThat

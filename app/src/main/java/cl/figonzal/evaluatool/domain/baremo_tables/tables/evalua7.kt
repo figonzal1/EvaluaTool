@@ -8,12 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 10:50
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua7Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua7Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
@@ -21,37 +23,33 @@ import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
  */
 class Evalua7Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
-        return emptyArray()
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua7Constants) {
+        ATENCION_CONCENTRACION_E7M1 -> atencionConcentracionE7M1Baremo()
+
+        RAZONAMIENTO_DEDUCTIVO_E7M2 -> razonamientoDeductivoE7M2Baremo()
+        RAZONAMIENTO_INDUCTIVO_E7M2 -> razonamientoInductivoE7M2Baremo()
+        RAZONAMIENTO_ESPACIAL_E7M2 -> razonamientoEspacialE7M2Baremo()
+
+        MOTIVACION_FRAGMENT_E7M3 -> motivacionFragmentE7M3Baremo()
+        AUTO_CONTROL_FRAGMENT_E7M3 -> autoControlFragmentE7M3Baremo()
+        CONDUCTA_PRO_SOCIAL_E7M3 -> conductaProSocialFragmentE7M3Baremo()
+        AUTO_ESTIMA_FRAGMENT_E7M3 -> autoEstimaFragmentE7M3Baremo()
+
+        EFICACIA_LECTORA_E7M4 -> eficaciaLectoraE7M4Baremo()
+        COMPRENSION_LECTORA_E7M4 -> comprensionLectoraE7M4Baremo()
+        VELOCIDAD_FRAGMENT_E7M4 -> velocidadFragmentE7M4Baremo()
+        COMPRESION_FRAGMENT_E7M4 -> comprensionFragmentE7M4Baremo()
+
+        ORTOGRAFIA_FONETICA_E7M5 -> ortografiaFoneticaE7M5Baremo()
+        ORTOGRAFIA_VISUAL_REGLADA_E7M5 -> ortografiaVisualRegladaE7M5Baremo()
+        EXPRESION_ESCRITA_E7M5 -> expresionEscritaE7M5Baremo()
+
+        CALCULO_NUMERACION_E7M6 -> calculoNumeracionE7M6Baremo()
+        RESOLUCION_PROBLEMAS_E7M6 -> resolucionProblemasE7M6Baremo()
     }
 
     override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return when (baremo) {
-            "aten" -> atencionConcentracionE7M1Baremo()
-
-            "razod" -> razonamientoDeductivoE7M2Baremo()
-            "razoi" -> razonamientoInductivoE7M2Baremo()
-            "razoe" -> razonamientoEspacialE7M2Baremo()
-
-            "moti" -> motivacionFragmentE7M3Baremo()
-            "auto" -> autoControlFragmentE7M3Baremo()
-            "conduct" -> conductaProSocialFragmentE7M3Baremo()
-            "esti" -> autoEstimaFragmentE7M3Baremo()
-
-            "efic" -> eficaciaLectoraE7M4Baremo()
-            "compl" -> comprensionLectoraE7M4Baremo()
-            "velo" -> velocidadFragmentE7M4Baremo()
-            "compf" -> comprensionFragmentE7M4Baremo()
-
-            "ortof" -> ortografiaFoneticaE7M5Baremo()
-            "ortov" -> ortografiaVisualRegladaE7M5Baremo()
-            "expr" -> expresionEscritaE7M5Baremo()
-
-            "calc" -> calculoNumeracionE7M6Baremo()
-            "reso" -> resolucionProblemasE7M6Baremo()
-
-            else -> emptyArray()
-        }
+        return emptyArray()
     }
 
 }

@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 09:37
+ Last modified 23-06-22 10:50
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo5
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua7Constants.ORTOGRAFIA_FONETICA_E7M5
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -22,7 +23,7 @@ class OrtografiaFoneticaE7M5Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("ortof")
+    override val percentile = baremoTable.getBaremo(ORTOGRAFIA_FONETICA_E7M5)
 
     override fun calculateTask(
         nTask: Int,
