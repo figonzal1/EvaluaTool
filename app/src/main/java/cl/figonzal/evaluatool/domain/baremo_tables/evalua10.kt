@@ -8,14 +8,42 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:20
+ Last modified 22-06-22 21:15
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables
 
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+
 /**
  * Evalua 10
  */
+class Evalua10Baremo : BaremoTable {
+    override fun getBaremo(baremo: String) = when (baremo) {
+
+        "aten" -> atencionConcentracionE10M1Baremo()
+
+        "razoi" -> razonamientoInductivoE10M2Baremo()
+        "razoe" -> razonamientoEspacialE10M2Baremo()
+        "razod" -> razonamientoDeductivoE10M2Baremo()
+
+        "adapp" -> adaptacionPersonalFragmentE10M3Baremo()
+        "adapf" -> adaptacionFamiliarFragmentE10M3Baremo()
+        "adape" -> adaptacionEscolarFragmentE10M3Baremo()
+        "habi" -> habilidadesSocialesFragmentE10M3Baremo()
+
+        "compl" -> comprensionLectoraE10M4Baremo()
+        "velo" -> velocidadFragmentE10M4Baremo()
+        "compf" -> comprensionFragmentE10M4Baremo()
+
+        "ortov" -> ortografiaVisualRegladaE10M5Baremo()
+
+        "calc" -> calculoNumeracionE10M6Baremo()
+        "resol" -> resolucionProblemasE10M6Baremo()
+
+        else -> emptyArray()
+    }
+}
 
 /**
  * I.- Atencion - Concentracion

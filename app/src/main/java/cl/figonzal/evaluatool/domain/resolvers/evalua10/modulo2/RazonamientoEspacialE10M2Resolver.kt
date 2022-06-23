@@ -8,21 +8,23 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:59
+ Last modified 22-06-22 21:37
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo2
 
-import cl.figonzal.evaluatool.domain.baremo_tables.razonamientoEspacialE10M2Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 
-class RazonamientoEspacialE10M2Resolver : BaseResolver {
+class RazonamientoEspacialE10M2Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
 
-    override val percentile = razonamientoEspacialE10M2Baremo()
+    override val percentile = baremoTable.getBaremo("razoe")
 
     override fun calculateTask(
         nTask: Int,

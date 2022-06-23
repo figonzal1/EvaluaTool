@@ -8,18 +8,20 @@
 
  Copyright (c) 2022
 
- Last modified 18-06-22 23:59
+ Last modified 22-06-22 21:37
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.velocidadFragmentE10M4Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
-class VelocidadFragmentE10M4Resolver : BaseResolver {
+class VelocidadFragmentE10M4Resolver(
+    baremoTable: BaremoTable
+) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = velocidadFragmentE10M4Baremo()
+    override val percentile = baremoTable.getBaremo("velo")
 
     override fun calculateTask(
         nTask: Int,

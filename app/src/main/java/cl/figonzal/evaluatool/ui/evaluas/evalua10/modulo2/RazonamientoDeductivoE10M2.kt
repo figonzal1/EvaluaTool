@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 21:23
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2
@@ -30,6 +30,7 @@ import cl.figonzal.evaluatool.utils.*
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 import timber.log.Timber
 
 class RazonamientoDeductivoE10M2 : AppCompatActivity() {
@@ -60,9 +61,7 @@ class RazonamientoDeductivoE10M2 : AppCompatActivity() {
     //TOTALES
     private lateinit var tvPdTotal: TextView
 
-    private val resolver by lazy {
-        RazonamientoDeductivoE10M2Resolver()
-    }
+    private val resolver: RazonamientoDeductivoE10M2Resolver by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
