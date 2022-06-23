@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 23:32
+ Last modified 22-06-22 20:40
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3.adaptacionFragment
@@ -33,6 +33,7 @@ import cl.figonzal.evaluatool.utils.formatSubTotalPoints
 import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
+import org.koin.android.ext.android.inject
 
 class AdaptacionEscolarFragmentE9M3 : Fragment() {
 
@@ -58,9 +59,7 @@ class AdaptacionEscolarFragmentE9M3 : Fragment() {
     private lateinit var tvLevel: TextView
     private lateinit var progressBar: LinearProgressIndicator
 
-    private val resolver by lazy {
-        AdaptacionEscolarFragmentE9M3Resolver()
-    }
+    private val resolver: AdaptacionEscolarFragmentE9M3Resolver by inject()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

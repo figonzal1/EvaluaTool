@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 18:30
+ Last modified 22-06-22 20:56
  */
 
 package cl.figonzal.evaluatool.di
@@ -136,6 +136,21 @@ import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo4.VelocidadFragment
 import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo5.OrtografiaVisualRegladaE8M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo6.CalculoNumeracionE8M6Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo6.ResolucionProblemasE8M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo1.AtencionConcentracionE9M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo2.RazonamientoDeductivoE9M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo2.RazonamientoEspacialE9M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo2.RazonamientoInductivoE9M2Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.AdaptacionEscolarFragmentE9M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.AdaptacionFamiliarFragmentE9M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.AdaptacionPersonalFragmentE9M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3.HabilidadesSocialesFragmentE9M3Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4.ComprensionFragmentE9M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4.ComprensionLectoraE9M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4.EficaciaLectoraE9M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4.VelocidadFragmentE9M4Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo5.OrtografiaVisualRegladaE9M5Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo6.CalculoNumeracionE9M6Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo6.ResolucionProblemasE9M6Resolver
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
@@ -449,6 +464,42 @@ val evalua8Module = module {
     factory { ResolucionProblemasE8M6Resolver(get(named(e8))) }
 }
 
+val evalua9Module = module {
+
+    val e9 = "e9"
+
+    single<BaremoTable>(named(e9)) { Evalua9Baremo() }
+
+    //RESOLVERS
+
+    //MODULO 1
+    factory { AtencionConcentracionE9M1Resolver(get(named(e9))) }
+
+    //MODULO 2
+    factory { RazonamientoInductivoE9M2Resolver(get(named(e9))) }
+    factory { RazonamientoEspacialE9M2Resolver(get(named(e9))) }
+    factory { RazonamientoDeductivoE9M2Resolver(get(named(e9))) }
+
+    //MODULo 3
+    factory { AdaptacionPersonalFragmentE9M3Resolver(get(named(e9))) }
+    factory { AdaptacionFamiliarFragmentE9M3Resolver(get(named(e9))) }
+    factory { AdaptacionEscolarFragmentE9M3Resolver(get(named(e9))) }
+    factory { HabilidadesSocialesFragmentE9M3Resolver(get(named(e9))) }
+
+    //MODULO 4
+    factory { ComprensionLectoraE9M4Resolver(get(named(e9))) }
+    factory { EficaciaLectoraE9M4Resolver(get(named(e9))) }
+    factory { VelocidadFragmentE9M4Resolver(get(named(e9))) }
+    factory { ComprensionFragmentE9M4Resolver(get(named(e9))) }
+
+    //MODULO 5
+    factory { OrtografiaVisualRegladaE9M5Resolver(get(named(e9))) }
+
+    //MODULO 6
+    factory { CalculoNumeracionE9M6Resolver(get(named(e9))) }
+    factory { ResolucionProblemasE9M6Resolver(get(named(e9))) }
+}
+
 val appModule = module {
     includes(
         evalua0Module,
@@ -459,6 +510,7 @@ val appModule = module {
         evalua5Module,
         evalua6Module,
         evalua7Module,
-        evalua8Module
+        evalua8Module,
+        evalua9Module
     )
 }
