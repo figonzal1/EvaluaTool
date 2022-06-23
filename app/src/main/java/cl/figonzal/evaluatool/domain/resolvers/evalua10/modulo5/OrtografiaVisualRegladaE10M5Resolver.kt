@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 21:37
+ Last modified 23-06-22 11:35
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo5
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +24,8 @@ class OrtografiaVisualRegladaE10M5Resolver(
 
     var totalPdTask1 = 0.0
     var totalPdTask2 = 0.0
-    override val percentile = baremoTable.getBaremo("ortov")
+    override val percentile =
+        baremoTable.getBaremo(Evalua10Constants.ORTOGRAFIA_VISUAL_REGLADA_E10M5)
 
     override fun calculateTask(
         nTask: Int,

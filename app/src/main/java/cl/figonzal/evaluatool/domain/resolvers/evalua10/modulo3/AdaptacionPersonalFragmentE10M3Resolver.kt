@@ -8,11 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 21:37
+ Last modified 23-06-22 11:34
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo3
 
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -21,7 +22,7 @@ class AdaptacionPersonalFragmentE10M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo("adapp")
+    override val percentile = baremoTable.getBaremo(Evalua10Constants.ADAPTACION_PERSONAL_E10M3)
 
     override fun calculateTask(
         nTask: Int,

@@ -8,45 +8,44 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 00:39
+ Last modified 23-06-22 11:34
  */
 
-package cl.figonzal.evaluatool.domain.baremo_tables
+package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants.*
 import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 10
  */
 class Evalua10Baremo : BaremoTable {
-    override fun getBaremo(baremo: String) = when (baremo) {
-
-        "aten" -> atencionConcentracionE10M1Baremo()
-
-        "razoi" -> razonamientoInductivoE10M2Baremo()
-        "razoe" -> razonamientoEspacialE10M2Baremo()
-        "razod" -> razonamientoDeductivoE10M2Baremo()
-
-        "adapp" -> adaptacionPersonalFragmentE10M3Baremo()
-        "adapf" -> adaptacionFamiliarFragmentE10M3Baremo()
-        "adape" -> adaptacionEscolarFragmentE10M3Baremo()
-        "habi" -> habilidadesSocialesFragmentE10M3Baremo()
-
-        "compl" -> comprensionLectoraE10M4Baremo()
-        "velo" -> velocidadFragmentE10M4Baremo()
-        "compf" -> comprensionFragmentE10M4Baremo()
-
-        "ortov" -> ortografiaVisualRegladaE10M5Baremo()
-
-        "calc" -> calculoNumeracionE10M6Baremo()
-        "resol" -> resolucionProblemasE10M6Baremo()
-
-        else -> emptyArray()
+    override fun getBaremo(baremo: String): Array<Array<Double>> {
+        return emptyArray()
     }
 
-    override fun getBaremo(baremo: BaseConstants): Array<Array<Double>> {
-        return emptyArray()
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua10Constants) {
+        ATENCION_CONCENTRACION_E10M1 -> atencionConcentracionE10M1Baremo()
+
+        RAZONAMIENTO_INDUCTIVO_E10M2 -> razonamientoInductivoE10M2Baremo()
+        RAZONAMIENTO_ESPACIAL_E10M2 -> razonamientoEspacialE10M2Baremo()
+        RAZONAMIENTO_DEDUCTIVO_E10M2 -> razonamientoDeductivoE10M2Baremo()
+
+        ADAPTACION_PERSONAL_E10M3 -> adaptacionPersonalFragmentE10M3Baremo()
+        ADAPTACION_FAMILIAR_E10M3 -> adaptacionFamiliarFragmentE10M3Baremo()
+        ADAPTACION_ESCOLAR_E10M3 -> adaptacionEscolarFragmentE10M3Baremo()
+        HABILIDADES_SOCIALES_E10M3 -> habilidadesSocialesFragmentE10M3Baremo()
+
+        COMPRENSION_LECTORA_E10M4 -> comprensionLectoraE10M4Baremo()
+        VELOCIDAD_FRAGMENT_E10M4 -> velocidadFragmentE10M4Baremo()
+        COMPRENSION_FRAGMENT_E10M4 -> comprensionFragmentE10M4Baremo()
+
+        ORTOGRAFIA_VISUAL_REGLADA_E10M5 -> ortografiaVisualRegladaE10M5Baremo()
+
+        CALCULO_NUMERACION_E10M6 -> calculoNumeracionE10M6Baremo()
+        RESOLUCION_PROBLEMAS_E10M6 -> resolucionProblemasE10M6Baremo()
     }
 }
 
