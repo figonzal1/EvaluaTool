@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 10:50
+ Last modified 23-06-22 20:32
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.constants
@@ -28,7 +28,7 @@ enum class Evalua7Constants : BaseConstants {
     EFICACIA_LECTORA_E7M4,
     COMPRENSION_LECTORA_E7M4,
     VELOCIDAD_FRAGMENT_E7M4,
-    COMPRESION_FRAGMENT_E7M4,
+    COMPRENSION_FRAGMENT_E7M4,
 
     ORTOGRAFIA_FONETICA_E7M5,
     ORTOGRAFIA_VISUAL_REGLADA_E7M5,

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 10:50
+ Last modified 23-06-22 20:32
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -38,7 +38,7 @@ class Evalua7Baremo : BaremoTable {
         EFICACIA_LECTORA_E7M4 -> eficaciaLectoraE7M4Baremo()
         COMPRENSION_LECTORA_E7M4 -> comprensionLectoraE7M4Baremo()
         VELOCIDAD_FRAGMENT_E7M4 -> velocidadFragmentE7M4Baremo()
-        COMPRESION_FRAGMENT_E7M4 -> comprensionFragmentE7M4Baremo()
+        COMPRENSION_FRAGMENT_E7M4 -> comprensionFragmentE7M4Baremo()
 
         ORTOGRAFIA_FONETICA_E7M5 -> ortografiaFoneticaE7M5Baremo()
         ORTOGRAFIA_VISUAL_REGLADA_E7M5 -> ortografiaVisualRegladaE7M5Baremo()
