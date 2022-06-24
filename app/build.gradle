@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 21:46
+ Last modified 24-06-22 19:00
  */
 
 apply plugin: 'com.android.application'
@@ -34,13 +34,13 @@ android {
     }
 
     compileSdkVersion 31
-    buildToolsVersion "30.0.3"
+    buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 31
-        versionName "1.0.3"
+        versionCode 32
+        versionName "1.0.4"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 16:57
+ Last modified 24-06-22 19:02
  */
 
 package cl.figonzal.evaluatool.service
@@ -34,8 +34,7 @@ class ChangeLogService(
     private val version = activity.getString(R.string.version) + BuildConfig.VERSION_NAME
     private val listImprovements = listOf(
         "- Actualizaciones internas necesarias",
-        "- Mejoras de iconos",
-        "- Mejoras de preferencias de usuario"
+        "- Corregidas fórmulas",
     )
 
     override fun onCreate(owner: LifecycleOwner) {
