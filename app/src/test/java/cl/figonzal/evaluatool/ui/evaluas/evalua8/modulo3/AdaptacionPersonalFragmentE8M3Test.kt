@@ -8,37 +8,62 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 11:08
+ Last modified 23-06-22 20:49
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.tables.adaptacionPersonalE8M3Baremo
-import cl.figonzal.evaluatool.utils.EvaluaUtils
-import com.google.common.truth.Truth
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua8Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
+import com.google.common.truth.Truth.assertThat
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
+import org.koin.test.KoinTest
+import org.koin.test.inject
 
-@RunWith(Parameterized::class)
-class AdaptacionPersonalFragmentE8M3Test(
-    private val totalPD: Double,
-    private val expPercentile: Double
-) {
-    private val perc = adaptacionPersonalE8M3Baremo()
+class AdaptacionPersonalFragmentE8M3Test : KoinTest {
+
+    private val baremoTable: BaremoTable by inject()
+    private lateinit var perc: Array<Array<Double>>
+
+    @Before
+    fun setUp() {
+        startKoin {
+
+            modules(
+                module {
+                    single<BaremoTable> { Evalua8Baremo() }
+                }
+            )
+        }
+
+        perc = baremoTable.getBaremo(Evalua8Constants.ADAPTACION_PERSONAL_E8M3)
+    }
+
+    @After
+    fun cleanup() {
+        stopKoin()
+    }
+
 
     @Test
     fun testCalculatePercentile() {
 
-        val calcPercentile =
-            EvaluaUtils.calculatePercentile(perc, totalPD.toInt(), reverse = true).toDouble()
+        perc.forEach {
 
-        Truth.assertThat(expPercentile).isEqualTo(calcPercentile)
-    }
-
-    companion object {
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data() = adaptacionPersonalE8M3Baremo()
+            val expPercentile = it[1].toInt()
+            val calcPercentile = calculatePercentile(
+                percentile = perc,
+                pdTotal = it[0].toInt(),
+                reverse = true
+            )
+            assertThat(expPercentile).isEqualTo(calcPercentile)
+        }
     }
 }

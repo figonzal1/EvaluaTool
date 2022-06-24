@@ -8,51 +8,83 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 11:08
+ Last modified 23-06-22 20:49
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2
 
-import cl.figonzal.evaluatool.domain.baremo_tables.tables.razonamientoInductivoE8M2Baremo
-import cl.figonzal.evaluatool.utils.EvaluaUtils
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua8Baremo
+import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculateDeviation
+import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
 import com.google.common.truth.Truth.assertThat
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.junit.runners.Parameterized
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
+import org.koin.dsl.module
+import org.koin.test.KoinTest
+import org.koin.test.inject
 
 
-@RunWith(Parameterized::class)
-class RazonamientoInductivoE8M2Test(
-    private val totalPD: Double,
-    private val expPercentile: Double,
-    private val expDeviation: Double
-) {
+class RazonamientoInductivoE8M2Test : KoinTest {
 
-    private val perc = razonamientoInductivoE8M2Baremo()
+    private val baremoTable: BaremoTable by inject()
+    private lateinit var perc: Array<Array<Double>>
+
+    @Before
+    fun setUp() {
+        startKoin {
+
+            modules(
+                module {
+                    single<BaremoTable> { Evalua8Baremo() }
+                }
+            )
+        }
+
+        perc = baremoTable.getBaremo(Evalua8Constants.RAZONAMIENTO_INDUCTIVO_E8M2)
+    }
+
+    @After
+    fun cleanup() {
+        stopKoin()
+    }
+
 
     @Test
     fun testCalculatePercentile() {
 
-        val calcPercentile = EvaluaUtils.calculatePercentile(perc, totalPD.toInt()).toDouble()
+        perc.forEach {
 
-        assertThat(expPercentile).isEqualTo(calcPercentile)
+            val expPercentile = it[1].toInt()
+            val calcPercentile = calculatePercentile(
+                percentile = perc,
+                pdTotal = it[0].toInt()
+            )
+            assertThat(expPercentile).isEqualTo(calcPercentile)
+        }
     }
 
     @Test
     fun testCalculateDeviation() {
 
-        val calcDeviation =
-            EvaluaUtils.calculateDeviation(MEDIA, DESVIACION, totalPD.toInt()).toDouble()
+        perc.forEach {
 
-        assertThat(expDeviation).isEqualTo(calcDeviation)
+            val expDeviation = it[2]
+            val calcDeviation = calculateDeviation(
+                MEAN = MEDIA,
+                DEVIATION = DESVIACION,
+                pdTotal = it[0].toInt()
+            ).toDouble()
+            assertThat(expDeviation).isEqualTo(calcDeviation)
+        }
     }
 
     companion object {
         private const val DESVIACION = 9.91
         private const val MEDIA = 29.15
-
-        @JvmStatic
-        @Parameterized.Parameters
-        fun data() = razonamientoInductivoE8M2Baremo()
     }
 }
