@@ -8,14 +8,14 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 20:35
+ Last modified 23-06-22 22:26
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo3
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua7Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua7Baremo
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.calculatePercentile
 import com.google.common.truth.Truth.assertThat

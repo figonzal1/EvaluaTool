@@ -8,13 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 01:59
+ Last modified 23-06-22 21:15
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua5.modulo3
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua5Constants
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
 class AutoEstimaFragmentE5M3Resolver(

@@ -8,13 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 01:18
+ Last modified 23-06-22 21:15
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo5
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua2Constants.ORTOGRAFIA_E2M5
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

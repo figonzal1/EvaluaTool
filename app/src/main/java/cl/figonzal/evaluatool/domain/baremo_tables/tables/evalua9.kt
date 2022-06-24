@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 11:26
+ Last modified 23-06-22 21:18
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -16,39 +16,33 @@ package cl.figonzal.evaluatool.domain.baremo_tables.tables
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants.*
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 9
  */
 class Evalua9Baremo : BaremoTable {
 
-    override fun getBaremo(baremo: BaseConstants) =
-        when (baremo as Evalua9Constants) {
-            ATENCION_CONCENTRACION_E9M1 -> atencionConcentracionE9M1Baremo()
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua9Constants) {
+        ATENCION_CONCENTRACION_E9M1 -> atencionConcentracionE9M1Baremo()
 
-            RAZONAMIENTO_INDUCTIVO_E9M2 -> razonamientoInductivoE9M2Baremo()
-            RAZONAMIENTO_ESPACIAL_E9M2 -> razonamientoEspacialE9M2Baremo()
-            RAZONAMIENTO_DEDUCTIVO_E9M2 -> razonamientoDeductivoE9M2Baremo()
+        RAZONAMIENTO_INDUCTIVO_E9M2 -> razonamientoInductivoE9M2Baremo()
+        RAZONAMIENTO_ESPACIAL_E9M2 -> razonamientoEspacialE9M2Baremo()
+        RAZONAMIENTO_DEDUCTIVO_E9M2 -> razonamientoDeductivoE9M2Baremo()
 
-            ADAPTACION_PERSONAL_E9M3 -> adaptacionPersonalE9M3Baremo()
-            ADAPTACION_FAMILIAR_E9M3 -> adaptacionFamiliarFragmentE9M3Baremo()
-            ADAPTACION_ESCOLAR_E9M3 -> adaptacionEscolarFragmentE9M3Baremo()
-            HABILIDADES_SOCIALES_E9M3 -> habilidadesSocialesE9M3Baremo()
+        ADAPTACION_PERSONAL_E9M3 -> adaptacionPersonalE9M3Baremo()
+        ADAPTACION_FAMILIAR_E9M3 -> adaptacionFamiliarFragmentE9M3Baremo()
+        ADAPTACION_ESCOLAR_E9M3 -> adaptacionEscolarFragmentE9M3Baremo()
+        HABILIDADES_SOCIALES_E9M3 -> habilidadesSocialesE9M3Baremo()
 
-            COMPRENSION_LECTORA_E9M4 -> comprensionLectoraE9M4Baremo()
-            EFICACIA_LECTORA_E9M4 -> eficaciaLectoraE9M4Baremo()
-            VELOCIDAD_FRAGMENT_E9M4 -> velocidadFragmentE9M4Baremo()
-            COMPRENSION_FRAGMENT_E9M4 -> comprensionFragmentE9M4Baremo()
+        COMPRENSION_LECTORA_E9M4 -> comprensionLectoraE9M4Baremo()
+        EFICACIA_LECTORA_E9M4 -> eficaciaLectoraE9M4Baremo()
+        VELOCIDAD_FRAGMENT_E9M4 -> velocidadFragmentE9M4Baremo()
+        COMPRENSION_FRAGMENT_E9M4 -> comprensionFragmentE9M4Baremo()
 
-            ORTOGRAFIA_VISUAL_REGLADA_E9M5 -> ortografiaVisualRegladaE9M5Baremo()
+        ORTOGRAFIA_VISUAL_REGLADA_E9M5 -> ortografiaVisualRegladaE9M5Baremo()
 
-            CALCULO_NUMERACION_E9M6 -> calculoNumeracionE9M6Baremo()
-            RESOLUCION_PROBLEMAS_E9M6 -> resolucionProblemasE9M6Baremo()
-        }
-
-    override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return emptyArray()
+        CALCULO_NUMERACION_E9M6 -> calculoNumeracionE9M6Baremo()
+        RESOLUCION_PROBLEMAS_E9M6 -> resolucionProblemasE9M6Baremo()
     }
 }
 

@@ -8,13 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 01:46
+ Last modified 23-06-22 21:15
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo1
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
 

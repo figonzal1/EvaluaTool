@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 11:34
+ Last modified 23-06-22 21:18
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -16,15 +16,11 @@ package cl.figonzal.evaluatool.domain.baremo_tables.tables
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua10Constants.*
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 10
  */
 class Evalua10Baremo : BaremoTable {
-    override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return emptyArray()
-    }
 
     override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua10Constants) {
         ATENCION_CONCENTRACION_E10M1 -> atencionConcentracionE10M1Baremo()

@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 09:44
+ Last modified 23-06-22 21:18
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -16,40 +16,33 @@ package cl.figonzal.evaluatool.domain.baremo_tables.tables
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants.*
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 6
  */
 class Evalua6Baremo : BaremoTable {
-    override fun getBaremo(baremo: BaseConstants) =
-        when (baremo as Evalua6Constants) {
+    override fun getBaremo(baremo: BaseConstants) = when (baremo as Evalua6Constants) {
 
-            REFLEXIVIDAD_E6M1 -> reflexividadE6M1Baremo()
-            PENSAMIENTO_ANALOGICO_E6M1 -> pensamientoAnalogicoE6M1Baremo()
-            ORGANIZACION_PERCEPTIVA_E6M1 -> organizacionPerceptivaE6M1Baremo()
+        REFLEXIVIDAD_E6M1 -> reflexividadE6M1Baremo()
+        PENSAMIENTO_ANALOGICO_E6M1 -> pensamientoAnalogicoE6M1Baremo()
+        ORGANIZACION_PERCEPTIVA_E6M1 -> organizacionPerceptivaE6M1Baremo()
 
-            MEMORIA_ATENCION_E6M2 -> memoriaAtencionE6M2Baremo()
+        MEMORIA_ATENCION_E6M2 -> memoriaAtencionE6M2Baremo()
 
-            MOTIVACION_FRAGMENT_E6M3 -> motivacionFragmentE6M3Baremo()
-            AUTO_CONTROL_FRAGMENT_E6M3 -> autoControlFragmentE6M3Baremo()
-            CONDUCTA_PRO_SOCIAL_E6M3 -> conductaProSocialFragmentE6M3Baremo()
-            AUTO_ESTIMA_FRAGMENT_E6M3 -> autoEstimaFragmentE6M3Baremo()
+        MOTIVACION_FRAGMENT_E6M3 -> motivacionFragmentE6M3Baremo()
+        AUTO_CONTROL_FRAGMENT_E6M3 -> autoControlFragmentE6M3Baremo()
+        CONDUCTA_PRO_SOCIAL_E6M3 -> conductaProSocialFragmentE6M3Baremo()
+        AUTO_ESTIMA_FRAGMENT_E6M3 -> autoEstimaFragmentE6M3Baremo()
 
-            COMPRENSION_LECTORA_E6M4 -> comprensionLectoraE6M4Baremo()
-            COMPRESION_FRAGMENT_E6M4 -> comprensionFragmentE6M4Baremo()
-            VELOCIDAD_FRAGMENT_E6M4 -> velocidadFragmentE6M4Baremo()
+        COMPRENSION_LECTORA_E6M4 -> comprensionLectoraE6M4Baremo()
+        COMPRESION_FRAGMENT_E6M4 -> comprensionFragmentE6M4Baremo()
+        VELOCIDAD_FRAGMENT_E6M4 -> velocidadFragmentE6M4Baremo()
 
-            ORTOGRAFIA_VISUAL_REGLADA_E6M5 -> ortografiaVisualRegladaE6M5Baremo()
+        ORTOGRAFIA_VISUAL_REGLADA_E6M5 -> ortografiaVisualRegladaE6M5Baremo()
 
-            CALCULO_NUMERACION_E6M6 -> calculoNumeracionE6M6Baremo()
-            RESOLUCION_PROBLEMAS_E6M6 -> resolucionProblemasE6M6Baremo()
-        }
-
-    override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return emptyArray()
+        CALCULO_NUMERACION_E6M6 -> calculoNumeracionE6M6Baremo()
+        RESOLUCION_PROBLEMAS_E6M6 -> resolucionProblemasE6M6Baremo()
     }
-
 }
 
 /**

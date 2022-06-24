@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 01:29
+ Last modified 23-06-22 21:18
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -16,7 +16,6 @@ package cl.figonzal.evaluatool.domain.baremo_tables.tables
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants.*
-import cl.figonzal.evaluatool.domain.resolvers.BaremoTable
 
 /**
  * Evalua 3
@@ -43,10 +42,6 @@ class Evalua3Baremo : BaremoTable {
 
         CALCULO_NUMERACION_E3M6 -> calculoNumeracionE3M6Baremo()
         RESOLUCION_PROBLEMAS_E3M6 -> resolucionProblemasE3M6Baremo()
-    }
-
-    override fun getBaremo(baremo: String): Array<Array<Double>> {
-        return emptyArray()
     }
 }
 
