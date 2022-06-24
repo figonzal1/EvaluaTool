@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo1
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants.PENSAMIENTO_ANALOGICO_E6M1
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +23,7 @@ class PensamientoAnalogicoE6M1Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua6Constants.PENSAMIENTO_ANALOGICO_E6M1)
+    override val percentile = baremoTable.getBaremo(PENSAMIENTO_ANALOGICO_E6M1)
 
     override fun calculateTask(
         nTask: Int,

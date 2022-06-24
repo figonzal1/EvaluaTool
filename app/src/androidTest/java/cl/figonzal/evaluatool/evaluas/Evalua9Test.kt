@@ -8,14 +8,17 @@
 
  Copyright (c) 2022
 
- Last modified 07-03-22 10:24
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.evaluas
 
+import android.app.Activity
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import androidx.test.core.app.ActivityScenario
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.scrollTo
@@ -24,7 +27,6 @@ import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
-import androidx.test.platform.app.InstrumentationRegistry
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.ui.MainActivity
 import org.hamcrest.Description
@@ -45,16 +47,18 @@ import org.junit.runners.MethodSorters
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class Evalua9Test {
 
-    private lateinit var mContext: Context
+    private lateinit var context: Context
+    private lateinit var activity: Activity
 
-    @Rule
-    @JvmField
-    var mActivityTestRule: ActivityScenarioRule<MainActivity> =
-        ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule
+    var rule = ActivityScenarioRule(MainActivity::class.java)
 
     @Before
-    fun start() {
-        mContext = InstrumentationRegistry.getInstrumentation().targetContext
+    fun setUp() {
+        context = ApplicationProvider.getApplicationContext()
+
+        val scenario = ActivityScenario.launch(MainActivity::class.java)
+        scenario.onActivity { activity -> this.activity = activity }
     }
 
     @Test
@@ -83,29 +87,29 @@ class Evalua9Test {
 
         clickEvalua9Btn()
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_6), 5)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_6), 5)
         checkSubItemsAprendizajesMatematico()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_6), 5)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_6), 5)
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_5), 4)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_5), 4)
         checkSubItemsEscritura()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_5), 4)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_5), 4)
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_4), 3)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_4), 3)
         checkSubItemsLectura()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_4), 3)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_4), 3)
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_3), 2)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_3), 2)
         checkSubItemsNivelesAdaptacion()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_3), 2)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_3), 2)
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_2), 1)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_2), 1)
         checkSubItemsBasesRazonamiento()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_2), 1)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_2), 1)
 
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_1), 0)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_1), 0)
         checkSubItemsAtencionConcentracion()
-        performAction("click", mContext.getString(R.string.EVALUA_9_MODULO_1), 0)
+        performAction("click", context.getString(R.string.EVALUA_9_MODULO_1), 0)
 
         try {
             Thread.sleep(2000)
@@ -116,45 +120,45 @@ class Evalua9Test {
     }
 
     private fun checkSubItemsAprendizajesMatematico() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M6_SI_1))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M6_SI_2))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_VALORACION_GLOBAL_MATEMATICAS))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_INDICE_GENERAL_MATEMATICAS))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M6_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M6_SI_2))
+        checkChildsItem(context.getString(R.string.EVALUA_9_VALORACION_GLOBAL_MATEMATICAS))
+        checkChildsItem(context.getString(R.string.EVALUA_9_INDICE_GENERAL_MATEMATICAS))
     }
 
     private fun checkSubItemsEscritura() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M5_SI_1))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_INDICE_GENERAL_ESCRITURA))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M5_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_INDICE_GENERAL_ESCRITURA))
     }
 
     private fun checkSubItemsLectura() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M4_SI_1))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M4_SI_2))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M4_SI_3))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_INDICE_GENERAL_LECTURA))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M4_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M4_SI_2))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M4_SI_3))
+        checkChildsItem(context.getString(R.string.EVALUA_9_INDICE_GENERAL_LECTURA))
     }
 
     private fun checkSubItemsNivelesAdaptacion() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M3_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M3_SI_1))
     }
 
     private fun checkSubItemsBasesRazonamiento() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M2_SI_1))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M2_SI_2))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M2_SI_3))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO))
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_INDICE_GENERAL_COGNITIVO))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M2_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M2_SI_2))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M2_SI_3))
+        checkChildsItem(context.getString(R.string.EVALUA_9_VALORACION_GLOBAL_RAZONAMIENTO))
+        checkChildsItem(context.getString(R.string.EVALUA_9_INDICE_GENERAL_COGNITIVO))
 
     }
 
     private fun checkSubItemsAtencionConcentracion() {
-        checkChildsItem(mContext.getString(R.string.EVALUA_9_M1_SI_1))
+        checkChildsItem(context.getString(R.string.EVALUA_9_M1_SI_1))
     }
 
     private fun checkHeaders() {
         val textView = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_1)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_1)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -164,11 +168,11 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_1))))
+        textView.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_1))))
 
         val textView2 = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_2)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_2)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -178,11 +182,11 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView2.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_2))))
+        textView2.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_2))))
 
         val textView3 = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_3)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_3)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -192,11 +196,11 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView3.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_3))))
+        textView3.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_3))))
 
         val textView4 = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_4)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_4)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -206,11 +210,11 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView4.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_4))))
+        textView4.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_4))))
 
         val textView5 = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_5)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_5)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -220,11 +224,11 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView5.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_5))))
+        textView5.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_5))))
 
         val textView6 = onView(
             allOf(
-                withId(R.id.tv_group), withText(mContext.getString(R.string.EVALUA_9_MODULO_6)),
+                withId(R.id.tv_group), withText(context.getString(R.string.EVALUA_9_MODULO_6)),
                 withParent(
                     allOf(
                         withId(R.id.cl_header),
@@ -234,7 +238,7 @@ class Evalua9Test {
                 isDisplayed()
             )
         )
-        textView6.check(ViewAssertions.matches(withText(mContext.getString(R.string.EVALUA_9_MODULO_6))))
+        textView6.check(ViewAssertions.matches(withText(context.getString(R.string.EVALUA_9_MODULO_6))))
     }
 
     private fun checkChildsItem(nombre: String) {
@@ -256,7 +260,7 @@ class Evalua9Test {
     private fun clickEvalua9Btn() {
         val materialButton = onView(
             allOf(
-                withId(R.id.btn_evalua_9), withText(mContext.getString(R.string.TOOLBAR_EVALUA_9)),
+                withId(R.id.btn_evalua_9), withText(context.getString(R.string.TOOLBAR_EVALUA_9)),
                 childAtPosition(
                     childAtPosition(
                         withClassName(`is`("android.widget.ScrollView")),

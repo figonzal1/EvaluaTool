@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:09
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants.HABILIDADES_SOCIALES_E9M3
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -22,7 +22,7 @@ class HabilidadesSocialesFragmentE9M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua9Constants.HABILIDADES_SOCIALES_E9M3)
+    override val percentile = baremoTable.getBaremo(HABILIDADES_SOCIALES_E9M3)
 
     override fun calculateTask(
         nTask: Int,

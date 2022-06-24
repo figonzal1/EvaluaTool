@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua8.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua8Constants.EFICACIA_LECTORA_E8M4
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +23,7 @@ class EficaciaLectoraE8M4Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua8Constants.EFICACIA_LECTORA_E8M4)
+    override val percentile = baremoTable.getBaremo(EFICACIA_LECTORA_E8M4)
 
     override fun calculateTask(
         nTask: Int,

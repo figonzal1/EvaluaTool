@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:09
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua9.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua9Constants.COMPRENSION_FRAGMENT_E9M4
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -23,7 +23,7 @@ class ComprensionFragmentE9M4Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua9Constants.COMPRENSION_FRAGMENT_E9M4)
+    override val percentile = baremoTable.getBaremo(COMPRENSION_FRAGMENT_E9M4)
 
     override fun calculateTask(
         nTask: Int,

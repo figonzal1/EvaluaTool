@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua6.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua6Constants.AUTO_ESTIMA_FRAGMENT_E6M3
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -21,7 +21,7 @@ class AutoEstimaFragmentE6M3Resolver(
     baremoTable: BaremoTable
 ) : BaseResolver {
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua6Constants.AUTO_ESTIMA_FRAGMENT_E6M3)
+    override val percentile = baremoTable.getBaremo(AUTO_ESTIMA_FRAGMENT_E6M3)
 
 
     override fun calculateTask(

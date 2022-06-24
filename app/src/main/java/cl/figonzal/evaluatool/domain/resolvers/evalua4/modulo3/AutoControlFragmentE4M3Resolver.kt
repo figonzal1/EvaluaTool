@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua4.modulo3
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua4Constants.AUTO_CONTROL_FRAGMENT_E4M3
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 
@@ -22,7 +22,7 @@ class AutoControlFragmentE4M3Resolver(
 ) : BaseResolver {
 
     var totalPdTask1 = 0.0
-    override val percentile = baremoTable.getBaremo(Evalua4Constants.AUTO_CONTROL_FRAGMENT_E4M3)
+    override val percentile = baremoTable.getBaremo(AUTO_CONTROL_FRAGMENT_E4M3)
 
     override fun calculateTask(
         nTask: Int,

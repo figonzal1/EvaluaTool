@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26/2/22 23:01
+ Last modified 23-06-22 22:46
  */
 
 package cl.figonzal.evaluatool
@@ -35,10 +35,8 @@ import org.junit.runners.MethodSorters
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class MainActivityTest {
 
-    @Rule
-    @JvmField
-    var mActivityTestRule: ActivityScenarioRule<MainActivity> =
-        ActivityScenarioRule(MainActivity::class.java)
+    @get:Rule
+    var rule = ActivityScenarioRule(MainActivity::class.java)
 
     @Test
     fun mainActivityTest() {

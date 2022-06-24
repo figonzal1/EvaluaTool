@@ -8,12 +8,12 @@
 
  Copyright (c) 2022
 
- Last modified 23-06-22 21:15
+ Last modified 23-06-22 23:08
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua3.modulo4
 
-import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants
+import cl.figonzal.evaluatool.domain.baremo_tables.constants.Evalua3Constants.COMPRENSION_LECTORA_E3M4
 import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import kotlin.math.floor
@@ -27,7 +27,7 @@ class ComprensionLectoraE3M4Resolver(
     var totalPdTask3 = 0.0
     var totalPdTask4 = 0.0
 
-    override val percentile = baremoTable.getBaremo(Evalua3Constants.COMPRENSION_LECTORA_E3M4)
+    override val percentile = baremoTable.getBaremo(COMPRENSION_LECTORA_E3M4)
 
     override fun calculateTask(
         nTask: Int,
