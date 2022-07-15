@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 15-07-22 16:17
+ Last modified 15-07-22 16:50
  */
 
 apply plugin: 'com.android.application'
@@ -83,7 +83,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation "androidx.core:core-ktx:1.8.0"
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation "com.google.android.material:material:1.6.1" //Material Design

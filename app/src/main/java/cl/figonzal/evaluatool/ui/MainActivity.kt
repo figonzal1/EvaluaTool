@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 16:57
+ Last modified 15-07-22 16:53
  */
 package cl.figonzal.evaluatool.ui
 
@@ -116,6 +116,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == updateCode) {
