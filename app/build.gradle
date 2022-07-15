@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 24-06-22 19:00
+ Last modified 15-07-22 16:17
  */
 
 apply plugin: 'com.android.application'
@@ -81,7 +81,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation "androidx.core:core-ktx:1.8.0"
     implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -107,7 +107,7 @@ dependencies {
     implementation "io.insert-koin:koin-android:3.2.0"
 
     //Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-process:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.0'
 
     //junit
     testImplementation("junit:junit:4.13.2")
