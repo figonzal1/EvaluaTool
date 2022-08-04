@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 15-07-22 16:50
+ Last modified 04-08-22 15:35
  */
 
 apply plugin: 'com.android.application'
@@ -88,7 +88,7 @@ dependencies {
 
     implementation "com.google.android.material:material:1.6.1" //Material Design
     implementation 'androidx.preference:preference-ktx:1.2.0' //Preferencias de usuario
-    implementation 'androidx.core:core-splashscreen:1.0.0-rc01' //splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.0' //splash screen
 
     //FIREBASE
     implementation platform('com.google.firebase:firebase-bom:30.0.0')
@@ -100,14 +100,14 @@ dependencies {
 
     //Google Play
     implementation("com.google.android.play:core-ktx:1.8.1")
-    implementation 'com.google.android.gms:play-services-ads:21.0.0'
+    implementation 'com.google.android.gms:play-services-ads:21.1.0'
 
     //KOIN
     implementation "io.insert-koin:koin-core:3.2.0"
     implementation "io.insert-koin:koin-android:3.2.0"
 
     //Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-process:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
 
     //junit
     testImplementation("junit:junit:4.13.2")
