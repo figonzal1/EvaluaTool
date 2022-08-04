@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 04-08-22 15:35
+ Last modified 04-08-22 15:57
  */
 
 apply plugin: 'com.android.application'
@@ -45,6 +45,11 @@ android {
     }
     buildTypes {
         debug {
+            versionNameSuffix '-debug'
+        }
+        beta {
+            versionNameSuffix '-beta'
+            debuggable true
         }
         release {
             minifyEnabled true
@@ -91,7 +96,7 @@ dependencies {
     implementation 'androidx.core:core-splashscreen:1.0.0' //splash screen
 
     //FIREBASE
-    implementation platform('com.google.firebase:firebase-bom:30.0.0')
+    implementation platform('com.google.firebase:firebase-bom:30.3.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-perf-ktx'
@@ -124,6 +129,9 @@ dependencies {
     androidTestImplementation('androidx.test.espresso:espresso-contrib:3.4.0') {
         exclude module: "protobuf-lite"
     }
+
+    //DEBUG
+    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.9.1")
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
 }
