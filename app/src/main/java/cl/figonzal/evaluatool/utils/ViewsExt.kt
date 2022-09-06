@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 20-06-22 20:01
+ Last modified 06-09-22 17:37
  */
 
 package cl.figonzal.evaluatool.utils
@@ -28,7 +28,6 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
@@ -45,7 +44,6 @@ import com.google.android.material.card.MaterialCardView
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.switchmaterial.SwitchMaterial
-import com.google.android.material.tabs.TabLayout
 import timber.log.Timber
 import java.util.*
 
@@ -277,14 +275,6 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
         else -> Timber.d(getString(R.string.privacy_policy_not_show))
     }
 
-}
-
-fun TabLayout.setTabWidthAsWrapContent(tabPosition: Int) {
-    val layout = (this.getChildAt(0) as LinearLayout).getChildAt(tabPosition) as LinearLayout
-    val layoutParams = layout.layoutParams as LinearLayout.LayoutParams
-    layoutParams.weight = 0f
-    layoutParams.width = LinearLayout.LayoutParams.WRAP_CONTENT
-    layout.layoutParams = layoutParams
 }
 
 fun ComponentActivity.handleNightMode(

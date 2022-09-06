@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 25-05-22 23:57
+ Last modified 06-09-22 17:37
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4
@@ -21,7 +21,6 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityVelocidadLectoraE10M4Binding
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.velocidadFragments.FragmentStateAdapterE10M4
 import cl.figonzal.evaluatool.utils.configureActionBar
-import cl.figonzal.evaluatool.utils.setTabWidthAsWrapContent
 import com.google.android.material.tabs.TabLayoutMediator
 import timber.log.Timber
 
@@ -55,13 +54,7 @@ class VelocidadLectoraE10M4 : AppCompatActivity() {
                 viewPagerVelocidad
             ) { tab, position ->
                 tab.text = FragmentStateAdapterE10M4.tabsArray[position]
-
-                when (position) {
-                    0 -> tab.setIcon(R.drawable.ic_round_campaign_24)
-                }
             }.attach()
-
-            includeTablayout.tabsVelocidad.setTabWidthAsWrapContent(0)
         }
     }
 

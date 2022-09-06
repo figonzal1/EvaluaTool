@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 00:57
+ Last modified 06-09-22 17:37
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo4.velocidadFragment
 
@@ -16,17 +16,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.ui.AdMobFragment
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 
 class FragmentStateAdapterE5M4(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> AdMobFragment.newInstance()
-            1 -> VelocidadFragmentE5M4.newInstance()
-            2 -> ComprensionFragmentE5M4.newInstance()
-            else -> AdMobFragment.newInstance()
+            0 -> VelocidadFragmentE5M4.newInstance()
+            else -> ComprensionFragmentE5M4.newInstance()
         }
     }
 
@@ -34,7 +31,6 @@ class FragmentStateAdapterE5M4(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabsArray = listOf(
-            "",
             EvaluaUtils.get(R.string.TOOLBAR_VELOCIDAD),
             EvaluaUtils.get(R.string.TOOLBAR_COMPRENSION)
         )

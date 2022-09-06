@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 06-03-22 00:36
+ Last modified 06-09-22 17:37
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2
 
@@ -24,13 +24,9 @@ import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
 import cl.figonzal.evaluatool.utils.configureFABWsp
-import cl.figonzal.evaluatool.utils.startAds
-import com.google.android.gms.ads.AdView
 import timber.log.Timber
 
 class Evalua2Activity : AppCompatActivity() {
-
-    private var adView: AdView? = null
 
     private lateinit var binding: ActivityEvaluaBinding
 
@@ -42,9 +38,6 @@ class Evalua2Activity : AppCompatActivity() {
 
         configureActionBar(R.string.TOOLBAR_EVALUA_2, binding.includeToolbar.materialToolbar)
         configureFABWsp(binding.fabWsp)
-
-        //Banner
-        adView = startAds(binding.adViewContainer, getString(R.string.ADMOB_ID_BANNER_EVALUAS))
 
 
         val headers = listOf(
@@ -109,10 +102,5 @@ class Evalua2Activity : AppCompatActivity() {
             return true
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        adView?.destroy()
     }
 }

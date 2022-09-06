@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 19-06-22 00:57
+ Last modified 06-09-22 17:37
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3.adaptacionFragments
@@ -17,19 +17,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.ui.AdMobFragment
 import cl.figonzal.evaluatool.utils.EvaluaUtils
 
 class FragmentStateAdapterE8M3(fa: FragmentActivity) : FragmentStateAdapter(fa) {
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> AdMobFragment.newInstance()
-            1 -> AdaptacionPersonalFragmentE8M3.newInstance()
-            2 -> AdaptacionFamiliarFragmentE8M3.newInstance()
-            3 -> AdaptacionEscolarFragmentE8M3.newInstance()
-            4 -> HabilidadesSocialesFragmentE8M3.newInstance()
-            else -> AdMobFragment.newInstance()
+            0 -> AdaptacionPersonalFragmentE8M3.newInstance()
+            1 -> AdaptacionFamiliarFragmentE8M3.newInstance()
+            2 -> AdaptacionEscolarFragmentE8M3.newInstance()
+            else -> HabilidadesSocialesFragmentE8M3.newInstance()
         }
     }
 
@@ -37,7 +34,6 @@ class FragmentStateAdapterE8M3(fa: FragmentActivity) : FragmentStateAdapter(fa) 
 
     companion object {
         val tabsArray = listOf(
-            "",
             EvaluaUtils.get(R.string.TOOLBAR_ADAP_PERSONAL),
             EvaluaUtils.get(R.string.TOOLBAR_ADAP_FAMILIAR),
             EvaluaUtils.get(R.string.TOOLBAR_ADAP_ESCOLAR),

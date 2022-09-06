@@ -8,15 +8,13 @@
 
  Copyright (c) 2022
 
- Last modified 21-06-22 00:54
+ Last modified 06-09-22 17:37
  */
 
 package cl.figonzal.evaluatool
 
 import android.app.Application
 import cl.figonzal.evaluatool.di.appModule
-import cl.figonzal.evaluatool.service.AppOpenService
-import com.google.android.gms.ads.MobileAds
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
@@ -53,9 +51,5 @@ class ApplicationController : Application() {
             BuildConfig.DEBUG -> Timber.plant(Timber.DebugTree())
             else -> Timber.plant(CrashlyticsTree())
         }
-
-        MobileAds.initialize(this) {}
-
-        AppOpenService(this)
     }
 }
