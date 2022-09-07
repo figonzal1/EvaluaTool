@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 07-09-22 19:02
+  Last modified 07-09-22 20:23
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -625,7 +625,7 @@
     <string name="NEW_VERSION_DETECTED" translatable="false">NUEVA VERSION DETECTADA: sharedVersionCode \u003C versionCode</string>
     <string name="NO_VERSION_DETECTED" translatable="false">NUEVA VERSION NO DETECTADA</string>
     <string name="version" translatable="false">"Versión "</string>
-    <string name="solucionamos_el_problema" translatable="false">Solucionamos el problema</string>
+    <string name="solucionamos_el_problema" translatable="false">Cambios</string>
     <string name="qu_hay_de_nuevo_en_la_app" translatable="false">¿Qué hay de nuevo en la app?</string>
     <string name="icono_nuevas_caracteristicas" translatable="false">Icono nuevas caracteristicas</string>
     <string name="UPDATE_FAIL" translatable="false">Actualizacion fallida</string>
