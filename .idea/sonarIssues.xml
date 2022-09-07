@@ -13,17 +13,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo4/velocidadFragments/ComprensionFragmentE10M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/velodadFragments/ComprensionFragmentE4M4.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo4/velocidadFragments/ComprensionFragmentE8M4.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo4/velocidadFragments/ComprensionFragmentE9M4.kt">
           <value>
             <set />
           </value>

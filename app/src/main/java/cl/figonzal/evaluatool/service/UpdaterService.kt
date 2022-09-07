@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2022
 
- Last modified 26-07-21 15:33
+ Last modified 07-09-22 17:02
  */
 
 package cl.figonzal.evaluatool.service
@@ -24,7 +24,7 @@ import timber.log.Timber
 class UpdaterService(
     val activity: Activity,
     private val appUpdateManager: AppUpdateManager,
-    private val UPDATE_CODE: Int
+    private val updateCode: Int
 ) {
 
     init {
@@ -46,7 +46,7 @@ class UpdaterService(
                         // The current activity making the update request.
                         activity,
                         // Include a request code to later monitor this update request.
-                        UPDATE_CODE
+                        updateCode
                     )
                 } else {
                     Timber.d(activity.getString(R.string.UPDATE_NOT_AVAILABLE))
@@ -66,7 +66,7 @@ class UpdaterService(
                         appUpdateInfo,
                         AppUpdateType.IMMEDIATE,
                         activity,
-                        UPDATE_CODE
+                        updateCode
                     )
                 }
             }

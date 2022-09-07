@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 22-06-22 10:12
+ Last modified 07-09-22 17:02
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.velocidadFragments
@@ -230,8 +230,8 @@ class ComprensionFragmentE8M4 : Fragment() {
         }
     }
 
-    private fun calculateComprehension(pd_actual: Int): String {
-        return when (pd_actual) {
+    private fun calculateComprehension(pdActual: Int): String {
+        return when (pdActual) {
             in 0..2 -> getString(R.string.COMPRENSION_MUY_BAJA)
             in 3..4 -> getString(R.string.COMPRENSION_BAJA)
             in 5..6 -> getString(R.string.COMPRENSION_MEDIA)
