@@ -8,7 +8,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/cl/figonzal/evaluatool/databinding/AdMobFragmentTemplateBinding.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/MainActivity.kt">
           <value>
             <set />
           </value>

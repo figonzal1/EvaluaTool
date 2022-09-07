@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 07-09-22 13:53
+ Last modified 07-09-22 18:17
  */
 
 apply plugin: 'com.android.application'
@@ -34,12 +34,12 @@ android {
         }
     }
 
-    compileSdkVersion 31
+    compileSdkVersion 33
     buildToolsVersion "32.0.0"
     defaultConfig {
         applicationId "cl.figonzal.evaluatool"
         minSdkVersion 23
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 33
         versionName "1.0.5"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -111,9 +111,6 @@ dependencies {
     //KOIN
     implementation "io.insert-koin:koin-core:3.2.0"
     implementation "io.insert-koin:koin-android:3.2.0"
-
-    //Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-process:2.5.1'
 
     //junit
     testImplementation("junit:junit:4.13.2")

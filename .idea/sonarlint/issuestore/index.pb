@@ -47,10 +47,6 @@ j
 :app/src/main/java/cl/figonzal/evaluatool/utils/ViewsExt.kt,e\2\e2b55402a63045ab871f1c85a54e9e988e766c96
 ê
 `app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/modulo1/AtencionConcentracionE7M1.kt,f\8\f893a0675a0dd39ca7c5231c79205f63a54c700c
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 >
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 £
