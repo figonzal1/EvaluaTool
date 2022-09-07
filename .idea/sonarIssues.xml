@@ -8,237 +8,22 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/build.gradle">
-          <value>
-            <set />
-          </value>
-        </entry>
         <entry key="$PROJECT_DIR$/app/build/generated/data_binding_base_class_source_out/debug/out/cl/figonzal/evaluatool/databinding/AdMobFragmentTemplateBinding.java">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ApplicationController.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/MainActivity.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo4/velocidadFragments/ComprensionFragmentE10M4.kt">
           <value>
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua0/Evalua0Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua1/Evalua1Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua1/modulo3/NivelesAdaptacionE1M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/Evalua10Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo3/NivelesAdaptacionE10M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo3/adaptacionFragments/FragmentStateAdapterE10M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo4/VelocidadLectoraE10M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo4/velocidadFragments/FragmentStateAdapterE10M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua2/Evalua2Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua2/modulo3/NivelesAdaptacionE2M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua3/Evalua3Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua3/modulo3/NivelesAdaptacionE3M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua3/modulo3/adaptacionFragments/FragmentStateAdapterE3M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/Evalua4Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo3/NivelesAdaptacionE4M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo3/adaptacionFragments/FragmentStateAdapterE4M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/VelocidadLectoraE4M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/velodadFragments/FragmentStateAdapterE4M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua5/Evalua5Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua5/modulo3/NivelesAdaptacionE5M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua5/modulo3/adaptacionFragments/FragmentStateAdapterE5M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua5/modulo4/VelocidadLectoraE5M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua5/modulo4/velocidadFragment/FragmentStateAdapterE5M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua6/Evalua6Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua6/modulo3/NivelesAdaptacionE6M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua6/modulo3/adaptacionFragments/FragmentStateAdapterE6M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua6/modulo4/VelocidadLectoraE6M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua6/modulo4/velocidadFragment/FragmentStateAdapterE6M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/Evalua7Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/modulo3/NivelesAdaptacionE7M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/modulo3/adaptacionFragments/FragmentStateAdapterE7M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/modulo4/VelocidadLectoraE7M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua7/modulo4/velocidadFragments/FragmentStateAdapterE7M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/Evalua8Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo3/NivelesAdaptacionE8M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo3/adaptacionFragments/FragmentStateAdapterE8M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo4/VelocidadLectoraE8M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo4/velocidadFragments/FragmentStateAdapterE8M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/Evalua9Activity.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo3/NivelesAdaptacionE9M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo3/adaptacionFragment/FragmentStateAdapterE9M3.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo4/VelocidadLectoraE9M4.kt">
-          <value>
-            <set />
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo4/velocidadFragments/FragmentStateAdapterE9M4.kt">
+        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/velodadFragments/ComprensionFragmentE4M4.kt">
           <value>
             <set />
           </value>
@@ -248,7 +33,17 @@
             <set />
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/app/src/main/java/cl/figonzal/evaluatool/utils/ViewsExt.kt">
+        <entry key="$PROJECT_DIR$/app/src/test/java/cl/figonzal/evaluatool/ui/evaluas/evalua1/modulo6/CalculoNumeracionE1M6Test.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/ComprensionFragmentE4M4Test.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/test/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/VelocidadFragmentE4M4Test.kt">
           <value>
             <set />
           </value>
