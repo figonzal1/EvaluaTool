@@ -48,6 +48,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/cl/figonzal/evaluatool/ui/evaluas/evalua1/modulo6/CalculoNumeracionE1M6Test.kt">
           <value>
             <set />
@@ -59,6 +64,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/test/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/VelocidadFragmentE4M4Test.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../LastQuakeChile/app/src/main/AndroidManifest.xml">
           <value>
             <set />
           </value>

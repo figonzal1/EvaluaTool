@@ -51,3 +51,15 @@ j
 app/.gitignore,5\1\51e1c5d383dfaa35e0e7e5873a0a99355a86880f
 £
 sapp/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua10/modulo4/velocidadFragments/ComprensionFragmentE10M4.kt,6\1\61557661a10de5a91603cdad01765521c4996cd9
+n
+>app/src/main/java/cl/figonzal/evaluatool/utils/RouteHandler.kt,4\8\4843f7a6732d0d6db343081bd9c7f5dbd60235a7
+Ÿ
+oapp/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua4/modulo4/velodadFragments/ComprensionFragmentE4M4.kt,7\3\736c99ac90fea579cb7399dcf87f675c5669ebe5
+¡
+qapp/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua8/modulo4/velocidadFragments/ComprensionFragmentE8M4.kt,c\1\c1a17666a8e6ee60577205f044b7922d4164f41b
+r
+Bapp/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt,a\d\ad1e9a63984be341e5dab585e746c74dcd7f1214
+¡
+qapp/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo4/velocidadFragments/ComprensionFragmentE9M4.kt,9\1\917c21ae9d3665b40cfd5dd9188812d7bcbf89a8
+<
+build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35

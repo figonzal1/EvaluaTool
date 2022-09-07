@@ -8,29 +8,13 @@
 
   Copyright (c) 2022
 
-  Last modified 26-05-22 16:47
+  Last modified 07-09-22 19:02
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name" translatable="false">EvaluaTool</string>
-
     <string name="ADMOB_MASTER_KEY" translatable="false">ca-app-pub-6355378855577476~8089782740</string>
 
     <string name="PRIVACY_POLICY_URL" translatable="false">https://github.com/figonzal1/EvaluaTool/blob/main/privacy_policy.md</string>
-
-    <!--TEST AD-->
-    <!--<string name="ADMOB_ID_BANNER_MAIN" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ADMOB_ID_BANNER_EVALUAS" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
-    <string name="ADMOB_ID_APPOPEN" translatable="false">ca-app-pub-3940256099942544/3419835294</string>
-    <string name="ADMOB_ID_INTERSTITIAL" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
-    <string name="ADMOB_ID_NATIVE">ca-app-pub-3940256099942544/2247696110</string>-->
-
-    <!--PROD AD-->
-    <string name="ADMOB_ID_BANNER_MAIN" translatable="false">ca-app-pub-6355378855577476/3579176413</string>
-    <string name="ADMOB_ID_BANNER_EVALUAS" translatable="false">ca-app-pub-6355378855577476/2063216085</string>
-    <string name="ADMOB_ID_APPOPEN" translatable="false">ca-app-pub-6355378855577476/3483598214</string>
-    <string name="ADMOB_ID_INTERSTITIAL" translatable="false">ca-app-pub-6355378855577476/7878386216</string>
-    <string name="ADMOB_ID_NATIVE">ca-app-pub-6355378855577476/1859239943</string>
 
     <!-- FORMAT -->
     <string name="DATETIME_FORMAT" translatable="false" tools:keep="@string/DATETIME_FORMAT">yyyy-MM-dd HH:mm:ss</string>
