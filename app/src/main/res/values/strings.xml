@@ -8,11 +8,10 @@
 
   Copyright (c) 2022
 
-  Last modified 07-09-22 20:23
+  Last modified 07-09-22 21:08
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="ADMOB_MASTER_KEY" translatable="false">ca-app-pub-6355378855577476~8089782740</string>
 
     <string name="PRIVACY_POLICY_URL" translatable="false">https://github.com/figonzal1/EvaluaTool/blob/main/privacy_policy.md</string>
 
@@ -382,7 +381,7 @@
     <string name="shared_pref_master_key" translatable="false">evalua_tool</string>
     <string name="SHARED_PREF_ACTUAL_VERSION_CODE" translatable="false">shared_pref_actual_version_code</string>
 
-    <!-- REWARD DIALOG TAGS & ADS -->
+    <!-- REWARD DIALOG TAGS -->
     <string name="REWARD_DIALOG_BTN_VER_VIDEO" translatable="false" tools:keep="@string/REWARD_DIALOG_BTN_VER_VIDEO">BOTON VER VIDEO PRESIONADO</string>
     <string name="REWARD_DIALOG_BTN_CANCEL" translatable="false" tools:keep="@string/REWARD_DIALOG_BTN_CANCEL">BOTON CANCEL PRESIONADO</string>
     <string name="VIDEO_REWARD_STATUS_LOADED" translatable="false" tools:keep="@string/VIDEO_REWARD_STATUS_LOADED">Video reward LOADED</string>
@@ -394,10 +393,6 @@
     <string name="REWARD_STATUS_PERIODO_INACTIVO" translatable="false" tools:keep="@string/REWARD_STATUS_PERIODO_INACTIVO">PERIODO REWARD INACTIVO</string>
     <string name="RANDOM_SHOW_REWARD_DIALOG_ON" translatable="false" tools:keep="@string/RANDOM_SHOW_REWARD_DIALOG_ON">MOSTRAR DIALOG REWARD</string>
     <string name="RANDOM_SHOW_REWARD_DIALOG_OFF" translatable="false" tools:keep="@string/RANDOM_SHOW_REWARD_DIALOG_OFF">NO MOSTRAR DIALOG REWARD</string>
-    <string name="ADS_PERMITIDOS" translatable="false" tools:keep="@string/ADS_PERMITIDOS">ADS PERMITIDOS</string>
-    <string name="ADS_NO_PERMITIDOS" translatable="false" tools:keep="@string/ADS_NO_PERMITIDOS">ADS NO PERMITIDOS</string>
-    <string name="ADS_CARGADOS" translatable="false" tools:keep="@string/ADS_CARGADOS">ADS CARGADOS</string>
-    <string name="ADS_NO_CARGADOS" translatable="false" tools:keep="@string/ADS_NO_CARGADOS">ADS NO CARGADOS</string>
     <string name="INTERSITIAL_CARGADO" translatable="false" tools:keep="@string/INTERSITIAL_CARGADO">Intersitial CARGADO</string>
     <string name="INTERSITIAL_NO_CARGADO" translatable="false" tools:keep="@string/INTERSITIAL_NO_CARGADO">Intersitial NO CARGADO</string>
     <string name="INTERSITIAL_MOSTRADO" translatable="false" tools:keep="@string/INTERSITIAL_MOSTRADO">Intersitial MOSTRADO</string>
@@ -631,7 +626,6 @@
     <string name="UPDATE_FAIL" translatable="false">Actualizacion fallida</string>
     <string name="UPDATE_AVAILABLE" translatable="false">Actualizacion disponible</string>
     <string name="UPDATE_NOT_AVAILABLE" translatable="false">Actualizacion no disponible</string>
-    <string name="MOBILE_ADS_COMPLETE" translatable="false" tools:keep="@string/MOBILE_ADS_COMPLETE">Mobile Ads complete load</string>
     <string name="icono_grupo_whatsapp" translatable="false" tools:keep="@string/icono_grupo_whatsapp">Icono grupo whatsapp</string>
     <string name="problemas_sugerencias_y_avisos" translatable="false" tools:keep="@string/problemas_sugerencias_y_avisos">Dudas, problemas y sugerencias</string>
     <string name="TOOLBAR_CONFIGURACION">Configuración</string>
@@ -652,21 +646,8 @@
     <string name="GP_UPDATED" translatable="false">Updated</string>
     <string name="privacy_policy_show">Mostrando privacy policy dialog</string>
     <string name="privacy_policy_not_show">Privacy policy dialog ya mostrado</string>
-    <string name="AD_OPEN_ON_START" translatable="false">onStart - checking adIfAvailable</string>
-
-    <!-- 4 TIMBER -->
-    <string name="APP_OPEN_SHOW_AD" translatable="false">Will show ad</string>
-    <string name="APP_OPEN_AD_NOT_SHOW" translatable="false">Can not show ad</string>
-    <string name="ADMOB_AD_FAILED" translatable="false">Failed to load: </string>
-    <string name="ADMOB_AD_LOADED" translatable="false">Ad loaded</string>
-    <string name="ADMOB_AD_OPEN" translatable="false">Ad open</string>
-    <string name="ADMOB_INTERSTITIAL_FAILED">Interstitial failed to load:</string>
-    <string name="ADMOB_INTERSTITIAL_LOADED">Interstitial loaded</string>
-
 
     <!-- VIEWS -->
-    <string name="ad" translatable="false">Ad</string>
-    <string name="icon_ad_app">Icono publicidad</string>
     <string name="ver_m_s">Ver más</string>
     <string name="fullscreen_interstitial_dismiss">Fullscreen interstitial dismiss</string>
     <string name="fullscreen_interstitial_failed_load">Fullscreen interstitial failed to load: "</string>

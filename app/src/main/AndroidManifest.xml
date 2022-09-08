@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 07-03-22 16:46
+  Last modified 07-09-22 21:04
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
@@ -24,13 +24,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.Starting">
-
-        <meta-data
-            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
-            android:value="true" />
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/ADMOB_MASTER_KEY" />
 
         <meta-data
             android:name="com.google.android.gms.version"
