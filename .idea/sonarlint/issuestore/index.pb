@@ -61,5 +61,11 @@ r
 Bapp/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt,a\d\ad1e9a63984be341e5dab585e746c74dcd7f1214
 ¡
 qapp/src/main/java/cl/figonzal/evaluatool/ui/evaluas/evalua9/modulo4/velocidadFragments/ComprensionFragmentE9M4.kt,9\1\917c21ae9d3665b40cfd5dd9188812d7bcbf89a8
-<
-build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
+k
+;app/src/main/java/cl/figonzal/evaluatool/ui/MainActivity.kt,e\0\e0a924524251c5e51352b36952f7824a98e1346b
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+t
+Dapp/src/main/java/cl/figonzal/evaluatool/service/ChangeLogService.kt,f\1\f17c224b26d662f2a7a6152aedbca45927462c47
+@
+app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
