@@ -8,10 +8,10 @@
 
   Copyright (c) 2022
 
-  Last modified 28/2/22 0:15
+  Last modified 15-10-22 16:24
   -->
 
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <style name="AppTheme.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/colorPrimary</item>
@@ -19,7 +19,7 @@
         <item name="postSplashScreenTheme">@style/AppTheme</item>
 
         <!-- Status bar and Nav bar configs -->
-        <item name="android:statusBarColor" tools:targetApi="l">@color/colorPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
         <item name="android:navigationBarColor">@color/colorPrimary</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>

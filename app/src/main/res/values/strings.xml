@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 15-10-22 13:32
+  Last modified 15-10-22 16:23
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -623,7 +623,6 @@
     <string name="solucionamos_el_problema" translatable="false">Cambios</string>
     <string name="qu_hay_de_nuevo_en_la_app" translatable="false">¿Qué hay de nuevo en la app?</string>
     <string name="icono_nuevas_caracteristicas" translatable="false">Icono nuevas caracteristicas</string>
-    <string name="UPDATE_FAIL" translatable="false">Actualizacion fallida</string>
     <string name="UPDATE_AVAILABLE" translatable="false">Actualizacion disponible</string>
     <string name="UPDATE_NOT_AVAILABLE" translatable="false">Actualizacion no disponible</string>
     <string name="icono_grupo_whatsapp" translatable="false" tools:keep="@string/icono_grupo_whatsapp">Icono grupo whatsapp</string>
@@ -649,10 +648,6 @@
 
     <!-- VIEWS -->
     <string name="ver_m_s">Ver más</string>
-    <string name="fullscreen_interstitial_dismiss">Fullscreen interstitial dismiss</string>
-    <string name="fullscreen_interstitial_failed_load">Fullscreen interstitial failed to load: "</string>
-    <string name="fullscreen_interstitial_showed">Fullscreen interstitial fullscreen content</string>
-    <string name="interstitial_null">Interstitial null</string>
     <string name="acerca">Acerca</string>
     <string name="acerca_description">Aplicación móvil que facilita el cálculo de puntajes de evaluaciones pertenecientes a la batería de evaluaciones psicopedagógicas Evalúa - Chile Versión 2.0</string>
     <string name="SHARED_PREF_VERSION">version</string>
