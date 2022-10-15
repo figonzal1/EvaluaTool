@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 06-09-22 17:43
+ Last modified 15-10-22 13:32
  */
 package cl.figonzal.evaluatool.ui
 
@@ -44,11 +44,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sharedPrefUtil: SharedPrefUtil
 
     private lateinit var binding: ActivityMainBinding
-    private val updateCode: Int = 350
+
+    private var updaterService: UpdaterService? = null
 
     private var buttonList = mutableListOf<MaterialButton>()
-
-    private lateinit var updateService: UpdaterService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,9 +67,8 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(ChangeLogService(this, sharedPrefUtil))
 
         //UPDATER
-        updateService = UpdaterService(
-            this, AppUpdateManagerFactory.create(this), updateCode
-        )
+        updaterService = UpdaterService(this, AppUpdateManagerFactory.create(this))
+        updaterService!!.checkAvailability()
 
         bindingResources()
     }
@@ -105,17 +103,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     @Deprecated("Deprecated in Java")
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        @Suppress("DEPRECATION")
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == updateCode && resultCode != RESULT_OK) {
-            Timber.e(getString(R.string.UPDATE_FAIL))
+
+        if (requestCode == UpdaterService.UPDATE_CODE) {
+            when (resultCode) {
+                RESULT_OK -> Timber.d(getString(R.string.UPDATE_OK))
+                else -> Timber.e(getString(R.string.UPDATE_FAILED), resultCode)
+            }
         }
     }
 
     override fun onResume() {
         super.onResume()
-
-        updateService.resumeUpdater()
+        updaterService?.resumeUpdater()
     }
 
     fun ActivityMainBinding.onButtonClickListeners() {
@@ -126,52 +128,42 @@ class MainActivity : AppCompatActivity() {
 
         btnEvalua1.setOnClickListener {
             mainActivityTo(Evalua1Activity())
-
         }
 
         btnEvalua2.setOnClickListener {
             mainActivityTo(Evalua2Activity())
-
         }
 
         btnEvalua3.setOnClickListener {
             mainActivityTo(Evalua3Activity())
-
         }
 
         btnEvalua4.setOnClickListener {
             mainActivityTo(Evalua4Activity())
-
         }
 
         btnEvalua5.setOnClickListener {
             mainActivityTo(Evalua5Activity())
-
         }
 
         btnEvalua6.setOnClickListener {
             mainActivityTo(Evalua6Activity())
-
         }
 
         btnEvalua7.setOnClickListener {
             mainActivityTo(Evalua7Activity())
-
         }
 
         btnEvalua8.setOnClickListener {
             mainActivityTo(Evalua8Activity())
-
         }
 
         btnEvalua9.setOnClickListener {
             mainActivityTo(Evalua9Activity())
-
         }
 
         btnEvalua10.setOnClickListener {
             mainActivityTo(Evalua10Activity())
-
         }
 
     }

@@ -20,22 +20,22 @@ buildscript {
         maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath 'com.android.tools.build:gradle:7.3.0'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
         // Check for v3.1.2 or higher
-        classpath 'com.google.gms:google-services:4.3.13'  // Google Services plugin
+        classpath 'com.google.gms:google-services:4.3.14'  // Google Services plugin
 
         // Add the Firebase Crashlytics Gradle plugin.
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.1'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
 
         // Add the dependency for the Performance Monitoring plugin
-        classpath 'com.google.firebase:perf-plugin:1.4.1'
+        classpath 'com.google.firebase:perf-plugin:1.4.2'
 
         //KOTLIN
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20'
 
         //SonarQube
         classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.4.0.2513"

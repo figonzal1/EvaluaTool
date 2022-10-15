@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 27/2/22 22:46
+ Last modified 15-10-22 12:36
  */
 
 package cl.figonzal.evaluatool.service
@@ -21,8 +21,9 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import timber.log.Timber
 
-class GooglePlayService(private val activity: Activity) :
-    DefaultLifecycleObserver {
+class GooglePlayService(
+    private val activity: Activity
+) : DefaultLifecycleObserver {
 
     private val googlePlay: GoogleApiAvailability = GoogleApiAvailability.getInstance()
 

@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 07-09-22 21:08
+  Last modified 15-10-22 13:32
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -658,5 +658,9 @@
     <string name="SHARED_PREF_VERSION">version</string>
     <string name="privacy_policy">Política de privacidad</string>
     <string name="politica_privacidad">Política de privacidad</string>
+    <string name="UPDATE_MANAGER_FAILED">onResume updater manager failed</string>
+    <string name="UPDATE_INTENT_FAILED">Update intent failed</string>
+    <string name="UPDATE_OK">Update succesfull</string>
+    <string name="UPDATE_FAILED">Update flow failed! Result code: %s</string>
 
 </resources>
