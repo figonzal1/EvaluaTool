@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 15-10-22 16:23
+  Last modified 31-10-22 12:13
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -657,5 +657,12 @@
     <string name="UPDATE_INTENT_FAILED">Update intent failed</string>
     <string name="UPDATE_OK">Update succesfull</string>
     <string name="UPDATE_FAILED">Update flow failed! Result code: %s</string>
+    <string name="contact_key">contact_email</string>
+    <string name="contact_summary">¿Sugerencias? ¿Problemas?</string>
+    <string name="contact_developer">Contacto desarrollador</string>
+    <string name="mail_to_felipe">felipe.gonzalezalarcon94@gmail.com</string>
+    <string name="email_subject">Contacto desarrollador EvalúaTool</string>
+    <string name="email_chooser_title">Envía una email usando:</string>
+    <string name="email_intent_fail">No tienes ninguna app de email para contactarnos</string>
 
 </resources>

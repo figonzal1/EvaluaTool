@@ -8,7 +8,7 @@
 
   Copyright (c) 2022
 
-  Last modified 25-05-22 22:59
+  Last modified 31-10-22 12:13
   -->
 
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -55,6 +55,13 @@
             app:iconSpaceReserved="true"
             app:key="@string/SHARED_PREF_PRIVACY_POLICY"
             app:title="@string/privacy_policy" />
+
+        <Preference
+            app:allowDividerAbove="true"
+            app:iconSpaceReserved="true"
+            app:key="@string/contact_key"
+            app:summary="@string/contact_summary"
+            app:title="@string/contact_developer" />
     </PreferenceCategory>
 
 </PreferenceScreen>

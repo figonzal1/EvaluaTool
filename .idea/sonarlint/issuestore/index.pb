@@ -11,7 +11,7 @@ r
 Bapp/src/main/java/cl/figonzal/evaluatool/service/UpdaterService.kt,a\d\ad1e9a63984be341e5dab585e746c74dcd7f1214
 k
 ;app/src/main/java/cl/figonzal/evaluatool/ui/MainActivity.kt,e\0\e0a924524251c5e51352b36952f7824a98e1346b
-@
-app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
 ^
 ..idea/inspectionProfiles/profiles_settings.xml,1\e\1e9075f5bf079c01ef2c910709e91a497d262080
+t
+Dapp/src/main/java/cl/figonzal/evaluatool/service/ChangeLogService.kt,f\1\f17c224b26d662f2a7a6152aedbca45927462c47

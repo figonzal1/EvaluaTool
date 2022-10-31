@@ -50,7 +50,7 @@ android {
             applicationIdSuffix '.debug'
             debuggable true
             minifyEnabled false
-            resValue "string", "app_name", "EvaluaTool-debug"
+            resValue "string", "app_name", "EvalúaTool-debug"
         }
         release {
             minifyEnabled true

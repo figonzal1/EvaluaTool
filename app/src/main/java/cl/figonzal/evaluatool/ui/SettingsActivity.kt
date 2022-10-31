@@ -8,7 +8,7 @@
 
  Copyright (c) 2022
 
- Last modified 26-05-22 18:07
+ Last modified 31-10-22 12:13
  */
 
 package cl.figonzal.evaluatool.ui
@@ -68,6 +68,25 @@ class SettingsActivity : AppCompatActivity() {
                 Intent(Intent.ACTION_VIEW).apply {
                     data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
                     startActivity(this)
+                }
+                true
+            }
+
+            findPreference<Preference>(getString(R.string.contact_key))?.setOnPreferenceClickListener {
+
+                Intent(Intent.ACTION_SEND).apply {
+                    putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.mail_to_felipe)))
+                    putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
+                    type = "text/plain"
+
+                    when {
+                        resolveActivity(requireActivity().packageManager) != null -> {
+                            requireActivity().startActivity(
+                                Intent.createChooser(this, getString(R.string.email_chooser_title))
+                            )
+                        }
+                        else -> requireActivity().toast(getString(R.string.email_intent_fail))
+                    }
                 }
                 true
             }
