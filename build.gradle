@@ -26,10 +26,10 @@ buildscript {
         // in the individual module build.gradle files
 
         // Check for v3.1.2 or higher
-        classpath 'com.google.gms:google-services:4.3.14'  // Google Services plugin
+        classpath 'com.google.gms:google-services:4.3.15'  // Google Services plugin
 
         // Add the Firebase Crashlytics Gradle plugin.
-        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.2'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.9.4'
 
         // Add the dependency for the Performance Monitoring plugin
         classpath 'com.google.firebase:perf-plugin:1.4.2'
@@ -38,7 +38,7 @@ buildscript {
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.20'
 
         //SonarQube
-        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.4.0.2513"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:4.0.0.2929"
     }
 }
 
