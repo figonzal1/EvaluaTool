@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 15-10-22 16:28
+ Last modified 01-03-23 23:19
  */
 
 package cl.figonzal.evaluatool.service
@@ -32,9 +32,7 @@ class ChangeLogService(
 
     private var versionCode: Int = BuildConfig.VERSION_CODE
     private val version = activity.getString(R.string.version) + BuildConfig.VERSION_NAME
-    private val listImprovements = listOf(
-            "- Actualizaciones internas necesarias"
-    )
+    private val listImprovements = emptyList<String>()
 
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
