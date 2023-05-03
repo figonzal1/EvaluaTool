@@ -12,11 +12,10 @@
  */
 
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
+apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: 'org.sonarqube'
 
 android {
     def keystorePropertiesFile = rootProject.file("keystore.properties")
@@ -68,12 +67,12 @@ android {
     }
     compileOptions {
         coreLibraryDesugaringEnabled true
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 
 
@@ -103,21 +102,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.7.20'
-    implementation "androidx.core:core-ktx:1.9.0"
+
+    implementation "androidx.core:core-ktx:1.10.0"
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
     implementation "com.google.android.material:material:1.8.0" //Material Design
     implementation 'androidx.preference:preference-ktx:1.2.0' //Preferencias de usuario
-    implementation 'androidx.core:core-splashscreen:1.0.0' //splash screen
+    implementation 'androidx.core:core-splashscreen:1.0.1' //splash screen
 
     //Life cycle components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
 
     //FIREBASE
-    implementation platform('com.google.firebase:firebase-bom:31.2.1')
+    implementation platform('com.google.firebase:firebase-bom:31.5.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-perf-ktx'
@@ -129,14 +128,14 @@ dependencies {
     implementation("com.google.android.play:app-update-ktx:2.0.1")
 
     //KOIN
-    implementation "io.insert-koin:koin-core:3.2.2"
-    implementation "io.insert-koin:koin-android:3.3.0"
+    implementation "io.insert-koin:koin-core:3.4.0"
+    implementation "io.insert-koin:koin-android:3.4.0"
 
     //junit
     testImplementation("junit:junit:4.13.2")
     testImplementation("androidx.test:core-ktx:1.5.0")
-    testImplementation("io.insert-koin:koin-test:3.2.0")
-    testImplementation("io.insert-koin:koin-test-junit4:3.2.0")
+    testImplementation("io.insert-koin:koin-test:3.4.0")
+    testImplementation("io.insert-koin:koin-test-junit4:3.4.0")
     testImplementation("androidx.arch.core:core-testing:2.2.0")
     testImplementation("androidx.test.ext:truth:1.5.0")
 
