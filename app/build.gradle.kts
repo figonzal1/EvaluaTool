@@ -8,18 +8,18 @@
 
  Copyright (c) 2023
 
- Last modified 02-05-23 22:27
+ Last modified 18-06-23 18:37
  */
 
 import java.io.FileInputStream
 import java.util.Properties
 
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("com.google.gms.google-services")
-    id("com.google.firebase.crashlytics")
-    id("com.google.firebase.firebase-perf")
+    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.org.jetbrains.kotlin.android)
+    alias(libs.plugins.com.google.gms.google.services)
+    alias(libs.plugins.com.google.firebase.crashlytics)
+    alias(libs.plugins.com.google.firebase.firebase.perf)
 }
 
 android {
@@ -45,8 +45,8 @@ android {
         applicationId = "cl.figonzal.evaluatool"
         minSdk = 23
         targetSdk = 33
-        versionCode = 35
-        versionName = "1.0.7"
+        versionCode = 36
+        versionName = "1.0.8"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -105,52 +105,48 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.10.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(libs.androidx.core.core.ktx)
+    implementation(libs.androidx.appcompat)
 
-    implementation("com.google.android.material:material:1.8.0") //Material Design
-    implementation("androidx.preference:preference-ktx:1.2.0")//Preferencias de usuario
-    implementation("androidx.core:core-splashscreen:1.0.1")//splash screen
+    implementation(libs.com.google.android.material)
+    implementation(libs.androidx.preference.preference.ktx)
+    implementation(libs.androidx.core.core.splashscreen)
 
     //Life cycle components
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
+    implementation(libs.bundles.lifecycle)
 
     //FIREBASE
-    implementation(platform("com.google.firebase:firebase-bom:31.5.0"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-crashlytics-ktx")
-    implementation("com.google.firebase:firebase-perf-ktx")
+    implementation(platform(libs.com.google.firebase.firebase.bom))
+    implementation(libs.bundles.firebase)
 
-    implementation("com.jakewharton.timber:timber:5.0.1")//Timber logs
+    implementation(libs.com.jakewharton.timber)
 
     //Google Play
-    implementation("com.google.android.gms:play-services-base:18.2.0")
-    implementation("com.google.android.play:app-update-ktx:2.0.1")
+    implementation(libs.com.google.android.gms.play.services.base)
+    implementation(libs.com.google.android.play.app.update.ktx)
 
     //KOIN
-    implementation("io.insert-koin:koin-core:3.4.0")
-    implementation("io.insert-koin:koin-android:3.4.0")
+    implementation(libs.io.insert.koin.koin.core)
+    implementation(libs.io.insert.koin.koin.android)
 
     //junit
-    testImplementation("junit:junit:4.13.2")
-    testImplementation("androidx.test:core-ktx:1.5.0")
-    testImplementation("io.insert-koin:koin-test:3.4.0")
-    testImplementation("io.insert-koin:koin-test-junit4:3.4.0")
-    testImplementation("androidx.arch.core:core-testing:2.2.0")
-    testImplementation("androidx.test.ext:truth:1.5.0")
+    testImplementation(libs.junit)
+    testImplementation(libs.androidx.test.core.ktx)
+    testImplementation(libs.io.insert.koin.koin.test)
+    testImplementation(libs.io.insert.koin.koin.test.junit4)
+    testImplementation(libs.androidx.arch.core.testing)
+    testImplementation(libs.androidx.test.ext.truth)
 
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.test:rules:1.5.0")
-    androidTestImplementation("androidx.test:runner:1.5.2")
-    androidTestImplementation("androidx.test.espresso:espresso-contrib:3.5.1")
+    androidTestImplementation(libs.androidx.test.ext.junit)
+    androidTestImplementation(libs.androidx.test.espresso.espresso.core)
+    androidTestImplementation(libs.androidx.test.espresso.espresso.contrib)
+    androidTestImplementation(libs.androidx.test.rules)
+    androidTestImplementation(libs.androidx.test.runner)
 
     //DEBUG
-    debugImplementation("com.squareup.leakcanary:leakcanary-android:2.9.1")
+    debugImplementation(libs.com.squareup.leakcanary.leakcanary.android)
 
-    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:1.1.5")
+    coreLibraryDesugaring(libs.com.android.tools.desugar.jdk.libs)
 }
 
 sonarqube {
