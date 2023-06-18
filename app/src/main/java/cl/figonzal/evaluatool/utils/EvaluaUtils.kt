@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 19-06-22 23:32
+ Last modified 18-06-23 17:21
  */
 package cl.figonzal.evaluatool.utils
 
@@ -60,7 +60,7 @@ object EvaluaUtils {
      * @return Int percentile
      */
     fun calculatePercentile(
-        percentile: Array<Array<Double>>,
+        percentile: Array<DoubleArray>,
         pdTotal: Int,
         reverse: Boolean = false
     ) = when {

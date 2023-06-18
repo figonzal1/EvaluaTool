@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 21-06-22 00:54
+ Last modified 18-06-23 17:21
  */
 package cl.figonzal.evaluatool.ui.adapter
 
@@ -29,7 +29,7 @@ import cl.figonzal.evaluatool.utils.layoutInflater
  * @param context Used to get Resources
  * @version 18-04-2021
  */
-class BaremoAdapter(private var percentile: Array<Array<Double>>, private val context: Context) :
+class BaremoAdapter(private var percentile: Array<DoubleArray>, private val context: Context) :
     RecyclerView.Adapter<BaremoViewHolder>() {
 
     companion object {
@@ -56,7 +56,7 @@ class BaremoAdapter(private var percentile: Array<Array<Double>>, private val co
 
         private val binding = BaremoItemListBinding.bind(itemView)
 
-        fun bind(itemViewType: Int, context: Context, perc: Array<Array<Double>>) {
+        fun bind(itemViewType: Int, context: Context, perc: Array<DoubleArray>) {
 
             with(binding) {
                 when (itemViewType) {
@@ -72,6 +72,7 @@ class BaremoAdapter(private var percentile: Array<Array<Double>>, private val co
                             )
                         )
                     }
+
                     else -> {
                         val item = perc[adapterPosition - 1]
                         when {
@@ -81,6 +82,7 @@ class BaremoAdapter(private var percentile: Array<Array<Double>>, private val co
                                     context.theme
                                 )
                             )
+
                             else -> baremoItem.setBackgroundColor(
                                 context.resources.getColor(
                                     R.color.colorSurface,

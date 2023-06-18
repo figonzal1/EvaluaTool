@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 21:18
+ Last modified 18-06-23 17:21
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
@@ -16,5 +16,5 @@ package cl.figonzal.evaluatool.domain.baremo_tables.tables
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 
 interface BaremoTable {
-    fun getBaremo(baremo: BaseConstants): Array<Array<Double>>
+    fun getBaremo(baremo: BaseConstants): Array<DoubleArray>
 }

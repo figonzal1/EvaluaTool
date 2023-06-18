@@ -6,15 +6,14 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 18-06-22 12:20
+ Last modified 18-06-23 17:21
  */
 package cl.figonzal.evaluatool.ui.dialogs
 
 import android.app.Dialog
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import cl.figonzal.evaluatool.R
@@ -32,7 +31,7 @@ import timber.log.Timber
  * @version 10-06-2021
  */
 class BaremoDialogFragment(
-    private val percentile: Array<Array<Double>>,
+    private val percentile: Array<DoubleArray>,
     private val itemName: String
 ) :
     DialogFragment() {
@@ -41,7 +40,7 @@ class BaremoDialogFragment(
 
         val builder = MaterialAlertDialogBuilder(requireContext())
 
-        with(BaremoDialogLayoutBinding.inflate(LayoutInflater.from(context))) {
+        with(BaremoDialogLayoutBinding.inflate(layoutInflater)) {
 
             //Recycler view
             rvBaremo.apply {
