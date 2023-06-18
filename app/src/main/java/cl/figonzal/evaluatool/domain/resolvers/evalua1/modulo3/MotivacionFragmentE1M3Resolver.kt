@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 23:08
+ Last modified 18-06-23 11:58
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo3
@@ -39,7 +39,7 @@ class MotivacionFragmentE1M3Resolver(
 
     override fun getTotalPD() = totalPdTask1
 
-    override fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int {
+    override fun correctPD(percentile: Array<DoubleArray>, pdCurrent: Int): Int {
         when {
 
             pdCurrent < 0 -> return 0

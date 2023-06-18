@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 20-06-22 20:13
+ Last modified 18-06-23 11:58
  */
 
 package cl.figonzal.evaluatool.domain.resolvers
@@ -27,5 +27,5 @@ interface BaseResolver {
 
     fun getTotalPD(): Double
 
-    fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int
+    fun correctPD(percentile: Array<DoubleArray>, pdCurrent: Int): Int
 }

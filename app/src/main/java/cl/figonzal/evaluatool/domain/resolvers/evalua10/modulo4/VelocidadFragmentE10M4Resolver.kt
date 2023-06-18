@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 23:09
+ Last modified 18-06-23 11:58
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua10.modulo4
@@ -35,7 +35,7 @@ class VelocidadFragmentE10M4Resolver(
 
     override fun getTotalPD() = totalPdTask1
 
-    override fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int {
+    override fun correctPD(percentile: Array<DoubleArray>, pdCurrent: Int): Int {
         when {
             pdCurrent < percentile.first()[0].toInt() -> return percentile.first()[0].toInt()
             pdCurrent > percentile.last()[0].toInt() -> return percentile.last()[0].toInt()

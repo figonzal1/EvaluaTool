@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 21:15
+ Last modified 18-06-23 11:58
  */
 
 package cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1
@@ -45,7 +45,7 @@ class MemoriaVerbalE0M1Resolver(
         return total
     }
 
-    override fun correctPD(percentile: Array<Array<Double>>, pdCurrent: Int): Int {
+    override fun correctPD(percentile: Array<DoubleArray>, pdCurrent: Int): Int {
         //Verificar si pd_actual esta en la lista
         when {
             pdCurrent < 0 -> return 0
