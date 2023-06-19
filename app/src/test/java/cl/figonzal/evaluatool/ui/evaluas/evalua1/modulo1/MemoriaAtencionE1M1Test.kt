@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 22:26
+ Last modified 18-06-23 18:48
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo1
 
@@ -30,7 +30,7 @@ import org.koin.test.inject
 class MemoriaAtencionE1M1Test : KoinTest {
 
     private val baremoTable: BaremoTable by inject()
-    private lateinit var perc: Array<Array<Double>>
+    private lateinit var perc: Array<DoubleArray>
 
     @Before
     fun setUp() {

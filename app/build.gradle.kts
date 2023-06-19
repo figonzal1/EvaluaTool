@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 18:37
+ Last modified 18-06-23 21:36
  */
 
 import java.io.FileInputStream
@@ -139,7 +139,9 @@ dependencies {
 
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.androidx.test.espresso.espresso.core)
-    androidTestImplementation(libs.androidx.test.espresso.espresso.contrib)
+    androidTestImplementation(libs.androidx.test.espresso.espresso.contrib) {
+        exclude(module = "protobuf-lite")
+    }
     androidTestImplementation(libs.androidx.test.rules)
     androidTestImplementation(libs.androidx.test.runner)
 
