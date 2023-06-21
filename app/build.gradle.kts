@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 21:36
+ Last modified 21-06-23 02:00
  */
 
 import java.io.FileInputStream
@@ -90,16 +90,6 @@ android {
     }
     lint {
         checkDependencies = true
-    }
-    flavorDimensions += listOf("version")
-    productFlavors {
-        create("dev") {
-            dimension = "version"
-            versionNameSuffix = "-dev"
-        }
-        create("prod") {
-            dimension = "version"
-        }
     }
 }
 
