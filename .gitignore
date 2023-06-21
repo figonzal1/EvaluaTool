@@ -94,3 +94,5 @@ app/libs/
 
 /secrets.tar.gz
 keystore.properties
+/fastlane/google-play-fastlane.json
+/fastlane/.env

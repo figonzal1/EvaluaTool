@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 18:48
+ Last modified 20-06-23 15:22
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1
 
@@ -34,7 +34,7 @@ class SeriesE0M1Test : KoinTest {
 
     @Before
     fun setUp() {
-        val startKoin = startKoin {
+        startKoin {
 
             modules(
                 module {

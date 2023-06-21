@@ -1,0 +1,6 @@
+EvalúaTool es una calculadora que cuenta con diferentes módulos de evaluaciones psicopedaógicas para la versión 2.0 Chile. Desde el Evalúa 0 hasta el Evalúa 10.
+
+Navega a través de cada módulo dentro de los Evalúa y encontrarás diferentes evaluaciones, donde solo deberás ingresar el número de respuestas obtenidas por los alumnos y la herramienta te entregará automáticamente los resultados estadísticos obtenidos, dentro de los cuales por ejemplo: puntajes, percentiles y desviaciones estadísticas asociadas, puntajes tipificados, índices generales, etc.
+
+-------------------------------------------------------------------------------------------------------
+Main Icon made by Freepik from www.flaticon.com

@@ -144,9 +144,10 @@ dependencies {
     }
     androidTestImplementation(libs.androidx.test.rules)
     androidTestImplementation(libs.androidx.test.runner)
+    androidTestImplementation(libs.tools.fastlane.screengrab)
 
     //DEBUG
-    debugImplementation(libs.com.squareup.leakcanary.leakcanary.android)
+    //debugImplementation(libs.com.squareup.leakcanary.leakcanary.android)
 
     coreLibraryDesugaring(libs.com.android.tools.desugar.jdk.libs)
 }

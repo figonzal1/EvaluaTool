@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 23:08
+ Last modified 21-06-23 00:57
  */
 
 package cl.figonzal.evaluatool.evaluas
@@ -31,8 +31,8 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.ui.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers.`is`
 import org.hamcrest.Matchers.allOf
+import org.hamcrest.Matchers.`is`
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Before
 import org.junit.FixMethodOrder
@@ -66,7 +66,7 @@ class Evalua4Test {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        Thread.sleep(7000)
+        Thread.sleep(2000)
 
         clickEvalua4Btn()
         checkHeaders()
@@ -83,7 +83,7 @@ class Evalua4Test {
         // Added a sleep statement to match the app's execution delay.
         // The recommended way to handle such scenarios is to use Espresso idling resources:
         // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        Thread.sleep(7000)
+        Thread.sleep(2000)
 
         clickEvalua4Btn()
 
