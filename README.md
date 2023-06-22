@@ -4,14 +4,6 @@
 <h1 align="center">EvalúaTool</h1>
 <p align="center">
   
-  <!--<a href="https://img.shields.io/github/v/release/figonzal1/EvaluaTool?color=orange&include_prereleases" alt="Version">
-        <img alt="GitHub release" src="https://img.shields.io/github/v/release/figonzal1/EvaluaTool?color=orange&include_prereleases">
-  </a>-->
-  
-  <a href="https://snyk.io/test/github/figonzal1/EvaluaTool?targetFile=app/build.gradle" alt="Snyk">
-        <img src="https://snyk.io/test/github/figonzal1/EvaluaTool/badge.svg?targetFile=app/build.gradle" />
-  </a>
-  
   <a href="https://www.codefactor.io/repository/github/figonzal1/evaluatool" alt="CodeFactor">
         <img src="https://www.codefactor.io/repository/github/figonzal1/evaluatool/badge" />
   </a>
@@ -56,4 +48,4 @@ Mobile application that facilitates the calculation of scores of evaluations bel
   - [x] Evalúa - 10
   
  ## Screenshots
-<img src="https://github.com/figonzal1/EvaluaTool/blob/main/graphics/screenshots/Screenshot_20230302_001012.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/graphics/screenshots/Screenshot_20230302_001042.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/graphics/screenshots/Screenshot_20230302_001108.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/graphics/screenshots/Screenshot_20230302_001115.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/graphics/screenshots/Screenshot_20230302_001126.png" width="216" height="420">
+<img src="https://github.com/figonzal1/EvaluaTool/blob/main/fastlane/metadata/android/es-419/images/phoneScreenshots/main_activity_1687322664731.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/fastlane/metadata/android/es-419/images/phoneScreenshots/pensamiento_analog_activity_1687322695370.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/fastlane/metadata/android/es-419/images/phoneScreenshots/settings_activity_1687322724496.png" width="216" height="420"> <img src="https://github.com/figonzal1/EvaluaTool/blob/main/fastlane/metadata/android/es-419/images/phoneScreenshots/tabla_baremo_1687322711327.png" width="216" height="420">
