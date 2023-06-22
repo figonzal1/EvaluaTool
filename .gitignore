@@ -96,3 +96,4 @@ app/libs/
 keystore.properties
 /fastlane/google-play-fastlane.json
 /fastlane/.env
+/.idea/sonarlint/
