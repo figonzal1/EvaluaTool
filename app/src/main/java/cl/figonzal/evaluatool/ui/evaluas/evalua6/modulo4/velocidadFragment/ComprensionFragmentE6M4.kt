@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 22-06-22 00:22
+ Last modified 21-06-23 20:53
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.velocidadFragment
@@ -133,7 +133,9 @@ class ComprensionFragmentE6M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -169,7 +171,9 @@ class ComprensionFragmentE6M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -205,7 +209,9 @@ class ComprensionFragmentE6M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -261,6 +267,7 @@ class ComprensionFragmentE6M4 : Fragment() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

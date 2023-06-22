@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 28/2/22 1:27
+ Last modified 21-06-23 20:53
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo5
@@ -83,7 +83,9 @@ class IndiceGeneralEscrituraE9M5 : AppCompatActivity(), IndiceValorInterface {
                     subTotalT1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
                     when {

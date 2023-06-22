@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 15-10-22 13:32
+ Last modified 21-06-23 20:57
  */
 
 package cl.figonzal.evaluatool.service
@@ -50,6 +50,7 @@ class UpdaterService(
                         Timber.e(e, activity.getString(R.string.UPDATE_INTENT_FAILED))
                     }
                 }
+
                 else -> Timber.d(activity.getString(R.string.UPDATE_NOT_AVAILABLE))
             }
         }

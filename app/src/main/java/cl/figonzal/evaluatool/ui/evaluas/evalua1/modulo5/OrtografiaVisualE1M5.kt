@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 21-06-22 01:36
+ Last modified 21-06-23 20:51
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5
 
@@ -25,8 +25,12 @@ import cl.figonzal.evaluatool.databinding.ActivityOrtografiaVisualE1M5Binding
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaVisualE1M5Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaVisualE1M5Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua1.modulo5.OrtografiaVisualE1M5Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utils.*
+import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
+import cl.figonzal.evaluatool.utils.configureActionBar
+import cl.figonzal.evaluatool.utils.formatResult
+import cl.figonzal.evaluatool.utils.formatSubTotalPoints
+import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.android.ext.android.inject
@@ -113,7 +117,9 @@ class OrtografiaVisualE1M5 : AppCompatActivity() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -160,6 +166,7 @@ class OrtografiaVisualE1M5 : AppCompatActivity() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

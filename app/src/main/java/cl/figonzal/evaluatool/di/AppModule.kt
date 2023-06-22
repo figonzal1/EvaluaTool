@@ -6,15 +6,30 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 23-06-22 22:26
+ Last modified 21-06-23 20:47
  */
 
 package cl.figonzal.evaluatool.di
 
-import cl.figonzal.evaluatool.domain.baremo_tables.tables.*
-import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.*
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.BaremoTable
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua0Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua10Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua1Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua2Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua3Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua4Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua5Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua6Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua7Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua8Baremo
+import cl.figonzal.evaluatool.domain.baremo_tables.tables.Evalua9Baremo
+import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.ClasificacionE0M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.LetrasYNumerosE0M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.MemoriaVerbalE0M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.OrganizacionPerceptivaE0M1Resolver
+import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo1.SeriesE0M1Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2.CopiaDibujosE0M2Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo2.GrafoMotricidadE0M2Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua0.modulo3.HabilidadesFonologicasE0M3Resolver

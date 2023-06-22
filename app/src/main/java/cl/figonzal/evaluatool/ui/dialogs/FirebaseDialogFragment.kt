@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 25-05-22 23:11
+ Last modified 21-06-23 21:25
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -20,7 +20,6 @@ import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ClickableSpan
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.DialogFragment
@@ -46,7 +45,7 @@ class FirebaseDialogFragment(
 
         val builder = MaterialAlertDialogBuilder(requireContext())
 
-        val binding = FirebaseDialogLayoutBinding.inflate(LayoutInflater.from(requireContext()))
+        val binding = FirebaseDialogLayoutBinding.inflate(layoutInflater)
 
         this.isCancelable = false
 
@@ -74,6 +73,7 @@ class FirebaseDialogFragment(
 
             val clickable = object : ClickableSpan() {
                 override fun onClick(view: View) {
+                    //Not used
                 }
             }
 

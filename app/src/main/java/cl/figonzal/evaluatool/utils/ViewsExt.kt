@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 06-09-22 17:37
+ Last modified 21-06-23 20:57
  */
 
 package cl.figonzal.evaluatool.utils
@@ -45,7 +45,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.shape.CornerFamily
 import com.google.android.material.switchmaterial.SwitchMaterial
 import timber.log.Timber
-import java.util.*
+import java.util.Locale
 
 /**
  * Navigate from main activity to other activity
@@ -126,6 +126,7 @@ fun Activity.configureFABWsp(fabWsp: FabWhatsapLayoutBinding) {
                 }
 
             }
+
             else -> {
                 //try to install package
                 Intent(Intent.ACTION_VIEW).apply {
@@ -247,18 +248,9 @@ fun MaterialCardView.setUpCardViewCustomCorners() {
         .build()
 }
 
-/*fun Activity.setLatexText(
-    cvFormula: MaterialCardView,
-    mathJaxWebView: MathJaxWebView,
-    formula: String
-) {
-    cvFormula.visibility = View.VISIBLE
-    mathJaxWebView.setText(formula)
-}*/
-
 fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
 
-    val privacyDialogShowed: Boolean = sharedPrefUtil.getData(
+    val privacyDialogShowed = sharedPrefUtil.getData(
         getString(R.string.SHARED_PREF_PRIVACY_POLICY),
         false
     ) as Boolean
@@ -272,6 +264,7 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
 
             Timber.d(getString(R.string.privacy_policy_show))
         }
+
         else -> Timber.d(getString(R.string.privacy_policy_not_show))
     }
 
@@ -292,6 +285,7 @@ fun ComponentActivity.handleNightMode(
 
             setUpSwitchDarkMode(binding.includeSwitch.switchMaterial, sharedPrefUtil)
         }
+
         else -> {
             Timber.d("ANDROID_VERSION > Q: ${Build.VERSION.SDK_INT}")
 
@@ -331,6 +325,7 @@ private fun Context.setUpSwitchDarkMode(
 
                     sharedPrefUtil.saveData(getString(R.string.NIGHT_MODE_KEY), true)
                 }
+
                 else -> {
                     toast(getString(R.string.NIGHT_MODE_OFF))
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)

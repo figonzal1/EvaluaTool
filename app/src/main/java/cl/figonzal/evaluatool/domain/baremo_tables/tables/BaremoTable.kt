@@ -8,13 +8,13 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 17:21
+ Last modified 21-06-23 20:22
  */
 
 package cl.figonzal.evaluatool.domain.baremo_tables.tables
 
 import cl.figonzal.evaluatool.domain.baremo_tables.constants.BaseConstants
 
-interface BaremoTable {
+fun interface BaremoTable {
     fun getBaremo(baremo: BaseConstants): Array<DoubleArray>
 }

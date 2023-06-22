@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 21-06-22 11:30
+ Last modified 21-06-23 20:51
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1
 
@@ -25,8 +25,12 @@ import cl.figonzal.evaluatool.databinding.ActivityPensamientoAnalogicoE2M1Bindin
 import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.PensamientoAnalogicoE2M1Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.PensamientoAnalogicoE2M1Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua2.modulo1.PensamientoAnalogicoE2M1Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utils.*
+import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
+import cl.figonzal.evaluatool.utils.configureActionBar
+import cl.figonzal.evaluatool.utils.formatResult
+import cl.figonzal.evaluatool.utils.formatSubTotalPoints
+import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.android.ext.android.inject
@@ -133,7 +137,9 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -167,7 +173,9 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -205,7 +213,9 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
                     resolver.totalPdTask2 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -240,7 +250,9 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
                     resolver.totalPdTask2 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -298,6 +310,7 @@ class PensamientoAnalogicoE2M1 : AppCompatActivity() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 01-03-23 23:19
+ Last modified 21-06-23 20:57
  */
 
 package cl.figonzal.evaluatool.service
@@ -26,8 +26,8 @@ import com.google.android.material.button.MaterialButton
 import timber.log.Timber
 
 class ChangeLogService(
-        private val activity: Activity,
-        private val sharedPrefUtil: SharedPrefUtil
+    private val activity: Activity,
+    private val sharedPrefUtil: SharedPrefUtil
 ) : DefaultLifecycleObserver {
 
     private var versionCode: Int = BuildConfig.VERSION_CODE
@@ -47,8 +47,8 @@ class ChangeLogService(
 
         //GET STORED VERSION CODE
         val sharedVersionCode = sharedPrefUtil.getData(
-                activity.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
-                0
+            activity.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE),
+            0
         ) as Int
 
         Timber.d("${activity.getString(R.string.SHARED_VERSION_CODE_APP)}$sharedVersionCode")
@@ -60,6 +60,7 @@ class ChangeLogService(
                 showBottomDialog()
                 Timber.d(activity.getString(R.string.NEW_VERSION_DETECTED))
             }
+
             else -> Timber.d(activity.getString(R.string.NO_VERSION_DETECTED))
         }
     }
@@ -73,10 +74,10 @@ class ChangeLogService(
 
             findViewById<TextView>(R.id.tv_version)?.text = version
             findViewById<TextView>(R.id.tv_changes_list)?.text =
-                    listImprovements.printChangeLogList()
+                listImprovements.printChangeLogList()
             findViewById<MaterialButton>(R.id.btn_change_log)?.setOnClickListener {
                 sharedPrefUtil.saveData(
-                        context.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE), versionCode
+                    context.getString(R.string.SHARED_PREF_ACTUAL_VERSION_CODE), versionCode
                 )
                 dismiss()
             }

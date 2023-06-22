@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 21-06-22 01:11
+ Last modified 21-06-23 20:51
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo3.adaptacionFragments
 
@@ -125,7 +125,9 @@ class MotivacionFragmentE1M3 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -176,6 +178,7 @@ class MotivacionFragmentE1M3 : Fragment() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

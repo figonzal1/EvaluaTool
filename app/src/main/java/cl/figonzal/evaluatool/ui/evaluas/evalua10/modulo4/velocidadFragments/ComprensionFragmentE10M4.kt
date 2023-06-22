@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 22-06-22 21:23
+ Last modified 21-06-23 21:06
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.velocidadFragments
@@ -133,7 +133,9 @@ class ComprensionFragmentE10M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -169,7 +171,9 @@ class ComprensionFragmentE10M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -205,7 +209,9 @@ class ComprensionFragmentE10M4 : Fragment() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -230,8 +236,8 @@ class ComprensionFragmentE10M4 : Fragment() {
         }
     }
 
-    private fun calculateComprehension(pd_actual: Int): String {
-        return when (pd_actual) {
+    private fun calculateComprehension(pdActual: Int): String {
+        return when (pdActual) {
             in 0..2 -> getString(R.string.COMPRENSION_MUY_BAJA)
             in 3..4 -> getString(R.string.COMPRENSION_BAJA)
             in 5..6 -> getString(R.string.COMPRENSION_MEDIA)
@@ -279,6 +285,7 @@ class ComprensionFragmentE10M4 : Fragment() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

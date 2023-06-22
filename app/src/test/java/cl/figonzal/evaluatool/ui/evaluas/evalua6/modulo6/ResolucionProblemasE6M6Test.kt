@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 18:48
+ Last modified 21-06-23 21:07
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo6
@@ -75,8 +75,8 @@ class ResolucionProblemasE6M6Test : KoinTest {
 
             val expDeviation = it[2]
             val calcDeviation = calculateDeviation(
-                MEAN = MEDIA,
-                DEVIATION = DESVIACION,
+                mean = MEDIA,
+                deviation = DESVIACION,
                 pdTotal = it[0].toInt()
             ).toDouble()
             assertThat(expDeviation).isEqualTo(calcDeviation)

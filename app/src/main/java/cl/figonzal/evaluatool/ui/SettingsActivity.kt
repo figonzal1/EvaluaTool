@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 31-10-22 12:13
+ Last modified 21-06-23 20:57
  */
 
 package cl.figonzal.evaluatool.ui
@@ -85,6 +85,7 @@ class SettingsActivity : AppCompatActivity() {
                                 Intent.createChooser(this, getString(R.string.email_chooser_title))
                             )
                         }
+
                         else -> requireActivity().toast(getString(R.string.email_intent_fail))
                     }
                 }
@@ -108,6 +109,7 @@ class SettingsActivity : AppCompatActivity() {
                         FirebaseService.runCrashlyticsService()
                         true
                     }
+
                     else -> {
                         requireActivity().toast(getString(R.string.firebase_crashlytics_off))
                         FirebaseService.stopCrashlyticsService()
@@ -131,6 +133,7 @@ class SettingsActivity : AppCompatActivity() {
                         FirebaseService.runPerformanceService()
                         true
                     }
+
                     else -> {
                         requireActivity().toast(getString(R.string.firebase_performance_off))
                         FirebaseService.stopPerformanceService()

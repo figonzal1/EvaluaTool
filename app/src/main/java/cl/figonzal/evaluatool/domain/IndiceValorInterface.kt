@@ -6,12 +6,12 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 27/2/22 22:35
+ Last modified 21-06-23 20:44
  */
 package cl.figonzal.evaluatool.domain
 
-interface IndiceValorInterface {
+fun interface IndiceValorInterface {
     fun calculateResult()
 }

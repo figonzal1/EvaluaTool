@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 18-06-23 17:21
+ Last modified 21-06-23 21:07
  */
 package cl.figonzal.evaluatool.utils
 
@@ -34,21 +34,21 @@ object EvaluaUtils {
     /**
      * Function in charge of calculating the deviation of a student's PD (Method with generic implementation)
      *
-     * @param MEAN
-     * @param DEVIATION
+     * @param mean
+     * @param deviation
      * @param reverse Used to change the order calculation
      * @param pdTotal Direct score
      *
      * @return String desviacion
      */
     fun calculateDeviation(
-        MEAN: Double,
-        DEVIATION: Double,
+        mean: Double,
+        deviation: Double,
         pdTotal: Int,
         reverse: Boolean = false
     ) = when {
-        !reverse -> ((pdTotal - MEAN) / DEVIATION * 100.0).roundToInt() / 100.0
-        else -> ((MEAN - pdTotal) / DEVIATION * 100.0).roundToInt() / 100.0
+        !reverse -> ((pdTotal - mean) / deviation * 100.0).roundToInt() / 100.0
+        else -> ((mean - pdTotal) / deviation * 100.0).roundToInt() / 100.0
     }.toString()
 
     /**
@@ -78,6 +78,7 @@ object EvaluaUtils {
                 }
             }
         }
+
         else -> {
             when {
                 pdTotal > percentile.first()[0].toInt() -> percentile.first()[1].toInt()

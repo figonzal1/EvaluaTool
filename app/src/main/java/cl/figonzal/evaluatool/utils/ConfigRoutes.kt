@@ -6,14 +6,19 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 27/2/22 22:24
+ Last modified 21-06-23 20:51
  */
 package cl.figonzal.evaluatool.utils
 
 import cl.figonzal.evaluatool.R
-import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.ClasificacionE0M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.IndiceGeneralCognitivoE0M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.LetrasYNumerosE0M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.MemoriaVerbalE0M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.OrganizacionPerceptivaE0M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo1.SeriesE0M1
 import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.CopiaDibujosE0M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.GrafoMotricidadE0M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua0.modulo2.IndiceGeneralEspacialE0M2
@@ -35,7 +40,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5.OrtografiaVisualE1M5
 import cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo5.ValoracionGlobalEscrituraE1M5
 import cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo6.CalculoNumeracionE1M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo1.AtencionConcentracionE10M1
-import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.IndiceGeneralCognitivoE10M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoDeductivoE10M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoEspacialE10M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.RazonamientoInductivoE10M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo2.ValoracionGlobalRazonamientoE10M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo3.NivelesAdaptacionE10M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.ComprensionLectoraE10M4
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo4.IndiceGeneralLecturaE10M4
@@ -46,7 +55,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.CalculoNumeracionE10M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.IndiceGeneralMatematicasE10M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.ResolucionProblemasE10M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua10.modulo6.ValoracionGlobalMatematicasE10M6
-import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.ClasificacionesE2M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.IndiceGeneralCognitivoE2M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.OrganizacionPerceptivaE2M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.PensamientoAnalogicoE2M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo1.ValoracionGlobalRazonamientoE2M1
 import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo2.MemoriaAtencionE2M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo3.NivelesAdaptacionE2M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua2.modulo4.ComprensionLectoraE2M4
@@ -75,7 +88,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.CalculoNumeracionE3M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.ResolucionProblemasE3M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6.ValoracionGlobalAprenMatematE3M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo1.MemoriaAtencionE4M1
-import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.IndiceGeneralCognitivoE4M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.OrganizacionPerceptivaE4M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.PensamientoAnalogicoE4M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.ReflexividadE4M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo2.ValoracionGlobalRazonamientoE4M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo3.NivelesAdaptacionE4M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.ComprensionLectoraE4M4
 import cl.figonzal.evaluatool.ui.evaluas.evalua4.modulo4.IndiceGeneralLecturaE4M4
@@ -103,7 +120,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo5.ValoracionGlobalEscritu
 import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.CalculoNumeracionE5M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.ResolucionProblemasE5M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua5.modulo6.ValoracionGlobalMatematicasE5M6
-import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.IndiceGeneralCognitivoE6M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.OrganizacionPerceptivaE6M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.PensamientoAnalogicoE6M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.ReflexividadE6M1
+import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo1.ValoracionGlobalRazonamientoE6M1
 import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo2.MemoriaAtencionE6M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo3.NivelesAdaptacionE6M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua6.modulo4.ComprensionLectoraE6M4
@@ -130,7 +151,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo5.OrtografiaVisualReglada
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.CalculoNumeracionE7M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo6.ResolucionProblemasE7M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo1.AtencionConcentracionE8M1
-import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.IndiceGeneralCognitivoE8M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoDeductivoE8M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoEspacialE8M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.RazonamientoInductivoE8M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo2.ValoracionGlobalRazonamientoE8M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo3.NivelesAdaptacionE8M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.ComprensionLectoraE8M4
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo4.EficaciaLectoraE8M4
@@ -143,7 +168,11 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.IndiceGeneralMatematica
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.ResolucionProblemasE8M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.modulo6.ValoracionGlobalMatematicasE8M6
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo1.AtencionConcentracionE9M1
-import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.*
+import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.IndiceGeneralCognitivoE9M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoDeductivoE9M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoEspacialE9M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.RazonamientoInductivoE9M2
+import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo2.ValoracionGlobalRazonamientoE9M2
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo3.NivelesAdaptacionE9M3
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.ComprensionLectoraE9M4
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.modulo4.EficaciaLectoraE9M4

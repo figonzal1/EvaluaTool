@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 22-06-22 02:59
+ Last modified 21-06-23 20:53
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua7.modulo2
 
@@ -25,8 +25,12 @@ import cl.figonzal.evaluatool.databinding.ActivityRazonamientoDeductivoE7M2Bindi
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver.Companion.DEVIATION
 import cl.figonzal.evaluatool.domain.resolvers.evalua7.modulo2.RazonamientoDeductivoE7M2Resolver.Companion.MEAN
-import cl.figonzal.evaluatool.utils.*
+import cl.figonzal.evaluatool.utils.EvaluaUtils
 import cl.figonzal.evaluatool.utils.EvaluaUtils.configBaremoText
+import cl.figonzal.evaluatool.utils.configureActionBar
+import cl.figonzal.evaluatool.utils.formatResult
+import cl.figonzal.evaluatool.utils.formatSubTotalPoints
+import cl.figonzal.evaluatool.utils.setAlertDialogCorregido
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.google.android.material.textfield.TextInputEditText
 import org.koin.android.ext.android.inject
@@ -115,7 +119,9 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -150,7 +156,9 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity() {
                     resolver.totalPdTask1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -198,6 +206,7 @@ class RazonamientoDeductivoE7M2 : AppCompatActivity() {
                     percentile,
                     true
                 )
+
                 else -> progressBar.progress = percentile
             }
 

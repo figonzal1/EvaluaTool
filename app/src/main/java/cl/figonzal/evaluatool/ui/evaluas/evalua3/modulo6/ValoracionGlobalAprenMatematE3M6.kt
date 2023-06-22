@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 28/2/22 1:20
+ Last modified 21-06-23 20:51
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua3.modulo6
 
@@ -88,7 +88,9 @@ class ValoracionGlobalAprenMatematE3M6 : AppCompatActivity(), IndiceValorInterfa
                     subTotalT1 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 
@@ -116,7 +118,9 @@ class ValoracionGlobalAprenMatematE3M6 : AppCompatActivity(), IndiceValorInterfa
                     subTotalT2 = 0.0
                 }
 
-                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {}
+                override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                    //Not used
+                }
 
                 override fun afterTextChanged(s: Editable) {
 

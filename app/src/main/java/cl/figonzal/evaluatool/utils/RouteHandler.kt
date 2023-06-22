@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 26/2/22 23:19
+ Last modified 21-06-23 21:26
  */
 
 package cl.figonzal.evaluatool.utils
@@ -69,7 +69,7 @@ object RouteHandler {
      *
      * @param activity Parent Activity
      * @param destActivity ChildActivity (Destination activity)
-     * @param TAG tag for logs
+     * @param tag tag for logs
      * @param msg  Msg for logs
      *
      * @return Unit
@@ -77,10 +77,10 @@ object RouteHandler {
     private fun openActivity(
         activity: Activity,
         destActivity: Class<*>?,
-        TAG: String,
+        tag: String,
         msg: String
     ) {
-        Timber.i("%s%s", TAG, msg)
+        Timber.i("%s%s", tag, msg)
         activity.startActivity(Intent(activity, destActivity))
     }
 }

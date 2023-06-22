@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2023
 
- Last modified 15-10-22 12:36
+ Last modified 21-06-23 20:57
  */
 
 package cl.figonzal.evaluatool.service
@@ -55,6 +55,7 @@ class GooglePlayService(
                         show()
                     }
                 }
+
                 else -> {
 
                     //El error no puede ser resuelto por el usuario y la app se cierra
@@ -62,6 +63,7 @@ class GooglePlayService(
                     activity.finish()
                 }
             }
+
             else -> Timber.d(activity.getString(R.string.GP_UPDATED))
         }
     }
