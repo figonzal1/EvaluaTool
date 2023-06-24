@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 21-06-23 20:57
+ Last modified 23-06-23 23:36
  */
 
 package cl.figonzal.evaluatool.ui
@@ -74,20 +74,17 @@ class SettingsActivity : AppCompatActivity() {
 
             findPreference<Preference>(getString(R.string.contact_key))?.setOnPreferenceClickListener {
 
-                Intent(Intent.ACTION_SEND).apply {
-                    putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.mail_to_felipe)))
+                Intent(
+                    Intent.ACTION_SENDTO,
+                    Uri.parse(
+                        "mailto:${getString(R.string.mail_to_felipe)}" +
+                                "?subject=${getString(R.string.email_subject)}"
+                    )
+                ).apply {
                     putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
-                    type = "text/plain"
-
-                    when {
-                        resolveActivity(requireActivity().packageManager) != null -> {
-                            requireActivity().startActivity(
-                                Intent.createChooser(this, getString(R.string.email_chooser_title))
-                            )
-                        }
-
-                        else -> requireActivity().toast(getString(R.string.email_intent_fail))
-                    }
+                    requireActivity().startActivity(
+                        Intent.createChooser(this, getString(R.string.email_chooser_title))
+                    )
                 }
                 true
             }
