@@ -1,10 +1,9 @@
 [versions]
 androidx-appcompat = "1.6.1"
 androidx-lifecycle = "2.6.1"
-androidx-preference = "1.2.0"
+androidx-preference = "1.2.1"
 androidx-test-espresso = "3.5.1"
-com-squareup-leakcanary = "2.9.1"
-io-insert-koin = "3.4.2"
+io-insert-koin = "3.4.3"
 
 [libraries]
 androidx-core-core-ktx = "androidx.core:core-ktx:1.10.1"
@@ -14,10 +13,10 @@ androidx-preference-preference-ktx = { module = "androidx.preference:preference-
 androidx-core-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
-com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.1.1"
-com-google-firebase-firebase-analytics-ktx = "com.google.firebase:firebase-analytics-ktx:21.3.0"
-com-google-firebase-firebase-crashlytics-ktx = "com.google.firebase:firebase-crashlytics-ktx:18.3.7"
-com-google-firebase-firebase-perf-ktx = "com.google.firebase:firebase-perf-ktx:20.3.3"
+com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.2.2"
+com-google-firebase-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+com-google-firebase-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+com-google-firebase-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
 com-jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
 com-google-android-gms-play-services-base = "com.google.android.gms:play-services-base:18.2.0"
 com-google-android-play-app-update-ktx = "com.google.android.play:app-update-ktx:2.1.0"
@@ -26,8 +25,8 @@ io-insert-koin-koin-core = { module = "io.insert-koin:koin-core", version.ref = 
 #TESTING
 junit = "junit:junit:4.13.2"
 androidx-test-core-ktx = "androidx.test:core-ktx:1.5.0"
-io-insert-koin-koin-test = "io.insert-koin:koin-test:3.4.1"
-io-insert-koin-koin-test-junit4 = "io.insert-koin:koin-test-junit4:3.4.1"
+io-insert-koin-koin-test = { module = "io.insert-koin:koin-test", version.ref = "io-insert-koin" }
+io-insert-koin-koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "io-insert-koin" }
 androidx-arch-core-testing = "androidx.arch.core:core-testing:2.2.0"
 androidx-test-ext-truth = "androidx.test.ext:truth:1.5.0"
 androidx-test-ext-junit = "androidx.test.ext:junit:1.1.5"
@@ -36,7 +35,6 @@ androidx-test-espresso-espresso-core = { module = "androidx.test.espresso:espres
 androidx-test-rules = "androidx.test:rules:1.5.0"
 androidx-test-runner = "androidx.test:runner:1.5.2"
 com-android-tools-desugar_jdk_libs = "com.android.tools:desugar_jdk_libs:2.0.3"
-com-squareup-leakcanary-leakcanary-android = { module = "com.squareup.leakcanary:leakcanary-android", version.ref = "com-squareup-leakcanary" }
 tools-fastlane-screengrab = "tools.fastlane:screengrab:2.1.1"
 
 [bundles]
@@ -54,9 +52,9 @@ firebase = [
 com-android-application = "com.android.application:8.1.0"
 com-android-library = "com.android.library:8.1.0"
 com-github-ben-manes-versions = "com.github.ben-manes.versions:0.47.0"
-com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.6"
+com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.8"
 com-google-firebase-firebase-perf = "com.google.firebase.firebase-perf:1.4.2"
 com-google-gms-google-services = "com.google.gms.google-services:4.3.15"
-nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.0"
-org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.8.22"
-org-sonarqube = "org.sonarqube:4.2.1.3168"
+nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.1"
+org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.9.0"
+org-sonarqube = "org.sonarqube:4.3.0.3225"
