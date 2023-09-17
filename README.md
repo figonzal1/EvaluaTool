@@ -3,15 +3,19 @@
 </p>
 <h1 align="center">EvalúaTool</h1>
 <p align="center">
-  
+
+  <a href="https://snyk.io/test/github/figonzal1/EvaluaTool/badge.svg" >
+        <img alt="Snyk" src="https://snyk.io/test/github/figonzal1/EvaluaTool/badge.svg" >
+  </a>
+
   <a href="https://www.codefactor.io/repository/github/figonzal1/evaluatool" alt="CodeFactor">
         <img src="https://www.codefactor.io/repository/github/figonzal1/evaluatool/badge" />
   </a>
-  
+
   <a href="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool?color=orange" alt="Top Language">
         <img alt="GitHub repo language" src="https://img.shields.io/github/languages/top/figonzal1/EvaluaTool?color=orange">
   </a>
-  
+
   <a href="https://img.shields.io/github/repo-size/figonzal1/EvaluaTool" alt="GitHub repo size">
         <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/figonzal1/EvaluaTool">
   </a>
