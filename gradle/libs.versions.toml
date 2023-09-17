@@ -1,19 +1,19 @@
 [versions]
 androidx-appcompat = "1.6.1"
-androidx-lifecycle = "2.6.1"
+androidx-lifecycle = "2.6.2"
 androidx-preference = "1.2.1"
 androidx-test-espresso = "3.5.1"
-io-insert-koin = "3.4.3"
+io-insert-koin = "3.5.0"
 
 [libraries]
-androidx-core-core-ktx = "androidx.core:core-ktx:1.10.1"
+androidx-core-core-ktx = "androidx.core:core-ktx:1.12.0"
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 com-google-android-material = "com.google.android.material:material:1.9.0"
 androidx-preference-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidx-preference" }
 androidx-core-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
-com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.2.2"
+com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.3.1"
 com-google-firebase-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 com-google-firebase-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 com-google-firebase-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
@@ -51,10 +51,10 @@ firebase = [
 [plugins]
 com-android-application = "com.android.application:8.1.1"
 com-android-library = "com.android.library:8.1.1"
-com-github-ben-manes-versions = "com.github.ben-manes.versions:0.47.0"
-com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.8"
+com-github-ben-manes-versions = "com.github.ben-manes.versions:0.48.0"
+com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.9"
 com-google-firebase-firebase-perf = "com.google.firebase.firebase-perf:1.4.2"
-com-google-gms-google-services = "com.google.gms.google-services:4.3.15"
+com-google-gms-google-services = "com.google.gms.google-services:4.4.0"
 nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.1"
-org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.9.0"
-org-sonarqube = "org.sonarqube:4.3.0.3225"
+org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.9.10"
+org-sonarqube = "org.sonarqube:4.3.1.3277"
