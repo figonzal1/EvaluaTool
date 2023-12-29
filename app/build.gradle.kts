@@ -8,7 +8,7 @@
 
  Copyright (c) 2023
 
- Last modified 17-09-23 00:50
+ Last modified 12/29/23, 8:21 PM
  */
 
 import java.io.FileInputStream
@@ -39,14 +39,13 @@ android {
 
     namespace = "cl.figonzal.evaluatool"
     compileSdk = 34
-    buildToolsVersion = "33.0.2"
 
     defaultConfig {
         applicationId = "cl.figonzal.evaluatool"
         minSdk = 23
         targetSdk = 34
-        versionCode = 38
-        versionName = "1.1"
+        versionCode = 39
+        versionName = "1.1.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -87,6 +86,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
     lint {
         checkDependencies = true
