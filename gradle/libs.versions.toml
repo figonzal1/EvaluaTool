@@ -1,6 +1,6 @@
 [versions]
 androidx-appcompat = "1.6.1"
-androidx-lifecycle = "2.6.2"
+androidx-lifecycle = "2.7.0"
 androidx-preference = "1.2.1"
 androidx-test-espresso = "3.5.1"
 io-insert-koin = "3.5.3"
@@ -14,12 +14,12 @@ androidx-preference-preference-ktx = { module = "androidx.preference:preference-
 androidx-core-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
-com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.7.0"
+com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.7.3"
 com-google-firebase-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 com-google-firebase-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 com-google-firebase-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
 com-jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
-com-google-android-gms-play-services-base = "com.google.android.gms:play-services-base:18.2.0"
+com-google-android-gms-play-services-base = "com.google.android.gms:play-services-base:18.3.0"
 com-google-android-play-app-update-ktx = "com.google.android.play:app-update-ktx:2.1.0"
 io-insert-koin-koin-android = { module = "io.insert-koin:koin-android", version.ref = "io-insert-koin" }
 io-insert-koin-koin-core = { module = "io.insert-koin:koin-core", version.ref = "io-insert-koin" }
@@ -50,12 +50,12 @@ firebase = [
 ]
 
 [plugins]
-com-android-application = "com.android.application:8.2.0"
-com-android-library = "com.android.library:8.2.0"
-com-github-ben-manes-versions = "com.github.ben-manes.versions:0.50.0"
+com-android-application = "com.android.application:8.2.2"
+com-android-library = "com.android.library:8.2.2"
+com-github-ben-manes-versions = "com.github.ben-manes.versions:0.51.0"
 com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.9"
 com-google-firebase-firebase-perf = "com.google.firebase.firebase-perf:1.4.2"
-com-google-gms-google-services = "com.google.gms.google-services:4.4.0"
-nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.3"
+com-google-gms-google-services = "com.google.gms.google-services:4.4.1"
+nl-littlerobots-version-catalog-update = "nl.littlerobots.version-catalog-update:0.8.4"
 org-jetbrains-kotlin-android = "org.jetbrains.kotlin.android:1.9.22"
 org-sonarqube = "org.sonarqube:4.4.1.3373"
