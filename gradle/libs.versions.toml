@@ -3,23 +3,23 @@ androidx-appcompat = "1.6.1"
 androidx-lifecycle = "2.7.0"
 androidx-preference = "1.2.1"
 androidx-test-espresso = "3.5.1"
-io-insert-koin = "3.5.3"
+io-insert-koin = "3.5.6"
 androidx-test = "1.5.0"
 
 [libraries]
-androidx-core-core-ktx = "androidx.core:core-ktx:1.12.0"
+androidx-core-core-ktx = "androidx.core:core-ktx:1.13.0"
 androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 com-google-android-material = "com.google.android.material:material:1.11.0"
 androidx-preference-preference-ktx = { module = "androidx.preference:preference-ktx", version.ref = "androidx-preference" }
 androidx-core-core-splashscreen = "androidx.core:core-splashscreen:1.0.1"
 androidx-lifecycle-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
-com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.8.0"
+com-google-firebase-firebase-bom = "com.google.firebase:firebase-bom:32.8.1"
 com-google-firebase-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 com-google-firebase-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 com-google-firebase-firebase-perf-ktx = { module = "com.google.firebase:firebase-perf-ktx" }
 com-jakewharton-timber = "com.jakewharton.timber:timber:5.0.1"
-com-google-android-gms-play-services-base = "com.google.android.gms:play-services-base:18.3.0"
+com-google-android-gms-play-services-base = "com.google.android.gms:play-services-base:18.4.0"
 com-google-android-play-app-update-ktx = "com.google.android.play:app-update-ktx:2.1.0"
 io-insert-koin-koin-android = { module = "io.insert-koin:koin-android", version.ref = "io-insert-koin" }
 io-insert-koin-koin-core = { module = "io.insert-koin:koin-core", version.ref = "io-insert-koin" }
@@ -50,8 +50,8 @@ firebase = [
 ]
 
 [plugins]
-com-android-application = "com.android.application:8.3.1"
-com-android-library = "com.android.library:8.3.1"
+com-android-application = "com.android.application:8.3.2"
+com-android-library = "com.android.library:8.3.2"
 com-github-ben-manes-versions = "com.github.ben-manes.versions:0.51.0"
 com-google-firebase-crashlytics = "com.google.firebase.crashlytics:2.9.9"
 com-google-firebase-firebase-perf = "com.google.firebase.firebase-perf:1.4.2"
