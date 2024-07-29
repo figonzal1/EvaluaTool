@@ -25,7 +25,7 @@ plugins {
 android {
 
     val prop = Properties().apply {
-        load(FileInputStream(File(rootProject.rootDir, "keystore.properties")))
+        load(FileInputStream(File(rootProject.rootDir, "keys/keystore.properties")))
     }
 
     signingConfigs {
