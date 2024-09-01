@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2024
 
- Last modified 27/2/22 18:01
+ Last modified 01-09-24 16:42
  */
 
 package cl.figonzal.evaluatool.utils
@@ -16,12 +16,13 @@ package cl.figonzal.evaluatool.utils
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.content.edit
-import cl.figonzal.evaluatool.R
+
+private const val SHARED_PREF_MASTER_KEY = "evalua_tool"
 
 class SharedPrefUtil(context: Context) {
 
-    private val sharedPreferences: SharedPreferences = context.getSharedPreferences(
-        context.getString(R.string.shared_pref_master_key),
+    val sharedPreferences: SharedPreferences = context.getSharedPreferences(
+        SHARED_PREF_MASTER_KEY,
         Context.MODE_PRIVATE
     )
 
@@ -39,7 +40,8 @@ class SharedPrefUtil(context: Context) {
                 is Boolean -> putBoolean(key, value)
                 is Long -> putLong(key, value)
                 is Float -> putFloat(key, value)
-                else -> putString(key, value as String)
+                is String -> putString(key, value)
+                else -> throw IllegalArgumentException("Unsupported value type")
             }
         }
     }
@@ -48,20 +50,15 @@ class SharedPrefUtil(context: Context) {
      * Function that retrieve data from shared preferences
      *
      * @param key Key that store the data in shared preferences
-     * @param defaultvalue If the store value is inaccessible
+     * @param defaultValue If the store value is inaccessible
      * @return Any
      */
-    fun getData(key: String, defaultvalue: Any): Any {
-
-        with(sharedPreferences) {
-            return when (defaultvalue) {
-                is Int -> getInt(key, defaultvalue)
-                is Boolean -> getBoolean(key, defaultvalue)
-                is Float -> getFloat(key, defaultvalue)
-                is Long -> getLong(key, defaultvalue)
-                else -> getString(key, defaultvalue as String)!!
-
-            }
-        }
+    inline fun <reified T> getData(key: String, defaultValue: T): T = when (T::class) {
+        Int::class -> sharedPreferences.getInt(key, defaultValue as Int) as T
+        Boolean::class -> sharedPreferences.getBoolean(key, defaultValue as Boolean) as T
+        Float::class -> sharedPreferences.getFloat(key, defaultValue as Float) as T
+        Long::class -> sharedPreferences.getLong(key, defaultValue as Long) as T
+        String::class -> sharedPreferences.getString(key, defaultValue as String) as T
+        else -> throw IllegalArgumentException("Unsupported default value type")
     }
 }

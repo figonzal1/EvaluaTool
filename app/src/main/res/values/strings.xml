@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2022
+  Copyright (c) 2024
 
-  Last modified 31-10-22 12:13
+  Last modified 01-09-24 16:20
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -378,7 +378,6 @@
 
     <!-- Shared pref -->
     <string name="SHARED_PREF_END_REWARD_TIME" translatable="false" tools:keep="@string/SHARED_PREF_END_REWARD_TIME">end_reward_time</string>
-    <string name="shared_pref_master_key" translatable="false">evalua_tool</string>
     <string name="SHARED_PREF_ACTUAL_VERSION_CODE" translatable="false">shared_pref_actual_version_code</string>
 
     <!-- REWARD DIALOG TAGS -->

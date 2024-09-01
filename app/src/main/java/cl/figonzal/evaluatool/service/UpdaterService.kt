@@ -6,71 +6,98 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2024
 
- Last modified 21-06-23 20:57
+ Last modified 01-09-24 16:42
  */
 
 package cl.figonzal.evaluatool.service
 
 import android.app.Activity
-import android.content.IntentSender
-import cl.figonzal.evaluatool.R
-import com.google.android.play.core.appupdate.AppUpdateInfo
-import com.google.android.play.core.appupdate.AppUpdateManager
+import android.content.IntentSender.SendIntentException
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.IntentSenderRequest
+import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.google.android.play.core.appupdate.AppUpdateOptions
 import com.google.android.play.core.install.model.AppUpdateType
 import com.google.android.play.core.install.model.UpdateAvailability
+import com.google.firebase.crashlytics.ktx.crashlytics
+import com.google.firebase.ktx.Firebase
 import timber.log.Timber
 
 
+private const val FIREBASE_EVALUATOOL_UPDATER_STATUS = "evaluatool_updater_status"
+
 class UpdaterService(
-    private val activity: Activity,
-    private val appUpdateManager: AppUpdateManager
+    activity: Activity,
+    private val activityResultLauncher: ActivityResultLauncher<IntentSenderRequest>
 ) {
 
-    private val appUpdateInfoTask = appUpdateManager.appUpdateInfo
+    private var manager = AppUpdateManagerFactory.create(activity)
+    private var crashlytics = Firebase.crashlytics
 
     fun checkAvailability() {
 
-        appUpdateInfoTask.addOnSuccessListener { result: AppUpdateInfo ->
-            when {
-                result.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE && result.isUpdateTypeAllowed(
-                    AppUpdateType.IMMEDIATE
-                ) -> {
+        val appUpdateInfoTask = manager.appUpdateInfo
 
-                    Timber.d(activity.getString(R.string.UPDATE_AVAILABLE))
+        appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
+            when {
+                appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
+                    Timber.d("Update available")
+                    crashlytics.setCustomKey(FIREBASE_EVALUATOOL_UPDATER_STATUS, "Update available")
+
                     try {
-                        appUpdateManager.startUpdateFlowForResult(
-                            result,
-                            AppUpdateType.IMMEDIATE,
-                            activity,
-                            UPDATE_CODE
+                        manager.startUpdateFlowForResult(
+                            appUpdateInfo,
+                            activityResultLauncher,
+                            AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
                         )
-                    } catch (e: IntentSender.SendIntentException) {
-                        Timber.e(e, activity.getString(R.string.UPDATE_INTENT_FAILED))
+                    } catch (e: SendIntentException) {
+                        Timber.e("Update intent failed")
+                        crashlytics.setCustomKey(
+                            FIREBASE_EVALUATOOL_UPDATER_STATUS,
+                            "Update intent failed"
+                        )
                     }
                 }
 
-                else -> Timber.d(activity.getString(R.string.UPDATE_NOT_AVAILABLE))
+                else -> {
+                    Timber.d("No new updates available")
+                    crashlytics.setCustomKey(
+                        FIREBASE_EVALUATOOL_UPDATER_STATUS,
+                        "No new updates available"
+                    )
+                }
             }
         }
     }
 
+
     fun resumeUpdater() {
-        appUpdateManager
+
+        val crashlytics = Firebase.crashlytics
+
+        manager
             .appUpdateInfo
-            .addOnSuccessListener { appUpdateInfo: AppUpdateInfo ->
-                if (appUpdateInfo.updateAvailability() == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                    // If an in-app update is already running, resume the update.
+            .addOnSuccessListener { appUpdateInfo ->
+
+                if (appUpdateInfo.updateAvailability()
+                    == UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS
+                ) {
                     try {
-                        appUpdateManager.startUpdateFlowForResult(
+                        manager.startUpdateFlowForResult(
                             appUpdateInfo,
-                            AppUpdateType.IMMEDIATE,
-                            activity,
-                            UPDATE_CODE
+                            activityResultLauncher,
+                            AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
                         )
-                    } catch (e: IntentSender.SendIntentException) {
-                        Timber.e(e, activity.getString(R.string.UPDATE_MANAGER_FAILED))
+                    } catch (e: SendIntentException) {
+                        Timber.e(e, "onResume updater failed")
+                        crashlytics.setCustomKey(
+                            FIREBASE_EVALUATOOL_UPDATER_STATUS,
+                            "onResume updater failed"
+                        )
+
                     }
                 }
             }

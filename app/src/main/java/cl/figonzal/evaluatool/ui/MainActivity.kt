@@ -6,14 +6,16 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2024
 
- Last modified 15-10-22 13:32
+ Last modified 01-09-24 16:42
  */
 package cl.figonzal.evaluatool.ui
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import cl.figonzal.evaluatool.BuildConfig
@@ -33,9 +35,14 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua6.Evalua6Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity
-import cl.figonzal.evaluatool.utils.*
+import cl.figonzal.evaluatool.utils.SharedPrefUtil
+import cl.figonzal.evaluatool.utils.configureFABWsp
+import cl.figonzal.evaluatool.utils.handleNightMode
+import cl.figonzal.evaluatool.utils.handlePrivacyPolicy
+import cl.figonzal.evaluatool.utils.mainActivityTo
+import cl.figonzal.evaluatool.utils.setUpAnimations
+import cl.figonzal.evaluatool.utils.setUpCardViewCustomCorners
 import com.google.android.material.button.MaterialButton
-import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import timber.log.Timber
 
 
@@ -67,7 +74,7 @@ class MainActivity : AppCompatActivity() {
         lifecycle.addObserver(ChangeLogService(this, sharedPrefUtil))
 
         //UPDATER
-        updaterService = UpdaterService(this, AppUpdateManagerFactory.create(this))
+        updaterService = UpdaterService(this, activityResultLauncher)
         updaterService!!.checkAvailability()
 
         bindingResources()
@@ -167,4 +174,13 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    private val activityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
+            when (val resultCode = result.resultCode) {
+                Activity.RESULT_OK -> Timber.d("Lqch-apk updated successfully")
+                Activity.RESULT_CANCELED -> Timber.d("User cancelled Update flow!")
+                else -> Timber.e("Lqch-apk update flow failed! Result code: %s", resultCode)
+            }
+        }
 }
