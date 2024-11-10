@@ -8,7 +8,7 @@
 
   Copyright (c) 2024
 
-  Last modified 01-09-24 16:20
+  Last modified 09-11-24, 22:00
   -->
 
 <resources xmlns:tools="http://schemas.android.com/tools">
@@ -578,8 +578,8 @@
     <string name="COMPRENSION_MEDIA" translatable="false">Media</string>
     <string name="COMPRENSION_ALTA" translatable="false">Alta</string>
     <string name="COMPRENSION_MUY_ALTA" translatable="false">Muy Alta</string>
-    <string name="POINTS_FORMAT" formatted="false" translatable="false">%1$s %2$s pts</string>
-    <string name="POINTS_SIMPLE_FORMAT" translatable="false">%1$s pts</string>
+    <string name="POINTS_FORMAT" formatted="false" translatable="false">%1$s %2$.2f pts</string>
+    <string name="POINTS_SIMPLE_FORMAT" translatable="false">%1$.2f pts</string>
     <string name="ort_fonetica" translatable="false" tools:keep="@string/ort_fonetica">Ortografía fonética</string>
     <string name="graf_a_y_exp_escrita" translatable="false" tools:keep="@string/graf_a_y_exp_escrita">Grafía y exp. escrita</string>
     <string name="ortografia_visual" translatable="false" tools:keep="@string/ortografia_visual">Ortografía Visual</string>

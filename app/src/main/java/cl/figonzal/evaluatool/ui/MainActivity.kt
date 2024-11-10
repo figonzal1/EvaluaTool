@@ -8,7 +8,7 @@
 
  Copyright (c) 2024
 
- Last modified 09-11-24, 20:50
+ Last modified 09-11-24, 22:36
  */
 package cl.figonzal.evaluatool.ui
 
@@ -37,7 +37,6 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import cl.figonzal.evaluatool.utils.handleNightMode
-import cl.figonzal.evaluatool.utils.handlePrivacyPolicy
 import cl.figonzal.evaluatool.utils.mainActivityTo
 import cl.figonzal.evaluatool.utils.setUpAnimations
 import cl.figonzal.evaluatool.utils.setUpCardViewCustomCorners
@@ -102,7 +101,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
             }
 
-            handlePrivacyPolicy(sharedPrefUtil)
+            //handlePrivacyPolicy(sharedPrefUtil)
         }
     }
 

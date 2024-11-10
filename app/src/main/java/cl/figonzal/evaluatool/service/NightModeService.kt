@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2024
 
- Last modified 26-05-22 16:57
+ Last modified 09-11-24, 22:10
  */
 
 package cl.figonzal.evaluatool.service
@@ -36,7 +36,7 @@ class NightModeService(
     private fun checkNightMode() {
 
         val manualNightMode =
-            sharedPrefUtil.getData(activity.getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+            sharedPrefUtil.getData(activity.getString(R.string.NIGHT_MODE_KEY), false)
 
         //MANUAL MODE
         //manual mode activated
@@ -45,13 +45,13 @@ class NightModeService(
 
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
 
-                Timber.d(activity.getString(R.string.TAG_NIGHT_MODE) + ": ON")
+                Timber.d("%s: ON", activity.getString(R.string.TAG_NIGHT_MODE))
             }
 
             else -> {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
 
-                Timber.d(activity.getString(R.string.TAG_NIGHT_MODE) + ": OFF")
+                Timber.d("%s: OFF", activity.getString(R.string.TAG_NIGHT_MODE))
             }
         }
     }

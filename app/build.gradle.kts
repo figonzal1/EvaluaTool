@@ -8,7 +8,7 @@
 
  Copyright (c) 2024
 
- Last modified 6/8/24, 4:57 PM
+ Last modified 09-11-24, 22:35
  */
 
 import java.io.FileInputStream
@@ -44,8 +44,8 @@ android {
         applicationId = "cl.figonzal.evaluatool"
         minSdk = 23
         targetSdk = 34
-        versionCode = 42
-        versionName = "1.1.3"
+        versionCode = 43
+        versionName = "1.1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
