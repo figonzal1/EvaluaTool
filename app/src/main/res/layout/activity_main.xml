@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2022
+  Copyright (c) 2024
 
-  Last modified 15-07-22 16:58
+  Last modified 09-11-24, 20:50
   -->
 
 
@@ -197,10 +197,11 @@
                 android:layout_marginBottom="16dp"
                 android:padding="@dimen/padding_button_green"
                 android:text="@string/EVALUA_10"
-                app:layout_constraintBottom_toTopOf="@+id/fab_wsp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btn_evalua_9"
                 app:layout_constraintStart_toStartOf="@+id/btn_evalua_8"
-                app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/tv_nombre_app"
@@ -270,14 +271,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_round_settings_24" />
 
-            <include
-                android:id="@+id/fab_wsp"
-                layout="@layout/fab_whatsap_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

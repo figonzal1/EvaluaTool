@@ -6,21 +6,19 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2024
 
- Last modified 21-06-23 20:57
+ Last modified 09-11-24, 20:50
  */
 
 package cl.figonzal.evaluatool.utils
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
-import android.net.Uri
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +32,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
-import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
 import cl.figonzal.evaluatool.service.NightModeService
 import cl.figonzal.evaluatool.ui.MainActivity
 import cl.figonzal.evaluatool.ui.dialogs.FirebaseDialogFragment
@@ -103,50 +100,6 @@ fun List<String>.printChangeLogList(): CharSequence {
         }
     }
     return changes
-}
-
-
-fun Activity.configureFABWsp(fabWsp: FabWhatsapLayoutBinding) {
-    fabWsp.floatingActionButton.setOnClickListener {
-
-        val packageName = "com.whatsapp"
-
-        val intent = packageManager.getLaunchIntentForPackage(packageName)
-
-        when {
-            intent != null -> {
-
-                //Open whatsapp group
-                val url = "https://chat.whatsapp.com/HY53a5RlUvvFNwFwstXHHy"
-
-                Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(url)
-                    setPackage(packageName)
-                    startActivity(this)
-                }
-
-            }
-
-            else -> {
-                //try to install package
-                Intent(Intent.ACTION_VIEW).apply {
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    data = Uri.parse("market://details?id=$packageName")
-
-                    try {
-                        startActivity(this)
-                    } catch (e: ActivityNotFoundException) {
-                        startActivity(
-                            Intent(
-                                Intent.ACTION_VIEW,
-                                Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
-                            )
-                        )
-                    }
-                }
-            }
-        }
-    }
 }
 
 /**
@@ -253,7 +206,7 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
     val privacyDialogShowed = sharedPrefUtil.getData(
         getString(R.string.SHARED_PREF_PRIVACY_POLICY),
         false
-    ) as Boolean
+    )
 
     when {
         !privacyDialogShowed -> {
@@ -311,7 +264,7 @@ private fun Context.setUpSwitchDarkMode(
 ) {
 
     val nightMode =
-        sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+        sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false)
 
     switchMaterial.apply {
 

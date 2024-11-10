@@ -8,7 +8,7 @@
 
  Copyright (c) 2024
 
- Last modified 01-09-24 16:42
+ Last modified 09-11-24, 20:50
  */
 package cl.figonzal.evaluatool.ui
 
@@ -36,7 +36,6 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
-import cl.figonzal.evaluatool.utils.configureFABWsp
 import cl.figonzal.evaluatool.utils.handleNightMode
 import cl.figonzal.evaluatool.utils.handlePrivacyPolicy
 import cl.figonzal.evaluatool.utils.mainActivityTo
@@ -104,8 +103,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             handlePrivacyPolicy(sharedPrefUtil)
-
-            configureFABWsp(fabWsp)
         }
     }
 

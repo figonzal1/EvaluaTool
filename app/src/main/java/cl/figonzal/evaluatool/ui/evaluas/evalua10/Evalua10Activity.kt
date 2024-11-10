@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2024
 
- Last modified 06-09-22 17:37
+ Last modified 09-11-24, 20:50
  */
 
 package cl.figonzal.evaluatool.ui.evaluas.evalua10
@@ -24,7 +24,6 @@ import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
-import cl.figonzal.evaluatool.utils.configureFABWsp
 import timber.log.Timber
 
 class Evalua10Activity : AppCompatActivity() {
@@ -38,7 +37,6 @@ class Evalua10Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         configureActionBar(R.string.TOOLBAR_EVALUA_10, binding.includeToolbar.materialToolbar)
-        configureFABWsp(binding.fabWsp)
 
         val headers = listOf(
             Header(getString(R.string.EVALUA_10_MODULO_1)),
