@@ -8,7 +8,7 @@
 
  Copyright (c) 2025
 
- Last modified 10-10-25, 23:22
+ Last modified 11-10-25, 16:46
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -27,8 +27,8 @@ import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FirebaseDialogLayoutBinding
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.crashlytics.ktx.crashlytics
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
 
 /**
  * Class that handle privacy_policy dialog fragment

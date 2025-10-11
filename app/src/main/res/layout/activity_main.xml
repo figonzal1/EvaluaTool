@@ -8,7 +8,7 @@
 
   Copyright (c) 2025
 
-  Last modified 10-10-25, 23:22
+  Last modified 11-10-25, 16:46
   -->
 
 
@@ -194,10 +194,8 @@
                 android:id="@+id/btn_evalua_10"
                 android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
                 android:padding="@dimen/padding_button_green"
                 android:text="@string/EVALUA_10"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/btn_evalua_9"
                 app:layout_constraintStart_toStartOf="@+id/btn_evalua_8"
                 app:layout_constraintTop_toBottomOf="@+id/btn_evalua_8" />

@@ -8,14 +8,14 @@
 
  Copyright (c) 2025
 
- Last modified 10-10-25, 23:22
+ Last modified 11-10-25, 16:46
  */
 
 package cl.figonzal.evaluatool.service
 
-import com.google.firebase.crashlytics.ktx.crashlytics
-import com.google.firebase.ktx.Firebase
-import com.google.firebase.perf.ktx.performance
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
+import com.google.firebase.perf.performance
 
 /**
  * Function that handle firebase service collection

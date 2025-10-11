@@ -8,7 +8,7 @@
 
   Copyright (c) 2025
 
-  Last modified 10-10-25, 23:22
+  Last modified 11-10-25, 16:46
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,6 +16,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua1.Evalua1Activity"
     tools:keep="@layout/activity_evalua">
 
@@ -32,6 +33,7 @@
         android:id="@+id/rv"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include_toolbar" />

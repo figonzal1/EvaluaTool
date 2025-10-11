@@ -6,9 +6,9 @@
   Autor: Felipe González
   Email: felipe.gonzalezalarcon94@gmail.com
 
-  Copyright (c) 2022
+  Copyright (c) 2025
 
-  Last modified 07-03-22 16:42
+  Last modified 11-10-25, 16:46
   -->
 
 
@@ -17,6 +17,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
     tools:context="cl.figonzal.evaluatool.ui.evaluas.evalua1.modulo2.SeriesE1M2"
     tools:keep="@layout/activity_series_e1_m2">
 

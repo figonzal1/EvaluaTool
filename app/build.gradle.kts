@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2024
+ Copyright (c) 2025
 
- Last modified 6/8/24, 4:57 PM
+ Last modified 11-10-25, 16:46
  */
 
 import java.io.FileInputStream
@@ -38,12 +38,12 @@ android {
     }
 
     namespace = "cl.figonzal.evaluatool"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "cl.figonzal.evaluatool"
         minSdk = 23
-        targetSdk = 34
+        targetSdk = 36
         versionCode = 42
         versionName = "1.1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
