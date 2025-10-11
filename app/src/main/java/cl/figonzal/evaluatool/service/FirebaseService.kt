@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2021
+ Copyright (c) 2025
 
- Last modified 12/17/21, 1:58 AM
+ Last modified 10-10-25, 23:22
  */
 
 package cl.figonzal.evaluatool.service
@@ -24,11 +24,11 @@ class FirebaseService {
 
     companion object {
         fun runCrashlyticsService() {
-            Firebase.crashlytics.setCrashlyticsCollectionEnabled(true)
+            Firebase.crashlytics.isCrashlyticsCollectionEnabled = true
         }
 
         fun stopCrashlyticsService() {
-            Firebase.crashlytics.setCrashlyticsCollectionEnabled(false)
+            Firebase.crashlytics.isCrashlyticsCollectionEnabled = false
         }
 
         fun runPerformanceService() {

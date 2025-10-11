@@ -6,20 +6,20 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 23-06-23 23:36
+ Last modified 10-10-25, 23:22
  */
 
 package cl.figonzal.evaluatool.ui
 
 import android.content.Intent
 import android.content.SharedPreferences
-import android.net.Uri
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.edit
+import androidx.core.net.toUri
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -66,7 +66,7 @@ class SettingsActivity : AppCompatActivity() {
             findPreference<Preference>(getString(R.string.SHARED_PREF_PRIVACY_POLICY))?.setOnPreferenceClickListener {
 
                 Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
+                    data = getString(R.string.PRIVACY_POLICY_URL).toUri()
                     startActivity(this)
                 }
                 true
@@ -76,10 +76,8 @@ class SettingsActivity : AppCompatActivity() {
 
                 Intent(
                     Intent.ACTION_SENDTO,
-                    Uri.parse(
-                        "mailto:${getString(R.string.mail_to_felipe)}" +
-                                "?subject=${getString(R.string.email_subject)}"
-                    )
+                    ("mailto:${getString(R.string.mail_to_felipe)}" +
+                            "?subject=${getString(R.string.email_subject)}").toUri()
                 ).apply {
                     putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_subject))
                     requireActivity().startActivity(

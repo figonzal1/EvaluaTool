@@ -50,8 +50,8 @@ firebase = [
 ]
 
 [plugins]
-com-android-application = "com.android.application:8.6.1"
-com-android-library = "com.android.library:8.6.1"
+com-android-application = "com.android.application:8.13.0"
+com-android-library = "com.android.library:8.13.0"
 com-github-ben-manes-versions = "com.github.ben-manes.versions:0.51.0"
 com-google-firebase-crashlytics = "com.google.firebase.crashlytics:3.0.2"
 com-google-firebase-firebase-perf = "com.google.firebase.firebase-perf:1.4.2"

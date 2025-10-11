@@ -6,13 +6,12 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2024
+ Copyright (c) 2025
 
- Last modified 01-09-24 16:42
+ Last modified 10-10-25, 23:22
  */
 package cl.figonzal.evaluatool.ui
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
@@ -36,7 +35,6 @@ import cl.figonzal.evaluatool.ui.evaluas.evalua7.Evalua7Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua8.Evalua8Activity
 import cl.figonzal.evaluatool.ui.evaluas.evalua9.Evalua9Activity
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
-import cl.figonzal.evaluatool.utils.configureFABWsp
 import cl.figonzal.evaluatool.utils.handleNightMode
 import cl.figonzal.evaluatool.utils.handlePrivacyPolicy
 import cl.figonzal.evaluatool.utils.mainActivityTo
@@ -104,8 +102,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             handlePrivacyPolicy(sharedPrefUtil)
-
-            configureFABWsp(fabWsp)
         }
     }
 
@@ -178,8 +174,8 @@ class MainActivity : AppCompatActivity() {
     private val activityResultLauncher =
         registerForActivityResult(ActivityResultContracts.StartIntentSenderForResult()) { result ->
             when (val resultCode = result.resultCode) {
-                Activity.RESULT_OK -> Timber.d("Lqch-apk updated successfully")
-                Activity.RESULT_CANCELED -> Timber.d("User cancelled Update flow!")
+                RESULT_OK -> Timber.d("Lqch-apk updated successfully")
+                RESULT_CANCELED -> Timber.d("User cancelled Update flow!")
                 else -> Timber.e("Lqch-apk update flow failed! Result code: %s", resultCode)
             }
         }

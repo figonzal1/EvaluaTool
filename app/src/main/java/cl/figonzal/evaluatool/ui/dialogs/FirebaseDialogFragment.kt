@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 21-06-23 21:25
+ Last modified 10-10-25, 23:22
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -16,12 +16,12 @@ package cl.figonzal.evaluatool.ui.dialogs
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FirebaseDialogLayoutBinding
@@ -82,7 +82,7 @@ class FirebaseDialogFragment(
 
             tvPrivacyPolicy.setOnClickListener {
                 Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
+                    data = getString(R.string.PRIVACY_POLICY_URL).toUri()
                     startActivity(this)
                 }
 

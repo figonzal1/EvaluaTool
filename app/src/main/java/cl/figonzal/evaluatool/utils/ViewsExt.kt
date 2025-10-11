@@ -6,21 +6,18 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 21-06-23 20:57
+ Last modified 10-10-25, 23:22
  */
 
 package cl.figonzal.evaluatool.utils
 
 import android.app.Activity
-import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.TransitionDrawable
-import android.net.Uri
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -32,9 +29,9 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.graphics.drawable.toDrawable
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.ActivityMainBinding
-import cl.figonzal.evaluatool.databinding.FabWhatsapLayoutBinding
 import cl.figonzal.evaluatool.service.NightModeService
 import cl.figonzal.evaluatool.ui.MainActivity
 import cl.figonzal.evaluatool.ui.dialogs.FirebaseDialogFragment
@@ -105,50 +102,6 @@ fun List<String>.printChangeLogList(): CharSequence {
     return changes
 }
 
-
-fun Activity.configureFABWsp(fabWsp: FabWhatsapLayoutBinding) {
-    fabWsp.floatingActionButton.setOnClickListener {
-
-        val packageName = "com.whatsapp"
-
-        val intent = packageManager.getLaunchIntentForPackage(packageName)
-
-        when {
-            intent != null -> {
-
-                //Open whatsapp group
-                val url = "https://chat.whatsapp.com/HY53a5RlUvvFNwFwstXHHy"
-
-                Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(url)
-                    setPackage(packageName)
-                    startActivity(this)
-                }
-
-            }
-
-            else -> {
-                //try to install package
-                Intent(Intent.ACTION_VIEW).apply {
-                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-                    data = Uri.parse("market://details?id=$packageName")
-
-                    try {
-                        startActivity(this)
-                    } catch (e: ActivityNotFoundException) {
-                        startActivity(
-                            Intent(
-                                Intent.ACTION_VIEW,
-                                Uri.parse("https://play.google.com/store/apps/details?id=$packageName")
-                            )
-                        )
-                    }
-                }
-            }
-        }
-    }
-}
-
 /**
  * Animate View
  */
@@ -156,8 +109,8 @@ fun Activity.setIndexAnimation(totalPd: Double): TransitionDrawable {
 
     return TransitionDrawable(
         arrayOf(
-            ColorDrawable(Color.TRANSPARENT),
-            ColorDrawable(resources.getColor(R.color.indexRed, theme))
+            Color.TRANSPARENT.toDrawable(),
+            resources.getColor(R.color.indexRed, theme).toDrawable()
         )
     ).apply {
         isCrossFadeEnabled = true
@@ -253,7 +206,7 @@ fun AppCompatActivity.handlePrivacyPolicy(sharedPrefUtil: SharedPrefUtil) {
     val privacyDialogShowed = sharedPrefUtil.getData(
         getString(R.string.SHARED_PREF_PRIVACY_POLICY),
         false
-    ) as Boolean
+    )
 
     when {
         !privacyDialogShowed -> {
@@ -311,7 +264,7 @@ private fun Context.setUpSwitchDarkMode(
 ) {
 
     val nightMode =
-        sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false) as Boolean
+        sharedPrefUtil.getData(getString(R.string.NIGHT_MODE_KEY), false)
 
     switchMaterial.apply {
 

@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2025
 
- Last modified 06-09-22 17:37
+ Last modified 10-10-25, 23:22
  */
 package cl.figonzal.evaluatool.ui.evaluas.evalua2
 
@@ -23,7 +23,6 @@ import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 import cl.figonzal.evaluatool.ui.adapter.HeaderAdapter
 import cl.figonzal.evaluatool.utils.configureActionBar
-import cl.figonzal.evaluatool.utils.configureFABWsp
 import timber.log.Timber
 
 class Evalua2Activity : AppCompatActivity() {
@@ -37,7 +36,6 @@ class Evalua2Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         configureActionBar(R.string.TOOLBAR_EVALUA_2, binding.includeToolbar.materialToolbar)
-        configureFABWsp(binding.fabWsp)
 
 
         val headers = listOf(

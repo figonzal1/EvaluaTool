@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 21-06-23 21:07
+ Last modified 10-10-25, 23:22
  */
 package cl.figonzal.evaluatool.utils
 
@@ -21,7 +21,6 @@ import androidx.annotation.StringRes
 import androidx.core.text.toSpannable
 import androidx.fragment.app.FragmentManager
 import cl.figonzal.evaluatool.ApplicationController
-import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.domain.resolvers.BaseResolver
 import cl.figonzal.evaluatool.ui.dialogs.BaremoDialogFragment
 import cl.figonzal.evaluatool.utils.EvaluaUtils.LEVEL.*
@@ -113,13 +112,12 @@ object EvaluaUtils {
         }
     }
 
-    @Suppress("UNUSED_PARAMETER")
-    enum class LEVEL(name: String) {
-        ALTO(get(R.string.NIVEL_ALTO)),
-        MEDIO_ALTO(get(R.string.NIVEL_MEDIO_ALTO)),
-        MEDIO(get(R.string.NIVEL_MEDIO)),
-        MEDIO_BAJO(get(R.string.NIVEL_MEDIO_BAJO)),
-        BAJO(get(R.string.NIVEL_BAJO))
+    enum class LEVEL() {
+        ALTO(),
+        MEDIO_ALTO(),
+        MEDIO(),
+        MEDIO_BAJO(),
+        BAJO()
     }
 
     /**
