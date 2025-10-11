@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 21-06-23 21:25
+ Last modified 11-10-25, 16:46
  */
 
 package cl.figonzal.evaluatool.ui.dialogs
@@ -16,19 +16,19 @@ package cl.figonzal.evaluatool.ui.dialogs
 import android.app.Activity
 import android.app.Dialog
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.ClickableSpan
 import android.view.View
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.fragment.app.DialogFragment
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.FirebaseDialogLayoutBinding
 import cl.figonzal.evaluatool.utils.SharedPrefUtil
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import com.google.firebase.crashlytics.ktx.crashlytics
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.Firebase
+import com.google.firebase.crashlytics.crashlytics
 
 /**
  * Class that handle privacy_policy dialog fragment
@@ -82,7 +82,7 @@ class FirebaseDialogFragment(
 
             tvPrivacyPolicy.setOnClickListener {
                 Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(getString(R.string.PRIVACY_POLICY_URL))
+                    data = getString(R.string.PRIVACY_POLICY_URL).toUri()
                     startActivity(this)
                 }
 
