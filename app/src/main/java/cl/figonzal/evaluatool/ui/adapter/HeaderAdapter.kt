@@ -6,9 +6,9 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2022
+ Copyright (c) 2025
 
- Last modified 26-05-22 00:14
+ Last modified 11-10-25, 18:22
  */
 
 package cl.figonzal.evaluatool.ui.adapter
@@ -24,6 +24,7 @@ import cl.figonzal.evaluatool.databinding.HeaderItemListBinding
 import cl.figonzal.evaluatool.domain.model.Child
 import cl.figonzal.evaluatool.domain.model.Header
 
+
 class HeaderAdapter(
     private val routeMapKey: String,
     private val headerList: List<Header>,
@@ -34,19 +35,23 @@ class HeaderAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HeaderViewHolder {
-        val v =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.header_item_list, parent, false)
-        return HeaderViewHolder(v)
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.header_item_list, parent, false)
+        return HeaderViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: HeaderViewHolder, position: Int) {
-        holder.bind(routeMapKey, headerList[position], this, childList, activity)
+        holder.bind(
+            routeMapKey = routeMapKey,
+            header = headerList[position],
+            position = position,
+            adapter = this,
+            childList = childList,
+            activity = activity
+        )
     }
 
-    override fun getItemCount(): Int {
-        return headerList.size
-    }
+    override fun getItemCount(): Int = headerList.size
 
     class HeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -55,41 +60,37 @@ class HeaderAdapter(
         fun bind(
             routeMapKey: String,
             header: Header,
+            position: Int,
             adapter: HeaderAdapter,
             childList: List<List<Child>>,
             activity: Activity
         ) {
-
-            val expanded: Boolean = header.expanded
+            val expanded = header.expanded
 
             with(binding) {
-
                 tvGroup.text = header.name
 
-                //Change arrrow icon
+                // Cambiar ícono de flecha
                 ivArrow.setImageResource(
-                    when {
-                        header.expanded -> R.drawable.ic_round_keyboard_arrow_up_24
-                        else -> R.drawable.ic_round_keyboard_arrow_down_24
-                    }
+                    if (expanded)
+                        R.drawable.ic_round_keyboard_arrow_up_24
+                    else
+                        R.drawable.ic_round_keyboard_arrow_down_24
                 )
 
-                //Header click listener
+                // Click del header
                 clHeader.setOnClickListener {
-
-                    header.expanded = !expanded
-
-                    // Notify the adapter that item has changed
-                    adapter.notifyItemChanged(adapterPosition)
+                    header.expanded = !header.expanded
+                    adapter.notifyItemChanged(position)
                 }
 
                 //Config recyclerview for childs
                 rvChildItem.adapter =
                     ChildAdapter(
-                        routeMapKey,
-                        header.name,
-                        childList[adapterPosition],
-                        activity
+                        routeMapKey = routeMapKey,
+                        headerName = header.name,
+                        list = childList.getOrNull(position) ?: emptyList(),
+                        activity = activity
                     )
 
                 rvChildItem.apply {
@@ -101,11 +102,9 @@ class HeaderAdapter(
 
                     layoutManager = LinearLayoutManager(context)
                     setHasFixedSize(true)
+                    visibility = if (expanded) View.VISIBLE else View.GONE
                 }
-
             }
         }
-
     }
-
 }

@@ -6,15 +6,16 @@
  Autor: Felipe González
  Email: felipe.gonzalezalarcon94@gmail.com
 
- Copyright (c) 2023
+ Copyright (c) 2025
 
- Last modified 18-06-23 17:21
+ Last modified 11-10-25, 18:09
  */
 package cl.figonzal.evaluatool.ui.adapter
 
 import android.content.Context
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import cl.figonzal.evaluatool.R
 import cl.figonzal.evaluatool.databinding.BaremoItemListBinding
@@ -74,25 +75,22 @@ class BaremoAdapter(private var percentile: Array<DoubleArray>, private val cont
                     }
 
                     else -> {
-                        val item = perc[adapterPosition - 1]
-                        when {
-                            (adapterPosition - 1) % 2 != 0 -> baremoItem.setBackgroundColor(
-                                context.resources.getColor(
-                                    R.color.tableGreyRow,
-                                    context.theme
-                                )
-                            )
+                        val pos = bindingAdapterPosition
+                        if (pos == RecyclerView.NO_POSITION) return
 
-                            else -> baremoItem.setBackgroundColor(
-                                context.resources.getColor(
-                                    R.color.colorSurface,
-                                    context.theme
-                                )
-                            )
+                        val item = perc[pos - 1]
+
+                        val backgroundColor = if ((pos - 1) % 2 != 0) {
+                            ContextCompat.getColor(context, R.color.tableGreyRow)
+                        } else {
+                            ContextCompat.getColor(context, R.color.colorSurface)
                         }
+
+                        baremoItem.setBackgroundColor(backgroundColor)
                         tvPd.text = item.first().toInt().toString()
                         tvPcChileno.text = item[1].toInt().toString()
                     }
+
                 }
             }
 
