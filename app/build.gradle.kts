@@ -8,7 +8,7 @@
 
  Copyright (c) 2025
 
- Last modified 11-10-25, 16:46
+ Last modified 11-10-25, 18:41
  */
 
 import java.io.FileInputStream
@@ -44,8 +44,8 @@ android {
         applicationId = "cl.figonzal.evaluatool"
         minSdk = 23
         targetSdk = 36
-        versionCode = 42
-        versionName = "1.1.3"
+        versionCode = 43
+        versionName = "1.1.4"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -79,8 +79,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    kotlinOptions {
-        jvmTarget = "17"
+    kotlin {
+        jvmToolchain(17)
     }
 
 
